@@ -1,0 +1,52 @@
+2015-05-25 17:24:46[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/25 17:24:46
+Title=“object”未包含“StepContent”的定义
+Message=Message:“object”未包含“StepContent”的定义
+TargetSite:System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object)
+Data:
+StackTrace:   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 WebManager.Controllers.StepController.AddStep(Object model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\StepController.cs:行号 49
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.71
+UrlReferrer=http://www.webmanager.com/Step/EditStep
+RawUrl=/Step/AddStep
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:56
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=qnxrkhukwoyibeh2ev5tr1tg; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfPapoBfMkgbqso+MmpAnPZTx+jBFQswFZaNlTHLvHx2s8WnkgTldGF09MVjUupaYZZlcvZfLI6SpyEbG7Y1blH3cZxe8umP4YU4fmPkPZMQWyZ2KMFgLtbIMPjxVKy6aZF/QORUHTV9O2H3I6J/cZp11wvQEyg54a/4XLEC2tWLJlUteRyoWJY38gvMhiUJTU0bZfrqLvDNSN5kKZswogO+BV2rwBKr308zsZqdgdeXwSMpMEgFfEdJ0VhFTO0q6rE1zwsMYm6Ek19vpDkE5KDHg0QPTwjyX7zzTENB2WmwPdkUok8qogjY/LGKDQHfwpLzt5aZiLoUqNqtBV6CaMGLtiGI2d901SQyJTlvyc4t6oEgAJUNbCUMkA0D3g9LTvTgUOPzyWJK8Di87RHzF1ecGrPu1g8bLLipTP5R5rXmkXqNV8tkj3EoPCWhfth3A6+fM2qrrGI45Fd0ULwc3P8CdboRoOIPuA3LuxTmBKdkl+bqXjR1YsPGQniFm2WjZBZwjf/JMa6conmDlvyUrLDU88pmJE2ouUk1/cVaGqKJZ2Ale6b/CZPImlrc3XU6jjpMY9ZeEvI8NdWkS/2+l+jWlOfJvJDgDCjBRyytUvwjBdMVaRgP+mw02hxtpTH3PnMFSryTzbqw1yKoMuaE7vZjqOK8e+lH0aSoD+4vJD/yBihFYmGEcd3AMjqoDPgV1jWa4l8QuYk8EAXTqN+bQsdIf9dPdI1koGqOvCkBV5dwZx/hrq8mBiKTnZzqbetUfySDIP1Y8skri6jXDj2E5dG/E4au/VL4YTQ=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Step/EditStep
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+X-Requested-With:XMLHttpRequest
+
+

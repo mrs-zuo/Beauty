@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:layout_alignParentLeft="true"
+            android:text="@string/label_add_title" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/add_content_layout"
+                style="@style/activity_content_table_attrs"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/notepad_add_content_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/label_add_content_prompt"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size_18sp" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/notepad_add_content_prompt"
+                    android:background="#CCCCCC" />
+
+                <EditText
+                    android:id="@+id/content_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line"
+                    android:layout_marginTop="10dp"
+                    android:background="#00000000"
+                    android:hint="@string/notepad_add_content_edit_prompt"
+                    android:longClickable="false"
+                    android:maxLength="20"
+                    android:textSize="@dimen/text_size_18sp" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/confirm_button"
+                style="@style/submit_big_btn"
+                android:layout_below="@id/add_content_layout"
+                android:layout_marginTop="10dp"
+                android:text="@string/ok" />
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

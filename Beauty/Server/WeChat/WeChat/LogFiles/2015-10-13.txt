@@ -1,0 +1,1012 @@
+2015-10-13 09:30:25[10] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 9:30:25
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[zFfR5kgLXj7fkQbe7rNP4HY0w6W6S4nxuZv4/Hb4K+RfSpp3EOEO59EWvachnPKSjXazYv3rngxVT7SRV6FQEyEFYgELVW0b5cIW0XlGd5zEc5SCM6s3O+B6y6QA/7OYtBtnlROC/RW/gUZ6bgFfqMDsCyPHnm6YU16Ay0uSsSwiXNEJOnEo7qq/gUuQWiOQsVnbpiCP77nWf7MRWmfmNBj2D1Z49+sMg/+8Zzu/taTvCvfNym8GatWJzR6yJR9EwFolOcrPnjZ//SF6uVNeUcYRcQnEjQlylshEzhavDlFXeeouzS64KmxvOctVLRk+UtQXBFcrOcqqaDW8yyQC7asCAtFxw4Fcj6V14Vze8Tc7zLmKJF78+WiXOJUZvw22CHNUQ6F7maNu2wQNKPUV1CdXrGszbiXUszTeteiUIm9OFqdTeOPNAakBJX81cnSFvmIB/kbHGqbCsQrHrVcN6D90SgXUb6pgX/oVD3XOfw3eNyfx0XJjtYusR3OD3oDvdNVw5CHyckNossiOC8CdBXJh6LnZVnqcR7955z2+TyO/ZF6Z2HQ9Vv7N2+gmCeXp/m97DT3kgnI75EAm8SZWufiZNOxDsh8YNseXk8pd0TaZIHJjUhTT5v/7LmUx2PjFgOMRNEG8fb3AR/YdyhwCt70eleaBQivT6pjODmcdURzhnnucrkWefbi/6MzSpOZeu1t28kwCSHopJIahkRTf7w==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=e4ab8cd792bc920657a55ba2baa851bc48469061&timestamp=1444699821&nonce=474171778&encrypt_type=aes&msg_signature=458a81fcb764fffd7ce1e3724bc4f05a9968f7ee
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 09:30:25[10] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 9:30:25
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444699821</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Promotion/PromotionList&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=e4ab8cd792bc920657a55ba2baa851bc48469061&timestamp=1444699821&nonce=474171778&encrypt_type=aes&msg_signature=458a81fcb764fffd7ce1e3724bc4f05a9968f7ee
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 09:30:26[11] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 9:30:26
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[zFfR5kgLXj7fkQbe7rNP4HY0w6W6S4nxuZv4/Hb4K+RfSpp3EOEO59EWvachnPKSjXazYv3rngxVT7SRV6FQEyEFYgELVW0b5cIW0XlGd5zEc5SCM6s3O+B6y6QA/7OYtBtnlROC/RW/gUZ6bgFfqMDsCyPHnm6YU16Ay0uSsSwiXNEJOnEo7qq/gUuQWiOQsVnbpiCP77nWf7MRWmfmNBj2D1Z49+sMg/+8Zzu/taTvCvfNym8GatWJzR6yJR9EwFolOcrPnjZ//SF6uVNeUcYRcQnEjQlylshEzhavDlFXeeouzS64KmxvOctVLRk+UtQXBFcrOcqqaDW8yyQC7asCAtFxw4Fcj6V14Vze8Tc7zLmKJF78+WiXOJUZvw22CHNUQ6F7maNu2wQNKPUV1CdXrGszbiXUszTeteiUIm9OFqdTeOPNAakBJX81cnSFvmIB/kbHGqbCsQrHrVcN6D90SgXUb6pgX/oVD3XOfw3eNyfx0XJjtYusR3OD3oDvdNVw5CHyckNossiOC8CdBXJh6LnZVnqcR7955z2+TyO/ZF6Z2HQ9Vv7N2+gmCeXp/m97DT3kgnI75EAm8SZWufiZNOxDsh8YNseXk8pd0TaZIHJjUhTT5v/7LmUx2PjFgOMRNEG8fb3AR/YdyhwCt70eleaBQivT6pjODmcdURzhnnucrkWefbi/6MzSpOZeu1t28kwCSHopJIahkRTf7w==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.77
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=e4ab8cd792bc920657a55ba2baa851bc48469061&timestamp=1444699821&nonce=474171778&encrypt_type=aes&msg_signature=458a81fcb764fffd7ce1e3724bc4f05a9968f7ee
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 09:30:26[11] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 9:30:26
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444699821</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Promotion/PromotionList&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.77
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=e4ab8cd792bc920657a55ba2baa851bc48469061&timestamp=1444699821&nonce=474171778&encrypt_type=aes&msg_signature=458a81fcb764fffd7ce1e3724bc4f05a9968f7ee
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 09:50:05[47] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 9:50:05
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[upUehdYe80bPEACNWZkCaNtfeUy0YQCWkchcmUZRQOh2zJT5y0p1vKDu8s4GmJ2BF4hJBceGZtP9KS0lN//J0yWfriHaZwFjCT8S4B1AkbN7zybgZEGnZ4C5gI1uyO0CPorIOXTOw1spOq/KVjh9yL2wVgFJ4P1Cxh+UKlOzPvu72565nJ/tF3slPq7rouIXhCOBkIsK1LQpKuAeWsv50Q8VzozNqUUWX54WicxiifgZkOwZTTwPdf2Gc9zOooGB10ZGQJlO7RLrsZmS/hrbilmHWPiOuRmGvRchHm6XO9VfQQRdLf+gIEE7BT8AFaYw2uFOsXgTWisGGXrNMeiSiQ9CQAXRl1EOPQuzvQ1W+2aBQ23JyFCLT490FnBgaKo78k9C4Vu7HQ/oNRqQrp2jkvk5G9dHTds/fzfnVGKqWpLgYRM8IYIb0Jo1KSsX0ZKOjGY/E6+XliyDc2XGbj/jQK0VDqIvHCWW7SJtzyJfMhItgSYT5c0X2l1zwBoWGvLdZrZw+MeJhlVcIQOauk8mj6+jSFScffJNeBDU7m4ARmYN7FlcjWxRu7d4O+tQw0OYgCC6+RnFoNOEgT1TIqeEHOBvb8f3YE29Ztx6rUoryPFptBbK2xoQLWdSwycYLtgUW3aWRr/7LGI/mp6baX8GedC4yvMAi79Cic6c8g5w2OKlpBBlFdXXJDDmT7xSheXdbc+xBl465kRFuTfvYxSWwg==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=f268d121820554d5a4e176570255aafc5fb2de4c&timestamp=1444701005&nonce=2117223276&encrypt_type=aes&msg_signature=3dad3594c365293ca65aa56b184ee1cf7222923a
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 09:50:05[47] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 9:50:05
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444701005</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Order/AllOrder&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=f268d121820554d5a4e176570255aafc5fb2de4c&timestamp=1444701005&nonce=2117223276&encrypt_type=aes&msg_signature=3dad3594c365293ca65aa56b184ee1cf7222923a
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 10:34:15[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 10:34:15
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[350omUBvgc6syrmCn27+vsSk9/DIBquFGl16kYt3Sy42u1EMHfxFf+RdUE0ms8m6lz8lX1KeA/cuTAYWr9y4f/0ri3itHnnRk7HrYlh3u8YkIBaUSs5hYZlXcD1Gg8+kWFn0idLZ9d/0WBgpTVRlgOy4QspifAYkbzvPYCgnG2N49vmpO2rDZUCEwthkq7Sbnbygv4xQ4yBGmrv+bHFh+dS1Ysh7adEJi6B/zBKLwdIUtglSO4CR2LEOqm9C4Y8eFuO+TjIeNb/iP+ulFZZpvhnL6cTyyucNJ+qpdZj2wBQYk1g2qi4bKBjBwW4tfcu/26HgQ+oS883Z0AoB3OZxkParJND4ajM2kh7GkWB77gZ2fx45ciYwDOsxWxJXtqZk6FpSXrp3wWaT49PXcejo9h+/g15badiXF0Rch38YahkBRzMcpf53PN0PSWOpBHJYzq2KKFbx4X9v0do64X9ztj3cKt0ZowGkshteRN93i+/Ho1Bsz7AvLk1R5kGQ+SN4g/QgYghsR+i/oSeJp55LYdBxaYdybADTP4giV1vDk09Ub5GTyddeLZZ2Qn8h4StC5EXeFgIGCHRkiLxjd5WvvwHjK6zx5XxJpBs4iXsfINopgtyOwwXaogc57K9fai0IuN8kBJEg73Qd+ifKZF92vIJBdgv4RJ7+v1sczQIVolWL6b+hh9NCl5FvY3Mt+NdHqI17WEktv/x4c6pAP2P7wQ==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=c3fd9f1f682b6e494e59caf6322666f7e21a2e5d&timestamp=1444703654&nonce=1458631914&encrypt_type=aes&msg_signature=0117dd9fd31984283431dabb6a30d67e730a800f
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 10:34:16[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 10:34:16
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444703654</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Order/AllOrder&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=c3fd9f1f682b6e494e59caf6322666f7e21a2e5d&timestamp=1444703654&nonce=1458631914&encrypt_type=aes&msg_signature=0117dd9fd31984283431dabb6a30d67e730a800f
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 10:36:41[9] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 10:36:41
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[+51Xfjr1q5gSXmOEkjh632wJgA5Y4afm16Gnu9cTx+nIoC4jofTH0cXD8QpzIvWY64EHunpeOTtpnxiPULqbQGQXJUSzKUJkpAQhANHiA6wKoZ4ybDkULS309G7u+Glow5E5HBEdTeLx8n0s/frZi3lfTKyU0BiN76qq35FXX8uYcOW7pClwPsClm9aTEl3/iZuOrK+/zpLAHNHqqcs7qvjmfx/VDyMOlkTTC2K6+jkQodxEW9ba2a3sFsZ6ZYiKqmyN1j08Wiay8xkLYFBh3u8eaX0jmLSewP8yRFAOsYIJh57BP5hYZDelI8Zk4hl2Ls2EIJuFQQO18Ks22oNP+xmbZ8xIepsMj0HCQD+gpHg/tnr38AqzVzijdhl0bSkn4iwzRrrTI/l/lu+Oqo3w4hsu/qzzQrfEe8+pC2885QJJlj9EEcPe2bvnuxuo4KLRe3Qw26HypFuiepfGi4Dl74OUmW19lVuVudWChSdR/YWMQ3TqXDwbsqpieQXwLTzDhe/+6rEehFyocZYaUwAQERdlqJfCaqF7l/TNTvvOBDUkvxTbsFpGkvITK0qOlO0M+1zcyYmijT7SY27ADudxoZfK8HSvtNr7UbWLw9BtMUWuIfLaKUUzP9V1AzXmth8QTrgZOgyU8YTGeln9r/Fcm8GnDFJBd13ZWs2vsDAe0K5m+1p+DnXTUhjeJpIy5GTwd5kOvwqEABPcFT4JLurI+w==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=64ec1f6ab0a340bf142f09998b62097b87bb1a83&timestamp=1444703801&nonce=1054921337&encrypt_type=aes&msg_signature=c78de02762791f321c21866c30a95287fe556cca
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 10:36:41[9] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 10:36:41
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444703801</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Order/AllOrder&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=64ec1f6ab0a340bf142f09998b62097b87bb1a83&timestamp=1444703801&nonce=1054921337&encrypt_type=aes&msg_signature=c78de02762791f321c21866c30a95287fe556cca
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 11:17:49[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 11:17:49
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[plw8afUqBXsDxpC7ZSLbConMXVUgHSArNiPBzolzli/YMix4mtlfI2+fyNMGN7CiehY+KVsK0OpPkYIc6B3tHssa8L56YAAgqtIGfhgnesG7Wdhpb4cYEm2CreTHSRqRhza9OQJIloEDOgwQFQ77nTnLFvQYFpBNs3MmzRsXUXVDQgf4jaGZtAowfmikJVh+RfwrPx2Io9lLj8O3wTv0X6gxBjdP0wUPlrwixhMyYurgD71LJ9VQM4i/9fSZvIH1+NfN0GgPiabDOfQEfL2G+oSuk2ypZaNuhBNdChHGbdOlGEpEnVQkOzkI6CeZXit5ruoJYhPF+GdJ/AuXFLUUyd7fPb+28xOL8bDRY7Ar3einPEo2XypNzTCCQ6iNQuBFsEvuXiVaOkhosgJ+KYoA0BK0fTLSsQHPPcjnISWwg/BviOGYJHREti7m4HDZfxmtrBv+H7NKJflRYjMkHgKoeRIJw6a+/26MNQVEo+mIC/7K3MmHgM7yXWw0ncagVAHLCaxSuLsKN26GgK7p4X60PWtI1JztHbbHNMGySFL8JukKGYGvUM/sH/Jdsl7rXUT0gpTiSNog1f7Ul0TyP60xNlCv0b2tqEo0Cl7PawhNDNd11JRHeX2MB/av2zaqbm59dx34UktgolBnu2r55AYPEaRavnIXzGNRZgac2+slyqFbDBftLbWkq5nmQ4OkCRrMUAMLJlhrHLgi7X1Z1ZijHA==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.84
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=d8b1f7d4851ac163c0c735f69cef0df775dd5d48&timestamp=1444706265&nonce=751854701&encrypt_type=aes&msg_signature=0ef71ae31b8ee81de88070325e0d0f8609a79545
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 11:17:49[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 11:17:49
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuJ352HuNZIyZe-mk_YXPkFQ]]></FromUserName>
+<CreateTime>1444706265</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Account/MyAccount&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.84
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=d8b1f7d4851ac163c0c735f69cef0df775dd5d48&timestamp=1444706265&nonce=751854701&encrypt_type=aes&msg_signature=0ef71ae31b8ee81de88070325e0d0f8609a79545
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 11:54:21[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 11:54:21
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[l3a9eulYux3fj5umCM2iNpDkJ/Srm0QFOTpY+wqRoZZHKe1JA8v8FyeBXfT3TQwF6fg3WnHwBEoL+36xzzDRsq8aveOugFLZzLDS3+wutptI0qT6U0aWn+Ph//VOVZWH9MVbl96EnlLMUgUElB1d30nJoCQ0ipyXyWV0zYDGKB2lyagRCZk1m0RbOvW41ZMVMCfnYDzW+kz+xN5WooQSbxOumxY7tv5zgymoNXOF/9jez9MD+dTHdGiOwTcb1+Eq5yH5EX/WJFZJ1QRpAdb6jGVWcMUcuFqhHNaUjrCQvNXJtjKRWVD79Zpum4y0MNlO/yxBRWesDyxOy0S5gQL+DXhorPZyvBpirY99N1Pti4xdCnyFzjwttCeFXoR2WRg9YfaeIGZiCuU+vyw9fAiYd5l2l966DnorUBaFLHFOdZJ1I66wRg+qUmOsYqYzm2x4nx2o1xR7DIOWudt/a2ue94Vj9HnoXBC3fihX16oD+9wlWtzuoL1W4+m2LYSXbZzxZT63Cfk1qDOYUab2m7o/OOrzefC9xcB/PpUckVPHZoDvilE/TDwIHx72sFw8GvPjY6hZqLm4I2AVKL8kwPtS09SRuCce9I1t7Lsi3g27p3z5AETY6nAFpbY8GCRWZGKE2p9U8IHTca+dQvXSu6YTaAwIv+3PHo2Xp1K6fDaA0bjd2gw2Svy2xE3e/wMNDQa3MhxzZeSL4DofmOxNEj4WMA==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.84
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=cdbbf0c69a5dd707d82c32d424f74d1da1ef4405&timestamp=1444708458&nonce=1193643491&encrypt_type=aes&msg_signature=c315823a74a59222f7d4fe8796043be425e00466
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 11:54:21[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 11:54:21
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuJ352HuNZIyZe-mk_YXPkFQ]]></FromUserName>
+<CreateTime>1444708458</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Product/CommodityCategory&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.84
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=cdbbf0c69a5dd707d82c32d424f74d1da1ef4405&timestamp=1444708458&nonce=1193643491&encrypt_type=aes&msg_signature=c315823a74a59222f7d4fe8796043be425e00466
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:34:14[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:34:14
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[kgY6ig+JFFBMefGlkQCWu8oxQWn0JohPPI4vCcxSIAIBT2y/TGcq++3pj0J9oYl0WSo/rSA5VhQ2e7qR0QnZrSxPJoyjJ8YEpWLU+FpR6JvBF8JDcq9urnj4wlAGgNqgAVTpxfOEKqeCeJjbePh2/hXxp8g/mxI6see+V2aPmcfrd0LXjUVqEKRPdpgWuEttgEdjwX/CCcSoYb//EHqjkzpO/qRTFRK57dCB3QjtxKhqDaIhJhKjZugz7bcg8jlBGLPie+o0XG6Q91jvaB3/cdhTocqJEa73eDSXBwZveMIYSbvxHsEYccHa41luzD333NqmzbQF3XI6GPHA+ng9ibbe+ViZcv2r+ZZS7OvLZovxLu5XR8557zBH75QldLtQohqtgSpdaxb8/Nnvx+7M+jTe7lWAzc9pHEgq+QGQ5zAiZ9onRrMlGK05V7IcmIEFR1JUjKBc6seIde/ljyRnlmCXoIlwunRxa5NUC4gR5P/mVn0cU+KFv0nYIjIIfxb6n4ZCj0M0UM7RlyblkX1durpkwYCE2lxkUhj/QYM8mRhWc6dTwt1fqQRuMbaqnXNIbGdlU7IOAZJPsPS9Edr4Zl2a2OLHLxWAYSVbQ2CsXP9LaYTmCUYMytysUlolHR1On780AND9a5xN1CkkWZ/ffUBDWtVnDc6YhCaioWTXORcZVGFlBJFTLt/WOhHbh50EVZ6j/mYZfRbfZXokfjCQTw==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=c485043576d7820aa85d8f54051d0ee378009a80&timestamp=1444714452&nonce=1780838525&encrypt_type=aes&msg_signature=3595d33fd7fcbbddacd35f72b6b32493dbf2dae8
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:34:14[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:34:14
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444714452</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Promotion/PromotionList&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=c485043576d7820aa85d8f54051d0ee378009a80&timestamp=1444714452&nonce=1780838525&encrypt_type=aes&msg_signature=3595d33fd7fcbbddacd35f72b6b32493dbf2dae8
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:47:24[5] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:47:24
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[gcPvVBPicSYQs7lhWfasLbXuvYFb93/qvw1ETUcrKHV/BIC/NkyoEPe+N+snqtmkJ5bn8pR2sYormw5F84JWkPtg3OD9OnhimAzXRt+b/REVxIvGWmxYt8xpJfhpKZux5XHm2FseeYWhjOeVMu0o1TVbfXi88fT1Xd2FR9igG+p33H6f2k1Esy6c2bWyq5j0GmQKGevEAOriKBjiYg+iUpNUpav7X17vJhLmWg8w/wOkWejdqU4U5j88iZNdBxosHgAENb3Was0r+23sxxwPPL/iNzW5zwOIRdMxsrjqqJw9dAb9gvOGNpRFexJ/Jo928gXg7jWG7XVKA7tXNiTk0h3pt2j+jgKobVY9IJf9bbwS7BakExcmEWWX8jcVrPy0VqHHCmP8Lb+m9Dm2cCYeye1xVpUj+Boj4lpJiv3Di32COQVAufi0JP3KyDMcf4RmIVL70Ok1TbI7BiIEFZN/cAlxu34jrHnjV2AqxppxfZWrMZM9Kl5eIGfEedQiJ81kkPio3dJFf6ykTaSbmHE3yLCwL1VBLyluLNm6eKOGEhQKkubwa6spFepYIiiMzzsEQVIb1aNIBo9BkZwx+RTB0lyECXfAL8aYXEpAjYoD5y2kiwZasKg8wCXHmaXsBwblSB9PHCHh/nhCqTv0eDZpMsUAo6UP4F/qHqdFglbahE/91sdyL0+apsLVaGDLQeRvD9vglbh4BG6Bh0qDBt5m/w==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=c2806552c4782e6de75bb6a84c29e39f947e382b&timestamp=1444715244&nonce=92686890&encrypt_type=aes&msg_signature=7face1a1e8ccb282ed3471353d2f0b7f8b509545
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:47:24[5] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:47:24
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuG2v2kBQ7ziUdgj07pQ9sb4]]></FromUserName>
+<CreateTime>1444715244</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Product/CommodityCategory&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=c2806552c4782e6de75bb6a84c29e39f947e382b&timestamp=1444715244&nonce=92686890&encrypt_type=aes&msg_signature=7face1a1e8ccb282ed3471353d2f0b7f8b509545
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:50:34[9] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:50:34
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[851zxgzUSlnXWy/U3vkjstAXGWRHWirTtO65P6k4h9bbE/pZduQq3lmHIRKFiSR2us4o9QW8J9UHDmxsz4syL4tdYDd384U23oVdj/5q4IXBpAPBTvCtst4QEv72pFZquYaHfpTDEP90opKbsGwKy5Bkz26CQLmKpZ0KLCeQlIRqPQsTMV1iUu+IkYthx4YQW6l0I4fPfMYKD98qEEGnuAyVRplXtUmOYCU9BBVa/bGKznjfF6CrFtuj0+txN8nTl/Nc3hrLfjLTmLWmPHQHnLh/ft9tqBBNfMRGr9IQmElBA4digg+qK98k5VAP4vzGxGNq63rQue200bvadDJivS2EjekHwl6vcKgxGkguQqEezyPIUNR/+7BjRc7ujxNDX0uG+siPfUUfCr7fb8yZ4t0t9XPCLJe++QOpkZGapkPYlYU4YlJtHM50BkkXfzj2U05QEMBq5F21MDvtmzylqwkb2IZokN4GVgbkzY64T+SlrQZHv8AGDfh8PxbGJN1isEjC3ItjvjIL3Vz3jquonoZ/u68UIOWAQP3uH9Yyj2rKosaXoZAE5M1rOKs/UNWH9Qc2w/BGK0Rnm+5JeC/XzO8JfTYc/q8E21yOc9zAxd8LU5GFtMqmDXsFDzy2jDyejS4v8bo1jI96vQc3Rb6TNalydk3lvRSX+j1V/RtFzz3MRAg/P4IkP/Uz/ev3HrJcJpcp2MWofAYrJi3Sk/ad3Q==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=9b774c8ed49e798a9d744026f1eca6d1d094c294&timestamp=1444715434&nonce=1298236351&encrypt_type=aes&msg_signature=ff47ca9b83b1519ed7fafacb1728cc1bdcf17f96
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:50:34[9] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:50:34
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuG2v2kBQ7ziUdgj07pQ9sb4]]></FromUserName>
+<CreateTime>1444715434</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Product/CommodityCategory&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=9b774c8ed49e798a9d744026f1eca6d1d094c294&timestamp=1444715434&nonce=1298236351&encrypt_type=aes&msg_signature=ff47ca9b83b1519ed7fafacb1728cc1bdcf17f96
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:54:54[18] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:54:54
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[NoapHjkJL1mzEdW7I+KKjgfpTo7OqYzWxsir9xurP7GnqTWde7ZFis7KALNckxOBharIjjB4dU6TJyi+CyVDHodgQOs0HO4fjQYFz3VV+rYGwkAXygaK16qH/Ryr1yyWhTILWBhSCOMRME7FNV2HfTTCWBSnCrUCybRN1yVeoy2m70Iws7w8SDpvLUpNoLFVdzroGhw6wrmwwNjT/sm2QVC9bsh/laOOarKfLXNr7f1PP6ypD6zVbQxs/nlW5Cnm7MmdsKJRQoda4d2o+xrHwfKnokeNupY8HB6+hWlJWy+XKXTtUiAvVS1r2q5zYqHwwuAwHNf/kQ/u/TOBMoC8q590e85cOSQJ502Z9lyLyVZyzLrOJXxfKUynCDifN/vO3n6OWnCIynNmq0i7wAqtULVxQ2z4JcOufzOCosCmQQ2MMh7oPN77zpBn7lwOZpLPt8kSCzA9Kkewv+YwAWi+0KHdLOOsaEB1kKkBJIi/4M086PwRAXYQ7uFsiXTeW1zrff2bJZPQ0PSBdgUvI0jt2JL+GPU3z5pmnHf0jFd8BBCokJvn7yQc7sRu5vsdfGdr2u/eUvZn2ES3OFVwtKf2V4GLDdMuq6aE/YnG9j+ef8bsEterIBYXj+HYFtvkIFY1GOtruxgFl/pFm2/gOXRkNo7kWUzkieOyVWyflkVlSZ28dQJWmP5LWVNKHBwuzN0Na6ziZdSRpaRaoJwqIYGOgg==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=cc1eda29e80399c94891028c865d347c8760ecd1&timestamp=1444715694&nonce=1409121363&encrypt_type=aes&msg_signature=8d650e96ca4b5d631139956b442876ad44096b80
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:54:54[18] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:54:54
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuG2v2kBQ7ziUdgj07pQ9sb4]]></FromUserName>
+<CreateTime>1444715694</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Product/CommodityCategory&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=cc1eda29e80399c94891028c865d347c8760ecd1&timestamp=1444715694&nonce=1409121363&encrypt_type=aes&msg_signature=8d650e96ca4b5d631139956b442876ad44096b80
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:56:16[9] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:56:16
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[wSiAt4GOoW1StsTjMZBp1tS48eh8+eOujaSlnXhY0VnvrLrAcIMjyhz4rETmTmnGV+cVPAuijurxJDUJEWepNCAqq+dVGG2muT33NlXdxEPGbDyEUxBZ4lIbKSqg4NOHsjJAPRDpefBGSBj27++2whUTV/4WyFkmsfZxu2WaoO4mQ6DYpJtGdL5Cl0yTti7Jw7u+H0bdPJ29ab1PBadnz5bdEK/Bv/2PFk60M9CQNASwzABQGq2iLI8coRYw73MpjyqL8LfsVR/F9yz97czxafB3uHVOZcsFIDmliabNqIRlS76rKUkzxHbFCGU1dmdCKr5JWyVs2S+GB/Wot2Y5K55CO4K6eU6Gn+Ofc4QZYOWxHRFaDS9oHRYRhOX4DEaFVquEi2v5BkMCzf7npp5ekPG4K4NiSefPCh0zHlfQEMCDcGzz9JEBIiOMS1YrC2GbV9HNgzKfFITh+HzfHNGjAou4rJAyNr/Y/JoW/B/N9F+LQx/qVE8DhjDKmI+c1OdvcULUhISNx3DwGu4MA7GvbouBs1lnG8Kos5xjSFVwyLHPdmBVORba97Nsid0ZOFvQ2ieyzmUp0b5flH7q64Y1ObXGa0Cfw8rdwLyna5kwBl9a/TVblXLqWEkKMFShV3jeX/1H+FXB8q00gut1SxIHgRaJQOtazi2mbZIWmxfgHL+63//B0+dqZQE91C+XQh6JkpwaXM652nC99Riak/r9FQ==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=a9d5287b8deaa8a172ba2fb9ad2bdf2fc8eec993&timestamp=1444715776&nonce=942867706&encrypt_type=aes&msg_signature=819afa2174e2f8249474708aa98c5d8ea92462d4
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 13:56:16[9] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 13:56:16
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuG2v2kBQ7ziUdgj07pQ9sb4]]></FromUserName>
+<CreateTime>1444715776</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Product/CommodityCategory&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=a9d5287b8deaa8a172ba2fb9ad2bdf2fc8eec993&timestamp=1444715776&nonce=942867706&encrypt_type=aes&msg_signature=819afa2174e2f8249474708aa98c5d8ea92462d4
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:02:51[23] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:02:51
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[+LB5PpzwhWM5gQS2/ZT/bXvhWVYY4Fqh2trWzUtdBTjhFplMVSnG9/Jx+J5O8qdxUfTAgkr+rlgIBPer/h/SYIyY7U0Pj4+eYAroyEBFzgZapro3iFPS5IgZnUqt4/2nP8Wl93Wzqobb+Ajx2ksz3VPqgQz9wegaxv684XEad0I3CApVYdXtN9wXanIFMsLJnPZXP+pOEbyhm8FC0P2dpGwfJ0NwrC2dgXgGlcXg0ohy343GBDQdGrdSR5WmE6RXTS9Ypg9VO95M0glsMxJxW4bf6d8P1qvbzvGOcZq/spOWmcwlVp2NvyRWoCx5LVVcuMUbX0RbPyBcm9/XkQ4CD1cptxP95CvG9Hzu2+TK+dkH2ESPB0nXWRtk+UKmT9/UsAyobeo0BtBsyiMD3kGalZFMARc3J0CniaawXK1lROtTY0Gp6vjO6AkWcafueepmvEbFi645IKK2R2V8ylo2+G7SQzk9dfuOURDH0IaIiLQhjEX1zoDgmkzvR//XHDxzrGlUdvTRZXy/J2HT3ThHz9U3Sx1cavvL8cneIQV9leAp19D87vJs2paRCp/GYWuTNg3OIRMsW4xJVdRSFbzYjKEjdil3pei60481gf2/rcZx5j6NVg9i3OVQZZyr9qVmhlvY9pRu7FhhmV9IBe12Gqb3s4/SoH7JE2E8YE/a2dKhrxcDCNxWx2oyK1VIEdC+N3qjLvMA4r1LT4LH3FmMnQ==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=1c21cbf613cb964d1a838cdcfc9b1cde3f5f3c41&timestamp=1444716171&nonce=415297402&encrypt_type=aes&msg_signature=3e4ab42bb829a7444592cc1e554f065e96f18cef
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:02:51[23] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:02:51
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444716171</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Account/MyAccount&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=1c21cbf613cb964d1a838cdcfc9b1cde3f5f3c41&timestamp=1444716171&nonce=415297402&encrypt_type=aes&msg_signature=3e4ab42bb829a7444592cc1e554f065e96f18cef
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:06:38[20] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:06:38
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[hHbiSlxHhspHOC/V8UbF+i5rnX7/s0YplRfAN4L9yEIC/UhbYaDAUChREBiQ15wUfY0hmMQ4oma0DaOrdTDZbAzDgHwYZ+us1O2my3ZKU68OZwIlKAiDZnvjvTVjD0jrD7qeP5fP32wH1sxAy9JSbqi7VZzL4Z4d1m8ar8YHuOlf7zG60KfFxly60XbG9SsWzPAXuc+P2ALRH0Gs1bqQ9JXUXtwxBbagiN7gravWpKXsHs1ijTZF5tm7Vn5DxMZxblIGcbiIJjbBdp/S/QSUxO1rZoG6tqr++aoskduVQDIG24gDrD+N2w4yvE6tKZCaNtUI2RD+jzAjgg9MKRsGn1vSZ1HnnHy/TrV/2U7OHcGAHf2gL6jbMEevmlj+obF6Sry9PGnPoKYVEC2zpFpSL8bP7HBjqODw+w0CPhLQdOC1FaOT5DvEGzZPJ+TnpkeD/blt6MdarMZJmRSfMl4yzoufWNKyL1HURyWCTrcqZtlQH/T1g+Hy1isaKvltnEeZzj0LkUdE79tbgerKnN8/CLdu+FXjGpPVggJ/2Y75Mi8j8SIrSk37WQFiLua1i7ySD2Ie4Mnts57FG5N89viKeOZKuBvLLLiYnR5k+cwd+xb0gy0uQCydrL5GYCDRri7qnSClvjfHNNjQ6qKPtKhxAyP/XB16V4bCDC1FKEdYLMijbSSGzRYMLYkFv4gEjKhNjj65vr3wz8MlF3xXAlbTBw==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=bd0572fee960cda0b60b61a3cf7b4ae88cc62c63&timestamp=1444716398&nonce=1817256705&encrypt_type=aes&msg_signature=f89bfcc554528d65b97f486e8b36674f23e01abc
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:06:38[20] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:06:38
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444716398</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Product/ServiceCategory&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=bd0572fee960cda0b60b61a3cf7b4ae88cc62c63&timestamp=1444716398&nonce=1817256705&encrypt_type=aes&msg_signature=f89bfcc554528d65b97f486e8b36674f23e01abc
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:11:15[30] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:11:15
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[T3F3KwqvJVpW1JC/JiS1ejckbkBVNLQPi6DgWzzDCf1kyXXtvHr+hUnFvvsj9xQ7wuto1Z6Zw+RYvjluPXC6OdRWcKOoxXHuGjTeV3jKb0dTMq4U0OLit0RZHQIo9huzc0J78mZ8ueRVmH0CQl+LlzGd+qKRgztztJwhV8JNTd5d5eTGeTGfxEPHTO906zbmeZCNR8N8RVUL1tsyMoDhoVRn4SapgBTcyCGLWYAHQFvmAVuT1sh4tG2wWuYY2wIZCRM2kAMiUA0DPkbjiY192IwXh5ImDS3SDNSB072jrGF/BesaIZF5RSJPPqWcRVkym7WVUGHli8PinIxqtkeROSQYPKDjHxg1jmchUr0VFQ80gUS9lDgy+Cik5VyNxvvZteLNvjlw3Sro6S5l0KO9A0Lj1zerPBXc5rv66PP8HSLNo+PXoGYCSLeubqJSm0Oxrm+LA/l2SMgHllz9RyXLZBUacZBEMlaPAbqDkfWikOPUU/NRTxvaaRKPddLFR46JiQGNY09zlEejI7x2L4EWPVSRL/yMjG1xAE+8zx3VfJTA4lFEjCBTi8fNIzXvhnwcDqbhP7fVY0TPnzFvznSiWSaCBPCtEJbFtYiD9vAPpaqfSBhnpNHhMu4jGHnr+jEV/E2NAbdv/mtaN24IZvhnEE/fJzKKY//ZVcYdbX8n1zgxWfq3sX0fAzuV+t53OiOSg3yXIPvXOZWNd70saUQ6Ow==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=a3178d6206b9d16ef765481df092176c060be16b&timestamp=1444716675&nonce=856563120&encrypt_type=aes&msg_signature=4fb8998590ba5fa7ab3d34bee5a2384d53ec4203
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:11:15[30] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:11:15
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444716675</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Account/MyAccount&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=a3178d6206b9d16ef765481df092176c060be16b&timestamp=1444716675&nonce=856563120&encrypt_type=aes&msg_signature=4fb8998590ba5fa7ab3d34bee5a2384d53ec4203
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:15:51[31] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:15:51
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[NBlmakTBXxC/6gegAf5BXt7HDj7FmVhqldpbGE/xkzZiDZPqNPyQ7mofB6wfcuUXzBj49A3A6ZDF4uKJZEUrVUbw3HWhUiS9NlXeiM32P3eVVteGYXnv5IB7ce9D20Qvkem+RLK5akyB1wbZb/FkZJ9KbIxYPMHJzKqBihNqROR79FAarxN5mvUJFx5ws46TJYG4QicSrJQbGIRJpOHd9ARbO9pH0BIgXu/Rm4KaBX98cEYrEKQfadfz1yjqTW0BVhwDvNFKBxDR1yH9zXJNpf/0CDbZmr4oaRQo9UVM9/aLlFUzd8vWRR5dxZMUB2XiSUt9N4KorTEBuEOuuZ1bZE22CXm3FTp70Ff/GYdSRpNzzY2UjtiaY5O5l0kWKzsXDUlQpLdIW3fmPEzcA7gjLiigEOFfA69PeZyGe5hP7X0udZGnKI7370toxrrQKq+czw/IvTSPotcjdZ8CM8soC41CbD366rfNpWoJHB8bGrx9V69/v3XuvQy5ya+TCpRq9QwkrvoFJ4i4W0zZfrJ+mb7LhKwseiOxjxuYOy6uFED+N4cP3dDtpFaPzCPZ+9/c6STeCrLLUh6R8ihVFtCeuCeKDjcmgym2ho2PS1b6eRwAMGOdasMHOW0IK6uaLTrO8F7F06V/bGv4mKwjuwPmO4URY5iUbY1ihUgOUJf/i9XY9hzqZvQONDTlEtJBVPyJcMtE80qZ2U1ecLBmMnPLag==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=b9e9621764fe6bf5c2ea60df572357610b58d8c3&timestamp=1444716951&nonce=2078251035&encrypt_type=aes&msg_signature=09da0425beec1290434289de8dba6246be22d425
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:15:51[31] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:15:51
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444716951</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Order/AllOrder&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=b9e9621764fe6bf5c2ea60df572357610b58d8c3&timestamp=1444716951&nonce=2078251035&encrypt_type=aes&msg_signature=09da0425beec1290434289de8dba6246be22d425
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:28:53[30] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:28:53
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[foVS4ZpvpxR5YHQlgGBTX/zsoYdX0hTRSB4v38SdvKpbE8IcLbGzHcVCIjh5oBwNm4rM8phmoh0rjvgvt3+tfW8Iea4UBc225v8x3KUxCCV7mGyASxq5sfLWecwQfWTslSsQp9QPANhW2Br9xxUWI6DxLUE0Omz/LjzJFOu4zuq7I8p92xkXw1YypXgt2ybBgQVkxzYHjExeEduTGfaoSEG0UYkbHhCpBkNMzVgCSzKUiFjFRodVdIpUD0ccb+MqITPeYlV63hkRwlUEvk/rLskltN00v2BmlNV+7VXq6IhYRrt08wS56K8C5d4YzaQqWxz8u/cPNiD0iS7syE0YhXR3vr6HqJcsjRXlZ7fm727aElXF25bYqwcAqPABT3Asmo+6N7GL+hOzywTYS6mOLC4ZzjJhgZqlv1Dohk+Gz4aDQf+G3MPf23Dnf2TvMIF4nL7gCdpV+I5BO1obdyXCbXJ4vTYet8TFjGfSqbNs2eYyt9vtv2c4kz/DGCCW+7dCQBKmIoxaEQTH0Jut+HE7ykdGSBfpKI4qCjNVR0Osx+HyUu3Ys8bsbbOAk4VqcG6Xwj1iSn4N/UXqkx6DTzi6xsGVzqOTREcarplHpnJpfbWFEa6joh0eYOljFKvOIUmxuPpMu+AAY5j/LmFL4k+uTC7UvPmbaRu8hqsibLbQJIwog+0k6eRQ0Ho86lCMdr0UOZ4Ok+hFjjZ/in9v2n4Agg==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=17cdff7e20792b5bc0afdaaceb5007269dbc59f5&timestamp=1444717733&nonce=998156467&encrypt_type=aes&msg_signature=9fe82ecb10b32c9164e9a8f5955a4d50c52c5a9d
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 14:28:53[30] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 14:28:53
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444717733</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Promotion/PromotionList&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=17cdff7e20792b5bc0afdaaceb5007269dbc59f5&timestamp=1444717733&nonce=998156467&encrypt_type=aes&msg_signature=9fe82ecb10b32c9164e9a8f5955a4d50c52c5a9d
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 15:37:38[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 15:37:38
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[Q5Z0eJ9P78soe91L3ZRsE1Jdf8S2Rs40SiH5MFhMjYA5YmJGF04T3XLAh/s2lXqX0pMtahbo0HdrFaf/LNTTJu5mxtFmJQ6bFMy007ODKz73wt3PLS+tMVp8UjYjz8RcIczAAydBrnhcM0qZu/WKfwyx+QNid3aQxBTIMIVxxjO771eePPhon9LDSeqz2WMR5zPWsIfKVLXSpn5qzJjDNuGK6XfTI3xfCOSeiydRfSvLoVuGSi0AEP6s0JICu6WgqDSaBFgo0NCUlRTFBHK3d0FGqC5b2jhB2mdLmCVxT84KALKP3Ct0D+jMlxLHrLDhPY3bhe5boDCJmTv34dzsBybXddTQ0ddhKcrQsmFepkI38JHvpZfkClQKd/sBUcDfo64NWTZLkRiem8A+tYidhJqf7MvE0iDTZlFRZftZiyZvANihq8oVIDDC4dJimAlL02GFtuVQ2iRbEpMsuQz5SVKEzwZlK+bZVJf2zE8FdzpszfI60Ro+tJVOJOSZoFkwIVFB6VWzMoLlQOC313NrDnyydHOXp68hdgG1/hFyEg7PWHRDXxMOsN50UAXl0Fu9ZaSOiGjnUFqW9Ryg/LMvP7rcVFMTuS4KqnWShM0BKiFdMhwNuUu4CfKfErF7mxq4ETR5zX4YIDQs/JRgCa9dQ4I+z9pQreXSsy6bxX4Ql3uWQBt5+2puW8jWi24o7OVc8dLbjNedYbAU5fAkv3+wjg==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.84
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=bfac71c858181dda58405c92fe30e2d92d302752&timestamp=1444721857&nonce=868998588&encrypt_type=aes&msg_signature=9d235ca69b2b139dd0674f62629e9d6a28a6195a
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 15:37:38[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 15:37:38
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuJ352HuNZIyZe-mk_YXPkFQ]]></FromUserName>
+<CreateTime>1444721857</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Promotion/PromotionList&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.84
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=bfac71c858181dda58405c92fe30e2d92d302752&timestamp=1444721857&nonce=868998588&encrypt_type=aes&msg_signature=9d235ca69b2b139dd0674f62629e9d6a28a6195a
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 16:58:33[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 16:58:33
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[6C5+RmJP4wNEaUIaWqLAtmRGOv31s2ftF+Z2mQZylJ3QI74DuMqlJDgeOIox2m5DnPBDHl9NOvFj9APwL30PTH/z0GAsj5eoouixOXTMRBx5gydSWqXSOzLjVy1JdlQ/q4rq8yQs3i15SRQSXj7fWK119Z2FvxYqFYtXZpAoGVti/wy/TYoB5JICOZQ7BzxbyKNJRvB9CIXtUb9FeHJsd37OhlCrUUCRvWfyEF6FNAP9mHiL2WMnPpaDVT3hPh5Dyg0+Fh3djq5IEHCC5A8yK1mNrh51puoD+vv6n7c7vrIaCChfOOW9SV+nMRvXdGdM2KA1zy7bPehub2Gil9iSmQ3wHATanThLwN0Pt+6PsCVVwJyn0JIaQXPk2qzmK2lQokzzXMyRYVYSQF/IwUAfjJmX1NelePfb+ZI65Oar879dcDMxjssHPUZER96kEdqbPIwrLUV8p6A2pcpgs/4rKO4dzE3p7Zrx40t+Y0Nj7nWOckwE8hDCMpYWLhIzLDJ4r3z2ECePnMQ+vXu/cu4jeT/77PCJ31qDzgzkHGqLPiJ6vC/k3/kDU6GDfTZDapNYTXrucRii5+OINN+9KA3TZrY6H+V7cnlwVJhfjWkZFK2ok4IneYPY02l533ppnKpI/Q5HVo7sNmJxsxECg/zN6OjIBwIffZhrJaR11lOsiRn9dkkqwzJYZDSXM5BV8niV8vTa3xd8QhZ9Vf5QJA9EpQ==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=39c2986c5da2d85c5639cd5a04a955faa248976f&timestamp=1444726712&nonce=583736850&encrypt_type=aes&msg_signature=c2bd58f405de84d03b2acb35a00da475240ec398
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 16:58:33[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 16:58:33
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444726712</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Account/MyAccount&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=39c2986c5da2d85c5639cd5a04a955faa248976f&timestamp=1444726712&nonce=583736850&encrypt_type=aes&msg_signature=c2bd58f405de84d03b2acb35a00da475240ec398
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 17:02:21[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 17:02:21
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[0DXHYHZU3s/T4mdG3F/HNAivYT15gTEREWmFPtf6GXQyOc2dwAp5oHRETFgfTcW4M+etFnJTkjsB+nT/ZK6gP9JtQ2vZgbKILUd5Ej6HwpSdycMXE/S/4OH6MFEiYq2rkFr/pwol/N3Lz29X81+iv0wKjtm5k6szNQsHFFsrf/Wp+A8YnD2YOZuRuiCmZ4lzqCUzg3btPmNyDb/xiTUIgSw7AcSBtCTvWzjJJ05umc/bK/M/XIdKK8u14UUZ9HJMC4rtuaTYBQfZSGwqHFLQYMbvnEAh0KOHJuhXOEYulnXRWA5zkrZL178OOQXs9cc74BalTp33kkMLmDENnT9wtEbJl1YPA80mHJfoG55ZK+zLzIuOgH5mbtY5N709tIR8cjuGL8ztPRVDEKH41rNO+HWq6mLNjI0rkjGcrZwEyDgsTqb6FuzF7KWclKe/M9SBuv3OW9OxWn25fexyVk0O/Fmxpull4zjHnRHkX2zcbq6gCoumsA0UwgHNBfjJ33OzNCo+iZGpDznU/7Bbp1ZcvvISQrCRv/VH/s/Rv2jr01t4vMtk09+nWPF3mfZYx9GurjeOcaPSFeRBDbpSg7y4YUammJVRLoqb5p/6Kkf1/494YNlximWRK1lIJrc6xpxe/x1ZIQjAIsE1+QHCzHT8VLAERNPHcAc8pcO3ABAsI6u9cVyuur4IE0L1G+rw0QDmDJcjHwtgy2Sb39+eHkZJcg==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=b17c590c27d2c5700a32e7107fcb9afe76ca9714&timestamp=1444726940&nonce=117994037&encrypt_type=aes&msg_signature=3b3e0eda33cba54f7f15ade495201c4f083dd1b5
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 17:02:21[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 17:02:21
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444726940</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Order/AllOrder&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=b17c590c27d2c5700a32e7107fcb9afe76ca9714&timestamp=1444726940&nonce=117994037&encrypt_type=aes&msg_signature=3b3e0eda33cba54f7f15ade495201c4f083dd1b5
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 17:23:11[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 17:23:11
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[Lfi9lS1JcTyj0rW/5BecStwAdrEputJSfObeS/jKdTiXlQ7SC8LxjzeuitP6NcISEPxc8MxGljytABtD78NnznwQg/HUChV2v5OJMgi5xxjXN3kCadEyftarD20WCWVY+WTVC6HtwzvHdXpvJ7C/QRTLDUzVhBo7TqFh4ypV0H7dmcUB9ROBi7cyNerskThsESXNglH2cWCSH1jhwyuLDReuf75Xu1fXW/mHkX3XFVh0XOzWJ6vIaqj4bd5Xp2KUYzwc6u6JIyEpWM0Auo39EmRoGwyOHkiB6p1lIl4tFxb4845OANAxFOX5tsi1P66LQp5y6+6D3MuWX28GfWAIRh61KbsxSoVwZz9Ay411Za5hwLzIT2x+D3SL66Pqnv5ugzArO4gLNZ6DRQEL53YwBHlW/Mae7CTemUO4ibRs66pDFEs/544YR3NkFytOrfjxb2HDh+74OxJcJ/CewrZ1kzz1RB1A/oe7JxPsagNn8k0gyyi/KZknyc7A5+HH+9hJLLln6Oo3WK0GYxLSPUJxoibOf9bgBhYmFucV3DXk+fMtA8i6revMwbEbRoih+aGqNYH1Md28aba7srV0TaSSlySJS14aB5XktZx6/tj3XuL8mpMR2aMuMEuwzmjMsp4jdNivOZ4Cvf4tHHQ43pk1fUppcy5+yZQgNwgXGPOE9w6DXE5pC1PHbVBVjn5cVXRjmzcDT0Zzr/lM/nHugE5zfA==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=27a9198a3cd1387273ccc50f86d694d3504f9557&timestamp=1444728190&nonce=578624163&encrypt_type=aes&msg_signature=cccb39030f973ceadd143f7c2ec225107b5f33cd
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 17:23:11[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 17:23:11
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444728190</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Account/MyAccount&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=27a9198a3cd1387273ccc50f86d694d3504f9557&timestamp=1444728190&nonce=578624163&encrypt_type=aes&msg_signature=cccb39030f973ceadd143f7c2ec225107b5f33cd
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 18:45:45[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 18:45:45
+Title=解密前
+Message=<xml>
+    <ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+    <Encrypt><![CDATA[axYjx5Q9412mChfvuPDWxwxJZSVDrmlyGYX2N5FPbbg/ATXRsEhSZHgDyiIpfy4e2y4aw5l+oOIpgw5y7vMyWKEuEOeE9fhjBe1YY9f4BKsvJAk1oRhpFD7PLnCsIVVr8cDfZfwVX84OcSs+ylF8n/ee81TIFlE2j7fjH5qe+wQXgKHTPL7Myoe57GPLu5WtXR5wcZmHuPi16Xd6SVZyf7ZIHGaNtFGXNK4a9dAM2teGwFy5HIR+GQA/lVEw2JvduZmL9iCnf/oiXigYnFEczrCaY4yzHpJkU4IWm72OU+uB+V0IVSjA6wcRbm8epts4ebJ8MmyKyjF/4Y3fd7OQkaAKqgGoTOZhp1RoQy5CgEPkPu5qcZW/3McGF9sgC+5bXyV0Up7fZBMIDnoNpb5Kc4ndZaxZYiysCzqSZ+wLsuVC27BxrFErxWXD9OID5k+G3pZzMmM2WqI0CrD3e4mmmLSVsIpjAu6U6UEP2QxPkxJt3NwAbQxsDyFErhzZ+lxIUlVFCb4dJ1efDoqqEblq0UO56YGHt5q/MuWKAzVk568oze3plseeBqJkw/esG4TjGEhgN4SJkpAjkKBufCI1akSEhZ5l4/8ptyCdej9PTcdi0eUFJvVT5HXy2ITdfEGqLLJBJ8TERaHhuLdtNYrdzclzqkcSmjFnGXJp4J4H296+3h/y/BxLDVQ7v6pBW4F+QPtc/Z132a5Xa5uyFbJPrA==]]></Encrypt>
+</xml>
+
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=6fe7482e44ab2b630f1ed5c8f6a81054ea084596&timestamp=1444733141&nonce=2009095040&encrypt_type=aes&msg_signature=2463cb0dfad1fc94a01d54b14e3841c011b25f66
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+
+2015-10-13 18:45:45[7] ERROR index (null) - 
+AppName=WeChat
+LogTime=2015/10/13 18:45:45
+Title=解密后
+Message=<xml><ToUserName><![CDATA[gh_8186e2c6fb58]]></ToUserName>
+<FromUserName><![CDATA[oEG8xuMQ4sLJp1EcUm80iBdBR1yI]]></FromUserName>
+<CreateTime>1444733140</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1aa3ce096117de41&redirect_uri=http://t.test.beauty.glamise.com/Product/CommodityCategory&response_type=code&scope=snsapi_base&state=skMPVC35BDo%3d#wechat_redirect]]></EventKey>
+</xml>
+ProcessName=wechatapi
+ClientIp=101.226.62.81
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/meiliyueding?signature=6fe7482e44ab2b630f1ed5c8f6a81054ea084596&timestamp=1444733141&nonce=2009095040&encrypt_type=aes&msg_signature=2463cb0dfad1fc94a01d54b14e3841c011b25f66
+Header=Pragma:no-cache
+Content-Length:834
+Content-Type:text/xml
+Accept:*/*
+Host:weixin.test.beauty.glamise.com
+User-Agent:Mozilla/4.0
+
+

@@ -1,0 +1,61 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="blue">#0677bb</color>
+    <color name="white">#ffffff</color>
+    <color name="red"> #ff0000</color>
+    <color name="simple_blue">#53c6f1</color>
+    <color name="gray">#A2A2A2</color>
+    <color name="body_backclolor">#F5F5F5</color>
+    <color name="table_row_color">#CCCCCC</color>
+    <color name="image_button_background">#00000000</color>
+    <color name="title_backcolor">#f2f2f2</color>
+    <color name="title_backcolor_old">#e6f4f8</color>
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="help_button_view">#ffcccccc</color>
+    <color name="help_view">#ff404040</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_image_border">#ffffffff</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="sbc_header_text">#ff808080</color>
+    <color name="sbc_header_view">#ffffffff</color>
+    <color name="sbc_list_item">#fffff0e0</color>
+    <color name="sbc_layout_view">#ffffffff</color>
+    <color name="sbc_page_number_text">#ff000000</color>
+    <color name="sbc_snippet_text">#ff4b4b4b</color>
+    <color name="share_text">#ff000000</color>
+    <color name="share_view">#ffffffff</color>
+    <color name="status_view">#50000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_frame">#ff88ae00</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="green">#79FF79</color>
+	<color name="border_color">#a5daf1</color>
+	<color name="commodity_detail_commodity_stock_calc_type_text_color">#afafaf</color>
+	<color name="black">#000000</color>
+	<color name="tab_title_text_color">#00A0E9</color>
+	<color name="tg_background_color">#F6FFF6</color>
+	<color name="activity_background_color">#CFE8EF</color>
+	<color name="ecard_background_green">#81C137</color>
+	<color name="ecard_background_purple">#9057CB</color>
+	<color name="ecard_background_orange">#F99837</color>
+	<color name="ecard_background_dark_red">#C13737</color>
+	<color name="tab_background_color">#3EBEFF</color>
+	<color name="home_page_sort_tg_status_text_color">#016CAD</color>
+	<color name="treatment_placeholder_text_color">#85B2C8</color>
+	<color name="tg_executing_status_text_color">#01BA04</color>
+	<color name="tg_unconfirm_status_text_color">#00BFFF</color>
+	
+	<color name="button_backcolor">#494b51</color>
+	<color name="page_backcolor">#f2f2f2</color>
+	<color name="tab_backcolor">#696969</color>
+	<color name="title_font">#676e72</color>
+	<color name="tab_font">#ffffff</color>
+	
+</resources>

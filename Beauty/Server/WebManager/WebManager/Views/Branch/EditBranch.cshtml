@@ -1,0 +1,797 @@
+﻿@{
+    Model.Table_Model.Branch_Model model = new Model.Table_Model.Branch_Model();
+    if (ViewBag.Branch != null)
+    {
+        model = ViewBag.Branch;
+    }
+    List<Model.Table_Model.ImageCommon_Model> listCompanyImage = new List<Model.Table_Model.ImageCommon_Model>();
+    if (ViewBag.BigImageList != null)
+    {
+        listCompanyImage = ViewBag.BigImageList;
+    }
+    string title = "";
+    if (model.ID > 0)
+    {
+        title = "编辑门店";
+    }
+    else
+    {
+        title = "添加门店";
+    }
+
+
+    int flg = 0;
+    string HomeClass = "";
+    string BranchClass = "";
+    if (flg == 0)
+    {
+        HomeClass = " active in ";
+        BranchClass = "";
+    }
+    else
+    {
+        HomeClass = "";
+        BranchClass = "  active in ";
+    }
+
+    List<Model.View_Model.GetBranchMarketRelationShip_Model> listCommodity = new List<Model.View_Model.GetBranchMarketRelationShip_Model>();
+    List<Model.View_Model.StockCalcType_Model> listCalcType = new List<Model.View_Model.StockCalcType_Model>();
+    List<Model.View_Model.GetBranchMarketRelationShip_Model> listService = new List<Model.View_Model.GetBranchMarketRelationShip_Model>();
+    Model.Table_Model.PriceRange_Model mPriceRange = new Model.Table_Model.PriceRange_Model();
+    List<Model.Table_Model.Account_Model> listAccount = new List<Model.Table_Model.Account_Model>();
+    List<Model.Table_Model.Account_Model> listConsultant = new List<Model.Table_Model.Account_Model>();
+
+    if (ViewBag.CommodityList != null)
+    {
+        listCommodity = ViewBag.CommodityList;
+    }
+
+    if (ViewBag.StockCalcTypeList != null)
+    {
+        listCalcType = ViewBag.StockCalcTypeList;
+    }
+
+    if (ViewBag.ServiceList != null)
+    {
+        listService = ViewBag.ServiceList;
+    }
+
+    if (ViewBag.ServiceList != null)
+    {
+        listService = ViewBag.ServiceList;
+    }
+
+    if (ViewBag.PriceRange != null)
+    {
+        mPriceRange = ViewBag.PriceRange;
+    }
+
+
+    if (ViewBag.AccountList != null)
+    {
+        listAccount = ViewBag.AccountList;
+    }
+
+
+    if (ViewBag.ConsultantList != null)
+    {
+        listConsultant = ViewBag.ConsultantList;
+    }
+
+
+}
+
+
+<script src="/Script/jquery.layerModel.js"></script>
+<link href="/assets/css/skins/layerModel.css" rel="stylesheet" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mvsDPBAu8r0iMYK33XU3mTG5"></script>
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+<script src="/Script/ajaxfileupload.js"></script>
+<script src="/Script/Branch.js"></script>
+
+<script src="/assets/js/sortable.js"></script>
+<style type="text/css">
+    #allmap {
+        width: 500px;
+        height: 500px;
+        overflow: hidden;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+</style>
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 1)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Branch/GetBranchList">商家信息</a></li>
+
+                <li class="active">@(title)</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>@(title)</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <ul role="tablist" class="nav nav-tabs" id="myTab">
+                <li class="@(HomeClass)" role="presentation">
+                    <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">门店基本信息</a></li>
+                @if (model.ID > 0)
+                {  <li class="@(BranchClass)" role="presentation">
+                    <a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile">商品选择</a></li>
+                    
+                    <li class="@(BranchClass)" role="presentation">
+                        <a aria-controls="profile" data-toggle="tab" id="Service-tab" role="tab" href="#Service">服务选择</a></li>
+						
+                    <li class="@(BranchClass)" role="presentation">
+                        <a aria-controls="profile" data-toggle="tab" id="Pricerange-tab" role="tab" href="#Pricerange">价格区间</a></li>
+                    
+                    <li class="@(BranchClass)" role="presentation">
+                        <a aria-controls="profile" data-toggle="tab" id="AccountSort-tab" role="tab" href="#AccountSort">员工排序</a></li>
+                    
+                }
+
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div aria-labelledby="home-tab" id="home" class="tab-pane fade @(HomeClass)" role="tabpanel">
+                    <div class="widget">
+                        <div class="form-horizontal form-bordered ">
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	名称
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input class="form-control" placeholder="输入门店名称" type="text" data-bv-field="fullName" name="fullName" id="txtBranchName" value="@(model.BranchName)" maxlength="30">
+                                </div>
+                                <!--<i class="col-sm-05 control-label glyphicon glyphicon-asterisk darkorange text-left MT5 txt06em txtL"></i>-->
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Search input-->
+                                <label class="col-sm-2 control-label no-padding-right">联系人</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入联系人" class="form-control" type="text" id="txtBranchContact" value="@(model.Contact)"  maxlength="30">
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">电话</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入电话" class="form-control" type="tel" id="txtBranchPhone" value="@(model.Phone)"  maxlength="20">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">传真</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入传真" class="form-control" type="tel" id="txtBranchFax" value="@(model.Fax)" maxlength="20">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">地址</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入街道" class="form-control" type="text"  id="txtBranchAddress" value="@(model.Address)" maxlength="100">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">定位</label>
+                                <div class="col-sm-2">
+                                    <label>经度</label>
+                                    <input type="text" class="form-control" name="firstName" placeholder="输入经度"
+                                data-bv-notempty="true"
+                                data-bv-notempty-message="The first name is required and cannot be empty" id="txtBranchLongitude" value="@(model.Longitude == 0 ? "" : Math.Round(model.Longitude,6).ToString())" maxlength="19" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>纬度</label>
+                                    <input type="text" class="form-control" name="lastName" placeholder="输入纬度"
+                                data-bv-notempty="true"
+                                data-bv-notempty-message="The last name is required and cannot be empty" id="txtBranchLatitude" value="@(model.Latitude == 0 ? "" : Math.Round(model.Latitude,6).ToString())" maxlength="19" />
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <label>地图定位</label>
+                                    <button type="submit" class="form-control btn btn-primary" onclick="directMap()">定位</button>
+                                </div>
+                                
+    <div id="allmap" style="display:none; float: left; margin-top: 20px; margin-left: 15%;border: 1px solid #ddd"></div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">邮编</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入邮编" class="form-control" type="text" id="txtBranchZip" value="@(model.Zip)" maxlength="10">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">网址</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入网址" class="form-control" type="text" id="txtBranchWeb" value="@(model.Web)" maxlength="100" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">营业时间</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入营业时间" class="form-control" type="text" id="txtBranchBusinessHours" value="@(model.BusinessHours)" maxlength="100" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">照片</label>
+                                <!-- File Upload -->
+                                @Html.Partial("FileUpload", 1)
+                            </div>
+                            <div class="form-group" style="display: none;">
+                                <label class="col-sm-2 control-label no-padding-right">门店信息</label>
+                                <div class="input-group radio">
+                                    <label>
+                                        <input type="radio" id="BranchVisibleY" @(model.Visible || model.ID == -1 ? "checked='checked'" : "class='inverted'")  name="Visible">
+                                        <span class="text">允许顾客查看</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio"  id="BranchVisibleN"  @(!model.Visible && model.ID > 0 ? "checked='checked'" : "class='inverted'")  name="Visible">
+                                        <span class="text">不允许顾客查看</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">顾客查看交易记录</label>
+                                <div class="input-group radio">
+                                    <label>
+                                        <input type="radio" id="IsShowECardHisY" @(model.IsShowECardHis || model.ID == -1 ? "checked='checked'" : "class='inverted'")  name="IsShowECardHis">
+                                        <span class="text">允许</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsShowECardHisN" @(!model.IsShowECardHis && model.ID > 0 ? "checked='checked'" : "class='inverted'")  name="IsShowECardHis">
+                                        <span class="text">不允许</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group" style="display: none;">
+                                <label class="col-sm-2 control-label no-padding-right">服务状态</label>
+                                <div class="input-group radio">
+                                    <label>
+                                        <input type="radio" id="IsConfirmedY" @(model.IsConfirmed || model.ID == -1 ? "checked='checked'" : "class='inverted'")  name="IsConfirmed">
+                                        <span class="text">需要顾客确认</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsConfirmedN" @(!model.IsConfirmed && model.ID > 0 ? "checked='checked'" : "class='inverted'")  name="IsConfirmed">
+                                        <span class="text">不需要顾客确认</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">分期支付</label>
+                                <div class="input-group radio">
+                                    <label>
+                                        <input type="radio" id="IsPartPayY" @(model.IsPartPay ? "checked='checked'" : "class='inverted'")  name="IsPartPay">
+                                        <span class="text">允许</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsPartPayN" @(!model.IsPartPay ? "checked='checked'" : "class='inverted'")  name="IsPartPay">
+                                        <span class="text">不允许</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">员工扣除e账户</label>
+                                <div class="input-group radio">
+                                    <label>
+                                        <input type="radio" id="IsPayY" @(!model.IsPay || model.ID == -1 ? "checked='checked'" : "class='inverted'")  name="IsPay">
+                                        <span class="text">不允许</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsPayN" @(model.IsPay && model.ID > 0 ? "checked='checked'" : "class='inverted'")  name="IsPay">
+                                        <span class="text">允许</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Textarea -->
+                                <label class="col-sm-2 control-label no-padding-right">生效时间</label>
+                                <div class="col-sm-4">
+                                    <span class="input-icon icon-right time-layer">
+                                        @{ 
+                                            string strDisabled = "";
+                                            if (model.StartTime != null && model.StartTime != "")
+                                            {
+                                                strDisabled = "disabled=''";
+                                            }
+                                        }
+                                        <input @(strDisabled)  class="form-control date-picker" placeholder="请输入生效时间" onclick="laydate({ istime: true, format: 'YYYY-MM-DD hh:mm' })" id="txtBranchStartTime" value="@(model.StartTime)" >
+
+
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                                <p class="n-p-15 help-block">该门店正式使用本系统日期,一旦填写将不能更改</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">业绩折算</label>
+                                <div class="input-group radio">
+                                    <label>
+                                        <input type="radio" id="IsUseRateY"  @(model.IsUseRate == 1 ? "checked='checked'" : "class='inverted'")   name="IsUseRate">
+                                        <span class="text">使用</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsUseRateN" @(model.IsUseRate == 2 ? "checked='checked'" : "class='inverted'")   name="IsUseRate">
+                                        <span class="text">不使用</span>
+                                    </label>
+                                    <!-- <p class="n-p-15 help-block">业绩折算一旦选择了将不能更改</p> -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">销售顾问提成比例</label>
+                                <div class="col-sm-2">
+                                    <input placeholder="请输入销售顾问提成比例" class="form-control" type="text" value="@(model.CommissionRate)" id="txtCommissionRateWeb" maxlength="100" style="text-align:right">
+                                </div>
+                                <p class="n-p-15 help-block">%</p>
+                                <label class="col-sm-2 control-label no-padding-right">生效日期</label>
+                                <div class="col-sm-2">
+                                    <span class="input-icon icon-right time-layer">
+                                        @{
+                                            string IssuedDateData = "";
+                                            if (model.IssuedDate != null)
+                                            {
+                                                IssuedDateData = model.IssuedDate.ToString();
+                                                IssuedDateData = IssuedDateData.Substring(0, IssuedDateData.LastIndexOf(" ")).Replace("/", "-");
+                                            }
+
+                                        }
+                                        <input class="form-control date-picker" placeholder="请输入生效日期" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" id="txtBranchIssuedDate" value="@(IssuedDateData)" style="text-align:right;">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">预约提醒</label>
+                                <div class="col-sm-4">
+                                    @{
+                                        decimal remindTime = 24;
+                                        if (model.ID > 0)
+                                        {
+                                            remindTime = model.RemindTime;
+                                        }
+                                
+                                        <input type="tel" class="form-control" placeholder="请输入服务提醒时间" id="txtBranchRemindTime"  value="@(remindTime)">
+                                    }
+                                </div>
+                                <p class="n-p-15 help-block">小时前</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">生日提醒</label>
+                                <div class="col-sm-4">
+                                    <input type="tel" class="form-control" placeholder="请输入生日提醒时间" id="txtBranchBirthdayRemindTime" value="@(model.BirthdayRemindTime == -1 ? "" : model.BirthdayRemindTime.ToString())">
+                                </div>
+                                <p class="n-p-15 help-block">天前(如果不填为不提醒，填0则为当天提醒)</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">顾客流失提醒天数</label>
+                                <div class="col-sm-4">
+                                    <input type="tel" class="form-control" placeholder="请输入提醒天数" id="txtLostRemind" value="@(model.LostRemind)">
+                                </div>
+                                <p class="n-p-15 help-block">天</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">商品有效期提醒天数</label>
+                                <div class="col-sm-4">
+                                    <input type="tel" class="form-control" placeholder="请输入提醒天数" id="txtExpiryRemind" value="@(model.ExpiryRemind)">
+                                </div>
+                                <p class="n-p-15 help-block">天</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">顾客初始密码</label>
+                                <div class="col-sm-10 input-group radio">
+                                    <label class="pull-left">
+                                        <input type="radio" id="DefaultPasswordN" @(model.DefaultPassword == null || model.DefaultPassword == "" ? "checked='checked'" : "class='inverted'")  name="DefaultPassword" onchange="defaultPasswordChange(this)">
+                                        <span class="text">系统随机生成并发送短信通知 </span>
+                                    </label>
+                                    <label class="pull-left">
+                                        <input type="radio" id="DefaultPasswordY" @(model.DefaultPassword != null && model.DefaultPassword != "" ? "checked='checked'" : "class='inverted  '")  name="DefaultPassword" onchange="defaultPasswordChange(this)">
+                                        <span class="text">指定</span>
+                                    </label>
+                                    <input type="text"" class="pull-left margin-left-10" name="form-field-radio" id="txtBranchDefaultPassword"  @(model.DefaultPassword == null || model.DefaultPassword == "" ? "style=display:none" : "style=display:block")  value="@(model.DefaultPassword)">
+                                </div>
+                            </div>
+                            @if (model.ID > 0)
+                            {
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">默认专属顾问</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" id="ddlConsultant">
+                                            @if (listConsultant != null && listConsultant.Count > 0)
+                                            {
+                                                foreach (Model.Table_Model.Account_Model item in listConsultant)
+                                                {
+                                                
+                                                <option value="@(item.UserID)" @(item.UserID == model.DefaultConsultant ? "selected='selected'" : "") >@(item.Name)</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                    <p class="n-p-15 help-block">顾客网上自助注册时默认的专属顾问</p>
+                                </div>
+                            }
+                            <div class="form-group ">
+                                <div class="col-sm-offset-2 col-sm-10 PT10">
+                                    <button class="btn btn-primary" type="submit" onclick="BranchSubmit('@(model.ID)')">确 定</button>
+                                    <a href="javascript:history.go(-1);" class="btn btn-default">返 回</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /Page Body -->
+
+                @if (model.ID > 0)
+                { 
+                    <!-- profile Body -->
+                    <div id="profile" class="tab-pane fade @(BranchClass)">
+                        <div>
+                            <table class="table table-hover table-striped ">
+                                <colgroup class="row">
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-4">
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-2">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label class="choose-num" title="全选">
+                                                <input id="chk_All" name="chk_All" type="checkbox" class="btn-group no-pm" onclick="selectAll(this, 'tbCommodity')">
+                                                <span class="text"><strong>商品名称</strong></span>
+                                            </label>
+                                        </th>
+                                        <th>库存</th>
+                                        <th>库存单价</th>
+                                        <th>库存操作</th>
+                                        <th>安全库存</th>
+                                        <th>备注</th>
+                                        <th>库存模式</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tbCommodity">
+
+                                    @if (listCommodity.Count != null && listCommodity.Count > 0)
+                                    {
+                                        string imgoldBranchs = "";
+
+                                        foreach (Model.View_Model.GetBranchMarketRelationShip_Model item in listCommodity)
+                                        {
+                                            string ischecked = "";
+                                            if (item.BranchAvailable)
+                                            {
+                                                ischecked = " checked=\"checked\"";
+                                            }
+                                        <tr oId ="@(item.ObjectID)" sId="@(item.StockID)">
+                                            <td>
+                                                <label>
+                                                    <input type="checkbox" name="object_chk" @(ischecked)>
+                                                    <span class="text over-text col-xs-12 no-pm">@(item.ObjectName)</span>
+                                                </label>
+                                            </td>
+                                            <td>@(item.ProductQty)件</td>
+                                            <td>
+                                               <div class="input-group">
+												    <input class="form-control" type="text" placeholder="单价" name="object_BuyPrice" value="@(item.BuyingPrice.ToString("0.00"))">
+												    <span class="input-group-addon">元</span>
+											    </div>
+                                             </td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <div class="col-xs-5 no-padding-left">
+                                                        <select name="object_OperateType">
+                                                            <option value="0" selected="selected">不操作</option>
+                                                            @if (listCalcType != null && listCalcType.Count > 0)
+                                                            {
+                                                                foreach (Model.View_Model.StockCalcType_Model temp in listCalcType)
+                                                                {
+                                                                <option value="@(temp.StockCalcTypeID)">@(temp.StockCalcTypeName)</option>
+                                                                }
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-xs-7 no-padding">
+                                                        <div class="spinner spinner-horizontal spinner-right">
+                                                            <div class="spinner-buttons	btn-group">
+                                                                <button class="btn spinner-down default" type="button">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </button>
+                                                                <button class="btn spinner-up default" type="button">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </button>
+                                                            </div>
+                                                            <input name="object_Qty" class="spinner-input form-control" type="text" placeholder="数量">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                               <div class="input-group">
+												    <input class="form-control" type="text" placeholder="安全库存" name="object_InsuranceQty" value="@(item.InsuranceQty)">
+												    <span class="input-group-addon">件</span>
+											    </div>
+                                            </td>
+                                            <td>
+                                                <input name="object_Remark" class="form-control" type="text" placeholder="备注">
+                                            </td>
+                                            <td>
+                                                <select name="object_StockCalcType">
+                                                    <option value="2" @(item.StockCalcType == 2 ? "selected='selected'" : "")>不计存库</option>
+                                                    <option value="1" @(item.StockCalcType == 1 ? "selected='selected'" : "")>正常销售</option>
+                                                    <option value="3"@(item.StockCalcType == 3 ? "selected='selected'" : "")>允许超卖</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                    
+                                        }
+                                        <input type="hidden" id="hid_imgOldBranchs" value="@(imgoldBranchs)">
+                                    }
+                                </tbody>
+                            </table>
+                            <br>
+                            <button type="submit" class="btn btn-primary" onclick="CommoditySubmit(@(model.ID),1)">确 定</button>
+                            <a class="btn btn-default" onclick="javascript:history.go(-1);">返 回</a>
+                        </div>
+                    </div>
+                    <!-- profile Body  end -->
+                    <!-- Service Body  start -->
+                    <div id="Service" class="tab-pane fade @(BranchClass)">
+                        <div>
+                            <table class="table table-hover table-striped ">
+                                <colgroup class="row">
+                                    <col class="col-xs-12">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label class="choose-num" title="全选">
+                                                <input name="chk_All" type="checkbox" class="btn-group no-pm" onclick="selectAll(this, 'tbService')">
+                                                <span class="text"><strong>服务名称</strong></span>
+                                            </label>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbService">
+
+                                    @if (listService.Count != null && listService.Count > 0)
+                                    {
+                                        string imgoldBranchs = "";
+
+                                        foreach (Model.View_Model.GetBranchMarketRelationShip_Model item in listService)
+                                        {
+                                            string ischecked = "";
+                                            if (item.BranchAvailable)
+                                            {
+                                                ischecked = " checked=\"checked\"";
+                                            }
+                                        <tr oId ="@(item.ObjectID)">
+                                            <td>
+                                                <label>
+                                                    <input type="checkbox" name="object_chk" @(ischecked)>
+                                                    <span class="text over-text col-xs-12 no-pm">@(item.ObjectName)</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                            <br>
+                            <button type="submit" class="btn btn-primary" onclick="ServiceSubmit(@(model.ID),2)">确 定</button>
+                            <a class="btn btn-default" onclick="javascript:history.go(-1);">返 回</a>
+                        </div>
+                    </div>
+                    <!-- Service Body  end -->
+                    <!-- Pricerange Body -->
+                    <div id="Pricerange" class="tab-pane fade @(BranchClass)">
+                        <div>
+                            <div class="form-horizontal form-bordered ">
+                                <div class="form-group" style="display: none;">
+                                    <label class="col-sm-2 control-label no-padding-right">价格区间名称</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" placeholder="默认" type="text" data-bv-field="fullName" name="fullName" id="txtBranchName" value="" maxlength="30">
+                                    </div>
+                                </div>
+
+                                <div class="form-group borderNone">
+                                    <!-- Text input-->
+                                    <label class="col-sm-2 control-label no-padding-right">价格区间设定</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" rows="6" id="txtRangePrice" placeholder="输入价格区间设定，每行一个范围值，不同值换行输入">@(mPriceRange != null && mPriceRange.PriceRangeValue != null ? mPriceRange.PriceRangeValue.Replace("|", "\r\n") : "")</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="display: none;">
+                                    <label class="col-sm-2 control-label no-padding-right">适用门店</label>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" placeholder="适用店名" type="text" name="fullName" value="" maxlength="30" readonly="readonly">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="borderTop PT15">
+                                <button type="submit" class="btn btn-primary" onclick="RangePriceSubmit(@(model.ID))">确 定</button>
+                                <a class="btn btn-default" onclick="javascript:history.go(-1);">返 回</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Pricerange Body  end -->
+                    <!-- Service Body  start -->
+                    <div id="AccountSort" class="tab-pane fade @(BranchClass)">
+
+                        <div class="widget">
+                            <div class=" no-padding">
+                                <table class="table table-hover table-striped ">
+                                    <colgroup class="row">
+                                        <col class="col-xs-10">
+                                    </colgroup>
+                                    <thead class="ML15P">
+                                        <tr>
+                                            <th>
+                                                <label>
+                                                    <span class="text"><strong>员工姓名</strong></span>
+                                                </label>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="foo">
+                                        @{string oldSort = "";
+                                          if (listAccount != null && listAccount.Count > 0)
+                                          {
+
+                                              foreach (Model.Table_Model.Account_Model item in listAccount)
+                                              {
+                                                  oldSort += "|" + item.UserID;
+                                            <tr aId="@(item.UserID)">
+                                                <td>
+                                                    <label>
+                                                        <span class="text">@(item.Name)</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            
+                                              }
+                                          }
+                                            <input type="hidden" id="hidoldSortID" value="@(oldSort)">
+                                        }
+                                    </tbody>
+                                </table>
+                                <br>
+                                <div class="col-sm-offset-2 col-sm-10 no-padding-left">
+                                    <button type="submit" class="btn btn-primary" onclick="UpdateAccountSort(@(model.ID))">确 定</button>
+                                    <a onclick="javascript:history.go(-1);" class="btn btn-default">返 回 </a>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Service Body  end -->
+
+                }
+            </div>
+        </div>
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var cityName = "";
+    
+
+    function myFun(result) {
+        cityName = result.name;
+        map.centerAndZoom(cityName, 12);
+
+    }
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
+    map.enableScrollWheelZoom(true);
+    //单击获取点击的经纬度
+    map.addEventListener("click", function (e) {
+        alert("定位成功,选择坐标" + e.point.lng + "," + e.point.lat);
+        $("#txtBranchLongitude").val(e.point.lng);
+        $("#txtBranchLatitude").val(e.point.lat);
+        $("#allmap").hide();
+    });
+
+    (function () {
+        var console = window.console;
+
+        if (!console.log) {
+            console.log = function () {
+                alert([].join.apply(arguments, ' '));
+            };
+        }
+        window.x = new Sortable(foo, {
+            group: "words",
+            //store: {
+            //    get: function (sortable) {
+            //        var order = localStorage.getItem(sortable.options.group);
+            //        return order ? order.split('|') : [];
+            //    },
+            //    set: function (sortable) {
+            //        var order = sortable.toArray();
+            //        localStorage.setItem(sortable.options.group, order.join('|'));
+            //    }
+            //},
+            //onAdd: function (evt) { console.log('onAdd.foo:', evt.item); },
+            //onUpdate: function (evt) { console.log('onUpdate.foo:', evt.item); },
+            //onRemove: function (evt) { console.log('onRemove.foo:', evt.item); },
+            //onStart: function (evt) { console.log('onStart.foo:', evt.item); },
+            //onEnd: function (evt) { console.log('onEnd.foo:', evt.item); }
+        });
+
+
+        //[].forEach.call(multi.getElementsByClassName('tile__list'), function (el) {
+        //    new Sortable(el, { group: 'photo' });
+        //});
+    })();
+
+    function directMap() {
+        if ($("#txtBranchLongitude").val() != "" && $("#txtBranchLatitude").val() != "") {
+
+            map.clearOverlays();
+            var new_point = new BMap.Point($("#txtBranchLongitude").val(), $("#txtBranchLatitude").val());
+            var marker = new BMap.Marker(new_point);  // 创建标注
+            map.addOverlay(marker);              // 将标注添加到地图中
+            map.panTo(new_point);
+            map.centerAndZoom(new_point, 11);
+        }
+        $("#allmap").show();
+    }
+</script>
+
+

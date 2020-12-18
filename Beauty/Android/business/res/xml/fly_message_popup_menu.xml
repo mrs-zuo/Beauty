@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@color/white">
+    <Button
+        android:id="@+id/fly_message_my_customer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/fly_message_my_customer" 
+        android:textSize="@dimen/text_size"/>
+    <Button
+        android:id="@+id/fly_message_branch_customer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/fly_message_branch_customer" 
+        android:textSize="@dimen/text_size"/>
+    <Button
+        android:id="@+id/fly_message_company_customer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/fly_message_company_customer" 
+        android:textSize="@dimen/text_size"/>
+    <Button
+        android:id="@+id/fly_message_cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/fly_message_cancel_btn" 
+        android:textSize="@dimen/text_size"/>
+</LinearLayout>

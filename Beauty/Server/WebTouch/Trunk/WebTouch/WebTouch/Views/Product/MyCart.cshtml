@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "购物车";
+    List<Model.View_Model.GetCartList_Model> list = new List<Model.View_Model.GetCartList_Model>();
+    list = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+<script src="/Scripts/Product.js"></script>
+@if (list != null && list.Count > 0)
+{ 
+    <form id="formCart" method="post" action="/Product/PurchaseDetail">
+    <div class="wrapper MB60">
+        @foreach (Model.View_Model.GetCartList_Model item in list)
+        {
+            <div class="part width100 whiteBkg">
+                <div class="blockC clearfix">
+                    <div class="bkgColor5">
+                        <h4 class=" PT15 PB15 blackTex blockC ML15">
+                            <div class="fl">
+                                <input type="checkbox" name="branchName" value="@(item.BranchID)" onclick="selectBranchCartAll(this)" /> 
+                            </div>
+                            <span class="width95 ML15">@(item.BranchName)</span>
+                        </h4>
+                    </div>
+                    @if (item.CartDetailList != null && item.CartDetailList.Count > 0)
+                    {
+                        <ul class="P10Table width100 whiteBkg" name="ulDetail">
+                            @foreach (Model.View_Model.CartDetail_Model itemDetail in item.CartDetailList)
+                            {
+                                <li class="borderB PB5 MT10 ML15 clearfix" name="liDetail">
+                                    <div class="fl MT40">
+                                        <input type="checkbox" name="chkCartID" value="@(itemDetail.CartID)"  onclick="selectCart(this)" />
+                                    </div>
+                                    <a class="block ML30" href="@(itemDetail.ProductType == 0 ? "/Product/ServiceDetail?lc="+ itemDetail.ProductCode :  "/Product/CommodityDetail?lc="+ itemDetail.ProductCode)">
+                                        <div class="width10 fl">
+                                            <div class="imgArea bkgColor1 viewImgArea">
+                                                <img src="@(itemDetail.ImageURL == "" ? "/pic/nopicbg.jpg" : itemDetail.ImageURL)" alt="" /> 
+                                            </div>
+                                        </div>
+                                    </a> 
+                                    <div class="positionR ML135">
+                                        <p class="width95 height60px">@(itemDetail.ProductName)</p>
+                                        	<div class="strong color1">@(CurrencySymbol)<span class="ML10" name="spanPrice">@(itemDetail.UnitPrice.ToString("0.00"))</span></div>
+                                        <p class="fl ML10">×</p>
+                                        <div class="grayTex fl ML10">
+                                            <input class="min color1"   type="button" value="-"  onclick="UpdateCart(this,1,'@(itemDetail.CartID)')"  />
+                                            <input class="textBox textC width40P txtProductNumber"  name="inputQty" type="text" maxlength="4" value="@(itemDetail.Quantity)" onchange="UpdateCart(this,3,'@(itemDetail.CartID)')" />
+                                            <input class="add greenTex" name="" type="button" value="+" onclick="UpdateCart(this,2,'@(itemDetail.CartID)')" />
+                                        </div>
+                                        <img class="MR5 width25P fr btnDel" src="/pic/delicon.png" onclick="delCart('@(itemDetail.CartID)')" />
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="btnBtm width100 whiteBkg">
+        <ul class="width100 btnBtmUL1 clearfix">
+            <li class="bkgColor1 fr width40"><a onclick="gotoPurchaseDetail()" class="whiteTex">结 算</a></li>
+            <li class="fl positionR"><span class="ML15 font20">@("合计  " + CurrencySymbol)</span><span class="ML5 redTex font20" id="spanTotal">0</span></li>  
+        </ul>
+    </div>
+    <input type="hidden" name="txtCardIDList" id="txtCardIDList" />
+        </form>
+}
+else
+{
+    <div class="wrapper MB60">
+        <div class="part width100 whiteBkg">
+            <div class="blockC clearfix">
+                <div class="width100 textC PT30 PB30 MB60 clearfix">
+                    <div class="MT10P MB10P "><img src="/pic/nocartpic.png" height="100" class="graybkg borderRad50" /></div>
+                    <p class=" PB30 grayTex">不剁手的日子很空虚~</p>
+                    <div class="width90 blockC MB30 clearfix"><a class="btnMid borderPink width50 color1" href="/Home/Index">去逛逛</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+ 
+    $(document).ready(function () {
+    });
+
+    $(function () {
+        $("input.txtProductNumber").keyup(function () {
+            this.value = this.value.replace(/[^\d]/g, '');
+            //如果输入为空，则替换为1
+            if (this.value == "") {
+                this.value = 1;
+            }
+        })
+    });
+</script>

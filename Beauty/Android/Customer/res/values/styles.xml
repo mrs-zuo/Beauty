@@ -1,0 +1,95 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
+    </style>
+
+    <style name="Theme.Start" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/welcome_2</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AnimFade" parent="AppTheme">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_activity_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_activity_hold</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_activity_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_activity_out</item>
+    </style>
+    <!-- 商品详细或者服务详细的收藏按钮 -->
+    <style name="add_favorite_btn">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">@dimen/add_cart_button_layout_height</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+    <!-- 商品详细或者服务详细的加入购物车按钮 -->
+    <style name="add_cart_btn">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">@dimen/add_cart_button_layout_height</item>
+        <item name="android:background">#9A846D</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="search_btn">
+        <item name="android:layout_width">80dip</item>
+        <item name="android:layout_height">45dip</item>
+        <item name="android:background">@drawable/shape_btn</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="cancel_btn_red">
+        <item name="android:layout_width">80dip</item>
+        <item name="android:layout_height">45dip</item>
+        <item name="android:background">@drawable/cancel_btn_red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <!-- 商品详细或者服务详细的立即购买按钮 -->
+    <style name="add_order_btn">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">@dimen/add_cart_button_layout_height</item>
+        <item name="android:background">@color/text_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <!-- RatingBar -->
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+
+        <!-- 指向star_rating_bar_full.xml文件 -->
+        <item name="android:progressDrawable">@drawable/star_rating_bar_full_big</item>
+    </style>
+
+    <style name="foodSmallRatingBar" parent="@android:style/Widget.RatingBar">
+
+        <!-- 指向star_rating_bar_full.xml文件 -->
+        <item name="android:progressDrawable">@drawable/star_rating_bar_full_small</item>
+        <item name="android:minHeight">28dip</item>
+        <item name="android:maxHeight">28dip</item>
+    </style>
+
+    <style name="divide_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#f4f4f4</item>
+    </style>
+
+</resources>

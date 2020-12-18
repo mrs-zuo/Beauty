@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <com.glamourpromise.beauty.customer.custom.view.SquareLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ImageView
+            android:id="@+id/tg_treatment_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/head_image_null_big" />
+    </com.glamourpromise.beauty.customer.custom.view.SquareLayout>
+    <TextView
+        android:id="@+id/tg_treatment_image_tag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal" />
+</LinearLayout>

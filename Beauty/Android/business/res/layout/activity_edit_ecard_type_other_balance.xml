@@ -1,0 +1,186 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".EditEcardTypeOtherBalanceActivity">
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout
+        android:id="@+id/title"
+        style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/edit_ecard_type_other_balance_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/edit_ecard_balance_title_text" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+           <TableLayout
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/establish_opportunity_order_customer" />
+
+                    <TextView
+                        android:id="@+id/ecard_type_other_money_customer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:maxWidth="250dip"
+                        android:singleLine="true"
+                        android:text="@string/ellipsis"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+            <TableLayout
+                android:id="@+id/layout_one"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/ecard_type_other_money"
+                        style="@style/activity_content_table_row_title_attrs"/>
+
+                    <TextView
+                        android:id="@+id/ecard_type_other_money_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+          <TableLayout
+                android:id="@+id/layout_two"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/ecard_recharge_type" />
+
+                    <Spinner
+                        android:id="@+id/ecard_type_other_recharge_type_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:paddingLeft="50dip" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" >
+                </View>
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/ecard_type_other_recharge_number_title"
+                        style="@style/activity_content_table_row_title_attrs"/>
+
+                    <EditText
+                        android:id="@+id/ecard_type_other_recharge_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="@string/plesase_ecard_recharge_number"
+                        android:inputType="number"
+                        android:maxLength="200"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                
+
+            </TableLayout>
+            <TableLayout
+                android:id="@+id/ecard_balance_remark"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/remark" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <EditText
+                        android:id="@+id/ecard_type_other_balance_remark_text"
+                        android:layout_width="400dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:background="@null"
+                        android:maxLength="200"
+                        android:minLines="3"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_type_other_remark_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/ecard_type_other_balance_remark_text"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+                <Button
+                    android:id="@+id/edit_ecard_type_other_balance_make_sure_btn"
+                    style="@style/submit_big_btn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dip"
+                    android:text="@string/ok"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

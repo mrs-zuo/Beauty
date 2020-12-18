@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".CustomerBenefitsActivity" >
+
+    <RelativeLayout
+        android:id="@+id/customer_benefits_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/customer_benefits_list_title"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/customer_benefits_head_layout" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/customer_benefits_list_title_text" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/customer_benefits_list_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:background="#3EBEFF">
+        <RelativeLayout
+            android:id="@+id/tab_customer_benefits_unused_ll"
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/customer_benefits_unused_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/customer_benefits_unused"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" >
+            </TextView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tab_customer_benefits_expired_ll"
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="1" >
+            <TextView
+                android:id="@+id/customer_benefits_expired_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:singleLine="true"
+                android:text="@string/customer_benefits_expired"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" >
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_customer_benefits_used_ll"
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="1"  >
+            <TextView
+                android:id="@+id/customer_benefits_used_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:singleLine="true"
+                android:text="@string/customer_benefits_used"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" >
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/customer_benefits_list_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/customer_benefits_list_tab_layout"
+        android:layout_below="@id/customer_benefits_list_title"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:padding="1dip" >
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

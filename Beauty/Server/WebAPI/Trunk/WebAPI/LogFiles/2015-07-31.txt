@@ -1,0 +1,147 @@
+2015-07-31 09:33:22[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/31 9:33:22
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"OrderObjectID":224,"OrderID":3735,"UserCardNo":"1507290000000009","totalSalePrice":50}
+TargetSite:HS.Framework.Common.Entity.ObjectResult`1[System.Boolean] UpdateTotalSalePrice(Int32, Int32, System.Decimal, System.DateTime, Int32, System.String, Int32, Int32, Int32)
+Data:
+StackTrace:   在 WebAPI.DAL.Order_DAL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 6875
+   在 WebAPI.BLL.Order_BLL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 299
+   在 WebAPI.Controllers.API.OrderController.UpdateTotalSalePrice(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 2121
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.83
+UrlReferrer=
+RawUrl=/order/UpdateTotalSalePrice
+Header=Content-Length:88
+Content-Type:application/json
+Accept:application/json
+Accept-Encoding:gzip
+Authorization:A8D9BDB63DCA5784FAB4EC993129558A
+Host:www.webapi.com
+CT:1
+DT:2
+AV:3.0
+ME:UpdateTotalSalePrice
+CO:69
+BR:98
+US:11727
+GU:2bdb7552-bc01-4671-bd92-ec038e183652
+TI:2015-07-31 09:29:46.269
+
+
+2015-07-31 09:34:28[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/31 9:34:28
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"OrderObjectID":224,"OrderID":3735,"UserCardNo":"1507290000000009","totalSalePrice":50}
+TargetSite:HS.Framework.Common.Entity.ObjectResult`1[System.Boolean] UpdateTotalSalePrice(Int32, Int32, System.Decimal, System.DateTime, Int32, System.String, Int32, Int32, Int32)
+Data:
+StackTrace:   在 WebAPI.DAL.Order_DAL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 6875
+   在 WebAPI.BLL.Order_BLL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 299
+   在 WebAPI.Controllers.API.OrderController.UpdateTotalSalePrice(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 2121
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.83
+UrlReferrer=
+RawUrl=/order/UpdateTotalSalePrice
+Header=Content-Length:88
+Content-Type:application/json
+Accept:application/json
+Accept-Encoding:gzip
+Authorization:A8D9BDB63DCA5784FAB4EC993129558A
+Host:www.webapi.com
+CT:1
+DT:2
+AV:3.0
+ME:UpdateTotalSalePrice
+CO:69
+BR:98
+US:11727
+GU:2bdb7552-bc01-4671-bd92-ec038e183652
+TI:2015-07-31 09:29:46.269
+
+
+2015-07-31 09:40:42[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/31 9:40:42
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"OrderObjectID":224,"OrderID":3735,"UserCardNo":"1507290000000009","totalSalePrice":50}
+TargetSite:HS.Framework.Common.Entity.ObjectResult`1[System.Boolean] UpdateTotalSalePrice(Int32, Int32, System.Decimal, System.DateTime, Int32, System.String, Int32, Int32, Int32)
+Data:
+StackTrace:   在 WebAPI.DAL.Order_DAL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 6875
+   在 WebAPI.BLL.Order_BLL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 299
+   在 WebAPI.Controllers.API.OrderController.UpdateTotalSalePrice(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 2121
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.83
+UrlReferrer=
+RawUrl=/order/UpdateTotalSalePrice
+Header=Content-Length:88
+Content-Type:application/json
+Accept:application/json
+Accept-Encoding:gzip
+Authorization:A8D9BDB63DCA5784FAB4EC993129558A
+Host:www.webapi.com
+CT:1
+DT:2
+AV:3.0
+ME:UpdateTotalSalePrice
+CO:69
+BR:98
+US:11727
+GU:2bdb7552-bc01-4671-bd92-ec038e183652
+TI:2015-07-31 09:29:46.269
+
+

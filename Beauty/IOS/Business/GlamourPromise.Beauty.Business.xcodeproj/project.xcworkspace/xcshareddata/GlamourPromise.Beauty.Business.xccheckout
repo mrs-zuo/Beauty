@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D7A1A520-4B60-46E0-968B-8240F8F93048</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GlamourPromise.Beauty.Business</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++4974</key>
+		<string>https://svn.bizapper.com/svn/glamourpromise/SourceCode/iOS-Business/Branches/GPB-3441</string>
+<<<<<<< .mine
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</key>
+		<string>https://jun.gan@svn.bizapper.com/svn/GlamourPromise/SourceCode/iOS-Business/Branches/GPB-3638</string>
+=======
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</key>
+		<string>https://svn.bizapper.com/svn/glamourpromise/SourceCode/iOS-Business/Branches/GPB-3638</string>
+>>>>>>> .r13461
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Client-Business/GlamourPromise.Beauty.Business.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++4974</key>
+		<string>../../../../Business-GPB-3441</string>
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++4974</key>
+		<string>https://svn.bizapper.com/svn/glamourpromise</string>
+<<<<<<< .mine
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</key>
+		<string>https://jun.gan@svn.bizapper.com/svn/GlamourPromise</string>
+=======
+		<key>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</key>
+		<string>https://svn.bizapper.com/svn/glamourpromise</string>
+>>>>>>> .r13461
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+<<<<<<< .mine
+	<string>https://jun.gan@svn.bizapper.com/svn/GlamourPromise/SourceCode/iOS-Business/Branches/GPB-3638/Client-Business/GlamourPromise.Beauty.Business.xcodeproj</string>
+=======
+	<string>https://svn.bizapper.com/svn/glamourpromise/SourceCode/iOS-Business/Branches/GPB-3638/Client-Business/GlamourPromise.Beauty.Business.xcodeproj</string>
+>>>>>>> .r13461
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</string>
+			<key>IDESourceControlWCCName</key>
+			<string>business_GPB-3638</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++4974</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Business-GPB-3441</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ddf90413-a43a-ab4d-a9e3-d803e46e8ccc++9174</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GPB-3638</string>
+		</dict>
+	</array>
+</dict>
+</plist>

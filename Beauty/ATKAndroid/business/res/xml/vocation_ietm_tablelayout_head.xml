@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/activity_content_table_relativelayout_attrs" >
+    <TextView
+        android:id="@+id/edit_vocation_question_type"
+        style="@style/activity_content_table_row_title_attrs"
+        android:textColor="@color/gray" />
+    <TextView
+        android:id="@+id/edit_vocation_question_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/edit_vocation_question_type"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+</RelativeLayout>

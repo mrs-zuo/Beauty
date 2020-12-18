@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OpportunityHistoryActivity">
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/opportunity_detail_history"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/opportunity_detail_history" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/opportunity_progress_history_list"
+        style="@style/activity_content_listview_attrs"/>
+
+</LinearLayout>

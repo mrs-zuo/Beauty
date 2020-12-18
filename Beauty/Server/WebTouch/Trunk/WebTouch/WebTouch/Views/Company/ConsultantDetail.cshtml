@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "顾问详情";
+    Model.View_Model.AccountDetail_Model model = Model;
+}
+
+
+@if (model != null)
+{
+    <div class="wrapper whiteBkg">
+        <div class="width100 blockC textL">
+            <ul class="width90 rowUl15 blockC">
+                <li class="borderB clearfix">
+                    <div class="blackTex fr MT40">@(model.Name)</div>
+                    <div class="grayTex textR fl">
+                        <div class="myphotoArea bkgColor1">
+                            <img src="@(model.HeadImageURL == "" ? "/pic/nopicbg.jpg" : model.HeadImageURL)" />  
+                        </div>
+                    </div>
+                </li>
+                @if (model.Mobile != "" && model.Mobile != null) 
+                {
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">电话</div>
+                    <div class="textR fr"><a class="grayTex" href="tel:@(model.Mobile)">@(model.Mobile)</a></div>
+                </li>
+                }  
+                @if (model.Title != "" && model.Title != null) 
+                {
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">职称</div>
+                    <div class="grayTex textR fr">@(model.Title)</div>
+                </li>
+                }
+                @if (model.Expert != "" && model.Expert != null) 
+                {
+                <li class="borderB clearfix">
+                    <h4 class="PB15 blackTex">擅长</h4>
+                    <div class="width98 fr grayTex lineHeight1_5x">
+                       @(model.Expert)
+                    </div>
+                </li> 
+                }
+                @if (model.Introduction != "" && model.Introduction != null) 
+                {
+                <li class="borderB clearfix">
+                    <h4 class="PB15 blackTex">简介</h4>
+                    <div class="width98 fr grayTex lineHeight1_5x">
+                        @(model.Introduction)
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+}

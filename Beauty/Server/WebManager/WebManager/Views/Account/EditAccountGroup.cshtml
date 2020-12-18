@@ -1,0 +1,179 @@
+﻿@{
+    Model.View_Model.TagDetailForWeb_Model model = Model;
+
+    List<Model.View_Model.GetAccountListByGroupFroWeb_Model> existUserList = new List<Model.View_Model.GetAccountListByGroupFroWeb_Model>();
+    existUserList = model.UserList.Where(c => c.isExist).ToList();
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 22)
+    <!-- /Page Sidebar -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Account/GetAccountGroupList">员工分组</a></li>
+                @{
+                    if (model != null && model.ID > 0)
+                    {
+                    <li>编辑员工分组</li>
+                    }
+                    else
+                    {
+                    <li>添加员工分组</li>
+                    }
+                }
+
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @{
+                    if (model != null && model.ID > 0)
+                    {
+                    <h1>编辑员工分组</h1>
+                    }
+                    else
+                    {
+                    <h1>添加员工分组</h1>
+                    }
+                }
+
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="widget-body no-padding">
+                <div class="form-horizontal form-bordered widget-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	员工分组名称
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" id="txt_TagName" placeholder="请输入分组名称" value="@(model.Name)">
+                                <input type="hidden" id="hid_TagName" value="@(model.Name)"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">选择成员账户</label>
+                        <div class="row">
+
+                            <div class="col-xs-4">
+                                <div class="select-down border" style="height: 356px;">
+                                    <table class="table table-striped table-hover margin-top-1">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <label class="pull-left label-m"><strong>员工姓名</strong></label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" id="txtSearchAccount" placeholder="请输入编号/电话/名字" style="min-width: 160px;" class="form-control" onkeyup="showAccountListUsedByGroup()">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table class="table active-table table-hover" id="tbAccount">
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <input type="hidden" id="hidData" />
+                                </div>
+                            </div>
+                            <div class="col-xs-1 arrow-client">
+                                <i class="margin-b fa fa-arrow-right fa-4x"></i>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="select-down border" style="height: 356px;">
+                                    <table class="table table-striped table-hover margin-top-1">
+                                        <tbody>
+                                            @*<tr>
+                                                <td>
+                                                    <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                    <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                </td>
+                                            </tr>*@
+                                            <tr>
+                                                <td>
+                                                    <table class="table active-table table-hover" id="tbAccountRight">
+                                                        @{
+                                                            string oldUserList = "";
+                                                            if (existUserList != null && existUserList.Count > 0)
+                                                            {
+                                                                foreach (Model.View_Model.GetAccountListByGroupFroWeb_Model item in existUserList)
+                                                                {
+                                                                    oldUserList += "|" + item.AccountID;
+                                                            <tr id="rtr@(item.AccountID)a" aname="@(item.AccountName)" aid="@(item.AccountID)" >
+                                                                <td><span class="text over-text col-xs-12 no-pm">@(item.AccountName)</span>
+                                                                    <a onclick="minusAccountToSelect(@(item.AccountID))" style="cursor:pointer;display:block;"><i class="eag-plus fa fa-minus"></i></a></td>
+                                                            </tr>
+                                                                }
+                                                                oldUserList += "|";
+                                                            }
+                                                        }
+                                                    </table>
+                                                    <input type="hidden" id="hid_oldUserList" value="@(oldUserList)"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            @{
+                                if (model.ID > 0)
+                                {
+                                <button class="btn btn-primary" type="button" onclick="EditTag(@(model.ID))">保 存</button>
+                                }
+                                else
+                                {
+                                <button class="btn btn-primary" type="button" onclick="AddTag()">确 定</button>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/Script/Account.js"></script>
+

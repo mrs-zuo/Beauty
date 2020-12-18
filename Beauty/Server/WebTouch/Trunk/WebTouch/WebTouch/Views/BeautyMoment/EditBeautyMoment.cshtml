@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "美丽记录编辑";
+    Model.View_Model.CustomerTGPic model = new Model.View_Model.CustomerTGPic();
+    model = Model;
+    string jsParam = "";
+    if (ViewBag.JsParam != null)
+    {
+        jsParam = ViewBag.JsParam;
+    }
+
+    string shareImageUrl = null;
+}
+
+
+<script src="/js/jweixin-1.0.0.js"></script>
+<script src="/Scripts/WXShare.js"></script>
+<script src="/Scripts/BeautyMoment.js"></script>
+
+<input type="hidden" id="hidParam" value="@(jsParam)"/>
+@if (model != null)
+{
+    <div class="width100 whiteBkg MB80">
+        <div class="width90 blockC rowU5 FL textL MB10 clearfix">
+            <span class="fl rowU5-title width100 borderB clearfix">
+                <span class="block fl"><i class="MR10">@(model.ServiceName)</i></span>
+                <span class="block fr"><a class="block del-icon" onclick="DeleteTGPic(@(model.GroupNo))"></a></span>
+            </span>
+            <span class="fl rowU5-title width100 borderB clearfix">
+                <span class="block fl"><i>@(model.TGStartTime.ToString("yyyy-MM-dd"))</i></span>
+                <span class="block fr"><i>@(model.BranchName)</i></span>
+            </span>
+            <span class="fl rowU5-fourpic width100 PT5 PB5 borderB textC font12 ">
+                @if (model.TGPicList != null && model.TGPicList.Count > 0)
+                {
+                    shareImageUrl =  model.TGPicList[0].ImageURL;
+                    foreach (Model.View_Model.CustomerTGPicList item in model.TGPicList)
+                    {
+                    <span><a class="grayTex" href="/BeautyMoment/EditBeautyMomentPhoto?ri=@(item.RecordImgID)&gn=@(model.GroupNo)">
+                        <img src="@(item.ImageURL)"><i class="LinkUnderLine">@(item.ImageTag)</i></a></span>
+                    }
+                }
+                <span><a class="grayTex" href="/BeautyMoment/EditBeautyMomentPhoto?gn=@(model.GroupNo)">
+                    <img class="addlinepic" src="/pic/whitepic.png"><i class="LinkUnderLine"></i></a></span>
+            </span>
+            <span class="fl width98 PT5 PB5 MT10 lineHeight1_5x ">
+                <textarea class="textarea grayTex" rows="3" id="txtComment">@(model.Comments)</textarea>
+            </span>
+            <span class="fl MB10 width100 clearfix">
+                <a class="PL20 share-icon grayTex block fr font12 PR10" onclick="GoToShare(@(model.GroupNo),'@(model.Comments)','@(shareImageUrl)',1)">分享美丽</a>
+            </span>
+        </div>
+    </div>
+    <div class="btnBtm width100 whiteBkg PT10 PB10">
+        <div class="width90 blockC ML5P fl"><a class="width100 btnLarge bkgColor1 fl" onclick="submitTG(@(model.GroupNo))" >确定</a></div>
+    </div>
+    
+}
+    <div id="guideImg1" class="block" style="display: none;">
+        <a class="closedBtn">
+            <img src="/pic/closedBtn.png" height="30" /></a>
+        <img src="/pic/RightShare.png" class="width100" />
+    </div>
+<script type="text/javascript">
+    var jsParams = $("#hidParam").val();
+    var jsModel = eval("(" + jsParams + ")");
+
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: jsModel.appid, // 必填，公众号的唯一标识
+        timestamp: jsModel.timestamp, // 必填，生成签名的时间戳
+        nonceStr: jsModel.noncestr, // 必填，生成签名的随机串
+        signature: jsModel.signature,// 必填，签名，见附录1
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+
+    $(".closedBtn").click(function () {
+        $("#guideImg1").hide();
+    })
+
+    GoToShare('@(model.GroupNo)','@(model.Comments)','@(shareImageUrl)',0);
+</script>

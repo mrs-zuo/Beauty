@@ -1,0 +1,209 @@
+﻿@{
+    Model.Table_Model.Question_Model QModel = Model;    
+    }
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 16)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    @{
+        if (QModel != null)
+        {
+        <div class="page-content">
+            <!-- Page 包碎屑 -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="/Home/index">首页</a>
+                    </li>
+                    <li class="active"><a href="/Question/GetQuestionList">问题列表</a></li>
+                    <li class="active">编辑问题</li>
+                </ul>
+            </div>
+            <!-- /Page 包碎屑 -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>编辑问题</h1>
+                </div>
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="refresh" id="refresh-toggler" href="">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a class="fullscreen" id="fullscreen-toggler" href="#">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+
+            <!-- Page Body -->            
+            <div class="page-body">
+                <div class="form-horizontal form-bordered widget-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">问题题型</label>
+                        <div class="btn-group col-sm-4">
+                            <select id="ddlEditStatus" style="width: 100%;">
+                                <option value="0" @(QModel.QuestionType==0 ? "selected=selected" :"")>文本</option>
+                                <option value="1" @(QModel.QuestionType==1 ? "selected=selected" :"")>单选选择</option>
+                                <option value="2" @(QModel.QuestionType==2 ? "selected=selected" :"")>多项选择</option>
+                            </select>                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	问题题目
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <textarea id="txtName" class="form-control" maxlength="200" rows="6" placeholder="输入问题题目">@QModel.QuestionName</textarea>                            
+                        </div>
+                    </div>
+
+                    <!-- 这一些另外加如需要可以用不需要可以进行删除-->
+                    <div id="divContent" @(QModel.QuestionType==0 ? "style=display:none" :"") class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" >
+                        	问题选项
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <textarea id="txtContent" class="form-control" maxlength="300" rows="6" placeholder="多个选项请按回车换行...">@QModel.QuestionContent</textarea>
+                        </div>
+                    </div>
+                    
+                    <div  class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" >
+                        	问题描述
+                        	
+                        </label>
+                        <div class="col-sm-4">
+                            <textarea id="txtQuestionDescription" class="form-control" maxlength="500" rows="6" placeholder="输入问题描述">@QModel.QuestionDescription</textarea>
+                        </div>
+                    </div>
+                    @{if (!QModel.HaveAnswer) { 
+                        <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-primary" onclick="UpdateQuestion()" type="button">确 定</button>
+                            <a href="/Question/GetQuestionList" class="btn btn-default"> 返 回 </a>
+                        </div>
+                        </div>
+                      }
+                      else{
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                此问题已被回答无法修改
+                                </div>
+                        </div>
+                      }
+                    }
+                </div>
+            </div>            
+            <!-- /Page Body -->
+
+        </div>
+        }
+        else
+        {
+        <div class="page-content">
+            <!-- Page 包碎屑 -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="/Home/index">首页</a>
+                    </li>
+                    <li class="active"><a href="/Question/GetQuestionList">问题列表</a></li>
+                    <li class="active">添加问题</li>
+                </ul>
+            </div>
+            <!-- /Page 包碎屑 -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>添加问题</h1>
+                </div>
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="refresh" id="refresh-toggler" href="">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a class="fullscreen" id="fullscreen-toggler" href="#">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="form-horizontal form-bordered widget-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">问题题型</label>
+                        <div class="btn-group col-sm-4">
+                            <select id="ddlAddStatus" style="width: 100%;">
+                                <option value="0">文本</option>
+                                <option value="1">单选选择</option>
+                                <option value="2">多选选择</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	问题题目
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <textarea class="form-control" rows="6" maxlength="200" id="txtName" placeholder="输入问题题目"></textarea>                                                                            
+                        </div>
+                    </div>
+
+                    <!-- 这一些另外加如需要可以用不需要可以进行删除-->
+                    <div id="divContent" style="display:none" class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	问题内容
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <textarea class="form-control" rows="6" maxlength="300" id="txtContent" placeholder="输入问题内容"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	问题描述
+                        	
+                        </label>
+                        <div class="col-sm-4">
+                            <textarea class="form-control" rows="6" maxlength="500" id="txtQuestionDescription" placeholder="输入问题描述"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-primary" onclick="AddQuestion()" type="button">确 定</button>
+                            <a href="/Question/GetQuestionList" class="btn btn-default"> 返 回 </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /Page Body -->
+
+        </div>
+        }
+    }
+
+    <!-- /Page Content -->
+</div>
+<script src="/Script/Question.js"></script>

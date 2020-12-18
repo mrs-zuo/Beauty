@@ -1,0 +1,200 @@
+﻿<div class="page-container">
+    <!-- Page Sidebar -->
+    <div class="page-sidebar" id="sidebar">
+        <!-- Page Sidebar Header-->
+        <div class="sidebar-header-wrapper">
+            <input type="text" class="searchinput" />
+            <i class="searchicon fa fa-search"></i>
+            <div class="searchhelper">输入搜索内容</div>
+        </div>
+        <!-- /Page Sidebar Header -->
+        <!-- Sidebar Menu -->
+        @Html.Partial("Sidebar",1)
+        <!-- /Sidebar Menu -->
+    </div>
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="#">首页</a>
+                </li>
+                <li class="active">商家信息</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>商家信息</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <ul class="nav nav-pills">
+                <li>
+                    <h4>汉弘信息科技(上海)有限公司</h4>
+                </li>
+                <li><a href="1.1-company.html" class="btn btn-sm btn-info"><i class="fa fa-edit fa-lg"></i>编辑公司</a></li>
+                <li><a href="1.2-company.html" class="btn btn-sm btn-info"><i class="fa fa-plus-square fa-lg"></i>添加门店</a></li>
+            </ul>
+            </br>
+				<table class="table table-striped widget-body">
+                    <thead class="row">
+                        <tr>
+                            <th class="col-md-1">编号</th>
+                            <th class="col-md-6">门店信息</th>
+                            <th class="col-md-3">状态</th>
+                            <th class="col-md-2">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>邯郸路店<br />
+                                邯郸路173号优族广场4号楼305C
+                            </td>
+                            <td>允许</td>
+                            <td>
+                                <a class="btn btn-info btn-xs edit" href="1.2-company.html"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-danger btn-xs delete" href="#"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <br>
+            <nav>
+                <ul class="pagination">
+                    <li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>

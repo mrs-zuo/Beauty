@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+    <cn.com.antika.view.RefreshListView
+        android:id="@+id/dispense_complete_order_listview"
+        style="@style/activity_content_listview_attrs"
+        android:layout_marginBottom="45dip" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/cancel_treatment_group_btn"
+            style="@style/cancel_middle_btn"
+            android:layout_alignParentLeft="true"
+            android:text="@string/cancel_tg_btn_text" 
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/complete_treatment_group_btn"
+            style="@style/submit_middle_btn"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:text="@string/complete_tg_btn_text" 
+            android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>

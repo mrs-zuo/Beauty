@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_backcolor"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg" >
+        <ImageView
+            android:id="@+id/search_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_backbutton" 
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/unfinish_tg_order_advanced_search_title_text" />
+    </RelativeLayout>
+
+    <TableLayout style="@style/activity_content_table_attrs" >
+        <RelativeLayout
+            style="@style/activity_content_table_relativelayout_attrs" >
+
+            <TextView
+                android:id="@+id/unfinish_tg_order_advanced_customer_title_text"
+                style="@style/activity_content_table_row_title_attrs"
+                android:text="@string/unfinish_tg_order_advanced_customer_text" />
+
+            <EditText
+                android:id="@+id/unfinish_tg_order_advanced_customer_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/unfinish_tg_order_advanced_customer_title_text"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:textColor="@color/gray"
+                android:hint="@string/unfinish_tg_order_advanced_customer_text"/>
+        </RelativeLayout>
+        <View 
+            style="@style/activity_content_divide_view_attrs"/>
+        <RelativeLayout
+            android:id="@+id/customer_advanced_responsible_person_relativelayout"
+            style="@style/activity_content_table_relativelayout_attrs" >
+
+            <TextView
+                android:id="@+id/unfinish_tg_order_responsible_person_title_text"
+                style="@style/activity_content_table_row_title_attrs"
+                android:text="@string/service_responsible_person" />
+
+            <EditText
+                android:id="@+id/unfinish_tg_order_service_pic_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/unfinish_tg_order_responsible_person_title_text"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:textColor="@color/gray"
+                android:hint="@string/service_responsible_person"/>
+        </RelativeLayout>
+    </TableLayout>
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <Button
+                android:id="@+id/unfinish_tg_order_advanced_search_reset_btn"
+                style="@style/search_reset_btn"
+                android:layout_weight="1"
+                android:text="@string/reset_btn_text"
+                 />
+            <Button
+                android:id="@+id/unfinish_tg_order_advanced_search_make_sure_btn"
+                style="@style/search_btn"
+                android:layout_weight="1"
+                android:text="@string/search_btn_text"/>
+        </LinearLayout>
+    </TableLayout>
+</LinearLayout>

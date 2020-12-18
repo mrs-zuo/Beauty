@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "CustomerSourceEdit";
+
+    Model.Table_Model.CustomerSource_Model model = new Model.Table_Model.CustomerSource_Model();
+    if (ViewBag.CustomerSource != null)
+    {
+        model = ViewBag.CustomerSource;
+    }
+}
+
+
+<script src="/Script/CustomerSource.js"></script>
+<!--顾客来源内容编辑开始-->
+@if (model != null)
+{
+    <div class="page-container">
+        <!-- Page Sidebar -->
+        @Html.Partial("Sidebar", 33)
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page 面包屑 -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="/Home/Index">首页</a>
+                    </li>
+                    <li>
+                        <a href="/CustomerSource/CustomerSourceList">顾客来源</a>
+                    </li>
+                    @if (model.ID == 0)
+                    {
+                        <li class="active">添加顾客来源</li>
+                    }
+                    else
+                    {
+                        <li class="active">编辑顾客来源</li>
+                    }
+                </ul>
+            </div>
+            <!-- /Page 面包屑 -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    @if (model.ID == 0)
+                    {
+                        <h1>添加顾客来源</h1>   
+                    }
+                    else
+                    {
+                        <h1>编辑顾客来源</h1>
+                    }
+                </div>
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#">
+                        <i class="fa fa-arrows-h"></i></a>
+                    <a class="refresh" id="refresh-toggler" href="">
+                        <i class="glyphicon glyphicon-refresh"></i></a>
+                    <a class="fullscreen" id="fullscreen-toggler" href="#">
+                        <i class="glyphicon glyphicon-fullscreen"></i></a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+
+            <!-- Page Body -->
+            <div class="page-body">
+                <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                    <ul role="tablist" class="nav nav-tabs" id="myTab">
+                        <li class="active in" role="presentation">
+                            <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">
+                                @if (model.ID == 0)
+                                {
+                                    <text>添加顾客来源</text> 
+                                }
+                                else
+                                {
+                                    <text>编辑顾客来源</text>
+                                }
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div aria-labelledby="home-tab" id="home" class="tab-pane fade active in" role="tabpanel">
+                            <div class="form-horizontal form-bordered">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">
+                                        顾客来源名称
+                                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input placeholder="输入顾客来源名称" id="txtName" class="form-control" type="text" value="@(model.Name)">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <a class="btn btn-primary" onclick="submit(@(model.ID))">确 定</a>
+                                        <a class="btn btn-default" onclick="javascript:history.go(-1);">返 回</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!--顾客来源内容编辑结束-->
+}
+else
+{
+    <script>
+        alert("请求错误");
+        window.location.href = "/CustomerSource/CustomerSourceList";
+    </script>
+}

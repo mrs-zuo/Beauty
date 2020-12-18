@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.OpportunityListActivity"
+    android:background="@color/white">
+    <include
+        android:id="@+id/home_page_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+        <TextView
+            android:id="@+id/opportunity_list_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/opportunity_list" />
+        <TextView 
+        	android:id="@+id/opportunity_page_info_text"
+         	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size"
+           android:layout_toRightOf="@id/opportunity_list_title_text"/>
+        <ImageButton
+            android:id="@+id/opportunity_advanced_filter_icon"
+            style="@style/activity_title_button_attrs"
+            android:background="@drawable/customer_advanced_filter_icon"
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+    <cn.com.antika.view.XListView
+        android:id="@+id/opportunity_list"
+        style="@style/activity_content_listview_attrs" />
+</LinearLayout>

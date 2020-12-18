@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/relative_layout_has_child_attrs"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+        <com.glamourpromise.beauty.customer.custom.view.CircleImageView
+            android:id="@+id/contact_account_thumbnail"
+            android:layout_width="@dimen/list_image"
+            android:layout_height="@dimen/list_image"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/image_new_message_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/contact_image_new_message_num_layout_marginleft"
+            android:background="@drawable/new_message_background_icon"
+            android:gravity="center"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/contact_account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/framelayout"
+        android:maxWidth="@dimen/contact_account_name_max_width"
+        android:singleLine="true"
+        android:text="..."
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/last_message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/last_message_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_account_name"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@id/framelayout"
+        android:maxWidth="@dimen/last_message_content_max_width"
+        android:singleLine="true"
+        android:text="..."
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal" />
+</RelativeLayout>

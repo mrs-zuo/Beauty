@@ -1,0 +1,159 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D5C5B5"
+        android:padding="3dp">
+        <ImageButton
+            android:id="@+id/btn_main_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_backbutton" />
+        <TextView
+            android:id="@+id/navigation_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_headline"/>
+        <ImageButton
+            android:id="@+id/btn_main_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_home_button" />
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/appointment_detail_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/appointment_detail_num_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/evaluate_service_name"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:maxLength="15"
+                        android:singleLine="true"
+                        android:text="@string/ellipsis" />
+
+                    <TextView
+                        android:id="@+id/evaluate_service_responsible_name_text"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divide_view"/>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/evaluate_service_time"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/evaluate_service_num"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/divide_view"/>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs"
+                    			android:padding="5dip">
+
+                    <RatingBar
+                        android:id="@+id/ratingbarId"
+                        style="@style/foodRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:rating="5"
+                        android:stepSize="1" >
+                    </RatingBar>
+                </RelativeLayout>
+
+               <View
+                    style="@style/divide_view"/>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <EditText
+                        android:id="@+id/evaluate_service_remark_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:background="@null"
+                        android:hint="@string/please_input_customer_evaluate"
+                        android:maxLength="300"
+                        android:minLines="3"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/list_tm_tablelayout"
+                style="@style/table_layout_attrs" 
+              >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/evaluate_responsible_remark"
+                        android:textColor="@color/text_color" />
+                </RelativeLayout>
+
+               <View
+                    style="@style/divide_view"/>
+
+                <LinearLayout
+                    android:id="@+id/list_tm_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/evaluate_service_submit"
+                style="@style/search_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="@dimen/margin_top"
+                android:contentDescription="@string/search"
+                android:text="@string/evaluate_service_submit"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

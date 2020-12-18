@@ -1,0 +1,103 @@
+2015-08-14 14:36:07[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/8/14 14:36:07
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\Vss\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.LoginController.getCompanyList(String loginMobile, String password, String validateCode, Boolean needRSAEncrypt) 位置 e:\Vss\WebManager\WebManager\Controllers\LoginController.cs:行号 108
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.95
+UrlReferrer=http://www.webmanager.com/
+RawUrl=/Login/getCompanyList
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:98
+Content-Type:application/json; charset=utf-8
+Accept:text/plain, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-08-14 14:39:39[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/8/14 14:39:39
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\Vss\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.LoginController.getCompanyList(String loginMobile, String password, String validateCode, Boolean needRSAEncrypt) 位置 e:\Vss\WebManager\WebManager\Controllers\LoginController.cs:行号 108
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.95
+UrlReferrer=http://www.webmanager.com/
+RawUrl=/Login/getCompanyList
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:95
+Content-Type:application/json; charset=utf-8
+Accept:text/plain, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=ahqfw5h3t1e4oesmygjkkip3
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+X-Requested-With:XMLHttpRequest
+
+

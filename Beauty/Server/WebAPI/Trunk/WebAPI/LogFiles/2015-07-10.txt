@@ -1,0 +1,177 @@
+2015-07-10 13:46:01[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/10 13:46:01
+Title=关键字 'SELECT' 附近有语法错误。
+Message=Message:关键字 'SELECT' 附近有语法错误。
+RequestParm:{"ProductType":0,"IsToday":true,"CustomerID":0}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Order_DAL.GetUnfinishTGList(UtilityOperation_Model model) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 5831
+   在 WebAPI.BLL.Order_BLL.GetUnfinishTGList(UtilityOperation_Model model) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 366
+   在 WebAPI.Controllers.API.OrderController.GetUnfinishTGList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 1925
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.90
+UrlReferrer=
+RawUrl=/Order/GetUnfinishTGList
+Header=Content-Length:47
+Content-Type:application/json
+Authorization:B15AD7467CCE1D84C3D48DC285600BA7
+Host:www.webapi.com
+User-Agent:Fiddler
+CO:69
+BR:1
+us:1
+CT:1
+AV:2.0
+me:GetAccountListByCompanyID
+ti:2014-01-01 01:01:01
+gu:askdfjsadkfk
+
+
+2015-07-10 13:46:10[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/10 13:46:10
+Title=关键字 'SELECT' 附近有语法错误。
+Message=Message:关键字 'SELECT' 附近有语法错误。
+RequestParm:{"ProductType":0,"IsToday":true,"CustomerID":0}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Order_DAL.GetUnfinishTGList(UtilityOperation_Model model) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 5831
+   在 WebAPI.BLL.Order_BLL.GetUnfinishTGList(UtilityOperation_Model model) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 366
+   在 WebAPI.Controllers.API.OrderController.GetUnfinishTGList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 1925
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.90
+UrlReferrer=
+RawUrl=/Order/GetUnfinishTGList
+Header=Content-Length:47
+Content-Type:application/json
+Authorization:B15AD7467CCE1D84C3D48DC285600BA7
+Host:www.webapi.com
+User-Agent:Fiddler
+CO:69
+BR:1
+us:1
+CT:1
+AV:2.0
+me:GetAccountListByCompanyID
+ti:2014-01-01 01:01:01
+gu:askdfjsadkfk
+
+
+2015-07-10 13:46:39[11] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/10 13:46:39
+Title=关键字 'SELECT' 附近有语法错误。
+Message=Message:关键字 'SELECT' 附近有语法错误。
+RequestParm:{"ProductType":0,"IsToday":true,"CustomerID":0}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Order_DAL.GetUnfinishTGList(UtilityOperation_Model model) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 5831
+   在 WebAPI.BLL.Order_BLL.GetUnfinishTGList(UtilityOperation_Model model) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 366
+   在 WebAPI.Controllers.API.OrderController.GetUnfinishTGList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 1925
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.90
+UrlReferrer=
+RawUrl=/Order/GetUnfinishTGList
+Header=Content-Length:47
+Content-Type:application/json
+Authorization:B15AD7467CCE1D84C3D48DC285600BA7
+Host:www.webapi.com
+User-Agent:Fiddler
+CO:69
+BR:1
+us:1
+CT:1
+AV:2.0
+me:GetAccountListByCompanyID
+ti:2014-01-01 01:01:01
+gu:askdfjsadkfk
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_content_table_relativelayout_attrs">
+    <TextView
+        android:id="@+id/branch_employee_business_list_object_name"
+        android:layout_width="@dimen/report_detail_list_object_name_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/title_font"
+        android:textSize="@dimen/text_size" />
+     <ImageView
+        android:id="@+id/branch_employee_business_list_join_in"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/join_in_arrowhead"/>
+    <TextView
+        android:id="@+id/branch_employee_business_list_sales_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/branch_employee_business_list_join_in"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="@dimen/text_size" 
+        android:layout_alignParentTop="true"/>
+</RelativeLayout>

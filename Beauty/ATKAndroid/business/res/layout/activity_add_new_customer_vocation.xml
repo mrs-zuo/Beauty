@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.EditCustomerVocationActivity" >
+
+    <RelativeLayout
+        android:id="@+id/add_new_customer_vocation_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <cn.com.antika.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <cn.com.antika.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/edit_customer_vocation_title_relativelayout"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/add_new_customer_vocation_head_layout" >
+
+        <TextView
+            android:id="@+id/edit_customer_vocation_title_text"
+            style="@style/activity_title_text_attrs"
+            android:lines="1"
+            android:text="@string/ellipsis" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/edit_customer_vocation_scorll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_customer_vocation_title_relativelayout"
+        android:layout_marginBottom="80dip"
+        android:padding="8dip" >
+    </ScrollView>
+
+    <TableLayout
+        android:id="@+id/add_customer_vocation_operation_tablelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/cancel_btn"
+                style="@style/cancel_middle_btn"
+                android:layout_weight="1"
+                android:text="@string/cancel_btn_text" />
+
+            <Button
+                android:id="@+id/submit_btn"
+                style="@style/submit_middle_btn"
+                android:layout_weight="1"
+                android:text="@string/submit_btn_text" />
+        </LinearLayout>
+    </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/add_customer_vocation_operation_tablelayout"
+        android:layout_centerInParent="true" >
+
+        <Button
+            android:id="@+id/previous_btn"
+            android:layout_width="70dip"
+            android:layout_height="40dip"
+            android:background="#666666"
+            android:text="@string/previous_btn_text"
+            android:textColor="@color/white" />
+
+        <View
+            android:id="@+id/pre_next_divide_view"
+            android:layout_width="1px"
+            android:layout_height="40dip"
+            android:layout_toRightOf="@id/previous_btn"
+            android:background="#333333" />
+
+        <Button
+            android:id="@+id/page_info_btn"
+            android:layout_width="70dip"
+            android:layout_height="40dip"
+            android:layout_toRightOf="@id/pre_next_divide_view"
+            android:background="#666666"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="70dip"
+            android:layout_height="40dip"
+            android:layout_toRightOf="@id/page_info_btn"
+            android:background="#333333"
+            android:text="@string/next_btn_text"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/jump_btn"
+            android:layout_width="70dip"
+            android:layout_height="40dip"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@id/next_btn"
+            android:background="#666666"
+            android:text="@string/jump_btn_text"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

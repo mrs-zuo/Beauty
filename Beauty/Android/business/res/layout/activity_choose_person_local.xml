@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ChoosePersonLocalActivity" 
+    android:background="@color/white">
+
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg" >
+
+        <ImageView
+            android:id="@+id/choose_person_local_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_backbutton" 
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+
+    <!--  
+    <SearchView
+        android:id="@+id/choose_person_search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/search_person_text" >
+    </SearchView>
+     -->
+
+  	<RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/choose_person_local_title_text"
+            style="@style/activity_title_text_attrs"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ListView
+            android:id="@+id/choose_person_local_list_view"
+            style="@style/activity_content_listview_attrs"
+            android:layout_marginBottom="@dimen/choose_person_margin_bottom_size"
+             />
+
+        <Button
+            android:id="@+id/choose_local_make_sure_btn"
+            style="@style/submit_big_btn"
+            android:layout_alignParentBottom="true"
+            android:text="@string/ok"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

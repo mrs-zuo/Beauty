@@ -1,0 +1,212 @@
+﻿@{
+    List<Model.Table_Model.Branch_Model> listBranch = new List<Model.Table_Model.Branch_Model>();
+    if (ViewBag.BranchList != null)
+    {
+        listBranch = ViewBag.BranchList;
+    }
+
+    List<Model.View_Model.AccountListForWeb_Model> listAccount = new List<Model.View_Model.AccountListForWeb_Model>();
+    if (ViewBag.AccountList != null)
+    {
+        listAccount = ViewBag.AccountList;
+    }
+
+    Model.View_Model.AccountInfo_Model mCountInfo = new Model.View_Model.AccountInfo_Model();
+    if (ViewBag.AccountCountInfo != null)
+    {
+        mCountInfo = ViewBag.AccountCountInfo;
+    }
+
+    int loginId = 0;
+    if (ViewBag.loginId != null)
+    {
+        loginId = ViewBag.loginId;
+    }
+
+    int roleId = 0;
+    if (ViewBag.RoleID != null)
+    {
+        roleId = ViewBag.RoleID;
+    }
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 11)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>员工列表</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>员工列表</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择门店:</div>
+                    <select class="select-control" id="ddl_branchID" onchange="SearchAccount()">
+                        @{
+                            if (listBranch != null && listBranch.Count > 0)
+                            {
+                                foreach (Model.Table_Model.Branch_Model item in listBranch)
+                                {
+                            <option value="@(item.ID)">@(item.BranchName)</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择状态:</div>
+                    <select class="select-control" id="ddl_flag" onchange="SearchAccount()">
+                        <option value="-1">全部</option>
+                        <option value="1">激活</option>
+                        <option value="0">停用</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input id="txtInputSearch" type="text" class="form-control" style="min-width: 195px;" placeholder="请输入名字/手机号/员工编号">
+                    <span class="input-group-btn">
+                        <a class="btn btn-default" onclick="SearchAccount()"><i class="fa fa-search"></i></a>
+                    </span>
+                </div>
+                <a onclick="isCanAddAccount()" class="btn btn-default"><i class="fa fa-plus-square"></i>添加员工</a>
+                <div class="input-group item-time FR PT10 PR10 Font18px databox-number">
+                    @if(mCountInfo != null){
+                    <span class="databox-number sky">@(mCountInfo.UsedCount)</span>
+                    <span class="databox-text darkgray">/</span>
+                    <span class="databox-text darkgray">@(mCountInfo.MaxCount)</span>
+                    }else{
+                    <span class="databox-number sky">0</span>
+                    <span class="databox-text darkgray">/</span>
+                    <span class="databox-text darkgray">0</span>
+                    
+                    }
+
+                </div>
+            </div>
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-5">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>员工信息</th>
+                            <th>角色</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int index = 1;
+                            foreach (Model.View_Model.AccountListForWeb_Model item in listAccount)
+                            {
+                                if (item.UserID != loginId || roleId == -1)
+                                {
+                            <tr>
+                                <td>@(index)</td>
+                                <td>
+                                    <div class="over-text">
+                                        @if (item.HeadImageFile == "")
+                                        {
+                                            item.HeadImageFile = "/assets/img/pic70.png";
+                                        }
+                                        <img data-original="@(item.HeadImageFile)"  name="accHead" alt="" class="pull-left img-thumbnail s-img">
+                                        姓名：@(item.Name)<br>
+                                        编号：@(item.Code)<br>
+                                        账户名：@(item.Mobile)<br>
+                                        归属门店：@(item.BranchCount)<br>
+                                        @*【职称:@(item.Title)】<br>
+                                    【科室:@(item.Department)】<br> 
+                                    【擅长:@(item.Expert)】*@
+                                    </div>
+                                </td>
+                                <td>@(item.roleName)</td>
+                                @if (item.Available)
+                                {
+                                    <td>激活</td>
+                                }
+                                else
+                                {
+                                    <td>停用</td>
+                                }
+                                <td>
+                                    <a href="/Account/EditAccount?UserID=@(item.UserID)&BranchSelect=0" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                    <a href="/Account/AccountPassword?UserID=@(item.UserID)" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i>修改密码</a>
+                                </td>
+
+                            </tr>
+                                index++;
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            @*            <nav>
+                <ul class="pagination">
+                    <li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>*@
+
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="~/Script/Account.js"></script>
+<script src="/assets/js/jquery.lazyload.min.js"></script>
+<script>
+    $(function () {
+        $('img[name="accHead"]').lazyload({
+            effect: "fadeIn"
+        });
+    });
+
+</script>

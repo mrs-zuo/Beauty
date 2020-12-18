@@ -1,0 +1,146 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/payment_action_weixin_mode_title_text"
+            style="@style/activity_title_text_attrs" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_third_part_name" />
+
+                    <TextView
+                        android:id="@+id/payment_action_third_part_name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_net_trade_no" />
+
+                    <TextView
+                        android:id="@+id/payment_action_net_trade_no_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/payment_action_product_name_text"
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:textColor="@color/black" 
+                        android:singleLine="true"
+                        android:text="@string/ellipsis"/>
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_amount" />
+
+                    <TextView
+                        android:id="@+id/payment_action_total_amount_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/payment_action_weixin_scan_code_tablelayout"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/payment_action_third_part_qr_code_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true" 
+                        android:contentDescription="@string/search"/>
+
+                    <TextView
+                        android:id="@+id/payment_action_third_part_qr_code_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/payment_action_third_part_qr_code_image"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal" >
+                <Button
+                    android:id="@+id/payment_action_weixin_next_btn"
+                    style="@style/submit_big_btn"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:text="@string/payment_action_weixin_next_btn_text"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

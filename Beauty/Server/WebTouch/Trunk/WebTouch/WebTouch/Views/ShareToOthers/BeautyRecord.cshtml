@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+    int CompanyID = 0;
+    if (ViewBag.CompanyID != null)
+    {
+        CompanyID = ViewBag.CompanyID;
+    }
+    Model.View_Model.CustomerTGPic model = new Model.View_Model.CustomerTGPic();
+    model = Model;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="no" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
+        <link href="/css/main.css" rel="stylesheet" />
+        <link href="/css/layout.css" rel="stylesheet" />
+        <style>
+        .bkgColor1 {
+            background-color: @(ViewBag.CompanyStyle);
+        }
+        .color1 {
+            color: @(ViewBag.CompanyStyle);
+        }
+        .borderPink {
+            border: 1px solid @(ViewBag.CompanyStyle);
+        }
+    </style>
+    </head>
+    <body>
+    <div class="header bkgColor1 positionR">
+        <a class="positionL headerLeftIcon">
+            <img height="45"></a><span>美丽记录分享</span><a class="positionL headerRightIcon" href="/Home/Index?co=@(CompanyID)"><img src="/pic/homeIcon.png" height="45"></a>
+    </div>
+
+    @if (model != null)
+    {
+        <div class="width100 whiteBkg MB80">
+            <div class="width90 blockC rowU5 FL textL MB10 clearfix">
+                <span class="fl rowU5-title width100 borderB clearfix">
+                    <span class="block fl"><i class="MR10">@(model.ServiceName)</i></span>
+                </span>
+                <span class="fl rowU5-title width100 borderB clearfix">
+                    <span class="block fl"><i>@(model.TGStartTime)</i></span>
+                    <span class="block fr"><i>@(model.BranchName)</i></span>
+                </span>
+                @if (model.TGPicList != null && model.TGPicList.Count > 0)
+                {
+                    <span class="fl rowU5-onepic width100 PT5 borderB textC ">
+                        @foreach (Model.View_Model.CustomerTGPicList item in model.TGPicList)
+                        {
+                            <span>
+                                <img class="Bradius0" src="@(item.ImageURL)"><i>@(item.ImageTag)</i></span>
+                        }
+                    </span>
+                }
+                <span class="fl width98 PT5 PB5  lineHeight1_5x ">@(model.Comments)
+                </span>
+    
+            </div>
+        </div>
+    }
+</body>
+</html>

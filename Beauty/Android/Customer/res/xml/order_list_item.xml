@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/order_list_item_to_order_detail_table_layout_btn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/order_list_item_child_cell_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="14dp"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/order_list_item_left_child_cell_order_time_text"
+            android:layout_width="@dimen/order_responsible_person_name_max_width"
+            android:layout_height="@dimen/text_height_16dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_size_normal" 
+            android:layout_marginTop="5dip"
+            />
+        <TextView
+            android:id="@+id/order_list_item_left_child_cell_product_name_text"
+            android:layout_width="@dimen/relative_layout_right_child_attrs_maxwidth"
+            android:layout_height="@dimen/text_height_16dp"
+            android:layout_below="@id/order_list_item_left_child_cell_order_time_text"
+            android:layout_marginTop="5dip"
+            android:singleLine="true"
+            android:text="..."
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:id="@+id/order_list_item_left_child_cell_order_price"
+            android:layout_width="@dimen/order_responsible_person_name_max_width"
+            android:layout_height="@dimen/text_height_16dp"
+            android:layout_below="@id/order_list_item_left_child_cell_product_name_text"
+            android:layout_marginTop="5dip"
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:id="@+id/order_list_item_right_child_cell_responsible_person_name"
+            android:layout_width="@dimen/order_responsible_person_name_max_width"
+            android:layout_height="@dimen/text_height_16dp"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:maxWidth="@dimen/order_responsible_person_name_max_width"
+            android:singleLine="true"
+            android:text="..."
+            android:textSize="@dimen/text_size_normal" 
+            android:layout_marginTop="5dip"
+            />
+        <TextView
+            android:id="@+id/order_list_item_right_child_cell_order_product_count"
+            android:layout_width="@dimen/order_responsible_person_name_max_width"
+            android:layout_height="@dimen/text_height_16dp"
+            android:layout_below="@id/order_list_item_right_child_cell_responsible_person_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dip"
+            android:gravity="right"
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:id="@+id/order_list_item_right_child_cell_order_status"
+            android:layout_width="@dimen/order_responsible_person_name_max_width"
+            android:layout_height="@dimen/text_height_16dp"
+            android:layout_below="@id/order_list_item_right_child_cell_order_product_count"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dip"
+            android:gravity="right"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+</TableLayout>

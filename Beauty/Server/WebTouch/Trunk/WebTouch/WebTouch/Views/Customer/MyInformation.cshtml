@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "我的资料";
+    Model.View_Model.CustomerBasic_Model model = Model;
+}
+
+
+@if (model != null )
+{
+    <div class="wrapper whiteBkg">
+        <div class="width100 blockC textL">
+            <ul class="width90 rowUl5 blockC">
+                <li class="borderB PTB15 clearfix">
+                    <div class="blackTex fl MT40">头像</div>
+                    <div class="grayTex textR fr">
+                        <div class="myphotoArea bkgColor1">
+                            <img src="@(model.HeadImageURL == "" ? "/pic/nopicbg.jpg" : model.HeadImageURL)" /> 
+                        </div>
+                    </div>
+                </li>
+                <li class="borderB PTB15 clearfix">
+                    <div class="blackTex fl">姓名</div>
+                    <div class="grayTex textR fr">@(model.CustomerName)</div>
+                </li>
+                <li class="borderB PTB15 clearfix">
+                    <div class="blackTex fl">性别</div>
+                    @if (model.Gender == 0)
+                    {
+                        <div class="grayTex textR fr">女</div>
+                    }
+                    else
+                    {
+                        <div class="grayTex textR fr">男</div>
+                    }
+                </li> 
+
+                <li class="borderB PTB15 clearfix">
+                    <div class="blackTex fl">会员号</div>
+                    <div class="grayTex textR fr">@(model.LoginMobile)</div>
+                </li>
+                <li class="borderB whiteBkg clearfix">
+                    <h4 class="borderB PB15 PT15">专属顾问</h4>
+                    <div class="width98 fr">
+                        <div class="blockC">
+                            <ol class="width100 rowUl PL20Ul">
+                                @foreach (Model.View_Model.CustomerBasicBranch_Model item in model.BranchList)
+                                {
+                                    <li class="ML10 borderB clearfix ">
+                                        <a href="/Company/ConsultantDetail?a=@(item.ResponsiblePersonID)&b=@(item.BranchID)">
+                                            <div class="blackTex fl">@(item.BranchName)</div>
+                                            <span class="fr">
+                                                <img src="/pic/rightArrow.png" height="20"></span>
+                                            <div class="grayTex textR fr MR10">@(item.ResponsiblePersonName)</div>
+                                        </a>
+                                    </li>
+                                }
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="width90 blockC MT30 MB30"><a class="btnLarge bkgColor1 width100" href="/Customer/EditInformation">编辑</a></div>
+}

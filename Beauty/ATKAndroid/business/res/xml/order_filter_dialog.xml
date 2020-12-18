@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/classify_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="@string/order_classify"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="20dip">
+            <RadioGroup
+                android:id="@+id/order_classify_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/classify_title"
+                android:contentDescription="分类"
+                android:orientation="horizontal" >
+                <RadioButton
+                    android:id="@+id/all_classify_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/order_classify_all"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/service_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_classify_service"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/commodity_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_classify_commodity"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+            </RadioGroup>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="1dp"
+        android:background="#CCCCCC" >
+    </View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/status_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="@string/order_status"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="20dip">
+            <RadioGroup
+                android:id="@+id/order_status_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/status_title"
+                android:contentDescription="分类"
+                android:orientation="horizontal" >
+                <RadioButton
+                    android:id="@+id/all_status_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/order_classify_all"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/order_proceed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_classify_status_1"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/order_processing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_classify_status_4"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/order_complete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_classify_status_2"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/order_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_classify_status_3"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+            </RadioGroup>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="1dp"
+        android:background="#CCCCCC" >
+    </View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/pay_status_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="@string/order_pay_status"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="20dip">
+            <RadioGroup
+                android:id="@+id/order_pay_status_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pay_status_title"
+                android:contentDescription="分类"
+                android:orientation="horizontal" >
+                <RadioButton
+                    android:id="@+id/all_pay_status_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/order_classify_all"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/order_no_paied"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_pay_status_2"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/order_part_paied"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_pay_status_3"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/order_paied"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_pay_status_1"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+            </RadioGroup>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".SettingActivity" >
+
+    <RelativeLayout
+        android:id="@+id/person_message_relativelayout"
+        style="@style/table_layout_attrs"
+        android:padding="14dp" >
+
+        <TextView
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/person_message"
+            android:textColor="@color/text_color" />
+
+        <ImageView
+            style="@style/relative_layout_right_child_attrs"
+            android:contentDescription="@string/search"
+            android:src="@drawable/join_in_arrowhead_gray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_one"
+        style="@style/table_layout_attrs"
+        android:padding="14dp" >
+
+        <TextView
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/password_setting"
+            android:textColor="@color/text_color" />
+
+        <ImageButton
+            android:id="@+id/arrowhead"
+            style="@style/relative_layout_right_child_attrs"
+            android:background="@drawable/join_in_arrowhead_gray"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_four"
+        style="@style/table_layout_attrs"
+        android:padding="14dp" >
+
+        <TextView
+            android:id="@+id/company_select"
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/company_select"
+            android:textColor="@color/text_color" />
+
+        <ImageButton
+            android:id="@+id/arrowhead_four"
+            style="@style/relative_layout_right_child_attrs"
+            android:background="@drawable/join_in_arrowhead_gray"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/check_new_version_layout"
+        style="@style/table_layout_attrs"
+        android:padding="14dp" >
+
+        <TextView
+            android:id="@+id/check_new_version"
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/check_new_version"
+            android:textColor="@color/text_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_two"
+        style="@style/table_layout_attrs"
+        android:padding="14dp" >
+
+        <TextView
+            android:id="@+id/about_us"
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/about_us"
+            android:textColor="@color/text_color" />
+
+        <ImageButton
+            android:id="@+id/arrowhead_two"
+            style="@style/relative_layout_right_child_attrs"
+            android:background="@drawable/join_in_arrowhead_gray"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:background="@xml/shape_corner_round_red"
+        android:padding="14dp" >
+
+        <TextView
+            android:id="@+id/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/exit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+</LinearLayout>

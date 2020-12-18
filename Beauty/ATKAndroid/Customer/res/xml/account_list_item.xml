@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    			 style="@style/relative_layout_has_child_attrs"
+   				 android:orientation="horizontal" >
+    <com.glamourpromise.beauty.customer.custom.view.CircleImageView
+        android:id="@+id/account_headimage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:id="@+id/account_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/account_headimage"
+        android:maxWidth="@dimen/account_title_max_width"
+        android:layout_marginLeft="14dip"
+        android:singleLine="true"
+        android:text="..."
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal"/>
+
+    <ImageView
+        android:id="@+id/arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/join_in_arrowhead_gray" />
+     <TextView
+        android:id="@+id/account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_toLeftOf="@id/arrowhead"
+        android:layout_marginRight="14dp"
+        android:singleLine="true"
+        android:maxWidth="150dp"
+        android:text="..."
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal" />
+</RelativeLayout>

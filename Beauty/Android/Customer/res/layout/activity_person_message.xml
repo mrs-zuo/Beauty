@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PersonMessageActivity" >
+
+    <TableLayout style="@style/table_layout_attrs" >
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/head_image"
+                android:textColor="@color/text_color" />
+
+            <ImageView
+                android:id="@+id/head_iamge"
+                android:layout_width="@dimen/setting_head_image_size"
+                android:layout_height="@dimen/setting_head_image_size"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/search" />
+        </RelativeLayout>
+
+        <View style="@style/divide_view" />
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/person_message_name"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/person_message_name_text"
+                style="@style/relative_layout_right_child_attrs"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <View style="@style/divide_view" />
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/person_message_gender"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/person_message_gender_text"
+                style="@style/relative_layout_right_child_attrs"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <View style="@style/divide_view" />
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/person_message_login_mobile"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/person_message_login_mobile_text"
+                style="@style/relative_layout_right_child_attrs"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <View style="@style/divide_view" />
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/person_message_responsible_person"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                style="@style/relative_layout_right_child_attrs"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/person_message_responsible_person_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/person_message_edit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:background="#D5C5B5"
+        android:text="@string/person_message_edit_btn_text"
+        android:textSize="@dimen/text_size_normal"
+        android:textColor="@color/white" />
+
+</LinearLayout>

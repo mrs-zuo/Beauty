@@ -1,0 +1,173 @@
+﻿@{
+   
+}
+
+<link href="~/assets/css/skins/layerModel.css" rel="stylesheet" />
+<div class="page-container" id="divContent">
+    
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 32)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li class="active">收支项目</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>收支项目</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <div class="page-body">
+            <div class="widget-body no-padding">
+                <div class="row">
+                    <!--大项目开始-->
+                    <div class="col-xs-1" style="width: 20px;"></div>
+                    <div class="col-xs-7 margin-top-20" style="width:30%;min-height:650px;">
+                        <a onclick="addInOutItem(1)" class="btn btn-default"><i class="fa fa-plus-square"></i>添加大项目</a>
+                        <table id="RevenueInItemA" class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table class="table">
+                                            <colgroup class="row">
+                                                <col class="col-xs-5">
+                                                <col class="col-xs-7">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>项目名称</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="InOutItemAList">
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--大项目结束-->
+                    <!--中项目开始-->
+                    <div class="col-xs-7 margin-top-20" style="width:30%;min-height:200px;">
+                        <a onclick="addInOutItem(2)" class="btn btn-default"><i class="fa fa-plus-square"></i>添加中项目</a>
+                        <table id="RevenueInItemB" class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table class="table">
+                                            <colgroup class="row">
+                                                <col class="col-xs-5">
+                                                <col class="col-xs-7">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>项目名称</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="InOutItemBList" >
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--中项目结束-->
+                    <!--小项目开始-->
+                    <div class="col-xs-7 margin-top-20" style="width:30%;min-height:650px;">
+                        <a onclick="addInOutItem(3)" class="btn btn-default"><i class="fa fa-plus-square"></i>添加小项目</a>
+                        <table id="RevenueInItemC" class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table class="table">
+                                            <colgroup class="row">
+                                                <col class="col-xs-5">
+                                                <col class="col-xs-7">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>项目名称</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="InOutItemCList">
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--小项目结束-->
+                </div>
+                
+               
+            </div>
+    </div>
+</div>
+</div>
+<!--弹窗编辑开始-->
+<div id="demo1" style="display:none;width:400px;height:200px;">
+    <div class="form-horizontal form-bordered widget-body">
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">
+                项目名称
+                <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+            </label>
+            <div class="col-sm-9">
+                <input type="text" placeholder="输入项目名称" id="InOutItemName" class="form-control">
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-primary" onclick="saveInOutItem()">保 存</a>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+<!--弹窗编辑结束-->
+<input type="hidden" id="ItemType" />
+<input type="hidden" id="ItemNum" />
+<input type="hidden" id="ItemID" />
+<script src="/Script/jquery.layerModel.js"></script>
+<script src="/Script/InOutItem.js"></script>
+<script src="/assets/js/jquery.lazyload.min.js"></script>

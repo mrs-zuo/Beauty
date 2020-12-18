@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgrey"
+    android:orientation="vertical" >
+    <Button  
+        android:id="@+id/order_filter_list_title"  
+        android:layout_width="200dp"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentLeft="true"  
+        android:layout_alignParentTop="true"  
+        android:paddingRight="70dp"  
+        android:text="@string/order_filter_list_item1" />  
+  
+    <Button  
+        android:id="@+id/order_filter_list_all"  
+        android:layout_width="200dp"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentLeft="true"  
+        android:layout_below="@+id/button2"  
+        android:paddingRight="70dp"  
+        android:text="@string/order_filter_list_item2" />  
+  
+    <Button  
+        android:id="@+id/order_filter_list_complete"  
+        android:layout_width="200dp"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentLeft="true"  
+        android:layout_below="@+id/button3"  
+        android:paddingRight="70dp"  
+        android:text="@string/order_filter_list_item3" /> 
+       
+        <Button  
+        android:id="@+id/order_filter_list_payment"  
+        android:layout_width="200dp"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentLeft="true"  
+        android:layout_below="@+id/button3"  
+        android:paddingRight="70dp"  
+        android:text="@string/order_filter_list_item4" />  
+        <Button  
+        android:id="@+id/order_filter_list_notpayment"  
+        android:layout_width="200dp"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentLeft="true"  
+        android:layout_below="@+id/button3"  
+        android:paddingRight="70dp"  
+        android:text="@string/order_filter_list_item5" />  
+        <Button  
+        android:id="@+id/order_filter_list_cancel"  
+        android:layout_width="200dp"  
+        android:layout_height="wrap_content"  
+        android:layout_alignParentLeft="true"  
+        android:layout_below="@+id/button3"  
+        android:paddingRight="70dp"  
+        android:text="@string/order_filter_list_item6" />  
+
+</LinearLayout>

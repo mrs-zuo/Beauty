@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.CustomerDetailActivity" >
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/customer_detail_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/customer_detail_info" />
+
+        <ImageButton
+            android:id="@+id/customer_detail_edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/customer_detail_edit"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/customer_detail_basic_tablelayout"
+                style="@style/activity_content_table_attrs" >
+                <RelativeLayout
+                    android:id="@+id/customer_detail_birthday_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_detail_birthday" />
+
+                    <TextView
+                        android:id="@+id/customer_detail_birthday_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/after_customer_detail_birthday_divide_view"
+                    style="@style/activity_content_divide_view_attrs" 
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:id="@+id/customer_detail_height_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_detail_height" />
+
+                    <TextView
+                        android:id="@+id/customer_detail_height_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/after_customer_detail_height_divide_view"
+                    style="@style/activity_content_divide_view_attrs" 
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:id="@+id/customer_detail_weight_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" 
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_detail_weight" />
+
+                    <TextView
+                        android:id="@+id/customer_detail_weight_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/after_customer_detail_weight_divide_view"
+                    style="@style/activity_content_divide_view_attrs" 
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:id="@+id/customer_detail_blood_type_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" 
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_detail_blood" />
+
+                    <TextView
+                        android:id="@+id/customer_detail_blood_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/after_customer_detail_blood_divide_view"
+                    style="@style/activity_content_divide_view_attrs" 
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:id="@+id/customer_detail_marriage_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" 
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_detail_marriage" />
+
+                    <TextView
+                        android:id="@+id/customer_detail_marriage_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/after_cutomer_detail_marriage_divide_view"
+                    style="@style/activity_content_divide_view_attrs" 
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:id="@+id/customer_detail_profession_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" 
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_detail_profession" />
+
+                    <TextView
+                        android:id="@+id/customer_detail_profession_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:maxLength="20"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+            <TableLayout
+                android:id="@+id/customer_detail_remark_tablelayout"
+                style="@style/activity_content_table_attrs" 
+                android:visibility="gone">
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_remark" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                    <TextView
+                        android:id="@+id/customer_detail_remark_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:maxLength="300"
+                        android:minLines="3"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

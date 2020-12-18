@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "我的存单";
+    List<Model.View_Model.GetUnfinishOrder_Model> list = Model;
+}
+
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        @if (list != null && list.Count > 0)
+        {
+            <ul class="width100 pTB15">
+                @foreach (Model.View_Model.GetUnfinishOrder_Model item in list)
+                {
+                    <li class="borderB PT10">
+                        <h4 class="blackTex font16 MB10 longTex">@(item.ProductName)</h4>
+                        <ol class="width100">
+                            <li class="clearfix">
+                                <div class="fl grayTex">
+                                    <span class="MR10 block">@(item.OrderTime.ToString("yyyy-MM-dd HH:mm"))</span>
+                                    <span class="MT10 block">@(item.ResponsiblePersonName)</span>
+                                </div>
+                                <div class="fr grayTex">
+                                    @{
+                    if (item.ProductType == 0)
+                    {
+                        if (item.TGTotalCount == 0)
+                        {
+                                        <span class="MR10 block">完成@(item.TGFinishedCount)次/不限次</span>
+                                        <a class="MT5 block btnSmall bkgColor1 width120P pTB2P" href="/Appointment/CreateAppointment?oId=@(item.OrderID)&tk=2"  >预&nbsp;约</a>
+                        }
+                        else
+                        {
+                                        <span class="MR10 block">完成@(item.TGFinishedCount)次/共@(item.TGTotalCount)次</span>
+                                       if (item.TGTotalCount > item.TGExecutingCount + item.TGFinishedCount)
+                                        {
+                                            <a class="MT5 block btnSmall bkgColor1 width120P pTB2P" href="/Appointment/CreateAppointment?oId=@(item.OrderID)&tk=2">预&nbsp;约</a>
+                                        }
+                        }
+                    }
+                    else
+                    {
+                                        <span class="MR10 block">交付@(item.TGFinishedCount)件/共@(item.TGTotalCount)件</span>
+                    }
+                                    }
+                                </div>
+                            </li>
+                        </ol>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <div class="width100 textC PT30 PB30 MB60 clearfix">
+                <div class="MT10P MB10P ">
+                    <img src="/pic/noorderpic.png" height="100" class="graybkg borderRad50" /></div>
+                <p class=" MT10P PB30 grayTex">亲，您还木有订单噢~</p>
+                <div class="width90 blockC MB30 clearfix"><a class="btnMid borderPink width50 color1" href="/Home/Index">去转转</a></div>
+            </div>
+        }
+    </div>
+</div>
+<div class="goTopSite">
+    <ul class="tab">
+        <li>
+            <a class="goTtop bkgColor2 goTop" style="display: none;">
+                <div class="imgArea MT5">
+                    <img src="/pic/upArrow.png" height="35">
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+

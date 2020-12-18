@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:listSelector="@android:color/transparent"
+    android:paddingBottom="5dp" >
+    <TextView
+        android:id="@+id/send_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/chat_send_time_textSize" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" >
+        <com.glamourpromise.beauty.customer.custom.view.CircleImageView
+            android:id="@+id/thumbnail_image"
+            android:layout_width="@dimen/thumbnail_image_size"
+            android:layout_height="@dimen/thumbnail_image_size"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:focusable="false" />
+
+        <TextView
+            android:id="@+id/message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/thumbnail_image"
+            android:background="@drawable/dialogue_popo_white_bg"
+            android:maxWidth="@dimen/message_content_maxwidth"
+            android:autoLink="web"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:textColor="#000000"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+</LinearLayout>

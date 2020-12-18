@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/ecard_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/ecard_money_out_title_text" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <TableLayout
+                android:id="@+id/ecard_slaver_tablelayout"
+                style="@style/activity_content_table_attrs">
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/money_out_customer_name" />
+                    <TextView
+                        android:id="@+id/customer_name"
+                        android:layout_width="200dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View
+                    style="@style/activity_content_divide_view_attrs" >
+                </View>
+
+                <RelativeLayout 
+                    android:id="@+id/benefit_share_percent_layout_o"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+			        <TextView
+			            android:id="@+id/benefit_share_percent_textv_o"
+			            style="@style/activity_content_table_row_title_attrs"
+			            android:text="@string/benefit_share_percent" />
+			        <TextView
+			            android:id="@+id/benefit_share_percent_mark_o"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_alignParentRight="true"
+			            android:layout_centerVertical="true"
+			            android:layout_marginRight="5dip"
+			            android:text="@string/percent"
+			            android:textColor="@color/black"
+			            android:textSize="@dimen/text_size" />
+			
+			        <EditText
+			            android:id="@+id/benefit_share_percent_o"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_centerVertical="true"
+			            android:layout_marginRight="5dip"
+			            android:layout_toLeftOf="@id/benefit_share_percent_mark_o"
+			            android:background="@null"
+			            android:gravity="right"
+			            android:inputType="numberDecimal"
+			            android:minWidth="20dp"
+			            android:text="100"
+			            android:textColor="@color/gray"
+			            android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View
+                    android:id="@+id/benefit_person_divide_view"
+                    style="@style/activity_content_divide_view_attrs" >
+                </View>
+                <RelativeLayout
+                    android:id="@+id/ecard_money_out_benefit_person_layout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/payment_benefit_textv_o"
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/benefit_person_prompt" />
+                    <TextView
+			            android:id="@+id/payment_benefit_share_btn_o"
+						android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:background="@xml/shape_btn_blue"
+				        android:textColor="@color/white"
+				        android:textSize="@dimen/text_size"
+				        android:layout_marginLeft="15dip"
+			            android:layout_toRightOf="@id/payment_benefit_textv_o"
+			            android:layout_toEndOf="@id/payment_benefit_textv_o"
+			            android:text="@string/benefit_person_share"/>
+
+                    <TextView
+                        android:id="@+id/ecard_money_out_benefit_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:hint="@string/select_benefit_person_prompt"
+                        android:maxWidth="250dip"
+                        android:singleLine="true"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <RelativeLayout
+                style="@style/activity_content_table_attrs"
+                android:padding="8dp" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/money_out_balance" />
+
+                <TextView
+                    android:id="@+id/balance"
+                    android:layout_width="200dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/money_out_way_prompt" />
+                   
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:text="@string/money_out_way"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/money_out_amount_prompt" />
+
+                    <EditText
+                        android:id="@+id/money_out_amount"
+                        android:layout_width="200dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="@string/money_out_amount_hint"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:padding="8dp"
+                    android:text="@string/money_out_comment" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_two"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:paddingBottom="@dimen/layout_padding"
+                    android:paddingTop="@dimen/layout_padding" >
+
+                    <EditText
+                        android:id="@+id/comment_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#00000000"
+                        android:hint="@string/money_out_comment_hint"
+                        android:longClickable="false"
+                        android:maxLength="200"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/text_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/comment_edit"
+                        android:layout_marginRight="12dip"
+                        android:text="@string/money_out_comment_amount_prompt"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+                <Button
+                    android:id="@+id/make_sure_btn"
+                    style="@style/submit_big_btn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dip"
+                    android:text="@string/ok"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

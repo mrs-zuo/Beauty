@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "交易明细";
+    List<Model.View_Model.GetCardBalanceList_Model> balanceList = Model;
+}
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC">
+        @{
+            if (balanceList != null && balanceList.Count > 0)
+            {
+            <ul class="width100 rowUl">
+                @{
+                foreach (Model.View_Model.GetCardBalanceList_Model item in balanceList)
+                {
+                    <li class="borderB">
+                        <a href="/Account/TransactionDetail?id=@(item.BalanceID)&t=@(item.ChangeType)">
+                            <ol class="width100">
+                                <li class="clearfix">
+                                    <div class="fl grayTex width55">
+                                        <h4 class="blackTex font16 longTex">@(item.ActionModeName)</h4>
+                                        <p class="MT10"><span class="grayTex">@(item.CreateTime.ToString("yyyy-MM-dd HH:mm"))</span></p>
+                                    </div>
+                                    <div class="grayTex fr positionR width45">
+                                        <div class="MR30 textR">
+                                            @{
+                                                    if (item.Amount < 0)
+                                                    {
+                                                        <span class="redTex block texBold">@(item.Amount)</span>
+                                                    }
+                                                    else
+                                                    { 
+                                                        <span class="greenTex block texBold">+@(item.Amount)</span>
+                                                    }
+                                            }
+
+                                            <span class="ML5 MT10 block grayTex">@(item.Balance)</span>
+                                        </div>
+                                        <span class="rightArrowRow"><img src="/pic/rightArrow.png" height="20"/></span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </a>
+                    </li>
+                }
+                }
+            </ul>
+            }
+        }
+
+    </div>
+</div>

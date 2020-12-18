@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="5dip" 
+    android:background="@color/white">
+	<TextView
+        android:id="@+id/servicing_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/text_size" />
+	<TextView
+        android:id="@+id/servicing_service_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/servicing_product_name"
+        android:layout_alignLeft="@id/servicing_product_name"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/servicing_customer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/servicing_service_date_time"
+        android:layout_alignLeft="@id/servicing_service_date_time"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+     <ImageView
+        android:id="@+id/today_service_join_in_arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:src="@drawable/join_in_arrowhead"/>
+    <TextView
+        android:id="@+id/servicing_service_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/today_service_join_in_arrowhead"
+        android:layout_below="@id/servicing_product_name"
+        android:layout_marginRight="5dip"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/servicing_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/servicing_service_status"
+        android:layout_toLeftOf="@id/today_service_join_in_arrowhead"
+        android:layout_alignBottom="@id/servicing_customer_name"
+		android:layout_marginRight="5dip"    
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size" />
+   
+</RelativeLayout>

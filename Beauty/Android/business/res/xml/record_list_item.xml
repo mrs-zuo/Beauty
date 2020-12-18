@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@xml/shape_corner_round"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:background="@color/simple_blue">
+        <TextView
+            android:id="@+id/record_time"
+            style="@style/activity_content_table_row_title_attrs"
+            android:layout_marginLeft="10dip"
+            android:textColor="@color/white"/>
+        
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:maxWidth="150dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/white" />
+         
+        <ImageView
+            android:id="@+id/visiable_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/name"
+            android:layout_marginRight="5dip" />
+        <!-- <ImageButton
+            android:id="@+id/edit_record_btn"
+            style="@style/activity_title_button_attrs"
+            android:background="@drawable/record_detail_edit" />
+             -->
+    </RelativeLayout>
+    <View
+        style="@style/activity_content_divide_view_attrs"/>
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs">
+        <TextView
+            android:id="@+id/record_problem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dip"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/blue"
+            android:text="@string/customer_record_problem"/>
+        <TextView
+            android:id="@+id/record_problem_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/record_problem"
+            android:layout_marginTop="5dip"
+            android:textSize="@dimen/text_size" 
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+    <View
+        style="@style/activity_content_divide_view_attrs" 
+        android:layout_marginTop="8dip"/>
+
+    <RelativeLayout
+       	style="@style/activity_content_table_relativelayout_attrs">
+        <TextView
+            android:id="@+id/record_suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dip"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/blue"
+            android:text="@string/customer_record_suggestion"
+            />
+        <TextView
+            android:id="@+id/record_suggestion_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/record_suggestion"
+            android:layout_marginTop="5dip"
+            android:textSize="@dimen/text_size" 
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+    <View
+        style="@style/activity_content_divide_view_attrs" 
+        android:layout_marginTop="8dip"/>
+
+    <RelativeLayout
+       	style="@style/activity_content_table_relativelayout_attrs">
+        <ImageView
+            android:id="@+id/label_flag_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dip"
+            android:src="@drawable/note_label_icon" ></ImageView>
+        <TextView
+            android:id="@+id/label_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_toRightOf="@id/label_flag_prompt"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textSize="@dimen/text_size" 
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+</TableLayout>

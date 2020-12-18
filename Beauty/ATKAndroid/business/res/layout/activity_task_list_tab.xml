@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.TaskListTabActivity" >
+    <RelativeLayout
+        android:id="@+id/task_list_tab_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+        <cn.com.antika.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+        <cn.com.antika.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/task_list_tab_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        
+        android:background="@color/button_backcolor" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:orientation="horizontal"
+            android:padding="1dip" 
+            android:baselineAligned="false">
+            <LinearLayout
+                android:id="@+id/appointment_task_tab_ll"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dip" >
+                <TextView
+                    android:id="@+id/appointment_task_tab_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/appointment_task_tab_title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" >
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/visit_task_tab_ll"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dip"
+                android:saveEnabled="false" >
+                <TextView
+                    android:id="@+id/visit_task_tab_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/visit_task_tab_title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" >
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/task_list_tab_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/task_list_tab_linearlayout"
+        android:layout_below="@id/task_list_tab_head_layout"
+        android:padding="1dip" >
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

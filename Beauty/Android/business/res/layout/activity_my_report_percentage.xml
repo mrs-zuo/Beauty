@@ -1,0 +1,238 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".MyReportPercentageActivity">
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <RelativeLayout
+        style="@style/activity_title_layout_attrs" >
+        <TextView
+            style="@style/activity_title_text_attrs" 
+            android:text="@string/my_report_percentage_text"/>
+    </RelativeLayout>
+	<LinearLayout
+        android:id="@+id/filter_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="5dp">
+        <RelativeLayout
+            android:id="@+id/filter_period_relativelayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="8">
+            <TextView
+                android:id="@+id/report_by_other_start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="5dip"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_16sp" />
+            <TextView
+                android:id="@+id/report_by_other_date_divide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:layout_toRightOf="@id/report_by_other_start_date"
+                android:text="@string/report_by_other_date_divide"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_16sp" />
+            <TextView
+                android:id="@+id/report_by_other_end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/report_by_other_date_divide"
+                android:layout_centerVertical="true"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_16sp" />            
+        </RelativeLayout>
+        <Button
+            android:id="@+id/report_query_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+         	android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@xml/report_shape_btn_blue"
+            android:text="@string/my_report_query_btn_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16sp" 
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip" >
+        <TableLayout
+            style="@style/activity_content_table_attrs"
+            android:background="@color/white">
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_height="@dimen/report_relativelayout_height" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/service_and_product_sale_achievement"
+                    android:textSize="@dimen/text_size" 
+                    android:textColor="@color/blue"/>
+
+                <TextView
+                    android:id="@+id/service_and_product_sale_achievement_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_height="@dimen/report_relativelayout_height" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/service_and_product_sale_percentage"
+                    android:textSize="@dimen/text_size" 
+                    android:textColor="@color/blue"/>
+
+                <TextView
+                    android:id="@+id/service_and_product_sale_percentage_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_height="@dimen/report_relativelayout_height" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/service_operation_achievement"
+                    android:textSize="@dimen/text_size" 
+                    android:textColor="@color/blue"/>
+
+                <TextView
+                    android:id="@+id/service_operation_achievement_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_height="@dimen/report_relativelayout_height" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/service_operation_percentage"
+                    android:textSize="@dimen/text_size" 
+                    android:textColor="@color/blue"/>
+
+                <TextView
+                    android:id="@+id/service_operation_percentage_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_height="@dimen/report_relativelayout_height" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/ecard_sale_achievement"
+                    android:textSize="@dimen/text_size" 
+                    android:textColor="@color/blue"/>
+
+                <TextView
+                    android:id="@+id/ecard_sale_achievement_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_height="@dimen/report_relativelayout_height" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/ecard_sale_percentage"
+                    android:textSize="@dimen/text_size" 
+                    android:textColor="@color/blue"/>
+
+                <TextView
+                    android:id="@+id/ecard_sale_percentage_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

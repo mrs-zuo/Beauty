@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "抢购单详情";
+    Model.View_Model.GetRushOrderDetail_Model model = new Model.View_Model.GetRushOrderDetail_Model();
+    model = Model;
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+
+@if (model != null)
+{
+    <div class="wrapper MB60">
+        <div class=" whiteBkg width100 MB10">
+            <ul class=" width90 blockC PTB15 ">
+                <li class="clearfix">
+                    <div class="fl blackTex font16">编号</div>
+                    <div class="fr grayTex textR">No.&nbsp;@(model.RushOrderID)</div>
+                </li>
+                <li class="PT15 clearfix">
+                    <div class="fl blackTex font16">时间</div>
+                    <div class="fr grayTex textR">@(model.RushTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                </li>
+            </ul>
+        </div>
+        <div class=" whiteBkg width100 MB10">
+            <ul class=" width90 blockC PTB15 ">
+                <li class="clearfix">
+                    <div class="fl blackTex font16">@(model.BranchName)</div>
+
+                </li>
+                <li class="PT15 clearfix">
+                    <div class="fl blackTex font16 longTex">@(model.ProductPromotionName)</div>
+
+                </li>
+                <li class=" PT15 clearfix">
+                    <div class="clearfix">
+                        <div class="grayTex fl">@(CurrencySymbol)&nbsp;@(model.RushPrice.ToString("0.00"))</div>
+                        <div class="grayTex fr">*&nbsp;@(model.RushQuantity)</div>
+                    </div>
+                </li>
+                <li class="PT15 clearfix">
+                    <div class="blackTex fl">总价</div>
+                    <div class="grayTex fr">@(CurrencySymbol)&nbsp;@(model.TotalRushPrice.ToString("0.00"))</div>
+                </li>
+                <li class="PT15 clearfix">
+                    <div class="blackTex fl">支付状态</div>
+                    @if (model.PaymentStatus == 1)
+                    {
+                        <div class="blueTex fr">未支付</div>
+                    }
+                    else
+                    {
+                        <div class="blueTex fr">已支付</div>
+                    }
+
+                </li>
+            </ul>
+        </div>
+        @if (model.PaymentStatus == 2) { 
+		<div class=" whiteBkg width100 MB10">
+			<ul class=" width90 blockC PTB15 ">
+				<a class="block" href="/Order/OrderDetail?oId=@(model.OrderID)&t=@(model.ProductType)">
+				<li class="clearfix">
+					<div class="fl blackTex font16">订单详情</div>
+					<div class="fr grayTex textR">></div>
+				</li>
+				</a>
+			</ul>		
+		</div>
+        }
+        @*        <div class=" whiteBkg width100 MB10">
+            <ul class=" width90 blockC PTB15 ">
+                <a class="block" href="">
+                    <li class="clearfix">
+                        <div class="fl blackTex font16">第三方支付结果</div>
+                        <div class="fr grayTex textR">></div>
+                    </li>
+                </a>
+            </ul>
+        </div>*@
+
+    </div>
+
+    if (model.PaymentStatus == 1)
+    {
+        <div class="btnBtm width100 whiteBkg">
+            <ul class="width100 btnBtmUL1 clearfix">
+                <li class="width100 bkgColor1 fr ML15 textC font18"><a href="/RushOrder/PayRushOrder?ro=@(model.RushOrderID)" class="block whiteTex">支付</a></li>
+            </ul>
+        </div>
+    }
+}

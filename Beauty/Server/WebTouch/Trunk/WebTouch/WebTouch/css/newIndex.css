@@ -1,0 +1,50 @@
+@charset "UTF-8";
+html body{
+}
+#newIndex {
+    width: 100%;
+    margin: auto;
+    font-family:"微软雅黑";
+}
+.banner {
+    width: 100%;
+    height:300px;
+    overflow: hidden;
+    position: relative;
+   /* padding-bottom: 30px;*/
+}
+.banner .bannerUl {
+    z-index: 999;
+    position: absolute;
+    top:0;
+    width: 100%;
+}
+.banner .bannerUl li{
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+}
+.banner .bannerBtn {
+    position: absolute;
+    left: 50%;
+    z-index: 1000;
+    bottom: 0px;
+    height: auto;
+    width: auto;
+}
+.banner .bannerBtn li {
+    width: 15px;
+	height: 15px;
+    margin-right: 20px;
+    border-radius: 50px;
+    font-size: 0;
+    line-height: 0;
+    float: left;
+    cursor: pointer;
+}
+.banner .bannerBtn li.hover, .banner .bannerBtn li:hover {
+
+}

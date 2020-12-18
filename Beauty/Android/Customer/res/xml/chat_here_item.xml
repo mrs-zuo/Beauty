@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:listSelector="@android:color/transparent"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/send_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="55dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_size_normal" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/send_time"
+        android:layout_marginTop="5dp" >
+        <com.glamourpromise.beauty.customer.custom.view.CircleImageView
+            android:id="@+id/thumbnail_image"
+            android:layout_width="@dimen/thumbnail_image_size"
+            android:layout_height="@dimen/thumbnail_image_size"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:focusable="false" />
+        <TextView
+            android:id="@+id/message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/thumbnail_image"
+            android:background="@drawable/dialogue_popo_green_bg_2"
+            android:maxWidth="@dimen/message_content_maxwidth"
+            android:autoLink="web"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:textColor="#000000"
+            android:textSize="@dimen/text_size_normal"/>
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" 
+            android:minWidth="25dp"
+            android:maxWidth="25dp"
+            android:minHeight="25dp"
+            android:maxHeight="25dp"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/send_message_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" 
+            android:background="@drawable/send_message_error"
+            android:focusable="false" 
+            android:visibility="gone"/>
+    </RelativeLayout>
+</RelativeLayout>

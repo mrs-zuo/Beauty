@@ -1,0 +1,336 @@
+2015-09-23 10:17:28[6] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:17:28
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=p0oqsmtuj2yohey1aaau0akh; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5Yick4cZ6LDwvxq6DGg0kNEhcBo2eASbASnABpzxO/14UHdDZkiVHvUcbhlYH95yvtyzqlo9LTYBD6PVsg/vAGZSTPAG5+oy69lTt87a/5i1Kadjh1ZCGKM/G8ZCrIBgWS8LzWO0DpnP4X11sHOMQUqDd9viyFHwEgJKdOgwlqGsuzKNTjlQ94QnX4Kl+CMhVkhlN+wUUYp9Wk4Us1PdfLzhrY5Xr3LYU7kl1u6O4/2leReCz96bzVvU3xd3BYpRGocBsKTg6PiPiSJEpPssXE3DglaZsm1JDLzFjaC7leoMGladEZSEM+JEpy1itB/G/XuOxQKTn4uZjhoSJQKaG7tciMge57KhdFJ3YGWYaHm4J1lN1EXYu2vuImLiCpUFrcybYG+8TEyvmeu3L42nXfLCBXuQQBg9S6EGIWNpg7ssgb1Ji3nY+IznToKHiMQyz1SWcBuOP0P9YAyrxhGmWvaHmv5q/+waIvMymyYQgoPzcuwyhkbDcucJDZJLEXbyFFcWa9h2DR0O31cF56U78TqxTbUIrMFDBONDjx4ROC2eZWsm8Ju9I+Bgt9ZzqhYVInmObltld7/85BdPn67Xw0e8HqhGZodDZ3ZQZEUzJKDrk1oHkkVeTO7pQxTwTFx9B5vjA0EYGPxmpdV9vZB2dja6qW8SDg/jOtqijTh2+Z1fDxe6PhDLeRUrB
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-23 10:17:30[13] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:17:30
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding:gzip, deflate, sdch
+Accept-Language:zh-CN,zh;q=0.8
+Cookie:ASP.NET_SessionId=sp5m54kghkhwyvogqr1cpqih; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5Yie2kQ+h0eYV7qyLt9/QvXr9MO/jGfapzudRYsyIuzqmdzPGXXo8iBVRrVU8B39PNMbJlDMCuDsKNE7+RU+MOHaH7NXR8c4dyBHXvP+L4SBBXm3BdL5tlaSgXJmSpoxDCrK7QnKACFLMrMLcctmQIXaTHEi+d1smksOSzgeDZTC98SV6bUdSzzogFDkW8lbOP29hThI5a77TVcQJ6v3cOE74JjV+L/9fbLh5ogKfzSgZzJ6e3u7bIh21fkPgO5EXlUWCw/45wTq5eMWF/YlgTB5KGIZ3rT9J7GnXz1SSdvhM6bXIaX2Kh0blV/V3CaI3wbjJMoDfBi4+KFoEWYZVZU4C9lnxPXQlFGK5PniL/xREOQBIEJbHVuHtFALv3Q/XwdB5JqoG9EhmgzZFgTWUZPVH6yUrPlV7ZdbayUPCMeSFk7k5CO76tyMnQtDAMuewTKzMmJ9ff1zvlNoCw9SJ6moNxLm6wc/dO9glf57UQsm5sUoyo425Gtl6iSuQTAvtmlj3qoLRnSpjEYg+8YurFOM8YjqUku5M3B1FXfen7sOZQWW1Ta0HlQPYvNbpOFoPXsPZhiXfsQatgVSfvFbWCDSDIeymQm3aT/S6uiWl7giZVRiYouU2zcQrSl27aR/bk7LkPViWb8abBXUWj35w37FfYwacL2xzv1aQu8dDfKFgccke41LMQGgX
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36
+
+
+2015-09-23 10:17:39[12] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:17:39
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=p0oqsmtuj2yohey1aaau0akh; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5Yie1uLl9xTI6/aFQoubT89y+Vn8j0hqhutm78N9dndckeKjJRnJB9OwuJVxk+oN1ZXUEqvSEDqJ9yVvhC/zgObG/Qxl00HjWIUUKSCtrJd76BXorpdAyUryQkVnhFXEJVeSiIN4dGeYWiIZVzZeHbo0tQTc49Xt8qKgqyj2LlER1pbAC1OS8vHXOo6DIs1cVoehYmQtN6jjNZpTBDH5c5LL9R2Vkdao3JfT8w26lcoISenfFZAGDaPuhkBzdCvvLaLnHm0zo8ze7kXDdCKykYfOLrtAWPRqE+5Uno4nMaX02STDoK93DjfOvy4BqzMrzmhH4dDuOAV6Yyyb9q/V2HGM5nCrZG+B8hXBXExbNSFP1mN3iHysaCwqdbAMoKtwOhRb1VA695o+L1dA08rSAe2c9qw1wmzOZV+7/46HdnS0P/mlj50SfnpcnYXacPxXqdYb+366UJdUTkSXK5jKpMLfXDvw8Ae8VhdJ0If4zt1Hwtcw8odAWK+KEftVLl0Umo4rblpQnSvTJHz8o+3IBNlxuhh38Iy+B9QJOmr7mwmYDiQByCpWVd/zCGiCmKEHGqNqZb3s1a/5S+2Jqf9sSYlzKV2OR0dEuX2xk39IG6j52mdJGREQZI+zE2ZIjsARiNVoZZZvgqYfXbVigYwX8z19NU/itDGzmL3JSbKhkRdYibXD6I7zo65Cj
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-23 10:17:51[13] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:17:51
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=p0oqsmtuj2yohey1aaau0akh; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YiclG80lx5+o73H4c87KuNDs3bpeJi3agpT+oXInU+Jp56Pd7F0MZRWdFrxvFMuRUxiNhjOdHs56Xk2qSlkGNfQhXDA1ODmkZB02KcY9jEwNkqWBMUog9fB3yQRRl8f8WshjQLiK7z+3z32nqawZwPR5wZ98Y93QCkpbGPRxaY4/NzcX3QYvprF2U/XzttlBFtWrIFh3/iDkm9Ntpi8dwqOvai4VRQaWoNAbJmElHzILBFUQlS1XLHxXDMm9gTszbZ3HJObuyj5xKz1nBQd8EzqM1DpOFalol+OSeEnM5ghBK8ylLl2KFTxL81TPvwKfcqFO914+HmClWzoJ3iS3clNdNWRlUz1Y3QbfZWq3gOATEXie54iRmIllhODaZgVd2gZdqyKjWXeTP5pJ7Z4p910iGnlBahEMulpo74tUmu2W1YNnqBCv9rWdCIEW90ZLTX0IHNcXbbEiQAspaPYqDJTi2isgYO6FTxnWVgm7Fp6MlENvu9WusV8xInzkahopGS4fStAlPc+ScMd/kyDabX7K7WABzYQ6U9zvfVGFFt/YhS+MIbFujUlD56QSFl4blKWqHZNgyz+kIt4CY+SeRs/W/9Z/2uMb3ZuvxUVPJNFuaJp1T3CJa+jf1X6EPKi4FtQBUWM14xvoc5JALpZYlthQmwEfparbGUr1Pse+sMydxR92+k3abrCJ
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-23 10:20:00[9] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:20:00
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=p0oqsmtuj2yohey1aaau0akh; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YieovAatACqDZxSaupXs/fNkeQy1ksCEyNE/A3i/DfrQWpnjkntT4cQQgPBELL3CHKT8pGvGDjRM9Ml/yOO3x7pNT1z+U65nXVK6ax7zo+UdvSwJyi4BA4dSWwdo5wm/NDPlBoDQTfEYngjUeBrrZlSVWjly3p3aZUGaWQAIBIQcPqzEJ2lrLULUM47frhTe9iGnjrRjYqYU5nVih7OkZAkSSpOlLquwftmt26DrhBsagEW7QMhEha8YQBe9A9DNmKzo80RtHWHvRBZSo4JeYxF9d2HBYuy2Tap5dlloKE8+84eucAM+wUqoHlfVs3GOrvALwBas/dGjZ4SPg9BmR7EMZDEhpUX5TtdiDiikQZRpWolR+jYpXa3qHz+0GnoRXDjEiuCspLz1fMbIQQ0UBMiqTPc2550BWl5D/CZsmAa8i1057XKRojUrrm0DtTmEphDDZNo1Z3QhoGzaOUy1QMOmnLbYgj0eIkggGrMfgVirs9vlPVWsszMl8T+DusZvVLsK0zBvqKJMtLfsI22ALAmkqKftuGy2xmMTIPGZaDbqSjOjHqb/pBAb8M0wQr1i6x3GixHZCGBDLsdrJQg+v+8QvZiRYOe8M7fcEJ4kBHuzrGVVrTRDq1iGzBTJ8dYpic3CBve9ItQrYYRCU6f3J/742ASUfq3v+jF6MEp9gTxPT4WjtFXopwuw
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-23 10:20:56[18] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:20:56
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=p0oqsmtuj2yohey1aaau0akh; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YieoDQkHx+kWB0WxbjxHkeC8MWAPb8RAOMPFH5iSfpmKPGgLlP5dBarnsYDoMr4B04j0x5Hf8Zd+i3KXVWVu954lA6XZTgQH1XH4obsgVFJnnkVczPw8lRP0tcfskdiHQMXdkdWjG/PJKU19A0Bquqr4MI/RFwj26pXOy4yCGWcDvwe1CGncDDIo59U0Zy3xQxdyDF0wUskGCPVEWA5qFGcvRcrCYYcHA5yxXT7T7Hdlrk8aO/z4cvTyN5LS8QTUC6o/fV8CZAzSWN+r9rVshkGfpS58es0e5k/5ZGLkr5cMqQSlaPDVb2j5aDhM/AmFahCOZhdYUAkaew/SviV2Mge5btx6y1ND8T+tTm/CN3zRuq6Zw43SaB1sIW3ptuZ2QifVKQDW34TZ62tKsGXJXgB3Vr21S2+38f1S/X1L65SfabeD2t7HHmPqqrTTDDUJrVRClxJ9BUQljwTV+pU79LLUIXCUIKmoZmyTGB5PEFh0t+wYf+HA9u7WPfte7n6GDxOnq/yVddQyVhtnjbrdt9XSTw5SyfyeB5b7JkMCY/1lPkLbr3ANGPO/ruuEkeqiYD1FQNe0w72IyJ8Y1TIsDv8IJZQdIO1rIFORTZ3n6JXHvAdj8xqZox6L2It40F9WAIecVS9ed4GcRRbUMHj+tcnfkWCmz++9Ysyx6hJFdqU++tqe2Dlwe0FV
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-23 10:25:48[9] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:25:48
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=p0oqsmtuj2yohey1aaau0akh; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5Yid1RXXCCoQOBhfC1X5WF4kixKOWNRwWY5PaXLaf6U689K/yToPsE7Qs6rKvmauqGolY08vo8ERFDu8mCohZRWtnxGjOEPeK0Np/F6JDkEmuHLG0AwSW+3b24zr79NcOOq2Xs/hZt+5iqnLbZQypJUeSJdUQYzmhid316jT94Y7aKo7nBoVFnLT2g8rCN8QVGOzMNp90xi1EvvfCmm0EZXhfPgeTQ5JJlr4u97dWbBOX/SxYV9JS9xuF6xnAywSukpUUN/2OyAJPqBcaCxpEFfPrhtGDPmdt/XzGJ+zCNUXJU647bUbXhX9L1flBXPVjRRKpXd7IuHk7LHtUjhzeBvrbczu09ddMdQrGNOLdJsMmQ76dVHO4EEiSwa6iTJPUdRib3q2SyHcHnyIkTjLYKEs+uQ3kt0b5UXi+mYye3Kg4sMxrS++fSYIgdFB9ZzQOe9a2ZNfrO0Jeegb0jIYbQgig2WVb1bdpvzYk+HDrdsUk1G30NgLU/adtiiIKVjMaM0QZ2KdKgzfIUJhCidUqIPl5C3bDY+YBpnGJAk5UeKdostBES15/3C3HyD/YPoZgHhloQ/tK1jxOeE3qxIHyImrZeEPN44ojWdqDMSyZtVUvZVjedNwaKVBBGh6yBHpmxptlnBx0gi3LcDHsOu4fbc5/WktSDuAdjxYjd3iqrAFWdR/V2Yb+oroh
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-23 10:27:33[27] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/23 10:27:33
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 249
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Home/index
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=p0oqsmtuj2yohey1aaau0akh; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YiennpJhbEZJPCfXWrr/o4DlP2qXz4x0fQ4ytXPrpfMPv4G8nMUw2FD9LIfSsk6IFSeeQYDLbPTBBqvHwE9zmCr83hFkAis/F6b5IxEzgUWHU3V1OtURvMpOgJwsy6BgAuawImtJNEBzKxcu1hRyVctlQQVyvz7xr4fGU47BaICzFxsllzPTyAoSqjRMFKX14TXubY7FBYfueACfFTpR/FSIN9fdHCR89Wpl3VWCaX1CH2wAzlb0rNNxzVT2VLG0RV7syD9UlLzs2gKhw2gk/RoQ5DUIzCVUElJxioboP9nk9Gk3nQu6xGYi1MGOyE0uIsP6l6ICBXCTAE9A0qnIebEFwujpp8T4Xl+N2ic52YXeEf4zh7fkohfT1udiKEIx992ojERZr53defy8Yr4BdIPwrfWJIxIfb47UV+xPcXViJoWQoob/T+vZBgLXVr8riflhqBmcbh8GfHrl3FK/iTIfiy/4XX5u4dvaGvKXv3KiC7iuPqh2BUNk70t8/YULTVTenOY8ZAnIeJAkf53roXS/3qbmRvET6nePl2bFemgsZUSv2Wm3ABgNOs5CwJRu0mFA03OBkjFUgWAHKlwkqeSXXG4sd9UYI6KLcColrXBABC+9yYHygd0OF5BDQq7CknZ2z3G6V/IMcluOZIYpt+c/9sywKIokGzBne1P5sZMlA+PrUBGsVNfq
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+

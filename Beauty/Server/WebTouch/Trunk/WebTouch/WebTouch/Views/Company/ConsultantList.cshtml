@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "服务团队";
+    int branchId = HS.Framework.Common.Safe.QueryString.IntSafeQ("b");
+    List<Model.View_Model.AccountList_Model> list = new List<Model.View_Model.AccountList_Model>();
+    list = Model;
+}
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width33_3 "><a href="/Company/BranchDetail?b=@(branchId)">门店介绍</a></li><li class="width33_3 "><a href="/Company/BranchPromotion?b=@(branchId)">促销一览</a></li><li class="width33_3 positionR">服务团队<span class="btmline bkgColor1"></span></li>
+        </ul>
+        @if (list != null && list.Count > 0)
+        {
+            <ul class="rowUl3"> 
+                @foreach (Model.View_Model.AccountList_Model item in list)
+                {
+                    <li class="borderB">
+                        <a href="/Company/ConsultantDetail?a=@(item.AccountID)">
+                            <div class="fl popUpImgArea MR20 borderRadius">
+                                <img src="@(item.HeadImageURL == "" ? "/pic/nopicbg.jpg" : item.HeadImageURL)" height="30" /> 
+                            </div>
+                            <div class="fl">@(item.Title)</div>
+                            <span class="fr MT5 ML5"><img src="/pic/rightArrow.png" height="20" /></span>
+                            <div class="fr">@(item.AccountName)</div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

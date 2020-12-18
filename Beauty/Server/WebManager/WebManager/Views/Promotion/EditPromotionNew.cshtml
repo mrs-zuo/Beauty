@@ -1,0 +1,296 @@
+﻿@{
+    bool isAdd = true;
+    Model.Table_Model.New_Promotion_Model model = new Model.Table_Model.New_Promotion_Model();
+    isAdd = ViewBag.IsAdd;
+
+    model = Model;
+    string branchhidcss = "";
+    if (model.PromotionCode == "" || model.PromotionCode == null)
+    {
+        branchhidcss = " hidden ";
+    }
+
+    int branchID = ViewBag.BranchID;
+
+    int active = ViewBag.active;
+    string promoActiveClass = "";
+    string branchActiveClass = "";
+    if (active == 0)
+    {
+        promoActiveClass = " active in ";
+        branchActiveClass = " ";
+    }
+    else
+    {
+        promoActiveClass = "  ";
+        branchActiveClass = " active in ";
+    }
+
+    List<Model.Table_Model.BranchSelection_Model> listBranch = new List<Model.Table_Model.BranchSelection_Model>();
+    if (ViewBag.BranchSelection != null)
+    {
+        listBranch = ViewBag.BranchSelection;
+    }
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSManger", true);
+    WebManager.Models.Cookie_Model cookieModel = new WebManager.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebManager.Models.Cookie_Model>(srtCookie);
+    }
+
+    int loginBranch = cookieModel.BR;
+
+    bool NoStart = model.StartDate > DateTime.Now.ToLocalTime() || string.IsNullOrEmpty(model.PromotionCode);
+
+    
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 4)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a></li>
+                <li><a href="/Promotion/GetPromotionListNew">促销列表</a></li>
+
+                @{
+                    if (model.PromotionCode == "" || model.PromotionCode == null)
+                    {
+                    <li class="active">添加促销</li>
+                    }
+                    else
+                    {
+                    <li class="active">编辑促销</li>
+                    }
+                }
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @{
+                    if (model.PromotionCode == "" || model.PromotionCode == null)
+                    {
+                    <h1>添加促销</h1>
+                    }
+                    else
+                    {
+                    <h1>编辑促销</h1>
+                    }
+                }
+
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i></a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i></a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i></a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="@(promoActiveClass)" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">
+                            @{
+                                if (model.PromotionCode == "" || model.PromotionCode == null)
+                                {
+                                 
+                                <text>添加促销</text>
+                                }
+                                else
+                                {
+                                   
+                                <text>编辑促销</text>
+                                }
+                            }
+                        </a></li>
+                    <li class="@(branchhidcss) @(branchActiveClass) " role="presentation">
+                        <a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile">选择门店</a></li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="home-tab" id="home" class="tab-pane fade @(promoActiveClass)" role="tabpanel">
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	开始时间
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <span class="input-icon icon-right time-layer">
+                                        <input id="txt_startDate" class="form-control date-picker" placeholder="开始时间"  onclick="@(NoStart? "laydate({ istime: true, format: 'YYYY-MM-DD  hh:mm:ss' })" : "" )" value="@(model.StartDate.ToString("yyyy-MM-dd HH:mm:ss"))" @(NoStart? "" :"readonly=readonly")>
+                                        <i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group no-border">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	结束时间
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <span class="input-icon icon-right time-layer">
+                                        <input id="txt_endDate" class="form-control date-picker" placeholder="结束时间" onclick="laydate({ istime: true, format: 'YYYY-MM-DD  hh:mm:ss' })"   value="@(model.EndDate.ToString("yyyy-MM-dd  HH:mm:ss"))">
+                                        <i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	促销展示位置
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <select id="ddlType" style="width: 100%;" @(NoStart? "" :"disabled='disabled'")>
+                                        <option value="1" @(model.Type == 1 ? "selected='selected'" : "")   />
+                                        顶部展示
+							            <option value="2" @(model.Type == 2 ? "selected='selected'" : "")/>
+                                        一览展示
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">促销类型</label>
+                                <div class="col-sm-4">
+                                    <select id="ddlPromotionType" style="width: 100%;"  @(model.PromotionCode != "" && model.PromotionCode != null ? "disabled='disabled'" :"" )>
+                                        @if (model.listPromotionRule != null && model.listPromotionRule.Count > 0)
+                                        {
+                                            foreach (Model.Table_Model.PromotionRule_Model item in model.listPromotionRule)
+                                            {
+                                                if (model.PromotionType == item.PromotionType)
+                                                { 
+                                            <option value="@(item.PromotionType)" selected='selected'   />@(item.PromotionTypeName)
+                                                }
+                                                else
+                                                {
+                                            <option value="@(item.PromotionType)" />@(item.PromotionTypeName)
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">促销主题</label>
+                                <div class="col-sm-10">
+                                    <textarea id="txt_Title" class="form-control" rows="6"  placeholder="输入促销主题"  @(NoStart? "" :"readonly=readonly")>@(model.Title)</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">促销内容</label>
+                                <div class="col-sm-10">
+                                    <textarea id="txt_Description" class="form-control" rows="6" placeholder="输入促销内容"  @(NoStart? "" :"readonly=readonly")>@(model.Description)</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	图片上传
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <!-- File Upload -->
+                                <div class="col-sm-10">
+                                    @Html.Partial("FileUpload", 2)
+                                </div>
+                                <input type="hidden" id="hid_imgUrl" value="@(model.ImageFile)" />
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <a class="btn btn-primary" onclick="EditPromo('@(model.PromotionCode)')">确 定</a>
+                                    <a class="btn btn-default" onclick="returnPromoList()">返 回</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade @(branchActiveClass) " role="tabpanel">
+                        <table class="table table-striped">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <table class="table table-hover table-striped ">
+                                    <colgroup class="row">
+                                        <col class="col-xs-12">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <td>
+                                                <label class="btn-group no-pm" title="全选">
+                                                    <input id="chkAll" name="chkAll" type="checkbox" onclick="selectAllBranch(this)" />
+                                                    <span class="text"><strong>门店名称</strong></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @if (listBranch.Count != null && listBranch.Count > 0)
+                                        {
+                                            string imgoldBranchs = "";
+
+                                            foreach (Model.Table_Model.BranchSelection_Model item in listBranch)
+                                            {
+
+                                                string ischecked = "";
+                                                if (item.IsExist)
+                                                {
+                                                    imgoldBranchs += "|" + item.BranchID;
+                                                    ischecked = " checked=\"checked\"";
+                                                }
+                                            <tr>
+                                                <td>
+                                                    <label class="btn-group no-pm">
+                                                        <input  name="imgBranchID" type="checkbox" value="@(item.BranchID)" @(ischecked)   />
+                                                        <span class="text">@(item.BranchName)</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                    
+                                            }
+                                            <input type="hidden" id="hid_imgOldBranchs" value="@(imgoldBranchs)">
+                                        }
+                                    </tbody>
+                                </table>
+                                <br>
+                                @if (loginBranch == 0)
+                                {
+                                    <button type="submit" class="btn btn-primary" onclick="submitBranch('@(model.PromotionCode)')">确 定</button>
+                                }
+                                <a class="btn btn-default" onclick="returnPromoList()">返 回</a>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+
+
+
+
+
+
+
+
+</div>
+<!--时间选择器脚本-->
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+<script src="/Script/PromotionNew.js"></script>

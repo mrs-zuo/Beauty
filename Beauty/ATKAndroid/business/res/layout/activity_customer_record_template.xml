@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.CustomerRecordTemplateActivity" >
+    <RelativeLayout 
+        android:id="@+id/record_template_list_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+        <cn.com.antika.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <cn.com.antika.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/customer_record_template_title_text"
+            style="@style/activity_title_text_attrs"
+            android:layout_alignParentLeft="true"
+            android:text="@string/customer_record_template_title"/>
+        <TextView 
+        	android:id="@+id/customer_record_template_page_info_text"
+         	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size"
+           android:layout_toRightOf="@id/customer_record_template_title_text"/>
+         <ImageView
+            android:id="@+id/add_new_customer_record_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/add_new_customer_record_btn" 
+            android:contentDescription="@string/search"/>
+          <ImageView
+            android:id="@+id/customer_record_advanced_search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/add_new_customer_record_btn"
+            android:layout_alignWithParentIfMissing="true"
+            android:src="@drawable/customer_advanced_filter_icon"
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+    <cn.com.antika.view.XListView
+        android:id="@+id/customer_record_template_list_view"
+        style="@style/activity_content_listview_attrs"
+        android:layout_marginTop="5dip"/>
+
+</LinearLayout>

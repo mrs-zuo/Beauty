@@ -1,0 +1,104 @@
+2015-05-08 17:08:47[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/8 17:08:47
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.BatchImportController.importProduct(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\BatchImportController.cs:行号 618
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.82
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=1
+RawUrl=/BatchImport/importProduct
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:54
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=nd5m40a4fvz3efp254qqcbqe; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfNL/MphpZ1RclY/euPtiuQ67oyNIasYP9j6piqaaGvp6iOHnTn1SBsCRyOQmw+M390R+ITvcJj36uGGsET9rkqnG9z/0YMXtkkPucOaDIPYcIB1hXo72TAMkD8FOVkITZ4bXkEvzPyT96rGEZAqCk9vl+CWxsN6b/rPq8ES375GlyWY/ZiAHdk/8aD8l7e3LPF1XLU4w6HwTlIp13k6Plbhux99EBcWx43dCYyH4Yo9ZKBmH2tQE2UhJCU4eFNqyFG3uJGF96hGAHI3VK307QSfm81QKXYZO1GhMPrvTeMojfhulK+WXioMnWCrOpGKHuqtNUxQe+5bRlPgSKSIaorwDuuv7B6ttgT9jOX3HA+xuUXUh88ATtupFx2s0uBd0+m/O2NkH6VJmhAD7urrZ46E6b2sGF5vjmxRUX9V54Pw4NNHb0KbEXvR+pLvmbFEHUrTgFjKQXeG+5yirQLveluvJ13wr+tMO0ygsFuKd1jMm/CxXXDbiCvVg8DWa6jw99ixkOrlhexul8SE5o7t7Ke3FJMoeBss28RoG/sgcwWWe8wN8uew1MlWsXOVqohp0HJx8zSF0n3OWgz4p2+Rdqi82ZOpwF3dWomP8X6hlDE/Rz8pEeVrgOh8HOHdgOeBllQWX4c1+BufFQ8H0jFFjPR8WqIWkvXJ4hEu+2hHi3fL17CDFS6XwQpQgLvImsGIM0XxIoperG31v8Zrqe0kjHL2y1Bcaa4TeQldRJXDT4SbH3crV45RA4rExqGLTbDovjlUpJqO7FlIPURbBEG3rZyB; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjw0D6eoQ4IAr5FMGnGJPDsweUvZ5tA1uYn2ePz0uBs/+tgdX5O6wd6OwlwqNU1Oc7L5/c9EgDUBaVx7+hE6KLKsfFp12BM+8tF2vLTIyF2ZquVOXqtXbcQH0sxEDpMpNG971InV3Yjnk7vqXnOAMHj+GSqUk/sSL9QRJ8aB+G/E2euWBS3V6pzYK90Zph4Cciljxf3Ox4a/izl38be9ep+yF+Iz51HC4fFUZQVohFVPkO5/tpyZnazsFs/2r7hmSqAiyrm9Tqind7PSnbu6osAZAPd+jSdd3zSBrCJIZI+NXqR8qVsFTQwFmqS8H9MLJJdFN4UKWaJt0ZOsS9dpr8B6xpnrYffEgiXeOsHrrDSCI7KP9EPY43xFWkBduu1dWqZQ+1qjvCjbulqJiVPdETDlpoG7dMZ4zhiTBvcuAVYaJL9ouklEU4VfkWtn5Dp/AAKswgzUpJjtRCkGK3cWY0mKtWJ9K0ibGXMDJYJSaRFKNa3huBIiVUCYXSnbxTLLLsocSKyOVURYTN5+WG8fzjaCYB3sND63T3sXflSUIcB/V2Y2wnufwTONQqy/YmQdfxlbzYjrNM3siMndT6cGx7XkRMkku4L6BAj2+/tSxwYVvHeHQxNDVP909L8zDIGU4FzZRFKQ1Jz3xi7XVdumCMt6d92oku0aMKg==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=1
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-08 18:14:11[11] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/8 18:14:11
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.CommodityController.updateCommodity(CommodityDetailOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\CommodityController.cs:行号 229
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.82
+UrlReferrer=http://www.webmanager.com/Commodity/EditCommodity?CD=1505080000000171
+RawUrl=/Commodity/updateCommodity
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:829
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=nd5m40a4fvz3efp254qqcbqe; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfMsMipPfkowSNppjP3xqscVslbEWgOPKoELMR7NLJbqj+ulzJaEvzpIOTvN2gHNBwokTSONKOaT2nIxjyF56eCHHo0QS5rrOYH5e1S4HOymh4kLj32hRLcm/UqFTXuXhYZ5z7pl4QiEUkyfdLLJ3uNAo8OBOzSYfX+nwkahqrcggtAtiE8qaVk6J9eeavIFAmOjjW70OFukwkk1nRF9Or0FBWP6vgCfvXzCoQaqqDEpg0JQ6MsfWwTGEaT0mtzHm4Vfi2gq2V+jv9w0MU+K1elrnlrW8tU3lH+TYyQ6YxQziQfNV8XH9MufUUHImuS7A/GSbJB1tIfGYYB8QKc745B35+FVkAasOIm9/WbVxrPF9BftftJkLatrM2//08GzF3iqb3S889qrespDq7oEvPin19XAGYVx4FDYchKmL9aznp6Avx9vEYghYFPSGnvhZ40kFzNd2JD2QWHzErCUaAndePYfSt796urxHnLdt2COjR3yOjB9VuO+xW3h6DN4pMUTnxKwhqTiB1DykUf18TSPxxgrrcw959hfiJUayFtzTNTmd88IDmGEP/Y3mkr65ZEfm0dAIh6X/gE7yuorPReunWizo9OZwhWSBVF2ka+j6efqeh7xrxFR8O5ScbrySIWsCRKFwbOVPHZJLAVYO957qprbRb4BfVYx8aQrfwyKYWUTs473jLmapP4qpQcAshTIRhG3qE6ISMJpIGWWOdiAATwfWH+2fW8gHp49BynOPLsyTWwm4pmRzHEZpR9M8nz4KgBMXNnUYoKL66n5XSxz; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjw0D6eoQ4IAr5FMGnGJPDsweUvZ5tA1uYn2ePz0uBs/+tgdX5O6wd6OwlwqNU1Oc7L5/c9EgDUBaVx7+hE6KLKsfFp12BM+8tF2vLTIyF2ZquVOXqtXbcQH0sxEDpMpNG971InV3Yjnk7vqXnOAMHj+GSqUk/sSL9QRJ8aB+G/E2euWBS3V6pzYK90Zph4Cciljxf3Ox4a/izl38be9ep+yF+Iz51HC4fFUZQVohFVPkO5/tpyZnazsFs/2r7hmSqAiyrm9Tqind7PSnbu6osAZAPd+jSdd3zSBrCJIZI+NXqR8qVsFTQwFmqS8H9MLJJdFN4UKWaJt0ZOsS9dpr8B6xpnrYffEgiXeOsHrrDSCI7KP9EPY43xFWkBduu1dWqZQ+1qjvCjbulqJiVPdETDlpoG7dMZ4zhiTBvcuAVYaJL9ouklEU4VfkWtn5Dp/AAKswgzUpJjtRCkGK3cWY0mKtWJ9K0ibGXMDJYJSaRFKNa3huBIiVUCYXSnbxTLLLsocSKyOVURYTN5+WG8fzjaCYB3sND63T3sXflSUIcB/V2Y2wnufwTONQqy/YmQdfxlbzYjrNM3siMndT6cGx7XkRMkku4L6BAj2+/tSxwYVvHeHQxNDVP909L8zDIGU4FzZRFKQ1Jz3xi7XVdumCMt6d92oku0aMKg==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Commodity/EditCommodity?CD=1505080000000171
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+

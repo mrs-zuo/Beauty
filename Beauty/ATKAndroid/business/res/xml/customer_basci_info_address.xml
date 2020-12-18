@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <View
+        style="@style/activity_content_divide_view_attrs"/>
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/address_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size"/>
+        <TextView
+            android:id="@+id/zip_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/address_type"
+            android:layout_marginRight="5dip"
+            android:maxWidth="200dip"
+            android:textSize="@dimen/text_size"/>
+        <TextView
+            android:id="@+id/address_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/zip_code"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:maxWidth="200dip"
+            android:textSize="@dimen/text_size"/>
+        
+    </RelativeLayout>
+
+</LinearLayout>

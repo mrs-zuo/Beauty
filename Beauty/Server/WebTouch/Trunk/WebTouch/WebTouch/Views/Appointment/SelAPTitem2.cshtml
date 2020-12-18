@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "选择预约项目-存单";
+    List<Model.View_Model.GetUnfinishOrder_Model> list = Model;
+    int BranchID = 0;
+    if (ViewBag.BranchID != null)
+    {
+        BranchID = ViewBag.BranchID;
+    }
+
+
+}
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/goTop.js"></script>
+<div class="wrapper whiteBkg MB80">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width33_3"><a href="/Appointment/SelAPTitem1?b=@(BranchID)">推荐</a></li><li class="width33_3 positionR">存单<span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Appointment/SelAPTitem3?b=@(BranchID)">买过</a></li>
+        </ul>
+        @if (list != null && list.Count > 0)
+        {
+            foreach (Model.View_Model.GetUnfinishOrder_Model item in list)
+            {
+
+            <ul class="width100 pTB15">
+                <li class="borderB">
+                    <h4 class="blackTex font16 MB10 longTex">@(item.ProductName)</h4>
+                    <ol class="width100">
+                        <li class="clearfix">
+                            <div class="fl grayTex">
+                                <span class="MR10 block">@(item.OrderTime.ToString("yyyy-MM-dd HH:mm"))</span>
+                                <span class="MT10 block">@(item.ResponsiblePersonName)</span>
+                            </div>
+                            <div class="fr grayTex">
+                                @if (item.TGTotalCount > 0)
+                                {
+
+                                    <span class="block">完成@(item.TGFinishedCount.ToString())次/共@(item.TGTotalCount.ToString())次</span>
+                                }
+                                else
+                                {
+
+                                    <span class="block">完成@(item.TGFinishedCount.ToString())次/不限次</span>
+                                }
+
+                                <a class="MT5 block btnSmall bkgColor1 width120P pTB2P" href="/Appointment/CreateAppointment?oId=@(item.OrderID)&tk=3">预约</a>
+                            </div>
+                        </li>
+                    </ol>
+                </li>
+            </ul>	
+            }
+        }
+    </div>
+</div>
+<div class="btnBtm width100 whiteBkg">
+	<ul class="width100 btnBtmUL1 clearfix">
+		<li class="width100 textC "><a href="/Product/ServiceCategory" class="block">查看全部服务</a></li>
+	</ul>
+</div>

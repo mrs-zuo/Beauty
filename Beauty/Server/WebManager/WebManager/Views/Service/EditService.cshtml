@@ -1,0 +1,487 @@
+﻿@{
+    
+    List<Model.View_Model.CategoryList_Model> listCategoryList = new List<Model.View_Model.CategoryList_Model>();
+    listCategoryList = ViewBag.CategoryList;
+
+
+
+    List<Model.View_Model.GetDiscountListForManager_Model> listDiscount = new List<Model.View_Model.GetDiscountListForManager_Model>();
+    listDiscount = ViewBag.DiscountList;
+
+
+    Model.Table_Model.Service_Model model = new Model.Table_Model.Service_Model();
+    model = ViewBag.ServiceDetail;
+
+    int categoryID = model.CategoryID;
+
+    List<Model.Table_Model.SubService_Model> listSubservice = new List<Model.Table_Model.SubService_Model>();
+
+    listSubservice = ViewBag.SubserviceList;
+
+    bool editFlag = ViewBag.ServiceCode > 0;
+
+
+    List<long> listSubCode = new List<long>();
+
+    if (model.SubServiceCodes != null && model.SubServiceCodes != "")
+    {
+        string[] str = model.SubServiceCodes.Split('|');
+        foreach (var item in str)
+        {
+            if (!string.IsNullOrEmpty(item)&& HS.Framework.Common.Util.StringUtils.GetDbLong(item , 0)>0)
+            {
+               
+                listSubCode.Add(HS.Framework.Common.Util.StringUtils.GetDbLong(item , 0));
+            }
+        }
+    }
+    bool haveSubCode = listSubCode.Count > 0;
+
+
+    List<Model.Table_Model.ServiceBranch> branchList = new List<Model.Table_Model.ServiceBranch>();
+
+    if (model.BranchList != null && model.BranchList.Count > 0)
+    {
+        branchList = model.BranchList;
+    }
+
+    bool isBranch = ViewBag.IsBranch;
+
+    int selectCategoryId = HS.Framework.Common.Util.StringUtils.GetDbInt(HS.Framework.Common.Safe.QueryString.IntSafeQ("c").ToString(), -1);
+}
+
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 20)
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Service/GetServiceList?b=-1&c=-1">服务</a></li>
+                <li>@(editFlag ? "编辑" : "添加")服务</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>@(editFlag ? "编辑" : "添加")服务</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                <!--widget-body-->
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="active" id="li_home" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">服务基本设置</a></li>
+                    <li id="li_profile" role="presentation" @(editFlag ? "" : "style =display:none")>
+                        <a id="a_profile" aria-controls="profile" data-toggle="tab" role="tab" href="#profile">门店设置</a></li>
+                </ul>
+                <div class="tab-content widget-body" id="myTabContent">
+                    <div id="home" class="tab-pane fade active in form-horizontal form-bordered" aria-labelledby="home-tab" role="tabpanel">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">服务状态</label>
+                            <div class="col-sm-10 radio">
+                                <label class="no-padding-left">
+                                    <input type="checkbox" id ="ck_Recommended" @(editFlag && model.Recommended ? "checked" : "")>
+                                    <span class="text">推荐</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Text input-->
+                            <label class="col-sm-2 control-label no-padding-right">分类所属</label>
+                            <div class="col-sm-4 btn-group">
+                                <select id="selCat" style="width: 100%;">
+                                    @{
+                                        if (listCategoryList != null && listCategoryList.Count > 0)
+                                        {
+                                            for (int i = 0; i < listCategoryList.Count; i++)
+                                            {
+                                                if ((editFlag && listCategoryList[i].CategoryID == categoryID) || (!editFlag && listCategoryList[i].CategoryID == selectCategoryId))
+                                                {
+                                        <option value="@(listCategoryList[i].CategoryID)" selected="selected">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                                }
+                                                else
+                                                {
+                                        <option value="@(listCategoryList[i].CategoryID)">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                                }
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">
+                            	服务名称
+                            	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                            </label>
+                            <div class="col-sm-4">
+                                <input placeholder="输入服务名称" type="text"  id="input_Name" value="@(editFlag ? model.ServiceName : "")" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">服务编号</label>
+                            <div class="col-sm-4">
+                                <input placeholder="输入编号" id="input_SerialNumber" value="@(editFlag ? model.SerialNumber.ToString() : "")" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">
+                            	单价
+                            	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                            </label>
+                            <div class="col-sm-4">
+                                <input placeholder="输入单价" id="input_UnitPrice" class="form-control" value= "@(editFlag ? model.UnitPrice.ToString("0.00") : "")" type="text">
+                            </div>
+                            <p class="n-p-15 help-block">元</p>
+                        </div>
+                        <div class="form-group">
+                            <!-- Text input-->
+                            <label class="col-sm-2 control-label no-padding-right">营销策略</label>
+                            <div class="col-sm-4 btn-group">
+                                <select id="selPoli" style="width: 100%;" onchange="marketingSelect()">
+                                    <option value="0" @(editFlag ? (model.MarketingPolicy == 0 ? "selected='selected'" : "") : "selected='selected'")   />
+                                    无优惠
+							<option value="1" @(editFlag ? (model.MarketingPolicy == 1 ? "selected='selected'" : "") : "")/>
+                                    按会员打折
+							<option value="2" @(editFlag ? (model.MarketingPolicy == 2 ? "selected='selected'" : "") : "")/>
+                                    按促销价
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="form_Poli" @(editFlag ? (model.MarketingPolicy != 0 ? "" : "style=display:none") : "style=display:none")>
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <select id ="selDis" style="width:100%;@((editFlag && model.MarketingPolicy == 1) ? "" : "display:none")" >
+                                    @{
+                                        if (listDiscount != null && listDiscount.Count > 0)
+                                        {
+                                            for (int i = 0; i < listDiscount.Count; i++)
+                                            {
+                                        <option value="@(listDiscount[i].ID)" @(listDiscount[i].ID == model.DiscountID ? "selected=selected" : "")>@(listDiscount[i].DiscountName)</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                                <input style="height:33px;@(editFlag ? (model.MarketingPolicy == 2 ? "" : "display:none") : "display:none")" id ="input_PromotionPrice" placeholder ="输入促销价"  class="form-control" type="text"   value="@(editFlag ? (model.MarketingPolicy == 2 ? model.PromotionPrice.ToString("0.00") : "") : "")">
+                            </div>
+                            <p style="height:18px;@(editFlag ? (model.MarketingPolicy == 2 ? "" : "display:none") : "display:none")" class="n-p-15 help-block" id="p_yuan">元</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">课程次数</label>
+                            <div class="col-sm-4">
+                                <input placeholder="" class="form-control" id="input_CourseFrequency" value="@(editFlag ? model.CourseFrequency.ToString() : "1")" type="text">
+                            </div>
+                            <p class="n-p-15 help-block">(如果不填则为不限次数)</p>
+                        </div>
+
+                        <div class="form-group" id="div_SpendTime">
+                            <label class="col-sm-2 control-label no-padding-right">服务时间</label>
+                            <div class="col-sm-4">
+                                <input placeholder="" class="form-control" id="input_SpendTime" value="@(editFlag ? model.SpendTime.ToString() : "")" type="text">
+                            </div>
+                            <p class="n-p-15 help-block">分钟 (请填写5的倍数,如果不填则为60分钟)</p>
+                        </div>
+                        <div class="form-group" id="div_VisitTime">
+                            <label class="col-sm-2 control-label no-padding-right">回访周期</label>
+                            <div class="col-sm-10 input-group radio">
+                                <label>
+                                    <input type="radio" name="NeedVisit"  @(editFlag && model.NeedVisit ? "" : "checked")>
+                                    <span class="text">无需回访</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="NeedVisit" id="ck_NeedVisit" @(editFlag && (model.NeedVisit) ? "checked" : "")>
+                                    <span class="text">需要回访</span>
+                                </label>
+                                <label id="lb_VisitTime" @(editFlag && model.NeedVisit ? "" : "style=display:none")>
+                                    <input type="text" id="input_VisitTime" value="@(editFlag && model.NeedVisit ? model.VisitTime.ToString() : "")">
+                                    <label>天 (如果填0则表示需要当天回访)</label>
+                                </label>
+                            </div>
+                        </div>
+
+                        @{
+                            string strDisabled = "";
+                            if (editFlag)
+                            {
+                                strDisabled = " disabled=disabled ";
+                            }
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">服务子项</label>
+                                <div class="col-sm-10 radio no-padding-left">
+                                    <label>
+                                        <input type="radio" name="radio-1" @(haveSubCode ? "checked" : "") id="ck_HaveServiceCode"   @(strDisabled) onchange="changeSubservice(true)">
+                                        <span class="text">有</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="radio-1" @(haveSubCode ? "" : "checked")  @(strDisabled)  onchange="changeSubservice(false)">
+                                        <span class="text">无</span>
+                                    </label>
+                                </div>
+                            </div>
+                        }
+
+                        @{
+                            if (haveSubCode)
+                            {
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">增加服务子项</label>
+                                <div class="col-sm-4">
+                                    <select name="selSubservice" style="width: 100%">
+                                        @{
+                                if (listSubservice != null && listSubservice.Count > 0)
+                                {
+                                    for (int i = 0; i < listSubservice.Count; i++)
+                                    {
+                                            <option value="@(listSubservice[i].SubServiceCode)" @(listSubservice[i].SubServiceCode == listSubCode[0] ? "selected=selected" : "")>@(listSubservice[i].SubServiceName)</option>
+                                    }
+                                }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-default btn-sm addButton" data-template="textbox">增加</button>
+                                </div>
+                            </div>
+                            }
+                        }
+                        @{ 
+                            for (int j = 1; j < listSubCode.Count; j++)
+                            {
+                                if (listSubservice != null && listSubservice.Count > 0)
+                                {
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-4">
+                                    <select name="selSubservice" style="width: 100%">
+                                        @{for (int i = 0; i < listSubservice.Count; i++)
+                                          {
+                                            <option value="@(listSubservice[i].SubServiceCode)" @(listSubservice[i].SubServiceCode == listSubCode[j] ? "selected=selected" : "")>@(listSubservice[i].SubServiceName)</option>
+                                          }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-default btn-sm removeButton">删除</button>
+                                </div>
+                            </div>
+                                }
+                            }
+                        }
+                        @{    
+                            if (!editFlag)
+                            {
+                            <div class="form-group" name="subservice" style="display: none">
+                                <label class="col-sm-2 control-label">增加服务子项</label>
+                                <div class="col-sm-4">
+                                    <select name="selSubservice" id="display" style="width: 100%">
+                                        @{
+                                if (listSubservice != null && listSubservice.Count > 0)
+                                {
+                                    for (int i = 0; i < listSubservice.Count; i++)
+                                    {
+                                            <option value="@(listSubservice[i].SubServiceCode)">@(listSubservice[i].SubServiceName)</option>
+                                    }
+                                }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-default btn-sm addButton" data-template="textbox">增加</button>
+                                </div>
+                            </div>
+                            }
+                        }
+                        <div class="form-group hide" id="textboxTemplate" name="subservice">
+                            <div class="col-sm-offset-2 col-lg-4">
+                                <select name="selSubservice" style="width: 100%">
+                                    @{
+                                        if (listSubservice != null && listSubservice.Count > 0)
+                                        {
+                                            for (int i = 0; i < listSubservice.Count; i++)
+                                            {
+                                        <option value="@(listSubservice[i].SubServiceCode)">@(listSubservice[i].SubServiceName)</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-default btn-sm removeButton">删除</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">客户可见</label>
+                            <div class="col-sm-10 radio no-padding-left">
+                                <label>
+                                    <input type="radio" id="ck_VisibleForCustomer" @(editFlag ? (model.VisibleForCustomer ? "checked" : "") : "checked") name="radio-2">
+                                    <span class="text">是</span>
+                                </label>
+                                <label>
+                                    <input type="radio" @(editFlag ? ((!model.VisibleForCustomer) ? "checked" : "") : "") name="radio-2">
+                                    <span class="text">否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">服务有效期</label>
+                            <div class="col-sm-10 input-group radio">
+                                <label>
+                                    <input type="radio" name="HaveExpiration"  @(editFlag && model.HaveExpiration ? "" : "checked")>
+                                    <span class="text">无服务有效期</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="HaveExpiration"  id="ck_HaveExpiration" @((editFlag && model.HaveExpiration) ? "checked" : "")>
+                                    <span class="text">有服务有效期</span>
+                                </label>
+                                <label id="lb_HaveExpiration" @((editFlag && model.HaveExpiration) ? "" : "style=display:none")>
+                                    <input type="text" id="input_HaveExpiration" value="@(editFlag && model.HaveExpiration ? model.ExpirationDate.ToString() : "")">
+                                    <label>天 (如果填0则为当天过期)</label>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">顾客确认方式</label>
+                            <div class="col-sm-10 radio no-padding-left">
+                                <label>
+                                    <input type="radio" id="IsConfirmed0" @(model.IsConfirmed == 0? "checked"  : "") name="IsConfirmed">
+                                    <span class="text">不需要确认</span>
+                                </label>
+                                <label>
+                                    <input type="radio"  id="IsConfirmed1" @(model.IsConfirmed == 1 ? "checked" : "") name="IsConfirmed">
+                                    <span class="text">客户端确认</span>
+                                </label>
+                                <label>
+                                    <input type="radio"  id="IsConfirmed2" @(model.IsConfirmed == 2 ? "checked" : "") name="IsConfirmed">
+                                    <span class="text">顾客签字确认</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">自动确认</label>
+                            <div class="col-sm-10 radio no-padding-left">
+                                <label>
+                                    <input type="radio" id="IsAutoComfirm0" @(model.AutoConfirm == 0 ? "checked" : "") name="AutoConfirm" value="0">
+                                    <span class="text">不自动确认</span>
+                                </label>
+                                <label>
+                                    <input type="radio" id="IsAutoComfirm1" @(model.AutoConfirm == 0 ? "" : "checked") name="AutoConfirm" value="1">
+                                    <span class="text">自动确认</span>
+                                </label>
+                                    <label id="lb_AutoConfirmDays" @(model.AutoConfirm == 0 ? "style=display:none" : "")>
+                                        <input type="text" maxlength="3" id="input_AutoConfirmDays" value="@(model.AutoConfirmDays.ToString())">
+                                        <label class=" text">日后自动确认</label>
+                                    </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Textarea -->
+                            <label class="col-sm-2 control-label no-padding-right">服务简述</label>
+                            <div class="col-sm-10">
+                                <div class="textarea">
+                                    <textarea placeholder="输入服务简述" id="input_Describe" rows="6" class="form-control">@(editFlag ? model.Describe : "")</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">照片</label>
+
+                            <!-- File Upload -->
+                            @Html.Partial("FileUpload", 5)
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <br>
+                                @{if (!editFlag || !isBranch)
+                                  {
+                                    <button class="btn btn-primary" type="submit" onclick="updateService(@(editFlag ? "1" : "0"))">确 定</button>
+                                  }
+                                }
+                                <a onclick="goback()" class="btn btn-default">返 回 </a>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="profile" class="tab-pane fade" aria-labelledby="profile-tab" role="tabpanel" @(editFlag ? "" : "style =display:none")>
+                        <table id="tbRelation" class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="checkbtn">
+                                            <label class="btn-group no-pm">
+                                                <input id="chk_All" name="chk_All" type="checkbox" class="btn-group no-pm" onclick="AllSelect(this)">
+                                                <span class="text">门店名称</span>
+                                            </label>
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbBranch">
+                                @{if (branchList != null && branchList.Count > 0)
+                                  {
+                                      foreach (Model.Table_Model.ServiceBranch item in branchList)
+                                      {
+                                    <tr>
+                                        <td>
+                                            <label class="no-pm">
+                                                <input id="@(item.BranchID)" type="checkbox" @(isBranch ? "checked='checked'" : (item.IsExist ? "checked='checked'" : "")) />
+                                                <span class="text over-text col-xs-12 no-pm">@(item.BranchName)</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                      }
+
+                                  }
+                                }
+                            </tbody>
+                        </table>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            @{if (!editFlag || !isBranch)
+                              {
+                                <a class="btn btn-primary" onclick="updateBranchRelationship()">确认</a>
+                              }
+                            }
+                            <a class="btn btn btn-default" onclick="goback()">返回</a>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <input type="hidden" id="hidID" value ="@(editFlag ? model.ID : 0)" />
+        <input type="hidden" id="hidCode" value="@(editFlag ? model.ServiceCode : 0)" />
+    </div>
+    <!-- /Page Content -->
+</div>
+
+<script src="/assets/js/validation/validator.min.js"></script>
+<script src="/Script/Service.js"></script>
+<script src="/assets/js/datetime/bs-datepicker.js"></script>

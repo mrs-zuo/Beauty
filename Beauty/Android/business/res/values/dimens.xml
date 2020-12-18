@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">30dp</dimen>
+    <dimen name="activity_vertical_margin">26dp</dimen>
+    <dimen name="shadow_width"> 20dp</dimen >
+    <dimen name="slidingmenu_offset"> 400dp</dimen >
+    <dimen name="slidingmenu_width">180dp</dimen >
+    
+    <dimen name="width_400dp"> 300dp</dimen >
+    <dimen name="width_300dp"> 260dp</dimen >
+    <dimen name="width_120dp"> 75dp</dimen >
+    <dimen name="margin_right"> 10dp</dimen >
+    <dimen name="margin_15dp"> 9.4dp</dimen >
+    <dimen name="margin_top"> 5dp</dimen >
+    <dimen name="padding_5dp"> 3dp</dimen >
+    <dimen name="padding_10dp"> 10dp</dimen >
+    <dimen name="layout_padding"> 10dp</dimen >
+    <dimen name="head_iamge_80dp"> 80dp</dimen >
+    <dimen name="list_image"> 50dp</dimen >
+    
+    <dimen name="text_size">18sp</dimen>
+   	<dimen name="treatment_treatment_detail_viewpager_width">250dip</dimen>
+    <dimen  name="right_menu_width">32dip</dimen>
+    <dimen  name="right_menu_height">32dip</dimen>
+    
+    <dimen name="service_commodity_viewpager_width">270dip</dimen>
+    <dimen name="add_new_customer_name_title_width">200dip</dimen>
+    <dimen name="fly_message_detail_edittext_width">160dip</dimen>
+    <dimen name="opportunity_list_item_product_name_width">150dip</dimen>
+    
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    
+     <dimen name="home_page_remind_red_margin_left">40dip</dimen>
+     <dimen name="report_by_other_text_size">16sp</dimen>
+     <dimen name="send_message_text_size">16sp</dimen>
+     <dimen name="order_list_product_name_width">200dip</dimen>
+     <dimen name="remind_content_text_size">16sp</dimen>
+     <dimen name="add_new_cutomer_relative_layout_height">100dip</dimen>
+     <dimen name="customer_name_sex_edittext_width">180dip</dimen>
+     <dimen name="fly_message_detail_icon_width">50dp</dimen>
+     <dimen name="order_list_item_margin_right">25dip</dimen>
+     <dimen name="about_us_text_size">16sp</dimen>
+     <dimen name="customer_view_order_margin_right">20dip</dimen>
+     <dimen name="customer_lsit_customer_name_width">150dip</dimen>
+     <dimen name="treatment_info_text_size">16sp</dimen>
+     <dimen name="choose_service_info_edittext_width">210dip</dimen>
+     <dimen name="report_relativelayout_height">40dip</dimen>
+     <dimen name="edit_cutomer_basic_width">180dip</dimen>
+     <dimen name="fly_message_lsit_customer_name_width">100dip</dimen>
+     <dimen name="new_recommended_icon_width">24dip</dimen>
+     <dimen name="new_recommended_icon_height">12dip</dimen>
+     <dimen name="edit_treatment_treatment_detail_height">150dip</dimen>
+     <dimen name="opportunity_list_item_margin_right">10dip</dimen>
+     <dimen name="treatment_number_margin_left">10dip</dimen>
+     <dimen name="business_headimage_width_height">80dip</dimen>
+     <dimen name="choose_service_info_relativelayout_height">70dip</dimen>
+     <dimen name="date_by_day_relativelayout_width">150dip</dimen>
+     <dimen name="report_detail_list_object_name_width">280dip</dimen>
+     <dimen name="new_recommended_margin_top">20dip</dimen>
+     <dimen name="customer_tab_margin_bottom">65dip</dimen>
+     <dimen name="unpaid_order_list_margin_right">40dip</dimen>
+     <dimen name="customer_basic_name_title_width">150dip</dimen>
+     <dimen name="payment_icon_margin_right">35dip</dimen>
+     <dimen name="choose_person_margin_bottom_size">40dip</dimen>
+     <dimen name="report_by_other_location">20dip</dimen>
+     <dimen name="report_by_other_detail_location">30dip</dimen>
+     <dimen name="treatment_executor_margin_right">5dip</dimen>
+     <dimen name="date_by_day_relativelayout_size">150dip</dimen>
+     <dimen name="clock_icon_image_margin_left">145dip</dimen>
+     <dimen name="opportunity_detail_margin_bottom">50dip</dimen>
+     <dimen name="payment_action_order_margin_right">15dip</dimen>
+     <dimen name="company_image_layout_height"> 210dp</dimen>
+    <dimen name="company_image_viewpager_layout_margin"> 20dp</dimen>
+    
+     <!-- 服务人员 -->
+    <dimen name="account_name_maxwidth"> 70dp</dimen>
+    
+    <dimen name="company_map_layout_width"> 350dp</dimen>
+    <dimen name="company_map_layout_height"> 210dp</dimen>
+</resources>

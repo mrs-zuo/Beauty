@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ReportListActivity" 
+    android:background="@color/white">
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <RelativeLayout
+       style="@style/activity_title_layout_attrs" >
+        <TextView
+            android:id="@+id/report_list_title_text"
+           	style="@style/activity_title_text_attrs" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/report_list"
+        style="@style/activity_content_listview_attrs"/>
+</LinearLayout>

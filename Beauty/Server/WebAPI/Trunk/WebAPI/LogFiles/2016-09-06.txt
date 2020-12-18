@@ -1,0 +1,226 @@
+2016-09-06 17:18:21[7] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/9/6 17:18:21
+Title={"ProductType":1,"UserCardNo":"                ","OrderObjectID":21901,"totalSalePrice":288,"OrderID":100156}
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+TargetSite:Void HandleUnauthorizedRequest(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.HandleUnauthorizedRequest(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 183
+   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 172
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Parameters=
+Level=Error
+
+2016-09-06 17:18:42[6] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/9/6 17:18:42
+Title={"ProductType":1,"UserCardNo":"                ","OrderObjectID":21901,"totalSalePrice":288,"OrderID":100156}
+Message=Message:Error converting value 100156 to type 'System.Collections.Generic.List`1[System.Int32]'. Path 'OrderID', line 6, position 20.
+TargetSite:System.Object EnsureType(Newtonsoft.Json.JsonReader, System.Object, System.Globalization.CultureInfo, Newtonsoft.Json.Serialization.JsonContract, System.Type)
+Data:
+StackTrace:   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 WebAPI.Controllers.API.PaymentController.WeChatPayByCustomer(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\PaymentController.cs:行号 839
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Parameters=
+Level=Error
+
+2016-09-06 17:19:08[8] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/9/6 17:19:08
+Title={"ProductType":1,"UserCardNo":"                ","OrderObjectID":21901,"totalSalePrice":288,"OrderID":100156}
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise.Beauty.Test"。登录失败。
+用户 'GlamourPromiseDirector' 登录失败。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.BeginTransaction(IsolationLevel il)
+   在 BLToolkit.Data.DbManager.BeginTransaction()
+   在 WebAPI.DAL.Order_DAL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 7599
+   在 WebAPI.Controllers.API.OrderController.UpdateTotalSalePrice(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 2345
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UpdateTotalSalePrice
+Parameters=
+Level=Error
+
+2016-09-06 17:19:14[8] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/9/6 17:19:14
+Title={"ProductType":1,"UserCardNo":"                ","OrderObjectID":21901,"totalSalePrice":288,"OrderID":100156}
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise.Beauty.Test"。登录失败。
+用户 'GlamourPromiseDirector' 登录失败。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.BeginTransaction(IsolationLevel il)
+   在 BLToolkit.Data.DbManager.BeginTransaction()
+   在 WebAPI.DAL.Order_DAL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 7599
+   在 WebAPI.Controllers.API.OrderController.UpdateTotalSalePrice(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 2345
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UpdateTotalSalePrice
+Parameters=
+Level=Error
+
+2016-09-06 17:20:36[14] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/9/6 17:20:36
+Title={"ProductType":1,"UserCardNo":"                ","OrderObjectID":21901,"totalSalePrice":288,"OrderID":100156}
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise"。登录失败。
+用户 'GlamourPromiseDirector' 登录失败。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.BeginTransaction(IsolationLevel il)
+   在 BLToolkit.Data.DbManager.BeginTransaction()
+   在 WebAPI.DAL.Order_DAL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 7599
+   在 WebAPI.Controllers.API.OrderController.UpdateTotalSalePrice(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 2345
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UpdateTotalSalePrice
+Parameters=
+Level=Error
+
+2016-09-06 17:21:02[6] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/9/6 17:21:02
+Title={"ProductType":1,"UserCardNo":"                ","OrderObjectID":21901,"totalSalePrice":288,"OrderID":100156}
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise"。登录失败。
+用户 'GlamourPromiseDirector' 登录失败。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.BeginTransaction(IsolationLevel il)
+   在 BLToolkit.Data.DbManager.BeginTransaction()
+   在 WebAPI.DAL.Order_DAL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 7599
+   在 WebAPI.BLL.Order_BLL.UpdateTotalSalePrice(Int32 updaterId, Int32 orderId, Decimal totalSalePrice, DateTime dt, Int32 OrderObjectID, String UserCardNo, Int32 CompanyID, Int32 ProductType, Int32 BranchID) 位置 e:\SourceCode\WebAPI\Trunk\BLL\Order_BLL.cs:行号 307
+   在 WebAPI.Controllers.API.OrderController.UpdateTotalSalePrice(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 2347
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UpdateTotalSalePrice
+Parameters=
+Level=Error
+

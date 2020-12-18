@@ -1,0 +1,154 @@
+2019-03-21 10:33:42[31] ERROR index (null) - AppName=WebApi
+
+LogTime=2019/3/21 10:33:42
+Title=值对于 Int32 太大或太小。
+Message=Message:值对于 Int32 太大或太小。
+TargetSite:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+Data:
+StackTrace:   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebAPI.Controllers.Manager.Company_MController.GetCompanyDetail() 位置 D:\svn\T030\Server\WebAPI\Trunk\WebAPI\Controllers\Manager\Company_MController.cs:行号 36
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ScsDeveloper
+ClientIp=::1
+ClientIp2=::1
+ServerIp=172.16.97.58
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Parameters=
+Level=Error
+
+2019-03-21 10:34:32[33] ERROR index (null) - AppName=WebApi
+
+LogTime=2019/3/21 10:34:32
+Title=值对于 Int32 太大或太小。
+Message=Message:值对于 Int32 太大或太小。
+TargetSite:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+Data:
+StackTrace:   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebAPI.Controllers.Manager.Company_MController.GetCompanyDetail() 位置 D:\svn\T030\Server\WebAPI\Trunk\WebAPI\Controllers\Manager\Company_MController.cs:行号 36
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ScsDeveloper
+ClientIp=::1
+ClientIp2=::1
+ServerIp=172.16.97.58
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Parameters=
+Level=Error
+
+2019-03-21 10:46:57[36] ERROR index (null) - AppName=WebApi
+
+LogTime=2019/3/21 10:46:57
+Title=SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。
+Message=Message:SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.SMSINFO_DAL.addSMSHIS_Model(AddSMSHIS_Model addSMSHIS_Model) 位置 D:\svn\T030\Server\WebAPI\Trunk\DAL\SMSINFO_DAL.cs:行号 60
+   在 WebAPI.BLL.SMSINFO_BLL.addSMSHIS_Model(AddSMSHIS_Model addSMSHIS_Model) 位置 D:\svn\T030\Server\WebAPI\Trunk\BLL\SMSINFO_BLL.cs:行号 50
+   在 WebAPI.Controllers.Manager.Company_MController.GetCompanyDetail() 位置 D:\svn\T030\Server\WebAPI\Trunk\WebAPI\Controllers\Manager\Company_MController.cs:行号 45
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ScsDeveloper
+ClientIp=::1
+ClientIp2=::1
+ServerIp=172.16.97.58
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Parameters=
+Level=Error
+
+2019-03-21 10:50:17[49] ERROR index (null) - AppName=WebApi
+
+LogTime=2019/3/21 10:50:17
+Title=SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。
+Message=Message:SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.SMSINFO_DAL.addSMSHIS_Model(AddSMSHIS_Model addSMSHIS_Model) 位置 D:\svn\T030\Server\WebAPI\Trunk\DAL\SMSINFO_DAL.cs:行号 60
+   在 WebAPI.BLL.SMSINFO_BLL.addSMSHIS_Model(AddSMSHIS_Model addSMSHIS_Model) 位置 D:\svn\T030\Server\WebAPI\Trunk\BLL\SMSINFO_BLL.cs:行号 50
+   在 WebAPI.Controllers.Manager.Company_MController.GetCompanyDetail() 位置 D:\svn\T030\Server\WebAPI\Trunk\WebAPI\Controllers\Manager\Company_MController.cs:行号 45
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ScsDeveloper
+ClientIp=::1
+ClientIp2=::1
+ServerIp=172.16.97.58
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Parameters=
+Level=Error
+

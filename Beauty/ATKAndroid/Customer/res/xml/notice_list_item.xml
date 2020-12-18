@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/relative_layout_has_child_attrs" >
+
+    <TextView
+        android:id="@+id/noticelist_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="..."
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/noticelist_createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noticelist_title"
+        android:layout_marginTop="14dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_size_normal" />
+
+    <ImageView
+        android:id="@+id/notice_arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/join_in_arrowhead_gray" />
+
+</RelativeLayout>

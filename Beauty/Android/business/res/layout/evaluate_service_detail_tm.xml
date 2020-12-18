@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+             <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1px"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:background="#CCCCCC" >
+		     </View>
+		     <RelativeLayout style="@style/relative_layout_has_child_attrs">
+			         <TextView
+				        android:id="@+id/evaluate_service_tm_name_text"
+				        style="@style/activity_content_table_row_title_attrs"
+				        android:maxLength="15"
+				        android:singleLine="true"
+				        />
+		         
+			        <RatingBar 
+			            android:id="@+id/evaluate_service_tm_ratingbar"
+			            style="?android:attr/ratingBarStyleSmall"
+						android:stepSize="1" 
+						android:isIndicator="false"
+						android:layout_height="wrap_content" 
+						android:layout_width="wrap_content" 
+						android:rating="5"
+						android:layout_centerVertical="true"
+						android:layout_marginRight="10dp"
+						android:layout_alignParentRight="true"> 
+					</RatingBar>
+             </RelativeLayout>
+             
+		     <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1px"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:background="#CCCCCC" >
+		     </View>
+		     
+		     <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+		
+                 <EditText
+                     android:id="@+id/evaluate_service_tm_remark"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentLeft="true"
+                     android:layout_centerVertical="true"
+                     android:layout_marginLeft="5dip"
+                     android:background="@null"
+                     android:hint="@string/please_input_customer_remark"
+                     android:maxLength="300"
+                     android:minLines="3"
+                     android:textColor="@color/gray"
+                     android:textSize="@dimen/text_size_18sp" />
+             </RelativeLayout>
+</LinearLayout>

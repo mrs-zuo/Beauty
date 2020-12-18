@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "选择公司";
+    List<Model.View_Model.CompanyListByLoginMobile_Model> listCompany = new List<Model.View_Model.CompanyListByLoginMobile_Model>();
+    listCompany = Model;
+    string strMobile = ViewBag.Mobile;
+}
+<script src="/Scripts/ResetPassword.js"></script>
+<form id="formSelectCompany" method="post" action="/ResetPassword/ChangePassword">
+    <div class="wrapper whiteBkg">
+        <div class="width90 blockC">
+            <ul class="width100 rowUl" id="ulCompany">
+                @if (listCompany != null && listCompany.Count > 0)
+                {
+                    foreach (Model.View_Model.CompanyListByLoginMobile_Model item in listCompany)
+                    {
+                    <li class="borderB pTB15 clearfix">
+                        <div class="blackTex fl">@(item.CompanyAbbreviation)</div>
+                        <div class="grayTex textR fr">
+                            <input type="checkbox" name="chkCompany"  value="@(item.UserID)">
+                        </div>
+                    </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="btnBtm width100 whiteBkg PT10 PB10">
+        <div class="width60 blockC ML5P fl"><a class="width100 btnLarge bkgColor1 fl" onclick="goToChangePassword()">下一步</a></div>
+        <div class=" blockC MR5P fr clearfix"><a class="btnLarge blackTex color6" onclick="selectAllCompany()"><span class="MR10">全选</span><input type="checkbox" onclick="selectAllCompany()" id="chkAll" name="1" value=""></a></div>
+    </div>
+    <input name="txtData" id="txtData" type="hidden" />
+    <input name="txtMobile" id="txtMobile" type="hidden" value="@(strMobile)" />
+</form>

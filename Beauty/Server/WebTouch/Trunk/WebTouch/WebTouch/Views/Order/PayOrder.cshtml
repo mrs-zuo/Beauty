@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "订单支付";
+    Model.Operation_Model.PaymentAddOperation_Model mAddPayment = ViewBag.AddPayment;
+
+    Model.View_Model.PaymentInfo_Model model = new Model.View_Model.PaymentInfo_Model();
+    model = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+
+<script src="/Scripts/Order.js"></script>
+<script src="/js/ToCNY.js"></script>
+@if (model != null && mAddPayment.OrderCount > 0)
+{
+    mAddPayment.PaymentDetail = new Model.Operation_Model.PaymentDetail_Model();
+    mAddPayment.PaymentDetail.UserCardNo = model.UserCardNo;
+    string strJson = Newtonsoft.Json.JsonConvert.SerializeObject(mAddPayment);
+    <div class="wrapper">
+        <div class="whiteBkg width100">
+            <div class="width90 blockC">
+                <ul class="width100 rowUl15">
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">订单数量</div>
+                        <div class="grayTex fr" id="txtOrderCount">@(mAddPayment.OrderCount.ToString())</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="blackTex fl">总计金额</div>
+                        <div class="grayTex fr" id="txtTotalSalePrice">@(CurrencySymbol + model.TotalSalePrice.ToString("0.00"))</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="part width100">
+            <h4 class="PT15 PB5 blackTex blockC width90">支付方式</h4>
+            <div class="whiteBkg width100 MT10 blockC">
+                <div class="blockC width90">
+                    <ul class="width100 rowUl15">
+                        <li class="borderB clearfix">
+                            <div class="clearfix">
+                                <div class="blackTex fl">储值卡</div>
+                                <div class="grayTex fr">@(model.CardName)</div>
+                            </div>
+                            <div class="clearfix PT15">
+                                <div class="blackTex fl">余额</div>
+                                <div class="grayTex fr">@(CurrencySymbol + model.Balance.ToString("0.00"))</div>
+                            </div>
+                            <div class="clearfix PT15">
+                                <div class="blackTex fl">有效期</div>
+                                <div class="grayTex fr">@(model.ExpirationDate.ToString("yyyy-MM-dd"))</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="clearfix">
+                                <div class="blackTex fl">应付款</div>
+                                <div class="grayTex fr">@(CurrencySymbol + (model.UnPaidPrice).ToString("0.00"))</div>
+                            </div>
+                            <div class="clearfix PT15">
+                                <div class="blackTex fl">大写</div>
+                                <div class="grayTex fr">
+                                    <script type="text/javascript">document.write(numToCny(@(model.UnPaidPrice.ToString("0.00"))))</script>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @if(model.GivePointAmount > 0 || model.GiveCouponAmount > 0){
+        <div class="part width100">
+            <h4 class="PT15 PB5 blackTex blockC width90">消费赠送</h4>
+            <div class="whiteBkg width100 MT10 blockC">
+                <div class="blockC width90">
+                    <ul class="width100 rowUl15">
+                        <li class="clearfix">
+                            @if (model.GivePointAmount > 0)
+                            {
+                                <div class="clearfix">
+                                    <div class="blackTex fl">赠送积分</div>
+                                    <div class="grayTex fr">@(model.GivePointAmount.ToString("0.00"))</div>
+                                </div>
+                            }
+                            @if (model.GiveCouponAmount > 0)
+                            {
+                                <div class="clearfix PT15">
+                                    <div class="blackTex fl">赠送现金券</div>
+                                    <div class="grayTex fr">@(model.GiveCouponAmount.ToString("0.00"))</div>
+                                </div>
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        }
+        <div class="width90 blockC MT30 MB30"><a class="btnLarge bkgColor1 width100" onclick="AddPayment('@(strJson)')">确定支付</a></div>
+    </div>
+}

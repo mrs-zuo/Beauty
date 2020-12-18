@@ -1,0 +1,962 @@
+2015-09-06 17:54:07[11] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 17:54:07
+Title=push失败
+Message=pushID为1508270000000004推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 17:54:07[11] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 17:54:07
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 17:54:08[11] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 17:54:08
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 17:54:13[11] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 17:54:13
+Title=push失败
+Message=pushID为1509060000000001推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 17:54:48[5] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 17:54:48
+Title=push失败
+Message=pushID为1509060000000001推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 17:58:45[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 17:58:45
+Title=push失败
+Message=pushID为1509060000000001推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:00:08[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:08
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:08[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:08
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:08[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:08
+Title=push失败
+Message=pushID为1508270000000001推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:30[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:30
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:30[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:30
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:30[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:30
+Title=push失败
+Message=pushID为1508270000000001推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:32[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:32
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:32[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:32
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:32[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:32
+Title=push失败
+Message=pushID为1508270000000001推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:35[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:35
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:35[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:35
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:35[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:35
+Title=push失败
+Message=pushID为1508270000000001推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:41[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:41
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:41[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:41
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=push失败
+Message=pushID为1508270000000003推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:47[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:47
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:48[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:48
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:48[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:48
+Title=push失败
+Message=pushID为1508270000000003推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=push失败
+Message=pushID为1508270000000004推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=push失败
+Message=pushID为1508270000000004推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=push失败
+Message=pushID为1508270000000005推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Data.IDbConnection get_Connection()
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.PushTool_DAL.<>c__DisplayClass4.<getPushPoolList>b__0() 位置 e:\Vss\WebApi\DAL\PushTool_DAL.cs:行号 89
+
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:49[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:49
+Title=push失败
+Message=pushID为1508280000000001推送失败
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-09-06 18:00:57[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:57
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:00:58[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:58
+Title=push失败
+Message=pushID为1508270000000002推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:00:59[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:00:59
+Title=push失败
+Message=pushID为1508270000000003推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:01:01[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:01:01
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:01:02[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:01:02
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:01:09[24] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:01:09
+Title=push失败
+Message=pushID为1509010000000001推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:01:28[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:01:28
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:01:33[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:01:33
+Title=push失败
+Message=pushID为1508270000000004推送失败
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:01:35[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:01:35
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-06 18:01:36[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/6 18:01:36
+Title=未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+Message=Message:未能找到路径“E:\Vss\WebApi\WebAPI\P12File\AppleProductionIOSPushServices_com.GlamourPromise.Beauty.Customer.p12”的一部分。
+TargetSite:Void WinIOError(Int32, System.String)
+Data:
+StackTrace:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   在 HS.Framework.Common.Push.HSPush.pushMessageToIOS(String strDeviceToken, String strP12FileName, String strMessage, Boolean production, String pushType)
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/PushTool/GetPushPoolList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webapi.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+

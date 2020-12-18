@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+     <TextView
+            android:id="@+id/customer_ecard_balance_change_customer_name"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+      <TextView
+            android:id="@+id/customer_ecard_balance_change_recharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customer_ecard_balance_change_customer_name"
+            android:layout_marginLeft="10dip"
+            android:textSize="@dimen/text_size_16sp" 
+            android:textColor="@color/green"/>
+        <TextView
+            android:id="@+id/customer_ecard_balance_change_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dip"
+            android:textSize="@dimen/text_size_16sp" />
+        <TextView
+            android:id="@+id/customer_ecard_balance_change_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/customer_ecard_balance_change_balance"
+            android:layout_marginRight="15dip"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/red" />
+    
+</RelativeLayout>

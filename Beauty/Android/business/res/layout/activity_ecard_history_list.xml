@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".EcardHistoryListActivity"
+    android:background="@color/white"
+    >
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <RelativeLayout style="@style/activity_title_layout_attrs"
+     >
+     <TextView
+         style="@style/activity_title_text_attrs"
+         android:id="@+id/ecard_history_title_text"
+         android:text="@string/ecard_history_title_text"
+         />
+    </RelativeLayout>
+    <com.GlamourPromise.Beauty.view.RefreshListView
+        android:id="@+id/ecard_history_list_view"
+        style="@style/activity_content_listview_attrs"
+        />
+
+</LinearLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+ >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout
+        android:id="@+id/company_information_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/title_bar"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/company_information_title_text"
+            style="@style/activity_title_text_attrs" />
+    </RelativeLayout>
+
+    <cn.com.antika.view.ImageScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp" 
+        android:focusable="false"
+        android:focusableInTouchMode="false">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/company_image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/company_image_layout_height"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@xml/shape_corner_round"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="1dp" >
+
+                <ImageView
+                    android:id="@+id/arrow_left_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="1dip" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/company_image_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/company_image_viewpager_layout_margin"
+                    android:layout_marginRight="@dimen/company_image_viewpager_layout_margin"
+                    android:background="@color/white" />
+
+                <ImageView
+                    android:id="@+id/arrow_right_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="1dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/account_count_layout"
+                style="@style/activity_content_table_attrs"
+                android:paddingBottom="@dimen/padding_10dp"
+                android:paddingTop="@dimen/padding_10dp" >
+
+                <TextView
+                    android:id="@+id/account_list_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_account_list"
+                    android:textColor="@color/title_font" />
+
+                <ImageView
+                    android:id="@+id/arrowhead"
+                    style="@style/relative_layout_right_child_attrs"
+                    android:src="@drawable/join_in_arrowhead" />
+
+                <TextView
+                    android:id="@+id/account_list_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/arrowhead"
+                    android:textSize="@dimen/text_size_18sp" />
+            </RelativeLayout>
+
+            <TableLayout
+                android:id="@+id/company_Summary"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/company_business_hours"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/company_contact_information"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/company_web"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+            
+            <TableLayout
+                android:id="@+id/company_address"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+             
+            <TableLayout
+                android:id="@+id/company_map"
+                android:layout_width="@dimen/company_map_layout_width"
+                android:layout_height="@dimen/company_map_layout_height"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="@dimen/margin_top"
+                android:visibility="gone" >
+
+                <com.baidu.mapapi.map.MapView  
+                    android:id="@+id/bmapView"
+                    android:layout_width="@dimen/company_map_layout_width"
+                    android:layout_height="@dimen/company_map_layout_height"
+                    android:clickable="true" />
+            </TableLayout>
+        </LinearLayout>
+    </cn.com.antika.view.ImageScrollView>
+
+</LinearLayout>

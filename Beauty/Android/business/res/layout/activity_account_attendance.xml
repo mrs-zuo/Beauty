@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".AccountAttendanceActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/account_attendance_title_text" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white" >
+
+        <ImageView
+            android:id="@+id/punch_the_clock_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@string/search"
+            android:src="@drawable/punch_the_clock_icon" />
+
+        <ImageView
+            android:id="@+id/attendance_code_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@string/search"
+            android:src="@drawable/attendance_code_icon" />
+    </LinearLayout>
+
+</LinearLayout>

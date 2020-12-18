@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/product_old_order_store_tablelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom">
+
+    <RelativeLayout 
+        android:id="@+id/product_old_order_responsible_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size"
+            android:layout_marginLeft="4dip"
+            android:text="@string/product_old_order_product_store_count" />
+        
+        
+         <EditText
+            android:id="@+id/product_old_order_store_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="right"
+            android:layout_toLeftOf="@+id/product_old_order_unit"
+            android:inputType="numberDecimal"
+            android:maxWidth="200dip"
+            android:hint="@string/product_old_order_product_store_count_add"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" >
+        </EditText>
+        <TextView
+            android:id="@+id/product_old_order_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="7dip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size"
+            android:text="@string/product_old_order_unit" />
+    </RelativeLayout>
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+   <RelativeLayout 
+        android:id="@+id/product_old_order_responsible_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size"
+            android:layout_marginLeft="4dip"
+            android:text="@string/product_old_order_product_store_isfinish" />
+        
+        <ImageButton
+            android:id="@+id/product_old_order_store_isfinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dip"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/customer_scan_record_status_blue_icon"
+            android:contentDescription="@string/search" />
+        
+    </RelativeLayout>
+
+   
+	
+</TableLayout>

@@ -1,0 +1,148 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNoTop.cshtml";
+    ViewBag.Title = "商品详情";
+
+    Model.View_Model.CommodityDetail_Model model = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+<script src="/Scripts/Product.js"></script>
+<script src="/js/Swipe.js"></script>
+<script type="text/javascript">
+    $(function () {
+        Swipe(document.getElementById('slider'), {
+            auto: 3000,
+            continuous: true,
+            callback: function (pos) {
+                var bullets = $("#position li");
+                var i = bullets.length;
+                while (i--) {
+                    bullets[i].className = ' ';
+                }
+                bullets[pos].className = 'on';
+            }
+        });
+    });
+</script>
+
+@if (model != null)
+{
+    <div class="wrapper whiteBkg MB60">
+        @{
+			if (model.CommodityImage != null && model.CommodityImage.Count > 0)
+			{	
+				<!--轮显图片开始-->
+				<div class="banner swipe" id="slider">
+					<div class="swipe-wrap">
+                        @{ foreach (string item in model.CommodityImage)
+							{
+								<figure><a href=""><img src="@(item == "" ? "/pic/nopicbg.jpg" : item)" alt=""/></a></figure>
+							}
+                        }
+                    </div>
+                    <nav>
+						<ul id="position">
+						@for(int i = 0;i<model.CommodityImage.Count;i++){
+							<li></li>
+						}
+						</ul>
+					</nav>
+                </div>
+				<!--轮显图片结束-->
+			} 
+        }
+
+        <div class="width100 blockC textL">
+            <ul class="width90 rowUl blockC">
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">@(model.CommodityName)</div>
+                    <div class="grayTex textR fr"></div>
+                </li>
+                @{
+    if (!string.IsNullOrWhiteSpace(model.Specification))
+    {
+                    <li class="borderB pTB15 clearfix">
+                        <div class="blackTex fl">规格</div>
+                        <div class="grayTex textR fr">@(model.Specification)</div> 
+                    </li>
+    }
+                }
+
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">原价</div>
+                    <div class="grayTex textR fr">@(CurrencySymbol)@(model.UnitPrice.ToString("0.00"))</div>
+                </li>
+                @*@{
+                        if (model.StockQuantity > 0)
+                        {
+                            <li class="borderB pTB15 clearfix">
+                                <div class="blackTex fl">库存</div>
+                                <div class="grayTex textR fr">@(model.StockQuantity)</div>
+                            </li>
+                        }
+                    }*@
+
+                @{
+    if (!string.IsNullOrWhiteSpace(model.Describe))
+    {
+                    <li class="borderB pTB15 clearfix">
+                        <h4 class="PB15">描述</h4>
+                        <div class="width98 fr grayTex lineHeight1_5x">
+                            @Html.Raw(model.Describe.Replace("\n", "<br />").Replace("\r", "<br />").Replace("\r\n", "<br />"))
+                        </div>
+                    </li>
+    }
+                }
+
+                <li class="borderB clearfix">
+                    <h4 class="borderB PB15 PT15">选择门店</h4>
+                    <div class="width98 fr">
+                        <div class="blockC">
+                            <ol id="olBranch" class="width100 rowUl PL20Ul">
+                                @if (model.ProductEnalbeInfo != null && model.ProductEnalbeInfo.Count > 0){
+                                    int i = 0;
+                                    foreach (Model.View_Model.CommodityEnalbeInfoDetail item in model.ProductEnalbeInfo)
+                                    {
+                                        <li class="ML10 borderB pTB15 clearfix">
+                                            <div class="blackTex fl">@(item.BranchName)</div>
+                                            <div class="grayTex textR fr">
+                                                <input type="radio" name="radio1"  @(i==0 ? "checked='checked'" : "") value="@(item.BranchID)"/>
+                                            </div>
+                                        </li>
+                                        i++;
+                                    }
+                                }
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>   
+    <div class="btnBtm width100 whiteBkg">
+        <ul class="width100 btnBtmUL2 clearfix">
+            <li class="bkgColor1 fr"><a onclick="AddCart(2,1,@(model.CommodityCode))" class="whiteTex">立即购买</a></li>
+            <li class="bkgColor1 bkgOpacity7 fr"><a onclick="AddCart(1,1,@(model.CommodityCode))" class="whiteTex">加入购物车</a></li>
+
+            @if (model.FavoriteID == "" || model.FavoriteID == null)
+            {  
+                <li class="fr favorIcon1">
+                    <a onclick="AddFavorite(@(model.CommodityCode),1)" class="grayTex">收藏</a>
+                  </li>
+            }
+            else
+            {   
+                <li class="fr favorIcon2">
+                    <a onclick="DelFavorite(@(model.CommodityCode),1,'@(model.FavoriteID)')" class="grayTex" >取消收藏</a>
+                    </li>
+            
+            }
+        </ul>
+    </div>
+}

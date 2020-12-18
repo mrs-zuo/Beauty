@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".EditPersonMessageActivity" >
+    <TableLayout style="@style/table_layout_attrs" >
+
+        <RelativeLayout
+            android:id="@+id/edit_head_iamge_relativelayout"
+            style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/head_image"
+                android:textColor="@color/text_color" />
+
+            <ImageView
+                android:id="@+id/edit_head_iamge_join_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/search"
+                android:src="@drawable/join_in_arrowhead_gray" />
+
+            <ImageView
+                android:id="@+id/edit_head_iamge"
+                android:layout_width="@dimen/setting_head_image_size"
+                android:layout_height="@dimen/setting_head_image_size"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/edit_head_iamge_join_icon" 
+                android:contentDescription="@string/search"/>
+        </RelativeLayout>
+
+        <View style="@style/divide_view" />
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/person_message_name"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/person_message_name"
+                style="@style/relative_layout_right_child_attrs"
+                android:background="@null"
+                android:maxLength="10"
+                android:minWidth="20dip"
+                android:textColor="@color/gray" />
+        </RelativeLayout>
+
+        <View style="@style/divide_view" />
+
+        <RelativeLayout
+            style="@style/relative_layout_has_child_attrs"
+            android:padding="6dp" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:layout_marginLeft="10dp"
+                android:text="@string/person_message_gender"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/person_message_gender_female"
+                style="@style/relative_layout_right_child_attrs"
+                android:layout_marginRight="10dp"
+                android:text="@string/person_message_gender_female" />
+
+            <ImageView
+                android:id="@+id/person_message_gender_female_select_icon"
+                style="@style/relative_layout_left_child_attrs"
+                android:layout_toLeftOf="@id/person_message_gender_female"
+                android:background="@drawable/one_unselect_icon"
+                android:contentDescription="@string/search" />
+
+            <TextView
+                android:id="@+id/person_message_gender_male"
+                style="@style/relative_layout_left_child_attrs"
+                android:layout_toLeftOf="@id/person_message_gender_female_select_icon"
+                android:text="@string/person_message_gender_male" />
+
+            <ImageView
+                android:id="@+id/person_message_gender_male_select_icon"
+                style="@style/relative_layout_left_child_attrs"
+                android:layout_toLeftOf="@id/person_message_gender_male"
+                android:background="@drawable/one_unselect_icon"
+                android:contentDescription="@string/search" />
+        </RelativeLayout>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/person_message_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:background="#D5C5B5"
+        android:textSize="@dimen/text_size_normal"
+        android:text="@string/save_btn_text"
+        android:textColor="@color/white" />
+
+</LinearLayout>

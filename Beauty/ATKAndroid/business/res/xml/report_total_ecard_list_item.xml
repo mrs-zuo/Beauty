@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@xml/shape_corner_round"
+    android:id="@+id/report_total_ecard_list_item_table">
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:background="@color/page_backcolor" >
+         <TextView
+            android:id="@+id/report_total_ecard_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="160dp"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/report_total_ecard_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/report_total_ecard_publish_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/report_total_ecard_has_balance_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+</TableLayout>

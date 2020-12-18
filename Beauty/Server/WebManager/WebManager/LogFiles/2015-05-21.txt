@@ -1,0 +1,483 @@
+2015-05-21 17:07:16[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:07:16
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 177
+   在 WebManager.Controllers.BranchController.GetBranchList() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\BranchController.cs:行号 52
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/Branch/GetBranchList
+RawUrl=/Branch/GetBranchList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfNCWKpK/du0PLjbsv8F4UB6xPTa4Jq4hRNnQ5S/ME1HBjLsSchQMvARg+531kL7UrWpPkzoLCKOrX0QmYIHWSKkGCDjqPUuQKxi8YAMwnE+P+XSvogHfTVSBviJ24sTROBQBJCL49Uoq/w0jQisXKd15Euy+8v9oHoPP3UdBfdBZgewys6sjg/a6x9RfoRjmPen1EEWhpGw06xmBsfDTSYPcE6XeCvqac+0ASwu3fcPS80n9IhgFP84mhm35yZAUwSqCDYIltx+RxhJvYx3ODkO+m8NatvZlPSGbW34q+WE8tDjHuVo1tQG3g2zyrXpt3QBfmT+WvgdK6yOV/NQbJmB/8nrsEePtIS5JUi8ESCuB8pEKF/1CwBotpjuhc30k1z46OKh/C4/Dwcn2WSL97Zho8Dm6mAJZt8UW+vYOA4b60v1+ZlnPfuDB3XcDGGZiPav3K1ETzlDGYKmsj3xfHL1PWOCNUjljWG4t+UG/7omNDhBX2BdY7yf3giLIANjPc49FE6iX6GWT1YZ4Ml6wPalxBmIliFpnu8FYCcoGcnA5mEGEkOd42FbhGTDRgcn/aRY6zyBRqmORgrPbIRyWBYzTPOW/HI7jAnE945tI3jEV2hKseYJfPjrk+wI9bmn+qQ+u7vQtsfMprBQF19bijsfYG0IzQ/6tyiE1vcc0Ny/xJYGs+eXajLJEZOBhglmkhHo9SKhVpA/PRWAeDFeQ/YfARgwzxuHqw3w4Bmbos/Bzc4kaC9TM4weWegoXEEw0aFzxUmlQCldmw==; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Branch/GetBranchList
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+
+
+2015-05-21 17:11:46[21] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:11:46
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 178
+   在 WebManager.Controllers.BranchController.GetBranchList() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\BranchController.cs:行号 52
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/Home/index
+RawUrl=/Branch/GetBranchList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfNF9wSm023lK/jMFPk1mlf4dqlvupPxgxrkD8xME3QaWZISVkPIHTwphPA0FI/4oiGjkvWyWBAgEaQgPH6bEE2EaRHq9LJ5UtwrHyWPsfYDTUsOaBgmI42vHVE177i5As65MIdNG66l97iW9xEPlr0g28GDJ1CX0rMJ139L/Qz/qqBBSGcYPIkpBwwONRYoAFkpab2T52tKtuQIiSEi6NhAzwGboihW1GXZfByIXXF1+VXUD90vtRQ4UL+U/KLHhJTarjONhgkPJyhI0kN63UlOWyMqF1FPNCrPFd1i7cTqL2qKHgMdlA1I004Jx26ab4jRAjiO0V2Oh/rvolPvJjSvI2iR14N8VMBMdP39f7eDFwdhM9DUVGB8Tsp0LXUao3rnmPHT+gW7VpeTb0Gs30isLEbQbFs6VuYc8WVoeUfJsXo2qIZguDnfIFii4kYyLVx/PVmyhLOIK+Vdu2/CvBCLAtfekMRn6oznjyOYyUd3Dpn8FtO6fdPE1XJzd4B4cVJI1SjEjACVIQLYF8rHPDg2cDsMtkGHdnDzJBCIpmPykNABJ1wqkQn1EYyoSUmPcxrUoaqvigQpCcP9p6x0pKAjngyWzB+oOopIiuA61+EdRVkhvXcSMSQ95DpqM17rDZDX3S9VWRhs201pd6D5nfzNZhkGLhQUARlNC/MsfKBqJFV46yeaZ0pQfheklBYaDQkvGIuU5yGF2nxVHx+oze9fcIR8sga0Fq07kp3PJsJuwmhkPJ4UWmnbMH/m7RMKH9BTGihZ0tZyDQ==; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+
+
+2015-05-21 17:12:16[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:12:16
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 178
+   在 WebManager.Controllers.BranchController.GetBranchList() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\BranchController.cs:行号 52
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/Branch/GetBranchList
+RawUrl=/Branch/GetBranchList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding:gzip, deflate, sdch
+Accept-Language:zh-CN,zh;q=0.8
+Cookie:ASP.NET_SessionId=kfbdzd55rm4mebk0l4nxalyc; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfPotIrZuS7BwQHHAzHgJQ9DYm14J/Aerz8jMJRZ+FZOJXBPetoT/l7gcWqfP5HiIdAtNINJ/UAx80Oq20oisHV3G5NF1K4tBUq/ASaYbfhWuw8014z4n2Hs9X4z4hTnHbV9xP8aiuL65ktQTLsebaroXM9syVeA1JF9UyCq3tgfYPZj7h2NUGv7UX0lH7gG86TK4obVoF/mMhg6XWw2NHJViWtjKXpHgWPqYQWfOc4Go+Tusfx6ILTfUNhu8JKhG2Zb3rOebCPzh5fRbFQJ6El+HFjoE+/QywKBqRXjXVkAwNgRi5leD6w84KJUjVl9CVyWStnJ581+QM18H7cP9missUDxpJadKTbGMJeQW/Hm23YtYVj9+Qx8hUpNIXh5o9APeRKQ9V61cIa8vG5Zauu3EefGL7OLTrfHDXsGbkK73tr+o2qcdCULQWXXfbUv0Emj84xdtIC/7qBQPhQEDUq//l+a7Sr4i01VlCMsjJvM0pv8+FtS70TeHsEHe+Dbkstd9TdvgpC50ma5bxFaolsyl/hO8kB2xJX8Liq8uh7D820qcg9ISE58RDJNatWlJwuR0A40s02Nv5tJ6boXYK6Bk2/RPuGvYKrtzzvZHbFHHaD4qH1+/MpWxHeO+R2R9BLHjhLTfXggr4RD5etMalm7QbeZy7DUhCJn+zerIPNpzJY7xNQbf2YqmKg6H1GYqNEsL5I+qrlgJZ9Q+0w1XcIRcyHkEbIp+q6jkSfeZXsFYVPMg72sJ+Feoux/ASIqtjRXDCzahik04w==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Branch/GetBranchList
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36
+
+
+2015-05-21 17:16:16[16] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:16:16
+Title=使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+Message=Message:使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+TargetSite:Void Serialize(System.Object, System.Text.StringBuilder, SerializationFormat)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+RawUrl=/RelationShip/GetCustomerList
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:18
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=3IJLtMYovfFbUPdSRf9a9x6a5kijeTvnhKG6s4e/wq1+EnWZBVfHLk9AV2gs2Fc2T3MEIyeeRuhJ15THi+on3dwE0rmhWJRjdLI5x2zc3ByiCDgN6SmOjXQ93mpNDhSWAOOmaVobC2Wc5RcxuPpMG8pu/MpOumAqNccC2AaHdTCzvTe7Gs4OpzWuS2d3SwRjj7GZi/0MD71iUSO/GQIhGt7CnX5T2PzW9LHEX/Qc8CqZiBBMuX4KsyiiKspubsyF62S39i15nyJHn1g9lCzyeUHZ6j39AzXpE4g9L/3kJh4joSDUs7M7EIve3t6UUg2VA2Rcn0u/kXOJqvsDGlQitOiYq504vYkKBhyiTJu8mAW1u612Q85gXWGRJSxxxviNBvCsZTYZBaZ22OoGaL3oGdp4kFgM6Fg/224I0q+/N7CT7KeDGICSOFg/VyIUSdT7owndsDSoVy9oqGVxXTXHXV90P4WMDfWb8S4znVMM4B9980cQVtNkWUy8Ze41LeGu7HKEc+J7UIR2Wn0qBNos6+B8SxCksfgnuLJgpLC2Rtpg/XOLiJHUNEdYuoSTxvxK8fKs+G3ehB1o/X+yLLQaDhwN2gq+OHtfHGvjDWD2uOPUeHROHDYurxbnYgWF6DDRJ8jVqKz9i4U9MQOkbC6amf3p7ksANrV3cydHuWMXkhDEd0RysiV8qTwk3n9AvjZ+TuRd0bye1iUtKAQ3FSP6MWBA9oYO2ypCVeKZhubokS5wo66QxrgO4HQbniFJQ38qfVw+7Y+EKKggQWJ/9WTrFhMv50iKL3ZfbaxWqAeqR0xCmPrsfYgICJmcX6se1m2eoX3yYd/bbU22XcEt9GwGaTL+KzitbGTdZ/57LjkN7UiVi2b6tD4B7uM/3Go5TaUTi+c/AM6yxkfemZZT9I+tAiS+T9nnYkGDjhMsZ9O/Qv3DW7Wce2qSOQ==; CompanyInfo=QKxDuUzF8sMoMlcOE9DXhxWlM+4l8AjsME2DY1osSBh4xcY+OdKtIbaATkweeZCIP5cF72pWNqi8y+e5nKrbHAKqvmKfZWHnZH95sNIWh2ukzGsl+8koCGPdjBB30gzp/4JXHeVdTKpidOB/pjp7Qwvs+Lqb6VqC4OUF8jhIdGlBd9tDdmY6JtrWLQ+9HhYopgJzZUDfrfAURdjTNZ1eG4hQTf3VU5LImT7GGraaWsRP4oCcXGLWuMWw8C4iIeImP26BSq3/FaPqtAHAyQJlxj+0yCt7/5QerYTZpAc6uaYKwqR+0X0gks/m/thti/j6MT1WqmqXmXwWTh7LrqjoqK6l0KDqKIOMgesQSaSYBZhXtupZnk6Bv/50sR56it7ftxgnlb5x0lvjkDTwj72ADu8sWU8cghZrmTOFfyKe/qO6F8YsDSfVQ4Ag3wML47D55MzbViK5cBCjCg878CqseiFQ9Ysfh0akYc1oCL5Z2+KLfPFxiqF43YRZVunTiaBEbQhQWeytpeDhycuTc/HjbQup3XU4izNdFfA1Y7l2rAwXzBZMnvy/+8aTj/e8HzP4klLDjpwkh8kPgxLIignUVKo/DPcXVYapoJBYi09oTUFdcr1JGDkUCEeUqMmfXajPsHfss7dBzQr5HeV7LdeDJW7YovsiM5r4kP55RRU0L0wj56APq8c+ld++RnmedYEHSPtO4h2QU50iQMOKeJUk1XT7bwg/liFx0RSwS/7fj1S+YhTZPeO1qDrZSKUsw2j3QCVEmOPGpPphUi+1sZLVlvxKR/xqPwge35sS2aOXR8m/l0IHoKp8LDiHKvoxboFrAjrMhdgOwVXPNL8aNUXjQGgdEohQXrxucabtpp3xB+Pts1gK419FSlZtjD/b1gcb9q8nJG6VL4Pmb+PYjDFRywp1MqrMJAE7UKKwp/+Jq+gYZq/8dnikEdbE/8iiqSyhmTrfUh7kZQHBYQSmQTMK+568A3S2TlYPpjew62mP3e7Gps51rp0IyVL2mf4pHI7dHieNxMF4BGJhq0b4eR8FewetM1O06dRnhuwpch41j9rK9b2xlnDRhHSIhBDpRPOUxKDyKiX4DKypAXzm9MkRIg==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-21 17:16:25[26] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:16:25
+Title=使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+Message=Message:使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+TargetSite:Void Serialize(System.Object, System.Text.StringBuilder, SerializationFormat)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+RawUrl=/RelationShip/GetCustomerList
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:18
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=3IJLtMYovfFbUPdSRf9a9x6a5kijeTvnhKG6s4e/wq1+EnWZBVfHLk9AV2gs2Fc2T3MEIyeeRuhJ15THi+on3dwE0rmhWJRjdLI5x2zc3ByiCDgN6SmOjXQ93mpNDhSWAOOmaVobC2Wc5RcxuPpMG8pu/MpOumAqNccC2AaHdTCzvTe7Gs4OpzWuS2d3SwRjj7GZi/0MD71iUSO/GQIhGt7CnX5T2PzW9LHEX/Qc8CqZiBBMuX4KsyiiKspubsyF62S39i15nyJHn1g9lCzyeUHZ6j39AzXpE4g9L/3kJh4joSDUs7M7EIve3t6UUg2VA2Rcn0u/kXOJqvsDGlQitOiYq504vYkKBhyiTJu8mAW1u612Q85gXWGRJSxxxviNBvCsZTYZBaZ22OoGaL3oGdp4kFgM6Fg/224I0q+/N7CT7KeDGICSOFg/VyIUSdT7owndsDSoVy9oqGVxXTXHXV90P4WMDfWb8S4znVMM4B9980cQVtNkWUy8Ze41LeGu7HKEc+J7UIR2Wn0qBNos6+B8SxCksfgnuLJgpLC2Rtpg/XOLiJHUNEdYuoSTxvxK8fKs+G3ehB1o/X+yLLQaDhwN2gq+OHtfHGvjDWD2uOPUeHROHDYurxbnYgWF6DDRJ8jVqKz9i4U9MQOkbC6amf3p7ksANrV3cydHuWMXkhDEd0RysiV8qTwk3n9AvjZ+TuRd0bye1iUtKAQ3FSP6MWBA9oYO2ypCVeKZhubokS5wo66QxrgO4HQbniFJQ38qfVw+7Y+EKKggQWJ/9WTrFhMv50iKL3ZfbaxWqAeqR0xCmPrsfYgICJmcX6se1m2eoX3yYd/bbU22XcEt9GwGaTL+KzitbGTdZ/57LjkN7UiVi2b6tD4B7uM/3Go5TaUTi+c/AM6yxkfemZZT9I+tAiS+T9nnYkGDjhMsZ9O/Qv3DW7Wce2qSOQ==; CompanyInfo=QKxDuUzF8sMoMlcOE9DXhxWlM+4l8AjsME2DY1osSBh4xcY+OdKtIbaATkweeZCIP5cF72pWNqi8y+e5nKrbHAKqvmKfZWHnZH95sNIWh2ukzGsl+8koCGPdjBB30gzp/4JXHeVdTKpidOB/pjp7Qwvs+Lqb6VqC4OUF8jhIdGlBd9tDdmY6JtrWLQ+9HhYopgJzZUDfrfAURdjTNZ1eG4hQTf3VU5LImT7GGraaWsRP4oCcXGLWuMWw8C4iIeImP26BSq3/FaPqtAHAyQJlxj+0yCt7/5QerYTZpAc6uaYKwqR+0X0gks/m/thti/j6MT1WqmqXmXwWTh7LrqjoqK6l0KDqKIOMgesQSaSYBZhXtupZnk6Bv/50sR56it7ftxgnlb5x0lvjkDTwj72ADu8sWU8cghZrmTOFfyKe/qO6F8YsDSfVQ4Ag3wML47D55MzbViK5cBCjCg878CqseiFQ9Ysfh0akYc1oCL5Z2+KLfPFxiqF43YRZVunTiaBEbQhQWeytpeDhycuTc/HjbQup3XU4izNdFfA1Y7l2rAwXzBZMnvy/+8aTj/e8HzP4klLDjpwkh8kPgxLIignUVKo/DPcXVYapoJBYi09oTUFdcr1JGDkUCEeUqMmfXajPsHfss7dBzQr5HeV7LdeDJW7YovsiM5r4kP55RRU0L0wj56APq8c+ld++RnmedYEHSPtO4h2QU50iQMOKeJUk1XT7bwg/liFx0RSwS/7fj1S+YhTZPeO1qDrZSKUsw2j3QCVEmOPGpPphUi+1sZLVlvxKR/xqPwge35sS2aOXR8m/l0IHoKp8LDiHKvoxboFrAjrMhdgOwVXPNL8aNUXjQGgdEohQXrxucabtpp3xB+Pts1gK419FSlZtjD/b1gcb9q8nJG6VL4Pmb+PYjDFRywp1MqrMJAE7UKKwp/+Jq+gYZq/8dnikEdbE/8iiqSyhmTrfUh7kZQHBYQSmQTMK+568A3S2TlYPpjew62mP3e7Gps51rp0IyVL2mf4pHI7dHieNxMF4BGJhq0b4eR8FewetM1O06dRnhuwpch41j9rK9b2xlnDRhHSIhBDpRPOUxKDyKiX4DKypAXzm9MkRIg==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-21 17:16:47[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:16:47
+Title=使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+Message=Message:使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+TargetSite:Void Serialize(System.Object, System.Text.StringBuilder, SerializationFormat)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+RawUrl=/RelationShip/GetCustomerList
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:18
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=3IJLtMYovfFbUPdSRf9a9x6a5kijeTvnhKG6s4e/wq1+EnWZBVfHLk9AV2gs2Fc2T3MEIyeeRuhJ15THi+on3dwE0rmhWJRjdLI5x2zc3ByiCDgN6SmOjXQ93mpNDhSWAOOmaVobC2Wc5RcxuPpMG8pu/MpOumAqNccC2AaHdTCzvTe7Gs4OpzWuS2d3SwRjj7GZi/0MD71iUSO/GQIhGt7CnX5T2PzW9LHEX/Qc8CqZiBBMuX4KsyiiKspubsyF62S39i15nyJHn1g9lCzyeUHZ6j39AzXpE4g9L/3kJh4joSDUs7M7EIve3t6UUg2VA2Rcn0u/kXOJqvsDGlQitOiYq504vYkKBhyiTJu8mAW1u612Q85gXWGRJSxxxviNBvCsZTYZBaZ22OoGaL3oGdp4kFgM6Fg/224I0q+/N7CT7KeDGICSOFg/VyIUSdT7owndsDSoVy9oqGVxXTXHXV90P4WMDfWb8S4znVMM4B9980cQVtNkWUy8Ze41LeGu7HKEc+J7UIR2Wn0qBNos6+B8SxCksfgnuLJgpLC2Rtpg/XOLiJHUNEdYuoSTxvxK8fKs+G3ehB1o/X+yLLQaDhwN2gq+OHtfHGvjDWD2uOPUeHROHDYurxbnYgWF6DDRJ8jVqKz9i4U9MQOkbC6amf3p7ksANrV3cydHuWMXkhDEd0RysiV8qTwk3n9AvjZ+TuRd0bye1iUtKAQ3FSP6MWBA9oYO2ypCVeKZhubokS5wo66QxrgO4HQbniFJQ38qfVw+7Y+EKKggQWJ/9WTrFhMv50iKL3ZfbaxWqAeqR0xCmPrsfYgICJmcX6se1m2eoX3yYd/bbU22XcEt9GwGaTL+KzitbGTdZ/57LjkN7UiVi2b6tD4B7uM/3Go5TaUTi+c/AM6yxkfemZZT9I+tAiS+T9nnYkGDjhMsZ9O/Qv3DW7Wce2qSOQ==; CompanyInfo=QKxDuUzF8sMoMlcOE9DXhxWlM+4l8AjsME2DY1osSBh4xcY+OdKtIbaATkweeZCIP5cF72pWNqi8y+e5nKrbHAKqvmKfZWHnZH95sNIWh2ukzGsl+8koCGPdjBB30gzp/4JXHeVdTKpidOB/pjp7Qwvs+Lqb6VqC4OUF8jhIdGlBd9tDdmY6JtrWLQ+9HhYopgJzZUDfrfAURdjTNZ1eG4hQTf3VU5LImT7GGraaWsRP4oCcXGLWuMWw8C4iIeImP26BSq3/FaPqtAHAyQJlxj+0yCt7/5QerYTZpAc6uaYKwqR+0X0gks/m/thti/j6MT1WqmqXmXwWTh7LrqjoqK6l0KDqKIOMgesQSaSYBZhXtupZnk6Bv/50sR56it7ftxgnlb5x0lvjkDTwj72ADu8sWU8cghZrmTOFfyKe/qO6F8YsDSfVQ4Ag3wML47D55MzbViK5cBCjCg878CqseiFQ9Ysfh0akYc1oCL5Z2+KLfPFxiqF43YRZVunTiaBEbQhQWeytpeDhycuTc/HjbQup3XU4izNdFfA1Y7l2rAwXzBZMnvy/+8aTj/e8HzP4klLDjpwkh8kPgxLIignUVKo/DPcXVYapoJBYi09oTUFdcr1JGDkUCEeUqMmfXajPsHfss7dBzQr5HeV7LdeDJW7YovsiM5r4kP55RRU0L0wj56APq8c+ld++RnmedYEHSPtO4h2QU50iQMOKeJUk1XT7bwg/liFx0RSwS/7fj1S+YhTZPeO1qDrZSKUsw2j3QCVEmOPGpPphUi+1sZLVlvxKR/xqPwge35sS2aOXR8m/l0IHoKp8LDiHKvoxboFrAjrMhdgOwVXPNL8aNUXjQGgdEohQXrxucabtpp3xB+Pts1gK419FSlZtjD/b1gcb9q8nJG6VL4Pmb+PYjDFRywp1MqrMJAE7UKKwp/+Jq+gYZq/8dnikEdbE/8iiqSyhmTrfUh7kZQHBYQSmQTMK+568A3S2TlYPpjew62mP3e7Gps51rp0IyVL2mf4pHI7dHieNxMF4BGJhq0b4eR8FewetM1O06dRnhuwpch41j9rK9b2xlnDRhHSIhBDpRPOUxKDyKiX4DKypAXzm9MkRIg==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-21 17:17:04[23] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:17:04
+Title=使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+Message=Message:使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+TargetSite:Void Serialize(System.Object, System.Text.StringBuilder, SerializationFormat)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+RawUrl=/RelationShip/GetCustomerList
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:18
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=3IJLtMYovfFbUPdSRf9a9x6a5kijeTvnhKG6s4e/wq1+EnWZBVfHLk9AV2gs2Fc2T3MEIyeeRuhJ15THi+on3dwE0rmhWJRjdLI5x2zc3ByiCDgN6SmOjXQ93mpNDhSWAOOmaVobC2Wc5RcxuPpMG8pu/MpOumAqNccC2AaHdTCzvTe7Gs4OpzWuS2d3SwRjj7GZi/0MD71iUSO/GQIhGt7CnX5T2PzW9LHEX/Qc8CqZiBBMuX4KsyiiKspubsyF62S39i15nyJHn1g9lCzyeUHZ6j39AzXpE4g9L/3kJh4joSDUs7M7EIve3t6UUg2VA2Rcn0u/kXOJqvsDGlQitOiYq504vYkKBhyiTJu8mAW1u612Q85gXWGRJSxxxviNBvCsZTYZBaZ22OoGaL3oGdp4kFgM6Fg/224I0q+/N7CT7KeDGICSOFg/VyIUSdT7owndsDSoVy9oqGVxXTXHXV90P4WMDfWb8S4znVMM4B9980cQVtNkWUy8Ze41LeGu7HKEc+J7UIR2Wn0qBNos6+B8SxCksfgnuLJgpLC2Rtpg/XOLiJHUNEdYuoSTxvxK8fKs+G3ehB1o/X+yLLQaDhwN2gq+OHtfHGvjDWD2uOPUeHROHDYurxbnYgWF6DDRJ8jVqKz9i4U9MQOkbC6amf3p7ksANrV3cydHuWMXkhDEd0RysiV8qTwk3n9AvjZ+TuRd0bye1iUtKAQ3FSP6MWBA9oYO2ypCVeKZhubokS5wo66QxrgO4HQbniFJQ38qfVw+7Y+EKKggQWJ/9WTrFhMv50iKL3ZfbaxWqAeqR0xCmPrsfYgICJmcX6se1m2eoX3yYd/bbU22XcEt9GwGaTL+KzitbGTdZ/57LjkN7UiVi2b6tD4B7uM/3Go5TaUTi+c/AM6yxkfemZZT9I+tAiS+T9nnYkGDjhMsZ9O/Qv3DW7Wce2qSOQ==; CompanyInfo=QKxDuUzF8sMoMlcOE9DXhxWlM+4l8AjsME2DY1osSBh4xcY+OdKtIbaATkweeZCIP5cF72pWNqi8y+e5nKrbHAKqvmKfZWHnZH95sNIWh2ukzGsl+8koCGPdjBB30gzp/4JXHeVdTKpidOB/pjp7Qwvs+Lqb6VqC4OUF8jhIdGlBd9tDdmY6JtrWLQ+9HhYopgJzZUDfrfAURdjTNZ1eG4hQTf3VU5LImT7GGraaWsRP4oCcXGLWuMWw8C4iIeImP26BSq3/FaPqtAHAyQJlxj+0yCt7/5QerYTZpAc6uaYKwqR+0X0gks/m/thti/j6MT1WqmqXmXwWTh7LrqjoqK6l0KDqKIOMgesQSaSYBZhXtupZnk6Bv/50sR56it7ftxgnlb5x0lvjkDTwj72ADu8sWU8cghZrmTOFfyKe/qO6F8YsDSfVQ4Ag3wML47D55MzbViK5cBCjCg878CqseiFQ9Ysfh0akYc1oCL5Z2+KLfPFxiqF43YRZVunTiaBEbQhQWeytpeDhycuTc/HjbQup3XU4izNdFfA1Y7l2rAwXzBZMnvy/+8aTj/e8HzP4klLDjpwkh8kPgxLIignUVKo/DPcXVYapoJBYi09oTUFdcr1JGDkUCEeUqMmfXajPsHfss7dBzQr5HeV7LdeDJW7YovsiM5r4kP55RRU0L0wj56APq8c+ld++RnmedYEHSPtO4h2QU50iQMOKeJUk1XT7bwg/liFx0RSwS/7fj1S+YhTZPeO1qDrZSKUsw2j3QCVEmOPGpPphUi+1sZLVlvxKR/xqPwge35sS2aOXR8m/l0IHoKp8LDiHKvoxboFrAjrMhdgOwVXPNL8aNUXjQGgdEohQXrxucabtpp3xB+Pts1gK419FSlZtjD/b1gcb9q8nJG6VL4Pmb+PYjDFRywp1MqrMJAE7UKKwp/+Jq+gYZq/8dnikEdbE/8iiqSyhmTrfUh7kZQHBYQSmQTMK+568A3S2TlYPpjew62mP3e7Gps51rp0IyVL2mf4pHI7dHieNxMF4BGJhq0b4eR8FewetM1O06dRnhuwpch41j9rK9b2xlnDRhHSIhBDpRPOUxKDyKiX4DKypAXzm9MkRIg==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-21 17:20:57[12] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:20:57
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 203
+   在 WebManager.Controllers.BranchController.GetBranchList() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\BranchController.cs:行号 52
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/Branch/GetBranchList
+RawUrl=/Branch/GetBranchList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding:gzip, deflate, sdch
+Accept-Language:zh-CN,zh;q=0.8
+Cookie:ASP.NET_SessionId=kfbdzd55rm4mebk0l4nxalyc; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfOrkNQGsUd0H1TXx2kl+5/6t9D+lgm4jS/d3NKGV/q8YhoU8rZtk/wSYdpq7fPpYCz935x8h2KVOCJHbTJsYwA97RtMnsowcX5Q7gw29XxceTuzfJjvj3bc7vMJf6nidw+rsjepFof8M3qZs/2ghupuG3TJtncI4ziwoHiR4roYg/3g7J4is5Sf68/3jnTP/ZrvIBrCBJSgPMV83r2p2lE3R9QgRvdDNDQpbqm4im5HRSbUeqbFa6EHH+sRtrdKQa1BvlBsOY7vXsQDV7fkUGy75N99De9F7B9D+b+tqVW+s1d9lHjWSPeYDHcBMd1jvVDJKFmbm84B18oHWAsk9NUxv4p9l7ZNi7SDWsW91RL3QChhO0NjzV1jGG2NjE+Cb5o70bwizGRBYu0yQwsx4h4ueTujl0xVjOvb7+5uUgvxYXQcuLzFXOuRuMvsbZZhd5wlt8iAMVe15ifAcnsUvhHHeBp/RtpCJBufXwlrt5otAQCBAVBFFfWXqZyqARObv8QoaAx1AhQsOyFeOIPr5EgAqCFmsgB+pou7oTDnyLnr6ELUWkMRHT5JIgWX6CMsac3spawdH39f5rwMM50qw9lGsWpciBCKOTydOy5vSrpXUQgsDtvB6GRvmsg3UcW5lwz/AqhkFG7v4tOT85M89nplcYGnGSXA94vW7Bc0g0Zdgomq1f6wf2TaovpTSFOf/8vbv2C/aIVNwNpG2qWMZVK1aTQ6sxUxII5N+ZguunWaQsZTPbjltzOyyLvyiEb5lgjJcygk5lspOg==; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Branch/GetBranchList
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36
+
+
+2015-05-21 17:26:37[16] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:26:37
+Title=未能找到默认的角色提供程序。 (E:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\web.config line 66)
+Message=Message:未能找到默认的角色提供程序。 (E:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\web.config line 66)
+TargetSite:Void Initialize()
+Data:
+StackTrace:   在 System.Web.Security.Roles.Initialize()
+   在 System.Web.Security.RoleManagerModule.OnEnter(Object source, EventArgs eventArgs)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/Home/index
+RawUrl=/Branch/GetBranchList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfPTR3+MZYfcQMoayMfhyzDxBddCHBYpHKdDcHfguO9qTrVvJrPVMrc0HllLAAFzhwDT8x2/GRcC2NqBHt/Vqw56PHDozWA0WmS7cICLyVOHv93qsuDgjPAMA/59a8mcIjeCHqA/l4QbA9AQ9MYj22N3DCzTUkfHpxwESEK5k6FU62SCUheIQB8jAuZige2EP5j9WgcARCaU9AxmzqO3o000rH9nCdksSF2B4+u3jo9U+r4sL6aDXFxYFty97xcpHdwj86adOF5ni8uK4w27gHu+jOixo+g6RT3LXsV3f+GPjzO1wJtgpk8J3PSoPTY7wZ5rX8hYpANjAKytQX1HPzDSJ2d/7j4jKEtY0awy4DMFfj2UpQF4ML7Vk5FhCYR9/s71LuJY0vtJ8YeEo5V3ORt9edxpfRUbaRCmDovaRsMLisrFSueMrvjxNDIVFkDYzHAj0yKeOKAozvH2bzVAoPXiZn7X1cIZUQz/5i3OW6EhzcyTDKXPHxrOPX1cTJHw4j81r7xrV+w3Cv/7MX+EZq2Wh9dk8EKVMe22DviMJm0V9puBP4VTKJUiLg6n+JaUyeHp6omZ2VB0zFm/cJE8NdfqhrZrx8BWWc9F4clpb83ivnHHh+ZpNq9J2yWk3nuGglxGaXm282z/qFGOC14cGBhplCFFG/t3RmB6YgGGVD8V2sicpu0twZAJpt31Ve472297aPvsOefpEccDyDOI+BeJutzAedj4EOxY2QntKhBCf7D0NKnras0o05ZjDCyycfEHmPBBwMhyPQ==; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+
+
+2015-05-21 17:26:42[10] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:26:42
+Title=未能找到默认的角色提供程序。 (E:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\web.config line 66)
+Message=Message:未能找到默认的角色提供程序。 (E:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\web.config line 66)
+TargetSite:Void Initialize()
+Data:
+StackTrace:   在 System.Web.Security.Roles.Initialize()
+   在 System.Web.Security.RoleManagerModule.OnEnter(Object source, EventArgs eventArgs)
+   在 System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch/GetBranchList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfPTR3+MZYfcQMoayMfhyzDxBddCHBYpHKdDcHfguO9qTrVvJrPVMrc0HllLAAFzhwDT8x2/GRcC2NqBHt/Vqw56PHDozWA0WmS7cICLyVOHv93qsuDgjPAMA/59a8mcIjeCHqA/l4QbA9AQ9MYj22N3DCzTUkfHpxwESEK5k6FU62SCUheIQB8jAuZige2EP5j9WgcARCaU9AxmzqO3o000rH9nCdksSF2B4+u3jo9U+r4sL6aDXFxYFty97xcpHdwj86adOF5ni8uK4w27gHu+jOixo+g6RT3LXsV3f+GPjzO1wJtgpk8J3PSoPTY7wZ5rX8hYpANjAKytQX1HPzDSJ2d/7j4jKEtY0awy4DMFfj2UpQF4ML7Vk5FhCYR9/s71LuJY0vtJ8YeEo5V3ORt9edxpfRUbaRCmDovaRsMLisrFSueMrvjxNDIVFkDYzHAj0yKeOKAozvH2bzVAoPXiZn7X1cIZUQz/5i3OW6EhzcyTDKXPHxrOPX1cTJHw4j81r7xrV+w3Cv/7MX+EZq2Wh9dk8EKVMe22DviMJm0V9puBP4VTKJUiLg6n+JaUyeHp6omZ2VB0zFm/cJE8NdfqhrZrx8BWWc9F4clpb83ivnHHh+ZpNq9J2yWk3nuGglxGaXm282z/qFGOC14cGBhplCFFG/t3RmB6YgGGVD8V2sicpu0twZAJpt31Ve472297aPvsOefpEccDyDOI+BeJutzAedj4EOxY2QntKhBCf7D0NKnras0o05ZjDCyycfEHmPBBwMhyPQ==; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+
+
+2015-05-21 17:28:52[16] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/21 17:28:52
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Add(HttpCookie cookie)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName, String cookieDomain)
+   在 HS.Framework.Common.Util.CookieUtil.ClearCookie(String CookieName)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 203
+   在 WebManager.Controllers.PromotionController.GetPromotionList() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\PromotionController.cs:行号 82
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=http://www.webmanager.com/Branch/GetBranchList
+RawUrl=/Promotion/GetPromotionList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=meglvyhw0xznzc3uig0iywew; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfPTR3+MZYfcQMoayMfhyzDxBddCHBYpHKdDcHfguO9qTrVvJrPVMrc0HllLAAFzhwDT8x2/GRcC2NqBHt/Vqw56PHDozWA0WmS7cICLyVOHv93qsuDgjPAMA/59a8mcIjeCHqA/l4QbA9AQ9MYj22N3DCzTUkfHpxwESEK5k6FU62SCUheIQB8jAuZige2EP5j9WgcARCaU9AxmzqO3o000rH9nCdksSF2B4+u3jo9U+r4sL6aDXFxYFty97xcpHdwj86adOF5ni8uK4w27gHu+jOixo+g6RT3LXsV3f+GPjzO1wJtgpk8J3PSoPTY7wZ5rX8hYpANjAKytQX1HPzDSJ2d/7j4jKEtY0awy4DMFfj2UpQF4ML7Vk5FhCYR9/s71LuJY0vtJ8YeEo5V3ORt9edxpfRUbaRCmDovaRsMLisrFSueMrvjxNDIVFkDYzHAj0yKeOKAozvH2bzVAoPXiZn7X1cIZUQz/5i3OW6EhzcyTDKXPHxrOPX1cTJHw4j81r7xrV+w3Cv/7MX+EZq2Wh9dk8EKVMe22DviMJm0V9puBP4VTKJUiLg6n+JaUyeHp6omZ2VB0zFm/cJE8NdfqhrZrx8BWWc9F4clpb83ivnHHh+ZpNq9J2yWk3nuGglxGaXm282z/qFGOC14cGBhplCFFG/t3RmB6YgGGVD8V2sicpu0twZAJpt31Ve472297aPvsOefpEccDyDOI+BeJutzAedj4EOxY2QntKhBCf7D0NKnras0o05ZjDCyycfEHmPBBwMhyPQ==; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Branch/GetBranchList
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+
+

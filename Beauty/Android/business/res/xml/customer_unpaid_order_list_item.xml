@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/order_responsible_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/gray"
+       />
+    
+    <TextView
+        android:id="@+id/order_product_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_below ="@id/order_responsible_person_name"
+        android:textSize="@dimen/text_size"
+        android:maxWidth="250dip"
+        android:text="@string/ellipsis"
+        android:singleLine="true"
+        android:textColor="@color/blue"
+       />
+
+    <TextView
+        android:id="@+id/order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_below ="@id/order_product_name_text"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/black"
+       />
+    <TextView
+        android:id="@+id/order_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/unpaid_order_list_margin_right"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/gray"
+       />
+    
+    <TextView
+        android:id="@+id/order_product_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/unpaid_order_list_margin_right"
+        android:layout_alignParentRight="true"
+        android:layout_below ="@id/order_time_text"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/gray"
+       />
+    <TextView
+        android:id="@+id/order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/unpaid_order_list_margin_right"
+        android:layout_below="@id/order_product_quantity"
+        android:textSize="@dimen/text_size" 
+        android:singleLine="true"
+        android:textColor="@color/gray"
+        android:maxWidth="100dip"/>
+    <TextView
+        android:id="@+id/order_responsible_person_customer_divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_product_quantity"
+        android:layout_toLeftOf="@id/order_price"
+        android:textSize="@dimen/text_size" 
+        android:textColor="@color/gray"
+        android:text="/"/>
+    
+     <TextView
+        android:id="@+id/unpaid_order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_product_quantity"
+        android:layout_toLeftOf="@id/order_responsible_person_customer_divide"
+        android:textSize="@dimen/text_size" 
+        android:singleLine="true"
+        android:ellipsize="middle"
+        android:textColor="@color/red"
+        android:maxWidth="100dip"/>
+     <TextView
+        android:id="@+id/order_price_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_product_quantity"
+        android:layout_toLeftOf="@id/unpaid_order_price"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/gray"
+        android:maxWidth="100dip"/>
+    <ImageButton
+            android:id="@+id/select_unpaid_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical ="true"
+            android:layout_alignParentRight="true"/>
+    <View
+        android:id="@+id/customer_unpaid_order_divide_view" 
+        style="@style/activity_content_divide_view_attrs" 
+        android:layout_below ="@id/order_status"
+        android:layout_marginRight="50dip"/>
+    <LinearLayout
+        android:id="@+id/customer_unpaid_order_service_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="38dip"
+        android:layout_below ="@id/customer_unpaid_order_divide_view"
+        android:orientation="vertical">
+    </LinearLayout> 
+    
+</RelativeLayout>

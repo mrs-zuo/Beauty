@@ -1,0 +1,808 @@
+2015-09-30 10:09:09[26] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 10:09:09
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=011fe1fc4711ccf584239755162307aj&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfCiiJJR/Z07lujYseP3tr/PoBDUnDDAAve4K3A9HIUX1UJqV96xr2zpHqtTWdbUDZ/LETfMZym4/Dh3u1HSC4c7MKRfoO9q8SXfRjPRSCvrCH+ZKmNUfyqrDuDun9Vf8WUFn7TEM0PhqLHHZTfP4Rb2pUN1qP8B5k2jMgzjvvpTWU8MeNhkf4KcYs81whE22cvJuZGVpKpBHgOX5TK961f/hnpux2cCzZj/uRKFMP8dIFjA+OQ0sVwm; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 10:10:02[36] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 10:10:02
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=001ed83ba3ebb3950f9d6ccf38067d2D&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfCiiJJR/Z07lujYseP3tr/PoBDUnDDAAve4K3A9HIUX1UJqV96xr2zpHqtTWdbUDZ/LETfMZym4/Dh3u1HSC4c7MKRfoO9q8SXfRjPRSCvrCH+ZKmNUfyqrDuDun9Vf8WUFn7TEM0PhqLHHZTfP4Rb2pUN1qP8B5k2jMgzjvvpTWU8MeNhkf4KcYs81whE22cvJuZGVpKpBHgOX5TK961f/hnpux2cCzZj/uRKFMP8dIFjA+OQ0sVwm; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 10:10:36[34] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 10:10:36
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=http://t.test.beauty.glamise.com/home/index?code=001ed83ba3ebb3950f9d6ccf38067d2D&state=skMPVC35BDo%3D
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfCiiJJR/Z07lujYseP3tr/PoBDUnDDAAve4K3A9HIUX1UJqV96xr2zpHqtTWdbUDZ/LETfMZym4/Dh3u1HSC4c7MKRfoO9q8SXfRjPRSCvrCH+ZKmNUfyqrDuDun9Vf8WUFn7TEM0PhqLHHZTfP4Rb2pUN1qP8B5k2jMgzjvvpTWU8MeNhkf4KcYs81whE22cvJuZGVpKpBHgOX5TK961f/hnpux2cCzZj/uRKFMP8dIFjA+OQ0sVwm; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+Referer:http://t.test.beauty.glamise.com/home/index?code=001ed83ba3ebb3950f9d6ccf38067d2D&state=skMPVC35BDo%3D
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 10:11:23[33] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 10:11:23
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=03167d5eed67ae9727865d6ee4e7cfeY&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 10:15:06[26] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 10:15:06
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=031b455cdedace02d404b2c0e19d19es&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 10:15:11[35] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 10:15:11
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=0015a5ee43618f323308389abb1f999B&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 14:07:32[8] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 14:07:32
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Remove(String name)
+   在 HS.Framework.Common.Util.CookieUtil.DeleteCookie(String CookieName, String cookieDomain)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 143
+   在 WebTouch.Controllers.HomeController.Index() 位置 e:\Vss\WebTouch\WebTouch\Controllers\HomeController.cs:行号 51
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Host:www.webtouch.com
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-30 14:08:21[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 14:08:21
+Title=服务器无法在发送 HTTP 标头之后修改 cookie。
+Message=Message:服务器无法在发送 HTTP 标头之后修改 cookie。
+TargetSite:Void BeforeCookieCollectionChange()
+Data:
+StackTrace:   在 System.Web.HttpResponse.BeforeCookieCollectionChange()
+   在 System.Web.HttpCookieCollection.Remove(String name)
+   在 HS.Framework.Common.Util.CookieUtil.DeleteCookie(String CookieName, String cookieDomain)
+   在 WebTouch.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax, Boolean isNeedLogin) 位置 e:\Vss\WebTouch\WebTouch\Controllers\Base\BaseController.cs:行号 159
+   在 WebTouch.Controllers.AccountController.MyHome() 位置 e:\Vss\WebTouch\WebTouch\Controllers\AccountController.cs:行号 44
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/?co=45
+RawUrl=/Account/MyHome
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:CompanyList=YuEZiSyO/i4lZiKomFmbkBBf04UgwOcW0bFB1CWxAqlKh1PbR+FvcTxMqBGWR15qWGFcJtEbK5ZPmzrCChQ+QgQIDyfoXh9hkjcApCSnBr7EWMsXdyigNcXDL+vG8I9CaH0COA8aj1Ixi2sDXtQPt9Yv/zl/5UzRqOZppPWtrzP0PIiT9752fky1pPJHa0gK8kfuc8SWbX3gJwXmNwkNnqxNzzmi9Qe++k8Ms4Nrw+lXMc1W3R7DMpK7p/6zfEVOxkBg0dXihUKnr+Z6V/PjjZNs/nUFZa/0unJgiYUJoj1+BXgz4Rhk7juQY1/setvqrirQL3bJUw/2/Y4jJULfmnzc/ydm49utBHjuHYLpCFfjT2OShTJ1irTpk0KhlHf0EzGgq5scgcBNDYMcksDujhIEd61Qu/0pjD5it5rHuYG0lgjuT/Oz2PtNKwlbTebuCAwbN/4QD7tb/alLr/VINLM+LjQg1zKzQkP/6cD9lzW40CyA8QbXTiNPRXb9cqFwVayWozJ70hLcklMKsMMTTft7vZ5W4vtcCb0xmVgG9HeX4ZxnrGyIAl9GSj9kyJjO7mHNdVtPs/4uWKAhWtkImlYuoCOOmudlXN7tuhUlUZcM+xYor05IE+qZ0f64/m27CBADAjfckRds6pUqGVsKZn5I9BuNbMfcQ5zQrIV5l+CZgPiUFgLHqaN2E0dVcS3oGXIuTO3KSpHWTauZ4x8ChaPQ488PC7J5oanunTqLrVo/+KZFtRqFL8/tXHMceUgvyXnuoeocAjXjTqqXu0oVXM/CUb/+cD8wwPipMQHWLIpAWFsoOjuvqV+AEqQ9DEcRPpVYCYSOazmWaH4/hSPjJHWACVUb/hD17f47arf921TEL/w1nmWF1uIkUYrruxU05IYWG+lACDThWqrRl4m4DyNOS9d4CIZ32BKrUaoKM2z3op/SSzqHhDaF1kXaZQt56X/RkfK76iK8s+LgwMvQUL1gJHw/0RI0WNXJkLvYYnHoJDewrdi4gtsCVDT2ZorCYg2hOmop2tPr5qBH2k/3szcZ4OTIYDw4dSqYNOdORRAht+HAwMjA7UvFf0UPKVvRx3G0QJ59IQ6oVg+0+OrpBA==; param=VoIV/Klr2SLVAz8rPzUsJrI8TK1i6qdtnk9f0DAvdZnVjK84XVnvkHrp7jYkLDCea5ofWfRmUhfMczzRr9m9FMPBuXMJgKC+xHcFhtapMp/X7c+7qsdVgvLz48wInfcmJqAUSb1KmF5S5Fx5o/9akmw2aqdDFfP6Y17jjZ2OcldupwIEC3HBbaOqhUaMm4C77/xEk0/moFN6oMQahIo5UYwsMocyL1mttXm9Ib5yzV8A8gF6ZMkFiCOwHFrgaXteR3RpVpBh5eg57IqZJJVbaDE6odDse+GOnSWT9DBiCgYlUdeAlYH6JSp2a547fFQX6LN9YeN6S7IlGYOW9iaSDsQsxujNuLBUiArHkbigQZuQkY8g3gyCCfmnrLrTGovoc3Xr5+IPgeQG18uGy192EpnEyYjgzXGKCv9k4et6MVCx3T/C5z28vx7bWBoouOfxuOTfhfdBmfkED30V+G8Jjoam9COZsMGX20KWfRyo1fNUIb6z5zVxPw9cSOQxbmMJMTOPaJssAF6N35kNBxIql6Sr2IzaEqdf9dbKxCNq32FpD5G2xjA/IMSb3QeWh9RcQPY3R6TGLw3zzBtRANvoZ7hp4fBQCVNjsDX1Tkas+AbQ2BJNWqyedtlVoEF43cfemMFWSB0Z21vFaTdCmdUdpaFQ4AEhYbB4+1ILlpYkgb+Raflel6/YjYYGKx1MeQLKTjG+SewNPu/mMGKMcXEvsJIstb6iVN5eXLuwCvxTIMe8+aoM+OZOlA5EPJ2lLxbzAJbZNXW+n9OOSFoCZdEd1TIuAofj9mTBevN6Ek+KJEMnVcFkfTH57pL1DY35FKHRQmQNwF84rLatJXYEa+luxdN4141y41M3kW5DKv49AD7ZRJMl3+Yz4yMYPK48jpECEU/ceAk+CT5/0Ob7ShOcKr/i7GNoFbyWKCncA+ajr4+qMJ395fedUDZ3PocXX4XVDDIyUBo4dHLU7oDNjjotsV3FvgrFlSndpVlnuuP+5IT0S17pQprysKzg9x1+VkJYeUY6VI80KUfaE5q0DqxXis/CJCFaJwJK; ASP.NET_SessionId=mvu0n0h0ln4u2ynwgfxv1tnf; HSTouchCOD=V3zN1wReEEM=
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/?co=45
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-30 14:08:50[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 14:08:50
+Title=未能在以下路径中找到布局页“/Shared/_LayoutPage1.cshtml”:“/Shared/_LayoutPage1.cshtml”。
+Message=Message:未能在以下路径中找到布局页“/Shared/_LayoutPage1.cshtml”:“/Shared/_LayoutPage1.cshtml”。
+TargetSite:System.String NormalizeLayoutPagePath(System.String, System.Func`2[System.String,System.Boolean])
+Data:
+StackTrace:   在 System.Web.WebPages.WebPageExecutingBase.NormalizeLayoutPagePath(String layoutPage, Func`2 fileExists)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Product/ProductList?t=1&c=0
+RawUrl=/Product/CommodityDetail?lc=1503100000000006
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:CompanyList=YuEZiSyO/i4lZiKomFmbkBBf04UgwOcW0bFB1CWxAqlKh1PbR+FvcTxMqBGWR15qWGFcJtEbK5ZPmzrCChQ+QgQIDyfoXh9hkjcApCSnBr7EWMsXdyigNcXDL+vG8I9CaH0COA8aj1Ixi2sDXtQPt9Yv/zl/5UzRqOZppPWtrzP0PIiT9752fky1pPJHa0gK8kfuc8SWbX3gJwXmNwkNnqxNzzmi9Qe++k8Ms4Nrw+lXMc1W3R7DMpK7p/6zfEVOxkBg0dXihUKnr+Z6V/PjjZNs/nUFZa/0unJgiYUJoj1+BXgz4Rhk7juQY1/setvqrirQL3bJUw/2/Y4jJULfmnzc/ydm49utBHjuHYLpCFfjT2OShTJ1irTpk0KhlHf0EzGgq5scgcBNDYMcksDujhIEd61Qu/0pjD5it5rHuYG0lgjuT/Oz2PtNKwlbTebuCAwbN/4QD7tb/alLr/VINLM+LjQg1zKzQkP/6cD9lzW40CyA8QbXTiNPRXb9cqFwVayWozJ70hLcklMKsMMTTft7vZ5W4vtcCb0xmVgG9HeX4ZxnrGyIAl9GSj9kyJjO7mHNdVtPs/4uWKAhWtkImlYuoCOOmudlXN7tuhUlUZcM+xYor05IE+qZ0f64/m27CBADAjfckRds6pUqGVsKZn5I9BuNbMfcQ5zQrIV5l+CZgPiUFgLHqaN2E0dVcS3oGXIuTO3KSpHWTauZ4x8ChaPQ488PC7J5oanunTqLrVo/+KZFtRqFL8/tXHMceUgvyXnuoeocAjXjTqqXu0oVXM/CUb/+cD8wwPipMQHWLIpAWFsoOjuvqV+AEqQ9DEcRPpVYCYSOazmWaH4/hSPjJHWACVUb/hD17f47arf921TEL/w1nmWF1uIkUYrruxU05IYWG+lACDThWqrRl4m4DyNOS9d4CIZ32BKrUaoKM2z3op/SSzqHhDaF1kXaZQt56X/RkfK76iK8s+LgwMvQUL1gJHw/0RI0WNXJkLvYYnHoJDewrdi4gtsCVDT2ZorCYg2hOmop2tPr5qBH2k/3szcZ4OTIYDw4dSqYNOdORRAht+HAwMjA7UvFf0UPKVvRx3G0QJ59IQ6oVg+0+OrpBA==; param=VoIV/Klr2SLVAz8rPzUsJrI8TK1i6qdtnk9f0DAvdZnVjK84XVnvkHrp7jYkLDCea5ofWfRmUhfMczzRr9m9FMPBuXMJgKC+xHcFhtapMp/X7c+7qsdVgvLz48wInfcmJqAUSb1KmF5S5Fx5o/9akmw2aqdDFfP6Y17jjZ2OcldupwIEC3HBbaOqhUaMm4C77/xEk0/moFN6oMQahIo5UYwsMocyL1mttXm9Ib5yzV8A8gF6ZMkFiCOwHFrgaXteR3RpVpBh5eg57IqZJJVbaDE6odDse+GOnSWT9DBiCgYlUdeAlYH6JSp2a547fFQX6LN9YeN6S7IlGYOW9iaSDsQsxujNuLBUiArHkbigQZuQkY8g3gyCCfmnrLrTGovoc3Xr5+IPgeQG18uGy192EpnEyYjgzXGKCv9k4et6MVCx3T/C5z28vx7bWBoouOfxuOTfhfdBmfkED30V+G8Jjoam9COZsMGX20KWfRyo1fNUIb6z5zVxPw9cSOQxbmMJMTOPaJssAF6N35kNBxIql6Sr2IzaEqdf9dbKxCNq32FpD5G2xjA/IMSb3QeWh9RcQPY3R6TGLw3zzBtRANvoZ7hp4fBQCVNjsDX1Tkas+AbQ2BJNWqyedtlVoEF43cfemMFWSB0Z21vFaTdCmdUdpaFQ4AEhYbB4+1ILlpYkgb+Raflel6/YjYYGKx1MeQLKTjG+SewNPu/mMGKMcXEvsJIstb6iVN5eXLuwCvxTIMe8+aoM+OZOlA5EPJ2lLxbzAJbZNXW+n9OOSFoCZdEd1TIuAofj9mTBevN6Ek+KJEMnVcFkfTH57pL1DY35FKHRQmQNwF84rLatJXYEa+luxdN4141y41M3kW5DKv49AD7ZRJMl3+Yz4yMYPK48jpECEU/ceAk+CT5/0Ob7ShOcKr/i7GNoFbyWKCncA+ajr4+qMJ395fedUDZ3PocXX4XVDDIyUBo4dHLU7oDNjjotsV3FvgrFlSndpVlnuuP+5IT0S17pQprysKzg9x1+VkJYeUY6VI80KUfaE5q0DqxXis/CJCFaJwJK; ASP.NET_SessionId=mvu0n0h0ln4u2ynwgfxv1tnf; HSTouchCOD=V3zN1wReEEM=; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfBHLCIdFTubjqzi5fSjPNzZY0+TzHDSE/elGQ5N+90HwCkILJlupMCit3C2Wt9+QHfTkWuNetffBLWKsfnKcwxe8cpx5ZbiDkPqn0G1Q4WjJbpFOdfcMLPTKiBYkxuEOq3VgdXzKIHp00XYDsR+d8LR0CVcgmAneXnaX5rkcVMaOdPXqoOxGASaNJSNiK1k95WnGP+osY/f36d2TLhIMuzLTYpnD28FMiVOiXgvPO279qOoodmOL02OS0cV7iQh6+OEmfLyTFIzWwTRQKVYO+hgBTxP4rxSpjUXaY2DzbW49jXkm9i9NYjsIKb9qO1Moi+WhJi1nJZFFw4K6R8Dy2GpIT8zV9Ud9sklHZQ/oCDvauTmpL2kfx+8XPnkTwLqm1lcNL8j75l290tj+N5mb3eqXXelIQgtZ8l68DUw4mOVSbo2Zb8xBF2icIH93M/4Be7ycTbr4QfW7l+IPIx26RUKIInpo9wklIpclNHyw9sas8xGjEbt/HKcDxqcM5VWcIu0/B6pxLH3IyNK/nBqoyVlHq+VCnQjL1YuKgvDRkMqXpWandM87yokKHjojPEnD5EepE5XeuI7qF5lt+Wx/DadFhx2WpEy5g5XFk9JtMKWg2I7n6ydOwntqjT3OOKgGLz+jD/5SIesNuG9okpr+URjFKEhUl36OwaZR/1gbo6UVdAPh9n6MUD2
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Product/ProductList?t=1&c=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-30 14:09:16[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 14:09:16
+Title=未能在以下路径中找到布局页“/Shared/_LayoutPage1.cshtml”:“/Shared/_LayoutPage1.cshtml”。
+Message=Message:未能在以下路径中找到布局页“/Shared/_LayoutPage1.cshtml”:“/Shared/_LayoutPage1.cshtml”。
+TargetSite:System.String NormalizeLayoutPagePath(System.String, System.Func`2[System.String,System.Boolean])
+Data:
+StackTrace:   在 System.Web.WebPages.WebPageExecutingBase.NormalizeLayoutPagePath(String layoutPage, Func`2 fileExists)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Product/ProductList?t=1&c=0
+RawUrl=/Product/CommodityDetail?lc=1503100000000006
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:CompanyList=YuEZiSyO/i4lZiKomFmbkBBf04UgwOcW0bFB1CWxAqlKh1PbR+FvcTxMqBGWR15qWGFcJtEbK5ZPmzrCChQ+QgQIDyfoXh9hkjcApCSnBr7EWMsXdyigNcXDL+vG8I9CaH0COA8aj1Ixi2sDXtQPt9Yv/zl/5UzRqOZppPWtrzP0PIiT9752fky1pPJHa0gK8kfuc8SWbX3gJwXmNwkNnqxNzzmi9Qe++k8Ms4Nrw+lXMc1W3R7DMpK7p/6zfEVOxkBg0dXihUKnr+Z6V/PjjZNs/nUFZa/0unJgiYUJoj1+BXgz4Rhk7juQY1/setvqrirQL3bJUw/2/Y4jJULfmnzc/ydm49utBHjuHYLpCFfjT2OShTJ1irTpk0KhlHf0EzGgq5scgcBNDYMcksDujhIEd61Qu/0pjD5it5rHuYG0lgjuT/Oz2PtNKwlbTebuCAwbN/4QD7tb/alLr/VINLM+LjQg1zKzQkP/6cD9lzW40CyA8QbXTiNPRXb9cqFwVayWozJ70hLcklMKsMMTTft7vZ5W4vtcCb0xmVgG9HeX4ZxnrGyIAl9GSj9kyJjO7mHNdVtPs/4uWKAhWtkImlYuoCOOmudlXN7tuhUlUZcM+xYor05IE+qZ0f64/m27CBADAjfckRds6pUqGVsKZn5I9BuNbMfcQ5zQrIV5l+CZgPiUFgLHqaN2E0dVcS3oGXIuTO3KSpHWTauZ4x8ChaPQ488PC7J5oanunTqLrVo/+KZFtRqFL8/tXHMceUgvyXnuoeocAjXjTqqXu0oVXM/CUb/+cD8wwPipMQHWLIpAWFsoOjuvqV+AEqQ9DEcRPpVYCYSOazmWaH4/hSPjJHWACVUb/hD17f47arf921TEL/w1nmWF1uIkUYrruxU05IYWG+lACDThWqrRl4m4DyNOS9d4CIZ32BKrUaoKM2z3op/SSzqHhDaF1kXaZQt56X/RkfK76iK8s+LgwMvQUL1gJHw/0RI0WNXJkLvYYnHoJDewrdi4gtsCVDT2ZorCYg2hOmop2tPr5qBH2k/3szcZ4OTIYDw4dSqYNOdORRAht+HAwMjA7UvFf0UPKVvRx3G0QJ59IQ6oVg+0+OrpBA==; param=VoIV/Klr2SLVAz8rPzUsJrI8TK1i6qdtnk9f0DAvdZnVjK84XVnvkHrp7jYkLDCea5ofWfRmUhfMczzRr9m9FMPBuXMJgKC+xHcFhtapMp/X7c+7qsdVgvLz48wInfcmJqAUSb1KmF5S5Fx5o/9akmw2aqdDFfP6Y17jjZ2OcldupwIEC3HBbaOqhUaMm4C77/xEk0/moFN6oMQahIo5UYwsMocyL1mttXm9Ib5yzV8A8gF6ZMkFiCOwHFrgaXteR3RpVpBh5eg57IqZJJVbaDE6odDse+GOnSWT9DBiCgYlUdeAlYH6JSp2a547fFQX6LN9YeN6S7IlGYOW9iaSDsQsxujNuLBUiArHkbigQZuQkY8g3gyCCfmnrLrTGovoc3Xr5+IPgeQG18uGy192EpnEyYjgzXGKCv9k4et6MVCx3T/C5z28vx7bWBoouOfxuOTfhfdBmfkED30V+G8Jjoam9COZsMGX20KWfRyo1fNUIb6z5zVxPw9cSOQxbmMJMTOPaJssAF6N35kNBxIql6Sr2IzaEqdf9dbKxCNq32FpD5G2xjA/IMSb3QeWh9RcQPY3R6TGLw3zzBtRANvoZ7hp4fBQCVNjsDX1Tkas+AbQ2BJNWqyedtlVoEF43cfemMFWSB0Z21vFaTdCmdUdpaFQ4AEhYbB4+1ILlpYkgb+Raflel6/YjYYGKx1MeQLKTjG+SewNPu/mMGKMcXEvsJIstb6iVN5eXLuwCvxTIMe8+aoM+OZOlA5EPJ2lLxbzAJbZNXW+n9OOSFoCZdEd1TIuAofj9mTBevN6Ek+KJEMnVcFkfTH57pL1DY35FKHRQmQNwF84rLatJXYEa+luxdN4141y41M3kW5DKv49AD7ZRJMl3+Yz4yMYPK48jpECEU/ceAk+CT5/0Ob7ShOcKr/i7GNoFbyWKCncA+ajr4+qMJ395fedUDZ3PocXX4XVDDIyUBo4dHLU7oDNjjotsV3FvgrFlSndpVlnuuP+5IT0S17pQprysKzg9x1+VkJYeUY6VI80KUfaE5q0DqxXis/CJCFaJwJK; ASP.NET_SessionId=mvu0n0h0ln4u2ynwgfxv1tnf; HSTouchCOD=V3zN1wReEEM=; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfBHLCIdFTubjqzi5fSjPNzZY0+TzHDSE/elGQ5N+90HwCkILJlupMCit3C2Wt9+QHfTkWuNetffBLWKsfnKcwxe8cpx5ZbiDkPqn0G1Q4WjJbpFOdfcMLPTKiBYkxuEOq3VgdXzKIHp00XYDsR+d8LR0CVcgmAneXnaX5rkcVMaOdPXqoOxGASaNJSNiK1k95WnGP+osY/f36d2TLhIMuzLTYpnD28FMiVOiXgvPO279qOoodmOL02OS0cV7iQh6+OEmfLyTFIzWwTRQKVYO+hgBTxP4rxSpjUXaY2DzbW49jXkm9i9NYjsIKb9qO1Moi+WhJi1nJZFFw4K6R8Dy2GpIT8zV9Ud9sklHZQ/oCDvauTmpL2kfx+8XPnkTwLqm1lcNL8j75l290tj+N5mb3eqXXelIQgtZ8l68DUw4mOVSbo2Zb8xBF2icIH93M/4Be7ycTbr4QfW7l+IPIx26RUKIInpo9wklIpclNHyw9sas8xGjEbt/HKcDxqcM5VWcIu0/B6pxLH3IyNK/nBqoyVlHq+VCnQjL1YuKgvDRkMqXpWandM87yokKHjojPEnD5EepE5XeuI7qF5lt+Wx/DadFhx2WpEy5g5XFk9JtMKWg2I7n6ydOwntqjT3OOKgGLz+jD/5SIesNuG9okpr+URjFKEhUl36OwaZR/1gbo6UVdAPh9n6MUD2
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Product/ProductList?t=1&c=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-30 14:10:51[8] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 14:10:51
+Title=未能在以下路径中找到布局页“/Shared/_LayoutPage1.cshtml”:“/Shared/_LayoutPage1.cshtml”。
+Message=Message:未能在以下路径中找到布局页“/Shared/_LayoutPage1.cshtml”:“/Shared/_LayoutPage1.cshtml”。
+TargetSite:System.String NormalizeLayoutPagePath(System.String, System.Func`2[System.String,System.Boolean])
+Data:
+StackTrace:   在 System.Web.WebPages.WebPageExecutingBase.NormalizeLayoutPagePath(String layoutPage, Func`2 fileExists)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Product/ProductList?t=1&c=0
+RawUrl=/Product/CommodityDetail?lc=1503100000000006
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:CompanyList=YuEZiSyO/i4lZiKomFmbkBBf04UgwOcW0bFB1CWxAqlKh1PbR+FvcTxMqBGWR15qWGFcJtEbK5ZPmzrCChQ+QgQIDyfoXh9hkjcApCSnBr7EWMsXdyigNcXDL+vG8I9CaH0COA8aj1Ixi2sDXtQPt9Yv/zl/5UzRqOZppPWtrzP0PIiT9752fky1pPJHa0gK8kfuc8SWbX3gJwXmNwkNnqxNzzmi9Qe++k8Ms4Nrw+lXMc1W3R7DMpK7p/6zfEVOxkBg0dXihUKnr+Z6V/PjjZNs/nUFZa/0unJgiYUJoj1+BXgz4Rhk7juQY1/setvqrirQL3bJUw/2/Y4jJULfmnzc/ydm49utBHjuHYLpCFfjT2OShTJ1irTpk0KhlHf0EzGgq5scgcBNDYMcksDujhIEd61Qu/0pjD5it5rHuYG0lgjuT/Oz2PtNKwlbTebuCAwbN/4QD7tb/alLr/VINLM+LjQg1zKzQkP/6cD9lzW40CyA8QbXTiNPRXb9cqFwVayWozJ70hLcklMKsMMTTft7vZ5W4vtcCb0xmVgG9HeX4ZxnrGyIAl9GSj9kyJjO7mHNdVtPs/4uWKAhWtkImlYuoCOOmudlXN7tuhUlUZcM+xYor05IE+qZ0f64/m27CBADAjfckRds6pUqGVsKZn5I9BuNbMfcQ5zQrIV5l+CZgPiUFgLHqaN2E0dVcS3oGXIuTO3KSpHWTauZ4x8ChaPQ488PC7J5oanunTqLrVo/+KZFtRqFL8/tXHMceUgvyXnuoeocAjXjTqqXu0oVXM/CUb/+cD8wwPipMQHWLIpAWFsoOjuvqV+AEqQ9DEcRPpVYCYSOazmWaH4/hSPjJHWACVUb/hD17f47arf921TEL/w1nmWF1uIkUYrruxU05IYWG+lACDThWqrRl4m4DyNOS9d4CIZ32BKrUaoKM2z3op/SSzqHhDaF1kXaZQt56X/RkfK76iK8s+LgwMvQUL1gJHw/0RI0WNXJkLvYYnHoJDewrdi4gtsCVDT2ZorCYg2hOmop2tPr5qBH2k/3szcZ4OTIYDw4dSqYNOdORRAht+HAwMjA7UvFf0UPKVvRx3G0QJ59IQ6oVg+0+OrpBA==; param=VoIV/Klr2SLVAz8rPzUsJrI8TK1i6qdtnk9f0DAvdZnVjK84XVnvkHrp7jYkLDCea5ofWfRmUhfMczzRr9m9FMPBuXMJgKC+xHcFhtapMp/X7c+7qsdVgvLz48wInfcmJqAUSb1KmF5S5Fx5o/9akmw2aqdDFfP6Y17jjZ2OcldupwIEC3HBbaOqhUaMm4C77/xEk0/moFN6oMQahIo5UYwsMocyL1mttXm9Ib5yzV8A8gF6ZMkFiCOwHFrgaXteR3RpVpBh5eg57IqZJJVbaDE6odDse+GOnSWT9DBiCgYlUdeAlYH6JSp2a547fFQX6LN9YeN6S7IlGYOW9iaSDsQsxujNuLBUiArHkbigQZuQkY8g3gyCCfmnrLrTGovoc3Xr5+IPgeQG18uGy192EpnEyYjgzXGKCv9k4et6MVCx3T/C5z28vx7bWBoouOfxuOTfhfdBmfkED30V+G8Jjoam9COZsMGX20KWfRyo1fNUIb6z5zVxPw9cSOQxbmMJMTOPaJssAF6N35kNBxIql6Sr2IzaEqdf9dbKxCNq32FpD5G2xjA/IMSb3QeWh9RcQPY3R6TGLw3zzBtRANvoZ7hp4fBQCVNjsDX1Tkas+AbQ2BJNWqyedtlVoEF43cfemMFWSB0Z21vFaTdCmdUdpaFQ4AEhYbB4+1ILlpYkgb+Raflel6/YjYYGKx1MeQLKTjG+SewNPu/mMGKMcXEvsJIstb6iVN5eXLuwCvxTIMe8+aoM+OZOlA5EPJ2lLxbzAJbZNXW+n9OOSFoCZdEd1TIuAofj9mTBevN6Ek+KJEMnVcFkfTH57pL1DY35FKHRQmQNwF84rLatJXYEa+luxdN4141y41M3kW5DKv49AD7ZRJMl3+Yz4yMYPK48jpECEU/ceAk+CT5/0Ob7ShOcKr/i7GNoFbyWKCncA+ajr4+qMJ395fedUDZ3PocXX4XVDDIyUBo4dHLU7oDNjjotsV3FvgrFlSndpVlnuuP+5IT0S17pQprysKzg9x1+VkJYeUY6VI80KUfaE5q0DqxXis/CJCFaJwJK; ASP.NET_SessionId=mvu0n0h0ln4u2ynwgfxv1tnf; HSTouchCOD=V3zN1wReEEM=; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfBHLCIdFTubjqzi5fSjPNzZY0+TzHDSE/elGQ5N+90HwCkILJlupMCit3C2Wt9+QHfTkWuNetffBLWKsfnKcwxe8cpx5ZbiDkPqn0G1Q4WjJbpFOdfcMLPTKiBYkxuEOq3VgdXzKIHp00XYDsR+d8LR0CVcgmAneXnaX5rkcVMaOdPXqoOxGASaNJSNiK1k95WnGP+osY/f36d2TLhIMuzLTYpnD28FMiVOiXgvPO279qOoodmOL02OS0cV7iQh6+OEmfLyTFIzWwTRQKVYO+hgBTxP4rxSpjUXaY2DzbW49jXkm9i9NYjsIKb9qO1Moi+WhJi1nJZFFw4K6R8Dy2GpIT8zV9Ud9sklHZQ/oCDvauTmpL2kfx+8XPnkTwLqm1lcNL8j75l290tj+N5mb3eqXXelIQgtZ8l68DUw4mOVSbo2Zb8xBF2icIH93M/4Be7ycTbr4QfW7l+IPIx26RUKIInpo9wklIpclNHyw9sas8xGjEbt/HKcDxqcM5VWcIu0/B6pxLH3IyNK/nBqoyVlHq+VCnQjL1YuKgvDRkMqXpWandM87yokKHjojPEnD5EepE5XeuI7qF5lt+Wx/DadFhx2WpEy5g5XFk9JtMKWg2I7n6ydOwntqjT3OOKgGLz+jD/5SIesNuG9okpr+URjFKEhUl36OwaZR/1gbo6UVdAPh9n6MUD2
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Product/ProductList?t=1&c=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-30 14:11:28[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 14:11:28
+Title=未能在以下路径中找到布局页“/Shared/_LayoutPage1”:“/Shared/_LayoutPage1”。
+Message=Message:未能在以下路径中找到布局页“/Shared/_LayoutPage1”:“/Shared/_LayoutPage1”。
+TargetSite:System.String NormalizeLayoutPagePath(System.String, System.Func`2[System.String,System.Boolean])
+Data:
+StackTrace:   在 System.Web.WebPages.WebPageExecutingBase.NormalizeLayoutPagePath(String layoutPage, Func`2 fileExists)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Product/ProductList?t=1&c=0
+RawUrl=/Product/CommodityDetail?lc=1503100000000006
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:CompanyList=YuEZiSyO/i4lZiKomFmbkBBf04UgwOcW0bFB1CWxAqlKh1PbR+FvcTxMqBGWR15qWGFcJtEbK5ZPmzrCChQ+QgQIDyfoXh9hkjcApCSnBr7EWMsXdyigNcXDL+vG8I9CaH0COA8aj1Ixi2sDXtQPt9Yv/zl/5UzRqOZppPWtrzP0PIiT9752fky1pPJHa0gK8kfuc8SWbX3gJwXmNwkNnqxNzzmi9Qe++k8Ms4Nrw+lXMc1W3R7DMpK7p/6zfEVOxkBg0dXihUKnr+Z6V/PjjZNs/nUFZa/0unJgiYUJoj1+BXgz4Rhk7juQY1/setvqrirQL3bJUw/2/Y4jJULfmnzc/ydm49utBHjuHYLpCFfjT2OShTJ1irTpk0KhlHf0EzGgq5scgcBNDYMcksDujhIEd61Qu/0pjD5it5rHuYG0lgjuT/Oz2PtNKwlbTebuCAwbN/4QD7tb/alLr/VINLM+LjQg1zKzQkP/6cD9lzW40CyA8QbXTiNPRXb9cqFwVayWozJ70hLcklMKsMMTTft7vZ5W4vtcCb0xmVgG9HeX4ZxnrGyIAl9GSj9kyJjO7mHNdVtPs/4uWKAhWtkImlYuoCOOmudlXN7tuhUlUZcM+xYor05IE+qZ0f64/m27CBADAjfckRds6pUqGVsKZn5I9BuNbMfcQ5zQrIV5l+CZgPiUFgLHqaN2E0dVcS3oGXIuTO3KSpHWTauZ4x8ChaPQ488PC7J5oanunTqLrVo/+KZFtRqFL8/tXHMceUgvyXnuoeocAjXjTqqXu0oVXM/CUb/+cD8wwPipMQHWLIpAWFsoOjuvqV+AEqQ9DEcRPpVYCYSOazmWaH4/hSPjJHWACVUb/hD17f47arf921TEL/w1nmWF1uIkUYrruxU05IYWG+lACDThWqrRl4m4DyNOS9d4CIZ32BKrUaoKM2z3op/SSzqHhDaF1kXaZQt56X/RkfK76iK8s+LgwMvQUL1gJHw/0RI0WNXJkLvYYnHoJDewrdi4gtsCVDT2ZorCYg2hOmop2tPr5qBH2k/3szcZ4OTIYDw4dSqYNOdORRAht+HAwMjA7UvFf0UPKVvRx3G0QJ59IQ6oVg+0+OrpBA==; param=VoIV/Klr2SLVAz8rPzUsJrI8TK1i6qdtnk9f0DAvdZnVjK84XVnvkHrp7jYkLDCea5ofWfRmUhfMczzRr9m9FMPBuXMJgKC+xHcFhtapMp/X7c+7qsdVgvLz48wInfcmJqAUSb1KmF5S5Fx5o/9akmw2aqdDFfP6Y17jjZ2OcldupwIEC3HBbaOqhUaMm4C77/xEk0/moFN6oMQahIo5UYwsMocyL1mttXm9Ib5yzV8A8gF6ZMkFiCOwHFrgaXteR3RpVpBh5eg57IqZJJVbaDE6odDse+GOnSWT9DBiCgYlUdeAlYH6JSp2a547fFQX6LN9YeN6S7IlGYOW9iaSDsQsxujNuLBUiArHkbigQZuQkY8g3gyCCfmnrLrTGovoc3Xr5+IPgeQG18uGy192EpnEyYjgzXGKCv9k4et6MVCx3T/C5z28vx7bWBoouOfxuOTfhfdBmfkED30V+G8Jjoam9COZsMGX20KWfRyo1fNUIb6z5zVxPw9cSOQxbmMJMTOPaJssAF6N35kNBxIql6Sr2IzaEqdf9dbKxCNq32FpD5G2xjA/IMSb3QeWh9RcQPY3R6TGLw3zzBtRANvoZ7hp4fBQCVNjsDX1Tkas+AbQ2BJNWqyedtlVoEF43cfemMFWSB0Z21vFaTdCmdUdpaFQ4AEhYbB4+1ILlpYkgb+Raflel6/YjYYGKx1MeQLKTjG+SewNPu/mMGKMcXEvsJIstb6iVN5eXLuwCvxTIMe8+aoM+OZOlA5EPJ2lLxbzAJbZNXW+n9OOSFoCZdEd1TIuAofj9mTBevN6Ek+KJEMnVcFkfTH57pL1DY35FKHRQmQNwF84rLatJXYEa+luxdN4141y41M3kW5DKv49AD7ZRJMl3+Yz4yMYPK48jpECEU/ceAk+CT5/0Ob7ShOcKr/i7GNoFbyWKCncA+ajr4+qMJ395fedUDZ3PocXX4XVDDIyUBo4dHLU7oDNjjotsV3FvgrFlSndpVlnuuP+5IT0S17pQprysKzg9x1+VkJYeUY6VI80KUfaE5q0DqxXis/CJCFaJwJK; ASP.NET_SessionId=mvu0n0h0ln4u2ynwgfxv1tnf; HSTouchCOD=V3zN1wReEEM=; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfBHLCIdFTubjqzi5fSjPNzZY0+TzHDSE/elGQ5N+90HwCkILJlupMCit3C2Wt9+QHfTkWuNetffBLWKsfnKcwxe8cpx5ZbiDkPqn0G1Q4WjJbpFOdfcMLPTKiBYkxuEOq3VgdXzKIHp00XYDsR+d8LR0CVcgmAneXnaX5rkcVMaOdPXqoOxGASaNJSNiK1k95WnGP+osY/f36d2TLhIMuzLTYpnD28FMiVOiXgvPO279qOoodmOL02OS0cV7iQh6+OEmfLyTFIzWwTRQKVYO+hgBTxP4rxSpjUXaY2DzbW49jXkm9i9NYjsIKb9qO1Moi+WhJi1nJZFFw4K6R8Dy2GpIT8zV9Ud9sklHZQ/oCDvauTmpL2kfx+8XPnkTwLqm1lcNL8j75l290tj+N5mb3eqXXelIQgtZ8l68DUw4mOVSbo2Zb8xBF2icIH93M/4Be7ycTbr4QfW7l+IPIx26RUKIInpo9wklIpclNHyw9sas8xGjEbt/HKcDxqcM5VWcIu0/B6pxLH3IyNK/nBqoyVlHq+VCnQjL1YuKgvDRkMqXpWandM87yokKHjojPEnD5EepE5XeuI7qF5lt+Wx/DadFhx2WpEy5g5XFk9JtMKWg2I7n6ydOwntqjT3OOKgGLz+jD/5SIesNuG9okpr+URjFKEhUl36OwaZR/1gbo6UVdAPh9n6MUD2
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Product/ProductList?t=1&c=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-30 14:14:25[8] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 14:14:25
+Title=未能在以下路径中找到布局页“/Shared/_LayoutPage1”:“/Shared/_LayoutPage1”。
+Message=Message:未能在以下路径中找到布局页“/Shared/_LayoutPage1”:“/Shared/_LayoutPage1”。
+TargetSite:System.String NormalizeLayoutPagePath(System.String, System.Func`2[System.String,System.Boolean])
+Data:
+StackTrace:   在 System.Web.WebPages.WebPageExecutingBase.NormalizeLayoutPagePath(String layoutPage, Func`2 fileExists)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webtouch.com/Product/ProductList?t=1&c=0
+RawUrl=/Product/CommodityDetail?lc=1503100000000006
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:CompanyList=YuEZiSyO/i4lZiKomFmbkBBf04UgwOcW0bFB1CWxAqlKh1PbR+FvcTxMqBGWR15qWGFcJtEbK5ZPmzrCChQ+QgQIDyfoXh9hkjcApCSnBr7EWMsXdyigNcXDL+vG8I9CaH0COA8aj1Ixi2sDXtQPt9Yv/zl/5UzRqOZppPWtrzP0PIiT9752fky1pPJHa0gK8kfuc8SWbX3gJwXmNwkNnqxNzzmi9Qe++k8Ms4Nrw+lXMc1W3R7DMpK7p/6zfEVOxkBg0dXihUKnr+Z6V/PjjZNs/nUFZa/0unJgiYUJoj1+BXgz4Rhk7juQY1/setvqrirQL3bJUw/2/Y4jJULfmnzc/ydm49utBHjuHYLpCFfjT2OShTJ1irTpk0KhlHf0EzGgq5scgcBNDYMcksDujhIEd61Qu/0pjD5it5rHuYG0lgjuT/Oz2PtNKwlbTebuCAwbN/4QD7tb/alLr/VINLM+LjQg1zKzQkP/6cD9lzW40CyA8QbXTiNPRXb9cqFwVayWozJ70hLcklMKsMMTTft7vZ5W4vtcCb0xmVgG9HeX4ZxnrGyIAl9GSj9kyJjO7mHNdVtPs/4uWKAhWtkImlYuoCOOmudlXN7tuhUlUZcM+xYor05IE+qZ0f64/m27CBADAjfckRds6pUqGVsKZn5I9BuNbMfcQ5zQrIV5l+CZgPiUFgLHqaN2E0dVcS3oGXIuTO3KSpHWTauZ4x8ChaPQ488PC7J5oanunTqLrVo/+KZFtRqFL8/tXHMceUgvyXnuoeocAjXjTqqXu0oVXM/CUb/+cD8wwPipMQHWLIpAWFsoOjuvqV+AEqQ9DEcRPpVYCYSOazmWaH4/hSPjJHWACVUb/hD17f47arf921TEL/w1nmWF1uIkUYrruxU05IYWG+lACDThWqrRl4m4DyNOS9d4CIZ32BKrUaoKM2z3op/SSzqHhDaF1kXaZQt56X/RkfK76iK8s+LgwMvQUL1gJHw/0RI0WNXJkLvYYnHoJDewrdi4gtsCVDT2ZorCYg2hOmop2tPr5qBH2k/3szcZ4OTIYDw4dSqYNOdORRAht+HAwMjA7UvFf0UPKVvRx3G0QJ59IQ6oVg+0+OrpBA==; param=VoIV/Klr2SLVAz8rPzUsJrI8TK1i6qdtnk9f0DAvdZnVjK84XVnvkHrp7jYkLDCea5ofWfRmUhfMczzRr9m9FMPBuXMJgKC+xHcFhtapMp/X7c+7qsdVgvLz48wInfcmJqAUSb1KmF5S5Fx5o/9akmw2aqdDFfP6Y17jjZ2OcldupwIEC3HBbaOqhUaMm4C77/xEk0/moFN6oMQahIo5UYwsMocyL1mttXm9Ib5yzV8A8gF6ZMkFiCOwHFrgaXteR3RpVpBh5eg57IqZJJVbaDE6odDse+GOnSWT9DBiCgYlUdeAlYH6JSp2a547fFQX6LN9YeN6S7IlGYOW9iaSDsQsxujNuLBUiArHkbigQZuQkY8g3gyCCfmnrLrTGovoc3Xr5+IPgeQG18uGy192EpnEyYjgzXGKCv9k4et6MVCx3T/C5z28vx7bWBoouOfxuOTfhfdBmfkED30V+G8Jjoam9COZsMGX20KWfRyo1fNUIb6z5zVxPw9cSOQxbmMJMTOPaJssAF6N35kNBxIql6Sr2IzaEqdf9dbKxCNq32FpD5G2xjA/IMSb3QeWh9RcQPY3R6TGLw3zzBtRANvoZ7hp4fBQCVNjsDX1Tkas+AbQ2BJNWqyedtlVoEF43cfemMFWSB0Z21vFaTdCmdUdpaFQ4AEhYbB4+1ILlpYkgb+Raflel6/YjYYGKx1MeQLKTjG+SewNPu/mMGKMcXEvsJIstb6iVN5eXLuwCvxTIMe8+aoM+OZOlA5EPJ2lLxbzAJbZNXW+n9OOSFoCZdEd1TIuAofj9mTBevN6Ek+KJEMnVcFkfTH57pL1DY35FKHRQmQNwF84rLatJXYEa+luxdN4141y41M3kW5DKv49AD7ZRJMl3+Yz4yMYPK48jpECEU/ceAk+CT5/0Ob7ShOcKr/i7GNoFbyWKCncA+ajr4+qMJ395fedUDZ3PocXX4XVDDIyUBo4dHLU7oDNjjotsV3FvgrFlSndpVlnuuP+5IT0S17pQprysKzg9x1+VkJYeUY6VI80KUfaE5q0DqxXis/CJCFaJwJK; ASP.NET_SessionId=mvu0n0h0ln4u2ynwgfxv1tnf; HSTouchCOD=V3zN1wReEEM=; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfBHLCIdFTubjqzi5fSjPNzZY0+TzHDSE/elGQ5N+90HwCkILJlupMCit3C2Wt9+QHfTkWuNetffBLWKsfnKcwxe8cpx5ZbiDkPqn0G1Q4WjJbpFOdfcMLPTKiBYkxuEOq3VgdXzKIHp00XYDsR+d8LR0CVcgmAneXnaX5rkcVMaOdPXqoOxGASaNJSNiK1k95WnGP+osY/f36d2TLhIMuzLTYpnD28FMiVOiXgvPO279qOoodmOL02OS0cV7iQh6+OEmfLyTFIzWwTRQKVYO+hgBTxP4rxSpjUXaY2DzbW49jXkm9i9NYjsIKb9qO1Moi+WhJi1nJZFFw4K6R8Dy2GpIT8zV9Ud9sklHZQ/oCDvauTmpL2kfx+8XPnkTwLqm1lcNL8j75l290tj+N5mb3eqXXelIQgtZ8l68DUw4mOVSbo2Zb8xBF2icIH93M/4Be7ycTbr4QfW7l+IPIx26RUKIInpo9wklIpclNHyw9sas8xGjEbt/HKcDxqcM5VWcIu0/B6pxLH3IyNK/nBqoyVlHq+VCnQjL1YuKgvDRkMqXpWandM87yokKHjojPEnD5EepE5XeuI7qF5lt+Wx/DadFhx2WpEy5g5XFk9JtMKWg2I7n6ydOwntqjT3OOKgGLz+jD/5SIesNuG9okpr+URjFKEhUl36OwaZR/1gbo6UVdAPh9n6MUD2
+Host:www.webtouch.com
+Referer:http://www.webtouch.com/Product/ProductList?t=1&c=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+
+
+2015-09-30 15:31:23[42] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:31:22
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding:gzip, deflate, sdch
+Accept-Language:zh-CN,zh;q=0.8
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36
+
+
+2015-09-30 15:31:45[42] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:31:45
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=041dcdbb62c9b786d84ab2c61993d55h&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A405 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:33:58[33] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:33:58
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=0413bba1e3412dcc1f858ee983342660&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A405 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:38:07[20] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:38:07
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=001e3f34e6825421b05feda9eb4ce33A&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A405 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:40:37[21] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:40:36
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=0419ba24705f606df765d17597ce3e26&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A405 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[27] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=0416da5d92a2edd598cac74a2cc2976B&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[42] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=0112d80952ad24454359e97ea89a4d2f&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[15] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=041e719255256fa9f2fea14646d8ba98&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[27] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=041e719255256fa9f2fea14646d8ba98&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[42] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Promotion/PromotionList?code=001f028c6d15d1a95e202b51f30b979w&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[27] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=0214f6ccb05c6ce8028aa26f8407568z&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A405 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[15] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Promotion/PromotionList?code=001f028c6d15d1a95e202b51f30b979w&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[27] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Promotion/PromotionList?code=001f028c6d15d1a95e202b51f30b979w&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 15:51:34[14] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:51:34
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.Mvc.SecurityUtil.<GetCallInAppTrustThunk>b__0(Action f)
+   在 System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust(Action action)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Encoding:gzip, deflate, sdch
+Accept-Language:zh-CN,zh;q=0.8
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36
+
+
+2015-09-30 15:52:53[23] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 15:52:53
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=0313d8cb02b0d1e59a5684b4c0e3c42w&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 16:13:13[39] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 16:13:13
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=031f412637d21fc7d965413080d28b2G&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 16:13:14[42] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 16:13:14
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount?code=031f412637d21fc7d965413080d28b2G&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfDJoP/m0dc14t6qHpt2680fItN3uYrQ9/M0dZd98qe5v+XeeODofjhGACmpvazL184zPvxPbRqvCe/nVOX0bYHRr/jUHjIxSwrdBPbKyxgasMG8e3lKyCqiNwE4bJftGFXaSIKrsAGmekCFx8gADKY/cz8Oo/cRyD1oZEofRAFr6ijImw/k+JRA3F3Lhvdpt3Lc3Xkts5I8Y4pr/SGJ13pkIvIxbhU5dBEfY5swksVgaGDkO4UIhZGO; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 16:13:53[39] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 16:13:53
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/ServiceCategory?code=021366e93b5c511ff4812f7287c7d0fG&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfDJoP/m0dc14t6qHpt2680fItN3uYrQ9/M0dZd98qe5v+XeeODofjhGACmpvazL184zPvxPbRqvCe/nVOX0bYHRr/jUHjIxSwrdBPbKyxgasMG8e3lKyCqiNwE4bJftGFXaSIKrsAGmekCFx8gADKY/cz8Oo/cRyD1oZEofRAFr6ijImw/k+JRA3F3Lhvdpt3Lc3Xkts5I8Y4pr/SGJ13pkIvIxbhU5dBEfY5swksVgaGDkO4UIhZGO; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 16:13:57[19] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 16:13:57
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Promotion/PromotionList?code=031ba81efa09890dd4e8e5fae089a34w&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfDJoP/m0dc14t6qHpt2680fItN3uYrQ9/M0dZd98qe5v+XeeODofjhGACmpvazL184zPvxPbRqvCe/nVOX0bYHRr/jUHjIxSwrdBPbKyxgasMG8e3lKyCqiNwE4bJftGFXaSIKrsAGmekCFx8gADKY/cz8Oo/cRyD1oZEofRAFr6ijImw/k+JRA3F3Lhvdpt3Lc3Xkts5I8Y4pr/SGJ13pkIvIxbhU5dBEfY5swksVgaGDkO4UIhZGO; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 16:14:01[8] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 16:14:01
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UnconfirmedOrder?code=0014b8e9329dc38af31f6016474d6967&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfDJoP/m0dc14t6qHpt2680fItN3uYrQ9/M0dZd98qe5v+XeeODofjhGACmpvazL184zPvxPbRqvCe/nVOX0bYHRr/jUHjIxSwrdBPbKyxgasMG8e3lKyCqiNwE4bJftGFXaSIKrsAGmekCFx8gADKY/cz8Oo/cRyD1oZEofRAFr6ijImw/k+JRA3F3Lhvdpt3Lc3Xkts5I8Y4pr/SGJ13pkIvIxbhU5dBEfY5swksVgaGDkO4UIhZGO; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+
+2015-09-30 16:14:06[19] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/30 16:14:06
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UnReviewedOrder?code=0218f22ff523bf51eda7412e5323a83W&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCXiC5D7QBkfDJoP/m0dc14t6qHpt2680fItN3uYrQ9/M0dZd98qe5v+XeeODofjhGACmpvazL184zPvxPbRqvCe/nVOX0bYHRr/jUHjIxSwrdBPbKyxgasMG8e3lKyCqiNwE4bJftGFXaSIKrsAGmekCFx8gADKY/cz8Oo/cRyD1oZEofRAFr6ijImw/k+JRA3F3Lhvdpt3Lc3Xkts5I8Y4pr/SGJ13pkIvIxbhU5dBEfY5swksVgaGDkO4UIhZGO; HSTouchCOD=V3zN1wReEEM=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.7 NetType/WIFI Language/zh_CN
+
+

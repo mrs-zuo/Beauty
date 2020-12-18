@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.CustomerEcardListActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/ecard_history_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/customer_ecard_list_title_text" />
+
+        <ImageView
+            android:id="@+id/add_new_customer_ecard_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@string/search"
+            android:src="@drawable/add_new_customer_ecard_btn" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:id="@+id/ecard_list_linearlayout"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dip"
+	            android:layout_marginRight="5dip"
+	            android:layout_marginTop="10dip"
+	            android:layout_marginBottom="5dip"
+	            android:orientation="vertical" >
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/all_ecard_history_relativelayout"
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_margin="5dip"
+                android:layout_weight="0.1"
+                android:background="@xml/shape_corner_round"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="8dp"
+                    android:text="@string/all_ecard_history"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size" />
+
+                <ImageButton
+                    android:id="@+id/ecard_history_joinin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/join_in_arrowhead"
+                    android:contentDescription="@string/search" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/all_ecard_history_third_part_payment_relativelayout"
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_margin="5dip"
+                android:layout_weight="0.1"
+                android:background="@xml/shape_corner_round"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="8dp"
+                    android:text="@string/all_ecard_history_weixin"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/join_in_arrowhead"
+                    android:contentDescription="@string/search" />
+            </RelativeLayout>
+        </LinearLayout>
+      
+
+    </ScrollView>
+
+</LinearLayout>

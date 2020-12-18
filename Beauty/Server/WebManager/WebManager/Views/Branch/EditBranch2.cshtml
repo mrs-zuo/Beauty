@@ -1,0 +1,259 @@
+﻿@{
+    Model.Table_Model.Branch_Model model = new Model.Table_Model.Branch_Model();
+    if (ViewBag.Branch != null)
+    {
+        model = ViewBag.Branch;
+    }
+    List<Model.Table_Model.ImageCommon_Model> listCompanyImage = new List<Model.Table_Model.ImageCommon_Model>();
+    if (ViewBag.BigImageList != null)
+    {
+        listCompanyImage = ViewBag.BigImageList;
+    }
+    
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 1)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 包碎屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Branch/GetBranchList">商家信息</a></li>
+                <li class="active">添加门店</li>
+            </ul>
+        </div>
+        <!-- /Page 包碎屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>添加门店</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="widget">
+                <div class="form-horizontal form-bordered widget-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">名称</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" placeholder="输入门店名称" type="text" data-bv-field="fullName" name="fullName" id="txtBranchName" value="@(model.BranchName)" maxlength="30">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Search input-->
+                        <label class="col-sm-2 control-label no-padding-right">联系人</label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入联系人" class="form-control" type="text" id="txtBranchContact" value="@(model.Contact)"  maxlength="30">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">电话</label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入电话" class="form-control" type="tel" id="txtBranchPhone" value="@(model.Phone)"  maxlength="20">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">传真</label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入传真" class="form-control" type="tel" id="txtBranchFax" value="@(model.Fax)" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">地址</label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入街道" class="form-control" type="text"  id="txtBranchAddress" value="@(model.Address)" maxlength="100">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">定位</label>
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control" name="firstName" placeholder="输入经度"
+                                data-bv-notempty="true"
+                                data-bv-notempty-message="The first name is required and cannot be empty" id="txtBranchLongitude" value="@(model.Longitude)" maxlength="19" />
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control" name="lastName" placeholder="输入纬度"
+                                data-bv-notempty="true"
+                                data-bv-notempty-message="The last name is required and cannot be empty" id="txtBranchLatitude" value="@(model.Latitude)" maxlength="19" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">邮编</label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入邮编" class="form-control" type="text" id="txtBranchZip" value="@(model.Zip)" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">网址</label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入网址" class="form-control" type="text" id="txtBranchWeb" value="@(model.Web)" maxlength="100" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">营业时间</label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入营业时间" class="form-control" type="text" id="txtBranchBusinessHours" value="@(model.BusinessHours)" maxlength="100" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">照片</label>
+                        <!-- File Upload -->
+                        @Html.Partial("FileUpload", 1);
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">门店信息</label>
+                        <div class="input-group radio">
+                            <label>
+                                <input type="radio" id="BranchVisibleY" @(model.Visible ? "checked='checked'" : "class='inverted'")  name="Visible">
+                                <span class="text">允许顾客查看</span>
+                            </label>
+                            <label>
+                                <input type="radio"  id="BranchVisibleN"  @(!model.Visible ? "checked='checked'" : "class='inverted'")  name="Visible">
+                                <span class="text">不允许顾客查看</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">交易记录</label>
+                        <div class="input-group radio">
+                            <label>
+                                <input type="radio" id="IsShowECardHisY" @(model.IsShowECardHis ? "checked='checked'" : "class='inverted'")  name="IsShowECardHis">
+                                <span class="text">允许顾客查看</span>
+                            </label>
+                            <label>
+                                <input type="radio" id="IsShowECardHisN" @(!model.IsShowECardHis ? "checked='checked'" : "class='inverted'")  name="IsShowECardHis">
+                                <span class="text">不允许顾客查看</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">服务状态</label>
+                        <div class="input-group radio">
+                            <label>
+                                <input type="radio" id="IsConfirmedY" @(model.IsConfirmed ? "checked='checked'" : "class='inverted'")  name="IsConfirmed">
+                                <span class="text">需要顾客确认</span>
+                            </label>
+                            <label>
+                                <input type="radio" id="IsConfirmedN" @(!model.IsConfirmed ? "checked='checked'" : "class='inverted'")  name="IsConfirmed">
+                                <span class="text">不需要顾客确认</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">分期支付</label>
+                        <div class="input-group radio">
+                            <label>
+                                <input type="radio" id="IsPartPayY" @(model.IsPartPay ? "checked='checked'" : "class='inverted'")  name="IsPartPay">
+                                <span class="text">允许分期支付</span>
+                            </label>
+                            <label>
+                                <input type="radio" id="IsPartPayN" @(!model.IsPartPay ? "checked='checked'" : "class='inverted'")  name="IsPartPay">
+                                <span class="text">不允许分期支付</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">e卡余额</label>
+                        <div class="input-group radio">
+                            <label>
+                                <input type="radio" id="IsPayY" @(model.IsPay ? "checked='checked'" : "class='inverted'")  name="IsPay">
+                                <span class="text">只允许顾客使用</span>
+                            </label>
+                            <label>
+                                <input type="radio" id="IsPayN" @(!model.IsPay ? "checked='checked'" : "class='inverted'")  name="IsPay">
+                                <span class="text">允许有权限的员工扣除</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Textarea -->
+                        <label class="col-sm-2 control-label no-padding-right">开始时间</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input class="form-control date-picker" placeholder="请输入开始时间" onclick="laydate({ istime: true, format: 'YYYY-MM-DD hh:mm:ss' })" id="txtBranchStartTime" value="@(model.StartTime)" >
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">服务提醒时间</label>
+                        <div class="col-sm-4">
+                            <input type="tel" class="form-control" placeholder="请输入服务提醒时间" id="txtBranchRemindTime" value="@(model.RemindTime)">
+                        </div>
+                        <p class="help-block">小时前</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">生日提醒时间</label>
+                        <div class="col-sm-4">
+                            <input type="tel" class="form-control" placeholder="请输入生日提醒时间" id="txtBranchBirthdayRemindTime" value="@(model.BirthdayRemindTime)">
+                        </div>
+                        <p class="help-block">天前(如果不填和填0则为当天提醒)</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">顾客初始密码</label>
+                        <div class="col-sm-10 input-group radio">
+                            <label>
+                                <input type="radio" id="DefaultPasswordN" @(model.DefaultPassword == null || model.DefaultPassword == "" ? "checked='checked'" : "class='inverted'")  name="DefaultPassword" onchange="defaultPasswordChange(this)">
+                                <span class="text">系统随机生成并发送短信通知 </span>
+                            </label>
+                            <label>
+                                <input type="radio" id="DefaultPasswordY" @(model.DefaultPassword != null && model.DefaultPassword != "" ? "checked='checked'" : "class='inverted'")  name="DefaultPassword" onchange="defaultPasswordChange(this)">
+                                <span class="text">指定</span>
+                                <input type="text"" name="form-field-radio" id="txtBranchDefaultPassword"  @(model.DefaultPassword == null || model.DefaultPassword == "" ? "style=display:none" : "style=display:block") >
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-primary" type="submit" onclick="BranchSubmit('@(model.ID)')">确 定</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+<script src="/Script/ajaxfileupload.js"></script>
+<script src="~/Script/Branch.js"></script>

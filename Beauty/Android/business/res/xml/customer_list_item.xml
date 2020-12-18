@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/customer_list_item_relativelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" 
+        android:padding="3dip">
+        <ImageView
+            android:id="@+id/customer_headImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginBottom="5dip"
+            android:layout_centerVertical="true" />
+        <TextView
+            android:id="@+id/customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_centerVertical="true"
+            android:maxWidth="@dimen/customer_lsit_customer_name_width"
+            android:textColor="@color/blue"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textSize="@dimen/text_size" 
+            android:layout_toRightOf="@id/customer_headImage"/>
+        <TextView
+            android:id="@+id/customer_login_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dip"/>
+        <TextView
+	        android:id="@+id/come_time_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@id/customer_login_mobile"
+	        android:textColor="@color/blue"
+	        android:layout_marginTop="20dip"
+	        android:textSize="@dimen/text_size" 
+	        android:layout_marginRight="20dip"/>
+    </RelativeLayout>
+
+</LinearLayout>

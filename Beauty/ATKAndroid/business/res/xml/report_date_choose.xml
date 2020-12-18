@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:id="@+id/filter_relativelayout_br1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:paddingBottom="10dp"
+        android:background="#F8F8F8"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/filter_by_period_title_br1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="gone" >
+            <TextView
+                android:id="@+id/filter_by_period_title_txt_br1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/filter_by_period"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/filter_period_linearlayout_br1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filter_by_period_title_br1"
+            android:layout_margin="10dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/filter_by_day_br1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_day"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_week_br1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_week"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_month_br1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_month"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_season_br1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_season"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_year_br1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_year"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/filter_period_relativelayout_br1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filter_period_linearlayout_br1"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:visibility="gone" >
+            <TextView
+                android:id="@+id/report_by_other_end_date_br1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dip"
+                android:layout_marginRight="5dip"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:background="@xml/edit_text_shape_corner_round"
+                android:padding="5dip"/>
+
+            <TextView
+                android:id="@+id/report_by_other_date_divide_br1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_toStartOf="@id/report_by_other_end_date_br1"
+                android:layout_toLeftOf="@id/report_by_other_end_date_br1"
+                android:text="@string/report_by_other_date_divide"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/report_by_other_start_date_br1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_toStartOf="@id/report_by_other_date_divide_br1"
+                android:layout_toLeftOf="@id/report_by_other_date_divide_br1"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:background="@xml/edit_text_shape_corner_round"
+                android:padding="5dip"/>
+            <TextView
+                android:id="@+id/report_by_other_date_txt_br1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_toStartOf="@id/report_by_other_end_date_br1"
+                android:layout_toLeftOf="@id/report_by_other_end_date_br1"
+                android:text="@string/filter_by_count_end_day"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:visibility="gone" />
+            </RelativeLayout>
+        <Button 
+            android:id="@+id/report_query_btn_br1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:layout_below="@id/filter_period_relativelayout_br1"
+            android:layout_alignWithParentIfMissing="true"
+            android:text="@string/report_query_btn_text"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/blue"
+            android:background="@color/white"/>
+    </RelativeLayout>
+</merge>

@@ -1,0 +1,257 @@
+2016-04-20 16:41:17[11] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/4/20 16:41:17
+Title={"AccountID":16229,"BranchID":105,"OrderSource":-1,"ProductType":-1,"Status":-1,"PaymentStatus":-1,"CreateTime":"","ViewType":1,"FilterByTimeFlag":0,"ResponsiblePersonIDs":[16229],"CustomerID":0,"PageIndex":1,"PageSize":10,"IsShowAll":1,"StartTime":"","EndTime":""}
+Message=Message:尝试除以零。
+TargetSite:System.Net.Http.HttpResponseMessage GetOrderList(Newtonsoft.Json.Linq.JObject)
+Data:
+StackTrace:   在 WebAPI.Controllers.API.OrderController.GetOrderList(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 671
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/GetOrderList
+Parameters=
+Level=Error
+
+2016-04-20 16:42:14[7] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/4/20 16:42:14
+Title={"AccountID":16229,"BranchID":105,"OrderSource":-1,"ProductType":-1,"Status":-1,"PaymentStatus":-1,"CreateTime":"","ViewType":1,"FilterByTimeFlag":0,"ResponsiblePersonIDs":[16229],"CustomerID":0,"PageIndex":1,"PageSize":10,"IsShowAll":1,"StartTime":"","EndTime":""}
+Message=Message:关键字 'DESC' 附近有语法错误。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'AND' 附近有语法错误。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Order_DAL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 1838
+   在 WebAPI.BLL.Order_BLL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\BLL\Order_BLL.cs:行号 156
+   在 WebAPI.Controllers.API.OrderController.GetOrderList(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 774
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/GetOrderList
+Parameters=
+Level=Error
+
+2016-04-20 16:43:29[11] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/4/20 16:43:29
+Title={"AccountID":16229,"BranchID":105,"OrderSource":-1,"ProductType":-1,"Status":-1,"PaymentStatus":-1,"CreateTime":"","ViewType":1,"FilterByTimeFlag":0,"ResponsiblePersonIDs":[16229],"CustomerID":0,"PageIndex":1,"PageSize":10,"IsShowAll":1,"StartTime":"","EndTime":""}
+Message=Message:关键字 'DESC' 附近有语法错误。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'AND' 附近有语法错误。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Order_DAL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 1838
+   在 WebAPI.BLL.Order_BLL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\BLL\Order_BLL.cs:行号 156
+   在 WebAPI.Controllers.API.OrderController.GetOrderList(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 774
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/GetOrderList
+Parameters=
+Level=Error
+
+2016-04-20 16:44:14[28] ERROR index (null) - 
+AppName=WebApi
+LogTime=2016/4/20 16:44:14
+Title=关键字 'DESC' 附近有语法错误。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'AND' 附近有语法错误。
+Message=Message:关键字 'DESC' 附近有语法错误。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'AND' 附近有语法错误。
+RequestParm:{"AccountID":16229,"BranchID":105,"OrderSource":-1,"ProductType":-1,"Status":-1,"PaymentStatus":-1,"CreateTime":"","ViewType":1,"FilterByTimeFlag":0,"ResponsiblePersonIDs":[16229],"CustomerID":0,"PageIndex":1,"PageSize":10,"IsShowAll":1,"StartTime":"","EndTime":""}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Order_DAL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 1838
+   在 WebAPI.BLL.Order_BLL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\BLL\Order_BLL.cs:行号 156
+   在 WebAPI.Controllers.API.OrderController.GetOrderList(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 774
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/GetOrderList
+Header=Connection:keep-alive, keep-alive
+Content-Length:265
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:7719A0764530D2C5456B5EE0549FD7E8
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.4.0.1 CFNetwork/758.2.8 Darwin/15.0.0
+GU:99e35460-398e-4971-8505-daeadcc4be61
+BR:105
+DT:1
+CO:66
+CT:1
+TI:2016-01-08 13:58:17.098
+ME:GetOrderList
+US:16229
+AV:3.4
+
+
+2016-04-20 16:45:36[27] ERROR index (null) - AppName=WebApi
+
+LogTime=2016/4/20 16:45:36
+Title={"AccountID":16229,"BranchID":105,"OrderSource":-1,"ProductType":-1,"Status":-1,"PaymentStatus":-1,"CreateTime":"","ViewType":1,"FilterByTimeFlag":0,"ResponsiblePersonIDs":[16229],"CustomerID":0,"PageIndex":1,"PageSize":10,"IsShowAll":1,"StartTime":"","EndTime":""}
+Message=Message:关键字 'DESC' 附近有语法错误。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'with' 附近有语法错误。如果此语句是公用表表达式、xmlnamespaces 子句或者更改跟踪上下文子句，那么前一个语句必须以分号结尾。
+关键字 'AND' 附近有语法错误。
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Order_DAL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\DAL\Order_DAL.cs:行号 1838
+   在 WebAPI.BLL.Order_BLL.getOrderList(GetOrderListOperation_Model operationModel, Int32 pageSize, Int32 pageIndex, Int32& recordCount) 位置 e:\SourceCode\WebAPI\Trunk\BLL\Order_BLL.cs:行号 156
+   在 WebAPI.Controllers.API.OrderController.GetOrderList(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\OrderController.cs:行号 774
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ClientIp2=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/GetOrderList
+Parameters=
+Level=Error
+

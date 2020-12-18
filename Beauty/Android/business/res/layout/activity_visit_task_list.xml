@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".VisitTaskListActivity" >
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/visit_task_tab_title" />
+
+        <ImageButton
+            android:id="@+id/visit_task_search_new_btn"
+            style="@style/activity_title_button_attrs"
+            android:background="@drawable/customer_advanced_filter_icon"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <com.GlamourPromise.Beauty.view.XListView
+            android:id="@+id/visit_task_list_view"
+            style="@style/activity_content_listview_attrs" />
+    </RelativeLayout>
+
+</LinearLayout>

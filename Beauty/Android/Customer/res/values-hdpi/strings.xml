@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="company_iamge_width"> 400</string >
+    <string name="company_iamge_height"> 120</string >
+    <!--飞语页面 -->
+    <string name="unread_message_count_and_below_ten_x">13</string >
+    <string name="unread_message_count_and_below_ten_y">20</string >
+    <string name="unread_message_count_and_below_hundred_x">8</string >
+    <string name="unread_message_count_and_below_hundred_y">20</string >
+    <string name="unread_message_count_and_over_hundred_x">10</string >
+    <string name="unread_message_count_and_over_hundred_y">20</string >
+    <string name="unread_message_count_text_size">20f</string >
+</resources>

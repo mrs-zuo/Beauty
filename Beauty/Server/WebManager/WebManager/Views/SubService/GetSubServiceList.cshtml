@@ -1,0 +1,101 @@
+﻿@{
+    List<Model.Table_Model.SubService_Model> listModel = Model;
+            
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    <div class="page-sidebar" id="sidebar">
+        @Html.Partial("Sidebar", 8)
+    </div>
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>子服务</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>子服务</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form">
+                @if (!ViewBag.isBranch)
+                {
+                    <a class="btn btn-default" href="/SubService/EditSubService"><i class="fa fa-plus-square"></i>添加子服务</a>}
+            </div>
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-6">
+                        <col class="col-xs-3">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>子服务名称</th>
+                            <th>子服务编号</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="foo">
+                        @{
+                            if (listModel != null && listModel.Count > 0)
+                            {
+                                int rowNum = 1;
+                                foreach (Model.Table_Model.SubService_Model item in listModel)
+                                {
+                                
+                            <tr>
+                                <td>@rowNum</td>
+                                <td>@item.SubServiceName</td>
+                                <td>@item.SubServiceCode</td>
+                                <td>
+                                    @if (!ViewBag.isBranch)
+                                    {
+                                        <a href="/SubService/EditSubService?SubServiceCode=@(item.SubServiceCode)" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                    }
+                                </td>
+                            </tr>
+                                    rowNum++;
+                                }
+                            }                            
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>

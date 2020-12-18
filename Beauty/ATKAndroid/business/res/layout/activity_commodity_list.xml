@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <include
+        android:id="@+id/commodity_list_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <SearchView
+        android:id="@+id/search_commodity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/search_commodity_text" >
+    </SearchView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <RelativeLayout
+            android:id="@+id/commodity_list_title_relativelayout"
+            style="@style/activity_title_layout_attrs" >
+            <TextView
+                android:id="@+id/commodity_list_title_text"
+                style="@style/activity_title_text_attrs"
+                android:layout_alignParentLeft="true" />
+        </RelativeLayout>
+
+        <cn.com.antika.view.RefreshListView
+            android:id="@+id/commodity_listview"
+            style="@style/activity_content_listview_attrs"
+            android:layout_below="@id/commodity_list_title_relativelayout"
+            android:layout_marginBottom="45dip" />
+        <Button
+            android:id="@+id/choose_commodity_make_sure_btn"
+            style="@style/submit_big_btn"
+            android:layout_alignParentBottom="true"
+            android:text="@string/ok"
+             />
+    </RelativeLayout>
+
+</LinearLayout>

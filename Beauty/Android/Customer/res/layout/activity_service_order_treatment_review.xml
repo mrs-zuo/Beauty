@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".CustomerActivity" >
+    <RelativeLayout
+        android:id="@+id/service_order_treatment_review_title"
+        style="@style/activity_title_layout_attrs"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/review_edit_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/edit_icon" 
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_below="@id/service_order_treatment_review_title">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/service_treatment_review_layout"
+                android:layout_marginTop="@dimen/margin_top"
+                style="@style/table_layout_attrs" >
+
+                <LinearLayout
+                    android:id="@+id/layout_one"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/layout_padding"
+                    android:paddingTop="@dimen/layout_padding" >
+
+                    <ImageButton
+                        android:id="@+id/review_star_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/evaluate_unselected_big_icon" 
+                        android:contentDescription="@string/search"/>
+
+                    <ImageButton
+                        android:id="@+id/review_star_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/evaluate_unselected_big_icon" 
+                        android:contentDescription="@string/search"/>
+
+                    <ImageButton
+                        android:id="@+id/review_star_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/evaluate_unselected_big_icon" 
+                        android:contentDescription="@string/search"/>
+
+                    <ImageButton
+                        android:id="@+id/review_star_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/evaluate_unselected_big_icon" 
+                        android:contentDescription="@string/search"/>
+
+                    <ImageButton
+                        android:id="@+id/review_star_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/evaluate_unselected_big_icon" 
+                        android:contentDescription="@string/search"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/layout_two"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:paddingTop="@dimen/layout_padding"
+                    android:paddingBottom="@dimen/layout_padding" >
+
+                    <EditText
+                        android:id="@+id/comment_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="@string/service_order_treatment_comment_hint"
+                        android:maxLength="200"
+                        android:textSize="@dimen/text_size_normal"
+                        android:longClickable="false"
+                        android:background="#00000000" />
+
+                    <TextView
+                        android:id="@+id/text_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/comment_edit"
+                        android:layout_marginRight="12dip"
+                        android:text="@string/review_comment_count"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_marginTop="@dimen/margin_top_20"
+                android:layout_below="@id/service_treatment_review_layout"
+                android:gravity = "center"
+                >
+            <ImageButton
+                android:id="@+id/review_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/service_review_cancel" 
+                android:visibility="gone"/>
+
+            <ImageButton
+                android:id="@+id/review_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:background="@drawable/service_review_confirm" 
+                android:visibility="gone"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

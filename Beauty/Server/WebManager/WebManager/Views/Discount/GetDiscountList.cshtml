@@ -1,0 +1,98 @@
+﻿@{
+    List<Model.View_Model.GetDiscountListForManager_Model> list = Model;
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 5)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="#">首页</a>
+                </li>
+                <li class="active">折扣分类</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>折扣分类</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-group navbar-form">
+                <a href="/Discount/EditDiscount" class="btn btn-default"><i class="fa fa-plus-square"></i>添加折扣分类</a>
+            </div>
+            <div class="widget-body no-padding">
+            <table class="table table-hover table-striped">
+                <colgroup class="row">
+                    <col class="col-xs-1">
+                    <col class="col-xs-7">
+                    <col class="col-xs-2">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>折扣分类名称</th>
+                        <th>折扣分类编号</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int index = 0;
+                        foreach (Model.View_Model.GetDiscountListForManager_Model item in list)
+                        {
+                            index++;
+                        <tr>
+                            <td>@(index)</td>
+                            <td>@(item.DiscountName)</td>
+                            <td>@(item.ID)</td>
+                            <td>
+                                @{
+                                    if (item.Available)
+                                    { 
+                                        <a class="btn btn-default btn-sm" href="/Discount/EditDiscount?ID=@(item.ID)"><i class="fa fa-edit"></i>编辑</a>
+                                        <a class="btn btn-default btn-sm" onclick="delDiscount(@(item.ID),0)"><i class="fa fa-trash-o"></i>删除</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-default btn-sm" onclick="delDiscount(@(item.ID),1)"><i class="fa fa-trash-o"></i>激活</a>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/Script/Level.js"></script>

@@ -1,0 +1,56 @@
+2015-06-15 11:12:14[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/6/15 11:12:14
+Title=外部组件发生异常。
+Message=Message:外部组件发生异常。
+RequestParm:
+TargetSite:Void .ctor()
+Data:
+StackTrace:   在 Newtonsoft.Json.JsonWriter..ctor()
+   在 Newtonsoft.Json.JsonTextWriter..ctor(TextWriter textWriter)
+   在 Newtonsoft.Json.JsonConvert.SerializeObjectInternal(Object value, Type type, JsonSerializer jsonSerializer)
+   在 Newtonsoft.Json.JsonConvert.SerializeObject(Object value, JsonSerializerSettings settings)
+   在 WebAPI.Controllers.API.BaseController.toJson(Object obj, String dateFormat) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Controllers\API\BaseController.cs:行号 63
+   在 WebAPI.Controllers.API.VersionController.getServerVersion() 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Controllers\API\VersionController.cs:行号 33
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.81
+UrlReferrer=
+RawUrl=/version/getServerVersion
+Header=Connection:keep-alive
+Content-Length:0
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:69D82A3172AD680F8C8D526D6983F5A8
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/2.4.3.1 CFNetwork/672.0.8 Darwin/14.0.0
+BR:180
+DT:1
+CO:130
+CT:1
+AV:2.4.3
+TI:2015-06-15 10:48:13.702
+ME:addOrder
+US:4769
+Proxy-Connection:keep-alive
+GU:23275d05-1de0-4245-bd37-97b4e03c9675
+
+

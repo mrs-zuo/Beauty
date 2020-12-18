@@ -1,0 +1,147 @@
+﻿@{
+    Model.Table_Model.Commission_Product_Model model = new Model.Table_Model.Commission_Product_Model();
+    if (ViewBag.Commodity != null)
+    {
+        model = ViewBag.Commodity;
+    }
+
+    int EditFlag = 0;
+    if (ViewBag.EditFlag != null)
+    {
+        EditFlag = ViewBag.EditFlag;
+    }
+}
+
+@if (model != null)
+{
+    <div class="page-container">
+        <!-- Page Sidebar -->
+        @Html.Partial("Sidebar", 30)
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page 面包屑 -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="/Home/Index">首页</a>
+                    </li>
+                    <li><a href="/Account/GetAccountList">业绩提成</a></li>
+                    <li class="active">编辑商品业绩提成方式</li>
+                </ul>
+            </div>
+            <!-- /Page 面包屑 -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>编辑商品业绩提成方式</h1>
+                </div>
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="refresh" id="refresh-toggler" href="">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a class="fullscreen" id="fullscreen-toggler" href="#">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+
+            <!-- Page Body -->
+            <div class="page-body">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="active in" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">编辑商品业绩提成方式</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="home-tab" id="home" class="tab-pane fade active in" role="tabpanel">
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">商品名称</label>
+                                <div class="col-sm-4">
+                                    <p class="n-p-15 help-block">@(model.ProductName)</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">定价</label>
+                                <div class="col-sm-4">
+                                    <p class="n-p-15 help-block">@(model.UnitPrice.ToString("0.00"))</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Search input-->
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	业绩计算比例
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="请输入业绩计算比例" class="form-control" type="text"  value="@(model.ProfitPct == -1 ? "" : (model.ProfitPct * 100).ToString("0.0"))" id="txtProfitPct">
+                                </div>
+                                <p class="n-p-15 help-block">(%)</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">销售提成</label>
+                            </div>
+                            <div class="form-group" style="border: none;">
+                                <label class="col-sm-2 control-label no-padding-right"></label>
+                                <div class="col-sm-1 radio no-padding-right text-right">
+                                    e账户
+                                    <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </div>
+                                <div class="col-sm-2 ">
+                                    <input placeholder="请输入提成数额" class="form-control" type="text" id="txtECardSACommValue" value="@(model.ECardSACommValue == -1 ? "" :model.ECardSACommType == 1 ? (model.ECardSACommValue * 100).ToString("0.0"): model.ECardSACommValue.ToString("0.00"))">
+                                </div>
+                                <div class="col-sm-2 no-padding-left">
+                                    <select id="ddlECardSACommType" style="width: 100%;">
+                                        <option value="1" @(model.ECardSACommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(model.ECardSACommType == 2 ? "selected='selected'" : "")>元</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="border: none;">
+                                <label class="col-sm-2 control-label no-padding-right"></label>
+                                <div class="col-sm-1 radio no-padding-right text-right">
+                                  	  非e账户 
+                                    <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input placeholder="请输入提成数额" class="form-control" type="text" id="txtNECardSACommValue" value="@(model.ECardSACommValue == -1 ? "" : model.NECardSACommType == 1 ? (model.NECardSACommValue * 100).ToString("0.0"): model.NECardSACommValue.ToString("0.00"))">
+                                </div>
+                                <div class="col-sm-2 no-padding-left">
+                                    <select id="ddlNECardSACommType" style="width: 100%;">
+                                        <option value="1" @(model.NECardSACommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(model.NECardSACommType == 2 ? "selected='selected'" : "")>元</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <br>
+                                    @if (EditFlag == 1){
+                                    <button class="btn btn-primary" type="submit" onclick="SubmitCommodity(@(model.ProductCode))">确 定</button>
+                                    }
+                                    <a  href="/Commission/CommodityList?#@(model.ProductCode)" class="btn btn-default">返 回 </a>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Page Body -->
+                </div>
+                <!-- /Page Content -->
+            </div>
+        </div>
+    </div>
+}
+<script src="/Script/Commission.js"></script>

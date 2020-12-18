@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="home_page_unread_count_and_below_ten_x">55</string>
+    <string name="home_page_unread_count_and_below_ten_y">61</string>
+    <string name="home_page_unread_count_and_below_hundred_x">47</string>
+    <string name="home_page_unread_count_and_below_hundred_y">65</string>
+    <string name="home_page_unread_count_and_over_hundred_x">50</string>
+    <string name="home_page_unread_count_and_over_hundred_y">55</string>
+    
+    <!--飞语页面 -->
+    <string name="unread_message_count_and_below_ten_x">28</string >
+    <string name="unread_message_count_and_below_ten_y">42</string >
+    <string name="unread_message_count_and_below_hundred_x">16</string >
+    <string name="unread_message_count_and_below_hundred_y">42</string >
+    <string name="unread_message_count_and_over_hundred_x">20</string >
+    <string name="unread_message_count_and_over_hundred_y">34</string >
+    <string name="unread_message_count_text_size">45f</string >
+
+</resources>

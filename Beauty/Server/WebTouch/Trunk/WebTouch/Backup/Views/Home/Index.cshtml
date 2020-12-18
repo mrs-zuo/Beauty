@@ -1,0 +1,116 @@
+﻿@{
+    Layout = null;
+    List<Model.View_Model.PromotionList_Model> topList = ViewBag.TopList;
+    List<Model.View_Model.PromotionList_Model> bottomList = ViewBag.ButtomList;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/newIndex.css" />
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/newIndex.js"></script>
+    <script src="/js/goTop.js"></script>
+</head>
+<body class="positionR">
+    <div class="wrapper whiteBkg">
+        <div id="newIndex">
+            <div class="banner mb10">
+                @{
+                    if (topList != null && topList.Count > 0)
+                    {
+                    <ul class="bannerUl clearfix">
+                        @{
+                        foreach (Model.View_Model.PromotionList_Model item in topList)
+                        {
+                            <li style="background-color: #FFF;"><a title='' target="_blank" href="/Promotion/PromotionDetail?pc=@(item.PromotionCode)">
+                                <img alt="@(item.Title)" src="@(item.PromotionPictureURL)" ></a></li>
+                        }
+                        }
+                    </ul>
+                    <ul class="bannerBtn clearfix">
+                    </ul>
+                    }
+                }
+
+            </div>
+        </div>
+        <div class="width90 blockC">
+            <div class="MT5P width100 MB50">
+                <ul class="tab">
+                    <li class="tabItem"><a class="tabItem bkgColor1" href="/Product/ProductCategory?t=0">
+                        <div class="imgArea MT15">
+                            <img src="/pic/icon1.png" height="40">
+                        </div>
+                        <span class="MT15 inlineB">服务分类</span></a></li>
+                    <li class="tabItem"><a class="tabItem bkgColor1" href="/Product/ProductCategory?t=1">
+                        <div class="imgArea MT15">
+                            <img src="/pic/icon2.png" height="40">
+                        </div>
+                        <span class="MT15 inlineB">商品分类</span></a></li>
+                    <li class="tabItem"><a class="tabItem bkgColor1" href="#">
+                        <div class="imgArea MT15">
+                            <img src="/pic/icon3.png" height="40">
+                        </div>
+                        <span class="MT15 inlineB">商家信息</span></a></li>
+                    <li class="tabItem"><a class="tabItem bkgColor1" href="#">
+                        <div class="imgArea MT10">
+                            <img src="/pic/icon4.png" height="45">
+                        </div>
+                        <span class="MT15 inlineB">我的</span></a></li>
+                </ul>
+            </div>
+            <div class="positionR MT5P">
+                <span class="separation inlineB bkgColor1"></span><font class="font18">促销</font>
+                @{
+                    if (bottomList != null && bottomList.Count > 0)
+                    {
+                    <a class="positionA grayTex rightSite" href="/Promotion/PromotionList">更多 >></a>
+                    }
+                }
+
+            </div>
+            <ul class="MT20 P10Table width100 homeUl">
+                @{
+                    if (bottomList != null && bottomList.Count > 0)
+                    {
+                        foreach (Model.View_Model.PromotionList_Model item in bottomList)
+                        {
+                    <li class="borderB clearfix PB10 MT10">
+                        <a href="/Promotion/PromotionDetail?pc=@(item.PromotionCode)">
+                            <div class="width120P fl">
+                                <div class="imgArea bkgColor1 viewImgArea positionR">
+                                    <span class="positionA newIcon">
+                                        <img src="/pic/new.png" height="60"></span><img src="@(item.PromotionPictureURL)" alt="">
+                                </div>
+                            </div>
+                            <div class="fl">
+                                <p class="grayTex MT25">@(item.StartDate.ToString("yyyyMMdd"))-@(item.EndDate.ToString("yyyyMMdd"))</p>
+                                <h4 class="strong blackTex font16 MT15">@(item.Title)</h4>
+                            </div>
+                        </a>
+                    </li>
+                        }
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="goTopSite">
+        <ul class="tab">
+            <li class="tabItem"><a class="tabItem bkgColor2 goTop" style="display: none;">
+                <div class="imgArea MT10">
+                    <img src="/pic/upArrow.png" height="50">
+                </div>
+            </a></li>
+        </ul>
+    </div>
+</body>
+</html>

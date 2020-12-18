@@ -1,0 +1,76 @@
+﻿@{
+    int productType = ViewBag.ProductType;
+    int categoryID = ViewBag.CategoryID;
+    string targetUrl = "";
+
+    if (productType == 1)
+    {
+        ViewBag.Title = "商品分类";
+        targetUrl = "/Product/CommodityDetail";
+    }
+    else
+    {
+        ViewBag.Title = "服务分类";
+        targetUrl = "/Product/ServiceDetail";
+    }
+
+
+    Model.View_Model.ProductListInfo_Model model = Model;
+    List<Model.View_Model.ProductList_Model> productList = new List<Model.View_Model.ProductList_Model>();
+    if (model != null)
+    {
+        productList = model.ProductList;
+        ViewBag.Title = model.CategoryName;
+    }
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    //else
+    //{
+    //    Response.Redirect("/Login/Login?err=1");
+    //}
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+
+<div class="wrapper whiteBkg PT10">
+    <div class="width95 blockC clearfix">
+        @{
+            if (productList != null && productList.Count > 0)
+            {
+            <ul class="P10Table width100">
+                @{
+                foreach (Model.View_Model.ProductList_Model item in productList)
+                {
+                    <li class="borderB PB10 MT10 clearfix">
+                        <a class="block" href="@(targetUrl)?lc=@(item.ProductCode)">
+                            <div class="width100P fl">
+                                <div class="imgArea bkgColor1 viewImgArea">
+                                    <img src="@(item.ThumbnailURL == "" ? "/pic/nopicbg.jpg" : item.ThumbnailURL)" alt=""/>  
+                                </div>
+                            </div> 
+                            <div class="positionR ML105">
+                                <h4 class="width95 height60px">@(item.ProductName)
+                                      @if (productType == 1)
+                                { 
+                                <span class="ML5">@(item.Specification)</span>
+                                }
+                                </h4>
+                              
+                                <p class="MT10 color1">@(CurrencySymbol)@(item.UnitPrice.ToString("0.00"))</p>
+                                <span class="rightArrowRow">
+                                    <img src="/pic/rightArrow.png" height="20" /></span>
+                            </div>
+                        </a>
+                    </li>
+                }
+                }
+            </ul>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,123 @@
+/* 
+  Localizable.strings
+  CustomeDemo
+
+  Created by macmini on 13-9-2.
+  Copyright (c) 2013年 MAC_Lion. All rights reserved.
+*/
+"loading" = "Loading...";
+
+//LoginViewController
+"inputUserName" = "Username";
+"inputPassWord" = "Password";
+
+//MenuViewController
+"MenuViewController-home" = "Home";
+"MenuViewController-business" = "Business";
+"MenuViewController-staff" = "Staff";
+"MenuViewController-record" = "Record";
+"MenuViewController-order" = "Order";
+"MenuViewController-eCard" = "E-Card";
+"MenuViewController-set" = "Setup";
+"MenuViewController-cTalk" = "C-Talk";
+"MenuViewController-quit" = "Quit";
+
+
+
+//SalonDetailViewController
+"SalonDetailViewController-photo" = "Photo";
+"SalonDetailViewController-intro" = "Intro";
+"SalonDetailViewController-hours" = "Hours";
+"SalonDetailViewController-linkman" = "Contacts";
+"SalonDetailViewController-address" = "Address";
+"SalonDetailViewController-net" = "Web";
+"SalonDetailViewController-phone" = "Phone";
+"SalonDetailViewController-zip" = "Zip";
+"SalonDetailViewController-fax" = "Fax";
+"SalonDetailViewController-cancel" = "cancel";
+"SalonDetailViewController-call" = "call:";
+
+//AccountListViewController
+"AccountListViewController-noRecord" = "No record";
+"AccountListViewController-cosmetologist" = "Cosmetologist";
+"AccountListViewController-lastTimeUpdate" = "Last Time Update";
+
+//AccountDetailViewController
+"AccountDetailViewController-phone" = "Phone";
+"AccountDetailViewController-title" = "Title";
+"AccountDetailViewController-skill" = "Skill";
+"AccountDetailViewController-intro" = "Intro";
+"AccountDetailViewController-department" = "Department";
+"AccountDetailViewController-cancel" = "cancel";
+"AccountDetailViewController-call" = "call:";
+
+//RecordListCell
+"RecordListCell-consultingContent" = "Consulting";
+"RecordListCell-suggestion" = "Suggestion";
+
+//OrderListViewController
+"OrderListViewController-noRecord" = "No record";
+"OrderListViewController-lastTimeUpdate" = "Last Time Update";
+"OrderListViewController-dollar" = "＄";
+"OrderListViewController-non-payment" = "Non-payment";
+"OrderListViewController-paid" = "Paid";
+"OrderListViewController-completed" = "Completed";
+"OrderListViewController-canceled" = "Canceled";
+
+//OrderDetailViewController
+"OrderDetailViewController-product" = "Product";
+"OrderDetailViewController-time" = "Time";
+"OrderDetailViewController-contactTime" = "Contact time";
+"OrderDetailViewController-number" = "Number";
+"OrderDetailViewController-courseOfTreatment" = "Course of treatment";
+"OrderDetailViewController-backToTheClinic" = "Back to the clinic";
+"OrderDetailViewController-times" = "times";
+"OrderDetailViewController-sum" = "Sum";
+"OrderDetailViewController-dollar" = "＄";
+"OrderDetailViewController-indentState" = "Indent state";
+"OrderDetailViewController-non-payment" = "Non-payment";
+"OrderDetailViewController-paid" = "Paid";
+"OrderDetailViewController-completed" = "Completed";
+"OrderDetailViewController-canceled" = "Canceled";
+
+//RechargeViewController
+"RechargeViewController-level" = "Level";
+"RechargeViewController-balance" = "Balance";
+"RechargeViewController-dollar" = "＄";
+"RechargeViewController-fold" = "Fold";
+"RechargeViewController-discount" = "Discount";
+"RechargeViewController-rechargeConsumerGlance" = "Recharge consumer Glance";
+
+//RechargeAndPayCell
+"RechargeAndPayCell-balance" = "Bal:";
+
+//RechargeAndPayViewController
+"RechargeAndPayViewController-dollar" = "＄";
+
+//MessageInputView
+"MessageInputView-edit" = "Edit";
+"MessageInputView-send" = "Send";
+
+//ChatViewController
+"ChatViewController-addressee" = "Addressee:";
+"ChatViewController-message" = "Message:";
+"ChatViewController-noRecord" = "No record";
+"ChatViewController-lastTimeUpdate" = "Last Time Update";
+"ChatViewController-failedtosendmessage" = "Failed to send message";
+
+//AccountSelectViewController
+"AccountSelectViewController-noRecord" = "No record";
+"AccountSelectViewController-lastTimeUpdate" = "Last Time Update";
+"AccountSelectViewController-cosmetologist" = "cosmetologist";
+"AccountSelectViewController-selectcosmetologist" = "Select cosmetologist";
+
+//RemindViewController
+"RemindViewController-noRecord" = "No record";
+"RemindViewController-lastTimeUpdate" = "Last Time Update";
+"RemindViewController-courseOfTreatment" = "Course of treatment";
+"RemindViewController-service" = "Service";
+"RemindViewController-contact" = "Contact";
+
+//NoticeViewController
+"NoticeViewController-noRecord" = "No record";
+"NoticeViewController-lastTimeUpdate" = "Last Time Update";

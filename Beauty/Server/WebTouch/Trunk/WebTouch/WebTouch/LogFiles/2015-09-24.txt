@@ -1,0 +1,245 @@
+2015-09-24 10:16:36[29] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:16:36
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=031deb0c5221e7dd61d7922d4f55dd7K&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=NAM8hQ7hTKo=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:16:53[8] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:16:53
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=00168dfdc34f39cce03dd85524d2e21t&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=NAM8hQ7hTKo=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:17:18[32] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:17:18
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=01189312f30df822388010b9c8be75cO&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:24:45[49] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:24:45
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=001ee9558cd669799bec9d9782d0864K&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:30:19[59] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:30:19
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=0414d3cdf278cc9d6edc2b6a7f1dfcar&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:31:30[60] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:31:30
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=0212738076ac860ce69d8b116597da9U&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YifBSc7NVYybOiQNsndtOqf4afi8SdFMIVFWlMazNrPTFwG/lJ5gFwUf6c/8z2uERreOmzHCdp7NL8XeYzutdM3o/7mrwu6d+7fGDFOIOxzoS9DN+MjLbHXOuou9SF2993E/3UqJJxxl+Zaytg1oFHpYLvN+Lc/auhtWWlkOYjZHdTKudMwDIXpVKViQ+W8znsDnsn97PpYMcN/JsoIlx2wZAMY+0DstPZ7eclJJJ27rIzZ0ZBnsFSxv; HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:31:42[54] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:31:42
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=031c24e161d642f898b5a673848e1bbn&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YifBSc7NVYybOiQNsndtOqf4afi8SdFMIVFWlMazNrPTFwG/lJ5gFwUf6c/8z2uERreOmzHCdp7NL8XeYzutdM3o/7mrwu6d+7fGDFOIOxzoS9DN+MjLbHXOuou9SF2993E/3UqJJxxl+Zaytg1oFHpYLvN+Lc/auhtWWlkOYjZHdTKudMwDIXpVKViQ+W8znsDnsn97PpYMcN/JsoIlx2wZAMY+0DstPZ7eclJJJ27rIzZ0ZBnsFSxv; HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:32:08[29] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:32:08
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=001335b0e720fe95a4adcabb3148ec9W&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YifBSc7NVYybOiQNsndtOqf4afi8SdFMIVFWlMazNrPTFwG/lJ5gFwUf6c/8z2uERreOmzHCdp7NL8XeYzutdM3o/7mrwu6d+7fGDFOIOxzoS9DN+MjLbHXOuou9SF2993E/3UqJJxxl+Zaytg1oFHpYLvN+Lc/auhtWWlkOYjZHdTKudMwDIXpVKViQ+W8znsDnsn97PpYMcN/JsoIlx2wZAMY+0DstPZ7eclJJJ27rIzZ0ZBnsFSxv; HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:33:03[47] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:33:03
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=021218387bdf58e8a0b20ca49dab72f9&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YifBSc7NVYybOiQNsndtOqf4afi8SdFMIVFWlMazNrPTFwG/lJ5gFwUf6c/8z2uERreOmzHCdp7NL8XeYzutdM3o/7mrwu6d+7fGDFOIOxzoS9DN+MjLbHXOuou9SF2993E/3UqJJxxl+Zaytg1oFHpYLvN+Lc/auhtWWlkOYjZHdTKudMwDIXpVKViQ+W8znsDnsn97PpYMcN/JsoIlx2wZAMY+0DstPZ7eclJJJ27rIzZ0ZBnsFSxv; HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:33:23[29] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:33:23
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=03111db711411ea49af082233d2b500t&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 10:46:36[77] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 10:46:36
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=0315040d53647c5ef367ad44ec1e7059&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:HSTouchCOD=NAM8hQ7hTKo=; TWXOD=l9TuMPV9Pc1uHllI1Z2D9usRIdtNVjcAk5vAHCrrfjM=; TWXUD=E1R0srgNjQw/Fy8UXK2qQjmGWhO3aSmA+cMffdln72Q=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A344 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 11:04:34[84] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 11:04:34
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=10.0.0.86
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=001db463d1073d3189f4456c1c46e846&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-09-24 11:28:02[6] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/24 11:28:02
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=10.0.0.86
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/home/index?code=0014fbe3f070a3de68ff0d492c1e281b&state=WxH8TLX4QLE%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:ASP.NET_SessionId=33znmadeq11juwcuevt004df; HSTouch=tvYwoLYEzh8y7roXS6RePDIyF41hSJMzyzaS5Rx5YidrMhaItgVg+QprW+NtaNLpcv2qgl0ABzCYnrKB8EnT6K3cnaxyOkLcbB01xaBiFvUxpPXNcXE67MGXA3GWaTfJjdlSj4gtFRJGfUXEuxwTefhJL9edr+MCZLe9wkrUe7jzz9w4M3lVNaJB/+T5B136mYjBR3SPSKewjOvrXmscSbAkD+2vJStpacgQetloB5K+bnlFL7CUy9pn+xjpofiCuRoCu1AeuZjTTaw3wkQdARAi5dIu0jqMa5nZPs6RLuos5OBACtAmQn9oIN026Qh/HudkpnhjvRdO+XUXomc7+5rfzUnngQKdaXfy61m4ZWpNJQ33HVZnxvAnpO0mIaGBOp+2sOgtn4D1JXywPtxbbCoUkef5N+BMerZDOd9lFwDtS7N6rmBjIjzvyK/sl713cTz0SEVRo8JdbrNXy1VdnZoZFTqOhScTE+Ubee6xtzDUVVdzyhJcb8fNYt0ujtixTrYYqc3uLZLAmX+Bf4TOILZEEDZKMVcIh1WL5QlHMvIUZpyGDJ3/JQA/af2058OU08pn7wpg03gcoFPySYKJQcvd1IbtcOF2Spn0KrjROFXiuCo7Pa7FKI9dpxnw2usoUZ06YeE477X4MKhVkLYoJU5kz+VHZryDEAFOliP4uQIJjcW6ZoshauwGQs/URsxhnQfxbGQCv0lZVdR0/R+K79wetkoPtE3i; HSTouchCOD=NAM8hQ7hTKo=; TWXOD=GucGlY+oonXT1uhsY8fBPaeZ9Nzvolh72rf/o5+9Y4o=; TWXUD=iaW1lvnAek3sTcJ4I6WRo6c02d3nZMfFgfiLb7fR7/s=
+Host:t.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A404 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+

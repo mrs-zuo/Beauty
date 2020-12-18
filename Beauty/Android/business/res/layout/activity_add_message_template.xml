@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".AddMessageTemplateActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/add_emarketing_message_template_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/add_emarketing_message_template_title_text" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/template_title" />
+
+                    <EditText
+                        android:id="@+id/template_title"
+                        android:layout_width="200dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@null"
+                        android:hint="@string/template_title_hint"
+                        android:maxLength="50"
+                        android:textSize="@dimen/text_size" 
+                        android:gravity="right"/>
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/template_type" />
+
+                    <Spinner
+                        android:id="@+id/template_type_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs">
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs">
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/template_content"
+                        />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/template_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/template_content_hint"
+                        android:maxLength="300"
+                        android:minLines="3"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:gravity="center"
+                android:padding="5dip" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ImageButton
+                        android:id="@+id/add_template_make_sure_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/edit_customer_detail_make_sure"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

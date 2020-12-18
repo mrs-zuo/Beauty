@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "发表评价";
+    Model.View_Model.GetReviewDetail_Model model = Model;
+}
+<link href="/css/evaluation.css" rel="stylesheet" />
+<script src="/js/evaluation.js"></script>
+<script src="/Scripts/Order.js"></script>
+@{
+    if (model != null)
+    {
+        <div class="wrapper">
+            <div class="whiteBkg width100 PB30">
+                <div class="width90 blockC">
+                    <ul class="width100">
+                        <li class="PT15 MB15">
+                            <ol class="width100">
+                                <li class="MT15 clearfix">
+                                    <h4 class="blackTex font16 longTex">@(model.ServiceName)</h4>
+                                </li>
+                                <li class="MT15 clearfix">
+                                    <div class="fl grayTex">
+                                        <span class="block">@(model.TGEndTime.ToString("yyyy-MM-dd HH:mm"))</span>
+                                    </div>
+                                    <div class="fr grayTex">
+                                        <span class="block grayTex">服务@(model.TGFinishedCount)次/共@(model.TGTotalCount)次</span>
+                                    </div>
+                                </li>
+                                <li class="MT20 height40 clearfix">
+                                    <div id="star">
+                                        <ul class="width100 clearfix">
+                                            <li class="on"><a>1</a></li>
+                                            <li class="on"><a>2</a></li>
+                                            <li class="on"><a>3</a></li>
+                                            <li class="on"><a>4</a></li>
+                                            <li class="on"><a>5</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="MB20">
+                            <textarea placeholder="请输入服务评价" class="textarea" rows="4" id="TGComment"></textarea>
+                        </li>
+                    </ul>
+
+                    <div id="small">
+                        @if (model.listTM != null && model.listTM.Count > 0)
+                        {
+                            int i = 1;
+                            <h4 class="font20">操作评价</h4>
+                            foreach (Model.View_Model.TMReviewDetail_Model item in model.listTM)
+                            {
+
+                                string name = "starSmall" + i;
+                                <div tid="@(item.TreatmentID)" name="TMReviewDiv">
+                                    <div class="clearfix MT20">
+                                        <div class="fl grayTex width20">
+                                            <span class="block longTex">@(item.SubServiceName)</span>
+                                        </div>
+                                        <div class="fr">
+                                            <div id="@(name)" class="starSmall">
+                                                <ul class="width100 clearfix">
+                                                    <li class="on"><a>1</a></li>
+                                                    <li class="on"><a>2</a></li>
+                                                    <li class="on"><a>3</a></li>
+                                                    <li class="on"><a>4</a></li>
+                                                    <li class="on"><a>5</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="MT10">
+                                        <textarea placeholder="请输入服务评价" name="textAreaTMReview" class="textarea" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                i++;
+                            }
+
+                        }
+                    </div>                    
+                </div>
+            </div>
+            <div class="width90 blockC MT30 MB30"><a class="btnLarge bkgColor1 width100" onclick="EditReview(@(model.GroupNo))">提交评价</a></div>
+        </div>
+        <input type="hidden" id="hiddenText"/>    
+    }
+}
+

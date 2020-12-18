@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".CustomerActivity" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TableLayout style="@style/table_layout_attrs" >
+
+            <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    android:id="@+id/order_quantity_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_order_quantity"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/order_quantity"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+
+            <View style="@style/divide_view" />
+            <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    android:id="@+id/order_totalprice_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/commodity_order_totalprice_title"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/order_totalprice"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+        </TableLayout>
+
+        <TableLayout style="@style/table_layout_attrs" >
+
+            <LinearLayout
+                android:id="@+id/layout_get_customer_card_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Spinner
+                    android:id="@+id/order_pay_customer_card_spinner"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom = "5dp"
+                    android:layout_weight="5"
+                    android:background="@null"
+                   	android:spinnerMode="dialog"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/memeber_payment_discount_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom = "5dp"
+                    android:layout_weight="4"
+                    android:text="@string/member_discount_payment"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/memeber_payment_discount"
+                    style="@style/relative_layout_right_child_attrs"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="7"
+                    android:gravity="right"
+                    android:text="@string/member_discount_payment" />
+            </LinearLayout>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/pay_information"
+            style="@style/table_layout_attrs" >
+
+            <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    android:id="@+id/order_total_sale_price_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_order_total_sale_price"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/order_total_sale_price"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#f4f4f4" >
+            </View>
+
+            <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    android:id="@+id/order_price_capitalization_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_order_price_capitalization"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/order_price_capitalization"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#E9E0D6"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#f4f4f4" />
+
+        <ImageView
+            android:id="@+id/order_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:src="@drawable/to_pay_button" />
+    </LinearLayout>
+
+</RelativeLayout>

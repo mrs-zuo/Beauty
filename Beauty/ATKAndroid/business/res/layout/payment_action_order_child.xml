@@ -1,0 +1,727 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical" >
+    <TableLayout 
+        android:id="@+id/payment_action_order_child_item_ecard_tablelayout" 
+        style="@style/activity_content_table_attrs" >
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/payment_action_order_type_ecard"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+            <Button
+                android:id="@+id/payment_action_order_card_surplus_button"
+                android:layout_width="80dip"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@xml/shape_btn_blue"
+                android:text="@string/payment_action_order_card_remaining_num"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+        <View style="@style/activity_content_divide_view_attrs" />
+        <LinearLayout
+            android:id="@+id/payment_action_order_child_item_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </TableLayout>
+    <TableLayout 
+        android:id="@+id/payment_action_order_point_cashcoupon_tablelayout"
+        style="@style/activity_content_table_attrs" >
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/payment_action_order_point_cashcoupon"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <Button
+                android:id="@+id/payment_action_order_point_cashcoupon_surplus_button"
+                android:layout_width="80dip"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@xml/shape_btn_blue"
+                android:text="@string/payment_action_order_card_remaining_num"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <ImageButton
+                android:id="@+id/payment_action_order_integral_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/no_select_btn"
+                android:contentDescription="@string/search"/>
+
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_toRightOf="@+id/payment_action_order_integral_select" >
+                <TextView
+                    android:id="@+id/payment_action_order_integral_text21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/payment_action_order_use_integral"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@+id/payment_action_order_integral_text21" >
+                    <EditText
+                        android:id="@+id/payment_action_order_integral_edit22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/payment_action_order_use_integral_edit"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/payment_action_order_integral_text23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/payment_action_order_cash_di"
+                        android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:id="@+id/payment_action_order_integral_text24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <ImageButton
+                android:id="@+id/payment_action_order_cash_coupon_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_toRightOf="@+id/payment_action_order_cash_coupon_select" >
+                <TextView
+                    android:id="@+id/payment_action_order_cash_coupon_text21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/payment_action_order_use_cash_coupon"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/payment_action_order_cash_coupon_text21" >
+                    <EditText
+                        android:id="@+id/payment_action_order_cash_coupon_edit22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:hint="@string/payment_action_order_use_cash_coupon_edit"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/payment_action_order_cash_coupon_text23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/payment_action_order_cash_di"
+                        android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:id="@+id/payment_action_order_cash_coupon_text24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/payment_action_order_cash_bank_other_payment_tablelayout"
+        style="@style/activity_content_table_attrs" >
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/payment_action_order_type_cash_bank_other"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+
+        <View style="@style/activity_content_divide_view_attrs" />
+
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <ImageButton
+                android:id="@+id/payment_action_order_cash_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <TextView
+                android:id="@+id/this_time_pay_amount_cash_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/payment_action_order_cash_select"
+                android:text="@string/this_time_pay_amount_cash"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <EditText
+                android:id="@+id/this_time_pay_amount_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="@string/please_input_pay_amount"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+
+            <Button
+                android:id="@+id/this_time_pay_amount_cash_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_toLeftOf="@id/this_time_pay_amount_cash"
+                android:background="@drawable/payment_shape_btn_blue"
+                android:contentDescription="@string/search"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="@string/payment_action_order_total"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+
+        <View style="@style/activity_content_divide_view_attrs" />
+
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <ImageButton
+                android:id="@+id/payment_action_order_bank_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/payment_action_order_bank_select"
+                android:text="@string/this_time_pay_amount_bank"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <EditText
+                android:id="@+id/this_time_pay_amount_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="@string/please_input_pay_amount"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+
+            <Button
+                android:id="@+id/this_time_pay_amount_bank_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_toLeftOf="@id/this_time_pay_amount_bank"
+                android:background="@drawable/payment_shape_btn_blue"
+                android:contentDescription="@string/search"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="@string/payment_action_order_total"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/this_payment_other_divide_view"
+            style="@style/activity_content_divide_view_attrs" />
+
+        <RelativeLayout
+            android:id="@+id/this_payment_other_relativelayout"
+            style="@style/activity_content_table_relativelayout_attrs" >
+            <ImageButton
+                android:id="@+id/payment_action_order_other_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/payment_action_order_other_select"
+                android:text="@string/payment_other_title_text"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <EditText
+                android:id="@+id/this_time_pay_amount_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="@string/please_input_pay_amount"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+
+            <Button
+                android:id="@+id/this_time_pay_amount_other_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_toLeftOf="@id/this_time_pay_amount_other"
+                android:background="@drawable/payment_shape_btn_blue"
+                android:contentDescription="@string/search"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="@string/payment_action_order_total"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+        <!--消费贷款支付-->
+        <View
+            android:id="@+id/this_payment_loan_divide_view"
+            style="@style/activity_content_divide_view_attrs" />
+
+        <RelativeLayout
+            android:id="@+id/this_payment_loan_relativelayout"
+            style="@style/activity_content_table_relativelayout_attrs" >
+            <ImageButton
+                android:id="@+id/payment_action_order_loan_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/payment_action_order_loan_select"
+                android:text="@string/payment_loan_title_text"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <EditText
+                android:id="@+id/this_time_pay_amount_loan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="@string/please_input_pay_amount"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+
+            <Button
+                android:id="@+id/this_time_pay_amount_loan_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_toLeftOf="@id/this_time_pay_amount_loan"
+                android:background="@drawable/payment_shape_btn_blue"
+                android:contentDescription="@string/search"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="@string/payment_action_order_total"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+         <!--第三方收款支付-->
+        <View
+            android:id="@+id/this_payment_from_third_divide_view"
+            style="@style/activity_content_divide_view_attrs" />
+
+        <RelativeLayout
+            android:id="@+id/this_payment_from_third_relativelayout"
+            style="@style/activity_content_table_relativelayout_attrs" >
+            <ImageButton
+                android:id="@+id/payment_action_order_from_third_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/payment_action_order_from_third_select"
+                android:text="@string/payment_from_third_title_text"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <EditText
+                android:id="@+id/this_time_pay_amount_from_third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="@string/please_input_pay_amount"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+
+            <Button
+                android:id="@+id/this_time_pay_amount_from_third_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_toLeftOf="@id/this_time_pay_amount_from_third"
+                android:background="@drawable/payment_shape_btn_blue"
+                android:contentDescription="@string/search"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+                android:text="@string/payment_action_order_total"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+    </TableLayout>
+    <TableLayout 
+        android:id="@+id/payment_action_order_third_part_payment_tablelayout"
+        style="@style/activity_content_table_attrs" >
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/payment_action_order_third_part_payment"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/payment_action_order_weixin_relativelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <ImageButton
+                android:id="@+id/payment_action_order_weixin_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_toRightOf="@+id/payment_action_order_weixin_select" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/payment_action_order_third_part_payment_weixin"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size" />
+
+                <EditText
+                    android:id="@+id/this_time_pay_amount_weixin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="@string/please_input_pay_amount"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size" />
+
+                <Button
+                    android:id="@+id/this_time_pay_amount_wexin_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_right"
+                    android:layout_toLeftOf="@id/this_time_pay_amount_weixin"
+                    android:background="@drawable/payment_shape_btn_blue"
+                    android:contentDescription="@string/search"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/payment_action_order_total"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/payment_action_order_alipay_relativelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <View style="@style/activity_content_divide_view_attrs" />
+
+            <ImageButton
+                android:id="@+id/payment_action_order_alipay_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/no_select_btn" 
+                android:contentDescription="@string/search"/>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_toRightOf="@+id/payment_action_order_alipay_select" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/payment_action_order_third_part_payment_alipay"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size" />
+
+                <EditText
+                    android:id="@+id/this_time_pay_amount_alipay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="@string/please_input_pay_amount"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size" />
+
+                <Button
+                    android:id="@+id/this_time_pay_amount_alipay_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_right"
+                    android:layout_toLeftOf="@id/this_time_pay_amount_alipay"
+                    android:background="@drawable/payment_shape_btn_blue"
+                    android:contentDescription="@string/search"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/payment_action_order_total"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/payment_this_time_people_count_tablelayout"
+        style="@style/activity_content_table_attrs" >
+        <RelativeLayout
+            android:id="@+id/payment_action_order_present"
+            style="@style/activity_content_table_relativelayout_attrs" >
+            <TextView
+                style="@style/activity_content_table_row_title_attrs"
+                android:text="@string/this_time_give" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/this_time_give_view"
+            style="@style/activity_content_divide_view_attrs"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/this_time_give_point_relativelayout"
+            style="@style/activity_content_table_relativelayout_attrs"
+            android:layout_marginLeft="15dp"
+            android:visibility="gone" >
+            <TextView
+                android:id="@+id/this_time_give_point_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/this_time_give_point"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <EditText
+                android:id="@+id/this_time_give_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/this_time_point_view"
+            style="@style/activity_content_divide_view_attrs"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/this_time_give_cash_coupon_relativelayout"
+            style="@style/activity_content_table_relativelayout_attrs"
+            android:layout_marginLeft="15dp"
+            android:visibility="gone" >
+            <TextView
+                android:id="@+id/this_time_give_cash_coupon_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/this_time_give_cash_coupon"
+                android:textColor="@color/title_font"
+                android:textSize="@dimen/text_size" />
+
+            <EditText
+                android:id="@+id/this_time_give_cash_coupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:background="@null"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+    </TableLayout>
+    <TableLayout style="@style/activity_content_table_attrs" >
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <TextView
+                style="@style/activity_content_table_row_title_attrs"
+                android:text="@string/customer_remark" />
+        </RelativeLayout>
+
+        <View style="@style/activity_content_divide_view_attrs" />
+
+        <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+            <EditText
+                android:id="@+id/payment_action_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:background="@null"
+                android:hint="@string/please_input_customer_remark"
+                android:maxLength="300"
+                android:minLines="3"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+    </TableLayout>
+
+</LinearLayout>

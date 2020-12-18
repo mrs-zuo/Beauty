@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/tm_detail_layout"
+        style="@style/relative_layout_has_child_attrs" >
+        <ImageView
+            android:id="@+id/service_treatment_finished_detail_subservice_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/commodity_main_classification_icon" />
+
+        <TextView
+            android:id="@+id/sub_service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_toRightOf="@id/service_treatment_finished_detail_subservice_img" />
+
+        <ImageView
+            android:id="@+id/sub_service_detail_arrowhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/join_in_arrowhead_gray" />
+
+        <TextView
+            android:id="@+id/executor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/sub_service_detail_arrowhead"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+</LinearLayout>

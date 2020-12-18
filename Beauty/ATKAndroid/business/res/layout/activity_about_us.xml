@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/about_us"
+    tools:context="cn.com.antika.business.AboutUsActivity" >
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+	 <TextView
+        android:id="@+id/software_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="460dp"
+        android:textSize="@dimen/about_us_text_size" />
+
+   
+     <TextView
+        android:id="@+id/copyright_all_rights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/copyright_all_rights"
+        android:textSize="@dimen/about_us_text_size" />
+     <TextView
+        android:id="@+id/copyright_english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@id/copyright_all_rights"
+        android:text="@string/copyright_english"
+        android:textSize="@dimen/about_us_text_size" />
+    <TextView
+        android:id="@+id/copyright_chinese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_above="@id/copyright_english"
+        android:layout_marginBottom="10dp"
+        android:text="@string/copyright_chinese"
+        android:textSize="@dimen/about_us_text_size" />
+     
+    
+</RelativeLayout>

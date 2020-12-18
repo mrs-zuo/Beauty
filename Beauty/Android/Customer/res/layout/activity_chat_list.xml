@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <RelativeLayout
+        android:id="@+id/layout_chat_there_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head_layout" >
+
+        <TextView
+            android:id="@+id/there_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/chat_there_name_background"
+            android:gravity="center"
+            android:text="@string/title_photo_album_list"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/title_bar"
+        android:paddingBottom="@dimen/chat_bottom_padding"
+        android:paddingTop="@dimen/chat_bottom_padding" >
+
+        <RelativeLayout
+            android:id="@+id/chat_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/chat_message_send_button"
+                android:layout_width="50dip"
+                android:layout_height="30dip"
+                android:background="@drawable/shape_btn"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/search"
+                android:text="@string/chat_message_send_button_text"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/white"/>
+
+            <ImageButton
+                android:id="@+id/fly_message_expression_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:layout_toLeftOf="@id/chat_message_send_button"
+                android:background="@drawable/fly_message_expression_icon"
+                android:contentDescription="@string/search" />
+
+            <EditText
+                android:id="@+id/sendmessage_edit"
+                android:layout_width="@dimen/sendmessage_edit_layout_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="50dp"
+                android:background="@xml/round_edittext"
+                android:hint="@string/hint_new_message"
+                android:maxLength="300"
+                android:maxLines="4"
+                android:padding="@dimen/sendmessage_edit_padding"
+                android:textSize="@dimen/text_size_normal" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fly_message_expression_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="160dip"
+            android:layout_below="@id/chat_message"
+            android:visibility="gone" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/fly_message_expression_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="130dip" >
+            </android.support.v4.view.ViewPager>
+
+            <LinearLayout
+                android:id="@+id/fly_message_expression_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/fly_message_expression_viewpager"
+                android:gravity="center"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_above="@id/chat_bottom"
+        android:background="#d5c6b4" >
+    </View>
+
+    <com.glamourpromise.beauty.customer.custom.view.NewRefreshListView
+        android:id="@+id/chat_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/chat_bottom"
+        android:layout_below="@id/layout_chat_there_name"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:divider="@null"
+        android:dividerHeight="5dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+</RelativeLayout>

@@ -1,0 +1,227 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".CustomerBenefitDetailActivity" >
+    <RelativeLayout
+        android:id="@+id/customer_benefit_detail_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/customer_benefit_detail_title_relativelayout"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/customer_benefit_detail_head_layout" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/customer_benefit_detail_title_text" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/customer_ecard_content_scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customer_benefit_detail_title_relativelayout" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dip"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+                <TextView
+                    android:id="@+id/customer_benefit_detail_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true"
+                    android:text="@string/ellipsis"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size" 
+                    android:lineSpacingExtra="5dp"/>
+
+                <TextView
+                    android:id="@+id/customer_benefit_detail_date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/customer_benefit_detail_name_text"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true"
+                    android:text="@string/ellipsis"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size" 
+                    android:lineSpacingExtra="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="5dp"
+                    android:text="@string/customer_benefit_detail_rule_title"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" >
+            </View>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/customer_benefit_detail_rule_content_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size" 
+                    android:lineSpacingExtra="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="5dp"
+                    android:text="@string/customer_benefit_detail_description_title"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" >
+            </View>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/customer_benefit_detail_description_content_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size" 
+                    android:lineSpacingExtra="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="5dp"
+                    android:text="@string/customer_benefit_detail_branch_title"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size" 
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" >
+            </View>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+                <TextView
+                    android:id="@+id/customer_benefit_detail_branch_content_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size"
+                    android:lineSpacingExtra="5dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

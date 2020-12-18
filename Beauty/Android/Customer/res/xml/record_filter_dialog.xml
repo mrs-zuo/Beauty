@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:id="@+id/home_page_rl"
+        style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/home_page_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/home_page"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_headline" />
+    </RelativeLayout>
+    
+     <View
+        style="@style/divide_view" />
+     <RelativeLayout 
+         android:id="@+id/record_expand_rl"
+         style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/record_expand_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/record_expand_all"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_headline" />
+    </RelativeLayout>
+    <View
+        style="@style/divide_view"/>
+     <RelativeLayout
+         android:id="@+id/record_expand_cancel_rl" 
+         style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/record_expand_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/cancel"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+    </RelativeLayout>
+</LinearLayout>

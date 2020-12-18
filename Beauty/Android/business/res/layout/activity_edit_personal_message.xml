@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".EditPersonalMessageActivity" 
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/edit_personal_message_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/edit_personal_message_title_text" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" > 
+			<View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/border_color" >
+            </View>
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/edit_personal_head_image"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size" />
+                <ImageView
+                    android:id="@+id/personal_message_headimage"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:layout_marginRight="5dip"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/search" 
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" >
+            </View>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/border_color" >
+            </View>
+            <RelativeLayout
+                android:id="@+id/edit_personal_password_relativelayout"
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:text="@string/edit_personal_password"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/join_in_arrowhead"
+                    android:contentDescription="@string/search" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" >
+            </View>
+
+            <Button
+                android:id="@+id/edit_personal_message_make_sure_btn"
+                style="@style/submit_big_btn"
+                android:layout_marginTop="10dip"
+                android:text="@string/ok"
+                 />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

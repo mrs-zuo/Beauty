@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp" >
+
+       <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/commodity_order_time_tablelayout"
+                style="@style/table_layout_attrs"
+                android:focusable="true"
+                android:focusableInTouchMode="true" >
+
+                <RelativeLayout
+                    android:id="@+id/layout_order_serial_number"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/commodity_order_serial_number_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/order_serial_number"
+                        android:textColor="@color/text_color" />
+
+                    <ImageView
+                        android:id="@+id/order_changeable_layout_image_view"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/report_main_down_icon" />
+
+                    <TextView
+                        android:id="@+id/commodity_order_serial_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:layout_toLeftOf="@id/order_changeable_layout_image_view"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/commodity_order_changeable_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        style="@style/divide_view"
+                         />
+
+                    <RelativeLayout
+                        android:id="@+id/layout_order_branch"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/commodity_order_branch_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/order_branch"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/commodity_order_branch"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/divide_view"
+                         />
+
+                    <RelativeLayout
+                        android:id="@+id/layout_one"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/commodity_order_time_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/commodity_order_time_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/commodity_order_time"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/divide_view"
+                         />
+
+                    <RelativeLayout
+                        android:id="@+id/layout_responsible_personname"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/responsible_personname_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/responsible_personname_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/responsible_personname"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/commodity_detail_tablelayout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/commodity_name_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/commodity_name"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/product_type_status_1" />
+
+                    <ImageView
+                        android:id="@+id/price_changeable_layout_image_view"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/report_main_down_icon" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/commodity_price_detail_changeable_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        style="@style/divide_view"
+                         />
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/commodity_quantity_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/count_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/commodity_quantity"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/divide_view"
+                         />
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/total_orig_price_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/total_orig_price_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/divide_view"
+                         />
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/total_memeber_sale_price_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/total_member_sale_price_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/activity_commodity_order_detail_total_sale_price_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <View
+                        style="@style/divide_view"
+                         />
+
+                        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                            <TextView
+                                android:id="@+id/activity_commodity_order_detail_total_sale_price_title"
+                                style="@style/relative_layout_left_child_attrs"
+                                android:text="@string/total_sale_price_title"
+                                android:textColor="@color/text_color" />
+
+                            <TextView
+                                android:id="@+id/total_sale_price_content"
+                                style="@style/relative_layout_right_child_attrs" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/status_tablelayout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/order_status_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/commodity_order_status_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/commodity_order_status_title"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/commodity_order_status"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/order_payment_detail_changeable_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        style="@style/divide_view"
+                         />
+
+                    <RelativeLayout
+                        android:id="@+id/order_pay_detail_relativelayout"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/commodity_order_vay_status_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/commodity_order_pay_detail_title"
+                            android:textColor="@color/text_color" />
+
+                        <ImageView
+                            android:id="@+id/order_pay_detail_arrowhead"
+                            style="@style/relative_layout_right_child_attrs"
+                            android:background="@drawable/join_in_arrowhead_gray" />
+
+                        <ImageView
+                            android:id="@+id/order_detail_paymentmode_bank_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dip"
+                            android:layout_toLeftOf="@id/order_pay_detail_arrowhead"
+                            android:src="@drawable/payment_mode_bank_card"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/order_detail_paymentmode_e_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dip"
+                            android:layout_toLeftOf="@id/order_detail_paymentmode_bank_card"
+                            android:contentDescription="@string/search"
+                            android:src="@drawable/payment_mode_ecard"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/order_detail_paymentmode_crash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dip"
+                            android:layout_toLeftOf="@id/order_detail_paymentmode_e_card"
+                            android:contentDescription="@string/search"
+                            android:src="@drawable/payment_mode_crash"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/order_detail_paymentmode_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dip"
+                            android:layout_toLeftOf="@id/order_detail_paymentmode_crash"
+                            android:contentDescription="@string/search"
+                            android:src="@drawable/payment_mode_bank_card_other"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/commodity_finish_status_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/commodity_finish_status_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/order_status_2"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/commodity_finish_status_content"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <com.glamourpromise.beauty.customer.view.NoScrollListView
+                    android:id="@+id/unfinish_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/commodity_finish_table_layout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/finished_commodity_record"
+                        android:textColor="@color/text_color" />
+
+                    <ImageView
+                        android:id="@+id/finish_list_changeable_layout_image_view"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/report_main_down_icon" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/show_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/order_annual_changeable_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <com.glamourpromise.beauty.customer.view.NoScrollListView
+                            android:id="@+id/commodity_order_annual_list_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:divider="@null" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableLayout>
+
+         
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

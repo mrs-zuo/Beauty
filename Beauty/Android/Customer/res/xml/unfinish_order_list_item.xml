@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/relative_layout_has_child_attrs"
+    android:orientation="vertical"
+    android:descendantFocusability= "blocksDescendants">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+	        android:id="@+id/unfinish_order_name_text"
+	        android:layout_width="500dp"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:singleLine="true"
+	        android:text="@string/ellipsis"
+	        android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+	        android:id="@+id/unfinish_order_time"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginTop="5dip"
+	        android:textSize="@dimen/text_size_normal" 
+	        android:textColor="@color/gray"/>
+        <TextView
+	        android:id="@+id/unfinish_order_num"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+	        android:textSize="@dimen/text_size_normal" 
+	        android:textColor="@color/gray"/>
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+	        android:id="@+id/unfinish_order_responsible_name_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentBottom="true"
+	        android:textSize="@dimen/text_size_normal" 
+	        android:textColor="@color/gray"/>
+        <Button
+           android:id="@+id/unfinish_order_appointment_button"
+           android:layout_width="60dp"
+	       android:layout_height="25dp"
+           android:layout_alignParentRight="true"
+           android:background="@drawable/shape_btn"
+           android:textColor="@color/white"
+           android:textSize="@dimen/text_size_normal"
+           android:contentDescription="@string/search"
+           android:text="@string/left_menu_appointment"  />
+    </RelativeLayout>
+</LinearLayout>

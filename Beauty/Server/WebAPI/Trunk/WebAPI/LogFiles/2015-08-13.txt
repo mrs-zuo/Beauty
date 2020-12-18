@@ -1,0 +1,59 @@
+2015-08-13 16:36:08[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/8/13 16:36:08
+Title=对象名 'SYS_VERSION' 无效。
+Message=Message:对象名 'SYS_VERSION' 无效。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":0,"LoginMobile":"Ex1MGH4uT4xhorbuwqK5iepA33mXi7Az8VHh/CSmo21G4dNak0k0OREPdONguQl/5qKrQUmNscJ9eUR85Q6QyyHyiMNCD2D77ZuYhRYvUvoUFDg0F/IbgEFAk5CeXfG92/z+2Ry0wAXk8Aw/fTd1WJOPM99xQ6TZqRzvYSzDESk=","ClientType":0,"AppVersion":null,"Password":"iwfGPWIUWsXaYkt1ra8jjix8K0TY7iqZwMhy5Oz9RwXgIiTrNnOybJE2FEAiXRKXwrO8YX1nxW6d1tzetixRKzn77EuzxZTlbXma2U5SR7JqdjfYu24gUdgJp8b4NyB8AxttgBplc+hOzvCiMutLWsFLLJWHzk8wIts85XsL2b8=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"IsNormalLogin":false}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteObjectInternal(Object entity, Type type, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteObject[T]()
+   在 WebAPI.DAL.Login_DAL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\DAL\Login_DAL.cs:行号 68
+   在 WebAPI.BLL.Login_BLL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\BLL\Login_BLL.cs:行号 38
+   在 WebAPI.Controllers.Manager.Login_MController.getCompanyList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Login_MController.cs:行号 66
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.95
+UrlReferrer=
+RawUrl=/Login_M/getCompanyList
+Header=Connection:Keep-Alive
+Content-Length:733
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:AAF7008D8095D53FFA257DD2554AB3D1
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:0
+BR:0
+US:0
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYLIST
+TI:2015/8/13 16:35:54
+GU:
+
+

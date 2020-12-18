@@ -1,0 +1,221 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.ServiceDetailActivity" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/service_detail_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/service_detail_title_text" />
+    </RelativeLayout>
+
+    <cn.com.antika.view.ImageScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/service_image_show_linearlayout"
+                style="@style/activity_content_table_attrs"
+                android:layout_height="210dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/arrow_left_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dip"
+                    android:contentDescription="@string/search" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/commodity_image_viewpager"
+                    android:layout_width="@dimen/service_commodity_viewpager_width"
+                    android:layout_height="200dip"
+                    android:layout_gravity="center"
+                    android:background="@color/white" />
+
+                <ImageView
+                    android:id="@+id/arrow_right_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dip"
+                    android:contentDescription="@string/search" />
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/service_name"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_detail_name" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/service_detail_name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/service_detail_service_time_divide_view"
+                    style="@style/activity_content_divide_view_attrs"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/service_detail_service_time_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_detail_service_time" />
+
+                    <TextView
+                        android:id="@+id/service_detail_service_time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/service_detail_service_frquency_divide_view"
+                    style="@style/activity_content_divide_view_attrs"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/service_detail_service_frquency_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_detail_service_frquency" />
+
+                    <TextView
+                        android:id="@+id/service_detail_service_frquency_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/service_price"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_detail_service_unit_price" />
+
+                    <TextView
+                        android:id="@+id/service_detail_service_unit_price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/service_detail_service_promotion_price_divide_view"
+                    style="@style/activity_content_divide_view_attrs"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/service_detail_service_promotion_price_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_detail_service_promotion_price" />
+
+                    <TextView
+                        android:id="@+id/service_detail_service_promotion_price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/service_introduction"
+                style="@style/activity_content_table_attrs"
+                android:visibility="gone" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_detail_service_introduction" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/service_detail_service_introduction_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/add_favorite_button"
+                style="@style/submit_big_btn"
+                android:layout_marginTop="10dp"
+                android:text="@string/add_favorite_btn_text" 
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/cancel_favorite_button"
+                style="@style/cancel_big_btn"
+                android:layout_marginTop="10dp"
+                android:text="@string/cancel_favorite_btn_text" 
+                android:visibility="gone"/>
+        </LinearLayout>
+    </cn.com.antika.view.ImageScrollView>
+
+</LinearLayout>

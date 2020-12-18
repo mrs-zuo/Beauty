@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".CustomerActivity" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:id="@+id/service_order_time_tablelayout"
+            style="@style/table_layout_attrs" >
+
+            <RelativeLayout
+                android:id="@+id/layout_order_serial_number"
+                style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_treatment_id"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/treatment_serial_number"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#f4f4f4" >
+            </View>
+
+            <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_contact_status"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/treatment_status"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#f4f4f4" >
+            </View>
+
+            <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_start_time"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/start_time_content"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#f4f4f4" >
+            </View>
+
+            <RelativeLayout
+                android:id="@+id/activity_service_treatment_detail_end_time_layout"
+                style="@style/relative_layout_has_child_attrs" >
+
+                <TextView
+                    style="@style/relative_layout_left_child_attrs"
+                    android:text="@string/title_end_time"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/end_time_content"
+                    style="@style/relative_layout_right_child_attrs" />
+            </RelativeLayout>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

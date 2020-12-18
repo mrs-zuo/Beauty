@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B590A9F-1361-4751-AD9D-3428E25681A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Operation_Model\AddSMSHIS_Model.cs" />
+    <Compile Include="Operation_Model\CartOperation_Model.cs" />
+    <Compile Include="Operation_Model\CheckAuthenticationCode_Model.cs" />
+    <Compile Include="Operation_Model\CompleteTGOperation_Model.cs" />
+    <Compile Include="Operation_Model\CustomerBasicUpdateOperation_Model.cs" />
+    <Compile Include="Operation_Model\GetAnswerPaperListOperation_Model.cs" />
+    <Compile Include="Operation_Model\GetOrderListOperation_Model.cs" />
+    <Compile Include="Operation_Model\GetPaymentInfoOperation_Model.cs" />
+    <Compile Include="Operation_Model\GetTaskListOperation_Model.cs" />
+    <Compile Include="Operation_Model\ImageOperation_Model.cs" />
+    <Compile Include="Operation_Model\MessageOperation_Model.cs" />
+    <Compile Include="Operation_Model\OrderCountOperation_Model.cs" />
+    <Compile Include="Operation_Model\OrderOperation_Model.cs" />
+    <Compile Include="Operation_Model\PaymentAddOperation_Model.cs" />
+    <Compile Include="Operation_Model\ProductStockOperation_Model.cs" />
+    <Compile Include="Operation_Model\PushOperation_Model.cs" />
+    <Compile Include="Operation_Model\QRInfoOperation_Model.cs" />
+    <Compile Include="Operation_Model\RegisterOperation_Model.cs" />
+    <Compile Include="Operation_Model\ReviewOperation_Model.cs" />
+    <Compile Include="Operation_Model\PwdOperation_Model.cs" />
+    <Compile Include="Operation_Model\RushOrderOperation_Model.cs" />
+    <Compile Include="Operation_Model\TaskOperation_Model.cs" />
+    <Compile Include="Operation_Model\TreatmentImageOperation_Model.cs" />
+    <Compile Include="Operation_Model\UpdateUserPassword_Model.cs" />
+    <Compile Include="Operation_Model\UtilityOperation_Model.cs" />
+    <Compile Include="Operation_Model\VersionCheck_Model.cs" />
+    <Compile Include="Operation_Model\WeChatReturn_Model.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table_Model\Branch_Model.cs" />
+    <Compile Include="Table_Model\Commodity_Model.cs" />
+    <Compile Include="Table_Model\CustomerBenefit_Model.cs" />
+    <Compile Include="Table_Model\CustomerFavorite_Model.cs" />
+    <Compile Include="Table_Model\CustomerLocation_Model.cs" />
+    <Compile Include="Table_Model\Echo_Model.cs" />
+    <Compile Include="Table_Model\Image_Model.cs" />
+    <Compile Include="Table_Model\Login_Model.cs" />
+    <Compile Include="Table_Model\Message_Model.cs" />
+    <Compile Include="Table_Model\NetTrade_Control_Model.cs" />
+    <Compile Include="Table_Model\Notice_Model.cs" />
+    <Compile Include="Table_Model\Product_Commission_Rule_Model.cs" />
+    <Compile Include="Table_Model\Product_Stock_Batch_Model.cs" />
+    <Compile Include="Table_Model\Profit_Model.cs" />
+    <Compile Include="Table_Model\Review_Model.cs" />
+    <Compile Include="Table_Model\Schedule_Model.cs" />
+    <Compile Include="Table_Model\Task_Model.cs" />
+    <Compile Include="View_Model\AccountDetail_Model.cs" />
+    <Compile Include="View_Model\AccountList_Model.cs" />
+    <Compile Include="View_Model\AccountSchedule_Model.cs" />
+    <Compile Include="View_Model\BalanceDetailInfo_Model.cs" />
+    <Compile Include="View_Model\CartAndNewMessageCount_Model.cs" />
+    <Compile Include="View_Model\CategoryList_Model.cs" />
+    <Compile Include="View_Model\CommodityDetail_Model.cs" />
+    <Compile Include="View_Model\CompanyListByLoginMobile_Model.cs" />
+    <Compile Include="View_Model\CompanyListForAccountLogin_Model.cs" />
+    <Compile Include="View_Model\CompanyListForCustomerLogin_Model.cs" />
+    <Compile Include="View_Model\CustomerBasic_Model.cs" />
+    <Compile Include="View_Model\CustomerBenefitList_Model.cs" />
+    <Compile Include="View_Model\CustomerInfo_Model.cs" />
+    <Compile Include="View_Model\FavoriteList_Model.cs" />
+    <Compile Include="View_Model\GetBalanceList_Model.cs" />
+    <Compile Include="View_Model\GetBranchList_Model.cs" />
+    <Compile Include="View_Model\GetBusinessDetail_Model.cs" />
+    <Compile Include="View_Model\GetCart_Model.cs" />
+    <Compile Include="View_Model\GetCommodityDetail_Model.cs" />
+    <Compile Include="View_Model\GetCompanyDetail_Model.cs" />
+    <Compile Include="View_Model\GetEcardInfo_Model.cs" />
+    <Compile Include="View_Model\GetECardList.cs" />
+    <Compile Include="View_Model\GetMessage_Model.cs" />
+    <Compile Include="View_Model\GetOrderCount_Model.cs" />
+    <Compile Include="View_Model\GetOrderDetail_Model.cs" />
+    <Compile Include="View_Model\GetOrderList_Model.cs" />
+    <Compile Include="View_Model\GetPromotion_Model.cs" />
+    <Compile Include="View_Model\GetReviewDetail_Model.cs" />
+    <Compile Include="View_Model\GetReviewList_Model.cs" />
+    <Compile Include="View_Model\GetRushOrderList_Model.cs" />
+    <Compile Include="View_Model\GetScheduleDetail_Model.cs" />
+    <Compile Include="View_Model\GetService_Model.cs" />
+    <Compile Include="View_Model\GetTaskList_Model.cs" />
+    <Compile Include="View_Model\GetTGDetail_Model.cs" />
+    <Compile Include="View_Model\GetTreatmentDetail_Model.cs" />
+    <Compile Include="View_Model\GetTreatmentImage_Model.cs" />
+    <Compile Include="View_Model\GetUnfinishOrder_Model.cs" />
+    <Compile Include="View_Model\GetVSMSINFO_Model.cs" />
+    <Compile Include="View_Model\GetWeChatUserInfo_Model.cs" />
+    <Compile Include="View_Model\OrderAddRes_Model.cs" />
+    <Compile Include="View_Model\OrderList_Model.cs" />
+    <Compile Include="View_Model\Paper_Model.cs" />
+    <Compile Include="View_Model\PaymentDetailByOrderID_Model.cs" />
+    <Compile Include="View_Model\PaymentInfo_Model.cs" />
+    <Compile Include="View_Model\ProductBranchRelationship_Model.cs" />
+    <Compile Include="View_Model\ProductInfoList_Model.cs" />
+    <Compile Include="View_Model\ProductList_Model.cs" />
+    <Compile Include="View_Model\PromotionProductDetail_Model.cs" />
+    <Compile Include="View_Model\RoleForLogin_Model.cs" />
+    <Compile Include="View_Model\RushOrder_Model.cs" />
+    <Compile Include="View_Model\ShareToOthers_Model.cs" />
+    <Compile Include="View_Model\TGList_Model.cs" />
+    <Compile Include="View_Model\UnPaidList_Model.cs" />
+    <Compile Include="View_Model\WeChatPayResault_Model.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

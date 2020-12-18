@@ -1,0 +1,169 @@
+﻿@{
+    string strTitle = "新加批次";
+    string strProductCode = (string)Model;
+
+    bool isBranch = ViewBag.IsBranch;
+    int branchID = ViewBag.branchID;
+    string branchName = ViewBag.BranchName;
+
+    Model.View_Model.CommodityDetail_Model model = null;
+    if (ViewBag.CommodityDetail != null && ViewBag.CommodityDetail is Model.View_Model.CommodityDetail_Model)
+    {
+        model = ViewBag.CommodityDetail as Model.View_Model.CommodityDetail_Model;
+    }
+
+}
+
+<script src="/Script/jquery.layerModel.js"></script>
+<link href="/assets/css/skins/layerModel.css" rel="stylesheet" />
+
+<script src="/assets/js/sortable.js"></script>
+<script src="/Script/Batch.js"></script>
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 1)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Commodity/GetCommodityList?b=-1&c=-1&d=-1">商品</a></li>
+                <li><a href="/Commodity/EditCommodity?CD=@(strProductCode)&b=-1&c=-1&d=-1">编辑商品</a></li>
+                <li class="active">>@(strTitle)</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>@(strTitle)</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="widget">
+                <div class="form-horizontal form-bordered widget-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                            门店名称
+                            <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                        </label>
+                        <div class="col-md-4">
+                            <select class="select-control" id="selBra" onchange="selectCommodity()">
+                                @{
+                                    if (!isBranch)
+                                    {
+                                        if (model != null && model.ProductBranchRelationship.Count > 0)
+                                        {
+                                            for (int i = 0; i < model.ProductBranchRelationship.Count; i++)
+                                            {
+                                                if (model.ProductBranchRelationship[i].BranchID == branchID)
+                                                {
+                                                    <option value="@(model.ProductBranchRelationship[i].BranchID)" selected="selected">@(model.ProductBranchRelationship[i].BranchName) </option>
+                                                }
+                                                else
+                                                {
+                                                    if (model.ProductBranchRelationship[i].BranchAvailable)
+                                                    {
+                                                        <option value="@(model.ProductBranchRelationship[i].BranchID)">@(model.ProductBranchRelationship[i].BranchName) </option>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="@(branchID)" selected="selected">@(branchName)</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                            批次番号
+                            <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <input class="form-control" placeholder="输入批次番号" id="input_BatchNO" type="text" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                            数量
+                            <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <input placeholder="输入数量" id="input_Quantity" value="" class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div class="form-group no-border">
+                        <label class="col-sm-2 control-label no-padding-right">
+                            有效期
+                            <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <span class="input-icon icon-right time-layer">
+                                <input id="input_ExpiryDate" class="form-control date-picker" placeholder="输入有效期" onchange="checkExpiryDate(this)" value="">
+                                <!--<i class="fa fa-calendar"></i>-->
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                            供应商&nbsp;&nbsp;&nbsp;&nbsp;
+                            <!--<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>-->
+                        </label>
+                        <div class="col-sm-2">
+                            <select class="select-control form-control" id="selSupplier" onchange="selectSupplier()">
+                                @{
+                                    if (model != null && model.SupplierDetail.Count > 0)
+                                    {
+                                        for (int i = 0; i < model.SupplierDetail.Count; i++)
+                                        {
+                                            <option value="@(model.SupplierDetail[i].SupplierID)">@(model.SupplierDetail[i].SupplierName) </option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="button" class="btn btn-primary" onclick="AddBatch()" value="确 定">
+                            <a href="javascript:history.go(-1);" class="btn btn-default"> 返 回 </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+        <input type="hidden" value="@(strProductCode)" id="hidProductCode" />
+    </div>
+</div>

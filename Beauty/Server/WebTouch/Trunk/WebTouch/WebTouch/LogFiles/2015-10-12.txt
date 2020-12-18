@@ -1,0 +1,908 @@
+2015-10-12 14:59:09[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 14:59:09
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=112.65.193.15
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyHome
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 15:08:27[31] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:08:27
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.69.108
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyAccount
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 15:11:15[38] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:11:15
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.66.191
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/ServiceDetail?lc=1503100000000027
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 15:12:30[42] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:12:30
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.66.175
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/MyHome
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 15:16:18[39] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:16:18
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=112.65.193.15
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 15:16:18[50] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:16:18
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=112.65.193.15
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 15:23:41[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:23:41
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.69.108
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UnconfirmedOrder
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 15:41:10[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:41:10
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/CommodityCategory?code=03107d768f972a6e01c3d64c2b13961u&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:ASP.NET_SessionId=zda1yon4nwok35oargnqtn1w; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCC5qX1zLPP2b/r/nYKZ1JvhimcxmRWKOR9OKUhb/q0quvPqX+WVrd+oWrx3eqTBGDai9fkRA5hCTLbhxcMbvuuYgIg4WZyOn042zo6ly/BzKmMYp49W54WOroqmOWyIyA9eWu2yh7EtRSKz42zlDcRlzu/gItMIvSssmRZXwpEC3jiOJoWz4MLeLMGUa7GogaHJx8rUHpuHreTIJuqJYEJhCLLCp9B7zo6xR5P4nfNtFfCXJApqzhF8I3ggKtjg7UvxuCag8pNELn2Iy92ACOUUGjkh+aPXvvRIM/0XcYAi+20biH/0uKduHEL5PJpcsFCd7gzRbjWDFlBnETKixhq8tigy/2UX1VoMJeEsKza7a16xl0yLczAgCUdQ+dhme2YUfj/gweLZ4TlqSq4giK7h+OvuyTGELIg8jRcPOOBGIkh9Bo/ZieKvds5e6JvI+fhwe+9OBU4rDXETUpqYI8ZKrL03LLy3LXLMWhI8uongXqxjwVONac1LDdt52zLU0CEAa3c8osQhoEFg5PTnJWGMCWxC7G36wZBP8grcCGBC6+/VFVgwz2KjPuoPS1OwL61Cu0Mw4vFD6jPSpDxiDhnZmqCwYedsvZtiIbuh0vUTwZQHZv2wnWvXXnbsFIrY9H93QLsRj/ObR7KbqtpvBb2Zg5y7MZaSSpkrvtem0dCW8YsJMWCj1FUBJPnvK1+2jhC7xfq2+YxFdoMPA+kjLo+tE2F52UEqKF; HSTouchCOD=V3zN1wReEEM=; TWXOD=o7YA+gUMnUty9SeI52FkeRSOi+sVL1C9miblRlPuhng=; TWXUD=rgmC9bzu+Tv//+oQ3ma+somAp/Ne4kinnac4DNVWhb4=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 8_4_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12H321 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-10-12 15:45:35[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:45:35
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.13
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/TransactionRecord
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 15:45:36[5] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 15:45:36
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.33
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Account/TransactionRecord
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 16:04:21[57] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 16:04:21
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.33
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 16:04:21[55] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 16:04:21
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.33
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 16:20:26[59] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 16:20:26
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.201.212
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Treatment/ServiceRecord?t=1&gn=1510120000000019
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 16:20:26[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 16:20:26
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.32
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Treatment/ServiceRecord?t=1&gn=1510120000000019
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 16:25:28[65] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 16:25:28
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.69.108
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/ServiceCategory
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 16:40:13[72] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 16:40:13
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.32
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 17:12:33[80] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 17:12:33
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.33.221
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/CommodityDetail?lc=1503100000000004
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 17:31:08[93] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 17:31:08
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.33.221
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 17:31:08[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 17:31:08
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.33.221
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 17:42:08[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 17:42:08
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.36
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/CommodityDetail?lc=1503100000000006
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 18:03:27[86] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:03:27
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.36
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 18:10:10[96] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:10:10
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/CommodityCategory?code=0019c1863c3a76b8e25c91b4ade5dddV&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:ASP.NET_SessionId=zda1yon4nwok35oargnqtn1w; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCC5qX1zLPP2b/r/nYKZ1JvhimcxmRWKOR9OKUhb/q0quvPqX+WVrd+oWrx3eqTBGDai9fkRA5hCTLbhxcMbvuuYgIg4WZyOn042zo6ly/BzKmMYp49W54WOroqmOWyIyA9eWu2yh7EtRSKz42zlDcRlzu/gItMIvSssmRZXwpEC3jiOJoWz4MLeLMGUa7GogaHJx8rUHpuHreTIJuqJYEJhCLLCp9B7zo6xR5P4nfNtFfCXJApqzhF8I3ggKtjg7UvxuCag8pNELn2Iy92ACOUUGjkh+aPXvvRIM/0XcYAi+20biH/0uKduHEL5PJpcsFCd7gzRbjWDFlBnETKixhq8tigy/2UX1VoMJeEsKza7a16xl0yLczAgCUdQ+dhme2YUfj/gweLZ4TlqSq4giK7h+OvuyTGELIg8jRcPOOBGIkh9Bo/ZieKvds5e6JvI+fhwe+9OBU4rDXETUpqYI8ZKrL03LLy3LXLMWhI8uongXqxjwVONac1LDdt52zLU0CEAa3c8osQhoEFg5PTnJWGMCWxC7G36wZBP8grcCGBC6+/VFVgwz2KjPuoPS1OwL61Cu0Mw4vFD6jPSpDxiDhnZmqCwYedsvZtiIbuh0vUTwZQHZv2wnWvXXnbsFIrY9H93QLsRj/ObR7KbqtpvBb2Zg5y7MZaSSpkrvtem0dCW8YsJMWCj1FUBJPnvK1+2jhC7xfq2+YxFdoMPA+kjLo+tE2F52UEqKF; HSTouchCOD=V3zN1wReEEM=; TWXOD=o7YA+gUMnUty9SeI52FkeRSOi+sVL1C9miblRlPuhng=; TWXUD=rgmC9bzu+Tv//+oQ3ma+somAp/Ne4kinnac4DNVWhb4=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 8_4_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12H321 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-10-12 18:11:08[85] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:11:08
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/CommodityCategory?code=00136f89d40765fdb398279d2b0348dV&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:ASP.NET_SessionId=zda1yon4nwok35oargnqtn1w; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCC5qX1zLPP2b/r/nYKZ1JvhimcxmRWKOR9OKUhb/q0quvPqX+WVrd+oWrx3eqTBGDai9fkRA5hCTLbhxcMbvuuYgIg4WZyOn042zo6ly/BzKmMYp49W54WOroqmOWyIyA9eWu2yh7EtRSKz42zlDcRlzu/gItMIvSssmRZXwpEC3jiOJoWz4MLeLMGUa7GogaHJx8rUHpuHreTIJuqJYEJhCLLCp9B7zo6xR5P4nfNtFfCXJApqzhF8I3ggKtjg7UvxuCag8pNELn2Iy92ACOUUGjkh+aPXvvRIM/0XcYAi+20biH/0uKduHEL5PJpcsFCd7gzRbjWDFlBnETKixhq8tigy/2UX1VoMJeEsKza7a16xl0yLczAgCUdQ+dhme2YUfj/gweLZ4TlqSq4giK7h+OvuyTGELIg8jRcPOOBGIkh9Bo/ZieKvds5e6JvI+fhwe+9OBU4rDXETUpqYI8ZKrL03LLy3LXLMWhI8uongXqxjwVONac1LDdt52zLU0CEAa3c8osQhoEFg5PTnJWGMCWxC7G36wZBP8grcCGBC6+/VFVgwz2KjPuoPS1OwL61Cu0Mw4vFD6jPSpDxiDhnZmqCwYedsvZtiIbuh0vUTwZQHZv2wnWvXXnbsFIrY9H93QLsRj/ObR7KbqtpvBb2Zg5y7MZaSSpkrvtem0dCW8YsJMWCj1FUBJPnvK1+2jhC7xfq2+YxFdoMPA+kjLo+tE2F52UEqKF; HSTouchCOD=V3zN1wReEEM=; TWXOD=o7YA+gUMnUty9SeI52FkeRSOi+sVL1C9miblRlPuhng=; TWXUD=rgmC9bzu+Tv//+oQ3ma+somAp/Ne4kinnac4DNVWhb4=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 8_4_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12H321 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-10-12 18:11:15[86] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:11:15
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.25
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/ProductList?t=1&c=1463
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 18:13:52[103] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:13:52
+Title=config
+Message=wx1aa3ce096117de41
+ProcessName=WebTouch
+ClientIp=61.129.96.206
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/ServiceCategory?code=001cff3f4ece131d7d80d24ca4f9575r&state=skMPVC35BDo%3D
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Cookie:ASP.NET_SessionId=zda1yon4nwok35oargnqtn1w; HSTouch=wFD/Q+16xKZ3/WePENkTTzbqLLlw8wGCC5qX1zLPP2b/r/nYKZ1JvhimcxmRWKOR9OKUhb/q0quvPqX+WVrd+oWrx3eqTBGDai9fkRA5hCTLbhxcMbvuuYgIg4WZyOn042zo6ly/BzKmMYp49W54WOroqmOWyIyA9eWu2yh7EtRSKz42zlDcRlzu/gItMIvSssmRZXwpEC3jiOJoWz4MLeLMGUa7GogaHJx8rUHpuHreTIJuqJYEJhCLLCp9B7zo6xR5P4nfNtFfCXJApqzhF8I3ggKtjg7UvxuCag8pNELn2Iy92ACOUUGjkh+aPXvvRIM/0XcYAi+20biH/0uKduHEL5PJpcsFCd7gzRbjWDFlBnETKixhq8tigy/2UX1VoMJeEsKza7a16xl0yLczAgCUdQ+dhme2YUfj/gweLZ4TlqSq4giK7h+OvuyTGELIg8jRcPOOBGIkh9Bo/ZieKvds5e6JvI+fhwe+9OBU4rDXETUpqYI8ZKrL03LLy3LXLMWhI8uongXqxjwVONac1LDdt52zLU0CEAa3c8osQhoEFg5PTnJWGMCWxC7G36wZBP8grcCGBC6+/VFVgwz2KjPuoPS1OwL61Cu0Mw4vFD6jPSpDxiDhnZmqCwYedsvZtiIbuh0vUTwZQHZv2wnWvXXnbsFIrY9H93QLsRj/ObR7KbqtpvBb2Zg5y7MZaSSpkrvtem0dCW8YsJMWCj1FUBJPnvK1+2jhC7xfq2+YxFdoMPA+kjLo+tE2F52UEqKF; HSTouchCOD=V3zN1wReEEM=; TWXOD=o7YA+gUMnUty9SeI52FkeRSOi+sVL1C9miblRlPuhng=; TWXUD=rgmC9bzu+Tv//+oQ3ma+somAp/Ne4kinnac4DNVWhb4=
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 8_4_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12H321 MicroMessenger/6.2.6 NetType/WIFI Language/zh_CN
+
+
+2015-10-12 18:14:09[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:14:09
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=112.64.235.252
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/ProductList?t=0&c=1426
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 18:24:41[112] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:24:41
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=101.226.66.175
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Product/ProductList?t=1&c=1463
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 18:27:48[113] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:27:48
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.13
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Order/UnReviewedOrder
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; HS-EG906 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.3.1.67_r745169.462
+
+
+2015-10-12 18:32:36[108] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:32:36
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=112.64.235.252
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+
+2015-10-12 18:42:03[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/10/12 18:42:03
+Title=服务器无法在已发送 HTTP 标头之后设置状态。
+Message=Message:服务器无法在已发送 HTTP 标头之后设置状态。
+TargetSite:Void set_StatusCode(Int32)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_StatusCode(Int32 value)
+   在 System.Web.Mvc.HandleErrorAttribute.OnException(ExceptionContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   在 System.Web.Mvc.Controller.ExecuteCore()
+   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass6.<>c__DisplayClassb.<BeginProcessRequest>b__5()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClasse.<EndProcessRequest>b__d()
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=WebTouch
+ClientIp=180.153.206.25
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Home/Index
+Header=Connection:close
+Accept:*/*
+Accept-Charset:GB2312,utf-8;q=0.7,*;q=0.7
+Accept-Language:zh-cn, zh
+Host:t.test.beauty.glamise.com
+User-Agent:Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36
+
+

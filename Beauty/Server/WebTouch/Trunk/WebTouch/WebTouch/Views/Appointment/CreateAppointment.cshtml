@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "创建预约";
+    Model.View_Model.GetScheduleDetail_Model model = Model;
+    List<Model.View_Model.AccountList_Model> listAcc = ViewBag.AccountList;
+
+    int TaskSourceType = 0;
+    if (ViewBag.TaskSourceType != null)
+    {
+        TaskSourceType = ViewBag.TaskSourceType;
+    }
+}
+
+<script src="/Scripts/mobiscroll_002.js" type="text/javascript"></script>
+<script src="/Scripts/mobiscroll_004.js" type="text/javascript"></script>
+<link href="/css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+<link href="/css/mobiscroll.css" rel="stylesheet" type="text/css">
+<script src="/Scripts/mobiscroll.js" type="text/javascript"></script>
+<script src="/Scripts/mobiscroll_003.js" type="text/javascript"></script>
+<script src="/Scripts/mobiscroll_005.js" type="text/javascript"></script>
+<link href="/css/mobiscroll_003.css" rel="stylesheet" type="text/css">
+
+<script src="/Scripts/Appointment.js"></script>
+<input type="hidden" value="1" id="hid1" />
+<div class="wrapper">
+    <div class="whiteBkg width100">
+        <div class="width90 blockC">
+            <ul class="width100 rowUl15">
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">选择门店</div>
+                    <div class="grayTex fr" >@(model.BranchName)</div>
+                </li>
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">到店时间</div>
+                    <div class="grayTex fr"><input value="" class="borderInput" readonly="readonly" name="appDateTime" id="aStartTime" type="text"/></div>
+                </li>
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">预约内容</div>
+                    <div class="color1 fr">@(model.ProductName)</div>
+                </li>
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">指定顾问</div>
+                    <div class="grayTex fr"><a class="grayTex LinkUnderLine" onclick="showDiv()" id="aAccountName">到店指定</a></div>
+                </li>
+                <li class="">
+                    <textarea placeholder="请输入备注内容" class="textarea" rows="4" id="txtTaskDescription"></textarea></li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" id="hiddenData" />
+    <div class="width90 blockC MT30 MB30"><a class="btnLarge bkgColor1 width100" onclick="CreateAppointment(@(model.BranchID),@(model.ProductCode),@(model.OrderObjectID),@(model.OrderID),@(TaskSourceType))">确定</a></div>
+</div>
+<div id="guideImg1" class="block" style="display:none;"> 
+    <a class="closedBtn">
+        <img src="/pic/closedBtn.png" height="30" /></a>
+    <div class="popupDiv whiteBkg width100">
+        <ul class="rowUl3 ML5P MR5P">
+            <li class="borderB">
+                <a onclick="selectAcc(0,'到店指定')">
+                    <div class="fl popUpImgArea MR30 borderRadius">
+                        <img src="/pic/noappointpic.png" height="30" />
+                    </div>
+                    <div class="grayTex fl">到店指定</div>
+                </a>
+            </li>
+            @if (listAcc != null && listAcc.Count > 0)
+            {
+                foreach (Model.View_Model.AccountList_Model itemAcc in listAcc)
+                {
+                <li class="borderB">
+                    <a onclick="selectAcc(@(itemAcc.AccountID),'@(itemAcc.AccountName)')">
+                        <div class="fl popUpImgArea MR30 borderRadius">
+                            <img src="@(itemAcc.HeadImageURL == "" ? "/pic/nopicbg.jpg" : itemAcc.HeadImageURL)" height="30" /> 
+                        </div>
+                        <div class="grayTex fl">@(itemAcc.AccountName)</div>
+                    </a>
+                </li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+<script>
+    function overlayShow() {
+        document.getElementById("guideImg1").style.display = "";
+    }
+    //关闭弹框
+    function closePop() {
+        $("#guideImg1").hide();
+    }
+    $(".closedBtn").click(function () {
+        closePop();
+    })
+
+    function showDiv() {
+        $("#guideImg1").show();
+    }
+</script>
+

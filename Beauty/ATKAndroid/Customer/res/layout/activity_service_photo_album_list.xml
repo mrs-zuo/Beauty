@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout
+        style="@style/activity_title_layout_attrs"
+        android:background="#f4f4f4"
+        android:padding="14dp" >
+        <TextView
+            android:id="@+id/photo_album_year_title"
+            style="@style/activity_title_text_attrs"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:id="@+id/service_photo_album_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/common_divider"
+            android:orientation="vertical"
+            android:showDividers="beginning|middle" />
+    </ScrollView>
+
+</LinearLayout>

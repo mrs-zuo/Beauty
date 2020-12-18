@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" 
+    android:padding="5dip">
+     <TextView
+            android:id="@+id/service_and_product_name"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size" />
+      <TextView
+            android:id="@+id/service_and_product_name_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/service_and_product_name"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="5dip"
+            android:textSize="@dimen/text_size_16sp" />
+       
+        <TextView
+            android:id="@+id/service_and_product_name_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/service_and_product_name_price"
+            android:layout_marginRight="10dip"
+            android:textSize="@dimen/text_size_16sp" />
+    
+</RelativeLayout>

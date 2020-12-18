@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/pay_confirm_btn_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+                android:id="@+id/pay_confirm"
+                style="@style/add_favorite_btn"
+                android:layout_width="match_parent"
+                android:layout_margin="1dip"
+                android:background="#D5C5B5"
+                android:text="@string/add_pay_btn_text"
+                android:textColor="@color/white" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/order_pay_listview"
+        style="@style/list_view_attrs"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/pay_confirm_btn_rl"/>
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    			style="@style/activity_content_table_relativelayout_attrs">
+    <TextView
+        android:id="@+id/treatment_group_past_count_text"
+        style="@style/activity_content_table_row_title_attrs"
+        android:textColor="@color/black"/>
+</RelativeLayout>

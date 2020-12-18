@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/order_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="5dip"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/order_responsible_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:maxWidth = "@dimen/order_responsible_person_name_max_width"
+        android:singleLine="true"
+        android:text="..."
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/order_product_name_text"
+        android:layout_width="@dimen/width_300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_time_text"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="5dip"
+        android:singleLine="true"
+        android:text="..."
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/order_product_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/order_time_text"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_toLeftOf="@id/arrowhead"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_product_name_text"
+        android:layout_marginLeft="11dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/order_product_name_text"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_normal" />
+
+
+</RelativeLayout>

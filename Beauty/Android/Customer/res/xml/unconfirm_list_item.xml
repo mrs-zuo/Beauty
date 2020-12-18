@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/unconfirm_list_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="14dp"
+    android:paddingLeft="14dp"
+    android:paddingTop="14dp" >
+    <TextView
+        android:id="@+id/order_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unconfirm_item_layout_margintop"
+        android:maxWidth="250dp"
+        android:singleLine="true"
+        android:text="..."
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_name_text"
+        android:layout_marginTop="14dp"
+        android:singleLine="true"
+        android:text="..."
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_size_normal" />
+    <ImageButton
+        android:id="@+id/select_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+    <TextView
+        android:id="@+id/order_responsible_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/select_view"
+        android:maxWidth="@dimen/unconfirm_list_order_responsible_person_name_max_width"
+        android:singleLine="true"
+        android:text="..."
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/order_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_responsible_person_name"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@id/select_view"
+        android:textSize="@dimen/text_size_normal" />
+</RelativeLayout>

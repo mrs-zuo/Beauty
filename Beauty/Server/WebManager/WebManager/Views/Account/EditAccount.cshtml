@@ -1,0 +1,436 @@
+﻿@{
+    WebManager.Models.Cookie_Model model_Cookied = new WebManager.Models.Cookie_Model();
+    if (ViewBag.Cookie != null)
+    {
+        model_Cookied = ViewBag.Cookie;
+    }
+    Model.Table_Model.Account_Model model = new Model.Table_Model.Account_Model();
+    if (ViewBag.Account != null)
+    {
+        model = ViewBag.Account;
+    }
+
+    List<Model.Table_Model.AccountTag_Model> TagsList = new List<Model.Table_Model.AccountTag_Model>();
+    TagsList = ViewBag.TabsList;
+
+    Model.Table_Model.ImageCommon_Model thumbImage = new Model.Table_Model.ImageCommon_Model();
+    if (ViewBag.thumbImage != null)
+    {
+        thumbImage = ViewBag.thumbImage;
+    }
+
+    bool roleWrite = false;
+    if (model.UserID != model_Cookied.US && model_Cookied.Role.IndexOf(WebAPI.Common.Const.ROLE_ACCOUNTROLE_WRITE) > -1)
+    {
+        roleWrite = true;
+    }
+
+    int flg = ViewBag.BranchFlag;
+
+    string HomeClass = "";
+    string BranchClass = "";
+    if (flg == 0)
+    {
+        HomeClass = " active in ";
+        BranchClass = "";
+    }
+    else
+    {
+        HomeClass = "";
+        BranchClass = "  active in ";
+    }
+
+    int selectBranchID = model_Cookied.BR;
+
+    List<Model.Table_Model.BranchSelection_Model> listBranch = new List<Model.Table_Model.BranchSelection_Model>();
+    if (ViewBag.BranchSelection != null)
+    {
+        listBranch = ViewBag.BranchSelection;
+    }
+}
+
+<script>
+    $(function () {
+        TagsOk();
+    });
+</script>
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 11)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Account/GetAccountList">员工列表</a></li>
+                @if (model.UserID == 0)
+                { 
+                
+                    <li class="active">添加员工</li>
+                }
+                else
+                {
+                    <li class="active">编辑员工</li>
+                }
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @if (model.UserID == 0)
+                { 
+                    <h1>添加员工</h1>
+                }
+                else
+                {
+                    <h1>编辑员工</h1>
+                }
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <ul role="tablist" class="nav nav-tabs" id="myTab">
+                <li class="@(HomeClass)" role="presentation">
+                    <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">员工基本信息</a></li>
+                @if (model.UserID > 0)
+                {  <li class="@(BranchClass)" role="presentation">
+                    <a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile">门店选择</a></li>
+                }
+
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div aria-labelledby="home-tab" id="home" class="tab-pane fade @(HomeClass)" role="tabpanel">
+                    <div class="form-horizontal form-bordered">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">是否推荐</label>
+                            <div class="col-sm-10 radio no-padding-left">
+                                <label>
+                                    <input type="radio" id="IsRecommendY"  @(model.IsRecommend || model.UserID == 0 ? "checked='checked'" : "class='inverted'")   name="IsRecommend">
+                                    <span class="text">是 </span>
+                                </label>
+                                <label>
+                                    <input type="radio" id="IsRecommendN" @(!model.IsRecommend && model.UserID > 0 ? "checked='checked'" : "class='inverted'")   name="IsRecommend">
+                                    <span class="text">否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">员工状态</label>
+                            <div class="col-sm-10 radio no-padding-left">
+                                <label>
+                                    <input type="radio" id="AvailableY" @(model.Available == 1 || model.UserID == 0 ? "checked='checked'" : "class='inverted'") name="Available"  onclick="OpenAccount()">
+                                    <span class="text">激活</span>
+                                </label>
+                                <label>
+                                    <input type="radio" id="AvailableN" @(model.Available == 0 && model.UserID > 0 ? "checked='checked'" : "class='inverted'") name="Available" onclick="changeStatus(@(model.UserID))" >
+                                    <span class="text">停用</span>
+                                </label>
+                                <label>
+                                    <input type="radio" id="AvailableD" name="Available" onclick="changeStatus(@(model.UserID))">
+                                    <span class="text">删除</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">
+                            	手机
+                            	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                            </label>
+                            <div class="col-sm-4">
+                                <input placeholder="请输入手机" type="tel" class="form-control" id="txtAccountMobile" value="@(model.Mobile)" maxlength="20" >
+                            </div>
+                            <p class="n-p-15 help-block">(作为登录账号)</p>
+                        </div>
+                        @if (model.UserID == 0)
+                        {
+                            <div class="form-group">
+                                <!-- Search input-->
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	密码
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="在这里请输入密码" class="form-control" type="password" id="txtAccountPwd" maxlength="20">
+                                </div>
+                            </div>
+                        }
+                        <div class="form-group">
+
+                            <!-- Search input-->
+                            <label class="col-sm-2 control-label no-padding-right">编号</label>
+                            <div class="col-sm-4">
+                                <input placeholder="请输入编号" class="form-control" type="text"  id="txtAccountCode" value="@(model.Code)" maxlength="20">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <!-- Text input-->
+                            <label class="col-sm-2 control-label no-padding-right">
+                            	姓名
+                            	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                            </label>
+                            <div class="col-sm-4">
+                                <input placeholder="输入您的名字" class="form-control" type="text" id="txtAccountName" value="@(model.Name)" maxlength="30">
+                            </div>
+                        </div>
+                        @if (roleWrite)
+                        {
+                            <div class="form-group">
+                                <!-- Text input-->
+
+                                <label class="col-sm-2 control-label no-padding-right">角色</label>
+
+                                <div class="col-sm-4 btn-group">
+                                    <select id="ddlRole" style="width: 100%;">
+                                        <option  @(model.UserID == 0 ? "selected='selected'" : "") value="选择角色" />
+                                        选择角色
+								@foreach (var item in model.RoleList)
+        {
+                                    <option @(item.ID == model.RoleID ? "selected='selected'" : "") value="@(item.ID)" />@(item.RoleName)
+        }
+                                    </select>
+                                </div>
+
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">销售顾问提成比例</label>
+                            <div class="col-sm-2">
+                                <input placeholder="请输入销售顾问提成比例" class="form-control" type="text" value="@(model.CommissionRate)" id="txtCommissionRateWeb" maxlength="100" style="text-align:right">
+                            </div>
+                            <p class="n-p-15 help-block">%</p>
+                            <label class="col-sm-2 control-label no-padding-right">生效日期</label>
+                            <div class="col-sm-2">
+                                <span class="input-icon icon-right time-layer">
+                                    @{
+                                        string IssuedDateData = "";
+                                        if (model.IssuedDate != null)
+                                        {
+                                            IssuedDateData = model.IssuedDate.ToString();
+                                            IssuedDateData = IssuedDateData.Substring(0, IssuedDateData.LastIndexOf(" ")).Replace("/", "-");
+                                        }
+
+                                    }
+                                    <input class="form-control date-picker" placeholder="请输入生效日期" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" id="txtStaffIssuedDate" value="@(IssuedDateData)" style="text-align:right;">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Text input-->
+                            <label class="col-sm-2 control-label no-padding-right">职称</label>
+                            <div class="col-sm-4">
+                                <div class="textarea">
+                                    <input placeholder="输入您的职称" class="form-control" type="text" id="txtAccountTitle" value="@(model.Title)" maxlength="30">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Text input-->
+                            <label class="col-sm-2 control-label no-padding-right">擅长</label>
+                            <div class="col-sm-10">
+                                <div class="textarea">
+                                    <textarea placeholder="输入您的擅长" rows="6" class="form-control" id="txtAccountExpert" maxlength="50">@(model.Expert)</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Textarea -->
+                            <label class="col-sm-2 control-label no-padding-right">简介</label>
+                            <div class="col-sm-10">
+                                <div class="textarea">
+                                    <textarea placeholder="输入您的简介" id="txtAccountIntro" rows="6" class="form-control" maxlength="500">@(model.Introduction)</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">分组</label>
+
+                            <div class="col-xs-4">
+                                <!--s-->
+
+                                <input id="txt_allTags" type="text" data-toggle="modal" data-target=".bs-example-modal-sm" class="form-control over-text col-xs-12" placeholder="点击选择分组" readonly="true">
+                                <!--最小弹窗层-->
+                                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                <h4 class="modal-title" id="mySmallModalLabel">选择分组</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="select-down">
+                                                    <table class="table table-striped table-hover">
+                                                        @{
+                                                            string oldTags = "";
+
+                                                            if (TagsList != null && TagsList.Count > 0)
+                                                            {
+
+                                                                foreach (Model.Table_Model.AccountTag_Model item in TagsList)
+                                                                {
+                                                                    string ischecked = "";
+                                                                    if (item.IsExist)
+                                                                    {
+                                                                        oldTags += "|" + item.TagID;
+                                                                        ischecked = " checked=\"checked\"";
+                                                                    }
+                                                            <tr>
+                                                                <td>
+                                                                    <label class="btn-group no-pm">
+                                                                        <input type="checkbox" value="@(item.TagID)" @ischecked name="chk_tags" TagName="@(item.TagName)">
+                                                                        <span class="text over-text col-xs-12 no-pm">@(item.TagName)</span>
+                                                                    </label>
+                                                                </td>
+                                                            </tr>
+                                                                }
+                                                            }
+                                                        }
+                                                        <input type="hidden" id="hid_oldTags" value="@(oldTags)">
+                                                    </table>
+                                                </div>
+                                                <br>
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <a data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-primary" onclick="TagsOk()">确 定</a>
+                                                </div>
+                                                <br>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!--/最小弹窗层-->
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label no-padding-right">照片</label>
+                            <!-- File Upload -->
+                            @Html.Partial("FileUpload", 3)
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <br>
+                                <button class="btn btn-primary" type="submit" @(roleWrite ? "onclick=Submit('" + (model.UserID) + "'," + selectBranchID + ",true)" : " onclick=Submit('" + (model.UserID) + "'," + selectBranchID + ",false)")>确 定</button>
+                                <a href="/Account/GetAccountList?BranchID=@(selectBranchID)&Available=-1" class="btn btn-default">返 回 </a>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (model.UserID > 0)
+                { 
+                    <div id="profile" class="tab-pane fade @(BranchClass)">
+
+
+                        <table class="table table-hover table-striped ">
+                            <colgroup class="row">
+                                <col class="col-xs-10">
+                                <col class="col-xs-2">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <label class="btn-group no-pm" title="全选">
+                                            <input id="chkAll" name="chkAll" type="checkbox" onclick="selectAll(this)" />
+                                            <span class="text"><strong>门店名称</strong></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <strong>顾客可见</strong>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (listBranch.Count != null && listBranch.Count > 0)
+                                {
+                                    string imgoldBranchs = "";
+                                    foreach (Model.Table_Model.BranchSelection_Model item in listBranch)
+                                    {
+                                        string strCheck = "onclick=checkAccount(this," + item.BranchID + "," + model.UserID + ")";
+
+                                        string ischecked = "";
+                                        if (item.IsExist)
+                                        {
+                                            imgoldBranchs += "|" + item.BranchID;
+                                            ischecked = " checked=\"checked\"";
+                                        }
+                                    <tr>
+                                        <td>
+                                            <label class="btn-group no-pm">
+                                                <input id="imgBranchID" name="imgBranchID" type="checkbox" value="@(item.BranchID)" @(ischecked)  @(strCheck)  />
+                                                <span class="text">@(item.BranchName)</span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <!-- <label class="btn-group no-pm">
+                                                <input class="colored-success"  name="chkVisible" type="checkbox" @(item.VisibleForCustomer? "checked=checked" : "")/>
+                                                <span class="text"></span>
+                                            </label> -->
+                                            <label>
+                                                <input class="checkbox-slider slider-icon colored-success" name="chkVisible" type="checkbox" @(item.VisibleForCustomer? "checked=checked" : "")/>
+                                                <span class="text"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                    
+                                    }
+                                    <input type="hidden" id="hid_imgOldBranchs" value="@(imgoldBranchs)">
+                                }
+                            </tbody>
+                        </table>
+                        <br>
+                        @if (selectBranchID == 0)
+                        {
+                            <button type="submit" class="btn btn-primary" onclick="getBranchSelectList(@(model.UserID))">确 定</button>
+                        }
+                        <a href="/Account/GetAccountList?BranchID=@(selectBranchID)&Available=-1" class="btn btn-default">返 回 </a>
+                    </div>
+                }
+            </div>
+            <!-- /Page Body -->
+
+        </div>
+
+        <!-- /Page Content -->
+    </div>
+</div>
+<script src="~/Script/Account.js"></script>
+<script src="~/assets/js/datetime/bs-datepicker.js"></script>

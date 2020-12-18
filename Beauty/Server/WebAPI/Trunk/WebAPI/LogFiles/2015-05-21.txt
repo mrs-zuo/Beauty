@@ -1,0 +1,708 @@
+2015-05-21 17:07:16[5] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:07:16
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:4539AF6EBD3BB6908FABF035B6098B36
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYDETAIL
+TI:2015/5/21 17:07:09
+GU:a1f9f4a7-845a-4d33-ae36-a16d8c9ff7d1
+
+
+2015-05-21 17:07:16[14] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:07:16
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:22008D49744ED4BC8831FB58B95F8BB9
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:07:16
+GU:a1f9f4a7-845a-4d33-ae36-a16d8c9ff7d1
+
+
+2015-05-21 17:09:40[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:09:40
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:5987078C49B278D1EA4211A69B78F703
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYDETAIL
+TI:2015/5/21 17:09:40
+GU:6f0db592-a3dc-499d-8eb5-14965a545ad3
+
+
+2015-05-21 17:09:40[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:09:40
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:EE6A7F677D999B3CADD81FBB1BA194F2
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:09:40
+GU:6f0db592-a3dc-499d-8eb5-14965a545ad3
+
+
+2015-05-21 17:09:40[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:09:40
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"Date":null,"PaymentMode":0,"Type":0,"ID":0,"OrderID":0,"UpdaterID":0,"PaymentID":0,"AccountID":0,"CustomerID":0,"CreatorID":0,"CompanyID":0,"BranchID":0,"UserID":0,"UserType":0,"ProductType":0,"TagIDs":null,"ProductCode":0,"ImageWidth":0,"ImageHeight":0,"PageIndex":0,"PageSize":0,"ServiceCode":0,"CommodityCode":0,"strSearch":null,"GUID":null,"BrowseHistoryCodes":null,"TotalSalePrice":0.0,"ScheduleID":0,"TreatmentID":0,"Time":"0001-01-01T00:00:00","ExecutorID":0,"ScheduleTime":"0001-01-01T00:00:00","ResponsiblePersonID":0,"SalesID":0,"Remark":null,"IsComplete":false,"Status":0,"ExpirationTime":"0001-01-01T00:00:00","IsAddUp":false,"IsDesignated":false,"OrderIDList":null,"OpportunityID":0,"ProgressID":0,"CategoryID":0,"LevelID":null,"IsBusiness":false,"Flag":0,"IDs":null,"Available":0,"RecordID":0,"ObjectType":0,"StartTime":null,"EndTime":null,"DiscountName":null,"CategoryName":null,"SubserviceName":null,"Advanced":null,"OrderCode":null,"PaymentCode":null,"TreatmentCode":null,"TreatmentListFlag":false,"SelectTreatment":false,"FileName":null,"FavoriteID":0,"LoginMobile":null,"FilterByTimeFlag":0,"InputSearch":null,"Prama":null,"listOrderID":null,"CommodityID":0,"SubServiceCode":0,"DiscountID":0}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Image_M/GetBusinessImage
+Header=Content-Length:1213
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:F2306BE31535A18A77C0C8AE06E73033
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBUSINESSIMAGE
+TI:2015/5/21 17:09:40
+GU:6f0db592-a3dc-499d-8eb5-14965a545ad3
+
+
+2015-05-21 17:09:54[6] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:09:54
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:3CBCAF1B02913819070C9E3CE08B1DBE
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYDETAIL
+TI:2015/5/21 17:09:54
+GU:0e387dca-e17c-4f30-8421-90cda87b67d1
+
+
+2015-05-21 17:09:54[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:09:54
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:378BF8F444022F92250BFC1F518B76CC
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:09:54
+GU:0e387dca-e17c-4f30-8421-90cda87b67d1
+
+
+2015-05-21 17:09:54[17] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:09:54
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"Date":null,"PaymentMode":0,"Type":0,"ID":0,"OrderID":0,"UpdaterID":0,"PaymentID":0,"AccountID":0,"CustomerID":0,"CreatorID":0,"CompanyID":0,"BranchID":0,"UserID":0,"UserType":0,"ProductType":0,"TagIDs":null,"ProductCode":0,"ImageWidth":0,"ImageHeight":0,"PageIndex":0,"PageSize":0,"ServiceCode":0,"CommodityCode":0,"strSearch":null,"GUID":null,"BrowseHistoryCodes":null,"TotalSalePrice":0.0,"ScheduleID":0,"TreatmentID":0,"Time":"0001-01-01T00:00:00","ExecutorID":0,"ScheduleTime":"0001-01-01T00:00:00","ResponsiblePersonID":0,"SalesID":0,"Remark":null,"IsComplete":false,"Status":0,"ExpirationTime":"0001-01-01T00:00:00","IsAddUp":false,"IsDesignated":false,"OrderIDList":null,"OpportunityID":0,"ProgressID":0,"CategoryID":0,"LevelID":null,"IsBusiness":false,"Flag":0,"IDs":null,"Available":0,"RecordID":0,"ObjectType":0,"StartTime":null,"EndTime":null,"DiscountName":null,"CategoryName":null,"SubserviceName":null,"Advanced":null,"OrderCode":null,"PaymentCode":null,"TreatmentCode":null,"TreatmentListFlag":false,"SelectTreatment":false,"FileName":null,"FavoriteID":0,"LoginMobile":null,"FilterByTimeFlag":0,"InputSearch":null,"Prama":null,"listOrderID":null,"CommodityID":0,"SubServiceCode":0,"DiscountID":0}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Image_M/GetBusinessImage
+Header=Content-Length:1213
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:A1614E1C9B591799DD7E03DDC5BA4645
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBUSINESSIMAGE
+TI:2015/5/21 17:09:54
+GU:0e387dca-e17c-4f30-8421-90cda87b67d1
+
+
+2015-05-21 17:10:01[18] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:10:01
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:A0136EAB07EE96A4F1A1CADB0422972F
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYDETAIL
+TI:2015/5/21 17:10:01
+GU:16c0d595-1578-494e-aee5-dbea6d385dd5
+
+
+2015-05-21 17:10:01[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:10:01
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:373D4A14F951B681CF8E5E63E776BD88
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:10:01
+GU:16c0d595-1578-494e-aee5-dbea6d385dd5
+
+
+2015-05-21 17:10:01[6] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:10:01
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"Date":null,"PaymentMode":0,"Type":0,"ID":0,"OrderID":0,"UpdaterID":0,"PaymentID":0,"AccountID":0,"CustomerID":0,"CreatorID":0,"CompanyID":0,"BranchID":0,"UserID":0,"UserType":0,"ProductType":0,"TagIDs":null,"ProductCode":0,"ImageWidth":0,"ImageHeight":0,"PageIndex":0,"PageSize":0,"ServiceCode":0,"CommodityCode":0,"strSearch":null,"GUID":null,"BrowseHistoryCodes":null,"TotalSalePrice":0.0,"ScheduleID":0,"TreatmentID":0,"Time":"0001-01-01T00:00:00","ExecutorID":0,"ScheduleTime":"0001-01-01T00:00:00","ResponsiblePersonID":0,"SalesID":0,"Remark":null,"IsComplete":false,"Status":0,"ExpirationTime":"0001-01-01T00:00:00","IsAddUp":false,"IsDesignated":false,"OrderIDList":null,"OpportunityID":0,"ProgressID":0,"CategoryID":0,"LevelID":null,"IsBusiness":false,"Flag":0,"IDs":null,"Available":0,"RecordID":0,"ObjectType":0,"StartTime":null,"EndTime":null,"DiscountName":null,"CategoryName":null,"SubserviceName":null,"Advanced":null,"OrderCode":null,"PaymentCode":null,"TreatmentCode":null,"TreatmentListFlag":false,"SelectTreatment":false,"FileName":null,"FavoriteID":0,"LoginMobile":null,"FilterByTimeFlag":0,"InputSearch":null,"Prama":null,"listOrderID":null,"CommodityID":0,"SubServiceCode":0,"DiscountID":0}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Image_M/GetBusinessImage
+Header=Content-Length:1213
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D55B96299F972B6C004A468DB307F1D0
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBUSINESSIMAGE
+TI:2015/5/21 17:10:01
+GU:16c0d595-1578-494e-aee5-dbea6d385dd5
+
+
+2015-05-21 17:11:46[6] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:11:46
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Header=Connection:Keep-Alive
+Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:95DAD8AFFD1A95B67D4AA118EA5CB9D4
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYDETAIL
+TI:2015/5/21 17:11:46
+GU:477b9a0a-8f7f-4731-8a48-4b64788b4f4d
+
+
+2015-05-21 17:11:46[18] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:11:46
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:EA655BB016F27DE8983685E61E5A271F
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:11:46
+GU:477b9a0a-8f7f-4731-8a48-4b64788b4f4d
+
+
+2015-05-21 17:12:16[6] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:12:16
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:7A2235E3F269300A9585A03CF117A1CA
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYDETAIL
+TI:2015/5/21 17:12:16
+GU:78c7bb6a-288b-4e56-820d-66d7a91a74f5
+
+
+2015-05-21 17:12:16[20] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:12:16
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:4F122467E9F98CF6E0996A87E6F6BF4A
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:12:16
+GU:78c7bb6a-288b-4e56-820d-66d7a91a74f5
+
+
+2015-05-21 17:20:57[17] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:20:57
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Company_M/GetCompanyDetail
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:6557B3D04AE18705514C0DBA9EECDA01
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYDETAIL
+TI:2015/5/21 17:20:57
+GU:5c32523d-034c-4bad-a459-70c4b35e3d8f
+
+
+2015-05-21 17:20:57[20] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:20:57
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:37172300DD9728AC7E43306205EB482E
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:20:57
+GU:5c32523d-034c-4bad-a459-70c4b35e3d8f
+
+
+2015-05-21 17:28:51[6] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:28:51
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Branch_M/GetBranchListForWeb
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:8B733D1978D72CFF589A4D2B96E08F1B
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETBRANCHLISTFORWEB
+TI:2015/5/21 17:28:51
+GU:bc632f5a-f8d4-4521-b631-00aa67fe8b38
+
+
+2015-05-21 17:28:51[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/21 17:28:51
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"Date":null,"PaymentMode":0,"Type":0,"ID":0,"OrderID":0,"UpdaterID":0,"PaymentID":0,"AccountID":0,"CustomerID":0,"CreatorID":0,"CompanyID":0,"BranchID":0,"UserID":0,"UserType":0,"ProductType":0,"TagIDs":null,"ProductCode":0,"ImageWidth":0,"ImageHeight":0,"PageIndex":0,"PageSize":0,"ServiceCode":0,"CommodityCode":0,"strSearch":null,"GUID":null,"BrowseHistoryCodes":null,"TotalSalePrice":0.0,"ScheduleID":0,"TreatmentID":0,"Time":"0001-01-01T00:00:00","ExecutorID":0,"ScheduleTime":"0001-01-01T00:00:00","ResponsiblePersonID":0,"SalesID":0,"Remark":null,"IsComplete":false,"Status":0,"ExpirationTime":"0001-01-01T00:00:00","IsAddUp":false,"IsDesignated":false,"OrderIDList":null,"OpportunityID":0,"ProgressID":0,"CategoryID":0,"LevelID":null,"IsBusiness":false,"Flag":0,"IDs":null,"Available":0,"RecordID":0,"ObjectType":0,"StartTime":null,"EndTime":null,"DiscountName":null,"CategoryName":null,"SubserviceName":null,"Advanced":null,"OrderCode":null,"PaymentCode":null,"TreatmentCode":null,"TreatmentListFlag":false,"SelectTreatment":false,"FileName":null,"FavoriteID":0,"LoginMobile":null,"FilterByTimeFlag":0,"InputSearch":null,"Prama":null,"listOrderID":null,"CommodityID":0,"SubServiceCode":0,"DiscountID":0}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 143
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.74
+UrlReferrer=
+RawUrl=/Promotion_M/GetPromotionList
+Header=Content-Length:1213
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D76FC7D1950FD79C2274FAB07F2AB4D9
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETPROMOTIONLIST
+TI:2015/5/21 17:28:51
+GU:bc632f5a-f8d4-4521-b631-00aa67fe8b38
+
+

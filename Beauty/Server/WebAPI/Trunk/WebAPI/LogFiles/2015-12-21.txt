@@ -1,0 +1,24 @@
+2015-12-21 16:59:37[19] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/21 16:59:37
+Title=报表生成失败
+Message=
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+
+2015-12-21 17:04:48[22] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/21 17:04:48
+Title=报表生成失败
+Message=
+ProcessName=webapi
+ClientIp=
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=
+Header=
+

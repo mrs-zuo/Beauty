@@ -1,0 +1,728 @@
+2015-09-14 16:19:20[10] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:19:20
+Title=无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":0,"LoginMobile":"Z95iwV8qPAkC6+rEfDweMqr29nkcGjN6IQlQB9hSvdacF6uG1MmCIjQVj4S5g1PAVNsuT63M2gQVt8SMWXnz1x3H9yOg1Z7SfrN9jKyhGb/xfHyQGzRc0zBrgkFJoFa5If3EBYEFPTV+2hrxLuZXDBdmQ26KdDDt2ex/G7ciWaM=","ClientType":0,"AppVersion":null,"Password":"F/tdi1JHjlXbny9gjPq6uu6KNY7dWG5D7GaCKzfIo2N4HH+GLs2JbTBIKB3d5aWzxFAedNw2oSE8VF45OXP+p2yy64UyP55Qd7JLAXepeQFliOos6Y6NLHAYVLcu7Teha7q82oo1Pj10gK9ZvQTiFs1n9helcVW7hvojE7sDysE=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":null,"IsNormalLogin":false}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.OpenConnection()
+   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.Login_DAL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\DAL\Login_DAL.cs:行号 68
+   在 WebAPI.BLL.Login_BLL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\BLL\Login_BLL.cs:行号 38
+   在 WebAPI.Controllers.Manager.Login_MController.getCompanyList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Login_MController.cs:行号 66
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login_M/getCompanyList
+Header=Connection:Keep-Alive
+Content-Length:749
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:E5C884572EB79FEF9DE6741660FE28DE
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:0
+BR:0
+US:0
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYLIST
+TI:2015/9/14 16:19:08
+GU:
+
+
+2015-09-14 16:19:25[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:19:25
+Title=无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":0,"LoginMobile":"MpkJfcOID5EsBCQ+AR8K5ApSa2wPXUEGxpb+JmvCO6jWOkht4B0U5jUftZjn4jRNaZ8gCbpXE+JC2C/5HlqZBnw9CaJey/3F5uaqUetMdYRZbBJJzEXaPgnla/mTPT6mBApIbva4lgluF+nAptKhGukeDa57r5NOYrvq0oNiSC4=","ClientType":0,"AppVersion":null,"Password":"HgTBg1nCj9wJXdyqDpLGNU1iyFtVkmSXj81jLbGdwrR4rzozFWcReuUuc+yshk7Kt0CjrTkG5OkjC70tqvyH6RDq908dtSZGP1iPtv6mcc/puWoYCRFL5oSoyb2BtCAGN4Amp9u2kfQg5+rfR1elTAF0cN3EjoZ6B8/WvEFwX5k=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":null,"IsNormalLogin":false}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.OpenConnection()
+   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.Login_DAL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\DAL\Login_DAL.cs:行号 68
+   在 WebAPI.BLL.Login_BLL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\BLL\Login_BLL.cs:行号 38
+   在 WebAPI.Controllers.Manager.Login_MController.getCompanyList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Login_MController.cs:行号 66
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login_M/getCompanyList
+Header=Content-Length:749
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:CC489E2378C120C7980132B6783D6F70
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:0
+BR:0
+US:0
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYLIST
+TI:2015/9/14 16:19:25
+GU:
+
+
+2015-09-14 16:19:27[9] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:19:27
+Title=无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":0,"LoginMobile":"Y2CGxCINOwoxs8kbcKjCYB5n08kj4jaBiGuZCZpjF0p5YS44yLUpKjQatGO31ORfhs0eBo102mYccfq4meqrj3saip1lYF3VMHGq2LqPR54caSVVRvAYKKAyz1YH550YZuQPHZXLkoptO1q23FlnQaonqTogZOFu8v3zCAw+NtI=","ClientType":0,"AppVersion":null,"Password":"QseuZ9o9CvhgmCA4Is5Kz3+3nQuqAXbtmf9H8Rsp+AQi0zuHN0SfCnMJB6qEP0xIiWET+4dIeJ7ogQx3UmCckrVtKLgc83GCe8PCEwVNr21LrAdxKGtwyaWKgApTcEfStdY8vdUjmfMV7IqqXBGJgpo/JIfEaqldhfJ7AWDhPW0=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":null,"IsNormalLogin":false}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.OpenConnection()
+   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.Login_DAL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\DAL\Login_DAL.cs:行号 68
+   在 WebAPI.BLL.Login_BLL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\BLL\Login_BLL.cs:行号 38
+   在 WebAPI.Controllers.Manager.Login_MController.getCompanyList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Login_MController.cs:行号 66
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login_M/getCompanyList
+Header=Content-Length:749
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:685F3FE27EBA4B5228849F8319BCB0FC
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:0
+BR:0
+US:0
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYLIST
+TI:2015/9/14 16:19:27
+GU:
+
+
+2015-09-14 16:19:35[9] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:19:35
+Title=无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+Message=Message:无法打开登录所请求的数据库 "GlamourPromise.Beauty_Test"。登录失败。
+用户 'sa' 登录失败。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":0,"LoginMobile":"TtA5Udpkqw0crHAM7EUWHcFj7pqfDNK0zHNezTAhmzbtW0DUjd5KOT2C7CwZlym07ZhjIUOJE6GcQBcKVteeKXifP8K228zPtVTpv2d0vfWXJU2Ff0FE6KDf/gQhf4+qxW34YpT5bCnc3IZ2nQKcCXFKIKN3S821x3ZzCH36UyU=","ClientType":0,"AppVersion":null,"Password":"f+FGLECTicX+B8lLSsjvTzTUWrizYkJVaZLUpMPRYj7jWIOA2zNVsLihEIrtMOfAr4EnKQcoQ7xryItO0lt9aXYo0DUpngW8WyLDsbjkkErkYDGDYRQZYxEGJI637b/mL19mr06wtFd4JXivz4LRllOskLBynoD8mG5lNCGG7cs=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":null,"IsNormalLogin":false}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.OpenConnection()
+   在 BLToolkit.Data.DbManager.get_Connection()
+   在 BLToolkit.Data.DbManager.OnInitCommand(IDbCommand command)
+   在 BLToolkit.Data.DbManager.get_SelectCommand()
+   在 BLToolkit.Data.DbManager.get_Command()
+   在 BLToolkit.Data.DbManager.Parameter(ParameterDirection parameterDirection, String parameterName, Object value, DbType dbType)
+   在 BLToolkit.Data.DbManager.Parameter(String parameterName, Object value, DbType dbType)
+   在 WebAPI.DAL.Login_DAL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\DAL\Login_DAL.cs:行号 68
+   在 WebAPI.BLL.Login_BLL.getCompanyListForAccount(Login_Model loginModel) 位置 e:\Vss\WebApi\BLL\Login_BLL.cs:行号 38
+   在 WebAPI.Controllers.Manager.Login_MController.getCompanyList(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Login_MController.cs:行号 66
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login_M/getCompanyList
+Header=Content-Length:749
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:15A0A834615341BBBF7DB10E0431DB96
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:0
+BR:0
+US:0
+CT:3
+DT:3
+AV:1.0
+ME:GETCOMPANYLIST
+TI:2015/9/14 16:19:35
+GU:
+
+
+2015-09-14 16:21:03[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:21:03
+Title=',' 附近有语法错误。
+Message=Message:',' 附近有语法错误。
+RequestParm:{"Type":4,"BeginDay":"2015-07-01T00:00:00","EndDay":"2015-09-14T23:59:59"}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable(DataTable dataTable)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable()
+   在 WebAPI.DAL.ReportDownload_DAL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\DAL\ReportDownload_DAL.cs:行号 1119
+   在 WebAPI.BLL.ReportDownload_BLL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\BLL\ReportDownload_BLL.cs:行号 373
+   在 WebAPI.Controllers.Manager.Report_MController.GetAccountPerformanceReport(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Report_MController.cs:行号 214
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:21:02
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:21:06[9] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:21:06
+Title=',' 附近有语法错误。
+Message=Message:',' 附近有语法错误。
+RequestParm:{"Type":4,"BeginDay":"2015-07-01T00:00:00","EndDay":"2015-09-14T23:59:59"}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable(DataTable dataTable)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable()
+   在 WebAPI.DAL.ReportDownload_DAL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\DAL\ReportDownload_DAL.cs:行号 1119
+   在 WebAPI.BLL.ReportDownload_BLL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\BLL\ReportDownload_BLL.cs:行号 373
+   在 WebAPI.Controllers.Manager.Report_MController.GetAccountPerformanceReport(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Report_MController.cs:行号 214
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:21:06
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:21:08[10] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:21:08
+Title=',' 附近有语法错误。
+Message=Message:',' 附近有语法错误。
+RequestParm:{"Type":4,"BeginDay":"2015-07-01T00:00:00","EndDay":"2015-09-14T23:59:59"}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable(DataTable dataTable)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable()
+   在 WebAPI.DAL.ReportDownload_DAL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\DAL\ReportDownload_DAL.cs:行号 1119
+   在 WebAPI.BLL.ReportDownload_BLL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\BLL\ReportDownload_BLL.cs:行号 373
+   在 WebAPI.Controllers.Manager.Report_MController.GetAccountPerformanceReport(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Report_MController.cs:行号 214
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:21:08
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:22:36[10] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:22:36
+Title=',' 附近有语法错误。
+Message=Message:',' 附近有语法错误。
+RequestParm:{"Type":4,"BeginDay":"2015-07-01T00:00:00","EndDay":"2015-09-14T23:59:59"}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable(DataTable dataTable)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable()
+   在 WebAPI.DAL.ReportDownload_DAL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\DAL\ReportDownload_DAL.cs:行号 1119
+   在 WebAPI.BLL.ReportDownload_BLL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\BLL\ReportDownload_BLL.cs:行号 373
+   在 WebAPI.Controllers.Manager.Report_MController.GetAccountPerformanceReport(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Report_MController.cs:行号 214
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:21:42
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:23:49[23] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:23:49
+Title=列名 'Status' 无效。
+列名 'Status' 无效。
+Message=Message:列名 'Status' 无效。
+列名 'Status' 无效。
+RequestParm:{"Type":4,"BeginDay":"2015-07-01T00:00:00","EndDay":"2015-09-14T23:59:59"}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable(DataTable dataTable)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable()
+   在 WebAPI.DAL.ReportDownload_DAL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\DAL\ReportDownload_DAL.cs:行号 1119
+   在 WebAPI.BLL.ReportDownload_BLL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\BLL\ReportDownload_BLL.cs:行号 373
+   在 WebAPI.Controllers.Manager.Report_MController.GetAccountPerformanceReport(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Report_MController.cs:行号 214
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:23:45
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:25:30[23] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:25:30
+Title=列名 'Status' 无效。
+列名 'Status' 无效。
+Message=Message:列名 'Status' 无效。
+列名 'Status' 无效。
+RequestParm:{"Type":4,"BeginDay":"2015-07-01T00:00:00","EndDay":"2015-09-14T23:59:59"}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation(OperationType operationType, Action operation)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable(DataTable dataTable)
+   在 BLToolkit.Data.DbManager.ExecuteDataTable()
+   在 WebAPI.DAL.ReportDownload_DAL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\DAL\ReportDownload_DAL.cs:行号 1119
+   在 WebAPI.BLL.ReportDownload_BLL.getServicePayDetail(Int32 companyId, Int32 branchId, DateTime beginDay, DateTime endDay) 位置 e:\Vss\WebApi\BLL\ReportDownload_BLL.cs:行号 373
+   在 WebAPI.Controllers.Manager.Report_MController.GetAccountPerformanceReport(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Report_MController.cs:行号 214
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:24:00
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:28:27[29] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:28:27
+Title=GetAccountPerformanceReport
+Message=14508
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Connection:Keep-Alive
+Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:28:10
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:32:24[29] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:32:24
+Title=GetAccountPerformanceReport
+Message=250868
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Connection:Keep-Alive
+Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:28:10
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:32:38[29] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:32:38
+Title=GetAccountPerformanceReport
+Message=265024
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Connection:Keep-Alive
+Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:28:10
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:32:38[29] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:32:38
+Title=GetAccountPerformanceReport
+Message=265035
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Connection:Keep-Alive
+Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:28:10
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+
+2015-09-14 16:32:43[29] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/14 16:32:43
+Title=GetAccountPerformanceReport
+Message=269955
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Connection:Keep-Alive
+Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:D8980E8AFF9DE13A5706D9B11F5C1F31
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/14 16:28:10
+GU:d02340fa-738c-4c36-8635-333fee574fd2
+
+

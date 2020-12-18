@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "我的账户";
+    List<Model.View_Model.GetECardList_Model> cardList = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    //else
+    //{
+    //    Response.Redirect("/Login/Login?err=1");
+    //}
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+<div class="wrapper">
+    <div class="width90 blockC P10Table">
+        <ul class="width100 pTB5P font20">
+            @{
+                if (cardList != null && cardList.Count > 0)
+                {
+                    foreach (Model.View_Model.GetECardList_Model item in cardList)
+                    {
+                        string colorCss = " card1Bkg ";
+                        if (item.CardTypeID == 2)
+                        {
+                            colorCss = " card3Bkg ";
+                        }
+                        else if (item.CardTypeID == 3)
+                        {
+                            colorCss = " card4Bkg ";
+                        }
+                            
+                <li class="itemCard @(colorCss) MB20">
+                    <ol class="width100 rowUl">
+                        <li class="clearfix">
+                            <a href="/Account/AccountDetail?cd=@(item.UserCardNo)" class="whiteTex positionR clearfix">
+                                @if (item.IsDefault)
+                                {		
+                                    <div class="width20P height20P borderRad50 MT5 fl">
+                                        <img src="/pic/defaultCartIcon.png" height="20">
+                                    </div>
+                                    <div class="textL fl width70 ML15 clearfix">
+                                        <span class="MR10 block">@(item.CardName)</span>
+                                        <span class="MT10 block">@(item.CardTypeID != 2 ? CurrencySymbol : "") @(item.Balance)</span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="textL fl">
+                                        <span class="MR10 block">@(item.CardName)</span>
+                                        <span class="MT10 block">@(item.CardTypeID != 2 ? CurrencySymbol : "") @(item.Balance)</span>
+                                    </div>
+                                }
+                                <div class="fr rightArrowRow">
+                                    <img src="/pic/rightArrowWhite.png" height="20">
+                                </div>
+                            </a>
+                        </li>
+                    </ol>
+                </li>
+                    }
+                }
+            }
+
+
+
+            <li class="itemCard card5Bkg ">
+                <ol class="width100 rowUl">
+                    <li class="clearfix">
+                        <a href="/CustomerBenefit/CustomerBenefitList?t=1" class="whiteTex positionR clearfix ">
+                            <div class="textL fl width70 ML15 clearfix">
+                                <span class="MR10 block">福利包</span>
+                            </div>
+                            <div class="fr rightArrowRow">
+                                <img src="/pic/rightArrowWhite.png" height="20" />
+                            </div>
+                        </a>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <div class="btnArea MB30"><a class="btnLarge bkgColor1 width100" href="/Account/TransactionRecord">账户交易记录</a></div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "门店一览";
+    List<Model.View_Model.GetBranchList_Model> list = new List<Model.View_Model.GetBranchList_Model>();
+    list = Model;
+    
+}
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+<script src="/js/EasyTemplate.js"></script>
+<script src="/Scripts/Company.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showMap, handleError, { enableHighAccuracy: true, maximumAge: 1000 });
+        } else {
+            alert("您的浏览器不支持使用HTML 5来获取地理位置服务");
+        }
+    });
+
+    function showMap(value) {
+        var longitude = value.coords.longitude;
+        var latitude = value.coords.latitude;
+        GetBranchList(longitude, latitude);
+    }
+
+    function handleError(value) {
+        switch (value.code) {
+            case 1:
+                alert("位置服务被拒绝");
+                break;
+            case 2:
+                alert("暂时获取不到位置信息");
+                break;
+            case 3:
+                alert("获取信息超时");
+                break;
+            case 4:
+                alert("未知错误");
+                break;
+        }
+        GetBranchList(0, 0);
+    }
+
+
+</script>
+<script id="templateSign" type="text/x-easy-template">
+<#macro bjTest data>
+	<#list data as list>
+		 <li class="borderB PT15 PB15 clearfix ">
+                        <a href="/Company/BranchDetail?b=${list.BranchID}">
+                            <em class="width80 fl MB15">${list.BranchName}</em>
+                            <span class="width20 fr MT20 textR">
+                                <i class="grayTex font12" >${list.Distance == -1  ? '未知': list.Distance +' km' } </i>
+                           
+						    </span>
+                            <p class="width80 grayTex fl clearfix">${list.Address}</p>
+                        </a>
+                    </li>
+	</#list>
+</#macro>
+</script>
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width33_3"><a href="/Company/CompanyDetail">商家介绍</a></li><li class="width33_3 positionR">门店一览<span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Company/NoticeList">公告信息</a>
+        </ul>
+        <ul class="width100 rowUl15" id="ulBranch">
+        </ul>
+    </div>
+</div>

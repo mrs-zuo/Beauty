@@ -1,0 +1,184 @@
+﻿@{
+    ViewBag.Title = "交易详情";
+    Model.View_Model.GetBalanceDetail_Model model = Model;
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    //else
+    //{
+    //    Response.Redirect("/Login/Login?err=1");
+    //}
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+<div class="wrapper">
+    <div class="whiteBkg width100">
+        <div class="width90 blockC">
+            <ul class="width100 rowUl15">
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">交易编号</div>
+                    <div class="grayTex fr">@(model.BalanceNumber)</div>
+                </li>
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">交易时间</div>
+                    <div class="grayTex fr"><span>@(model.CreateTime.ToString("yyyy-MM-dd HH:mm"))</span></div>
+                </li>
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">交易门店</div>
+                    <div class="grayTex fr">@(model.BranchName)</div>
+                </li>
+                <li class="clearfix">
+                    <div class="blackTex fl">交易类型</div>
+                    <div class="grayTex fr">@(model.ChangeTypeName)</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="whiteBkg width100 MT10">
+        <div class="width90 blockC">
+            <ul class="width100 rowUl15">
+                <li class="clearfix">
+                    <div class="blackTex fl">交易总额</div>
+
+                    <div class="grayTex fr">@(CurrencySymbol)@(model.Amount < 0 ? (model.Amount * -1).ToString("0.00") : model.Amount.ToString("0.00"))</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @{
+        if (model.BalanceMain != null)
+        {
+        <div class="part width100">
+            <h4 class="PT15 PB5 blackTex blockC width90">@(model.BalanceMain.ActionModeName)</h4>
+            <div class="whiteBkg width100 MT10 blockC">
+                <div class="blockC width90">
+                    <ul class="width100 rowUl15">
+                        @{
+            if (model.BalanceMain.BalanceCardList != null && model.BalanceMain.BalanceCardList.Count > 0)
+            {
+                foreach (Model.View_Model.BalanceCardDetail_Model item in model.BalanceMain.BalanceCardList)
+                {
+                            <li class="borderB clearfix">
+                                <div class="clearfix">
+                                    <div class="blackTex fl">@(item.CardName)</div>
+                                    @if (item.CardType == 1)
+                                    {
+                                        <div class="grayTex fr">@(item.CardPaidAmount < 0 ? CurrencySymbol + (item.CardPaidAmount * -1).ToString("0.00") : CurrencySymbol + item.CardPaidAmount.ToString("0.00"))</div>
+                                    }
+                                    else if (item.CardType == 2)
+                                    {
+                                        if (item.ActionMode > 4)
+                                        {
+                                        <div class="grayTex fr">@(item.Amount < 0 ? (item.Amount * -1).ToString("0.00") : item.Amount.ToString("0.00"))</div>
+                                        }
+                                        else
+                                        {
+                                        <div class="grayTex fr">@(item.Amount < 0 ? (item.Amount * -1).ToString("0.00") + "抵" + (item.CardPaidAmount * -1) : item.Amount.ToString("0.00") + "抵" + (item.CardPaidAmount))</div>
+                                        }
+                                    }
+                                    else if (item.CardType == 3)
+                                    {
+                                        if (item.ActionMode > 4)
+                                        {
+                                        <div class="grayTex fr">@(item.Amount < 0 ? CurrencySymbol + (item.Amount * -1).ToString("0.00") : CurrencySymbol + item.Amount.ToString("0.00"))</div>
+                                        }
+                                        else
+                                        {
+                                        <div class="grayTex fr">@(item.Amount < 0 ? CurrencySymbol + (item.Amount * -1).ToString("0.00") + "抵"+CurrencySymbol + (item.CardPaidAmount * -1) : CurrencySymbol + item.Amount.ToString("0.00")+ "抵" + (item.CardPaidAmount))</div>
+                                        }
+                                    }
+                                </div>
+                                <div class="clearfix PT15">
+                                    <div class="blackTex fl">余额</div>
+                                    <div class="grayTex fr">@(item.CardType != 2 ? CurrencySymbol : "")@(item.Balance)</div>
+                                </div>
+                            </li>
+                }
+            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        }
+    }
+
+    @{
+        if (model.BalanceSec != null)
+        {
+        <div class="part width100">
+            <h4 class="PT15 PB5 blackTex blockC width90">@(model.BalanceSec.ActionModeName)</h4>
+            <div class="whiteBkg width100 MT10 blockC">
+                <div class="blockC width90">
+                    <ul class="width100 rowUl15">
+                        @{
+            if (model.BalanceSec.BalanceCardList != null && model.BalanceSec.BalanceCardList.Count > 0)
+            {
+                foreach (Model.View_Model.BalanceCardDetail_Model item in model.BalanceSec.BalanceCardList)
+                {
+                            <li class="borderB clearfix">
+                                <div class="clearfix">
+                                    <div class="blackTex fl">@(item.CardName)</div>
+                                    <div class="grayTex fr">@(item.CardType != 2 ? CurrencySymbol + System.Math.Abs(item.Amount) : System.Math.Abs(item.Amount).ToString())</div>
+                                </div>
+                                <div class="clearfix PT15">
+                                    <div class="blackTex fl">余额</div>
+                                    <div class="grayTex fr">@(item.CardType != 2 ? CurrencySymbol + item.Balance.ToString() : item.Balance.ToString())</div>
+                                </div>
+
+                            </li>
+                }
+            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        }
+    }
+    @{
+        if (model.OrderList != null && model.OrderList.Count > 0)
+        {
+        <div class="part width100 whiteBkg MT10">
+            <div class="width90 blockC">
+                <ul class="width100 rowUl">
+                    @{
+            foreach (Model.View_Model.BalanceOrderList_Model item in model.OrderList)
+            {
+                        <li class="borderB">
+                            <a href="/Order/OrderDetail?oId=@(item.OrderObjectID)&t=@(item.ProductType)">
+                                <ol class="width100">
+                                    <li class="clearfix positionR">
+                                        <div class="clearfix">
+                                            <div class="fl width30">
+                                                <h4 class="blackTex font16">订单编号</h4>
+                                            </div>
+                                            <div class="grayTex fr width65">
+                                                <div class="MR30 textR">
+                                                    <span class="block">@(item.OrderNumber)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="PT15">@(item.ProductName)</div>
+                                        <div class="clearfix PT15 MR30">
+                                            <div class="blackTex fl">订单金额</div>
+                                            <div class="grayTex fr">@(CurrencySymbol)@(item.TotalSalePrice.ToString("0.00"))</div>
+                                        </div>
+                                        <span class="rightArrowRow">
+                                            <img src="/pic/rightArrow.png" height="20" /></span>
+                                    </li>
+                                </ol>
+                            </a>
+                        </li>
+            }
+                    }
+
+                </ul>
+            </div>
+        </div>
+        }
+    }
+</div>

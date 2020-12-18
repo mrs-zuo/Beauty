@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+         <RadioGroup
+                android:id="@+id/service_and_product_sales_quantity_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="分类"
+                android:orientation="vertical" >
+                <RadioButton
+                    android:id="@+id/service_and_product_sales_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/service_and_product_sales_share"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+                 <RadioButton
+                    android:id="@+id/service_and_product_sales_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/service_and_product_sales_price"
+                    android:textSize="@dimen/text_size_14sp" >
+                </RadioButton>
+            </RadioGroup>
+    </RelativeLayout>
+</LinearLayout>

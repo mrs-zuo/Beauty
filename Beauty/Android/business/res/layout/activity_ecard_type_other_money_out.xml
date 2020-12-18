@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/ecard_type_other_money_other_title_text"
+            style="@style/activity_title_text_attrs"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                style="@style/activity_content_table_attrs"
+                android:padding="8dp" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/money_out_customer_name" />
+
+                <TextView
+                    android:id="@+id/customer_name"
+                    android:layout_width="200dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/activity_content_table_attrs"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/money_out_balance_title"
+                    style="@style/activity_content_table_row_title_attrs"/>
+
+                <TextView
+                    android:id="@+id/balance"
+                    android:layout_width="200dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/money_out_amount_prompt_title"
+                        style="@style/activity_content_table_row_title_attrs"
+                        />
+
+                    <EditText
+                        android:id="@+id/money_out_amount"
+                        android:layout_width="200dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:inputType="numberDecimal"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="@string/money_out_amount_hint"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/gray"/>
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:padding="8dp"
+                    android:text="@string/money_out_comment" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_two"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:paddingBottom="@dimen/layout_padding"
+                    android:paddingTop="@dimen/layout_padding" >
+
+                    <EditText
+                        android:id="@+id/comment_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#00000000"
+                        android:hint="@string/money_out_comment_hint"
+                        android:longClickable="false"
+                        android:maxLength="200"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/text_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/comment_edit"
+                        android:layout_marginRight="12dip"
+                        android:text="@string/money_out_comment_amount_prompt"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+                <Button
+                    android:id="@+id/make_sure_btn"
+                    style="@style/submit_big_btn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dip"
+                    android:text="@string/ok"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

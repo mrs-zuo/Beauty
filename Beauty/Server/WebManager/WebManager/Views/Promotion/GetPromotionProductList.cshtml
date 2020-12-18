@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "GetPromotionProductList";
+    List<Model.Table_Model.PromotoinProduct_Model> list = new List<Model.Table_Model.PromotoinProduct_Model>();
+    list = Model;
+    string promotionCode = ViewBag.PromotionCode;
+}
+<script src="/Script/PromotionNew.js"></script>
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 4)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- 促销产品列表 开始 -->
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Promotion/GetPromotionListNew">促销信息</a></li>
+                <li>促销商品列表</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>促销商品列表</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form much-btn">
+
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择状态:</div>
+                    <select class="select-control" id="ddl_flag">
+                        <option value="0">全部</option>
+                        <option value="2">服务</option>
+                        <option value="1">商品</option>
+                    </select>
+                </div>
+                <a href="/Promotion/SelectPromotionProduct?pc=@(promotionCode)&pt=1" class="btn btn-default"><i class="fa fa-plus-square"></i>添加商品</a>
+                <a href="/Promotion/SelectPromotionProduct?pc=@(promotionCode)&pt=0" class="btn btn-default"><i class="fa fa-plus-square"></i>添加服务</a>
+            </div>
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-4">
+                        <col class="col-xs-1">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>名称</th>
+                            <th>规格</th>
+                            <th>原价</th>
+                            <th>优惠价</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbServiceList">
+                        @if (list != null && list.Count > 0)
+                        {
+                            int index = 0;
+                            foreach (Model.Table_Model.PromotoinProduct_Model item in list)
+                            {
+                                index++;
+                            <tr>
+                                <td>@(index)</td>
+                                <td>@(item.ProductPromotionName)</td>
+                                <td>@(item.Specification)</td>
+                                <td>@(item.UnitPrice.ToString("0.00"))</td>
+                                <td>@(item.DiscountPrice.ToString("0.00"))</td>
+                                <td>
+                                    <a href="/Promotion/EditPromotionProduct?pi=@(item.ProductID)&pc=@(item.PromotionID)&pt=@(item.ProductType)" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                    <a class="btn btn-default btn-sm"  onclick="DeletePromotionProduct('@(promotionCode)',@(item.ProductID),@(item.ProductType))"><i class="fa fa-trash-o"></i>删除</a>
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var flag = $.getUrlParam('f');
+        if (flag != null) {
+            $('#ddl_flag').val(flag);
+        }
+        var pc = $.getUrlParam('pc');
+
+        $('#ddl_flag').change(function () {
+            if (flag != null) {
+                flag = 0;
+            }
+            var url = "/Promotion/GetPromotionProductList?f=" + $(this).val() + "&pc=" + pc;
+            location.href = url;
+        });
+    });
+
+</script>
+<!-- /Page Body -->
+<!-- 促销产品列表 结束 -->

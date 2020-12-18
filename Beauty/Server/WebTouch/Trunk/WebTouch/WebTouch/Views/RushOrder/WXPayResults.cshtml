@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "微信支付结果";
+    Model.View_Model.WeChatPayResault_Model model = Model;
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+
+@if(model != null){
+<div class="wrapper">
+		<div class="whiteBkg width100 MB10">
+                @{
+    if (model.TradeState == "USERPAYING" || model.TradeState == "NOTPAY")
+    {
+        <div class="width90 blockC redTex textC PTB15 clearfix">
+            <span class="stateIconNotpaid PL40">@(model.DisplayResult)</span>
+        </div>
+    }
+    else if (model.TradeState == "SUCCESS")
+    {
+        <div class="width90 blockC greenTex textC PTB15 clearfix">
+            <span class="stateIconPaidOK PL40">@(model.DisplayResult)</span>
+        </div>
+    }
+    else
+    {
+        <div class="width90 blockC blueTex textC PTB15 clearfix">
+            <span class="stateIconUnknown PL40">@(model.DisplayResult)</span>
+        </div>
+    }
+}
+
+
+        </div>
+		<div class="whiteBkg width100 MB10">
+			
+				<ul class="width90 blockC PTB15">
+					<li class="clearfix">
+						<div class="fl blackTex font16">第三方支付编号</div>
+						<div class="fr grayTex textR">@(model.NetTradeNo)</div>
+					</li>
+					<li class=" PT15 clearfix">
+						<div class="longTex95 clearfix">@(model.ProductPromotionName)</div>
+					</li>
+					<li class=" PT15 clearfix">	
+						<div class="clearfix">
+							<div class="blackTex fl">金额</div>
+							<div class="grayTex fr">@(CurrencySymbol + model.CashFee.ToString("0.00"))</div>
+						</div>
+					</li>		
+                    @if (model.TradeState == "SUCCESS")
+                    {			
+					<li. class="PT15 clearfix">
+						<div class="blackTex fl">时间</div>
+						<div class="grayTex fr">@(model.CreateTime.ToString("yyyy-MM-dd HH:mm"))</div>
+					</li.
+                        >
+					<li class="PT15 clearfix">
+						<div class="blackTex fl">支付方式</div>
+						<div class="grayTex fr">@(model.BankName)</div>
+					</li>
+					<li class="PT15 clearfix">
+						<div class="blackTex ">交易单号</div>
+						<div class="PT10 grayTex ">@(model.TransactionID)</div>
+					</li>
+                    }
+				</ul>
+						
+		</div>
+	</div>
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>81C989EE-687A-4B99-A150-A4247CE8F750</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GlamourPromise.Cosmetology.B</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A123E1E7-83DB-4E15-9519-675D9569BE7D</key>
+		<string>https://try-server/svn/GlamourPromise/Client-Business/iOS</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GlamourPromise.Cosmetology.B.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A123E1E7-83DB-4E15-9519-675D9569BE7D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>A123E1E7-83DB-4E15-9519-675D9569BE7D</key>
+		<string>https://try-server/svn/GlamourPromise</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://try-server/svn/GlamourPromise/Client-Business/iOS/GlamourPromise.Cosmetology.B.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A123E1E7-83DB-4E15-9519-675D9569BE7D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A123E1E7-83DB-4E15-9519-675D9569BE7D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

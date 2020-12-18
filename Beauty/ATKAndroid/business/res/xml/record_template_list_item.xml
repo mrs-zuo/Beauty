@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal"
+    android:padding="8dip"
+    android:descendantFocusability="blocksDescendants" >
+
+    <ImageButton
+        android:id="@+id/record_template_del_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"/>
+    <ImageView
+        android:id="@+id/record_template_is_visible_icon_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/record_template_del_button"
+        android:layout_toLeftOf="@id/record_template_del_button"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip" />
+    <ImageView
+        android:id="@+id/record_template_is_editable_icon_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/record_template_is_visible_icon_d"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:layout_toLeftOf="@id/record_template_is_visible_icon_d" />
+    <ImageView
+        android:id="@+id/record_template_is_visible_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip" />
+    <ImageView
+        android:id="@+id/record_template_is_editable_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/record_template_is_visible_icon"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:layout_toLeftOf="@id/record_template_is_visible_icon" />
+
+    <TextView
+        android:id="@+id/record_template_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_toLeftOf="@id/record_template_is_editable_icon"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/record_template_update_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/record_template_title_text"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:textColor="@color/gray"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/record_template_person_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/record_template_update_time_text"
+        android:layout_below="@id/record_template_is_visible_icon"
+        android:layout_marginRight="10dip"
+        android:textColor="@color/gray"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/record_template_join_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/record_template_update_time_text"
+        android:layout_below="@id/record_template_is_visible_icon"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="10dip"
+        android:src="@drawable/join_in_arrowhead"
+        android:contentDescription="@string/search" />
+
+</RelativeLayout>

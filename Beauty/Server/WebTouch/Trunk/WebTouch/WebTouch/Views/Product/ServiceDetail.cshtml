@@ -1,0 +1,187 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNoTop.cshtml";
+    ViewBag.Title = "服务详情";
+    Model.View_Model.ServiceDetail_Model model = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+<script src="/js/Swipe.js"></script>
+<script src="/js/Swipe.js"></script>
+<script type="text/javascript">
+    $(function () {
+        Swipe(document.getElementById('slider'), {
+            auto: 3000,
+            continuous: true,
+            callback: function (pos) {
+                var bullets = $("#position li");
+                var i = bullets.length;
+                while (i--) {
+                    bullets[i].className = ' ';
+                }
+                bullets[pos].className = 'on';
+            }
+        });
+    });
+</script>
+
+@if (model != null)
+{
+    <div class="wrapper whiteBkg MB60">
+        @{
+			if (model.ServiceImage != null && model.ServiceImage.Count > 0)
+			{
+				<!--轮显图片开始-->
+				<div class="banner swipe" id="slider">
+					<div class="swipe-wrap">
+						@{
+							foreach (string item in model.ServiceImage)
+							{
+								<figure><a href=""><img src="@(item == "" ? "/pic/nopicbg.jpg" : item)" alt=""/></a></figure>
+							}
+						}
+					</div>
+					<nav>
+						<ul id="position">
+						@for(int i = 0;i<model.ServiceImage.Count;i++){
+							<li></li>
+						}
+						</ul>
+					</nav>
+				</div>
+				<!--轮显图片结束-->
+					
+				
+			} 
+        }
+        <div class="width100 blockC textL">
+            <ul class="width90 rowUl blockC">
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">@(model.ServiceName)</div>
+                    <div class="grayTex textR fr"></div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">原价</div>
+                    <div class="grayTex textR fr">@(CurrencySymbol)@(model.UnitPrice.ToString("0.00"))</div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">服务时间</div>
+                    <div class="grayTex textR fr">@(model.SpendTime)分钟</div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">服务次数</div>
+                    @if (model.CourseFrequency == 0)
+                    {
+                        <div class="grayTex textR fr">不限次</div>
+                    }
+                    else
+                    {
+                        <div class="grayTex textR fr">@(model.CourseFrequency)次</div>
+                    }
+                </li>
+                @if (model.HaveExpiration)
+                {
+                    <li class="borderB pTB15 clearfix">
+                        <div class="blackTex fl">有效期</div>
+                        @if (model.ExpirationDate == 0)
+                        {
+                            <div class="grayTex textR fr">当日有效</div>
+                        }
+                        else
+                        {
+                            <div class="grayTex textR fr">@(model.ExpirationDate)天</div>
+                        }
+
+                    </li>
+                }
+                @{
+                if (model.SubServices != null && model.SubServices.Count > 0)
+                {
+                    <li class="borderB whiteBkg clearfix">
+                        <h4 class="borderB PB15 PT15">子服务</h4>
+                        <div class="width98 fr">
+                            <div class="blockC">
+                                <ol class="width100 rowUl PL20Ul">
+                                    @{
+                    int i = 1;
+                    foreach (Model.View_Model.SubServiceInServiceDetail_Model item in model.SubServices)
+                    {
+                                        <li class="ML10 borderB pTB15 clearfix">
+                                            <div class="blackTex fl">@(i).@(item.SubServiceName)</div>
+                                            <div class="grayTex textR fr">@(item.SpendTime)分钟</div>
+                                        </li>
+                        i++;
+                    }
+                                    }
+                                </ol>
+                            </div>
+                        </div>
+                    </li>
+                }
+                }
+                @{
+                if (!string.IsNullOrWhiteSpace(model.Describe))
+                { 
+                    <li class="borderB pTB15 whiteBkg clearfix">
+                        <h4 class="PB15">描述</h4>
+                        <div class="width98 fr grayTex lineHeight1_5x">
+                            @Html.Raw(model.Describe.Replace("\n", "<br />").Replace("\r", "<br />").Replace("\r\n", "<br />"))
+                        </div>
+                    </li>
+                }
+                }
+                <li class="borderB whiteBkg clearfix">
+                    <h4 class="borderB PB15 PT15">选择门店</h4>
+                    <div class="width98 fr">
+                        <div class="blockC">
+                            <ol id="olBranch" class="width100 rowUl PL20Ul">
+                                @if (model.ProductEnalbeInfo != null && model.ProductEnalbeInfo.Count > 0)
+                                {
+                                    int i = 0;
+                                    foreach (Model.View_Model.ServiceEnalbeInfoDetail_Model item in model.ProductEnalbeInfo)
+                                    {
+                                    <li class="ML10 borderB pTB15 clearfix">
+                                        <div class="blackTex fl">@(item.BranchName)</div>
+                                        <div class="grayTex textR fr">
+                                            <input type="radio" name="radio1" value="@(item.BranchID)" @(i==0 ? "checked='checked'" : "") bname="@(item.BranchName)">
+                                        </div>
+                                    </li>
+                                        i++;
+                                    }
+                                }
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+	<div class="MB60"></div>
+    <div class="btnBtm width100 whiteBkg">
+
+        <ul class="width100 btnBtmUL1 clearfix">
+            <li class="width25 bkgColor1 fr"><a onclick="AddCart(2,0,@(model.ServiceCode))" class="block whiteTex">立即购买</a></li>
+            <li class="width25 bkgColor1 bkgOpacity7 fr"><a onclick="AddCart(1,0,@(model.ServiceCode))" class="block whiteTex">加入购物车</a></li>
+			<li class="width25 fl"><a class="block grayTex" onclick="AddTask(@(model.ServiceCode),'@(model.ServiceName)')">预约</a></li>
+            @if (model.FavoriteID == "" || model.FavoriteID == null)
+            {
+                <li class="width24 fl favorIcon1 positionR">
+                    <a onclick="AddFavorite(@(model.ServiceCode),0)" class=" block grayTex">收藏</a><span class="border"></span>
+                   </li>
+            }
+            else
+            {
+                <li class="width24 fl favorIcon2 positionR">
+					<a onclick="DelFavorite(@(model.ServiceCode),0,'@(model.FavoriteID)')" class="block grayTex">取消收藏</a><span class="border"></span>
+                </li>
+            }
+           
+        </ul>
+    </div>
+}
+<script src="/Scripts/Product.js"></script>

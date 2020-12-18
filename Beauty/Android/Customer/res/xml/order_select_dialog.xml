@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_filter_dialog_title_text"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_headline" />
+    </RelativeLayout>
+
+    <View style="@style/divide_view" />
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/classify_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_classify"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_headline" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/relative_layout_has_child_attrs"
+        android:layout_below="@id/classify_title"
+        android:orientation="horizontal"
+        android:padding="0dp" >
+        <TextView
+            android:id="@+id/order_classify_all"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="14dp"
+            android:gravity="center"
+            android:text="@string/order_classify_all"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline"/>
+        <TextView
+            android:id="@+id/order_classify_service"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_classify_service"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_classify_commodity"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_classify_commodity"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+    </LinearLayout>
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/status_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_status"
+            android:textSize="@dimen/text_size_headline" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/relative_layout_has_child_attrs"
+        android:layout_below="@id/classify_title"
+        android:orientation="horizontal"
+        android:padding="0dp" >
+        <TextView
+            android:id="@+id/order_status_all"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="14dp"
+            android:gravity="center"
+            android:text="@string/order_classify_all"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_status_proceed"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_classify_status_1"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_status_complete"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_classify_status_2"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_status_terminate"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_classify_status_4"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_status_cancel"
+           	android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_classify_status_3"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+    </LinearLayout>
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/pay_status_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_pay_status"
+            android:textSize="@dimen/text_size_headline" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/relative_layout_has_child_attrs"
+        android:layout_below="@id/classify_title"
+        android:orientation="horizontal"
+        android:padding="0dp" >
+        <TextView
+            android:id="@+id/order_pay_status_all"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="14dp"
+            android:gravity="center"
+            android:text="@string/order_classify_all"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_pay_status_unpaid"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_ispaid_1"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_pay_status_part_payment"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_ispaid_2"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_pay_status_paid"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_ispaid_3"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/order_pay_status_no_need_payment"
+             android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="@string/order_ispaid_5"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_headline" />
+    </LinearLayout>
+
+    <View
+        style="@style/divide_view"
+        android:layout_marginTop="14dp" />
+
+    <LinearLayout
+        style="@style/relative_layout_has_child_attrs"
+        android:layout_below="@id/classify_title"
+        android:orientation="horizontal"
+        android:padding="0dp" >
+        <TextView
+            android:id="@+id/order_filter_cancel_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_headline" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#f4f4f4" />
+
+        <TextView
+            android:id="@+id/order_filter_ok_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_headline" />
+    </LinearLayout>
+
+    <View style="@style/divide_view" />
+
+</LinearLayout>

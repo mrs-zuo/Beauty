@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.com.antika.business.TreatmentDetailActivity"
+    android:orientation="vertical"
+    android:background="@color/title_backcolor">
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <!-- tabStripEnabled属性去掉底部下划线与选项卡间的下划线 -->
+            <!-- layout_alignParentBottom属性即可将其放在底部菜单栏，注意，必须在RelativeLayout里 -->
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/tab_backcolor"
+                android:tabStripEnabled="false" >
+
+            </TabWidget>
+        </RelativeLayout>
+    </TabHost>
+</LinearLayout>
+
+
+

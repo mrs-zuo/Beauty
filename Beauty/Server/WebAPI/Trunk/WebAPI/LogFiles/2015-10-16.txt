@@ -1,0 +1,44 @@
+2015-10-16 10:14:34[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/10/16 10:14:34
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"CustomerID":"11805"}
+TargetSite:System.Threading.Tasks.Task`1[System.Object] ReadContentAsync(System.Net.Http.HttpRequestMessage, System.Type, System.Collections.Generic.IEnumerable`1[System.Net.Http.Formatting.MediaTypeFormatter], System.Net.Http.Formatting.IFormatterLogger, System.Threading.CancellationToken)
+Data:
+StackTrace:   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/ECard/GetCustomerCardList
+Header=Content-Length:22
+Authorization:6C9AD330CC6C3AA7C689EAABAB94D1F2
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.1.0.1 CFNetwork/711.3.18 Darwin/14.3.0
+GU:0c74aca3-2dd4-417c-8993-f1922e42fef6
+BR:98
+DT:1
+CO:69
+CT:1
+TI:2015-10-16 10:04:53.165
+ME:GetCustomerCardList
+US:11761
+AV:3.1
+
+

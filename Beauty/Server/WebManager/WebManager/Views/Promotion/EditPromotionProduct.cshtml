@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "EditPromotionProduct";
+    Model.Table_Model.PromotoinProduct_Model model = new Model.Table_Model.PromotoinProduct_Model();
+    model = Model;
+    string promotionCode = ViewBag.PromotionCode;
+    int isAdd = ViewBag.IsAdd;
+}
+
+<script src="/Script/PromotionNew.js"></script>
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 4)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+
+        <!-- 促销产品编辑 开始 -->
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Promotion/GetPromotionListNew">促销信息</a></li>
+                <li>促销产品编辑</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>促销产品编辑</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        @if (model != null)
+        { 
+            <!-- Page Body -->
+            <div class="page-body">
+                <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                    <!--widget-body-->
+                    <ul role="tablist" class="nav nav-tabs" id="myTab">
+                        <li class="active" id="li_home" role="presentation">
+                            <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="">促销产品编辑</a></li>
+                    </ul>
+                    <div class="tab-content widget-body" id="myTabContent">
+                        <div id="home" class="tab-pane fade active in" aria-labelledby="home-tab" role="tabpanel">
+                            <div class="form-horizontal form-bordered">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">产品名称</label>
+                                    <div class="col-sm-4">
+                                        <input placeholder="@(model.ProductName)" id="txtProductName" type="text" disabled="disabled" data-bv-field="fullName" name="fullName" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">
+                                    	产品促销名称
+                                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input placeholder="产品促销名称默认为产品名称" id="txtProductPromotionName" value="@(string.IsNullOrEmpty( model.ProductPromotionName)? model.ProductName : model.ProductPromotionName)" class="form-control" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">原价</label>
+                                    <div class="col-sm-4">
+                                        <input placeholder="@(model.UnitPrice.ToString("0.00"))" id="" type="text" disabled="disabled"  class="form-control"  />
+                                    </div>
+                                    <p class="n-p-15 help-block">元</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">
+                                    	优惠价
+                                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input placeholder="输入优惠价" id="txtDiscountPrice" value="@(model.DiscountPrice.ToString("0.00"))" class="form-control" type="text" />
+                                    </div>
+                                    <p class="n-p-15 help-block">元</p>
+                                </div>
+                                <div class="form-group" id="divRule">
+                                    <label class="col-sm-2 control-label no-padding-right">促销规则</label>
+                                    @if (model.PromotionRuleList != null && model.PromotionRuleList.Count > 0)
+                                    {
+                                        foreach (Model.Table_Model.PromotionRule_Model item in model.PromotionRuleList)
+                                        {
+                                        <br />
+                                        <br />
+                                        <div class="control-label">
+                                          <label class="col-sm-2 control-label no-padding-right txtL ML15P">
+                                              <input type="checkbox" name="RuleCode"  value ="@(item.PRCode)" @(item.IsUse ? " checked='checked'" : "")  />
+                                              <span class="text over-text col-xs-12 no-pm">@(item.PRDesc)</span>
+                                          </label>
+                                          <div class="col-sm-4 ">
+                                              <input placeholder="输入促销总数量"  value="@(item.PRValue)" class="form-control" type="text" />
+                                          </div>  
+
+                                        </div>
+                                        
+                                        }
+                                    }
+                                </div>
+                                <div class="form-group">
+                                    <!-- Textarea -->
+                                    <label class="col-sm-2 control-label no-padding-right">促销须知</label>
+                                    <div class="col-sm-10">
+                                        <div class="textarea">
+                                            <textarea placeholder="输入促销须知" id="txtNotice" rows="6" class="form-control">@(model.Notice)</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button class="btn btn-primary"  onclick="EditPromotionProductDetail('@(promotionCode)',@(model.PromotionType),@(model.ProductID),@(model.ProductType),@(isAdd))">确 定</button>
+                                        <a class="btn btn btn-default" href="/Promotion/GetPromotionProductList?pc=@(promotionCode)">返回</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 促销产品编辑 结束 -->
+        }
+
+    </div>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout
+        android:id="@+id/notice_detail_title"
+        style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/notice_detail_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/title_notice_detail"
+            android:textColor="@color/blue" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/notice_title_and_time"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/notice_title"
+                        android:textColor="@color/blue" />
+
+                    <TextView
+                        android:id="@+id/notice_title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:maxWidth="240dp"
+                        android:singleLine="true"
+                        android:text="@string/ellipsis"
+                        android:textSize="@dimen/text_size_18sp" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/activity_content_divide_view_attrs" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/time"
+                        android:textColor="@color/blue" />
+
+                    <TextView
+                        android:id="@+id/time_content_text"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/notice_content"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/notice_content"
+                        android:textColor="@color/blue" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/activity_content_divide_view_attrs">
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/notice_content_text"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/time" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

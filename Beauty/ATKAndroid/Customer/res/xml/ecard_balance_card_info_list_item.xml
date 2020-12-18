@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TableLayout
+        android:id="@+id/card_info_list_table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/table_layout_attrs_layout_marginleft"
+        android:background="@xml/shape_corner_round" >
+        <RelativeLayout
+            android:id="@+id/card_trading_amount_layout"
+            style="@style/relative_layout_has_child_attrs">
+            <TextView
+                android:id="@+id/card_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:text="@string/card_type_title_1"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_normal" />
+            <TextView
+                android:id="@+id/not_card_payment_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="15dp"
+                android:textSize="@dimen/text_size_normal" />
+            <TextView
+                android:id="@+id/card_trading_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:textSize="@dimen/text_size_normal" />
+        </RelativeLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="#f4f4f4" >
+        </View>
+        <RelativeLayout
+            android:id="@+id/card_balance_layout"
+            style="@style/relative_layout_has_child_attrs" >
+            <TextView
+                android:id="@+id/card_balance_title"
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/balance_title"
+                android:textColor="@color/text_color" />
+            <TextView
+                android:id="@+id/card_balance_content"
+                style="@style/relative_layout_right_child_attrs" />
+        </RelativeLayout>
+    </TableLayout>
+</LinearLayout>

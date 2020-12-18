@@ -1,0 +1,205 @@
+2015-09-09 16:44:36[26] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/9 16:44:36
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\Vss\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.ReportController.Operation(ReportDownloadOperation_Model model) 位置 e:\Vss\WebManager\WebManager\Controllers\ReportController.cs:行号 42
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webmanager.com/Report/ReportDownload
+RawUrl=/Report/Operation
+Header=Connection:keep-alive
+Content-Length:74
+Content-Type:application/json; charset=UTF-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.8
+Cookie:ASP.NET_SessionId=rzwi3ncfuzn3eiexn2d02xw2; HSManger=LkaGkzG7Xo9W9ip6+iycc02WI74QPN7u6vqj2mMcZLxeNQfQNGj4cdUlbf406WkNrxbkVc8Gx98QtXbtCqML7qZLYCF6NANue/R16hNVyWx+o0FC+Z2AX5tRvRVDmRGJy+GfrdiZrXWQ/GbWNh9cuq/7Tqeo3Hg56YTgPnbib2hEtgGN2lAj66qVP9hBVEC0wb6mHzBvmSbZnxFiAzlZtfMJLp8tgPlUF3pG0xVU1zkX1F4T1wca21mehIYzcvVV2WBrts8S2Ld/yE6f1cXs0fJ2ZdPQPBmmBE+pVYkjatrwACK6ms4lGwfBJu+L5FlruAEc8lewQwvmbAUFSK7tiQNxMURjP56iA1GoDhEmTcMPayHBG8lKdshbjEzuuLBmkZLwXY/aiemfUN25aJWGITy1wo8gn4HM3Sz1f2tauWQx3+maIzeCfs3cPHaN36TAj1KM52vH/ap08VP97gCFOkaMzo/CdXGL9SseNVRIF6Sx9hVi34wKct/SOJWmRcTQWLe283ib5FuCC7TEXrUpyy0zzGCtgEJZPjBFKuqT2SM/dbKVK4936LKE4yJXNcjRP/A4koFR9pV9O012OjC9EX3EQhHGRvXoa4E49LgDP/AZTfwsio6QXpTfWxjoMZOQhjNeYc7/0P9D4zn/L0NsaD0Uwqqe0ivFBe5l2cEKocMIH911NoicJM14eBiF3EU7RJNt2B2c9cgnUvleJ+uDVX+6GdQAsEok3dyRLVgi2WUyOqGbK/ZmuNY+nS2x3i5Hkh3p/kj02P5IivsO/MZt1Q/9ZCUZY9J12lr9l0HhdeHW6TDjITA54GSZj1ci/9M3AEub//v7/eC5/oqv4/y59gwcuzt9eOVxKU7MKxf60hrbgSZfC9LzycQHHq19ZLKEFPeKzIIzMTM=; CompanyInfo=QKxDuUzF8sPqcZIbC6vY9DwkjrWj1qM5jc3Z1ltLxwS7LrSajxc3Zv+rqvG8z4ibf9lQmMK8dGbRPjqkgQ3f83d0KoAgJRHW5XnWtWC3xibls97WyfLpcGiGydnov9wDOweDUTTVAh3l/fcq8DfpvsV/OLtk9aoqLvc/jpWiSI5gpWaJk+tn1qD869yx3NPwZgi4tgJCA0LTJy+VY5CebZcCxcQJaDBN0jR5mfVTEn/UUEpXM8jnyksh9wKq2kCHwGbuZCyymsR8qLj1ioIjicWS0YCrepQjA/56IcJJxZO0BeNzrgI6G6+PGJq2G3Qqn7K0BmW1fVr4/NfQE5/o2DMXNeZ70snHXcjlmI6H7QGmwyial+QTu7aaxMouFsUaEFPba9pGlrKwnqhPx32gBc1buYodfRrOSGAVyBYYgvUEKz+uYwb/IkvZfNrtnyV1cB+MJZzjgJevmWzSVYb9dOlv/1JEH/c/nqzCJ/XC/Q+HHJlFCQ6dlxQN/HwnlKfuNuCucTSjRXWGyXAgPPHfbJsWG8wk2LzoZ05okHa4m49je3Lhd1lnWYKNwUxnVUZA8c+dyXuzn+0dRyJPVdG730HUWa4YoHjpx+dHnNBy07+lBnd4unlLsIXOEOdh1GLCKn1/PB1t98pPDR3ZPoRjPuZ8sEBBzfrxC5s80uqHX87G6jX/EgnlKMiKzvZT9FdkbiG6eK+IKosHgtuJzpM+4UGCEvvApYWMHC6JdN2r7Nn1wnhqqaOEhN4ffalXd08v/+Kz6F6yc8HeXgHBxmt9F70yrYrxCbDdGtULNViu0oN5zekdaxIKM0eMq03PUiPZn5TwYFRt3SYqxHZuTkMfiaU8caz/gSBI81X41Q2r+ALY7YalTFuQpQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Report/ReportDownload
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36
+Origin:http://www.webmanager.com
+X-Requested-With:XMLHttpRequest
+
+
+2015-09-09 16:46:30[29] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/9 16:46:30
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\Vss\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.ReportController.Operation(ReportDownloadOperation_Model model) 位置 e:\Vss\WebManager\WebManager\Controllers\ReportController.cs:行号 42
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webmanager.com/Report/ReportDownload
+RawUrl=/Report/Operation
+Header=Connection:keep-alive
+Content-Length:74
+Content-Type:application/json; charset=UTF-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.8
+Cookie:ASP.NET_SessionId=rzwi3ncfuzn3eiexn2d02xw2; HSManger=LkaGkzG7Xo9W9ip6+iycc02WI74QPN7u6vqj2mMcZLxeNQfQNGj4cdUlbf406WkNrxbkVc8Gx98QtXbtCqML7qZLYCF6NANue/R16hNVyWx+o0FC+Z2AX5tRvRVDmRGJy+GfrdiZrXWQ/GbWNh9cuq/7Tqeo3Hg56YTgPnbib2hEtgGN2lAj66qVP9hBVEC0wb6mHzBvmSbZnxFiAzlZtfMJLp8tgPlUF3pG0xVU1zkX1F4T1wca21mehIYzcvVV2WBrts8S2Ld/yE6f1cXs0fJ2ZdPQPBmmBE+pVYkjatrwACK6ms4lGwfBJu+L5FlruAEc8lewQwvmbAUFSK7tiQNxMURjP56iA1GoDhEmTcMPayHBG8lKdshbjEzuuLBmkZLwXY/aiemfUN25aJWGITy1wo8gn4HM3Sz1f2tauWQx3+maIzeCfs3cPHaN36TAj1KM52vH/ap08VP97gCFOkaMzo/CdXGL9SseNVRIF6Sx9hVi34wKct/SOJWmRcTQWLe283ib5FuCC7TEXrUpyy0zzGCtgEJZPjBFKuqT2SM/dbKVK4936LKE4yJXNcjRP/A4koFR9pV9O012OjC9EX3EQhHGRvXoa4E49LgDP/AZTfwsio6QXpTfWxjoMZOQhjNeYc7/0P9D4zn/L0NsaD0Uwqqe0ivFBe5l2cEKocMIH911NoicJM14eBiF3EU7RJNt2B2c9cgnUvleJ+uDVX+6GdQAsEok3dyRLVgi2WUyOqGbK/ZmuNY+nS2x3i5Hkh3p/kj02P5IivsO/MZt1Q/9ZCUZY9J12lr9l0HhdeHW6TDjITA54GSZj1ci/9M3AEub//v7/eC5/oqv4/y59gwcuzt9eOVxKU7MKxf60hrbgSZfC9LzycQHHq19ZLKEFPeKzIIzMTM=; CompanyInfo=QKxDuUzF8sPqcZIbC6vY9DwkjrWj1qM5jc3Z1ltLxwS7LrSajxc3Zv+rqvG8z4ibf9lQmMK8dGbRPjqkgQ3f83d0KoAgJRHW5XnWtWC3xibls97WyfLpcGiGydnov9wDOweDUTTVAh3l/fcq8DfpvsV/OLtk9aoqLvc/jpWiSI5gpWaJk+tn1qD869yx3NPwZgi4tgJCA0LTJy+VY5CebZcCxcQJaDBN0jR5mfVTEn/UUEpXM8jnyksh9wKq2kCHwGbuZCyymsR8qLj1ioIjicWS0YCrepQjA/56IcJJxZO0BeNzrgI6G6+PGJq2G3Qqn7K0BmW1fVr4/NfQE5/o2DMXNeZ70snHXcjlmI6H7QGmwyial+QTu7aaxMouFsUaEFPba9pGlrKwnqhPx32gBc1buYodfRrOSGAVyBYYgvUEKz+uYwb/IkvZfNrtnyV1cB+MJZzjgJevmWzSVYb9dOlv/1JEH/c/nqzCJ/XC/Q+HHJlFCQ6dlxQN/HwnlKfuNuCucTSjRXWGyXAgPPHfbJsWG8wk2LzoZ05okHa4m49je3Lhd1lnWYKNwUxnVUZA8c+dyXuzn+0dRyJPVdG730HUWa4YoHjpx+dHnNBy07+lBnd4unlLsIXOEOdh1GLCKn1/PB1t98pPDR3ZPoRjPuZ8sEBBzfrxC5s80uqHX87G6jX/EgnlKMiKzvZT9FdkbiG6eK+IKosHgtuJzpM+4UGCEvvApYWMHC6JdN2r7Nn1wnhqqaOEhN4ffalXd08v/+Kz6F6yc8HeXgHBxmt9F70yrYrxCbDdGtULNViu0oN5zekdaxIKM0eMq03PUiPZn5TwYFRt3SYqxHZuTkMfiaU8caz/gSBI81X41Q2r+ALY7YalTFuQpQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Report/ReportDownload
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36
+Origin:http://www.webmanager.com
+X-Requested-With:XMLHttpRequest
+
+
+2015-09-09 16:50:31[14] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/9 16:50:31
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\Vss\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.ReportController.Operation(ReportDownloadOperation_Model model) 位置 e:\Vss\WebManager\WebManager\Controllers\ReportController.cs:行号 42
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webmanager.com/Report/ReportDownload
+RawUrl=/Report/Operation
+Header=Connection:keep-alive
+Content-Length:74
+Content-Type:application/json; charset=UTF-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.8
+Cookie:ASP.NET_SessionId=rzwi3ncfuzn3eiexn2d02xw2; HSManger=LkaGkzG7Xo9W9ip6+iycc02WI74QPN7u6vqj2mMcZLxeNQfQNGj4cdUlbf406WkNrxbkVc8Gx98QtXbtCqML7qZLYCF6NANue/R16hNVyWx+o0FC+Z2AX5tRvRVDmRGJy+GfrdiZrXWQ/GbWNh9cuq/7Tqeo3Hg56YTgPnbib2hEtgGN2lAj66qVP9hBVEC0wb6mHzBvmSbZnxFiAzlZtfMJLp8tgPlUF3pG0xVU1zkX1F4T1wca21mehIYzcvVV2WBrts8S2Ld/yE6f1cXs0fJ2ZdPQPBmmBE+pVYkjatrwACK6ms4lGwfBJu+L5FlruAEc8lewQwvmbAUFSK7tiQNxMURjP56iA1GoDhEmTcMPayHBG8lKdshbjEzuuLBmkZLwXY/aiemfUN25aJWGITy1wo8gn4HM3Sz1f2tauWQx3+maIzeCfs3cPHaN36TAj1KM52vH/ap08VP97gCFOkaMzo/CdXGL9SseNVRIF6Sx9hVi34wKct/SOJWmRcTQWLe283ib5FuCC7TEXrUpyy0zzGCtgEJZPjBFKuqT2SM/dbKVK4936LKE4yJXNcjRP/A4koFR9pV9O012OjC9EX3EQhHGRvXoa4E49LgDP/AZTfwsio6QXpTfWxjoMZOQhjNeYc7/0P9D4zn/L0NsaD0Uwqqe0ivFBe5l2cEKocMIH911NoicJM14eBiF3EU7RJNt2B2c9cgnUvleJ+uDVX+6GdQAsEok3dyRLVgi2WUyOqGbK/ZmuNY+nS2x3i5Hkh3p/kj02P5IivsO/MZt1Q/9ZCUZY9J12lr9l0HhdeHW6TDjITA54GSZj1ci/9M3AEub//v7/eC5/oqv4/y59gwcuzt9eOVxKU7MKxf60hrbgSZfC9LzycQHHq19ZLKEFPeKzIIzMTM=; CompanyInfo=QKxDuUzF8sPqcZIbC6vY9DwkjrWj1qM5jc3Z1ltLxwS7LrSajxc3Zv+rqvG8z4ibf9lQmMK8dGbRPjqkgQ3f83d0KoAgJRHW5XnWtWC3xibls97WyfLpcGiGydnov9wDOweDUTTVAh3l/fcq8DfpvsV/OLtk9aoqLvc/jpWiSI5gpWaJk+tn1qD869yx3NPwZgi4tgJCA0LTJy+VY5CebZcCxcQJaDBN0jR5mfVTEn/UUEpXM8jnyksh9wKq2kCHwGbuZCyymsR8qLj1ioIjicWS0YCrepQjA/56IcJJxZO0BeNzrgI6G6+PGJq2G3Qqn7K0BmW1fVr4/NfQE5/o2DMXNeZ70snHXcjlmI6H7QGmwyial+QTu7aaxMouFsUaEFPba9pGlrKwnqhPx32gBc1buYodfRrOSGAVyBYYgvUEKz+uYwb/IkvZfNrtnyV1cB+MJZzjgJevmWzSVYb9dOlv/1JEH/c/nqzCJ/XC/Q+HHJlFCQ6dlxQN/HwnlKfuNuCucTSjRXWGyXAgPPHfbJsWG8wk2LzoZ05okHa4m49je3Lhd1lnWYKNwUxnVUZA8c+dyXuzn+0dRyJPVdG730HUWa4YoHjpx+dHnNBy07+lBnd4unlLsIXOEOdh1GLCKn1/PB1t98pPDR3ZPoRjPuZ8sEBBzfrxC5s80uqHX87G6jX/EgnlKMiKzvZT9FdkbiG6eK+IKosHgtuJzpM+4UGCEvvApYWMHC6JdN2r7Nn1wnhqqaOEhN4ffalXd08v/+Kz6F6yc8HeXgHBxmt9F70yrYrxCbDdGtULNViu0oN5zekdaxIKM0eMq03PUiPZn5TwYFRt3SYqxHZuTkMfiaU8caz/gSBI81X41Q2r+ALY7YalTFuQpQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Report/ReportDownload
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36
+Origin:http://www.webmanager.com
+X-Requested-With:XMLHttpRequest
+
+
+2015-09-09 18:04:15[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/9 18:04:15
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\Vss\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.ReportController.Operation(ReportDownloadOperation_Model model) 位置 e:\Vss\WebManager\WebManager\Controllers\ReportController.cs:行号 42
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webmanager.com/Report/ReportDownload
+RawUrl=/Report/Operation
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:74
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=53rl1i5s3l3kawzv1raqvrsr; HSManger=LkaGkzG7Xo9W9ip6+iycc02WI74QPN7ueJZ0PkmzXWgT4ysLymGPcIH2+HX3291SkHl/cwCy/klV9x7gubJn9CrTo4j2gEnLe+Q06O15yXBXM0Ybqcaf5kw4lkGt5E9LQeg72hZX9nlU8LIV11q9YHlwzcvV505B6uO2V1LEOR8A0i3P2sovub3NbmibDYR6i13BKb3G5+bp3lwe36F8XX88iCY5sQZaFNr1PVoszqCX65EY+ouAaE7pddyBPO3x42QyuOfjLCiyj0tEWdKC7LGIiM77D10P4CsFX0uUTT0OgtEYmc2XbBmLmRadZRe/zDRsyi3RCgDUw0A+qiYEulgpo4fPhZL8nEilaLKGz5qnPzRi9BN9caVpCL0B+q1YnOVXYzho4uUkHOnw27bZhR5F7M5ROJyBGaFSOIrHxScoU0sR0rQpEqoNam1AMiv04po/8kJ3xpVpBW+7cc3xD9M9HaZZVGoMHHgSsBQsWGQLYqKHKAlOKYztdSNQIKuNKbk9s3HYCVg73qQ2MixsM9WI5B9ixTHGOVniFd/SUiNsoLdfJ1zKZdEEjR/4J2h19CJLzRz1SnSK/nzZcqcJ3g8HOXPflxPsIvbdUHijQQT1tRcid85u9xTX4iC9K5/VBG6MjP2xPXw7cD3iU8ogSW7HpwT5R2/7KGqHfvc57Bw0IUd+Q+eZhwT+pS5RPGnALDCsKbES+Mio3DAgdzYG7WrSnJ1tPyxUD5cex7urjzBJmT0b8SGwQONv8qg3nAISpo7TIilHUi1lWQwhKWIXARwnvvSlqH/GDQADrvUtsCp9j9U5mwkNz4lgPvhG+CgOp4Yj3Qla0X15mhRUbjt7ff73Ultj0/lRn2dnDEcGjrUV0apw5XK+a9RT3h+R4R9/txNcXgiL0YA=; CompanyInfo=QKxDuUzF8sPqcZIbC6vY9DwkjrWj1qM5jc3Z1ltLxwS7LrSajxc3Zv+rqvG8z4ibf9lQmMK8dGbRPjqkgQ3f83d0KoAgJRHW5XnWtWC3xibls97WyfLpcGiGydnov9wDOweDUTTVAh3l/fcq8DfpvsV/OLtk9aoqLvc/jpWiSI5gpWaJk+tn1qD869yx3NPwZgi4tgJCA0LTJy+VY5CebZcCxcQJaDBN0jR5mfVTEn/UUEpXM8jnyksh9wKq2kCHwGbuZCyymsR8qLj1ioIjicWS0YCrepQjA/56IcJJxZO0BeNzrgI6G6+PGJq2G3Qqn7K0BmW1fVr4/NfQE5/o2DMXNeZ70snHXcjlmI6H7QGmwyial+QTu7aaxMouFsUaEFPba9pGlrKwnqhPx32gBc1buYodfRrOSGAVyBYYgvUEKz+uYwb/IkvZfNrtnyV1cB+MJZzjgJevmWzSVYb9dOlv/1JEH/c/nqzCJ/XC/Q+HHJlFCQ6dlxQN/HwnlKfuNuCucTSjRXWGyXAgPPHfbJsWG8wk2LzoZ05okHa4m49je3Lhd1lnWYKNwUxnVUZA8c+dyXuzn+0dRyJPVdG730HUWa4YoHjpx+dHnNBy07+lBnd4unlLsIXOEOdh1GLCKn1/PB1t98pPDR3ZPoRjPuZ8sEBBzfrxC5s80uqHX87G6jX/EgnlKMiKzvZT9FdkbiG6eK+IKosHgtuJzpM+4UGCEvvApYWMHC6JdN2r7Nn1wnhqqaOEhN4ffalXd08v/+Kz6F6yc8HeXgHBxmt9F70yrYrxCbDdGtULNViu0oN5zekdaxIKM0eMq03PUiPZn5TwYFRt3SYqxHZuTkMfiaU8caz/gSBI81X41Q2r+ALY7YalTFuQpQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Report/ReportDownload
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+X-Requested-With:XMLHttpRequest
+
+

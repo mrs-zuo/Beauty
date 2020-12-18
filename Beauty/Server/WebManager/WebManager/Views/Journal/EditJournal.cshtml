@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "EditJournal";
+    Model.Operation_Model.JournalAccountOperation_Model model = new Model.Operation_Model.JournalAccountOperation_Model();
+    if (ViewBag.Journal != null)
+    {
+        model = ViewBag.Journal;
+    }
+
+
+    List<Model.Table_Model.Branch_Model> listBranch = new List<Model.Table_Model.Branch_Model>();
+    if (ViewBag.BranchList != null)
+    {
+        listBranch = ViewBag.BranchList;
+    }
+    int EditFlag = 0;
+    if (ViewBag.EditFlag != null)
+    {
+        EditFlag = ViewBag.EditFlag;
+    }
+    int InOutType = ViewBag.InOutType;
+
+    Model.Table_Model.Journal_Account_Search_Model SearchAccountModel = new Model.Table_Model.Journal_Account_Search_Model();
+    SearchAccountModel = ViewBag.SearchAccountModel;
+
+}
+
+         
+@if (model != null)
+{
+    <body onload=@(0 == EditFlag ? "GetDefaultAMount();" : "")>
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            @Html.Partial("Sidebar", 32)
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content" >
+                <!-- Page 面包屑 -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="/Home/Index">首页</a>
+                        </li>
+                        <li>
+                            <a href="/Journal/JournalList">收支记录</a>
+                        </li>
+                        @if (InOutType == 1)
+                    {
+                        if (model.ID == 0)
+                        {
+                    <li class="active">添加支出记录</li>
+                        }
+                        else
+                        {
+                    <li class="active">编辑支持记录</li>
+                        }
+                    }
+                    else if (InOutType == 2)
+                    {
+                        if (model.ID == 0)
+                        {
+                    <li class="active">添加收入记录</li>
+                        }
+                        else
+                        {
+                    <li class="active">编辑收入记录</li>
+                        }
+                    }
+
+                    </ul>
+                </div>
+                <!-- /Page 面包屑 -->
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    <div class="header-title">
+                        @if (InOutType == 1)
+                    {
+                        if (model.ID == 0)
+                        {
+                    <h1>添加支出记录</h1>
+                        }
+                        else
+                        {
+                    <h1>编辑支出记录</h1>
+                        }
+                    }
+                    else if (InOutType == 2)
+                    {
+                        if (model.ID == 0)
+                        {
+                    <h1>添加收入记录</h1>
+                        }
+                        else
+                        {
+                    <h1>编辑收入记录</h1>
+                        }
+                    }
+
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                        <ul role="tablist" class="nav nav-tabs" id="myTab">
+                            <li class="active in" role="presentation">
+                                <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">
+                                    @if (InOutType == 1)
+                                {
+                                    if (model.ID == 0)
+                                    {
+                                <text>添加支出记录</text>
+                                    }
+                                    else
+                                    {
+                                <text>编辑支出记录</text>
+                                    }
+                                }
+                                else if (InOutType == 2)
+                                {
+                                    if (model.ID == 0)
+                                    {
+                                <text>添加收入记录</text>
+                                    }
+                                    else
+                                    {
+                                <text>编辑收入记录</text>
+                                    }
+                                }
+
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div aria-labelledby="home-tab" id="home" class="tab-pane fade active in" role="tabpanel">
+                                <div class="form-horizontal form-bordered">
+                                    <div class="form-group">
+                                        <!-- Text input-->
+                                        <label class="col-sm-2 control-label no-padding-right">大项目</label>
+                                        <div class="col-sm-4 btn-group">
+                                            <select id="InOutItemAList" style="width: 100%;" onchange="GetInOutItemBList(@(model.ItemAID),@(model.ItemBID),@(model.ItemCID));GetDefaultAMount();"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- Text input-->
+                                        <label class="col-sm-2 control-label no-padding-right">中项目</label>
+                                        <div class="col-sm-4 btn-group">
+                                            <select id="InOutItemBList" style="width: 100%;" onchange="GetInOutItemCList(@(model.ItemBID),@(model.ItemCID));GetDefaultAMount();"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- Text input-->
+                                        <label class="col-sm-2 control-label no-padding-right">小项目</label>
+                                        <div class="col-sm-4 btn-group">
+                                            <select id="InOutItemCList" style="width: 100%;" onchange="GetDefaultAMount();"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <!-- Text input-->
+                                        <label class="col-sm-2 control-label no-padding-right">门店</label>
+                                        <div class="col-sm-4 btn-group">
+                                            <select id="ddlBranch" style="width: 100%;" onchange="GetOperateList(@(model.ID),@(model.OperatorID));GetDefaultAMount();">
+                                                @if (listBranch != null && listBranch.Count > 0)
+                                            {
+                                                foreach (Model.Table_Model.Branch_Model item in listBranch)
+                                                {
+                                            <option value="@(item.ID)" @(item.ID == model.BranchID ? "selected='selected'" : "")>@(item.BranchName)</option>
+                                                }
+                                            }
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right">日期</label>
+                                        <div class="col-sm-4">
+                                            <span class="input-icon icon-right time-layer">
+                                                <input id="txtstartDate" class="form-control date-picker" placeholder="日期" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" value="@(model.InOutDate.ToString("yyyy-MM-dd") == "0001-01-01" ? DateTime.Now.ToString("yyyy-MM-dd") : model.InOutDate.ToString("yyyy-MM-dd"))">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right">
+                                            金额
+                                            <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                                        </label>
+                                        <div class="col-sm-4">
+                                            <input placeholder="输入金额" id="txtAmount" class="form-control" type="text" value="@(model.Amount == 0 ? "" : model.Amount.ToString("0.00"))" style="text-align:right;">
+                                        </div>
+                                        <p class="n-p-15 help-block">元</p>
+                                    </div>
+                                    <!-- lou 2020.06.10
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right">
+                                            经办人
+                                            <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                                        </label>
+                                        <div class="col-sm-4 btn-group">
+                                            <select id="ddlOperator" style="width: 100%;"></select>
+                                        </div>
+                                    </div>
+                                   -->
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right">备注</label>
+                                        <div class="col-sm-10">
+                                            <textarea id="txtRemark" class="form-control" rows="6" placeholder="输入备注内容">@(model.Remark)</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <a class="btn btn-primary" onclick="EditJournal(@(model.ID))">确 定</a>
+                                            <a class="btn btn-default" onclick="javascript:history.go(-1);">返 回</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <input type="hidden" id="InOutType" value="@(InOutType) " />
+        <input type="hidden" id="hiddenItemName" />
+    </body>
+<!--时间选择器脚本-->
+
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+
+<script src="/Script/Journal.js"></script>
+
+<script>
+    $(function () {
+        //GetDefaultAMount();
+        $("#hiddenItemName").val("@(SearchAccountModel.ItemName)"); 
+        //第一次加载
+        //GetOperateList(@(model.ID),@(model.OperatorID));
+        GetInOutItemAList(@(model.ItemAID));
+        GetInOutItemBList(@(model.ItemAID),@(model.ItemBID),@(model.ItemCID));
+        GetInOutItemCList(@(model.ItemBID),@(model.ItemCID));
+        //
+         
+        });
+    </script>
+}

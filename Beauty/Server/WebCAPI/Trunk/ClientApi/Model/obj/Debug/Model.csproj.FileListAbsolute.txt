@@ -1,0 +1,15 @@
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\bin\Debug\Model.dll
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\bin\Debug\Model.pdb
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.dll
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.pdb
+D:\svn\T029\Server\WebCAPI\Trunk\ClientApi\Model\bin\Debug\Model.dll
+D:\svn\T029\Server\WebCAPI\Trunk\ClientApi\Model\bin\Debug\Model.pdb
+D:\svn\T029\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.dll
+D:\svn\T029\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.pdb
+D:\svn\T030\Server\WebCAPI\Trunk\ClientApi\Model\bin\Debug\Model.dll
+D:\svn\T030\Server\WebCAPI\Trunk\ClientApi\Model\bin\Debug\Model.pdb
+D:\svn\T030\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\svn\T030\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.dll
+D:\svn\T030\Server\WebCAPI\Trunk\ClientApi\Model\obj\Debug\Model.pdb

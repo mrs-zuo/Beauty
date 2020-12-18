@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "JournalList";
+    List<Model.Table_Model.Journal_Account_New_Model> list = new List<Model.Table_Model.Journal_Account_New_Model>();
+    if (ViewBag.JournalList != null)
+    {
+        list = ViewBag.JournalList;
+    }
+
+    List<Model.Table_Model.Branch_Model> listBranch = new List<Model.Table_Model.Branch_Model>();
+    if (ViewBag.BranchList != null)
+    {
+        listBranch = ViewBag.BranchList;
+    }
+    Model.Table_Model.Journal_Account_Search_Model SearchAccountModel = new Model.Table_Model.Journal_Account_Search_Model();
+    SearchAccountModel = ViewBag.SearchAccountModel;
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 32)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>收入记录</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>收入记录</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择门店:</div>
+                    <select class="select-control" id="txtBranchID">
+                        @{
+                            if (listBranch != null && listBranch.Count > 0)
+                            {
+                                foreach (Model.Table_Model.Branch_Model item in listBranch)
+                                {
+                                    <option value="@(item.ID)" @(item.ID == SearchAccountModel.BranchID ? "selected='selected'" : "")>@(item.BranchName)</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input id="txtItemName" type="text" class="form-control" style="max-width: 130px;" placeholder="请输入项目名称" value="@(SearchAccountModel.ItemName)">
+                </div>
+                <div class="input-group col-md-2 MT3" style="width:120px">
+                    <span class="input-icon icon-right time-layer" style="width:120px">
+                        <input class="form-control date-picker" placeholder="开始日期" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" value="@(SearchAccountModel.StartDate)" id="txtStartDate" style="width:120px">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+                <div class="input-group col-md-2 MT3" style="width:120px">
+                    <span class="input-icon icon-right time-layer" style="width:120px">
+                        <input class="form-control date-picker" placeholder="结束日期" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" value="@(SearchAccountModel.EndDate)" id="txtEndDate" style="width:120px">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择类型:</div>
+                    <select class="select-control" id="txtInOutType">
+                        <option value="0" @(0 == SearchAccountModel.InOutType ? "selected='selected'" : "")>全部</option>
+                        <option value="1" @(1 == SearchAccountModel.InOutType ? "selected='selected'" : "")>支出</option>
+                        <option value="2" @(2 == SearchAccountModel.InOutType ? "selected='selected'" : "")>收入</option>
+                    </select>
+                </div>
+                <a class="btn btn-azure" onclick="SearchJournal();"><i class=" fa fa-search"></i>查询</a>
+                <a id ="addIn"href="/Journal/EditJournal?jd=0&e=0&InOutType=2" 
+                   class="btn btn-default"><i class="fa fa-plus-square"></i>添加收入记录</a>
+                <a id="addOut"href="/Journal/EditJournal?jd=0&e=0&InOutType=1" 
+                   class="btn btn-default"><i class="fa fa-plus-square"></i>添加支出记录</a>
+            </div>
+            <div class="widget-body no-padding" style="max-height:640px;overflow-y:scroll; ">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-2" style="width:42px;">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2" style="width:55px;">
+                        <col class="col-xs-3">
+                        <col class="col-xs-3" style="width:83px;">
+                        <col class="col-xs-3" style="width:88px;">
+                        <col class="col-xs-2">
+                        <col class="col-xs-12">
+                        <col class="col-xs-2" style="width:55px;">
+                        <col class="col-xs-5" style="width:136px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                编号
+                            </th>
+                            <th>分店</th>
+                            <th>类型</th>
+                            <th>收支项目</th>
+                            <th>日期</th>
+                            <th>金额</th>
+                            <th>经办人</th>
+                            <th>备注</th>
+                            <th>审核结果</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="AccountTableList">
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="widget-body no-padding" style="max-height:100px;overflow-y:scroll;">
+                <table class="table table-hover  table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-2" style="width:42px;">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2" style="width:55px;">
+                        <col class="col-xs-3">
+                        <col class="col-xs-3" style="width:83px;">
+                        <col class="col-xs-3" style="width:88px;">
+                        <col class="col-xs-2">
+                        <col class="col-xs-12">
+                        <col class="col-xs-2" style="width:55px;">
+                        <col class="col-xs-5" style="width:136px;">
+                    </colgroup>
+                    <tbody id="AccountTableListTotal"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+<script src="/Script/Journal.js"></script>
+<script>
+    $(function () {
+        SearchJournal();
+    })
+</script>
+
+	
+

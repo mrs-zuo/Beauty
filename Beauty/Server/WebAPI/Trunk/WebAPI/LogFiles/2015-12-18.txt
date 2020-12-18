@@ -1,0 +1,384 @@
+2015-12-18 09:33:11[13] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 9:33:11
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"TotalAmount":12,"SlaveID":[16319],"CustomerID":16320,"OrderID":[39069],"UserCode":"130369310511390413","PointAmount":1.2,"CouponAmount":2.4,"Remark":""}
+TargetSite:System.Threading.Tasks.Task`1[System.Object] ReadContentAsync(System.Net.Http.HttpRequestMessage, System.Type, System.Collections.Generic.IEnumerable`1[System.Net.Http.Formatting.MediaTypeFormatter], System.Net.Http.Formatting.IFormatterLogger, System.Threading.CancellationToken)
+Data:
+StackTrace:   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Content-Length:154
+Host:www.webapi.com
+BR:68
+DT:1
+CO:46
+CT:1
+AV:3.3.1
+TI:2015-12-17 10:52:43.895
+ME:WeChatPayByCustomer
+US:16319
+GU:9d0a3b82-370b-4f2b-b444-bd99665babed
+
+
+2015-12-18 09:33:39[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 9:33:39
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"TotalAmount":12,"SlaveID":[16319],"CustomerID":16320,"OrderID":[39069],"UserCode":"130369310511390413","PointAmount":1.2,"CouponAmount":2.4,"Remark":""}
+TargetSite:System.Threading.Tasks.Task`1[System.Object] ReadContentAsync(System.Net.Http.HttpRequestMessage, System.Type, System.Collections.Generic.IEnumerable`1[System.Net.Http.Formatting.MediaTypeFormatter], System.Net.Http.Formatting.IFormatterLogger, System.Threading.CancellationToken)
+Data:
+StackTrace:   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Content-Length:154
+Authorization:1D9E73D0D9558009E1924BF81939A9C2
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.3.1.1 CFNetwork/672.1.15 Darwin/14.0.0
+BR:68
+DT:1
+CO:46
+CT:1
+AV:3.3.1
+TI:2015-12-17 10:52:43.895
+ME:WeChatPayByCustomer
+US:16319
+GU:9d0a3b82-370b-4f2b-b444-bd99665babed
+
+
+2015-12-18 09:48:39[17] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 9:48:39
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"TotalAmount":12,"SlaveID":[16319],"CustomerID":16320,"OrderID":[39069],"UserCode":"130369310511390413","PointAmount":1.2,"CouponAmount":2.4,"Remark":""}
+TargetSite:System.Threading.Tasks.Task`1[System.Object] ReadContentAsync(System.Net.Http.HttpRequestMessage, System.Type, System.Collections.Generic.IEnumerable`1[System.Net.Http.Formatting.MediaTypeFormatter], System.Net.Http.Formatting.IFormatterLogger, System.Threading.CancellationToken)
+Data:
+StackTrace:   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Content-Length:154
+Authorization:1D9E73D0D9558009E1924BF81939A9C2
+Host:www.webapi.com
+BR:68
+DT:1
+CO:46
+CT:1
+AV:3.3.1
+TI:2015-12-17 10:52:43.895
+ME:WeChatPayByCustomer
+US:16319
+GU:9d0a3b82-370b-4f2b-b444-bd99665babed
+
+
+2015-12-18 09:49:23[17] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 9:49:23
+Title=处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+Message=Message:处理 HTTP 请求导致了异常。请参见此异常的 "Response" 属性返回的 HTTP 响应，以了解详细信息。
+RequestParm:{"TotalAmount":12,"SlaveID":[16319],"CustomerID":16320,"OrderID":[39069],"UserCode":"130369310511390413","PointAmount":1.2,"CouponAmount":2.4,"Remark":""}
+TargetSite:System.Threading.Tasks.Task`1[System.Object] ReadContentAsync(System.Net.Http.HttpRequestMessage, System.Type, System.Collections.Generic.IEnumerable`1[System.Net.Http.Formatting.MediaTypeFormatter], System.Net.Http.Formatting.IFormatterLogger, System.Threading.CancellationToken)
+Data:
+StackTrace:   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   在 System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Content-Length:154
+Authorization:1D9E73D0D9558009E1924BF81939A9C2
+Host:www.webapi.com
+BR:68
+DT:1
+CO:46
+CT:1
+AV:3.3.1
+TI:2015-12-17 10:52:43.895
+ME:WeChatPayByCustomer
+US:16319
+GU:9d0a3b82-370b-4f2b-b444-bd99665babed
+
+
+2015-12-18 10:39:57[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 10:39:57
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"OrderID":[39071],"Remark":"","CouponAmount":0,"CustomerID":16339,"SlaveID":[],"TotalAmount":0.01,"PointAmount":0,"UserCode":"130335629837772906"}
+TargetSite:System.String ScanPayByUserCode(System.String, System.String, Int32, System.String, System.String, System.String, System.String)
+Data:
+StackTrace:   在 HS.Framework.Common.WeChat.WeChatPay.ScanPayByUserCode(String UserCode, String TradeNO, Int32 CompanyID, String body, String detail, String ip, String total_fee)
+   在 WebAPI.Controllers.API.PaymentController.WeChatPayByCustomer(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\PaymentController.cs:行号 899
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Connection:keep-alive, keep-alive
+Content-Length:147
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:3C870C1BDB69B654B66890C240B749BA
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.3.1.1 CFNetwork/672.1.14 Darwin/14.0.0
+GU:3518791c-d2e4-439f-be8b-a902151d3ee2
+BR:105
+DT:1
+CO:66
+CT:1
+TI:2015-12-18 10:34:28.037
+ME:WeChatPayByCustomer
+US:16318
+AV:3.3.1
+
+
+2015-12-18 10:43:34[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 10:43:34
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"OrderID":[39071],"Remark":"","CouponAmount":0,"CustomerID":16339,"SlaveID":[],"TotalAmount":0.01,"PointAmount":0,"UserCode":"130335629837772906"}
+TargetSite:System.String ScanPayByUserCode(System.String, System.String, Int32, System.String, System.String, System.String, System.String)
+Data:
+StackTrace:   在 HS.Framework.Common.WeChat.WeChatPay.ScanPayByUserCode(String UserCode, String TradeNO, Int32 CompanyID, String body, String detail, String ip, String total_fee)
+   在 WebAPI.Controllers.API.PaymentController.WeChatPayByCustomer(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\PaymentController.cs:行号 899
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Connection:keep-alive, keep-alive
+Content-Length:147
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:3C870C1BDB69B654B66890C240B749BA
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.3.1.1 CFNetwork/672.1.14 Darwin/14.0.0
+GU:3518791c-d2e4-439f-be8b-a902151d3ee2
+BR:105
+DT:1
+CO:66
+CT:1
+TI:2015-12-18 10:34:28.037
+ME:WeChatPayByCustomer
+US:16318
+AV:3.3.1
+
+
+2015-12-18 10:44:49[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 10:44:49
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"OrderID":[39071],"Remark":"","CouponAmount":0,"CustomerID":16339,"SlaveID":[],"TotalAmount":0.01,"PointAmount":0,"UserCode":"130335629837772906"}
+TargetSite:System.String ScanPayByUserCode(System.String, System.String, Int32, System.String, System.String, System.String, System.String)
+Data:
+StackTrace:   在 HS.Framework.Common.WeChat.WeChatPay.ScanPayByUserCode(String UserCode, String TradeNO, Int32 CompanyID, String body, String detail, String ip, String total_fee)
+   在 WebAPI.Controllers.API.PaymentController.WeChatPayByCustomer(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\PaymentController.cs:行号 899
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Connection:keep-alive, keep-alive
+Content-Length:147
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:3C870C1BDB69B654B66890C240B749BA
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.3.1.1 CFNetwork/672.1.14 Darwin/14.0.0
+GU:3518791c-d2e4-439f-be8b-a902151d3ee2
+BR:105
+DT:1
+CO:66
+CT:1
+TI:2015-12-18 10:34:28.037
+ME:WeChatPayByCustomer
+US:16318
+AV:3.3.1
+
+
+2015-12-18 10:47:49[21] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/12/18 10:47:49
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"OrderID":[39071],"Remark":"","CouponAmount":0,"CustomerID":16339,"SlaveID":[],"TotalAmount":0.01,"PointAmount":0,"UserCode":"130335629837772906"}
+TargetSite:System.String ScanPayByUserCode(System.String, System.String, Int32, System.String, System.String, System.String, System.String)
+Data:
+StackTrace:   在 HS.Framework.Common.WeChat.WeChatPay.ScanPayByUserCode(String UserCode, String TradeNO, Int32 CompanyID, String body, String detail, String ip, String total_fee)
+   在 WebAPI.Controllers.API.PaymentController.WeChatPayByCustomer(JObject obj) 位置 e:\SourceCode\WebAPI\Trunk\WebAPI\Controllers\API\PaymentController.cs:行号 899
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Payment/WeChatPayByCustomer
+Header=Connection:keep-alive, keep-alive
+Content-Length:147
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:3C870C1BDB69B654B66890C240B749BA
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.3.1.1 CFNetwork/672.1.14 Darwin/14.0.0
+GU:3518791c-d2e4-439f-be8b-a902151d3ee2
+BR:105
+DT:1
+CO:66
+CT:1
+TI:2015-12-18 10:34:28.037
+ME:WeChatPayByCustomer
+US:16318
+AV:3.3.1
+
+

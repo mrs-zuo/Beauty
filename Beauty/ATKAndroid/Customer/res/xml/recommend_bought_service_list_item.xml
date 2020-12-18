@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/service_thumbnail"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/commodity_image_null"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:padding="14dp"
+        android:layout_toRightOf="@id/service_thumbnail">
+        <TextView
+            android:id="@+id/service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="..."
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:id="@+id/service_unit_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/service_name"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal" />
+
+        <Button
+            android:id="@+id/appointment_service_button"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@id/service_unit_price"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shape_btn"
+            android:contentDescription="@string/search"
+            android:text="@string/left_menu_appointment"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+        <Button
+            android:id="@+id/service_detail_button"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@id/service_unit_price"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/appointment_service_button"
+            android:background="@drawable/shape_btn"
+            android:contentDescription="@string/search"
+            android:text="@string/detail"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+</RelativeLayout>

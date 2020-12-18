@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".CustomerStatisticsPieActivity" >
+
+    <RelativeLayout
+        android:id="@+id/customer_statistics_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/customer_statistics_bar_chart_title"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/customer_statistics_head_layout" >
+
+        <TextView
+            android:id="@+id/customer_statistics_bar_chart_title_text"
+            style="@style/activity_title_text_attrs" />
+        <ImageButton
+            android:id="@+id/customer_statistics_bar_chart_detail_list_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/customer_statistics_bar_chart_detail_list_icon"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+<LinearLayout 
+    	android:layout_below="@id/customer_statistics_bar_chart_title"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/customer_statistics_bar_chart_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/customer_statistics_bar_chart2_linearlayout"
+        android:layout_width="match_parent"
+       	android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+    </LinearLayout>
+  </LinearLayout>
+</RelativeLayout>

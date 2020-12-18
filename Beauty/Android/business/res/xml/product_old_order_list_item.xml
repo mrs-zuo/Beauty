@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/product_old_order_tablelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    >
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+        <TextView
+            android:id="@+id/product_old_subService_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size" />
+        <Button
+            android:id="@+id/prepare_order_reduce_quantity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dip"
+            android:layout_alignParentRight="true"
+            android:background="@xml/shape_btn_red"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:text="@string/product_old_order_delete_subservice" />
+    </RelativeLayout>
+
+    <!-- <View style="@style/activity_content_divide_view_attrs" /> -->
+
+    <RelativeLayout
+        android:id="@+id/product_old_order_responsible_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:layout_marginLeft="10dp" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size"
+            android:layout_marginLeft="20dp"
+            android:text="@string/service_responsible_person" 
+            />
+
+        <ImageView
+            android:id="@+id/product_old_order_is_designated_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:contentDescription="@string/search"
+            android:visibility="gone"
+            android:src="@drawable/is_designated_icon" />
+        
+        <ImageView
+            android:id="@+id/product_old_order_reaponsible_name_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:contentDescription="@string/search"
+            android:src="@drawable/service_and_product_sales_filter_btn" />
+
+        <TextView
+            android:id="@+id/product_old_order_reaponsible_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/product_old_order_reaponsible_name_icon"
+            android:maxWidth="200dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    
+    <LinearLayout
+        android:id="@+id/product_old_order_list_item_subService1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:paddingLeft="30dp"
+        android:orientation="vertical">
+    </LinearLayout>
+    
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+</TableLayout>

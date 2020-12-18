@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_content_table_attrs" >
+
+    <RelativeLayout
+        android:id="@+id/payment_record_detail_order_join"  
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/order_serial_number" />
+        
+        <ImageView
+            android:id="@+id/payment_record_detail_order_join_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:src="@drawable/join_in_arrowhead"/>
+        <TextView
+            android:id="@+id/payment_record_detail_order_serial_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/payment_record_detail_order_join_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+    <View style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/payment_record_detail_order_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/payment_record_detail_order_total_price" />
+        <TextView
+            android:id="@+id/payment_record_detail_order_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+</TableLayout>

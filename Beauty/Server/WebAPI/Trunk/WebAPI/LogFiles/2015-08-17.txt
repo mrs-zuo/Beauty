@@ -1,0 +1,118 @@
+2015-08-17 16:50:30[25] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/8/17 16:50:30
+Title=将 expression 转换为数据类型 int 时出现算术溢出错误。
+语句已终止。
+Message=Message:将 expression 转换为数据类型 int 时出现算术溢出错误。
+语句已终止。
+RequestParm:{"CustomerID":11910,"TGDetailList":[{"OrderType":1,"OrderObjectID":627,"GroupNo":1508170000000152,"OrderID":5315}]}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.Order_DAL.CompleteTreatGroup(CompleteTGOperation_Model model) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 5333
+   在 WebAPI.BLL.Order_BLL.CompleteTreatGroup(CompleteTGOperation_Model model) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 245
+   在 WebAPI.Controllers.API.OrderController.CompleteTreatGroup(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 1514
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.88
+UrlReferrer=
+RawUrl=/Order/CompleteTreatGroup
+Header=Connection:keep-alive, keep-alive
+Content-Length:115
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:76D1FF72D371A48249F0A5A7A6F66E15
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.0 CFNetwork/672.1.14 Darwin/14.0.0
+GU:6abf0f0c-b81b-446e-bfd6-ef75c901b02a
+BR:106
+DT:1
+CO:76
+CT:1
+TI:2015-08-17 16:49:24.350
+ME:CompleteTreatGroup
+US:11827
+AV:3.0
+
+
+2015-08-17 16:52:01[13] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/8/17 16:52:01
+Title=将 expression 转换为数据类型 int 时出现算术溢出错误。
+语句已终止。
+Message=Message:将 expression 转换为数据类型 int 时出现算术溢出错误。
+语句已终止。
+RequestParm:{"CustomerID":11910,"TGDetailList":[{"OrderType":1,"OrderObjectID":627,"GroupNo":1508170000000152,"OrderID":5315}]}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.Order_DAL.CompleteTreatGroup(CompleteTGOperation_Model model) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 5333
+   在 WebAPI.BLL.Order_BLL.CompleteTreatGroup(CompleteTGOperation_Model model) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 245
+   在 WebAPI.Controllers.API.OrderController.CompleteTreatGroup(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 1514
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.88
+UrlReferrer=
+RawUrl=/Order/CompleteTreatGroup
+Header=Connection:keep-alive, keep-alive
+Content-Length:115
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:76D1FF72D371A48249F0A5A7A6F66E15
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.0 CFNetwork/672.1.14 Darwin/14.0.0
+GU:6abf0f0c-b81b-446e-bfd6-ef75c901b02a
+BR:106
+DT:1
+CO:76
+CT:1
+TI:2015-08-17 16:49:24.350
+ME:CompleteTreatGroup
+US:11827
+AV:3.0
+
+

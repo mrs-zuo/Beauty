@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.GlamourPromise.Beauty.Business"
+    android:versionCode="6"
+    android:versionName="4.6.017">
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    <!-- JPUSH -->
+    <permission
+        android:name="com.GlamourPromise.Beauty.Business.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="com.GlamourPromise.Beauty.Business.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <application
+        android:name="com.GlamourPromise.Beauty.application.UserInfoApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="stateHidden" >
+      <provider
+          android:name="android.support.v4.content.FileProvider"
+          android:authorities="com.GlamourPromise.Beauty.Business.fileprovider"
+          android:exported="false"
+          android:grantUriPermissions="true" >
+       <meta-data
+           android:name="android.support.FILE_PROVIDER_PATHS"
+           android:resource="@xml/file_paths" />
+      </provider>
+       <meta-data  
+        android:name="com.baidu.lbsapi.API_KEY"  
+        android:value="gh0w9DxHyGeyPiwgKbuqwUyU"/>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.SplashActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" 
+            android:theme="@android:style/Theme.Holo.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.achartengine.GraphicalActivity" />
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.HomePageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.CompanySelectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan|stateHidden">
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.RemindListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddNewCustomerActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerBasicInfoActivity"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerRecordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditCustomerBasicActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditCustomerDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddCustomerRecordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditCustomerRecordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddNewCustomerVocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditCustomerVocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ServiceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CommodityCategoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OpportunityListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CommodityListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CommodityDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OpportunityDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OpportunityDetailMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OpportunityHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditOpportunityProgressActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditProgressHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ChoosePersonActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentServiceDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentGroupDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentTreatmentDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ServiceOrderContactDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditServiceOrderContactDetailMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditTreatmentTreatmentDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EMarketingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.SendNewEmarketingMessageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.SendMarketingTemplateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddMessageTemplateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditMessageTemplateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.FlyMessageListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.FlyMessageDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.SettingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.SettingPersonalMessageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AboutUsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditPersonalMessageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditPersonalPasswordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CropImageViewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerEcardActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EcardHistoryListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AllEcardHistoryListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddNewCustomerEcardActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditEcardBalanceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EditEcardTypeOtherBalanceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.DecodeQRCodeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ChooseServicePeopleActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ReportMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ReportByDateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ReportListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ReportDetailListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ServiceListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.FavoriteListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ServiceDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.PrepareOrderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.ProductAndOldOrderListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerViewOrderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerUnpaidOrderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentReviewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.PaymentActionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.MemorySpaceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--<activity
+            android:name="com.GlamourPromise.Beauty.Business.EcardHistoryOrderListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>-->
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EcardMoneyOut"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EcardTypeOtherMoneyOut"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ReportTotalActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.Company"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.NoticeListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AccountDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AccountListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.NoticeDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppDownloadActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.NotepadListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddNoteActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.LabelListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddLabelActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.PaymentRecordListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.PaymentRecordDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.RechargeDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderPaymentDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EcardDiscountDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.UnpaidCustomerListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerAdvancedConditionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--订单的高级筛选-->
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderAdvancedSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderSearchNewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerEcardBalanceChangeAnalyticsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ServiceAndProductSalesAnalyticsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OpportunityAdvancedSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AddOpportunityConfirmActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerRecordTemplateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ChooseCustomerRecordTemplateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerEcardListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.EcardHistoryDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerServicingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.UnfishTGListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.UnFinishTGOrderAdvancedSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ChoosePersonLocalActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchTotalReportActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentTaskListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentCreateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.VisitTaskSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentCusOldOrderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--<activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentTaskSearchNewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>-->
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentSearchNewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderListTabActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TodayServiceListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentTaskDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentGroupDetailTabActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentGroupReviewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.PaymentActionThirdPartActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.PaymentActionThirdPartModeActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.PaymentActionThirdPartResultActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderDetailThirdPartPayListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.ThirdPartPayHelpActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderRefundActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerStatisticsMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerStatisticsPieActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerStatisticsListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerStatisticsBarChartActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerStatisticsBarChartDetailListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.OrderSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TaskListTabActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.VisitTaskListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AppointmentTaskSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TreatmentGroupTreatmentDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerServicingPhotoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerBenefitsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerBenefitDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.TodayServiceSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--转卡界面  将客户老卡转到新卡-->
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AssignToNewCustomerEcardActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--考勤界面-->
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AccountAttendanceActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.AccountAttendanceCodeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--电子签名界面-->
+        <activity
+            android:name="com.GlamourPromise.Beauty.view.sign.HandwritingActivity"
+            android:screenOrientation="landscape">
+         </activity>
+         <!--门店数据统计分析-->
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchStatisticsMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchBusinessConditionsBarChartActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchBusinessConditionsStatisticsBarChartDetailListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchEmployeeBusinessMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchEmployeeBusinessStatisticsPieActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchEmployeeBusinessListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchProductStatisticsMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchProductStatisticsPieActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchProductStatisticsListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchEmployeeBusinessDetailBarChartActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.MyReportMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.GlamourPromise.Beauty.Business.MyReportPercentageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.BranchJournalReportActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.GlamourPromise.Beauty.Business" />
+            </intent-filter>
+        </activity>
+        
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true" >
+            <intent-filter android:priority="1000" >
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+
+                <category android:name="com.GlamourPromise.Beauty.Business" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+        <receiver
+            android:name="com.GlamourPromise.Beauty.Jpush.JpushMessageReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <category android:name="com.GlamourPromise.Beauty.Business" />
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+         <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="4cb9cdbffae95626ad18427b" />
+    </application>
+</manifest>

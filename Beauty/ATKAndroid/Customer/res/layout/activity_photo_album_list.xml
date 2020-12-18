@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout
+        style="@style/activity_title_layout_attrs"
+        android:background="#f4f4f4"
+        android:padding="3dp">
+        <TextView
+            android:id="@+id/photo_album_year_title"
+            style="@style/activity_title_text_attrs"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/photo_album_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/search"
+            android:src="@drawable/filter_button"
+            android:layout_marginRight="5dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/photo_album_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/common_divider"
+            android:orientation="vertical"
+            android:showDividers="beginning|middle"/>
+    </ScrollView>
+
+</LinearLayout>

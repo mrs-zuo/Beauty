@@ -1,0 +1,175 @@
+﻿@{
+    List<Model.View_Model.CategoryList_Model> list = Model;
+
+    int type = ViewBag.Type;
+    int categoryID = ViewBag.CategoryID;
+
+    List<Model.View_Model.CategoryList_Model> catelist = list;
+    List<int> IDList = new List<int>();
+    Queue<int> queue = new Queue<int>();
+
+
+    if (categoryID > 0)
+    {
+        queue.Enqueue(categoryID);
+
+        while (queue.Count > 0)
+        {
+            int parentId = queue.Dequeue();
+            IDList.Add(parentId);
+
+            (from p in catelist
+             where p.ParentID == parentId
+             select p.CategoryID).ToList().ForEach(c => queue.Enqueue(c));
+        }
+        catelist = catelist.Where(x => IDList.Contains(x.CategoryID)).ToList();
+    }
+
+    bool isBranch = ViewBag.IsBranch;
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", type == 1 ? 9 : 7)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>@(type == 0 ? "服务分类" : "商品分类")</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>@(type == 0 ? "服务分类" : "商品分类")</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-group navbar-form">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择服务:</div>
+                    <select class="select-control" id="selCat" onchange="selectCategoryList()">
+                        @{
+                            if (list != null && list.Count > 0)
+                            {
+                                for (int i = 0; i < list.Count; i++)
+                                {
+                                    if(list[i].CategoryID == 0){
+                                        continue;
+                                    }
+                            <option value="@(list[i].CategoryID)" @((categoryID > -1 && categoryID == list[i].CategoryID) ? "selected='selected'" : "") >@(list[i].CategoryName)(@(list[i].ProductCount))</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+                @{
+                    if (!isBranch)
+                    {
+                    <a class="btn btn-default" onclick="editCategory(0,@(type))"><i class="fa fa-plus-square"></i>添加@(type == 0 ? "服务分类" : "商品分类")</a>
+                    }
+                }
+            </div>
+            <div class="widget-body no-padding">
+                <table id="treeTable1" class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-8">
+                        <col class="col-xs-2">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <span class="checkbtn">
+                                    <a class="checka" title="全部展开" href="#" onclick="jQuery('#example-advanced').treetable('expandAll');
+									$('.checka').hide();$('.uncheck').show(); return false">&nbsp;</a>
+                                    <a class="uncheck" title="全部收缩" href="#" onclick="jQuery('#example-advanced').treetable('collapseAll');
+									$('.uncheck').hide();$('.checka').show(); return false"
+                                        style="display: none">&nbsp;</a>
+                                </span>
+                                分类名称
+                            </th>
+                            <th>分类编号</th>
+                            <th>@(isBranch ? "" : "操作")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (catelist != null && catelist.Count > 0)
+                            {
+                                foreach (Model.View_Model.CategoryList_Model item in catelist)
+                                {
+                                    if (item.CategoryID == 0 || item.CategoryID == -1)
+                                    {
+                                        continue;
+                                    }
+
+                                    string pId = "";
+                                    if (item.ParentID > 0)
+                                    {
+                                        pId = " pId=" + item.ParentID;
+                                    }
+                            <tr id="@(item.CategoryID)" @(pId)>
+                                <td>
+                                    <label class="btn-group no-pm">
+                                        <span class="text file">@(item.CategoryNameForEdit)(@(item.ProductCount))</span>
+                                    </label>
+                                </td>
+                                <td>@(item.CategoryID)</td>
+
+                                <td>@{
+                                    if (!isBranch)
+                                    {<a class="btn btn-default btn-sm" onclick="editCategory(@(item.CategoryID),@(type))" >
+                                        <i class="fa fa-edit"></i>编辑</a>
+                                    <a class="btn btn-default btn-sm" onclick="delCategory(@(item.CategoryID))"><i class="fa fa-trash-o"></i>删除</a>
+                                    }
+                                }
+
+                                </td>
+
+                            </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <input type="hidden" value="@(type)" id="hidType" />
+        <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/assets/js/fuelux/treeview/jquery.treetable.js"></script>
+<script src="~/Script/Category.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var option = {
+            theme: 'vsStyle',
+            expandLevel: 9,
+        };
+        $('#treeTable1').treeTable(option);
+    });
+</script>

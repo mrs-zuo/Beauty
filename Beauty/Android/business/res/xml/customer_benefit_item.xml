@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_content_table_relativelayout_attrs"
+    android:padding="3dip">
+
+    <TextView
+        android:id="@+id/benefit_name"
+        style="@style/relative_layout_left_child_attrs"
+        android:textColor="@color/blue" />
+	<TextView
+        android:id="@+id/benefit_prvalue2"
+        style="@style/relative_layout_right_child_attrs"
+        android:textColor="@color/red" 
+        android:layout_marginRight="2dip"/>
+</RelativeLayout>

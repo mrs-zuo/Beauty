@@ -1,0 +1,172 @@
+2015-05-27 18:10:18[10] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/27 18:10:18
+Title=对象名 'TBL_PAPER' 无效。
+Message=Message:对象名 'TBL_PAPER' 无效。
+RequestParm:
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Paper_DAL.getPaperListForWeb(Int32 companyId) 位置 e:\SourceCode\WebAPI\Trunk\VSS\DAL\Paper_DAL.cs:行号 47
+   在 WebAPI.Controllers.Manager.Paper_MController.GetPaperList() 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Controllers\Manager\Paper_MController.cs:行号 30
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.71
+UrlReferrer=
+RawUrl=/Paper_M/GetPaperList
+Header=Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:E5C7D4A6F670AA2D13E00B4DE1BB4E31
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETPAPERLIST
+TI:2015/5/27 18:10:17
+GU:f955a60c-cecc-483e-b5e2-d8c9ea2b14cf
+
+
+2015-05-27 18:14:17[11] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/27 18:14:17
+Title=对象名 'TBL_PAPER' 无效。
+Message=Message:对象名 'TBL_PAPER' 无效。
+RequestParm:
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Paper_DAL.getPaperListForWeb(Int32 companyId) 位置 e:\SourceCode\WebAPI\Trunk\VSS\DAL\Paper_DAL.cs:行号 46
+   在 WebAPI.BLL.Paper_BLL.getPaperListForWeb(Int32 companyId) 位置 e:\SourceCode\WebAPI\Trunk\VSS\BLL\Paper_BLL.cs:行号 68
+   在 WebAPI.Controllers.Manager.Paper_MController.GetPaperList() 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Controllers\Manager\Paper_MController.cs:行号 31
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.71
+UrlReferrer=
+RawUrl=/Paper_M/GetPaperList
+Header=Connection:Keep-Alive
+Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:E5C7D4A6F670AA2D13E00B4DE1BB4E31
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETPAPERLIST
+TI:2015/5/27 18:14:14
+GU:f955a60c-cecc-483e-b5e2-d8c9ea2b14cf
+
+
+2015-05-27 18:18:03[9] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/5/27 18:18:03
+Title=对象名 'TBL_PAPER' 无效。
+Message=Message:对象名 'TBL_PAPER' 无效。
+RequestParm:
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReader(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal()
+   在 BLToolkit.Data.DbManager.ExecuteListInternal[T](IList`1 list, Object[] parameters)
+   在 BLToolkit.Data.DbManager.ExecuteList[T]()
+   在 WebAPI.DAL.Paper_DAL.getPaperListForWeb(Int32 companyId) 位置 e:\SourceCode\WebAPI\Trunk\VSS\DAL\Paper_DAL.cs:行号 46
+   在 WebAPI.BLL.Paper_BLL.getPaperListForWeb(Int32 companyId) 位置 e:\SourceCode\WebAPI\Trunk\VSS\BLL\Paper_BLL.cs:行号 68
+   在 WebAPI.Controllers.Manager.Paper_MController.GetPaperList() 位置 e:\SourceCode\WebAPI\Trunk\VSS\WebAPI\Controllers\Manager\Paper_MController.cs:行号 31
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.71
+UrlReferrer=
+RawUrl=/Paper_M/GetPaperList
+Header=Connection:Keep-Alive
+Content-Length:0
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:E5C7D4A6F670AA2D13E00B4DE1BB4E31
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:111
+BR:0
+US:1303
+CT:3
+DT:3
+AV:1.0
+ME:GETPAPERLIST
+TI:2015/5/27 18:18:03
+GU:f955a60c-cecc-483e-b5e2-d8c9ea2b14cf
+
+

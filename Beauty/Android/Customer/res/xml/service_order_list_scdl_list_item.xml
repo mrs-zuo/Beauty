@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <View
+            style="@style/divide_view" >
+        </View>
+        <RelativeLayout
+            android:id="@+id/service_order_list_scdl_responsible_persone_name_layout"
+           	style="@style/relative_layout_has_child_attrs" >
+            <TextView
+                android:id="@+id/service_order_list_scdl_responsible_person_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/responsible_person"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_normal" />
+            <ImageView
+                android:id="@+id/service_order_list_scdl__tg_detail_arrowhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/join_in_arrowhead_gray" />
+            <TextView
+                android:id="@+id/service_order_list_scdl_scdl_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/service_order_list_scdl__tg_detail_arrowhead"
+                android:textSize="@dimen/text_size_normal" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

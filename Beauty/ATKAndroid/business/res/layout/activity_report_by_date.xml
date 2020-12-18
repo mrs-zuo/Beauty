@@ -1,0 +1,1921 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.ReportByDateActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout
+        android:id="@+id/report_by_date_title_relativelayout"
+        style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/report_by_date_title_text"
+            style="@style/activity_title_text_attrs" />
+
+        <TextView
+            android:id="@+id/report_filter_tag_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:text="@string/filter_tag_text"
+            android:textColor="@color/title_font"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filter_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:paddingBottom="10dp"
+        android:background="#F8F8F8"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/filter_by_period_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/filter_by_period"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/filter_period_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filter_by_period_title"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:id="@+id/filter_by_day"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_day"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size"
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_month"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_month"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_season"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_season"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_year"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_year"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_other"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_other"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/filter_period_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filter_period_linearlayout"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:visibility="gone" >
+            <TextView
+                android:id="@+id/report_by_other_end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:background="@xml/edit_text_shape_corner_round"
+                android:padding="5dip"/>
+
+            <TextView
+                android:id="@+id/report_by_other_date_divide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:layout_toLeftOf="@id/report_by_other_end_date"
+                android:text="@string/report_by_other_date_divide"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/report_by_other_start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:layout_toLeftOf="@id/report_by_other_date_divide"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size"
+                android:background="@xml/edit_text_shape_corner_round"
+                android:padding="5dip"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/activity_content_divide_view_attrs"
+            android:layout_below="@id/filter_period_relativelayout"
+            android:background="#E9E9E9"/>
+        <RelativeLayout
+            android:id="@+id/filter_by_category_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filter_period_relativelayout"
+            android:layout_margin="10dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/filter_by_category"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/filter_category_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filter_by_category_title"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:id="@+id/filter_by_service_and_commodity"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_service_and_commodity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_ecard"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_ecard"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+
+            <TextView
+                android:id="@+id/filter_by_customer"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/filter_by_customer"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" 
+                android:padding="6dp"/>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/filter_category_item_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filter_category_linearlayout"
+            android:layout_margin="10dp"
+            android:visibility="gone" >
+            <LinearLayout
+                android:id="@+id/filter_category_item_linearlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </HorizontalScrollView>
+        <Button 
+            android:id="@+id/report_query_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:layout_below="@id/filter_category_item_scroll_view"
+            android:layout_alignWithParentIfMissing="true"
+            android:text="@string/report_query_btn_text"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/title_font"
+            android:background="@color/white"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/report_by_date_scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/report_basic_service"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:id="@+id/service_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_sale_cash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_and_product_sale_cash"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_cash_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_sale_bank_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_and_product_sale_bank_card"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_bank_card_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_sale_weixin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_weixin"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_weixin_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_sale_ali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_ali"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_ali_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_sale_ecard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_and_product_sale_ecard"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_ecard_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_sale_point_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_point_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_sale_coupon_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_coupon_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+				<View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_loan_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_loan_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_from_third_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_from_third_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_other_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_sale_other_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/service_project_sale_total_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_project_sale_total_analytics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_project_sale_total_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/service_customer_consume_number_analytics_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/customer_consume_number_analytics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/customer_consume_number_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/report_basic_commodity"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:id="@+id/product_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/product_total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/product_sale_cash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_and_product_sale_cash"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_cash_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/product_sale_bank_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_and_product_sale_bank_card"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_bank_card_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/product_sale_weixin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_weixin"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_weixin_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/product_sale_ali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_ali"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_ali_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/product_sale_ecard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_and_product_sale_ecard"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_ecard_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_sale_point_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_point_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_sale_coupon_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_coupon_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_loan_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_loan_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                 <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_from_third_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_from_third_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_other_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/product_sale_other_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/product_sale_total_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/product_sale_total_analytics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/product_sale_total_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/product_customer_consume_number_analytics_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/customer_consume_number_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/report_basic_cash_and_bank_card"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:id="@+id/cash_and_bank_card_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/cash_and_bank_card_total_income"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/cash_and_bank_card_total_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/cash_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/cash_total_income"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/cash_total_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/bank_card_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/bank_card_total_income"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/bank_card_total_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/weixin_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_weixin"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/weixin_total_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                 <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/ali_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_ali"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ali_total_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+				<View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/loan_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_loan_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/loan_total_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/from_third_total_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/payment_from_third_title_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/from_third_total_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/cash_and_bank_card_total_income_tips"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/ecard_sales_table_layout"
+                style="@style/activity_content_table_attrs"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/ecard_sales_all_income"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_sales_all_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/ecard_sales_cash_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/cash_total_income"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_sales_cash_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/ecard_sales_bank_card_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/bank_card_total_income"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_sales_bank_card_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/ecard_sales_web_chat_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_weixin"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_sales_web_chat_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                 <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/ecard_sales_ali_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/sale_ali"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_sales_ali_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/ecard_balance_table_layout"
+                style="@style/activity_content_table_attrs"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:id="@+id/ecard_balance_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/ecard_balance_total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_balance_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/ecard_sales_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/ecard_sales_total"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_sales_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/ecard_consume_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/ecard_consume_total"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_consume_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/customer_ecard_balance_change_analytics_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/customer_ecard_balance_change_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/customer_ecard_balance_change_tips"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/report_basic_service_overall"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:id="@+id/service_overall_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_overall_total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_overall_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_designed_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_designed_total"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_designed_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_not_designed_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_not_designed_total"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_not_designed_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_tips"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/report_basic_service_treatment_times"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_designed_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_designed_total"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_designed_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_not_designed_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_not_designed_total"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_not_designed_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_designed_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_designed_rate"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_treatment_times_designed_rate_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+                
+                <RelativeLayout
+                    android:id="@+id/service_treatment_times_analytics_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/report_basic_service_treatment_analytics"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_analytics"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/service_treatment_times_and_money_analytics_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_and_money_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/service_treatment_customer_analytics_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/customer_consume_number_analytics"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_treatment_times_tips"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/report_basic_service_customer_total"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:id="@+id/service_customer_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_customer_total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_customer_total_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_customer_total_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_customer_total_female"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_customer_total_female_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:id="@+id/service_customer_total_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/service_customer_total_male"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/service_customer_total_male_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/report_basic_statistics_customer"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:background="@color/page_backcolor" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/statistics_customer"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/statistics_add_new_customer"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/add_new_customer_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/statistics_add_new_effective_customer"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/add_new_effective_customer_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/statistics_old_customer_consume_again"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/old_effect_cutomer_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/customer_tips"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

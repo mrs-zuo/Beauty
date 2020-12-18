@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".CustomerAppointmentRelatedActivity" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <include
+                android:id="@+id/customer_appointment_related_layout"
+                layout="@xml/customer_appointment_related_tab_layout" />
+
+            <TextView
+                android:id="@+id/all_service_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/add_cart_button_layout_height"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:layout_margin="1dip"
+                android:background="@android:color/white"
+                android:text="@string/all_service_btn"
+                android:textColor="@android:color/black" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/customer_appointment_related_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/all_service_btn"
+                android:layout_below="@+id/customer_appointment_related_layout" 
+                android:background="#eeeeee">
+            </android.support.v4.view.ViewPager>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,144 @@
+2015-07-28 09:55:00[5] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/28 9:55:00
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"TreatmentID": 12346}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\Vss\WebApi\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 19
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.90
+UrlReferrer=
+RawUrl=/order/GetTreatmentDetail
+Header=Content-Length:22
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+
+2015-07-28 09:56:28[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/28 9:56:28
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"TreatmentID": 12346}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\Vss\WebApi\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 19
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.90
+UrlReferrer=
+RawUrl=/order/GetTreatmentDetail
+Header=Content-Length:22
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+
+2015-07-28 10:00:43[18] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/28 10:00:43
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"TreatmentID": 12346}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\Vss\WebApi\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 19
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.90
+UrlReferrer=
+RawUrl=/order/GetTreatmentDetail
+Header=Content-Length:22
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+
+2015-07-28 10:04:43[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/28 10:04:43
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"TreatmentID": 12346}
+TargetSite:Void OnAuthorization(System.Web.Http.Controllers.HttpActionContext)
+Data:
+StackTrace:   在 WebAPI.Authorize.HTTPBasicAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext) 位置 e:\Vss\WebApi\WebAPI\Authorize\HTTPBasicAuthorizeAttribute.cs:行号 19
+   在 System.Web.Http.Filters.AuthorizationFilterAttribute.System.Web.Http.Filters.IAuthorizationFilter.ExecuteAuthorizationFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func`1 continuation)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.90
+UrlReferrer=
+RawUrl=/order/GetTreatmentDetail
+Header=Content-Length:22
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+

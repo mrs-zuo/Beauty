@@ -1,0 +1,223 @@
+﻿@{
+    List<Model.Table_Model.Service_Model> list = new List<Model.Table_Model.Service_Model>();
+    list = ViewBag.ServiceList;
+    List<Model.Table_Model.Branch_Model> listBranch = null;
+    if (ViewBag.BranchList != null && ViewBag.BranchList is List<Model.Table_Model.Branch_Model>)
+    {
+        listBranch = ViewBag.BranchList as List<Model.Table_Model.Branch_Model>;
+    }
+
+    List<Model.View_Model.CategoryList_Model> listCategoryList = null;
+    if (ViewBag.CategoryList != null && ViewBag.CategoryList is List<Model.View_Model.CategoryList_Model>)
+    {
+        listCategoryList = ViewBag.CategoryList as List<Model.View_Model.CategoryList_Model>;
+    }
+
+    int branchID = ViewBag.branchID;
+    int categoryID = ViewBag.categoryID;
+
+
+    Model.View_Model.CompanyListForAccountLogin_Model model = Newtonsoft.Json.JsonConvert.DeserializeObject<Model.View_Model.CompanyListForAccountLogin_Model>(HS.Framework.Common.Util.CookieUtil.GetCookieValue("CompanyInfo", true));
+    string branchName = ViewBag.BranchName;
+    bool isBranch = ViewBag.IsBranch;
+    
+}
+<div class="page-container" id="divContent">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 20)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li class="active">服务</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>服务</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form much-btn">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择门店:</div>
+                    <select class="select-control" id="selBra" onchange="selectCommodity()">
+                        @{
+                            if (!isBranch)
+                            {
+                            <option value="-1" @(branchID == -1 ? "selected='selected'" : "")>全部</option>
+                            <option value="0" @(branchID == 0 ? "selected='selected'" : "")>无所属</option>
+                                if (listBranch != null && listBranch.Count > 0)
+                                {
+                                    for (int i = 0; i < listBranch.Count; i++)
+                                    {
+                                        if (listBranch[i].ID == branchID)
+                                        {
+                            <option value="@(listBranch[i].ID)" selected="selected">@(listBranch[i].BranchName) </option>
+                                        }
+                                        else
+                                        {
+                            <option value="@(listBranch[i].ID)">@(listBranch[i].BranchName) </option>
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                            <option value="@(branchID)" selected="selected">@(branchName)</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择服务:</div>
+                    <select class="select-control" id="seCal" onchange="selectCommodity()">
+                        @{
+                            if (listCategoryList != null && listCategoryList.Count > 0)
+                            {
+                                for (int i = 0; i < listCategoryList.Count; i++)
+                                {
+                                    if (listCategoryList[i].CategoryID == categoryID)
+                                    {
+                            <option value="@(listCategoryList[i].CategoryID)" selected="selected">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                    }
+                                    else
+                                    {
+                            <option value="@(listCategoryList[i].CategoryID)">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                    }
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+                <a onclick="editService(0)" class="btn btn-default"><i class="fa fa-plus-square"></i>添加服务</a>
+                @{if (!isBranch)
+                  {
+                    <a href="/BatchImport/BatchImport?Type=0" class="btn btn-default"><i class="fa fa-plus-square"></i>批量添加服务</a>
+                    <a href="/Service/EditServiceSort?C=-1" class="btn btn-default"><i class="fa fa-sort-alpha-asc"></i>修改排序</a>
+                    <a href="#" class="btn btn-default" onclick="mulityDelete()"><i class="fa fa-trash-o"></i>删除选中项</a>
+                  }
+                }
+                <a href="#" class="btn btn-default" onclick="printProduct()"><i class="fa fa-qrcode"></i>二维码</a>
+                <a href="#" class="btn btn-default" onclick="downloadService()">
+                    <i class="fa fa-cloud-download"></i>下载
+                </a>
+            </div>
+            <div class="widget-body no-padding">
+
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-9">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label class="choose-num">
+                                    <input type="checkbox" onclick="AllServiceSelect(this)">
+                                    <span class="text"><strong>编号</strong></span>
+                                </label>
+                            </th>
+                            <th>服务信息</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbServiceList">
+                        @{
+                            if (list != null && list.Count > 0)
+                            {
+                                int index = 0;
+                                string[] strMarketingPolicy = new string[] { "无优惠", "按等级打折", "促销价" };
+                                foreach (Model.Table_Model.Service_Model item in list)
+                                {
+                                    index++;
+                            <tr>
+                                <td>
+                                    <label class="choose-num no-margin">
+                                        <input type="checkbox" name="chk_Com" code="@(item.ServiceCode)"/>
+                                        <span class="text">@(index)</span>
+                                    </label>
+                                </td>
+                                @*<td>@(index)</td>*@
+                                <td>
+                                    <div class="over-text">
+                                        <img name="ServiceHead"  data-original="@(string.IsNullOrEmpty(item.ThumbnailUrl) ? "/assets/img/pic70.png" : item.ThumbnailUrl)" alt="" class="pull-left img-thumbnail s-img">
+                                        @(item.ServiceName)<br>
+                                        定价:@(item.UnitPrice.ToString("0.00"))元<br>
+                                        营销策略:@(strMarketingPolicy[item.MarketingPolicy])<br>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a onclick="editService(@(item.ServiceCode))" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                    @{
+                                    if (!isBranch)
+                                    {
+                                        <a href="#" class="btn btn-default btn-sm" id="@(item.ServiceCode)" onclick="delService(this)"><i class="fa fa-trash-o"></i>删除</a>
+                                    }
+                                    }
+                                </td>
+                            </tr>
+                                }
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!--最大弹窗层-->
+            <div id="divWait" class="text-align-center top-layer hidden">
+                <i style="margin-top: 26%" class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i>
+            </div>
+            <!--/最大弹窗层-->
+        </div>
+    </div>
+</div>
+
+<div id="divPrint" style="display: none">
+    <!--startprint1-->
+    <div id="divWholeQRcode" class="row margin-top-10"></div>
+    <!--endprint1-->
+    <br>
+    <br>
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="button" value="打印" class="btn btn-primary" onclick="gotoPrint();" />
+        <input type="button" value="返回" class="btn btn-default" onclick="closeDiv();" />
+    </div>
+
+    <asp:hiddenfield id="hiddenQRcodeName" runat="server" />
+</div>
+<script src="/Script/Service.js"></script>
+<script src="/assets/js/jquery.lazyload.min.js"></script>
+<script>
+    $(function () {
+        $('img[name="ServiceHead"]').lazyload({
+            effect: "fadeIn"
+        });
+    });
+
+</script>

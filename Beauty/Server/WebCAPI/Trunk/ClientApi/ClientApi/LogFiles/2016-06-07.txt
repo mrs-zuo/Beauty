@@ -1,0 +1,225 @@
+2016-06-07 10:32:04[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2016/6/7 10:32:04
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":66,"CompanyName":null,"LoginMobile":"UBQpMyh9xe4PtolqsPzUEEUnswguiBgtXEgpIio/C9uw+yW120aF7qhzWqVyu6Mh1VvODLvjDIrLJpZHKNYqEZBchqtOcNL+23sXdj987pCZvocpkMYWpbw95sD9ySDO/BlJnsDqJZp33OXcnwa9LF2tUiR5AHTCA96tb6InV1o=","ClientType":0,"AppVersion":null,"Password":"FKBOmMRp2HknEmpqnuxypSdi/Ds22usb1i5pGNWDmiTKJ9v0tRsc1+yTKZ9ISwTCe611TkfM3jv57Km8qSYp854wwORfbW886fbdLJ0nXXpKH5JFoUIYz4Z8eRk7QQhdStTdL4LDMXvaTFIN3FKnBQ58kZTVdm9GtaRBixz4gbc=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":"o4voAwdefN64uFk0JxDqgOnz8NXc","WXUnionID":"","WeChatUserInfoPrama":"{\"subscribe\":1,\"openid\":\"o4voAwdefN64uFk0JxDqgOnz8NXc\",\"nickname\":\"林林\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"杨浦\",\"province\":\"上海\",\"country\":\"中国\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Ca5LNnC2EvamQicWLp1yFuia1icBfNsQRDJB0hg91ibsn0xBX62Wtn3ia4EJWtVKiah1vV0Sk3TBzr4fzwGOo85xoLh35tuRnVq6iaf\\/0\",\"subscribe_time\":1464684967,\"unionid\":\"oBpNrwbmmST5XklYn_zC78twvRxo\",\"remark\":\"\",\"groupid\":0,\"tagid_list\":[]}","IsNormalLogin":false}
+TargetSite:System.Net.Http.HttpResponseMessage BindWeChatOpenID(Newtonsoft.Json.Linq.JObject)
+Data:
+StackTrace:   在 ClientApi.Controllers.API.LoginController.BindWeChatOpenID(JObject obj) 位置 e:\SourceCode\WebCAPI\Trunk\ClientApi\ClientApi\Controllers\API\LoginController.cs:行号 315
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ClientAPI
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login/BindWeChatOpenID
+Header=Content-Length:1304
+Content-Type:application/json
+Authorization:DBB746DA8AA0D5CC82F3A0D3775C3B09
+Host:www.clientapi.com
+CO:66
+BR:0
+US:0
+CT:4
+DT:4
+AV:2.3.3
+ME:GETORDERLIST
+TI:2015-09-09
+GU:ADSJKLWEY23789012JLKADNAFDBJKQWFY8
+
+
+2016-06-07 10:33:14[13] ERROR index (null) - 
+AppName=WebApi
+LogTime=2016/6/7 10:33:14
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":66,"CompanyName":null,"LoginMobile":"UBQpMyh9xe4PtolqsPzUEEUnswguiBgtXEgpIio/C9uw+yW120aF7qhzWqVyu6Mh1VvODLvjDIrLJpZHKNYqEZBchqtOcNL+23sXdj987pCZvocpkMYWpbw95sD9ySDO/BlJnsDqJZp33OXcnwa9LF2tUiR5AHTCA96tb6InV1o=","ClientType":0,"AppVersion":null,"Password":"FKBOmMRp2HknEmpqnuxypSdi/Ds22usb1i5pGNWDmiTKJ9v0tRsc1+yTKZ9ISwTCe611TkfM3jv57Km8qSYp854wwORfbW886fbdLJ0nXXpKH5JFoUIYz4Z8eRk7QQhdStTdL4LDMXvaTFIN3FKnBQ58kZTVdm9GtaRBixz4gbc=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":"o4voAwdefN64uFk0JxDqgOnz8NXc","WXUnionID":"","WeChatUserInfoPrama":"{\"subscribe\":1,\"openid\":\"o4voAwdefN64uFk0JxDqgOnz8NXc\",\"nickname\":\"林林\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"杨浦\",\"province\":\"上海\",\"country\":\"中国\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Ca5LNnC2EvamQicWLp1yFuia1icBfNsQRDJB0hg91ibsn0xBX62Wtn3ia4EJWtVKiah1vV0Sk3TBzr4fzwGOo85xoLh35tuRnVq6iaf\\/0\",\"subscribe_time\":1464684967,\"unionid\":\"oBpNrwbmmST5XklYn_zC78twvRxo\",\"remark\":\"\",\"groupid\":0,\"tagid_list\":[]}","IsNormalLogin":false}
+TargetSite:System.Net.Http.HttpResponseMessage BindWeChatOpenID(Newtonsoft.Json.Linq.JObject)
+Data:
+StackTrace:   在 ClientApi.Controllers.API.LoginController.BindWeChatOpenID(JObject obj) 位置 e:\SourceCode\WebCAPI\Trunk\ClientApi\ClientApi\Controllers\API\LoginController.cs:行号 315
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ClientAPI
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login/BindWeChatOpenID
+Header=Content-Length:1304
+Content-Type:application/json
+Authorization:DBB746DA8AA0D5CC82F3A0D3775C3B09
+Host:www.clientapi.com
+CO:66
+BR:0
+US:0
+CT:4
+DT:4
+AV:2.3.3
+ME:GETORDERLIST
+TI:2015-09-09
+GU:ADSJKLWEY23789012JLKADNAFDBJKQWFY8
+
+
+2016-06-07 10:34:24[12] ERROR index (null) - 
+AppName=WebApi
+LogTime=2016/6/7 10:34:24
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":66,"CompanyName":null,"LoginMobile":"UBQpMyh9xe4PtolqsPzUEEUnswguiBgtXEgpIio/C9uw+yW120aF7qhzWqVyu6Mh1VvODLvjDIrLJpZHKNYqEZBchqtOcNL+23sXdj987pCZvocpkMYWpbw95sD9ySDO/BlJnsDqJZp33OXcnwa9LF2tUiR5AHTCA96tb6InV1o=","ClientType":0,"AppVersion":null,"Password":"FKBOmMRp2HknEmpqnuxypSdi/Ds22usb1i5pGNWDmiTKJ9v0tRsc1+yTKZ9ISwTCe611TkfM3jv57Km8qSYp854wwORfbW886fbdLJ0nXXpKH5JFoUIYz4Z8eRk7QQhdStTdL4LDMXvaTFIN3FKnBQ58kZTVdm9GtaRBixz4gbc=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":"o4voAwdefN64uFk0JxDqgOnz8NXc","WXUnionID":"","WeChatUserInfoPrama":"{\"subscribe\":1,\"openid\":\"o4voAwdefN64uFk0JxDqgOnz8NXc\",\"nickname\":\"林林\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"杨浦\",\"province\":\"上海\",\"country\":\"中国\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Ca5LNnC2EvamQicWLp1yFuia1icBfNsQRDJB0hg91ibsn0xBX62Wtn3ia4EJWtVKiah1vV0Sk3TBzr4fzwGOo85xoLh35tuRnVq6iaf\\/0\",\"subscribe_time\":1464684967,\"unionid\":\"oBpNrwbmmST5XklYn_zC78twvRxo\",\"remark\":\"\",\"groupid\":0,\"tagid_list\":[]}","IsNormalLogin":false}
+TargetSite:System.Net.Http.HttpResponseMessage BindWeChatOpenID(Newtonsoft.Json.Linq.JObject)
+Data:
+StackTrace:   在 ClientApi.Controllers.API.LoginController.BindWeChatOpenID(JObject obj) 位置 e:\SourceCode\WebCAPI\Trunk\ClientApi\ClientApi\Controllers\API\LoginController.cs:行号 315
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ClientAPI
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login/BindWeChatOpenID
+Header=Content-Length:1304
+Content-Type:application/json
+Authorization:DBB746DA8AA0D5CC82F3A0D3775C3B09
+Host:www.clientapi.com
+CO:66
+BR:0
+US:0
+CT:4
+DT:4
+AV:2.3.3
+ME:GETORDERLIST
+TI:2015-09-09
+GU:ADSJKLWEY23789012JLKADNAFDBJKQWFY8
+
+
+2016-06-07 10:36:13[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2016/6/7 10:36:13
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":66,"CompanyName":null,"LoginMobile":"UBQpMyh9xe4PtolqsPzUEEUnswguiBgtXEgpIio/C9uw+yW120aF7qhzWqVyu6Mh1VvODLvjDIrLJpZHKNYqEZBchqtOcNL+23sXdj987pCZvocpkMYWpbw95sD9ySDO/BlJnsDqJZp33OXcnwa9LF2tUiR5AHTCA96tb6InV1o=","ClientType":0,"AppVersion":null,"Password":"FKBOmMRp2HknEmpqnuxypSdi/Ds22usb1i5pGNWDmiTKJ9v0tRsc1+yTKZ9ISwTCe611TkfM3jv57Km8qSYp854wwORfbW886fbdLJ0nXXpKH5JFoUIYz4Z8eRk7QQhdStTdL4LDMXvaTFIN3FKnBQ58kZTVdm9GtaRBixz4gbc=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":"o4voAwdefN64uFk0JxDqgOnz8NXc","WXUnionID":"","WeChatUserInfoPrama":"{\"subscribe\":1,\"openid\":\"o4voAwdefN64uFk0JxDqgOnz8NXc\",\"nickname\":\"林林\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"杨浦\",\"province\":\"上海\",\"country\":\"中国\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Ca5LNnC2EvamQicWLp1yFuia1icBfNsQRDJB0hg91ibsn0xBX62Wtn3ia4EJWtVKiah1vV0Sk3TBzr4fzwGOo85xoLh35tuRnVq6iaf\\/0\",\"subscribe_time\":1464684967,\"unionid\":\"oBpNrwbmmST5XklYn_zC78twvRxo\",\"remark\":\"\",\"groupid\":0,\"tagid_list\":[]}","IsNormalLogin":false}
+TargetSite:System.Net.Http.HttpResponseMessage BindWeChatOpenID(Newtonsoft.Json.Linq.JObject)
+Data:
+StackTrace:   在 ClientApi.Controllers.API.LoginController.BindWeChatOpenID(JObject obj) 位置 e:\SourceCode\WebCAPI\Trunk\ClientApi\ClientApi\Controllers\API\LoginController.cs:行号 315
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ClientAPI
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login/BindWeChatOpenID
+Header=Content-Length:1304
+Content-Type:application/json
+Authorization:DBB746DA8AA0D5CC82F3A0D3775C3B09
+Host:www.clientapi.com
+CO:66
+BR:0
+US:0
+CT:4
+DT:4
+AV:2.3.3
+ME:GETORDERLIST
+TI:2015-09-09
+GU:ADSJKLWEY23789012JLKADNAFDBJKQWFY8
+
+
+2016-06-07 10:38:51[20] ERROR index (null) - 
+AppName=WebApi
+LogTime=2016/6/7 10:38:51
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+RequestParm:{"UserID":0,"BranchID":0,"CompanyID":66,"CompanyName":null,"LoginMobile":"UBQpMyh9xe4PtolqsPzUEEUnswguiBgtXEgpIio/C9uw+yW120aF7qhzWqVyu6Mh1VvODLvjDIrLJpZHKNYqEZBchqtOcNL+23sXdj987pCZvocpkMYWpbw95sD9ySDO/BlJnsDqJZp33OXcnwa9LF2tUiR5AHTCA96tb6InV1o=","ClientType":0,"AppVersion":null,"Password":"FKBOmMRp2HknEmpqnuxypSdi/Ds22usb1i5pGNWDmiTKJ9v0tRsc1+yTKZ9ISwTCe611TkfM3jv57Km8qSYp854wwORfbW886fbdLJ0nXXpKH5JFoUIYz4Z8eRk7QQhdStTdL4LDMXvaTFIN3FKnBQ58kZTVdm9GtaRBixz4gbc=","LoginTimes":0,"LoginTime":null,"DeviceID":null,"DeviceType":0,"RoleType":0,"ImageWidth":0,"ImageHeight":0,"IPAddress":null,"UserType":0,"CustomerIDList":null,"CustomerIDs":null,"OSVersion":null,"GUID":null,"ChangeCompany":0,"DeviceModel":null,"ValidateCode":null,"WXOpenID":"o4voAwdefN64uFk0JxDqgOnz8NXc","WXUnionID":"","WeChatUserInfoPrama":"{\"subscribe\":1,\"openid\":\"o4voAwdefN64uFk0JxDqgOnz8NXc\",\"nickname\":\"林林\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"杨浦\",\"province\":\"上海\",\"country\":\"中国\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Ca5LNnC2EvamQicWLp1yFuia1icBfNsQRDJB0hg91ibsn0xBX62Wtn3ia4EJWtVKiah1vV0Sk3TBzr4fzwGOo85xoLh35tuRnVq6iaf\\/0\",\"subscribe_time\":1464684967,\"unionid\":\"oBpNrwbmmST5XklYn_zC78twvRxo\",\"remark\":\"\",\"groupid\":0,\"tagid_list\":[]}","IsNormalLogin":false}
+TargetSite:System.Net.Http.HttpResponseMessage BindWeChatOpenID(Newtonsoft.Json.Linq.JObject)
+Data:
+StackTrace:   在 ClientApi.Controllers.API.LoginController.BindWeChatOpenID(JObject obj) 位置 e:\SourceCode\WebCAPI\Trunk\ClientApi\ClientApi\Controllers\API\LoginController.cs:行号 315
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=ClientAPI
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Login/BindWeChatOpenID
+Header=Content-Length:1304
+Content-Type:application/json
+Authorization:DBB746DA8AA0D5CC82F3A0D3775C3B09
+Host:www.clientapi.com
+CO:66
+BR:0
+US:0
+CT:4
+DT:4
+AV:2.3.3
+ME:GETORDERLIST
+TI:2015-09-09
+GU:ADSJKLWEY23789012JLKADNAFDBJKQWFY8
+
+

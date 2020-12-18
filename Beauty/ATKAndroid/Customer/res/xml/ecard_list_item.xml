@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#F7F7F7" />
+
+    <RelativeLayout
+        android:id="@+id/ecard_relativelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ecard_background_white">
+        <TextView
+            android:id="@+id/customer_ecard_is_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dip"
+            android:background="#FE931E"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="@string/customer_ecard_is_default_label_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_headline"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            style="@style/relative_layout_has_child_attrs"
+            android:layout_gravity="center_vertical" >
+            <TextView
+                android:id="@+id/customer_ecard_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_headline" />
+            <TextView
+                android:id="@+id/customer_ecardno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/customer_ecard_name"
+                android:layout_marginTop="14dp"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_headline" />
+            <TextView
+                android:id="@+id/customer_ecard_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="70dp"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="@string/ellipsis"
+                android:textColor="#FE931E"
+                android:textSize="@dimen/text_size_headline" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

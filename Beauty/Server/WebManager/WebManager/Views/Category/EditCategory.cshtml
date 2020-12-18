@@ -1,0 +1,109 @@
+﻿@{
+    List<Model.View_Model.CategoryList_Model> list = Model;
+    ViewBag.Title = "EditCategory";
+    int type = ViewBag.Type;
+    Model.Table_Model.Category_Model model = ViewBag.CategoryDetail;
+    int categoryId = ViewBag.CategoryID;
+
+
+    string actionName = categoryId > 0 ? "编辑" : "添加";
+    string categoryType = type == 0 ? "服务分类" : "商品分类";
+
+    int selectCategoryId = HS.Framework.Common.Util.StringUtils.GetDbInt(HS.Framework.Common.Safe.QueryString.IntSafeQ("p").ToString(), -1);
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", type == 1 ? 9 : 7)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">  
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="index.html">首页</a>
+                </li>
+                <li><a href="/Category/GetCategoryList?type=@(type)&p=-1">@(categoryType)</a></li>
+                <li class="active">@(actionName + categoryType)</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>@(actionName + categoryType)</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="widget">
+                <div class="form-horizontal form-bordered widget-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">所属@(categoryType)</label>
+                        <div class="col-md-4">
+                            <select style="width: 100%;" id="selCat">
+                                @{
+                                    if (list != null && list.Count > 0)
+                                    {
+                                        for (int i = 0; i < list.Count; i++)
+                                        {
+                                            if (list[i].CategoryID == 0||list[i].CategoryID == -1)
+                                            {
+                                                list[i].CategoryNameForEdit = "无所属";
+                                            }
+                                            if(list[i].CategoryID == categoryId && categoryId!=0){
+                                                continue;
+                                            }
+                                        <option value="@(list[i].CategoryID)" @(((categoryId>0 && list[i].CategoryID ==model.ParentID) || (categoryId == 0 && list[i].CategoryID == selectCategoryId))?"selected='selected'":"") >
+                                            @(list[i].CategoryName)(@(list[i].ProductCount))</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	@(categoryType)名称
+                        <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-4">
+                            <input class="form-control" placeholder="输入分类名称" id="input_CategoryName" type="text" value="@(model != null ? model.CategoryName : "")">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type ="button" class="btn btn-primary" onclick="updateCategory()" value="确 定">
+                            <a href="javascript:history.go(-1);" class="btn btn-default"> 返 回 </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+        <input type="hidden" value="@(categoryId)" id="hidID" />
+        <input type="hidden" value="@(type)" id="hidType" />
+    </div>
+</div>
+<!-- /Page Content -->
+<script src="/Script/Category.js"></script>

@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "支付详情";
+    List<Model.View_Model.PaymentDetailByOrderID_Model> list = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    //else
+    //{
+    //    Response.Redirect("/Login/Login?err=1");
+    //}
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+@if (list != null && list.Count > 0)
+{
+    <div class="wrapper">
+        @foreach (Model.View_Model.PaymentDetailByOrderID_Model item in list)
+        {
+            <div class="whiteBkg width100 MB10">
+                <div class="width90 blockC">
+                    <ul class="width100 rowUl15">
+                        <li class="borderB clearfix">
+                            <div class="blackTex fl">支付编号</div>
+                            <div class="grayTex fr">@(item.PaymentCode)</div>
+                        </li>
+                        <li class="borderB clearfix">
+                            <div class="blackTex fl">支付时间</div>
+                            <div class="grayTex fr"><span>@(item.PaymentTime.ToString("yyyy-MM-dd HH:mm"))</span></div>
+                        </li>
+                        <li class="borderB clearfix">
+                            <div class="blackTex fl">支付门店</div>
+                            <div class="grayTex fr">@(item.BranchName)</div>
+                        </li>
+                        <li class="borderB clearfix">
+                            <div class="blackTex fl">操作人</div>
+                            <div class="grayTex fr">@(item.Operator)</div>
+                        </li>
+                        <li class="borderB clearfix">
+                            <div class="blackTex fl">支付总金额</div>
+                            <div class="grayTex fr">@(CurrencySymbol)@(item.TotalPrice.ToString("0.00"))</div>
+                        </li>
+                        @if (item.PaymentDetailList != null && item.PaymentDetailList.Count > 0)
+                        {
+                            foreach (Model.View_Model.PaymentDetailList_Model itemDetail in item.PaymentDetailList)
+                            {
+                            <li class="ML20 clearfix">
+                                <div class="blackTex fl">@(itemDetail.CardName)</div>
+                                @if (itemDetail.CardType == 1)
+                                {
+                                    <div class="grayTex fr">@(CurrencySymbol)@(itemDetail.PaymentAmount.ToString("0.00"))</div>
+                                }
+                                else if (itemDetail.CardType == 2)
+                                {
+                                    <div class="grayTex fr">@(itemDetail.PaymentAmount.ToString("0.00") + "抵" + CurrencySymbol + itemDetail.CardPaidAmount.ToString("0.00"))</div>
+                                }
+                                else if (itemDetail.CardType == 3)
+                                {
+                                    <div class="grayTex fr">@(CurrencySymbol + itemDetail.PaymentAmount.ToString("0.00") + "抵" + CurrencySymbol + itemDetail.CardPaidAmount.ToString("0.00"))</div>
+                                }
+
+                            </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+                        if (item.PaymentOrderList != null && item.PaymentOrderList.Count > 0)
+                        {
+            <div class="part width100 MB10">
+                <h4 class="PT5 PB5 blackTex blockC width90">合并支付订单号列表</h4>
+                <div class="whiteBkg width100 MT10 blockC">
+                    <div class="width90 blockC">
+                        <ul class="width100 rowUl">
+                            @foreach (Model.View_Model.PaymentOrderList_Model itemOrder in item.PaymentOrderList)
+                            {
+                                <li class="borderB">
+                                    <a href="/Order/OrderDetail?oId=@(itemOrder.OrderObjectID)">
+                                        <ol class="width100">
+                                            <li class="clearfix positionR">
+                                                <div class="clearfix">
+                                                    <div class="fl width30">
+                                                        <h4 class="blackTex font16">订单编号</h4>
+                                                    </div>
+                                                    <div class="grayTex fr width65">
+                                                        <div class="MR30 textR">
+                                                            <span class="block">@(itemOrder.OrderNumber)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="PT15 longTex95">@(itemOrder.ProductName)</div>
+                                                <div class="clearfix PT15 MR30">
+                                                    <div class="blackTex fl">订单金额</div>
+                                                    <div class="grayTex fr">@(CurrencySymbol)@(itemOrder.TotalSalePrice.ToString("0.00"))</div>
+                                                </div>
+                                                <span class="rightArrowRow">
+                                                    <img src="/pic/rightArrow.png" height="20"></span>
+                                            </li>
+                                        </ol>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                        }
+        }
+    </div>
+
+}

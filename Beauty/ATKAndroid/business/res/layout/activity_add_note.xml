@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:layout_alignParentLeft="true"
+            android:text="@string/notepad_add_title" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/add_content_layout"
+                style="@style/activity_content_table_attrs"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/notepad_add_content_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/notepad_add_content_prompt"
+                    android:textColor="@color/title_font"
+                    android:textSize="@dimen/text_size_18sp" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/notepad_add_content_prompt"
+                    android:background="#CCCCCC" />
+
+                <EditText
+                    android:id="@+id/content_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line"
+                    android:layout_marginTop="10dp"
+                    android:background="#00000000"
+                    android:gravity="left|top"
+                    android:hint="@string/notepad_add_content_edit_prompt"
+                    android:longClickable="false"
+                    android:maxLength="500"
+                    android:minLines="6"
+                    android:textSize="@dimen/text_size_18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/label_layout"
+                style="@style/activity_content_table_attrs"
+                android:layout_below="@id/add_content_layout"
+                android:padding="10dp" >
+
+                <RelativeLayout
+                    android:id="@+id/layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/notepad_add_label_prompt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/notepad_add_label_prompt"
+                        android:textColor="@color/title_font"
+                        android:textSize="@dimen/text_size_18sp" />
+
+                    <ImageView
+                        android:id="@+id/add_label_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/add_note_label" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/layout"
+                    android:background="#CCCCCC" />
+
+                <LinearLayout
+                    android:id="@+id/label_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line2"
+                    android:minHeight="30dp"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/confirm_button"
+                style="@style/submit_big_btn"
+                android:layout_below="@id/label_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/ok" />
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

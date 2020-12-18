@@ -1,0 +1,197 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.TreatmentGroupDetailActivity"
+    android:background="@color/title_backcolor">
+    <RelativeLayout
+       style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/treatment_group_detail"
+            />
+    </RelativeLayout>
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="60dip">
+    <LinearLayout
+        android:id="@+id/treatment_service_detail_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:id="@+id/treatment_service_detail_tablelayout"
+           	style="@style/activity_content_table_attrs" >
+           	<RelativeLayout
+                  style="@style/activity_content_table_relativelayout_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/treatment_group_code"
+                    />
+
+                <TextView
+                    android:id="@+id/treatment_group_code_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+            <View
+                style="@style/activity_content_divide_view_attrs" />
+            <RelativeLayout
+                  style="@style/activity_content_table_relativelayout_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/treatment_service_detail_branch_name"
+                    />
+
+                <TextView
+                    android:id="@+id/treatment_service_detail_branch_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+			<View
+                style="@style/activity_content_divide_view_attrs" />
+            <RelativeLayout
+                  style="@style/activity_content_table_relativelayout_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/treatment_service_detail_start_time"
+                    />
+
+                <TextView
+                    android:id="@+id/treatment_group_detail_start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+			<View
+                style="@style/activity_content_divide_view_attrs" />
+            <RelativeLayout
+                  style="@style/activity_content_table_relativelayout_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/treatment_service_detail_end_time"
+                    />
+
+                <TextView
+                    android:id="@+id/treatment_group_detail_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+            <View
+                style="@style/activity_content_divide_view_attrs" />
+
+            <RelativeLayout
+               		style="@style/activity_content_table_relativelayout_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/treatment_service_detail_status"/>
+
+                <TextView
+                    android:id="@+id/treatment_group_detail_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dip"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+        </TableLayout>
+		<TableLayout
+            android:id="@+id/treatment_service_detail_sign_image_tablelayout"
+            style="@style/activity_content_table_attrs" >
+
+            <RelativeLayout
+               style="@style/activity_content_table_relativelayout_attrs" >
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/treatment_group_sign_image_title" />
+            </RelativeLayout>
+
+            <View
+                style="@style/activity_content_divide_view_attrs"/>
+
+            <RelativeLayout
+               style="@style/activity_content_table_relativelayout_attrs" >
+                <ImageView
+                    android:id="@+id/treatment_group_sign_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/search"/>
+            </RelativeLayout>
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/treatment_service_detail_remark_tablelayout"
+            style="@style/activity_content_table_attrs" >
+
+            <RelativeLayout
+               style="@style/activity_content_table_relativelayout_attrs" >
+
+                <TextView
+                    android:id="@+id/treatment_service_detail_remark"
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:text="@string/treatment_group_detail_remark" />
+            </RelativeLayout>
+
+            <View
+                style="@style/activity_content_divide_view_attrs"/>
+
+            <RelativeLayout
+               style="@style/activity_content_table_relativelayout_attrs" >
+
+                <EditText
+                    android:id="@+id/treatment_group_detail_remark_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_centerVertical="true"
+                    android:minLines="3"
+                    android:textSize="@dimen/text_size" 
+                    android:maxLength="300"
+                    android:minWidth="100dip"
+                    android:background="@null"
+                    android:hint="@string/input_treatment_group_remark"/>
+            </RelativeLayout>
+        </TableLayout>
+        
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip">
+                <Button
+                    android:id="@+id/edit_treatment_group_detail_make_sure_btn"
+                    style="@style/submit_big_btn"
+                    android:text="@string/ok"
+                    android:visibility="gone"
+                 />
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

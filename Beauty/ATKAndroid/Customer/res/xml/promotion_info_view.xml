@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/branch_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:maxWidth="150dp"
+        android:singleLine="true"
+        android:text="促销门店"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/branch_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="@dimen/text_size_normal" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#f4f4f4" >
+    </View>
+
+    <TextView
+        android:id="@+id/time_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:text="促销时间"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_normal" />
+    <TextView
+        android:id="@+id/time_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:singleLine="true"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

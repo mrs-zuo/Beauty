@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.CommodityCategoryActivity"
+    android:background="@color/white">
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:id="@+id/commodity_category_title_text"
+            android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/commodity_category_list"
+        style="@style/activity_content_listview_attrs"
+        android:layout_marginTop="0dip"/>
+</LinearLayout>

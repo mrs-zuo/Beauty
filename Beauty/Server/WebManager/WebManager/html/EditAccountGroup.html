@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html>
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>账户分组</title>
+
+    <meta name="description" content="美丽约定-后台系统" />
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--跟上面meta可进行切换主要对手机进行可放大name="viewport" content="width=device-width, initial-scale=1.0"-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/img/favicon.png" rel="shortcut icon">
+
+    <!--Basic Styles-->
+    <link href="/assets/css/bs.min.css" rel="stylesheet" />
+    <link href="/assets/css/bs.css" rel="stylesheet" />
+    <link id="bs-rtl-link" href="" rel="stylesheet" />
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="/assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="/assets/css/skins/azure.min.css" rel="stylesheet" />
+
+    <!--皮肤脚本: 以上有加ID的LINK的是加载皮肤的样式,以下是皮肤的脚本-->
+    <script src="/assets/js/skins.min.js"></script>
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!--[if lte IE 9]>
+	<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，美丽约定-后台系统 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+	  或直载进入<a href="http://www.firefox.com.cn/" target="_blank">火狐官网</a>下载浏览器以获得更好的体验！</p>
+	<![endif]-->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="/Home/Index" class="navbar-brand">
+                        <small>
+                            <img src="/assets/img/logo.png" alt="汉弘科技信息科技(上海)有限公司-美丽约定" />
+                        </small>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="site-store" title="点击下拉可选择切换门店">
+                                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile">GJH-总店</span></h2>
+                                    </section>
+                                </a>
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="dropdown-footer">
+
+                                        <a href="/Login/changeBranch">
+                                            <i class="fa fa-exchange"></i>
+                                            切换门店
+                                        </a>
+
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="site-store" title="点击下拉可选择退出登陆">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile l-m-w">小郑</span></h2>
+                                    </section>
+                                </a>
+                                <!--登录区域下拉-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username"><a>小郑</a></li>
+                                    <!--头像区域-->
+                                    <!--/头像区域-->
+                                    <li class="dropdown-footer">
+                                        <a href="/Login/logOut">
+                                            <i class="fa fa-power-off"></i>
+                                            退出登录
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/登录区域下拉-->
+                            </li>
+                            <!-- /帐户区域 -->
+
+                            <!-- 设置 -->
+                        </ul>
+                        <div class="setting">
+                            <a id="btn-setting" title="Setting" href="#">
+                                <i class="icon glyphicon glyphicon-cog"></i>
+                            </a>
+                        </div>
+                        <div class="setting-container">
+                            <label>
+                                <input type="checkbox" id="checkbox_fixednavbar">
+                                <span class="text">固定头部导航条</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedsidebar">
+                                <span class="text">固定左侧栏</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedbreadcrumbs">
+                                <span class="text">固定面包屑</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedheader">
+                                <span class="text">固定头部</span>
+                            </label>
+                        </div>
+                        <!-- 设置 -->
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- 主要容器 -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- 侧边导航 -->
+
+            <div id="sidebar" class="page-sidebar sidebar-fixed">
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <!--首页-->
+                    <li class="">
+                        <a href="/Home/Index">
+                            <i class="fa fa-home home-size"></i>
+                            <span class="menu-text">首页</span>
+                        </a>
+                    </li>
+
+                    <!--商家信息-->
+                    <li class="">
+                        <a href="/Branch/GetBranchList">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text">商家信息</span>
+                        </a>
+                    </li>
+
+                    <!--新闻与公告-->
+                    <li class="">
+                        <a class="menu-dropdown" href="#">
+                            <i class="menu-icon fa fa-video-camera"></i>
+                            <span class="menu-text">新闻与公告</span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+
+                            <!--新闻-->
+                            <li class="">
+                                <a href="/News/GetNewsList">
+                                    <span class="menu-text">新闻</span>
+                                </a>
+                            </li>
+                            <!--公告-->
+                            <li class="">
+                                <a href="/News/GetNoticeList">
+                                    <span class="menu-text">公告</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="/Promotion/GetPromotionList">
+                            <i class="menu-icon fa fa-volume-up"></i>
+                            <span class="menu-text">促销信息</span>
+                        </a>
+                    </li>
+
+                    <!--服务信息-->
+                    <li class="">
+                        <a class="menu-dropdown" href="#">
+                            <i class="menu-icon fa fa-heart"></i>
+                            <span class="menu-text">服务信息</span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="/Category/GetCategoryList?Type=0&amp;p=-1">
+                                    <span class="menu-text">服务分类</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/Service/GetServiceList?b=-1&amp;c=-1">
+                                    <span class="menu-text">服务</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/Subservice/GetSubServiceList">
+                                    <span class="menu-text">子服务</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!--商品信息-->
+                    <li class="">
+                        <a class="menu-dropdown" href="#">
+                            <i class="menu-icon fa fa-cube"></i>
+                            <span class="menu-text">商品信息</span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="/Category/GetCategoryList?Type=1&amp;p=-1">
+                                    <span class="menu-text">商品分类</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/Commodity/GetCommodityList?b=-1&amp;c=-1">
+                                    <span class="menu-text">商品</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!--账户信息-->
+                    <li class="active open">
+                        <a class="menu-dropdown" href="#">
+                            <i class="menu-icon fa fa-users"></i>
+                            <span class="menu-text">账户信息</span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li class="">
+
+                                <a href="/Account/GetAccountList?BranchID=-1&amp;Available=-1">
+                                    <span class="menu-text">账户</span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="/html/AccountGroup.html">
+                                    <span class="menu-text">账户分组</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/Account/AccountHierarchy">
+                                    <span class="menu-text">账户层级</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Role/GetRoleList">
+                                    <span class="menu-text">角色权限</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="/RelationShip/EditRelationShip">
+                                    <span class="menu-text">账户顾客关系</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!--等级与折扣-->
+                    <li class="">
+                        <a class="menu-dropdown" href="#">
+                            <i class="menu-icon fa fa-tags"></i>
+                            <span class="menu-text">等级与折扣</span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <!--会员等级-->
+                            <li class="">
+                                <a href="/Level/GetLevelList">
+                                    <span class="menu-text">会员等级</span>
+                                </a>
+                            </li>
+                            <!--折扣分类-->
+                            <li class="">
+                                <a href="/Discount/GetDiscountList">
+                                    <span class="menu-text">折扣分类</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!--专业信息-->
+                    <li class="">
+                        <a class="menu-dropdown" href="/Question/GetQuestionList">
+                            <i class="menu-icon fa fa-envelope"></i>
+                            <span class="menu-text">专业信息</span>
+                        </a>
+                    </li>
+
+                    <!--销售步骤-->
+                    <li class="">
+                        <a href="/Step/GetStep">
+                            <i class="menu-icon fa fa-sort-numeric-desc"></i>
+                            <span class="menu-text">销售步骤</span>
+                        </a>
+                    </li>
+
+                    <!--市场营销-->
+                    <li class="">
+                        <a class="menu-dropdown" href="/MarketMessage/GetMarketMessageList">
+                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                            <span class="menu-text">市场营销</span>
+                        </a>
+                    </li>
+
+                    <!--数据下载-->
+                    <li class="">
+                        <a class="menu-dropdown" href="/Report/ReportDownload">
+                            <i class="menu-icon fa fa-cloud-download"></i>
+                            <span class="menu-text">数据下载</span>
+                        </a>
+                    </li>
+
+                    <!--订单高级编辑-->
+                    <li class="">
+                        <a href="/Order/OrderEdit" class="menu-dropdown">
+                            <i class="menu-icon fa fa-file-text"></i>
+                            <span class="menu-text">订单高级编辑</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /侧边导航 -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page 面包屑 -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li><a href="/html/AccountGroup.html">账户分组</a></li>
+                        <li>添加账户分组</li>
+                    </ul>
+                </div>
+                <!-- /Page 面包屑 -->
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    <div class="header-title">
+                        <h1>添加账户分组</h1>
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="widget-body no-padding">
+                        <div class="form-horizontal form-bordered widget-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">账户分组名称</label>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="text" placeholder="请输入分组名称">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">选择成员账户</label>
+                                <div class="row">
+
+                                    <div class="col-xs-4">
+                                        <div class="select-down border" style="height:356px;">
+                                            <table class="table table-striped table-hover margin-top-1">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="搜索成员账户" class="form-control">
+                                                                <span class="input-group-btn">
+                                                                    <a class="btn btn-default">
+                                                                        <i class="fa fa-search"></i>
+                                                                    </a>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-plus"></i></a>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1 arrow-client">
+                                        <i class="margin-b fa fa-arrow-right fa-4x"></i>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="select-down border" style="height:356px;">
+                                            <table class="table table-striped table-hover margin-top-1">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="text over-text col-xs-12 no-pm">✅✅</span>
+                                                            <a href="#"><i class="eag-plus fa fa-minus"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-primary" type="submit">确 定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- 主要容器 -->
+
+    </div>
+
+
+    <!--基础脚本-->
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/bs.min.js"></script>
+
+    <!--主题脚本-->
+    <script src="/assets/js/beyond.min.js"></script>
+
+</body>
+<!--  /Body -->
+</html>

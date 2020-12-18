@@ -1,0 +1,173 @@
+﻿@{
+    string strComoany = HS.Framework.Common.Util.CookieUtil.GetCookieValue("CompanyInfo", true);
+    if (string.IsNullOrEmpty(strComoany))
+    {
+        Response.Redirect("/Login/Login?err=1");
+    }
+    Model.View_Model.CompanyListForAccountLogin_Model model = Newtonsoft.Json.JsonConvert.DeserializeObject<Model.View_Model.CompanyListForAccountLogin_Model>(strComoany); 
+}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>美丽约定</title>
+
+    <meta name="description" content="美丽约定-后台系统" />
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--跟上面meta可进行切换主要对手机进行可放大name="viewport" content="width=device-width, initial-scale=1.0"-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/img/favicon.png" rel="shortcut icon">
+
+    <!--基础 样式-->
+    <link href="/assets/css/bs.min.css" rel="stylesheet" />
+    <link href="/assets/css/bs.css" rel="stylesheet" />
+    <link id="bs-rtl-link" href="" rel="stylesheet" />
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--自定义附加 样式-->
+    <link id="beyond-link" href="/assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="/assets/css/skins/azure.min.css" rel="stylesheet" />
+	<link href="/assets/css/skins/gh.min.css" rel="stylesheet" />
+
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/skins.min.js"></script>
+</head>
+
+<!-- Body -->
+<body>
+    <!--[if lte IE 9]>
+	<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，美丽约定-后台系统 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+	  或直载进入<a href="http://www.firefox.com.cn/" target="_blank">火狐官网</a>下载浏览器以获得更好的体验！</p>
+	<![endif]-->
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="/Home/Index" class="navbar-brand">
+                        <small>
+                            <img src="/assets/img/logo.png" alt="@(model.CompanyName)-美丽约定" />
+                        </small>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="site-store" title="点击下拉可选择切换门店">
+                                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile">@(model.CompanyAbbreviation)-@(model.BranchName)</span></h2>
+                                    </section>
+                                </a>
+                                @{ if (model.canChangeBranch)
+                                   {
+                                    <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                        <li class="dropdown-footer">
+
+                                            <a href="/Login/changeBranch">
+                                                <i class="fa fa-exchange"></i>
+                                                切换门店
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                   }
+                                }
+                            </li>
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="site-store" title="点击下拉可选择退出登录">
+                                        @{if (!string.IsNullOrEmpty(model.HeadImageURL))
+                                          {
+                                            <img src="@(model.HeadImageURL)" class="avatar">
+                                          }
+                                          else
+                                          {
+                                            <i class="fa fa-user"></i>}
+                                        }
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile l-m-w">@(model.AccountName)</span></h2>
+                                    </section>
+                                </a>
+                                <!--登录区域下拉-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username"><a>@(model.AccountName)</a></li>
+                                    <!--头像区域-->
+                                    <!--/头像区域-->
+                                    <li class="dropdown-footer">
+                                        <a href="/Login/logOut">
+                                            <i class="fa fa-power-off"></i>
+                                            退出登录
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/登录区域下拉-->
+                            </li>
+                            <!-- /帐户区域 -->
+                            
+                            <!-- 设置 -->
+                        </ul>
+                        <div class="setting">
+                            <a id="btn-setting" title="设置" href="#">
+                                <i class="icon glyphicon glyphicon-cog"></i>
+                            </a>
+                        </div>
+                        <div class="setting-container">
+                            <label>
+                                <input type="checkbox" id="checkbox_fixednavbar">
+                                <span class="text">固定头部导航条</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedsidebar">
+                                <span class="text">固定左侧栏</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedbreadcrumbs">
+                                <span class="text">固定面包屑</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedheader">
+                                <span class="text">固定头部</span>
+                            </label>
+                        </div>
+                        <!-- 设置 -->
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        @RenderBody()
+        <!-- /Page Container -->
+    </div>
+    <!-- /Main Container -->
+    <!--基础脚本-->
+    <script src="/assets/js/bs.min.js"></script>
+    <!--主题脚本 Scripts-->
+    <script src="/assets/js/beyond.min.js"></script>
+</body>
+<!--  /Body -->
+
+</html>

@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "美丽记录详情";
+    Model.View_Model.CustomerRecPicDetail model = new Model.View_Model.CustomerRecPicDetail();
+    model = Model;
+    string jsParam = "";
+    if (ViewBag.JsParam != null)
+    {
+        jsParam = ViewBag.JsParam;
+    }
+
+    
+}
+<script src="/js/jweixin-1.0.0.js"></script>
+<script src="/Scripts/WXShare.js"></script>
+<script src="/Scripts/BeautyMoment.js"></script>
+<input type="hidden" id="hidParam" value="@(jsParam)"/>
+@if (model != null)
+{
+    if (model.ServicePicList != null && model.ServicePicList.Count > 0)
+    {
+        foreach (Model.View_Model.ServicePicList item in model.ServicePicList)
+        {
+    <div class="width100 whiteBkg MB10">
+        <div class="width90 blockC rowU5 FL textL MB10 clearfix">
+            <span class="fl rowU5-title width100 borderB clearfix">
+                <span class="block fl"><i class="color1 MR10">@(item.TGStartTime.ToString("yyyy-MM-dd"))</i><i>@(item.BranchName)</i></span>
+                <span class="block fr"> 
+                    @{
+                        string ShareImageUrl = null;
+                        if (item.ImageURL != null && item.ImageURL.Count > 0)
+                        {
+                            ShareImageUrl = item.ImageURL[0];
+                        }
+                        <a class=" block fr share-icon width20P height20P" onclick="GoToShare(@(item.GroupNo),'@(item.Comments)','@(ShareImageUrl)',1)"></a>
+                    }
+                    
+                    <a class="MR10 block fr edit-icon width20P height20P" href="/BeautyMoment/EditBeautyMoment?gn=@(item.GroupNo)"></a>
+
+                </span>
+
+            </span>
+            <span class="fl rowU5-fourpic width100 PT5 borderB ">
+                @if (item.ImageURL != null && item.ImageURL.Count > 0)
+                {
+                    foreach (string Url in item.ImageURL)
+                    {
+	        	 
+                    <span>
+                        <img src="@(Url)"></span>
+                    }
+                }
+            </span>
+            <span class="fl width98 PT5 PB5 lineHeight1_5x ">@(item.Comments)
+            </span>
+        </div>
+    </div> 
+        }
+    }
+}
+
+
+<div id="guideImg1" class="block" style="display: none;">
+    <a class="closedBtn">
+        <img src="/pic/closedBtn.png" height="30" /></a>
+    <img src="/pic/RightShare.png" class="width100" />
+</div>
+<script>
+    var jsParams = $("#hidParam").val();
+    var jsModel = eval("(" + jsParams + ")");
+
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: jsModel.appid, // 必填，公众号的唯一标识
+        timestamp: jsModel.timestamp, // 必填，生成签名的时间戳
+        nonceStr: jsModel.noncestr, // 必填，生成签名的随机串
+        signature: jsModel.signature,// 必填，签名，见附录1
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+
+    $(".closedBtn").click(function () {
+        $("#guideImg1").hide();
+
+    })
+</script>

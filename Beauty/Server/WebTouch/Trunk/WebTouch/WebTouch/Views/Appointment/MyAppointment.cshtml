@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "我的预约";
+    List<Model.View_Model.GetTaskList_Model> list = Model;
+    int Status = 0;
+    if (ViewBag.Status != null)
+    {
+        Status = ViewBag.Status;
+    }
+}
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            @{
+                switch (Status)
+                {
+                    case 1: 
+                <li class="width25"><a href="/Appointment/MyAppointment?s=2" class="">已确认</a></li><li class="width25 positionR"><a href="/Appointment/MyAppointment?s=1">待确认</a><span class="btmline bkgColor1"></span></li><li class="width25"><a href="/Appointment/MyAppointment?s=3">已开单</a></li><li class="width25"><a href="/Appointment/MyAppointment?s=4">已取消</a></li>
+                        break;
+                    case 2:
+                <li class="width25 positionR"><a href="/Appointment/MyAppointment?s=2" class="">已确认</a><span class="btmline bkgColor1"></span></li><li class="width25"><a href="/Appointment/MyAppointment?s=1">待确认</a></li><li class="width25"><a href="/Appointment/MyAppointment?s=3">已开单</a></li><li class="width25"><a href="/Appointment/MyAppointment?s=4">已取消</a></li>
+                        break;
+                    case 3:
+                <li class="width25"><a href="/Appointment/MyAppointment?s=2" class="">已确认</a></li><li class="width25"><a href="/Appointment/MyAppointment?s=1">待确认</a></li><li class="width25 positionR"><a href="/Appointment/MyAppointment?s=3">已开单</a><span class="btmline bkgColor1"></span></li><li class="width25"><a href="/Appointment/MyAppointment?s=4">已取消</a></li>
+                        break;
+                    case 4:
+                <li class="width25"><a href="/Appointment/MyAppointment?s=2" class="">已确认</a></li><li class="width25"><a href="/Appointment/MyAppointment?s=1">待确认</a></li><li class="width25"><a href="/Appointment/MyAppointment?s=3">已开单</a></li><li class="width25 positionR"><a href="/Appointment/MyAppointment?s=4">已取消</a><span class="btmline bkgColor1"></span></li>
+                        break;
+                }    
+            }
+        </ul>
+        @if (list != null && list.Count > 0)
+        { 
+            <ul class="width100 pTB15 MB60">
+                @foreach (Model.View_Model.GetTaskList_Model item in list)
+                {                 
+                    <li class="borderB">
+                        <a href="/Appointment/AppointmentDetail?a=@(item.TaskID)">
+                            <ol class="width100">
+                                <li class="clearfix">
+                                    <div class="fl grayTex">
+                                        <span class="MR10 block">@(item.TaskScdlStartTime.ToString("yyyy-MM-dd HH:mm"))</span>
+                                    </div>
+                                    <div class="fr grayTex">
+
+                                        @switch (Status)
+                                        {
+                                            case 1:
+                                            <span class="block blueTex"><span class="MR5">?</span>
+                                                待确认</span>
+                                                break;
+                                            case 2:
+                                            <span class="block greenTex"><span class="MR5">√</span>
+                                                已确认</span>
+                                                break;
+                                            case 3:
+                                            <span class="block greenTex"><span class="MR5">√</span>
+                                                已执行</span>
+                                                break;
+                                            case 4:
+                                            <span class="block color1"><span class="MR5">×</span>
+                                                已取消</span>
+                                                break;
+
+                                        }
+
+                                    </div>
+                                </li>
+                                <li class="MT15">
+                                    <h4 class="blackTex font16 longTex">@(item.TaskName)</h4>
+                                </li>
+                                <li class="MT15 clearfix">
+                                    <div class="fl grayTex">
+                                        <span class="block">指定顾问</span>
+                                    </div>
+                                    <div class="fr grayTex">
+                                        <span class="block grayTex">@(item.ResponsiblePersonName == "" ? "到店指定" :item.ResponsiblePersonName )</span>
+                                </li>
+                            </ol>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <div class="width100 textC PT30 PB30 MB60 clearfix">
+                <div class="MT10P MB10P "><img src="/pic/noappointmentlistpic.png" height="100" class="graybkg borderRad50" /></div>
+                <p class=" MT10P PB30 grayTex">变美丽很容易，赶快去预约吧~</p>
+            </div>
+        }
+    </div>
+</div>
+<div class="btnBtm width100 whiteBkg">
+	<ul class="width100 btnBtmUL1 clearfix">
+		<li class="width100 bkgColor1 textC font18"><a href="/Appointment/SelectAppointmentBranch" class="block whiteTex">我要预约</a></li>
+	</ul>
+</div>

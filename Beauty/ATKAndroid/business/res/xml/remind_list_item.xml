@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/remind_icon_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip"
+        android:padding="8dip" >
+        <ImageView
+            android:id="@+id/remind_service_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/remind_service_icon"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/remind_birthday_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/remind_birthday_icon"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/remind_back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/remind_back_icon"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/remind_content_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dip" >
+        <TextView
+            android:id="@+id/remind_schedule_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/remind_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/remind_schedule_type"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/remind_content_text_size" />
+        <TextView
+            android:id="@+id/remind_schedule_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/remind_content_text_size" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".OrderListActivity" >
+
+   <RelativeLayout
+        android:id="@+id/order_list_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/order_list_title_text"
+            style="@style/activity_title_text_attrs" />
+        <TextView 
+        	android:id="@+id/order_page_info_text"
+         	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size"
+           android:layout_toRightOf="@id/order_list_title_text"/>
+        <ImageButton
+            android:id="@+id/order_search_new_btn"
+            style="@style/activity_title_button_attrs"
+            android:layout_alignWithParentIfMissing="true"
+            android:background="@drawable/customer_advanced_filter_icon" 
+            android:contentDescription="@string/search"/>
+         <ImageButton
+            android:id="@+id/order_search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toLeftOf="@id/order_search_new_btn"
+            android:background="@drawable/customer_rsearch_icon" 
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/customer_service_order_list_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+        <com.GlamourPromise.Beauty.view.XListView
+            android:id="@+id/order_list_view"
+            style="@style/activity_content_listview_attrs" />
+    </RelativeLayout>
+
+</LinearLayout>

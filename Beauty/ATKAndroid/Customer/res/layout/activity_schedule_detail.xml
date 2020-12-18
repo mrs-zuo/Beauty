@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".CustomerActivity" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/schedule_long_id_title"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_long_id_content"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/schedule_status_title"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_status_content"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/schedule_branch_name_title"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_branch_name_content"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/schedule_to_branch_time_title"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_to_branch_time_content"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/schedule_content_detail_title"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_content_detail_content"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/activity_schedule_detail_asignment_concealable_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/schedule_asignment_responsible_person_for_sure_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/activity_schedule_detail_asignment_responsible_person_for_sure_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/schedule_asignment_responsible_person_name_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/activity_schedule_asignment_responsible_person_name_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/activity_schedule_detail_remark_layout"
+                style="@style/table_layout_attrs" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/remark_prompt"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_remark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="@dimen/text_size_normal" />
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/activity_schedule_detail_to_order_detail_btn"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/ecard_payment_order_number"
+                        android:textColor="@color/text_color" />
+
+                    <ImageView
+                        android:id="@+id/activity_schedule_detail_order_number_arrow"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:src="@drawable/join_in_arrowhead_gray" />
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_order_number_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/activity_schedule_detail_order_number_arrow"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_order_product_name"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/product_type_status_0" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/ecard_payment_order_amount"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/activity_schedule_detail_order_payment_amount"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

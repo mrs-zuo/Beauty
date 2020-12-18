@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".EcardDetailActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/ecard_relativelayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ecard_background_white"
+                    android:layout_margin="5dip">
+
+                    <TextView
+                        android:id="@+id/customer_ecard_is_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="14dip"
+                        android:background="#FE931E"
+                        android:paddingLeft="10dip"
+                        android:paddingRight="10dip"
+                        android:text="@string/customer_ecard_is_default_label_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_headline"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        style="@style/relative_layout_has_child_attrs"
+                        android:layout_gravity="center_vertical" >
+
+                        <TextView
+                            android:id="@+id/ecard_detail_layout_card_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_size_headline" />
+
+                        <TextView
+                            android:id="@+id/ecard_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ecard_detail_layout_card_name"
+                            android:layout_marginTop="14dip"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/text_size_normal" />
+
+                        <TextView
+                            android:id="@+id/real_card_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ecard_number"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/text_size_normal" />
+
+                        <TextView
+                            android:id="@+id/customer_ecard_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="100dip"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="@string/ellipsis"
+                            android:textColor="#FE931E"
+                            android:textSize="@dimen/text_size_headline"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <TableLayout
+                    android:id="@+id/ecard_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/table_layout_attrs_layout_marginleft"
+                    android:background="@xml/shape_corner_round" >
+
+                    <RelativeLayout
+                        android:id="@+id/layout_expirationtime"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/responsible_expirationtime_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_expirationtime_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/responsible_expirationtime"
+                            style="@style/relative_layout_right_child_attrs" />
+
+                        <ImageView
+                            android:id="@+id/expirationtime_overdue_prompt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/layout_marginright"
+                            android:layout_toLeftOf="@id/responsible_expirationtime"
+                            android:background="@drawable/expirationtime_overdue_icon"
+                            android:visibility="gone" 
+                            android:contentDescription="@string/search"/>
+                    </RelativeLayout>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/table_layout_attrs_layout_marginleft"
+                    android:background="@xml/shape_corner_round" >
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_card_type_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/ecard_card_type_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <com.glamourpromise.beauty.customer.view.NoScrollListView
+                        android:id="@+id/card_discount_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@null"
+                        android:orientation="vertical" />
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/table_layout_attrs_layout_marginleft"
+                    android:background="@xml/shape_corner_round" >
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/card_account_description_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_account_description_title"
+                            android:textColor="@color/text_color" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <View
+                            android:id="@+id/card_account_description_divider"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1px"
+                            android:background="#f4f4f4"
+                            android:visibility="gone" >
+                        </View>
+
+                        <TextView
+                            android:id="@+id/ecard_account_description_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dip"
+                            android:layout_marginLeft="10dip"
+                            android:layout_marginTop="10dip"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_normal" />
+                    </LinearLayout>
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/layout_balance_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/table_layout_attrs_layout_marginleft"
+                    android:layout_marginTop="@dimen/table_layout_attrs_layout_marginleft"
+                    android:background="@xml/shape_corner_round" >
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/card_payment_detail_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_balance_detail_title"
+                            android:textColor="@color/text_color" />
+
+                        <ImageButton
+                            android:id="@+id/arrowhead_card_payment_detail"
+                            style="@style/relative_layout_right_child_attrs"
+                            android:background="@drawable/join_in_arrowhead_gray" />
+                    </RelativeLayout>
+                </TableLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

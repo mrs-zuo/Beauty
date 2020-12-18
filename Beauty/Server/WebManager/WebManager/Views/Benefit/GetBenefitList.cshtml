@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "优惠劵列表";
+    List<Model.Table_Model.BenefitPolicy_Model> list = new List<Model.Table_Model.BenefitPolicy_Model>();
+    list = Model;
+    List<Model.Table_Model.Branch_Model> branchList = new List<Model.Table_Model.Branch_Model>();
+    branchList = ViewBag.BranchList;
+
+    int LoginBranchID = ViewBag.LoginBranchID;
+}
+<script src="/Script/Benefit.js"></script>
+<script>
+    $(function () {
+        var branchID = $.getUrlParam('bId');
+        if (branchID != null) {
+            $('#ddl_branchID').val(branchID);
+        }
+
+        $('#ddl_branchID').change(function () {
+            if (branchID != null) {
+                branchID = 0;
+            }
+            var url = "/Benefit/GetBenefitList?bId=" + $(this).val();
+
+            location.href = url;
+        });
+    })
+</script>
+<div class="page-container">
+    @Html.Partial("Sidebar", 25)
+    <!-- 优惠券列表 开始 -->
+    <!-- Page 面包屑 -->
+
+    <div class="page-content">
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>优惠券</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>优惠券</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form much-btn">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择门店:</div>
+                    <select class="select-control" id="ddl_branchID">
+                        @if (branchList != null && branchList.Count > 0)
+                        {
+                            for (int i = 0; i < branchList.Count; i++)
+                            {
+                                if (branchList[i].ID == LoginBranchID)
+                                {
+                            <option value="@(branchList[i].ID)" selected="selected">@(branchList[i].BranchName) </option>
+                                }
+                                else
+                                {
+                            <option value="@(branchList[i].ID)">@(branchList[i].BranchName) </option>
+                                }
+                            }
+                        }
+
+                    </select>
+                </div>
+                <a href="/Benefit/EditBenefit?f=1" class="btn btn-default"><i class="fa fa-plus-square"></i>添加优惠券</a>
+            </div>
+            <div class="widget-body no-padding">
+
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-4">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-3">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>优惠券名称</th>
+                            <th>券类型</th>
+                            <th>发放位置</th>
+                            <th>数量</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbBenefitList">
+                        @if (list != null && list.Count > 0)
+                        {
+                            int index = 0;
+                            foreach (Model.Table_Model.BenefitPolicy_Model item in list)
+                            {
+                                index++;
+                            <tr>
+                                <td>@(index)</td>
+                                <td>@(item.PolicyName)</td>
+                                @switch (item.PolicyType)
+                                {
+                                    case 1:
+                                    <td>优惠券</td>
+                                        break;
+                                    default:
+                                    <td></td>
+                                        break;
+                                }
+
+                                @switch (item.PolicyActPosition)
+                                {
+                                    case 10001:
+                                    <td>注册</td>
+                                        break;
+                                    case 10002:
+                                    <td>生日</td>
+                                        break;
+                                    default:
+                                    <td></td>
+                                        break;
+                                }
+
+                                <td>@(item.Amount)</td>
+                                @switch (item.RecordType)
+                                {
+                                    case 1:
+                                    <td>激活</td>
+                                        break;
+                                    case 2:  
+                                    <td>停用</td>
+                                        break;
+                                    default:
+                                    <td></td>
+                                        break;
+                                }
+
+                                <td>
+                                    <a href="/Benefit/EditBenefit?pd=@(item.PolicyID)" class="btn btn-default btn-sm"><i class="fa fa-sliders"></i>详情</a>
+                                    @if (item.RecordType == 1)
+                                    {
+                                        <a href="/Benefit/EditBenefit?pd=@(item.PolicyID)&f=1" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                       if (item.StartDate > DateTime.Now.ToLocalTime())
+                                        {
+<a href="#" class="btn btn-default btn-sm btn-danger" id="" onclick="delBenefit('@(item.PolicyID)')"><i class="fa fa-trash-o"></i>删除</a>
+                                        }
+                                        else
+                                        { <a href="#" class="btn btn-default btn-sm btn-danger" id="" onclick="delBenefit('@(item.PolicyID)')"><i class="fa fa-trash-o"></i>停用</a>
+    
+                                        }
+                                    }
+
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Body -->
+<!-- 优惠券列表 结束 -->

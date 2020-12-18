@@ -1,0 +1,340 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".BranchJournalReportActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+	    <RelativeLayout style="@style/activity_title_layout_attrs" >
+	
+	        <TextView
+	            style="@style/activity_title_text_attrs" 
+	            android:text="@string/my_branch_journal_type_text"/>
+	        <com.GlamourPromise.Beauty.view.SegmentBar
+	            android:id="@+id/branch_journal_segment_bar"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginRight="5dip" />
+	   </RelativeLayout>
+        
+        <RelativeLayout
+        android:id="@+id/branch_journal_report_by_other_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/report_by_date_other_background"
+        android:padding="8dip"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/report_by_other_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/report_by_other_location"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/report_by_other_text_size" />
+
+        <TextView
+            android:id="@+id/report_by_other_date_divide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/report_by_other_start_date"
+            android:text="@string/report_by_other_date_divide"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/report_by_other_text_size" />
+
+        <TextView
+            android:id="@+id/report_by_other_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/report_by_other_date_divide"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/report_by_other_text_size" />
+
+        <ImageView
+            android:id="@+id/branch_journal_report_by_date_query_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:contentDescription="@string/search"
+            android:src="@drawable/report_by_date_query_btn" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:orientation="vertical" >
+            <TableLayout style="@style/activity_content_table_attrs" >
+				<RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/simple_blue" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/my_branch_journal_income_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                    
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="40dip"
+                        android:text="@string/my_branch_journal_income_sales_text"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                    
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_ratio_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="60dip"
+                        android:text="@string/my_branch_journal_income_sales_service_text"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_service_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                    
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_service_ratio_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="60dip"
+                        android:text="@string/my_branch_journal_income_sales_commodity_text"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_commodity_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                    
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_commodity_ratio_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="60dip"
+                        android:text="@string/my_branch_journal_income_sales_ecard_text"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_ecard_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                    
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_ecard_ratio_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="40dip"
+                        android:text="@string/my_branch_journal_income_sales_other_text"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_other_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                    
+                    <TextView
+                        android:id="@+id/my_branch_journal_income_sales_other_ratio_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/my_branch_journal_out_tablelayout" 
+                style="@style/activity_content_table_attrs" >
+				<RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/simple_blue" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/my_branch_journal_out_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:id="@+id/my_branch_journal_out_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                
+            </TableLayout>
+            
+            <TableLayout style="@style/activity_content_table_attrs" >
+				<RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/simple_blue" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/my_branch_journal_balance_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                    
+                    <TextView
+                        android:id="@+id/my_branch_journal_balance_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="60dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/relative_layout_has_child_attrs"
+    android:paddingTop="14dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:id="@+id/content_textview"
+        style="@style/relative_layout_left_child_attrs" 
+        android:lineSpacingExtra="8dp"/>
+
+</RelativeLayout>

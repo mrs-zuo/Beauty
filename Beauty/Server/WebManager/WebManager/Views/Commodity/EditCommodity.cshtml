@@ -1,0 +1,649 @@
+﻿@{
+    ViewBag.Title = "EditCommodity";
+    string actionName = ViewBag.commodityCode == 0 ? "添加商品" : "编辑商品";
+
+    List<Model.View_Model.CategoryList_Model> listCategoryList = null;
+    if (ViewBag.CategoryList != null && ViewBag.CategoryList is List<Model.View_Model.CategoryList_Model>)
+    {
+        listCategoryList = ViewBag.CategoryList as List<Model.View_Model.CategoryList_Model>;
+    }
+
+    List<Model.Table_Model.StorageDetail_Model> listStorageDetail = null;
+    if (ViewBag.StorageDetail != null && ViewBag.StorageDetail is List<Model.Table_Model.StorageDetail_Model>)
+    {
+        listStorageDetail = ViewBag.StorageDetail as List<Model.Table_Model.StorageDetail_Model>;
+    }
+
+    Model.View_Model.CommodityDetail_Model model = null;
+    if (ViewBag.CommodityDetail != null && ViewBag.CommodityDetail is Model.View_Model.CommodityDetail_Model)
+    {
+        model = ViewBag.CommodityDetail as Model.View_Model.CommodityDetail_Model;
+    }
+
+    List<Model.View_Model.GetDiscountListForManager_Model> listDiscount = null;
+
+    if (ViewBag.DiscountList != null && ViewBag.DiscountList is List<Model.View_Model.GetDiscountListForManager_Model>)
+    {
+        listDiscount = ViewBag.DiscountList as List<Model.View_Model.GetDiscountListForManager_Model>;
+    }
+    bool editFlag = ViewBag.commodityCode > 0;
+
+
+    string strBranchList = "|";
+
+    if (model != null && model.ProductBranchRelationship != null && model.ProductBranchRelationship.Count > 0)
+    {
+        for (int i = 0; i < model.ProductBranchRelationship.Count; i++)
+        {
+            strBranchList += model.ProductBranchRelationship[i].BranchID + "|";
+        }
+    }
+
+    bool isBranch = ViewBag.IsBranch;
+    int selectCategoryId = HS.Framework.Common.Util.StringUtils.GetDbInt(HS.Framework.Common.Safe.QueryString.IntSafeQ("c").ToString(), -1);
+    List<Model.View_Model.CommoditySupplierDetail_Model> SupplierDetail = null;
+    if (ViewBag.SupplierDetail != null)
+    {
+        SupplierDetail = ViewBag.SupplierDetail as List<Model.View_Model.CommoditySupplierDetail_Model>;
+    }
+
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 10)
+    <div class="page-content">
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li>
+                    <a href="/Commodity/GetCommodityList?b=-1&c=-1&d=-1">商品</a>
+                </li>
+                <li>@(actionName)</li>
+            </ul>
+        </div>
+
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>@(actionName)</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <!-- Page Body -->
+        <div class="page-body">
+            <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                <!--widget-body-->
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li @(ViewBag.tabIndex == 3 ? "" : "class=active") id="li_home" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">商品基本设置</a>
+                    </li>
+                    <li id="li_profile" role="presentation" @(editFlag ? "" : "style =display:none")>
+                        <a id="a_profile" aria-controls="profile" data-toggle="tab" role="tab" href="#profile">门店库存设置</a>
+                    </li>
+                    <li @(ViewBag.tabIndex != 3 ? "" : "class=active") id="li_batchNo" role="presentation" @(editFlag ? "" : "style =display:none")>
+                        <a id="a_batchNo" aria-controls="batchNo" data-toggle="tab" role="tab" href="#batchNo">商品批次设置</a>
+                    </li>
+                    <li id="li_storage" role="presentation" @(editFlag ? "" : "style =display:none")>
+                        <a id="a_storage" aria-controls="storage" data-toggle="tab" role="tab" href="#storage">总库入出库</a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content widget-body" id="myTabContent">
+                    <!-- 商品基本设置 -->
+                    <div id="home" class="@(ViewBag.tabIndex == 3 ? "tab-pane fade" : "tab-pane fade active in")" aria-labelledby="home-tab" role="tabpanel">
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">商品状态</label>
+                                <div class="col-sm-10 radio">
+                                    <label class="no-padding-left">
+                                        <input type="checkbox" id="ck_New" @(editFlag && model.New ? "checked" : "")>
+                                        <span class="text">新品</span>
+                                    </label>
+                                    <label class="no-padding-left">
+                                        <input type="checkbox" id="ck_Recommended" @(editFlag && model.Recommended ? "checked" : "")>
+                                        <span class="text">推荐</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">分类所属</label>
+                                <div class="col-sm-4 btn-group">
+                                    <select id="selCat" style="width: 100%;">
+                                        @{
+                                            if (listCategoryList != null && listCategoryList.Count > 0)
+                                            {
+                                                for (int i = 0; i < listCategoryList.Count; i++)
+                                                {
+                                                    if ((editFlag && listCategoryList[i].CategoryID == model.CategoryID) || (!editFlag && listCategoryList[i].CategoryID == selectCategoryId))
+                                                    {
+                                                        <option value="@(listCategoryList[i].CategoryID)" selected="selected">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@(listCategoryList[i].CategoryID)">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                    商品名称
+                                    <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入商品名称" id="input_Name" type="text" value="@(editFlag ? model.CommodityName : "")" data-bv-field="fullName" name="fullName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">商品编号</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入商品编号" id="input_SerialNumber" value="@(editFlag ? model.SerialNumber.ToString() : "")" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">规格</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入规格" id="input_Specification" value="@(editFlag ? model.Specification.ToString() : "")" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                    单价
+                                    <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入单价" id="input_UnitPrice" value="@(editFlag ? model.UnitPrice.ToString("0.00") : "")" class="form-control" type="text">
+                                </div>
+                                <p class="n-p-15 help-block">元</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">生产厂家</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入生产厂家" id="input_Manufacturer" value="@(editFlag ? model.Manufacturer.ToString() : "")" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">批准文号</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入批准文号" id="input_ApprovalNumber" value="@(editFlag ? model.ApprovalNumber.ToString() : "")" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">营销策略</label>
+                                <div class="col-sm-4 btn-group">
+                                    <select id="selPoli" style="width: 100%;" onchange="marketingSelect()">
+                                        <option value="0" @(editFlag ? (model.MarketingPolicy == 0 ? "selected='selected'" : "") : "selected='selected'")>
+                                            无优惠
+                                        <option value="1" @(editFlag ? (model.MarketingPolicy == 1 ? "selected='selected'" : "") : "") />
+                                        按会员打折
+                                        <option value="2" @(editFlag ? (model.MarketingPolicy == 2 ? "selected='selected'" : "") : "") />
+                                        按促销价
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="form_Poli" @(editFlag ? (model.MarketingPolicy != 0 ? "" : "style=display:none") : "style=display:none")>
+                                <div class="col-sm-offset-2 col-sm-4 btn-group">
+                                    <select id="selDis" style="width: 100%;@(editFlag ? (model.MarketingPolicy == 1 ? "" : "display:none") : "display:none")">
+                                        @{
+                                            if (listDiscount != null && listDiscount.Count > 0)
+                                            {
+                                                for (int i = 0; i < listDiscount.Count; i++)
+                                                {
+                                                    <option value="@(listDiscount[i].ID)" @(listDiscount[i].ID == model.DiscountID ? "selected=selected" : "")>@(listDiscount[i].DiscountName)</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                    <input style="height:33px;@(editFlag ? (model.MarketingPolicy == 2 ? "" : "display:none") : "display:none")" type="text" id="input_PromotionPrice" placeholder="输入促销价" class="form-control" value="@(editFlag ? (model.MarketingPolicy == 2 ? model.PromotionPrice.ToString("0.00") : "") : "")" />
+                                </div>
+                                <p style="height:18px;@(editFlag ? (model.MarketingPolicy == 2 ? "" : "display:none") : "display:none")" class="n-p-15 help-block" id="p_yuan">元</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">客户可见</label>
+                                <div class="col-sm-10 radio no-padding-left">
+                                    <label>
+                                        <input type="radio" id="radio_VisibleForCustomer" name="form-field-radio" @(editFlag ? (model.VisibleForCustomer ? "checked" : "") : "checked")>
+                                        <span class="text">是</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="form-field-radio" @(editFlag ? ((!model.VisibleForCustomer) ? "checked" : "") : "")>
+                                        <span class="text">否</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">顾客确认方式</label>
+                                <div class="col-sm-10 radio no-padding-left">
+                                    <label>
+                                        <input type="radio" id="IsConfirmed0" name="IsConfirmed" @(model.IsConfirmed == 0 ? "checked" : "")>
+                                        <span class="text">不需要确认</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsConfirmed1" @(model.IsConfirmed == 1 ? "checked" : "") name="IsConfirmed">
+                                        <span class="text">客户端确认</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsConfirmed2" @(model.IsConfirmed == 2 ? "checked" : "") name="IsConfirmed">
+                                        <span class="text">顾客签名确认</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">自动确认</label>
+                                <div class="col-sm-10 radio no-padding-left">
+                                    <label>
+                                        <input type="radio" id="IsAutoComfirm0" @(model.AutoConfirm == 0 ? "checked" : "") name="AutoConfirm" value="0" onclick="hideAutoConfirmDays()">
+                                        <span class=" text">不自动确认</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" id="IsAutoComfirm1" @(model.AutoConfirm == 0 ? "" : "checked") name="AutoConfirm" value="1" onclick="showAutoConfirmDays()">
+                                        <span class="text">自动确认</span>
+                                    </label>
+                                    <label id="lb_AutoConfirmDays" @(model.AutoConfirm == 0 ? "style=display:none" : "")>
+                                        <input type="text" maxlength="3" id="input_AutoConfirmDays" value="@(model.AutoConfirmDays.ToString())">
+                                        <label class=" text">日后自动确认</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Textarea -->
+                                <label class="col-sm-2 control-label no-padding-right">商品简述</label>
+                                <div class="col-sm-10">
+                                    <div class="textarea">
+                                        <textarea placeholder="输入商品简述" id="input_Describe" rows="6" class="form-control">@(editFlag ? model.Describe : "")</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">照片</label>
+                                @Html.Partial("FileUpload", 4)
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <br>
+                                    @{if (!editFlag || !isBranch)
+                                        {
+                                            <button class="btn btn-primary" type="submit" onclick="updateCommodity(@(editFlag))">确 定</button>
+                                        }
+                                    }
+                                    <a class="btn btn btn-default" onclick="goback()">返回</a>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 门店库存设置 -->
+                    <div id="profile" class="tab-pane fade" aria-labelledby="profile-tab" role="tabpanel" @(editFlag ? "" : "style =display:none")>
+                        <table id="tbRelation" class="table table-hover table-striped">
+                            <colgroup class="row">
+                                <col class="col-xs-2">
+                                <col class="col-xs-1">
+                                <col class="col-xs-2">
+                                <col class="col-xs-4">
+                                <col class="col-xs-2">
+                                <col class="col-xs-1">
+                                <col class="col-xs-2">
+                                <col class="col-xs-2">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="choose-num" title="全选">
+                                            <input id="chk_All" name="chk_All" type="checkbox" class="btn-group no-pm" onclick="AllSelect(this)">
+                                            <span class="text"><strong>门店名称</strong></span>
+                                        </label>
+                                    </th>
+                                    <th>库存</th>
+                                    <th>库存单价</th>
+                                    <th>库存操作</th>
+                                    <th>安全库存</th>
+                                    <th style="padding-right: 0px;padding-left: 0px;">库存提醒</th>
+                                    <th>备注</th>
+                                    <th>库存模式</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{if (model != null && model.ProductBranchRelationship != null && model.ProductBranchRelationship.Count > 0)
+                                    {
+                                        for (int i = 0; i < model.ProductBranchRelationship.Count; i++)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <label>
+                                                        <input id="branchAvailable@(i)" type="checkbox" @(isBranch ? "checked='checked'" : (editFlag && model.ProductBranchRelationship[i].BranchAvailable ? "checked='checked'" : "")) />
+                                                        <span class="text over-text col-xs-12 no-pm">@(model.ProductBranchRelationship[i].BranchName)</span>
+                                                    </label>
+                                                </td>
+                                                <td id="tdProductQty@(i)">@(model.ProductBranchRelationship[i].ProductQty)件</td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input class="form-control" type="text" placeholder="单价" id="txtStockUnitPrice@(i)" value="@(model.ProductBranchRelationship[i].BuyingPrice.ToString("0.00"))">
+                                                        <span class="input-group-addon">元</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <div class="col-xs-5 no-padding-left">
+                                                            <select id="selOperationType@(i)">
+                                                                <option value="0" selected="selected">不操作</option>
+                                                                <option value="1">入库</option>
+                                                                <option value="2">出库</option>
+                                                                <option value="3">盘点</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xs-6 no-padding">
+                                                            <div class="spinner spinner-horizontal spinner-right">
+                                                                <div class="spinner-buttons	btn-group">
+                                                                    <button class="btn spinner-down default" type="button">
+                                                                        <i class="fa fa-minus"></i>
+                                                                    </button>
+                                                                    <button class="btn spinner-up default" type="button">
+                                                                        <i class="fa fa-plus"></i>
+                                                                    </button>
+                                                                </div>
+                                                                <input class="spinner-input form-control" type="text" id="input_Quantity@(i)" placeholder="数量">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input class="form-control" type="text" placeholder="数量" id="txtInsuranceQty@(i)" value="@(model.ProductBranchRelationship[i].InsuranceQty)">
+                                                        <span class="input-group-addon">件</span>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    @{if (model.ProductBranchRelationship[i].StockCalcType == 1)
+                                                        {
+                                                            if (model.ProductBranchRelationship[i].ProductQty <= model.ProductBranchRelationship[i].InsuranceQty)
+                                                            {
+                                                                <!--<i class="fa fa-check"></i>-->
+                                                                <span class="trtdSpan">低于安全库存</span>
+                                                            }
+                                                        }
+                                                    }
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text" id="input_Remark@(i)" placeholder="备注">
+                                                </td>
+                                                <td>
+                                                    <select id="selStockCal@(i)">
+                                                        <option value="1" @(editFlag ? (model.ProductBranchRelationship[i].StockCalcType == 1 ? "selected='selected'" : "") : "selected='selected'")>正常销售</option>
+                                                        <option value="2" @(model.ProductBranchRelationship[i].StockCalcType == 2 ? "selected='selected'" : "")>不计存库</option>
+                                                        <option value="3" @(model.ProductBranchRelationship[i].StockCalcType == 3 ? "selected='selected'" : "")>允许超卖</option>
+                                                    </select>
+                                                    <input id="hidBra@(i)" type="hidden" value="@(model.ProductBranchRelationship[i].BranchID)" />
+                                                    <input id="hidPro@(i)" type="hidden" value="@(model.ProductBranchRelationship[i].ProductRelationShipID)" />
+                                                    <input id="hidSto@(i)" type="hidden" value="@(model.ProductBranchRelationship[i].ProductStockID)" />
+                                                </td>
+                                            </tr>
+                                                            }
+                                                        }
+                                }
+                            </tbody>
+                        </table>
+                        <br>
+                        @{if (!editFlag || !isBranch)
+                            {
+                                <a class="btn btn-primary" onclick="updateBranchStock()">确认</a>
+                            }
+                        }
+                        <a class="btn btn-default" onclick="goback()">返回</a>
+                    </div>
+                    <!-- 商品批次设置 -->
+                    <div id="batchNo" class="@(ViewBag.tabIndex != 3 ? "tab-pane fade" : "tab-pane fade active in")" aria-labelledby="batchNo-tab" role="tabpanel" @(editFlag ? "" : "style =display:none")>
+                        <a onclick="AddBatch(@(ViewBag.commodityCode))" class="btn btn-default"><i class="fa fa-plus-square"></i>添加批次</a>
+                        <table id="tbBatch" class="table table-hover table-striped">
+                            <colgroup class="row">
+                                <col class="col-xs-2">
+                                <col class="col-xs-2">
+                                <col class="col-xs-2">
+                                <col class="col-xs-2">
+                                <col class="col-xs-2">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="text"><strong>门店名称</strong></span>
+                                    </th>
+                                    <th>批次番号</th>
+                                    <th>数量</th>
+                                    <th>有效期</th>
+                                    <th>供应商</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{if (model != null && model.BatchDetail != null && model.BatchDetail.Count > 0)
+                                    {
+                                        for (int i = 0; i < model.BatchDetail.Count; i++)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <label>
+                                                        <span class="text over-text col-xs-12 no-pm" id="hidBranchName@(i)">@(model.BatchDetail[i].BranchName)</span>
+                                                    </label>
+                                                </td>
+                                                <td id="tdBatchNO@(i)">@(model.BatchDetail[i].BatchNO)</td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <div class="col-xs-12 no-padding">
+                                                            <input class="form-control" type="text" id="Batch_Quantity@(i)" value="@(model.BatchDetail[i].Quantity)">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <div class="col-xs-14">
+                                                            <span class="input-icon icon-right time-layer" style="@(model.BatchDetail[i].DayDiffNum <=180 ? "background-color:red" : "")">
+                                                                <input class="form-control" id="txt_Date@(i)" onchange="checkExpiryDate(this)" placeholder="有效期" value="@(model.BatchDetail[i].ExpiryDate.ToString("yyyyMMdd"))">
+                                                            </span>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <select class="select-control form-control" id="selSupplier@(i)" onchange="selectSupplier(this,@(i))">
+                                                        @{
+                                                            if (SupplierDetail != null && SupplierDetail.Count > 0)
+                                                            {
+                                                                for (int j = 0; j < SupplierDetail.Count; j++)
+                                                                {
+                                                                    if (model.BatchDetail[i].SupplierID == SupplierDetail[j].SupplierID)
+                                                                    {
+                                                                        <option value="@(SupplierDetail[j].SupplierID)" selected="selected">@(SupplierDetail[j].SupplierName) </option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value="@(SupplierDetail[j].SupplierID)">@(SupplierDetail[j].SupplierName) </option>
+                                                                    }
+
+                                                                }
+                                                            }
+                                                        }
+                                                    </select>
+
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-default" onclick="delBatch(@(model.BatchDetail[i].ID),@(model.BatchDetail[i].BranchID),@(model.BatchDetail[i].ProductCode),@(model.BatchDetail[i].Quantity),'@(model.BatchDetail[i].BatchNO)','@(model.BatchDetail[i].BatchNO)')"><i class="fa fa-trash-o"></i>删除</a>
+                                                    <input id="hidBranchID@(i)" type="hidden" value="@(model.BatchDetail[i].BranchID)" />
+                                                    <input id="hidProductCode@(i)" type="hidden" value="@(model.BatchDetail[i].ProductCode)" />
+                                                    <input id="hidID@(i)" type="hidden" value="@(model.BatchDetail[i].ID)" />
+                                                    <input id="hidCompanyID@(i)" type="hidden" value="@(model.BatchDetail[i].CompanyID)" />
+                                                    <input id="hidBatchNO@(i)" type="hidden" value="@(model.BatchDetail[i].BatchNO)" />
+                                                    <input id="hidSupplierID@(i)" type="hidden" value="@(model.BatchDetail[i].SupplierID)" />
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <br>
+                        @{if (!editFlag || !isBranch)
+                            {
+                                <a class="btn btn-primary" onclick="updateBatchStock()">确认</a>
+                            }
+                        }
+                        <a class="btn btn-default" onclick="goback()">返回</a>
+                    </div>
+                    <!-- 总库入出库 -->
+                    <div id="storage" class="tab-pane fade" aria-labelledby="batchNo-tab" role="tabpanel" @(editFlag ? "" : "style =display:none")>
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right " style="margin-left: 13px;padding-left: 0px;">当前总库@(ViewBag.Quantity)件</label>
+                                @{if (!isBranch)
+                                    {
+                                        <div class="input-group" style="width: 469px;">
+                                            <input class="form-control" style="width: 77px; left: 150px;" type="text" id="txtpiece">
+                                            <span style="margin-left: 150px;">件</span>
+                                            <a onclick="addStorage()" class="btn btn-default" style="bottom:5px;top: 0px;"><i class="fa fa-plus-square"></i>入库</a>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            @{if (isBranch)
+                                {
+                                    <div class="form-group">
+                                        <a onclick="addApply('@(ViewBag.BranchName)',@(ViewBag.Quantity))" class="btn btn-default" style="margin-left: 30px;"><i class="fa fa-plus-square"></i>添加申请</a>
+                                    </div>
+                                }
+                            }
+
+                            <div class="form-group">
+                                <table id="tbBatch" class="table table-hover table-striped">
+                                    <colgroup class="row">
+                                        <col class="col-xs-2">
+                                        <col class="col-xs-1">
+                                        <col class="col-xs-1">
+                                        <col class="col-xs-1">
+                                        <col class="col-xs-1">
+                                        <col class="col-xs-1">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th style="padding-left: 20px;">门店名称</th>
+                                            <th>批次番号</th>
+                                            <th>申请数量</th>
+                                            <th>状态</th>
+                                            <th>有效期</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="applyArea">
+                                        @if (listStorageDetail != null)
+                                        {
+                                            foreach (Model.Table_Model.StorageDetail_Model item in listStorageDetail)
+                                            {
+                                                if (isBranch || item.Status == 1)
+                                                {
+                                                    <tr>
+                                                        <td style="padding-left: 20px;">@(item.BranchName)</td>
+                                                        <td>
+                                                            @if (item.Status == 1 && !isBranch)
+                                                            {
+                                                                <input style="width: 100px;" type="text" id="txtBatchNO">
+                                                            }
+                                                            @if (item.Status == 2 || item.Status == 4)
+                                                            {
+                                                                @(item.BatchNO)
+                                                            }
+                                                        </td>
+                                                        <td>@(item.Quantity)</td>
+                                                        @if (item.Status == 1)
+                                                        {
+                                                            <td>申请中</td>
+                                                        }
+                                                        @if (item.Status == 2)
+                                                        {
+                                                            <td>已同意</td>
+                                                        }
+                                                        @if (item.Status == 3)
+                                                        {
+                                                            <td>被否决</td>
+                                                        }
+                                                        @if (item.Status == 4)
+                                                        {
+                                                            <td>已入库</td>
+                                                        }
+                                                        <td>
+                                                            @if (item.Status == 1 && !isBranch)
+                                                            {
+                                                                <input style="width: 90px;" type="text" id="txtExpiryDate" onclick="laydate({ istime: false, format: 'YYYY-MM-DD' })">
+                                                            }
+                                                            @if (item.Status == 2 || item.Status == 4)
+                                                            {
+                                                                @(item.ExpiryDate.ToString("yyyy-MM-dd"))
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @if (isBranch)
+                                                            {
+                                                                if (item.Status == 2)
+                                                                {
+                                                                    <a onclick="Confirm(@(item.ID))" class="btn" style="padding-bottom: 0px;padding-top: 0px;">确认收货</a>
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                if (item.Status == 1)
+                                                                {
+                                                                    <a onclick="Agree(@(item.ID),@(ViewBag.Quantity),@(item.Quantity))" class="btn" style="padding-bottom: 0px;padding-top: 0px;">同意</a>
+                                                                    <a onclick="Negative(@(item.ID))" class="btn" style="padding-bottom: 0px;padding-top: 0px;">否决</a>
+                                                                }
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hidBranchList" value="@(editFlag && strBranchList != "|" ? strBranchList : "")" />
+        <input type="hidden" id="hidID" value="@(editFlag ? model.CommodityID : 0)" />
+        <input type="hidden" id="hidCode" value="@(editFlag ? model.CommodityCode : 0)" />
+        @{
+            if (ViewBag.tabIndex == 3)
+            {
+
+            }
+        }
+    </div>
+</div>
+<script src="/Script/Commodity.js"></script>
+
+<!--库存操作数量加减-->
+<script src="/assets/js/fuelux/spinner/fuelux.spinner.min.js"></script>

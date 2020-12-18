@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View
+        style="@style/activity_content_divide_view_attrs"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@color/tab_backcolor" />
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:background="@color/white" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/ecard_discount_detail_title" />
+    </RelativeLayout>
+
+    <View
+        style="@style/activity_content_divide_view_attrs"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@color/tab_backcolor" />
+
+</LinearLayout>

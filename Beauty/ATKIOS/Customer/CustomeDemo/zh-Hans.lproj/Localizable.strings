@@ -1,0 +1,129 @@
+/* 
+  Localizable.strings
+  CustomeDemo
+
+  Created by macmini on 13-9-2.
+  Copyright (c) 2013年 MAC_Lion. All rights reserved.
+*/
+"loading" = "加载中...";
+
+//LoginViewController
+"inputUserName" = "用户名";
+"inputPassWord" = "密码";
+
+//MenuViewController
+"MenuViewController-home" = "首页";
+"MenuViewController-business" = "商家";
+"MenuViewController-staff" = "团队";
+"MenuViewController-record" = "记录";
+"MenuViewController-order" = "订单";
+"MenuViewController-eCard" = "e 卡";
+"MenuViewController-set" = "设置";
+"MenuViewController-cTalk" = "飞语";
+"MenuViewController-photos" = "相册";
+"MenuViewController-quit" = "登出";
+
+//SalonDetailViewController
+"SalonDetailViewController-photo" = "图片";
+"SalonDetailViewController-intro" = "简介";
+"SalonDetailViewController-hours" = "营业时间";
+"SalonDetailViewController-linkman" = "联系人";
+"SalonDetailViewController-address" = "地址";
+"SalonDetailViewController-net" = "网址";
+"SalonDetailViewController-phone" = "电话";
+"SalonDetailViewController-zip" = "邮编";
+"SalonDetailViewController-fax" = "传真";
+"SalonDetailViewController-cancel" = "取消";
+"SalonDetailViewController-call" = "呼叫:";
+
+//AccountListViewController
+"AccountListViewController-noRecord" = "没有记录";
+"AccountListViewController-cosmetologist" = "美容师";
+"AccountListViewController-lastTimeUpdate" = "上次更新时间";
+
+//AccountDetailViewController
+"AccountDetailViewController-phone" = "电话";
+"AccountDetailViewController-title" = "职称";
+"AccountDetailViewController-skill" = "擅长";
+"AccountDetailViewController-intro" = "简介";
+"AccountDetailViewController-department" = "部门";
+"AccountDetailViewController-cancel" = "取消";
+"AccountDetailViewController-call" = "呼叫:";
+
+//RecordListCell
+"RecordListCell-consultingContent" = "咨询";
+"RecordListCell-suggestion" = "建议";
+
+//OrderListViewController
+"OrderListViewController-noRecord" = "没有记录";
+"OrderListViewController-lastTimeUpdate" = "上次更新时间";
+"OrderListViewController-dollar" = "元";
+"OrderListViewController-non-payment" = "未付款";
+"OrderListViewController-paid" = "已付款";
+"OrderListViewController-completed" = "已完成";
+"OrderListViewController-canceled" = "已取消";
+
+//OrderDetailViewController
+"OrderDetailViewController-product" = "产品";
+"OrderDetailViewController-time" = "时间";
+"OrderDetailViewController-contactTime" = "联系时间";
+"OrderDetailViewController-number" = "数量";
+"OrderDetailViewController-courseOfTreatment" = "疗程";
+"OrderDetailViewController-backToTheClinic" = "回诊";
+"OrderDetailViewController-times" = "次";
+"OrderDetailViewController-sum" = "总额";
+"OrderDetailViewController-dollar" = "元";
+"OrderDetailViewController-indentState" = "订单状态";
+"OrderDetailViewController-non-payment" = "未付款";
+"OrderDetailViewController-paid" = "已付款";
+"OrderDetailViewController-completed" = "已完成";
+"OrderDetailViewController-canceled" = "已取消";
+
+//RechargeViewController
+"RechargeViewController-level" = "等级";
+"RechargeViewController-balance" = "余额";
+"RechargeViewController-dollar" = "¥ ";
+"RechargeViewController-fold" = "";
+"RechargeViewController-discount" = "折扣率";
+"RechargeViewController-rechargeConsumerGlance" = "充值消费记录";
+
+//RechargeAndPayCell
+"RechargeAndPayCell-balance" = "余额:";
+
+//RechargeAndPayViewController
+"RechargeAndPayViewController-dollar" = "¥ ";
+
+//MessageInputView
+"MessageInputView-edit" = "编辑";
+"MessageInputView-send" = "发送";
+
+//ChatViewController
+"ChatViewController-addressee" = "收件人:";
+"ChatViewController-message" = "消息:";
+"ChatViewController-noRecord" = "没有记录";
+"ChatViewController-lastTimeUpdate" = "上次更新时间";
+"ChatViewController-failedtosendmessage" = "发送失败";
+
+//AccountSelectViewController
+"AccountSelectViewController-noRecord" = "没有记录";
+"AccountSelectViewController-lastTimeUpdate" = "上次更新时间";
+"AccountSelectViewController-cosmetologist" = "美容师";
+"AccountSelectViewController-selectcosmetologist" = "选择美容师";
+
+//RemindViewController
+"RemindViewController-noRecord" = "没有记录";
+"RemindViewController-lastTimeUpdate" = "上次更新时间";
+"RemindViewController-service" = "服务";
+"RemindViewController-contact" = "联系";
+
+//NoticeViewController
+"NoticeViewController-noRecord" = "没有记录";
+"NoticeViewController-lastTimeUpdate" = "上次更新时间";
+
+
+
+
+
+
+
+

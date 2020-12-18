@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/relative_layout_has_child_attrs" >
+
+    <TextView
+        android:id="@+id/left_textview"
+        style="@style/relative_layout_left_child_attrs" />
+    <TextView
+        android:id="@+id/right_textview"
+        android:singleLine="true"
+        android:text="..."
+        style="@style/relative_layout_right_child_attrs" />
+
+</RelativeLayout>

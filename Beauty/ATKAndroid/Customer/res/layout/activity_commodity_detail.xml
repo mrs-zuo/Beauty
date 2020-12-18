@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".CustomerActivity" >
+
+    <com.glamourpromise.beauty.customer.custom.view.ImageScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/scrollview_layout_marginbottom"
+        android:divider="@null" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/company_image_layout_height"
+                android:layout_marginLeft="@dimen/table_layout_attrs_layout_marginleft"
+                android:layout_marginRight="@dimen/table_layout_attrs_layout_marginleft"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@xml/shape_corner_round"
+                android:orientation="horizontal"
+                android:padding="1dp" >
+
+                <ImageView
+                    android:id="@+id/arrow_left_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="1dip" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/commodity_image_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/company_image_viewpager_layout_margin"
+                    android:layout_marginRight="@dimen/company_image_viewpager_layout_margin"
+                    android:background="@color/white" />
+
+                <ImageView
+                    android:id="@+id/arrow_right_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="1dip" />
+            </RelativeLayout>
+
+            <TableLayout
+                android:id="@+id/commodity_name"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/commodity_name_title_text"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_commodity_name"
+                        android:textColor="@color/text_color" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view" />
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/commodity_name_text"
+                        style="@style/relative_layout_left_child_attrs" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view" />
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_specification"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/specification_content_text"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/commodity_price"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_commodity_unit_price"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/unit_price_content_text"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/commodity_introduction"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_commodity_introduction"
+                        android:textColor="@color/text_color" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view" />
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/introduction_text"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:lineSpacingExtra="8dp" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/product_enalbe_info_layout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_commodity_branch_info"
+                        android:textColor="@color/text_color" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view" />
+            </TableLayout>
+        </LinearLayout>
+    </com.glamourpromise.beauty.customer.custom.view.ImageScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_cart_button_layout_height"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/add_favorite_relativelayout"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7" >
+
+            <ImageButton
+                android:id="@+id/add_favorite_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/un_favorite_icon" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/add_cart_button"
+            style="@style/add_cart_btn"
+            android:layout_weight="1"
+            android:text="@string/add_cart_button_text" />
+
+        <Button
+            android:id="@+id/add_order_button"
+            style="@style/add_order_btn"
+            android:layout_weight="1"
+            android:text="@string/add_order_button_text" />
+    </LinearLayout>
+
+</RelativeLayout>

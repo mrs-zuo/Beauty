@@ -1,0 +1,144 @@
+﻿@{
+    List<Model.Table_Model.Hierarchy_Model> listAccount = new List<Model.Table_Model.Hierarchy_Model>();
+    if (ViewBag.AccountList != null)
+    {
+        listAccount = ViewBag.AccountList;
+    }
+
+
+
+    List<Model.Table_Model.Hierarchy_Model> listSelect = new List<Model.Table_Model.Hierarchy_Model>();
+    if (ViewBag.SelectList != null)
+    {
+        listSelect = ViewBag.SelectList;
+    }
+    int LoginID = 0;
+    if (ViewBag.LoginID != null)
+    {
+        LoginID = ViewBag.LoginID;
+    }
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 12)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>员工层级</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>员工层级</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-group navbar-form h35">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择上级:</div>
+                    <select class="select-control" id="ddlAccount" onchange="changeTop();">
+                        @if (listSelect != null && listSelect.Count > 0)
+                        {
+                            foreach (Model.Table_Model.Hierarchy_Model item in listSelect)
+                            {
+                            <option value="@(item.SubordinateID)"  @(listAccount[0].SubordinateID == item.SubordinateID ? "selected='selected'" : "")   >@(item.SubordinateName)</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="btn-group select-div">
+                    <div class="select-titel">显示状态:</div>
+                    <select class="select-control" id="ddlType" onchange="changeTop();">
+                            <option value="0">全部员工</option>
+                            <option value="1">使用员工</option>
+                     
+                    </select>
+                </div>
+            </div>
+            <div class="widget-body no-padding">
+                <table id="treeTable1" class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-md-10">
+                        <col class="col-md-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            
+                            if (listAccount != null && listAccount.Count > 0)
+                            {
+                                int i = 0;
+                                foreach (Model.Table_Model.Hierarchy_Model item in listAccount)
+                                {
+                                    string pId = "";
+
+                                    if (item.SuperiorID > 0 && i > 0)
+                                    {
+                                        pId = " pId=" + item.SuperiorID;
+                                    }
+                                    i++;
+
+                            <tr id="@(item.SubordinateID)"  @(pId)>
+                                <td><span class="file"><i class="fa fa-user"></i> @(item.SubordinateName)</span></td>
+                                <td>
+                                    @if (item.SubordinateID != LoginID)
+                                    {
+                                        <a class="btn btn-default btn-sm" href="/Account/EditAccountHierarchy?hID=@(item.ID)"><i class="fa fa-edit"></i>编辑</a> 
+                                    }
+                                </td>
+                            </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="~/Script/AccountHierarchy.js"></script>
+<script src="/assets/js/fuelux/treeview/jquery.treetable.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var option = {
+            theme: 'vsStyle',
+            expandLevel: 9,
+        };
+        $('#treeTable1').treeTable(option);
+    });
+</script>

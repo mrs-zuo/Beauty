@@ -1,0 +1,487 @@
+﻿@{
+    Model.Table_Model.Commission_Account_Model model = new Model.Table_Model.Commission_Account_Model();
+    if (ViewBag.Account != null)
+    {
+        model = ViewBag.Account;
+    }
+    int EditFlag = 0;
+    if (ViewBag.EditFlag != null)
+    {
+        EditFlag = ViewBag.EditFlag;
+    }
+}
+
+<script src="/Script/Commission.js"></script>
+<script src="/Script/EasyTemplate.js"></script>
+<script id="templateSign" type="text/x-easy-template">
+  
+<#macro bjTest data>
+      <#list data as list>
+	
+                                            <div name="divCommProfit" class="form-group" style="border: none;margin-bottom: 10px;padding-top: 0;">
+                                            <label class="col-sm-2 control-label no-padding-right"></label>
+                                            <div class="col-sm-1 no-padding-right">
+                                                <input name="txtMinRange"  class="form-control" type="text" readonly="readonly" value="${list.ProfitMinRange}">
+                                            </div>
+                                            <div class="col-sm-1 radio text-center">
+                                                到
+                                            </div>
+                                            <div class="col-sm-2 no-padding-left">
+                                                <input  name="txtMaxRange"  placeholder="请输入数值" class="form-control" type="text"  onchange="MaxChange(this,'${list.ProfitName}')">
+                                            </div>
+                                            <div class="col-sm-1 radio text-center">
+                                                提成比例
+                                            </div>
+                                            <div class="col-sm-2 no-padding-left">
+                                                <input  name="txtProfitPct"  placeholder="请输入数值" class="form-control" type="text" id="" maxlength="">
+                                            </div>
+                                            <div class="col-sm-1 radio text-left">
+                                                (%)
+                                            </div>
+                                            <div class="col-sm-1 radio no-padding-right text-center">
+                                                <a onclick="Minus(this,'${list.ProfitName}')" ><i class="eag-plus fa fa-minus-square"></i></a>
+                                            </div>
+                                        </div>
+    </#list>
+</#macro>
+</script>
+@if (model != null)
+{
+    <div class="page-container">
+        <!-- Page Sidebar -->
+        @Html.Partial("Sidebar", 28)
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page 面包屑 -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="/Home/Index">首页</a>
+                    </li>
+                    <li><a href="/Account/GetAccountList">业绩提成</a></li>
+                    <li class="active">编辑员工提成方式</li>
+                </ul>
+            </div>
+            <!-- /Page 面包屑 -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>编辑提成方式</h1>
+                </div>
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="refresh" id="refresh-toggler" href="">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a class="fullscreen" id="fullscreen-toggler" href="#">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+
+            <!-- Page Body -->
+            <div class="page-body">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="active in" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">编辑提成方式</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="home-tab" id="home" class="tab-pane fade active in" role="tabpanel">
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">姓名</label>
+                                <div class="col-sm-4">
+                                    <p class="n-p-15 help-block">@(model.AccountName)</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Search input-->
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	底薪
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="请输入底薪" class="form-control" type="text" id="txtBaseSalary" maxlength="" value="@(model.BaseSalary == -1 ? "" : model.BaseSalary.ToString("0.00"))">
+                                </div>
+                                <p class="n-p-15 help-block">元</p>
+                            </div>
+                            @{
+    bool HaveSales = false;
+    if (model.ListCommSales != null && model.ListCommSales.Count > 2)
+    {
+        HaveSales = true;
+    }
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">销售提成</label>
+                                    <div class="col-sm-10 radio no-padding-left">
+                                        <label>
+                                            <input type="radio" id="radioCommSalesN" name="radioCommSales"  @(model.ListCommSales != null && model.ListCommSales.Count < 2 ? "checked=checked" : "") onchange="ShowCommDiv('Sales',false)"  >
+                                            <span class="text">按基础项目</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="radioCommSalesY" name="radioCommSales"  onchange="ShowCommDiv('Sales', true)"  @(model.ListCommSales != null && model.ListCommSales.Count >= 2 ? "checked=checked" : "") >
+                                            <span class="text">按业绩目标</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- 添加提成区间 开始 -->
+                                <div style="; @(model.ListCommSales != null && model.ListCommSales.Count >= 2 ? "" : "display:none")"  id="divSales">
+                                    <div class="form-group" name="divCommProfit" style="border: none; margin-bottom: 10px; margin-top: 10px;">
+                                        <label class="col-sm-2 control-label no-padding-right"></label>
+                                        <div class="col-sm-1 no-padding-right">
+                                            <input placeholder="0" class="form-control" readonly="readonly" type="text" value="0">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            到
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input name="txtMaxRange" class="form-control" type="text" id="txtFirstMaxSales" onchange="MaxChange(this,'Sales')" value="@(model.ListCommSales != null && model.ListCommSales.Count >= 2 ? model.ListCommSales[0].ProfitMaxRange.ToString() : "")" @(model.ListCommSales.Count > 2? "readonly='readonly'" : "") >
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            提成比例
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input   placeholder="请输入数值" class="form-control" type="text" id="txtFirstPorfitSales"  value="@(model.ListCommSales != null && model.ListCommSales.Count >= 2 ? (model.ListCommSales[0].ProfitPct * 100).ToString("0.0") : "")">
+                                        </div>
+                                        <div class="col-sm-1 radio text-left">
+                                            (%)
+                                        </div>
+                                        <div class="col-sm-05 radio no-padding-right text-center">
+                                            <a onclick="addComm('Sales')"><i class="eag-plus fa fa-plus-square"></i></a>
+                                        </div>
+                                    </div>
+                                    <div id="divCommSales" style="margin-bottom: 0;">
+                                        @if (HaveSales)
+                                        {
+                                            int rows = 0;
+                                            foreach (Model.Table_Model.CommissionDetail_Account item in model.ListCommSales)
+                                            {
+                                                rows++;
+                                                if (rows < model.ListCommSales.Count && rows > 1)
+                                                {
+                                                    string strOnlyRead = "";
+                                                    if (rows < model.ListCommSales.Count - 1)
+                                                    {
+                                                        strOnlyRead = "readonly = 'readonly'";
+                                                    }
+                                            <div name="divCommProfit" class="form-group" style="border: none; margin-bottom: 10px;padding-top: 0;">
+                                                <label class="col-sm-2 control-label no-padding-right"></label>
+                                                <div class="col-sm-1 no-padding-right">
+                                                    <input placeholder="0" class="form-control" type="text" value="@(item.ProfitMinRange.ToString())" name="txtMinRange" readonly="readonly">
+                                                </div>
+                                                <div class="col-sm-1 radio text-center">
+                                                    到
+                                                </div>
+                                                <div class="col-sm-2 no-padding-left">
+                                                    <input placeholder="请输入数值" class="form-control" type="text" value="@(item.ProfitMaxRange.ToString())"  name="txtMaxRange" @(strOnlyRead) >
+                                                </div>
+                                                <div class="col-sm-1 radio text-center">
+                                                    提成比例
+                                                </div>
+                                                <div class="col-sm-2 no-padding-left">
+                                                    <input name="txtProfitPct" placeholder="请输入数值" class="form-control" type="text" value="@((item.ProfitPct * 100).ToString("0.0"))" >
+                                                </div>
+                                                <div class="col-sm-1 radio text-left">
+                                                    (%)
+                                                </div>
+                                                <div class="col-sm-05 radio no-padding-right text-center">
+                                                    <a onclick="Minus(this,'Sales')"><i class="eag-plus fa fa-minus-square"></i></a>
+                                                </div>
+
+                                            </div>
+                                                }
+                                            }
+                                        }
+
+                                    </div>
+                                    <div class="form-group" style="border: none; margin-top: 10px; margin-bottom: 10px; padding-top: 0;">
+                                        <label class="col-sm-2 control-label no-padding-right"></label>
+                                        <div class="col-sm-1 no-padding-right">
+                                            <input placeholder="0" class="form-control" type="text" value="@(model.ListCommSales != null && model.ListCommSales.Count >= 2 ? model.ListCommSales[model.ListCommSales.Count - 1].ProfitMinRange.ToString() : "")"  id="txtLastMinSales" readonly="readonly">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            以上
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            提成比例
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input placeholder="请输入数值" class="form-control" type="text" id="txtLastPorfitSales" value="@(model.ListCommSales != null && model.ListCommSales.Count >= 2 ? (model.ListCommSales[model.ListCommSales.Count - 1].ProfitPct * 100).ToString("0.0") : "")" >
+                                        </div>
+                                        <div class="col-sm-1 radio text-left">
+                                            (%)
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <!-- 添加提成区间 结束 -->
+                            @{    
+                                        bool HaveOperate = false;
+                                        int CommType = 1;
+                                        if (model.ListCommOperate != null && model.ListCommOperate.Count > 2)
+                                        {
+                                            HaveOperate = true;
+                                            CommType = model.ListCommOperate[0].CommType;
+                                        }
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">操作提成</label>
+                                    <div class="col-sm-3 radio no-padding-left">
+                                        <label>
+                                            <input type="radio" id="radioCommOperateN" name="radioCommOperate" onclick="ShowCommDiv('Operate', false)" @(model.ListCommOperate != null && model.ListCommOperate.Count < 2 ? "checked=checked" : "")>
+                                            <span class="text">按基础项目 </span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="radioCommOperateY" name="radioCommOperate" onclick="ShowCommDiv('Operate', true)" @(model.ListCommOperate != null && model.ListCommOperate.Count >= 2 ? "checked=checked" : "")>
+                                            <span class="text">按业绩目标</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-2 no-padding-left">
+                                        <select id="ddlRole" style="width: 100%;">
+                                            <option value="1" @(model.ListCommOperate != null && model.ListCommOperate.Count > 0 && model.ListCommOperate[0].ProfitRangeUnit == 1 ? "selected='selected'" : "")>元</option>
+                                            <option value="2" @(model.ListCommOperate != null && model.ListCommOperate.Count > 0 && model.ListCommOperate[0].ProfitRangeUnit == 2 ? "selected='selected'" : "")>次</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- 添加提成区间 开始 -->
+                                <div style="padding: 10px 0; @(model.ListCommOperate != null && model.ListCommOperate.Count >= 2 ? "" : "display:none")" id="divOperate">
+
+                                    <div class="form-group" style="border: none;">
+                                        <label class="col-sm-2 control-label no-padding-right"></label>
+                                        <div class="col-sm-1 no-padding-right">
+                                            <input placeholder="0" class="form-control" readonly="readonly" type="text" value="0">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            到
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input placeholder="请输入数值" class="form-control" type="text" id="txtFirstMaxOperate" value="@(model.ListCommOperate != null && model.ListCommOperate.Count >= 2 ? model.ListCommOperate[0].ProfitMaxRange.ToString() : "")"  @(model.ListCommOperate.Count > 2 ? "readonly='readonly'" : "") onchange="MaxChange(this,'Operate')">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            提成比例
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input placeholder="请输入数值" class="form-control" type="text" id="txtFirstPorfitOperate" value="@(model.ListCommOperate != null && model.ListCommOperate.Count >= 2 ? (model.ListCommOperate[0].ProfitPct * 100).ToString("0.0") : "")">
+                                        </div>
+                                        <div class="col-sm-1 radio text-left">
+                                            (%)
+                                        </div>
+                                        <div class="col-sm-05 radio no-padding-right text-center">
+                                            <a onclick="addComm('Operate')"><i class="eag-plus fa fa-plus-square"></i></a>
+                                        </div>
+                                    </div>
+                                    <div id="divCommOperate">
+                                        @if (HaveOperate)
+                                        {
+                                            int rows = 0;
+                                            foreach (Model.Table_Model.CommissionDetail_Account item in model.ListCommOperate)
+                                            {
+                                                rows++;
+                                                if (rows < model.ListCommOperate.Count && rows > 1)
+                                                {
+                                                    string strOnlyRead = "";
+                                                    if (rows < model.ListCommOperate.Count - 1)
+                                                    {
+                                                        strOnlyRead = "readonly = 'readonly'";
+                                                    }
+                                            <div name="divCommProfit" class="form-group" style="border: none; margin-bottom: 10px;padding-top: 0;">
+                                                <label class="col-sm-2 control-label no-padding-right"></label>
+                                                <div class="col-sm-1 no-padding-right">
+                                                    <input placeholder="0" class="form-control" type="text" value="@(item.ProfitMinRange.ToString())" name="txtMinRange" readonly="readonly">
+                                                </div>
+                                                <div class="col-sm-1 radio text-center">
+                                                    到
+                                                </div>
+                                                <div class="col-sm-2 no-padding-left">
+                                                    <input placeholder="请输入数值" class="form-control" type="text" value="@(item.ProfitMaxRange.ToString())"  name="txtMaxRange"  @(strOnlyRead)>
+                                                </div>
+                                                <div class="col-sm-1 radio text-center">
+                                                    提成比例
+                                                </div>
+                                                <div class="col-sm-2 no-padding-left">
+                                                    <input name="txtProfitPct" placeholder="请输入数值" class="form-control" type="text" value="@((item.ProfitPct * 100).ToString("0.0"))">
+                                                </div>
+                                                <div class="col-sm-1 radio text-left">
+                                                    (%)
+                                                </div>
+                                                <div class="col-sm-05 radio no-padding-right text-center">
+                                                    <a onclick="Minus(this,'Operate')"><i class="eag-plus fa fa-minus-square"></i></a>
+                                                </div>
+                                            </div>
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                    <div class="form-group" style="border: none; margin-top: 10px; margin-bottom: 10px; padding-top: 0;">
+                                        <label class="col-sm-2 control-label no-padding-right"></label>
+                                        <div class="col-sm-1 no-padding-right">
+                                            <input placeholder="0" class="form-control" type="text" id="txtLastMinOperate" value="@(model.ListCommOperate != null && model.ListCommOperate.Count >= 2 ? model.ListCommOperate[model.ListCommOperate.Count - 1].ProfitMinRange.ToString() : "")" readonly="readonly">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            以上
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            提成比例
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input name="txtProfitPct" placeholder="请输入数值" class="form-control" type="text" id="txtLastPorfitOperate" value="@(model.ListCommOperate != null && model.ListCommOperate.Count >= 2 ? (model.ListCommOperate[model.ListCommOperate.Count - 1].ProfitPct * 100).ToString("0.0") : "")">
+                                        </div>
+                                        <div class="col-sm-1 radio text-left">
+                                            (%)
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 添加提成区间 结束 -->
+                            }
+                            @{
+                                        bool HaveRecharge = false;
+                                        if (model.ListCommRecharge != null && model.ListCommRecharge.Count > 2)
+                                        {
+                                            HaveRecharge = true;
+                                        }
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label no-padding-right">储值卡销售提成</label>
+                                    <div class="col-sm-10 radio no-padding-left">
+                                        <label>
+                                            <input type="radio" id="radioCommRechargeN" name="radioCommRecharge" onclick="ShowCommDiv('Recharge', false)"  @(model.ListCommRecharge != null && model.ListCommRecharge.Count < 2 ? "checked=checked" : "")>
+                                            <span class="text">按基础项目</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" id="radioCommRechargeY" name="radioCommRecharge" onclick="ShowCommDiv('Recharge', true)"  @(model.ListCommRecharge != null && model.ListCommRecharge.Count >= 2 ? "checked=checked" : "")>
+                                            <span class="text">按业绩目标</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- 添加提成区间 开始 -->
+                                <div style="padding: 10px 0;@(model.ListCommRecharge != null && model.ListCommRecharge.Count >= 2 ? "" : "display:none")" id="divRecharge">
+
+                                    <div class="form-group" style="border: none;">
+                                        <label class="col-sm-2 control-label no-padding-right"></label>
+                                        <div class="col-sm-1 no-padding-right">
+                                            <input placeholder="0" class="form-control" readonly="readonly" type="text" value="0">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            到
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input placeholder="请输入数值" class="form-control" type="text" id="txtFirstMaxRecharge" value="@(model.ListCommRecharge != null && model.ListCommRecharge.Count >= 2 ? model.ListCommRecharge[0].ProfitMaxRange.ToString() : "")" @(model.ListCommRecharge.Count > 2 ? "readonly='readonly'" : "") onchange="MaxChange(this,'Recharge')">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            提成比例
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input placeholder="请输入数值" class="form-control" type="text" id="txtFirstPorfitRecharge" value="@(model.ListCommRecharge != null && model.ListCommRecharge.Count >= 2 ? (model.ListCommRecharge[0].ProfitPct * 100).ToString("0.0") : "")">
+                                        </div>
+                                        <div class="col-sm-1 radio text-left">
+                                            (%)
+                                        </div>
+                                        <div class="col-sm-05 radio no-padding-right text-center">
+                                            <a onclick="addComm('Recharge')"><i class="eag-plus fa fa-plus-square"></i></a>
+                                        </div>
+                                    </div>
+                                    <div id="divCommRecharge">
+                                        @if (HaveRecharge)
+                                        {
+                                            int rows = 0;
+                                            foreach (Model.Table_Model.CommissionDetail_Account item in model.ListCommRecharge)
+                                            {
+                                                rows++;
+                                                if (rows < model.ListCommRecharge.Count && rows > 1)
+                                                {
+                                                    string strOnlyRead = "";
+                                                    if (rows < model.ListCommRecharge.Count - 1)
+                                                    {
+                                                        strOnlyRead = "readonly = 'readonly'";
+                                                    }
+                                            <div name="divCommProfit" class="form-group" style="border: none; margin-bottom: 10px;padding-top: 0;">
+                                                <label class="col-sm-2 control-label no-padding-right"></label>
+                                                <div class="col-sm-1 no-padding-right">
+                                                    <input placeholder="0" class="form-control" type="text" id="" name="txtMinRange" value="@(item.ProfitMinRange)" readonly="readonly">
+                                                </div>
+                                                <div class="col-sm-1 radio text-center">
+                                                    到
+                                                </div>
+                                                <div class="col-sm-2 no-padding-left">
+                                                    <input placeholder="请输入数值" class="form-control" type="text" id="" maxlength="" name="txtMaxRange"  value="@(item.ProfitMaxRange)" @(strOnlyRead)>
+                                                </div>
+                                                <div class="col-sm-1 radio text-center">
+                                                    提成比例
+                                                </div>
+                                                <div class="col-sm-2 no-padding-left">
+                                                    <input placeholder="请输入数值" class="form-control" type="text" id="" name="txtProfitPct"  value="@((item.ProfitPct * 100).ToString("0.0"))">
+                                                </div>
+                                                <div class="col-sm-1 radio text-left ">
+                                                    (%)
+                                                </div>
+                                                <div class="col-sm-05 radio no-padding-right text-center">
+                                                    <a onclick="Minus(this,'Recharge')"><i class="eag-plus fa fa-minus-square"></i></a>
+                                                </div>
+                                            </div>
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                    <div class="form-group" style="border: none; margin-top: 10px; margin-bottom: 10px; padding-top: 0;">
+                                        <label class="col-sm-2 control-label no-padding-right"></label>
+                                        <div class="col-sm-1 no-padding-right">
+                                            <input placeholder="0" class="form-control" type="text" id="txtLastMinRecharge" value="@(model.ListCommRecharge != null && model.ListCommRecharge.Count >= 2 ? model.ListCommRecharge[model.ListCommRecharge.Count - 1].ProfitMinRange.ToString() : "")" readonly="readonly">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            以上
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                        </div>
+                                        <div class="col-sm-1 radio text-center">
+                                            提成比例
+                                        </div>
+                                        <div class="col-sm-2 no-padding-left">
+                                            <input placeholder="请输入数值" class="form-control" type="text" id="txtLastPorfitRecharge" value="@(model.ListCommRecharge != null && model.ListCommRecharge.Count >= 2 ? (model.ListCommRecharge[model.ListCommRecharge.Count - 1].ProfitPct * 100).ToString("0.0") : "")">
+                                        </div>
+                                        <div class="col-sm-1 radio text-left">
+                                            (%)
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 添加提成区间 结束 -->
+                            }
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <br>
+                                    @if(EditFlag == 1){
+                                    <button class="btn btn-primary" type="submit" onclick="EditAccount(@(model.AccountID))">确 定</button>
+                                    }
+                                    <a href="/Commission/AccountList?#@(model.AccountID)" class="btn btn-default">返 回 </a>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+    </div>
+}
+else
+{
+    <script>
+        location.href = "/Commission/AccountList";
+    </script>
+}

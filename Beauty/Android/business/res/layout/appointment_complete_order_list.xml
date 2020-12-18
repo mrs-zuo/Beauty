@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg" >
+
+        <ImageButton
+            android:id="@+id/order_search_new_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_backbutton"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/appointment_old_order_title"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/appointment_service_old_order" />
+        <TextView
+            android:id="@+id/appointment_old_order_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/appointment_old_order_title"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:gravity="right"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+    
+	    <com.GlamourPromise.Beauty.view.RefreshListView
+	        android:id="@+id/dispense_customer_old_order_listview"
+	        style="@style/activity_content_listview_attrs" 
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_weight="6"/>
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_weight="0.1"
+	        >
+	    <Button
+	       android:id="@+id/appointment_detail_order_make_sure"
+		   android:layout_marginRight="5dp"
+		   android:layout_marginLeft="5dp"
+		   android:layout_width="match_parent"
+		   android:layout_height="35dip"
+		   android:textColor="@color/white"
+           android:background="@xml/shape_btn_blue"
+	       android:contentDescription="@string/search"
+	       android:textSize="@dimen/text_size"
+	       android:text="选择新项目" />
+	    
+    </LinearLayout>
+</LinearLayout>

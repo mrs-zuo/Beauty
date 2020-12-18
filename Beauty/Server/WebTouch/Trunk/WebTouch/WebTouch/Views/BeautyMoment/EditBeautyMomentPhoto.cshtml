@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "照片编辑";
+    Model.View_Model.CustomerTGPicList model = new Model.View_Model.CustomerTGPicList();
+    model = Model;
+
+    long GroupNo = 0;
+    if (ViewBag.GroupNo != null)
+    {
+        GroupNo = ViewBag.GroupNo;
+    }
+}
+<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/css/default.css">
+<style>
+    #clipArea {
+        margin: 20px;
+        height: 300px;
+    }
+
+    #file,
+    #clipBtn {
+        margin: 20px;
+    }
+
+    #view {
+        margin: 0 auto;
+        width: 320px;
+        height: 320px;
+        display: block;
+    }
+</style>
+
+<script src="/Scripts/BeautyMoment.js"></script>
+@if (model != null)
+{
+    <div class="width100 whiteBkg MB80">
+        <div class="width90 blockC rowU5 FL textL MB10 clearfix">
+            <span class="fl rowU5-onepic width100 PT15">
+                @if (string.IsNullOrWhiteSpace(model.ImageURL))
+                { 
+                    <span>
+                        <input type="file" id="file" style="display: none;" />
+                        <div id="view" style="background-image: url('/pic/whitepic.png')" onclick="ChoosePic()"></div>
+
+                    </span>
+                }
+                else
+                {
+
+                    <span>
+                        <img src="@(model.ImageURL)"></span>
+                    
+                }
+            </span>
+            <span class="fl width98 PT5 PB5 MT10 lineHeight1_5x ">
+                <textarea class="textarea grayTex" rows="3" id="txtImageTag">@(model.ImageTag)</textarea>
+            </span>
+        </div>
+    </div>
+    <div class="btnBtm width100 whiteBkg PT10 PB10">
+        @if (string.IsNullOrWhiteSpace(model.RecordImgID))
+        { 
+            <div class="width90 blockC ML5P fl"><a class="width100 btnLarge bkgColor1 fl" onclick="AddPic(@(GroupNo))">确定</a></div>
+        }
+        else
+        {
+            <div class="width90 blockC ML5P fl"><a class="width48 btnLarge bkgColor1 fl MR5" onclick="DeteleOnePic('@(model.RecordImgID)',(@(GroupNo)))">删除</a><a class="width48 btnLarge bkgColor1 fr"  onclick="SubmitPic('@(model.RecordImgID)',(@(GroupNo)))">确定</a></div>
+        }
+    </div>
+    <input type="hidden" id="hidtxt" />
+}
+
+<div id="guideImg1" class="block" style="display: none;">
+    <a class="closedBtn">
+        <img src="/pic/closedBtn.png" height="30" /></a>
+    <div class="popupDiv whiteBkg width100">
+        <div id="clipArea" onclick="ClipPic();"></div>
+        <button id="clipBtn" style="display: none;">截取</button>
+    </div>
+</div>
+
+<script src="/js/iscroll-zoom.js"></script>
+<script src="/js/hammer.js"></script>
+<script src="/js/jquery.photoClip.js"></script>
+<script>
+    function ChoosePic() {
+        $("#file").click();
+    }
+
+    function ClipPic() {
+        $("#clipBtn").click();
+    }
+    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    $("#clipArea").photoClip({
+        width: 320,
+        height: 320,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function () {
+            showDiv();
+            console.log("照片读取中");
+        },
+        loadComplete: function () {
+            console.log("照片读取完成");
+        },
+        clipFinish: function (dataURL) {
+            console.log(dataURL);
+            closePop();
+            $("#hidtxt").data("HeadFlg", 1);
+        }
+    });
+
+    function overlayShow() {
+        document.getElementById("guideImg1").style.display = "";
+    }
+    //关闭弹框
+    function closePop() {
+        $("#guideImg1").hide();
+    }
+    $(".closedBtn").click(function () {
+        closePop();
+    })
+
+    function showDiv() {
+        $("#guideImg1").show();
+    }
+</script>

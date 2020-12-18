@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="balanceRecharge" xml:space="preserve">
+    <value>充值</value>
+  </data>
+  <data name="Course" xml:space="preserve">
+    <value>课程</value>
+  </data>
+  <data name="errAccAdd" xml:space="preserve">
+    <value>0|美容师信息添加失败!</value>
+  </data>
+  <data name="errAccAvailable" xml:space="preserve">
+    <value>状态变更失败!</value>
+  </data>
+  <data name="errAccountLogin" xml:space="preserve">
+    <value>账号或密码错误！</value>
+  </data>
+  <data name="errAccountLoginNoBranch" xml:space="preserve">
+    <value>登录失败，该用户不属于任何门店！</value>
+  </data>
+  <data name="errAccUpdate" xml:space="preserve">
+    <value>美容师信息更新失败!</value>
+  </data>
+  <data name="errAddFavorite" xml:space="preserve">
+    <value>添加收藏失败!</value>
+  </data>
+  <data name="errAddTreatment" xml:space="preserve">
+    <value>添加服务失败！</value>
+  </data>
+  <data name="errAnswerAdd" xml:space="preserve">
+    <value>回答添加失败！</value>
+  </data>
+  <data name="errAnswerUpdate" xml:space="preserve">
+    <value>专业信息更新失败！</value>
+  </data>
+  <data name="errAuthenticationCodeHasUsed" xml:space="preserve">
+    <value>验证码已被使用!</value>
+  </data>
+  <data name="errAuthenticationCodeNotAvailable" xml:space="preserve">
+    <value>验证码已经过期!</value>
+  </data>
+  <data name="errAuthenticationCodeNotCorrect" xml:space="preserve">
+    <value>对不起，请输入正确的验证码！</value>
+  </data>
+  <data name="errAuthenticationCodeSend" xml:space="preserve">
+    <value>验证码发送失败！</value>
+  </data>
+  <data name="errBalanceNotEnough" xml:space="preserve">
+    <value>余额不足!</value>
+  </data>
+  <data name="errCancelOrderPaid" xml:space="preserve">
+    <value>已取消订单不能支付!</value>
+  </data>
+  <data name="errCantPartPay" xml:space="preserve">
+    <value>付款金额与订单金额不一致!</value>
+  </data>
+  <data name="errCartAdd" xml:space="preserve">
+    <value>添加失败！</value>
+  </data>
+  <data name="errCartDel" xml:space="preserve">
+    <value>删除失败！</value>
+  </data>
+  <data name="errCartHasChangeToOrder" xml:space="preserve">
+    <value>有购物车已转为订单！</value>
+  </data>
+  <data name="errCartUpdate" xml:space="preserve">
+    <value>更新失败！</value>
+  </data>
+  <data name="errComAvailabel0" xml:space="preserve">
+    <value>本公司允许添加人数为0！</value>
+  </data>
+  <data name="errComAvailabeMax" xml:space="preserve">
+    <value>本公司允许添加人数已经达到最大值！</value>
+  </data>
+  <data name="errCompanyUpdate" xml:space="preserve">
+    <value>美容院信息更新失败！</value>
+  </data>
+  <data name="errCompleteOrder" xml:space="preserve">
+    <value>订单状态更新失败！</value>
+  </data>
+  <data name="errCompleteTreatment" xml:space="preserve">
+    <value>更改服务状态失败！</value>
+  </data>
+  <data name="errCompleteTreatmentsByCourseID" xml:space="preserve">
+    <value>操作失败！</value>
+  </data>
+  <data name="errContactUpdate" xml:space="preserve">
+    <value>联系详情更新失败！</value>
+  </data>
+  <data name="errCustomerAdd" xml:space="preserve">
+    <value>客户添加失败！</value>
+  </data>
+  <data name="errCustomerBasicUpdate" xml:space="preserve">
+    <value>客户基本信息更新失败！</value>
+  </data>
+  <data name="errCustomerDelete" xml:space="preserve">
+    <value>客户删除失败！</value>
+  </data>
+  <data name="errCustomerDetailUpdate" xml:space="preserve">
+    <value>客户详细信息更新失败！</value>
+  </data>
+  <data name="errCustomerImageAdd" xml:space="preserve">
+    <value>客户添加成功！但头像上传失败！！</value>
+  </data>
+  <data name="errCustomerImageUpdate" xml:space="preserve">
+    <value>客户信息更新成功！但图片上传失败！</value>
+  </data>
+  <data name="errCustomerLevelUpdate" xml:space="preserve">
+    <value>用户等级修改失败!</value>
+  </data>
+  <data name="errCustomerNotExist" xml:space="preserve">
+    <value>用户已不存在！</value>
+  </data>
+  <data name="errDataError" xml:space="preserve">
+    <value>处理数据出现异常!</value>
+  </data>
+  <data name="errDeleteTreatment" xml:space="preserve">
+    <value>删除失败！</value>
+  </data>
+  <data name="errDelFavorite" xml:space="preserve">
+    <value>删除收藏商品失败!</value>
+  </data>
+  <data name="errExistFavorite" xml:space="preserve">
+    <value>已经收藏过了!</value>
+  </data>
+  <data name="errExpirationTimeUpdate" xml:space="preserve">
+    <value>有效时间修改失败!</value>
+  </data>
+  <data name="errHeadImageUpdate" xml:space="preserve">
+    <value>头像修改失败！</value>
+  </data>
+  <data name="errImageDel" xml:space="preserve">
+    <value>图片删除失败！</value>
+  </data>
+  <data name="errImageUpload" xml:space="preserve">
+    <value>操作失败！</value>
+  </data>
+  <data name="errItemAdd" xml:space="preserve">
+    <value>项目增加失败!</value>
+  </data>
+  <data name="errItemDelete" xml:space="preserve">
+    <value>项目删除失败!</value>
+  </data>
+  <data name="errItemUpdate" xml:space="preserve">
+    <value>项目修改失败!</value>
+  </data>
+  <data name="errLevelAdd" xml:space="preserve">
+    <value>会员卡添加失败！</value>
+  </data>
+  <data name="errLevelDel" xml:space="preserve">
+    <value>会员卡删除失败！</value>
+  </data>
+  <data name="errLevelUpdate" xml:space="preserve">
+    <value>会员卡更新失败！</value>
+  </data>
+  <data name="errLogin" xml:space="preserve">
+    <value>账号或密码错误！</value>
+  </data>
+  <data name="errLoginMobileError" xml:space="preserve">
+    <value>请输入正确的手机号！</value>
+  </data>
+  <data name="errLoginMobileNotExit" xml:space="preserve">
+    <value>对不起，您所输入的手机不存在！</value>
+  </data>
+  <data name="errMessageAdd" xml:space="preserve">
+    <value>消息发送失败！</value>
+  </data>
+  <data name="errNoAbout" xml:space="preserve">
+    <value>0|本公司没有关于</value>
+  </data>
+  <data name="errNOAccountID" xml:space="preserve">
+    <value>美丽顾问不正确！</value>
+  </data>
+  <data name="errNoCommodity" xml:space="preserve">
+    <value>该商品不存在或已下架!</value>
+  </data>
+  <data name="errNoData" xml:space="preserve">
+    <value>暂无数据！</value>
+  </data>
+  <data name="errNoRole" xml:space="preserve">
+    <value>操作失败！请确认权限！</value>
+  </data>
+  <data name="errNoService" xml:space="preserve">
+    <value>该服务不存在或已下架!</value>
+  </data>
+  <data name="errNoStep" xml:space="preserve">
+    <value>0|请先设置销售步骤！</value>
+  </data>
+  <data name="errNotExistFavorite" xml:space="preserve">
+    <value>没有收藏过此商品!</value>
+  </data>
+  <data name="errNotHaveEcardPayRole" xml:space="preserve">
+    <value>没有Ecard支付权限</value>
+  </data>
+  <data name="errOldPassword" xml:space="preserve">
+    <value>旧密码错误!</value>
+  </data>
+  <data name="errOppAdd" xml:space="preserve">
+    <value>添加需求失败!</value>
+  </data>
+  <data name="errOppDel" xml:space="preserve">
+    <value>删除需求失败!</value>
+  </data>
+  <data name="errOppHasChangeToOrder" xml:space="preserve">
+    <value>有需求已转为订单！</value>
+  </data>
+  <data name="errOppUpdate" xml:space="preserve">
+    <value>更新需求失败!</value>
+  </data>
+  <data name="errOrderAdd" xml:space="preserve">
+    <value>订单添加失败!</value>
+  </data>
+  <data name="errOrderConfirm" xml:space="preserve">
+    <value>确认失败！</value>
+  </data>
+  <data name="errOrderDelete" xml:space="preserve">
+    <value>订单取消失败!</value>
+  </data>
+  <data name="errOrderEdit" xml:space="preserve">
+    <value>此订单状态已无法更新！</value>
+  </data>
+  <data name="errOrderHasPaid" xml:space="preserve">
+    <value>支付失败，订单已经支付！</value>
+  </data>
+  <data name="errOrderUpdate" xml:space="preserve">
+    <value>更新订单失败!</value>
+  </data>
+  <data name="errPartAdd" xml:space="preserve">
+    <value>0|部位增加失败!</value>
+  </data>
+  <data name="errPartDelete" xml:space="preserve">
+    <value>0|部位删除失败!</value>
+  </data>
+  <data name="errPartUpdate" xml:space="preserve">
+    <value>0|部位更新失败!</value>
+  </data>
+  <data name="errPasswordNotCorrect" xml:space="preserve">
+    <value>密码错误！</value>
+  </data>
+  <data name="errPay" xml:space="preserve">
+    <value>支付失败!</value>
+  </data>
+  <data name="errPriceHasChanged" xml:space="preserve">
+    <value>价格已变化！</value>
+  </data>
+  <data name="errProgressUpdate" xml:space="preserve">
+    <value>进度变更失败!</value>
+  </data>
+  <data name="errPromotionAdd" xml:space="preserve">
+    <value>0|促销信息增加失败!</value>
+  </data>
+  <data name="errPromotionDel" xml:space="preserve">
+    <value>0|促销信息删除失败！</value>
+  </data>
+  <data name="errPromotionUpdate" xml:space="preserve">
+    <value>0|促销信息更新失败！</value>
+  </data>
+  <data name="errQuantityNotSufficient" xml:space="preserve">
+    <value>商品数量不足！</value>
+  </data>
+  <data name="errQuestionAdd" xml:space="preserve">
+    <value>0|问卷添加失败!</value>
+  </data>
+  <data name="errQuestionUpt" xml:space="preserve">
+    <value>0|问卷更新失败!</value>
+  </data>
+  <data name="errRecAdd" xml:space="preserve">
+    <value>美容记录添加失败!</value>
+  </data>
+  <data name="errRecDel" xml:space="preserve">
+    <value>美容记录删除失败！</value>
+  </data>
+  <data name="errRecUpdate" xml:space="preserve">
+    <value>美容记录更新失败!</value>
+  </data>
+  <data name="errReviewAdd" xml:space="preserve">
+    <value>评论添加失败！</value>
+  </data>
+  <data name="errReviewEmpty" xml:space="preserve">
+    <value>评价不能为空！</value>
+  </data>
+  <data name="errReviewUpdate" xml:space="preserve">
+    <value>评论更新失败！</value>
+  </data>
+  <data name="errServiceAdd" xml:space="preserve">
+    <value>0|服务增加失败!</value>
+  </data>
+  <data name="errServiceDelete" xml:space="preserve">
+    <value>0|服务删除失败!</value>
+  </data>
+  <data name="errServiceDetailUpdate" xml:space="preserve">
+    <value>服务详情更新失败!</value>
+  </data>
+  <data name="errServiceUpdate" xml:space="preserve">
+    <value>0|服务更新失败!</value>
+  </data>
+  <data name="errSettingCustomer" xml:space="preserve">
+    <value>0|个人基本信息设置失败!</value>
+  </data>
+  <data name="errStepInputNumber" xml:space="preserve">
+    <value>步骤数请输入0至</value>
+  </data>
+  <data name="errSubmit" xml:space="preserve">
+    <value>0|提交失败!</value>
+  </data>
+  <data name="errSystemHandle" xml:space="preserve">
+    <value>陈伟林!!!</value>
+  </data>
+  <data name="errTemplateAdd" xml:space="preserve">
+    <value>模板添加失败！</value>
+  </data>
+  <data name="errTemplateDel" xml:space="preserve">
+    <value>模板删除失败！</value>
+  </data>
+  <data name="errTemplateUpdate" xml:space="preserve">
+    <value>模板更新失败！</value>
+  </data>
+  <data name="errTreatmentEdit" xml:space="preserve">
+    <value>此服务已无法更新！</value>
+  </data>
+  <data name="errTreatmentHasCompleted" xml:space="preserve">
+    <value>订单下已有完成的服务，不能取消！</value>
+  </data>
+  <data name="errUpdatePassword" xml:space="preserve">
+    <value>密码修改失败！</value>
+  </data>
+  <data name="errUpdateResponsiblePerson" xml:space="preserve">
+    <value>更新责任人失败！</value>
+  </data>
+  <data name="errUpdateSalePriceDelete" xml:space="preserve">
+    <value>修改订单价格失败!</value>
+  </data>
+  <data name="errUpdateSalePriceHasCompleted" xml:space="preserve">
+    <value>订单下已有完成的服务,不能修改价格!</value>
+  </data>
+  <data name="errUpdateTreatment" xml:space="preserve">
+    <value>更新失败！</value>
+  </data>
+  <data name="errUpdateTreatmentDesignated" xml:space="preserve">
+    <value>修改指定失败！</value>
+  </data>
+  <data name="errUpdateTreatmentRemark" xml:space="preserve">
+    <value>服务备注更新失败！</value>
+  </data>
+  <data name="existCustomerName" xml:space="preserve">
+    <value>已经存在该名字！</value>
+  </data>
+  <data name="existCustomerNameAndPhone" xml:space="preserve">
+    <value>名字与联系电话已存在!</value>
+  </data>
+  <data name="existCustomerPhone" xml:space="preserve">
+    <value>已经存在该联系电话！</value>
+  </data>
+  <data name="existMobileError" xml:space="preserve">
+    <value>该手机号码已经存在！</value>
+  </data>
+  <data name="newMsg" xml:space="preserve">
+    <value>您有一条来自{0}的新消息！请注意查收！</value>
+  </data>
+  <data name="newRemind" xml:space="preserve">
+    <value>您有一条来自{0}的提醒！请注意查收！</value>
+  </data>
+  <data name="Num" xml:space="preserve">
+    <value>第</value>
+  </data>
+  <data name="rechargeBalanceError" xml:space="preserve">
+    <value>操作失败！</value>
+  </data>
+  <data name="rechargeBalanceSuccess" xml:space="preserve">
+    <value>操作成功！</value>
+  </data>
+  <data name="remindAppoint" xml:space="preserve">
+    <value>有一个预约!</value>
+  </data>
+  <data name="remindYou" xml:space="preserve">
+    <value>您在</value>
+  </data>
+  <data name="strBetween" xml:space="preserve">
+    <value>之间!</value>
+  </data>
+  <data name="strProduct" xml:space="preserve">
+    <value>的产品!</value>
+  </data>
+  <data name="sucAccAdd" xml:space="preserve">
+    <value>1|美容师信息添加成功!</value>
+  </data>
+  <data name="sucAccAvailable" xml:space="preserve">
+    <value>状态变更成功!</value>
+  </data>
+  <data name="sucAccUpdate" xml:space="preserve">
+    <value>美容师信息更新成功!</value>
+  </data>
+  <data name="sucAnswerAdd" xml:space="preserve">
+    <value>回答添加成功！</value>
+  </data>
+  <data name="sucAnswerUpdate" xml:space="preserve">
+    <value>专业信息更新成功！</value>
+  </data>
+  <data name="sucAuthenticationCodeSend" xml:space="preserve">
+    <value>验证码发送成功！</value>
+  </data>
+  <data name="sucCartAdd" xml:space="preserve">
+    <value>添加成功！</value>
+  </data>
+  <data name="sucCartDel" xml:space="preserve">
+    <value>删除成功！</value>
+  </data>
+  <data name="sucCartUpdate" xml:space="preserve">
+    <value>更新成功！</value>
+  </data>
+  <data name="sucCompanyUpdate" xml:space="preserve">
+    <value>美容院信息更新成功!</value>
+  </data>
+  <data name="sucCompleteTreatmentsByCourseID" xml:space="preserve">
+    <value>操作成功！</value>
+  </data>
+  <data name="sucContactUpdate" xml:space="preserve">
+    <value>联系详情更新成功!</value>
+  </data>
+  <data name="sucCustomerAdd" xml:space="preserve">
+    <value>客户添加成功！</value>
+  </data>
+  <data name="sucCustomerBasicUpdate" xml:space="preserve">
+    <value>客户基本信息更新成功！</value>
+  </data>
+  <data name="sucCustomerDelete" xml:space="preserve">
+    <value>客户删除成功！</value>
+  </data>
+  <data name="sucCustomerDetailUpdate" xml:space="preserve">
+    <value>客户详细信息更新成功！</value>
+  </data>
+  <data name="sucCustomerLevelUpdate" xml:space="preserve">
+    <value>用户等级修改成功!</value>
+  </data>
+  <data name="sucExpirationTimeUpdate" xml:space="preserve">
+    <value>有效时间修改成功!</value>
+  </data>
+  <data name="sucHeadImageUpdate" xml:space="preserve">
+    <value>头像修改成功！</value>
+  </data>
+  <data name="sucImageDel" xml:space="preserve">
+    <value>图片删除成功！</value>
+  </data>
+  <data name="sucImageUpload" xml:space="preserve">
+    <value>操作成功！</value>
+  </data>
+  <data name="sucItemAdd" xml:space="preserve">
+    <value>1|项目增加成功!</value>
+  </data>
+  <data name="sucItemDelete" xml:space="preserve">
+    <value>1|项目删除成功!</value>
+  </data>
+  <data name="sucItemUpdate" xml:space="preserve">
+    <value>1|项目修改成功!</value>
+  </data>
+  <data name="sucLevelAdd" xml:space="preserve">
+    <value>会员卡添加成功!</value>
+  </data>
+  <data name="sucLevelDel" xml:space="preserve">
+    <value>会员卡删除成功!</value>
+  </data>
+  <data name="sucLevelUpdate" xml:space="preserve">
+    <value>会员卡更新成功!</value>
+  </data>
+  <data name="sucLogin" xml:space="preserve">
+    <value>1|登陆成功!</value>
+  </data>
+  <data name="sucMessageAdd" xml:space="preserve">
+    <value>消息发送成功！</value>
+  </data>
+  <data name="sucOppAdd" xml:space="preserve">
+    <value>添加需求成功!</value>
+  </data>
+  <data name="sucOppDel" xml:space="preserve">
+    <value>删除需求成功!</value>
+  </data>
+  <data name="sucOppUpdate" xml:space="preserve">
+    <value>更新需求成功!</value>
+  </data>
+  <data name="sucOrderAdd" xml:space="preserve">
+    <value>订单添加成功!</value>
+  </data>
+  <data name="sucOrderConfirm" xml:space="preserve">
+    <value>确认成功！</value>
+  </data>
+  <data name="sucOrderDelete" xml:space="preserve">
+    <value>订单取消成功!</value>
+  </data>
+  <data name="sucOrderUpdate" xml:space="preserve">
+    <value>更新订单成功!</value>
+  </data>
+  <data name="sucPartAdd" xml:space="preserve">
+    <value>1|部位增加成功!</value>
+  </data>
+  <data name="sucPartDelete" xml:space="preserve">
+    <value>1|部位删除成功!</value>
+  </data>
+  <data name="sucPartUpdate" xml:space="preserve">
+    <value>1|部位更新成功!</value>
+  </data>
+  <data name="sucPasswordSend" xml:space="preserve">
+    <value>密码发送成功！</value>
+  </data>
+  <data name="sucPasswordUpdate" xml:space="preserve">
+    <value>密码修改成功!</value>
+  </data>
+  <data name="sucPay" xml:space="preserve">
+    <value>支付成功！</value>
+  </data>
+  <data name="sucProgressUpdate" xml:space="preserve">
+    <value>进度变更成功!</value>
+  </data>
+  <data name="sucPromotionAdd" xml:space="preserve">
+    <value>1|促销信息增加成功!</value>
+  </data>
+  <data name="sucPromotionDel" xml:space="preserve">
+    <value>1|促销信息删除成功!</value>
+  </data>
+  <data name="sucPromotionUpdate" xml:space="preserve">
+    <value>1|促销信息更新成功!</value>
+  </data>
+  <data name="sucQuestionAdd" xml:space="preserve">
+    <value>1|问卷添加成功!</value>
+  </data>
+  <data name="sucQuestionUpt" xml:space="preserve">
+    <value>1|问卷更新成功!</value>
+  </data>
+  <data name="sucRecAdd" xml:space="preserve">
+    <value>美容记录添加成功!</value>
+  </data>
+  <data name="sucRecDel" xml:space="preserve">
+    <value>美容记录删除成功！</value>
+  </data>
+  <data name="sucRecUpdate" xml:space="preserve">
+    <value>美容记录更新成功!</value>
+  </data>
+  <data name="sucReviewAdd" xml:space="preserve">
+    <value>评论添加成功！</value>
+  </data>
+  <data name="sucReviewUpdate" xml:space="preserve">
+    <value>评论更新成功！</value>
+  </data>
+  <data name="sucServiceAdd" xml:space="preserve">
+    <value>1|服务增加成功!</value>
+  </data>
+  <data name="sucServiceDelete" xml:space="preserve">
+    <value>1|服务删除成功!</value>
+  </data>
+  <data name="sucServiceDetailUpdate" xml:space="preserve">
+    <value>服务详情更新成功!</value>
+  </data>
+  <data name="sucServiceUpdate" xml:space="preserve">
+    <value>1|服务更新成功!</value>
+  </data>
+  <data name="sucSettingCustomer" xml:space="preserve">
+    <value>1|个人基本信息设置成功!</value>
+  </data>
+  <data name="sucSubmit" xml:space="preserve">
+    <value>1|提交成功!</value>
+  </data>
+  <data name="sucTemplateAdd" xml:space="preserve">
+    <value>模板添加成功！</value>
+  </data>
+  <data name="sucTemplateDel" xml:space="preserve">
+    <value>模板删除成功！</value>
+  </data>
+  <data name="sucTemplateUpdate" xml:space="preserve">
+    <value>模板更新成功！</value>
+  </data>
+  <data name="sucUpdateTotalSalePrice" xml:space="preserve">
+    <value>修改订单价格成功!</value>
+  </data>
+  <data name="sucUpdateTreatmentDesignated" xml:space="preserve">
+    <value>修改指定成功！</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>次</value>
+  </data>
+</root>

@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".LoginActivity" >
+    <LinearLayout
+        android:id="@+id/login_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/login_username_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/txtinputbg"
+            android:drawableLeft="@drawable/inputicon_username"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="number"
+            android:maxLength="20" 
+            android:paddingLeft="5dip">
+			
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/login_password_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/txtinputbg"
+            android:drawableLeft="@drawable/inputicon_password"
+            android:hint="@string/password"
+            android:inputType="textPassword" 
+            android:layout_marginTop="15dip"
+            android:maxLength="20"
+            android:paddingLeft="5dip"
+            android:longClickable="false"/>
+
+        <ImageButton
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/loginbtn"
+            android:contentDescription="@string/search"
+           />
+    </LinearLayout>
+ 	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_info"
+            android:textColor="@color/blue"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</LinearLayout>

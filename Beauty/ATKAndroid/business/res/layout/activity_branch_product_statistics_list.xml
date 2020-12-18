@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.BranchProductStatisticsListActivity" >
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout
+            android:id="@+id/branch_product_statistics_list_title_relativelayout"
+        	style="@style/activity_title_layout_attrs" >
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/branch_product_analysis_title_text"/>
+        <TextView
+            android:id="@+id/report_filter_tag_view_br5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dip"
+            android:layout_marginRight="10dip"
+            android:text="@string/filter_tag_text"
+            android:textColor="@color/title_font"
+            android:textSize="25sp" />
+    </RelativeLayout>
+    <include
+        android:id="@+id/branch_product_statistics_list_date_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/report_date_choose" />
+    <RelativeLayout
+                android:id="@+id/consumer_product_ranking_title_relativelayout" 
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="5dip"
+				android:layout_marginRight="5dip"
+				android:layout_marginTop="5dip">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/title_font"
+                android:text="@string/branch_product_statistics_detail_list_title_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/branch_product_statistics_list_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip">
+    <LinearLayout
+            android:id="@+id/branch_product_statistics_list_service_commodity_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" 
+            android:layout_marginBottom="5dip">
+            <Button
+                android:id="@+id/switch_service_btn"
+                android:layout_width="0dip"
+                android:layout_height="40dip"
+                android:background="@xml/shape_btn_blue_no_round"
+                android:layout_weight="1"
+                android:text="@string/right_menu_service"
+                android:textColor="@color/white" 
+                android:textSize="@dimen/text_size"
+                style="?android:attr/buttonStyle"/>
+            <Button
+                android:id="@+id/switch_commodity_btn"
+                android:layout_width="0dip"
+                android:layout_height="40dip"
+                android:background="@xml/shape_btn_white_no_round"
+                android:layout_weight="1"
+                android:text="@string/right_menu_products"
+                android:textColor="@color/title_font" 
+                android:textSize="@dimen/text_size"
+                style="?android:attr/buttonStyle"/>
+      </LinearLayout>
+      <ListView
+        android:id="@+id/branch_product_statistics_list_listview"
+        style="@style/activity_content_listview_attrs"
+        android:background="@color/white" 
+        android:layout_marginTop="5dip"
+        android:layout_above="@id/branch_product_statistics_list_service_commodity_linearlayout"
+        android:layout_marginBottom="5dip"/>
+      </RelativeLayout>
+</LinearLayout>

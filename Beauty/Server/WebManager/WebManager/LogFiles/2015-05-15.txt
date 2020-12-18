@@ -1,0 +1,45 @@
+2015-05-15 17:17:24[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/15 17:17:24
+Title=使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+Message=Message:使用 JSON JavaScriptSerializer 进行序列化或反序列化时出错。字符串的长度超过了为 maxJsonLength 属性设置的值。
+TargetSite:Void Serialize(System.Object, System.Text.StringBuilder, SerializationFormat)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+RawUrl=/RelationShip/GetCustomerList
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:18
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=rr5bwkmixvntaxxyvt15wrte; HSManger=3IJLtMYovfFbUPdSRf9a9x6a5kijeTvnhKG6s4e/wq3x0j50L/5Hmsb6UXQ7jCXZzc4b5G4pAemplYwdMSdlWF0HjAzMRZ+5mEvZlWzmIKnQgn8G6RAj45pAGiAB4A1eLP5zW4fK57xYS7/e3Quj51gGQ/zBovSCZvbFvuGFYBl4BdAJScBSu5LSHSuVlufZZwznKxQp3nvrdqe5kV8L4Ztn0OcT0Sjh1NRNDwy451r4Rsh7Eg6jML8+GUXxasy6z9m/UpOSj9qGIHhPSGtAhoJCM3gkp5DkeLg6uA28P5H/S0fUnTcheQQvEeT2BLXiFbWFPa7GcuaIIcvwFFZEkif4TzUcYcJczL3Af84SkWPn8dLffZwLVhEFAdD+LYm5xpWkbwe7CSOSVv7Ug9w7MZSb8g0yfC74YVdAjDQ+eMqsr1FtaMTfYB+I3PcRL/9l+Lv+rTtKvUVjlgT4G7awUfRS27FKiQs5zn0ehOvDIki3LFEPsrWJUPeGQ9KxuZQp+UmZt6KUrn6aDuUw+QJgQ090Kx5pukIco2nkU/gKX567sRUMBHhk+OhdLSR+KuRwFYDs9kfzZdP6A+pxVKrDV9TNUDZ4iBk/bZjVvA02MxobUU5nPpuX7/N5sf9+1QyBdXA/FlEW3FJEO+CuRYKR5LJYumF1P8ntX58nZlXl+fnIbH8ja4ftedmoKET+zXrflgYnGwRQQyeexiVURnQgQTUAolli3T2UJSTpH3a1XmTmSHXkYiTT+a9lu+B3IEGDW1fmbnZ7y2rixe4lS2FuU2obWnR5beMxoaEZgrP0ElUeLnUTaetlYZSW6gALCuLOLzLiyYHsQyEMD9K2RfWpUUF/QE3EHFEKX4ozIFix0cISRhprzab+3Br4aOCpqclm/QDaMUa0nNvdpSfEkv/BvMMVQ+yoZhdElLTvQQP/pWU=; CompanyInfo=QKxDuUzF8sMoMlcOE9DXhxWlM+4l8AjsME2DY1osSBh4xcY+OdKtIbaATkweeZCIP5cF72pWNqi8y+e5nKrbHAKqvmKfZWHnZH95sNIWh2ukzGsl+8koCGPdjBB30gzp/4JXHeVdTKpidOB/pjp7Qwvs+Lqb6VqC4OUF8jhIdGlBd9tDdmY6JtrWLQ+9HhYopgJzZUDfrfAURdjTNZ1eG4hQTf3VU5LImT7GGraaWsRP4oCcXGLWuMWw8C4iIeImP26BSq3/FaPqtAHAyQJlxj+0yCt7/5QerYTZpAc6uaYKwqR+0X0gks/m/thti/j6MT1WqmqXmXwWTh7LrqjoqK6l0KDqKIOMgesQSaSYBZhXtupZnk6Bv/50sR56it7ftxgnlb5x0lvjkDTwj72ADu8sWU8cghZr4LcbEBTOBm3XCKMPAeIZq2JsZrj6j6zU5uoRJGv5XJp3VMr46ChNWrpq2lZnXrahJeGRQY63sOT10e+qKB8SR6ALirszNOx9zo/VpyBUOjgFPDf3kDu01z3ZI4w2E9I/nipVB9GSCFnlIzqbQYKYDwFXzaieU5WtMmn1PATBWfBw89rcJHUpyurY6SQ6GXFmz+3PLIv02RLjs3HPRupMJMuy0XNfW37OtHNc16TO+Ct7H/+yzwLGVyGlSLMftzNjQbVW9MC8xRFJT4tIaxKG04LDGO5mRYRpw8jPGDrKd9vYN4gEc0+IIGG7m3pLXDsWe+xjtRQ3wuBRvX3J/4gIbNMQBWNSFOZ+hAky00kwCe9FoQIyIpELbnxQc9T8YC7Ox1Hn0hTTUOL4/gkXaOJbojXdeR/RhxSwss3ExBOIp2HVX6xVVBLCg0BY5T9eyLTcBvu+4lNIlSHvak+l5yooa6WqQ+KhKMVxfCtHwcmiHJfrryK+N3UtGIgGmZYff1WSBj5AN2bBPLAfDz9JfSthTYvhG2vbuS8X8LEtEMpPSNlKg7aleUOaD8d0VspXvBcXl+YpOcZ02NIvv55CUtezWkNrCGLXAlwVJDaSY74e8kTGCL4qhSJw4c0kPazHnnmIdrcrbMFhjk8QnHptTIbH//+FKZh9kbyNOZiLaNrsgxB7Q8zgqm/CWw==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/RelationShip/EditRelationShip?Type=1
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+

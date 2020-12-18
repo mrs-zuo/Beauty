@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "index";
+    int err = HS.Framework.Common.Safe.QueryString.IntSafeQ("err", 0);
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 21)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>首页</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a href="#" class="sidebar-toggler">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a href="" id="refresh-toggler" class="refresh">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a href="#" id="fullscreen-toggler" class="fullscreen">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <div class="page-body">
+            @{
+                if (err==2)
+                {
+                <!--报错页面-->                
+                <div class="widget-body margin-bottom-20">
+                    <div class="error">
+                        <div class="cry"></div>
+                        <h1>
+                        很抱歉<br>
+                        没有找到您访问的页面</h1>
+                        <h2>您可以尝试一下:</h2>
+                        <p>
+                            1.访问其它页面<br>
+                            2.您还可以点击 <a href="javascript:history.go(-1);">返回</a>。<br>
+                            3.将您访问的页面位置告知我们
+                            
+                        </p>
+                    </div>
+                </div>
+                <!--/报错页面-->
+                }
+                else
+                {
+                <!--欢迎页面-->
+                <div class="widget-body margin-bottom-20">
+                    <div class="welcome">
+                        <h1>欢迎来到后台中心</h1>
+                        <p>我们为您提供更好的管理服务！</p>
+                    </div>
+                </div>
+                
+                
+                <!--/欢迎页面-->
+                }
+            }
+        </div>
+    </div>
+    <!-- /Page Content -->
+</div>

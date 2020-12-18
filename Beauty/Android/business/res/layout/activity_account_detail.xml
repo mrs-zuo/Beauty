@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/title_bar"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/account_detail_title_text"
+            android:text="@string/account_detail_title"
+            style="@style/activity_title_text_attrs" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="@dimen/margin_top"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/account_headimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip" 
+                    android:contentDescription="@string/search"/>
+
+                <TextView
+                    android:id="@+id/account_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:maxWidth="@dimen/account_name_maxwidth"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/account_headimage"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size_18sp" 
+                    android:singleLine="true"
+                    android:text="@string/ellipsis"/>
+
+                <!--  
+                <ImageView
+                    android:id="@+id/send_message_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dip"
+                    android:background="@drawable/send_message_button"--> />
+            </RelativeLayout>
+
+            <TableLayout
+                android:id="@+id/account_phone"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_title_and_department"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_branch_name"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_expert"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_introduction"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

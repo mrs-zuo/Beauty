@@ -1,0 +1,136 @@
+﻿@{
+    List<Model.Table_Model.Question_Model> listModel = Model;    
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 16)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li class="active">问题列表</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>问题列表</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择类型:</div>
+                    <select class="select-control" id="ddlListStatus">
+                        <option value="-1">全部</option>
+                        <option value="0">文本</option>
+                        <option value="1">单选选择</option>
+                        <option value="2">多选选择</option>
+                    </select>
+                </div>
+                <a href="/Question/EditQuestion" class="btn btn-default"><i class="fa fa-plus-square"></i>添加问题</a>
+            </div>
+
+            <div class="widget-body no-padding">
+            <table class="table table-hover table-striped">
+                <colgroup class="row">
+                    <col class="col-xs-1">
+                    <col class="col-xs-6">
+                    <col class="col-xs-3">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>问题</th>
+                        <th>类型</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (listModel != null && listModel.Count > 0)
+                        {
+                            int rowNum = 1;
+                            foreach (Model.Table_Model.Question_Model item in listModel)
+                            {
+                        <tr>
+                            <td>@(rowNum)</td>
+                            <td>
+                                <div class="over-text">@(item.QuestionName)</div>
+                            </td>
+                            <td>@{
+                                switch (item.QuestionType)
+                                {
+                                    case 0:
+                                <text>文本</text>
+                                        break;
+                                    case 1:
+                                <text>单选</text>
+                                        break;
+                                    case 2:
+                                <text>多选</text>
+                                        break;
+                                    default:
+                                <<text>文本</text>
+                                        break;
+
+                                }
+                            }</td>
+                            <td>
+                                <a href="/Question/EditQuestion?ID=@(item.ID)" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-default btn-sm" onclick="DelQuestion(@(item.ID))"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>  
+                                rowNum++;
+                            }
+                        }    
+                    }
+                </tbody>
+            </table>
+            </div>
+            <br>
+            @*<nav>
+                <ul class="pagination">
+                    <li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>*@
+
+        </div>
+        <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+</div>
+
+<!--下午单选选 Scripts-->
+<script src="/Script/Question.js"></script>

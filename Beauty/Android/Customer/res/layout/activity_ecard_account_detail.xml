@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".CustomerActivity" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TableLayout
+                    android:id="@+id/ecard_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/table_layout_attrs_layout_marginleft"
+                    android:background="@xml/shape_corner_round" >
+
+                    <RelativeLayout
+                        android:id="@+id/layout_balance"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_balance_id_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/ecard_balance_id_content"
+                            style="@style/relative_layout_right_child_attrs"
+                            android:textSize="@dimen/text_size_normal" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_balance_create_time_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/ecard_balance_create_time_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_trading_branch_name_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/ecard_trading_branch_name_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_trading_type_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/ecard_trading_type_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_account_operator_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/ecard_account_operator_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/table_layout_attrs_layout_marginleft"
+                    android:background="@xml/shape_corner_round" >
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/ecard_change_type_amount_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/ecard_change_type_amount_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/ecard_card_type_amount_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+                </TableLayout>
+
+                
+                <com.glamourpromise.beauty.customer.view.NoScrollListView
+                    android:id="@+id/balance_info_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:listSelector="#ffffffff"
+                    android:divider="@null" />
+
+                <com.glamourpromise.beauty.customer.view.NoScrollListView
+                    android:id="@+id/order_list_info_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:listSelector="#ffffffff"
+                    android:divider="@null" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

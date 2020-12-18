@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/relative_layout_has_child_attrs">
+
+    <TextView
+        android:id="@+id/branch_name"
+        style="@style/relative_layout_left_child_attrs" 
+        android:layout_marginLeft="16dp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/gray"/>
+  
+    <ImageView
+        android:id="@+id/responsible_person_join_arrowhead"
+        style="@style/relative_layout_right_child_attrs"
+        android:src="@drawable/join_in_arrowhead_gray" />
+	<TextView
+        android:id="@+id/responsible_person_name"
+        style="@style/relative_layout_left_child_attrs" 
+        android:layout_toLeftOf="@id/responsible_person_join_arrowhead"
+        android:textColor="@color/gray"
+        android:layout_marginRight="14dp"/>
+
+</RelativeLayout>

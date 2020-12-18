@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:background="@color/white"
+    android:orientation="horizontal" >
+    <ImageView
+        android:id="@+id/promotion_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:id="@+id/promotion_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@id/promotion_image"
+        android:singleLine="true"
+        android:text="..."
+        android:textSize="@dimen/text_size_normal" 
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/promotion_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@id/promotion_image"
+        android:layout_below="@id/promotion_title"
+        android:layout_centerVertical="true"
+        android:minLines="2"
+        android:maxLines="2"
+        android:text="..."
+        android:textSize="@dimen/text_size_normal" 
+        android:textColor="@color/text_color"/>
+     <TextView
+        android:id="@+id/promotion_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/promotion_description"
+        android:layout_toRightOf="@id/promotion_image"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginLeft="11dp"
+        android:singleLine="true"
+        android:text="..."
+        android:textSize="@dimen/text_size_normal" 
+        android:textColor="@color/gray"/>
+
+    <View
+        android:id="@+id/promotion_item_divide_view"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#f4f4f4" >
+    </View>
+
+</RelativeLayout>

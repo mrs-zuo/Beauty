@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "服务评价";
+    int type = ViewBag.Type;
+    long MainKey = ViewBag.MainKey;
+}
+<link href="/css/evaluation.css" rel="stylesheet" />
+@if (type == 1)
+{
+    <div class="wrapper">
+        <div class="whiteBkg width100 PB30">
+            <div class="width90 blockC P10Table">
+                <ul class="borderB width100 rowUl2">
+                    <li class="width33_3"><a  href="/Treatment/ServiceRecord?t=1&gn=@(MainKey)" >服务记录</a></li><li class="width33_3"><a  href="/Treatment/ServiceEffect?t=1&gn=@(MainKey)" class="">服务效果</a></li><li class="width33_3 positionR"><a href="/Treatment/ReviewDetail?t=1&gn=@(MainKey)">服务评价</a><span class="btmline bkgColor1"></span></li>
+                </ul>
+            </div>
+            @{
+    Model.View_Model.GetReviewDetail_Model model = Model;
+    if (model != null)
+    {
+                <div class="width90 blockC">
+                    <ul class="width100">
+                        <li class="MT15 MB15">
+                            <ol class="width100">
+                                <li class="MT15 clearfix">
+                                    <h4 class="blackTex font16 longTex">@(model.ServiceName)</h4>
+                                </li>
+                                <li class="MT15 clearfix">
+                                    <div class="fl grayTex">
+                                        <font class="block">@(model.TGEndTime.ToString("yyyy-MM-dd HH:mm"))</font>
+                                    </div>
+                                    <div class="fr grayTex">
+                                        @if (model.TGTotalCount == 0)
+                                        {
+                                            <font class="MR10 block grayTex">服务@(model.TGFinishedCount)次/不限次</font>
+                                        }
+                                        else
+                                        {
+                                            <font class="MR10 block grayTex">服务@(model.TGFinishedCount)次/共@(model.TGTotalCount)次</font>
+                                        }
+                                    </div>
+                                </li>
+                                <li class="MT20 height40 clearfix">
+                                    <div id="star">
+                                        <ul class="width100 clearfix">
+                                            <li class="@(model.Satisfaction >= 1 ? "width24 on" : "width24")" >1</li>
+                                            <li class="@(model.Satisfaction >= 2 ? "width24 on" : "width24")">2</li>
+                                            <li class="@(model.Satisfaction >= 3 ? "width24 on" : "width24")">3</li>
+                                            <li class="@(model.Satisfaction >= 4 ? "width24 on" : "width24")">4</li>
+                                            <li class="@(model.Satisfaction == 5 ? "width24 on" : "width24")">5</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="MB20">
+                            <textarea class="textarea" rows="4" readonly="readonly">@(model.Comment)</textarea>
+                        </li>
+                    </ul>
+                    @if (model.listTM != null && model.listTM.Count > 0)
+                    {
+                        <h4 class="font20">操作评价</h4>
+                        foreach (Model.View_Model.TMReviewDetail_Model item in model.listTM)
+                        {
+                        
+                        <div class="clearfix MT20">
+                                <div class="fl grayTex width20">
+                                <font class="block longTex">@(item.SubServiceName)</font>
+                            </div>
+                            <div class="fr">
+                                <div class="starSmall">
+                                    <ul class="width100 clearfix">
+                                        <li class="@(item.Satisfaction >= 1 ? "width24 on" : "width24")">1</li>
+                                        <li class="@(item.Satisfaction >= 2 ? "width24 on" : "width24")">2</li>
+                                        <li class="@(item.Satisfaction >= 3 ? "width24 on" : "width24")">3</li>
+                                        <li class="@(item.Satisfaction >= 4 ? "width24 on" : "width24")">4</li>
+                                        <li class="@(item.Satisfaction == 5 ? "width24 on" : "width24")">5</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MT10">
+                            <textarea class="textarea" rows="3" readonly="readonly">@(item.Comment)</textarea>
+                        </div>
+                        }
+                    }
+                </div>
+    }
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="wrapper">
+        <div class="whiteBkg width100 PB30">
+            <div class="width90 blockC P10Table">
+                <ul class="borderB width100 rowUl2">
+                    <li class="width33_3"><a  href="/Treatment/ServiceRecord?t=2&tId=@(MainKey)" >服务记录</a></li><li class="width33_3"><a href="/Treatment/ServiceEffect?t=2&tId=@(MainKey)" class="">服务效果</a></li><li class="width33_3 positionR"><a href="/Treatment/ReviewDetail?t=2&tId=@(MainKey)">服务评价</a><span class="btmline bkgColor1"></span></li>
+                </ul>
+            </div>
+            @{
+    Model.Table_Model.Review_Model model = Model;
+    if (model != null)
+    {
+    
+                <div class="width90 blockC">
+                    <div class="clearfix MT20">
+                        @*<div class="fl grayTex width20">
+                            <font class="block longTex">@(model.SubServiceName)</font>
+                        </div>*@
+                        <div class="fl">
+                            <div class="starSmall">
+                                <ul class="width100 clearfix">
+                                    <li class="@(model.Satisfaction >= 1 ? "width24 on" : "width24")">1</li>
+                                    <li class="@(model.Satisfaction >= 2 ? "width24 on" : "width24")">2</li>
+                                    <li class="@(model.Satisfaction >= 3 ? "width24 on" : "width24")">3</li>
+                                    <li class="@(model.Satisfaction >= 4 ? "width24 on" : "width24")">4</li>
+                                    <li class="@(model.Satisfaction == 5 ? "width24 on" : "width24")">5</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="MT10">
+                        <textarea class="textarea" rows="3" readonly="readonly">@(model.Comment)</textarea>
+                    </div>
+                </div>
+    }
+            }
+        </div>
+    </div>
+}

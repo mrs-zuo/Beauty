@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "公告详情";
+    Model.Table_Model.Notice_Model model = new Model.Table_Model.Notice_Model();
+    model = Model;
+}
+@if(model != null){
+<div class="wrapper whiteBkg">
+		<div class="width100 blockC textL">
+			<ul class="width90 rowUl blockC">
+				<li class="borderB pTB15 clearfix textC"><div class="blackTex">@(model.NoticeTitle)</div></li>
+				<li class="borderB pTB15 clearfix"><div class="blackTex fl">发布时间</div><div class="grayTex textR fr">@(model.StartDate.ToString("yyyy-MM-dd"))</div></li>
+				<li class="pTB15 clearfix">
+					<h4 class="PB15 blackTex">公告内容</h4>
+					<div class="width98 fr grayTex lineHeight1_5x">
+						@(model.NoticeContent)
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+}

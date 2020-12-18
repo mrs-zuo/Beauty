@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/benefit_person_name"
+            style="@style/activity_content_table_row_title_attrs"
+            android:layout_marginLeft="35dp"
+            android:text="@string/benefit_person_prompt"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/benefit_person_percent_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:text="@string/percent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/benefit_person_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/benefit_person_percent_mark"
+            android:background="@null"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:minWidth="50dp"
+            android:hint="@string/benefit_person_percent_tip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+</LinearLayout>

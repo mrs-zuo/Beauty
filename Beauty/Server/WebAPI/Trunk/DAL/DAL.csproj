@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1EEE7D43-777C-45C6-AEBF-B9D28C9F1083}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAPI.DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.4">
+      <HintPath>..\lib\BLToolkit.4.dll</HintPath>
+    </Reference>
+    <Reference Include="HS.Framework.Common">
+      <HintPath>..\lib\HS.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account_DAL.cs" />
+    <Compile Include="Appointment_DAL.cs" />
+    <Compile Include="Benefit_DAL.cs" />
+    <Compile Include="Branch_DAL.cs" />
+    <Compile Include="Card_DAL.cs" />
+    <Compile Include="Cart_DAL.cs" />
+    <Compile Include="Category_DAL.cs" />
+    <Compile Include="Commission_DAL.cs" />
+    <Compile Include="CommoditySupplier_DAL.cs" />
+    <Compile Include="Commodity_DAL.cs" />
+    <Compile Include="Company_DAL.cs" />
+    <Compile Include="CustomerSource_DAL.cs" />
+    <Compile Include="Customer\Category_CDAL.cs" />
+    <Compile Include="Customer\Customer_CDAL.cs" />
+    <Compile Include="Customer\ECard_CDAL.cs" />
+    <Compile Include="Customer\Login_CDAL.cs" />
+    <Compile Include="Customer\Order_CDAL.cs" />
+    <Compile Include="Customer\Payment_CDAL.cs" />
+    <Compile Include="Customer\Promotion_CDAL.cs" />
+    <Compile Include="Customer\Task_CDAL.cs" />
+    <Compile Include="Customer_DAL.cs" />
+    <Compile Include="ECard_DAL.cs" />
+    <Compile Include="Image_DAL.cs" />
+    <Compile Include="InOutItem_DAL.cs" />
+    <Compile Include="Journal_DAL.cs" />
+    <Compile Include="Level_DAL.cs" />
+    <Compile Include="Login_DAL.cs" />
+    <Compile Include="Message_DAL.cs" />
+    <Compile Include="News_DAL.cs" />
+    <Compile Include="Notepad_DAL.cs" />
+    <Compile Include="Notice_DAL.cs" />
+    <Compile Include="Opportunity_DAL.cs" />
+    <Compile Include="Order_DAL.cs" />
+    <Compile Include="Paper_DAL.cs" />
+    <Compile Include="Payment_DAL.cs" />
+    <Compile Include="Promotion_DAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PushTool_DAL.cs" />
+    <Compile Include="Question_DAL.cs" />
+    <Compile Include="Record_DAL.cs" />
+    <Compile Include="RelationShip_DAL.cs" />
+    <Compile Include="ReportDownload_DAL.cs" />
+    <Compile Include="Report_DAL.cs" />
+    <Compile Include="Review_DAL.cs" />
+    <Compile Include="RoleCheck_DAL.cs" />
+    <Compile Include="Service_DAL.cs" />
+    <Compile Include="SMSINFO_DAL.cs" />
+    <Compile Include="Statement_DAL.cs" />
+    <Compile Include="Statistics_DAL.cs" />
+    <Compile Include="Step_DAL.cs" />
+    <Compile Include="SubService_DAL.cs" />
+    <Compile Include="Supplier_DAL.cs" />
+    <Compile Include="SuppplierCommodity_DAL.cs" />
+    <Compile Include="Tag_DAL.cs" />
+    <Compile Include="Task_DAL.cs" />
+    <Compile Include="Template_DAL.cs" />
+    <Compile Include="Version_DAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{82de9571-33f1-4c9a-a7b3-5d503a9cb386}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{e172fdb3-c760-42fa-ba3a-4571759a1786}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="API\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,156 @@
+﻿@{
+    HS.Framework.Common.Entity.PageResult<Model.View_Model.GetMessageList_Model> pageList = new HS.Framework.Common.Entity.PageResult<Model.View_Model.GetMessageList_Model>();
+    if (ViewBag.MessageList != null)
+    {
+        pageList = ViewBag.MessageList;
+    }
+
+    List<Model.View_Model.AccountListForWeb_Model> accountList = new List<Model.View_Model.AccountListForWeb_Model>();
+    if (ViewBag.AccountList != null)
+    {
+        accountList = ViewBag.AccountList;
+    }
+
+    int accountID = ViewBag.AccountID;
+
+    string strCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSManger", true);
+    if (string.IsNullOrEmpty(strCookie))
+    {
+        Response.Redirect("/Login/Login?err=1");
+    }
+    WebManager.Models.Cookie_Model model = Newtonsoft.Json.JsonConvert.DeserializeObject<WebManager.Models.Cookie_Model>(strCookie);
+    string role = model.Role;
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 6)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li>市场营销列表</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>市场营销列表</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+
+            <div class="form-group navbar-form">
+
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择账户:</div>
+                    <select class="select-control" id="sel_flag" onchange="selectAccount()">
+                        @{
+                            if (accountList != null && accountList.Count > 0)
+                            {
+                                for (int i = 0; i < accountList.Count; i++)
+                                {
+                                    if (accountList[i].UserID == accountID)
+                                    {
+                            <option value="@(accountList[i].UserID)" selected="selected">@(accountList[i].Name) </option>
+                                    }
+                                    else
+                                    {
+                            <option value="@(accountList[i].UserID)">@(accountList[i].Name) </option>
+                                    }
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+                @{
+                    if (role.Contains(WebAPI.Common.Const.ROLE_MARKETING_WRITE))
+                    {
+                    <a href="/MarketMessage/EditMarketMessage" class="btn btn-default"><i class="fa fa-plus-square"></i>添加市场营销</a>
+                    }
+                }                
+            </div>
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-5">
+                        <col class="col-xs-3">
+                        <col class="col-xs-3">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>市场营销内容</th>
+                            <th>发送人</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (pageList != null && pageList.Data != null && pageList.RecordCount > 0 && pageList.Data.Count > 0)
+                            {
+                                int index = 0;
+                                foreach (Model.View_Model.GetMessageList_Model item in pageList.Data)
+                                {
+                                    index++;
+                            <tr>
+                                <td>@(index)</td>
+                                <td>
+                                    <div class="over-text">@(item.MessageContent)</div>
+                                </td>
+                                <td>@(item.FromUserName)
+                                </td>
+                                <td>已发送@(item.SendCount) / 已接受@(item.ReceiveCount)
+                                </td>
+                            </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            @*<nav>
+						<ul class="pagination">
+						<li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+						<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+						</ul>
+					</nav>*@
+
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/Script/MarketMessage.js"></script>

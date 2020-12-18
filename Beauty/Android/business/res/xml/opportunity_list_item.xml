@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:scaleType="centerInside" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="8dip" >
+        <TextView
+            android:id="@+id/opportunity_customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="80dip"
+            android:layout_marginLeft="5dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" 
+            />
+        <TextView
+            android:id="@+id/opportunity_customer_responsible_divide_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/opportunity_customer_name"
+            android:text="|"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/opportunity_responsible_person_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/opportunity_customer_responsible_divide_view"
+            android:maxWidth="80dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/opportunity_product_name"
+            android:layout_width="@dimen/opportunity_list_item_product_name_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opportunity_customer_name"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="5dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/opportunity_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/opportunity_list_item_margin_right"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/opportunity_progress_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/opportunity_create_time"
+            android:layout_marginRight="@dimen/opportunity_list_item_margin_right"
+            android:layout_marginTop="5dip"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/opportunity_lose_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/has_lose_effectiveness_icon"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center"
+        android:layout_marginRight="5dip"
+        android:src="@drawable/join_in_arrowhead" />
+
+</FrameLayout>

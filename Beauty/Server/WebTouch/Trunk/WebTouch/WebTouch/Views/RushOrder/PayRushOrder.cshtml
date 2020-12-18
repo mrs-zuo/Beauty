@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "支付";
+   
+    Model.View_Model.GetRushOrderDetail_Model model = Model;
+    
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="/Scripts/RushOrder.js"></script>
+<script src="/js/ToCNY.js"></script>
+@if(model != null){
+<div class="wrapper MB60">
+		<div class=" whiteBkg width100 MB10">
+			<ul class=" width90 blockC PTB15 ">
+				<li class="clearfix">
+					<div class="fl blackTex font16">编号</div>
+					<div class="fr grayTex textR">No.&nbsp;@(model.NetTradeNo)</div>
+				</li>
+				<li class="PT15 clearfix">
+					<div class="fl blackTex font16">时间</div>
+					<div class="fr grayTex textR">@(model.RushTime.ToString("yyyy-MM-dd HH:mm"))</div>
+				</li>
+			</ul>		
+		</div>
+		<div class=" whiteBkg width100 MB10">
+			<ul class=" width90 blockC PTB15 ">
+				<li class="clearfix">
+					<div class="fl blackTex font16">@(model.BranchName)</div>
+					
+				</li>
+				<li class="PT15 clearfix">
+					<div class="fl blackTex font16 longTex">@(model.ProductPromotionName)</div>
+					
+				</li>
+				<li class=" PT15 clearfix">	
+					<div class="clearfix">
+						<div class="grayTex fl">@(CurrencySymbol)&nbsp;@(model.RushPrice.ToString("0.00"))</div>
+						<div class="grayTex fr">*&nbsp;@(model.RushQuantity)</div>
+					</div>
+				</li>					
+				
+			</ul>		
+		</div>
+		<div class=" whiteBkg width100 MB10">
+			<ul class=" width90 blockC PTB15 ">
+				<li class="clearfix">
+					<div class="blackTex fl">总计金额</div>
+					<div class="grayTex fr">@(CurrencySymbol)&nbsp;@((model.RushPrice * model.RushQuantity).ToString("0.00"))</div>
+				</li>
+				<li class="PT15 clearfix">
+					<div class="blackTex fl">大写</div>
+					<div class="grayTex fr"> <script type="text/javascript">document.write(numToCny(@((model.RushPrice * model.RushQuantity).ToString("0.00"))))</script></div>
+				</li>
+				<li class="PT15 clearfix">
+					<div class="blackTex fl">支付方式</div>
+					<div class="grayTex fr">微信支付</div>
+				</li>
+			</ul>		
+		</div>
+		
+	</div>
+	<div class="btnBtm width100 whiteBkg">
+		<ul class="width100 btnBtmUL1 clearfix">
+			<li class="width100 bkgColor1 fr ML15 textC font18"><a onclick="AddPay('@(model.JsParam)','@(model.NetTradeNo)')" class="block whiteTex">支付</a></li>
+		</ul>
+	</div>
+}else{
+<script>alert("下单失败");
+    location.href = "/RushOrder/MyRushOrder";
+</script>
+}

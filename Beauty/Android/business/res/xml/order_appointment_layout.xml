@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_content_table_relativelayout_attrs"
+    android:background="@color/tg_background_color">
+
+    <TextView
+        android:id="@+id/order_appointment_no_text"
+        style="@style/activity_content_table_row_title_attrs" />
+    <TextView
+        android:id="@+id/order_appointment_responsible_text"
+        style="@style/activity_content_table_row_title_attrs"
+        android:layout_marginLeft="20dip"
+        android:layout_toRightOf="@id/commodity_delivery_finished_no_text"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/order_appointment_join_arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:src="@drawable/join_in_arrowhead" />
+
+    <TextView
+        android:id="@+id/order_appointment_start_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/order_appointment_join_arrowhead"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:textSize="@dimen/text_size" />
+</RelativeLayout>

@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "业绩分析";
+    bool isAdd = false;
+    if (ViewBag.IsAdd != null)
+    {
+        isAdd = ViewBag.IsAdd;
+    }
+    List<Model.Table_Model.StatementCategory_Model> list = new List<Model.Table_Model.StatementCategory_Model>();
+    list = Model;
+}
+
+<script src="/Script/Statement.js"></script>
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 24)
+    <!-- /Page Sidebar -->
+    <!-- 业绩分析内容 开始 -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li>业绩分析</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>业绩分析</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-group navbar-form">
+                @if (isAdd)
+                {
+                    <a href="/Statement/EditStatement?sc=0" class="btn btn-default"><i class="fa fa-plus-square"></i>添加业绩分类</a>
+                }
+            </div>
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-9">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="over-text">编号</th>
+                            <th class="over-text">分类名称</th>
+                            <th class="over-text">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (list != null && list.Count > 0)
+                        {
+                            int index = 0;
+                            foreach (Model.Table_Model.StatementCategory_Model item in list)
+                            {
+                                index++;
+                            <tr>
+                                <td>@(index)</td>
+                                <td>@(item.CategoryName)</td>
+                                <td>
+                                    @if (isAdd)
+                                    {
+                                        <a class="btn btn-default btn-sm" href="/Statement/EditStatement?sc=@(item.ID)"><i class="fa fa-edit"></i>编辑</a>
+                                        <a class="btn btn-default btn-sm" onclick="deleteStatement(@item.ID)"><i class="fa fa-trash-o"></i>删除</a>
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- 业绩分析内容 结束 -->
+</div>

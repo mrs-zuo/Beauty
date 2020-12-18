@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+
+    List<Model.View_Model.CompanyListForAccountLogin_Model> list = new List<Model.View_Model.CompanyListForAccountLogin_Model>();
+
+    if (ViewBag.CompanyList != null)
+    {
+        list = ViewBag.CompanyList as List<Model.View_Model.CompanyListForAccountLogin_Model>;
+    }
+    
+}
+
+<!DOCTYPE html>
+<!--Head-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>登录</title>
+
+
+    <meta name="description" content="美丽约定-后台管理" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--跟上面meta可进行切换主要对手机进行可放大name="viewport" content="width=device-width, initial-scale=1.0"-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="/assets/css/bs.min.css" rel="stylesheet" />
+    <link href="/assets/css/bs.css" rel="stylesheet" />
+    <link id="bs-rtl-link" href="" rel="stylesheet" />
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="/assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="/assets/css/skins/azure.min.css" rel="stylesheet"/>
+	<link href="/assets/css/skins/gh.min.css" rel="stylesheet" />
+
+    <!--皮肤脚本: 以上有加ID的LINK的是加载皮肤的样式,以下是皮肤的脚本-->
+    <script src="/assets/js/skins.min.js"></script>
+</head>
+<!--Head Ends-->
+<!--Body-->
+<body>
+
+    <div class="login-container animated fadeInDown">
+        <div class="loginbox bg-white">
+        <div class="login-logo">
+                <img width="240" height="149" src="/assets/img/login-logo.png" alt="">
+        </div>
+        
+        <div class="loginbox-title">美丽约定-后台管理系统</div>
+        <div class="loginbox-social">
+            <div class="social-title ">
+                <span class="label label-primary">恭喜您登录成功 ！</span>
+            </div>
+        </div>
+        <div class="loginbox-textbox">
+            <select id="selCompany" onchange="selectCompany()" style="width:100%;">
+                <option selected="selected" value="选择公司" />
+                请选择公司
+                @{
+                    if (list != null)
+                    {
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                    <option value="@(i)" /> @list[i].CompanyAbbreviation
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <!--以下择该门店是根据上面选择守公司之后才会出现这个选择-->
+        <div class="loginbox-textbox">
+            <select id="selBranch" style="width: 100%;">
+                <option selected="selected" value="选择门店" />
+                请选择门店
+            </select>
+        </div>
+        <div class="loginbox-forgot loginbox-textbox">
+            <label class="pull-right">
+                <a class="text"><a href="/Login/logOut">切换账号</a></a>
+            </label>
+        </div>
+        <div class="loginbox-submit">
+            <input type="button" class="btn btn-primary btn-block" onclick="Login()" value="进 入">
+        </div>
+        </div>
+    </div>
+
+    @{
+        if (list != null && list.Count > 0)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i].CompanyID = 0;
+                list[i].AccountID = 0;
+                list[i].Advanced = "";
+                if (list[i].BranchList != null && list[i].BranchList.Count > 0)
+                {
+                    for (int j = 0; j < list[i].BranchList.Count; j++)
+                    {
+                        list[i].BranchList[j].BranchID = list[i].BranchList[j].BranchID==0?0:1;
+                    }
+                }
+            }
+        }}
+    <input type="hidden" id ="hid_CompanyList" value ="@(Newtonsoft.Json.JsonConvert.SerializeObject(list))" >
+
+    <!--Basic Scripts-->
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/bs.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="/assets/js/beyond.js"></script>
+    <script src="/Script/Login.js"></script>    
+</body>
+    <!--Body Ends-->
+</html>

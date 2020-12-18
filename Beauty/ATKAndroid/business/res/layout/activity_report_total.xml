@@ -1,0 +1,213 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.ReportTotalActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/report_total_type_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/report_total_type_text" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_margin="5dp"
+                android:background="@color/tab_backcolor" >
+
+                <TextView
+                    android:id="@+id/report_total_end_date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size" />
+            </RelativeLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:text="@string/report_total_person_title"
+                        android:textColor="@color/tab_font"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+               
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        style="@style/activity_title_text_attrs"
+                        android:text="@string/report_total_effective_customer_number"
+                        android:textColor="@color/title_font" />
+
+                    <TextView
+                        android:id="@+id/report_total_effective_customer_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        style="@style/activity_title_text_attrs"
+                        android:layout_marginLeft="50dp"
+                        android:text="@string/report_total_effective_customer_app"
+                        android:textColor="@color/title_font" />
+
+                    <TextView
+                        android:id="@+id/report_total_effective_customer_app_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        style="@style/activity_title_text_attrs"
+                        android:layout_marginLeft="50dp"
+                        android:text="@string/report_total_effective_customer_touch"
+                        android:textColor="@color/title_font" />
+
+                    <TextView
+                        android:id="@+id/report_total_effective_customer_touch_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:background="@color/tab_backcolor" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:text="@string/business_order_list_title_text"
+                        android:textColor="@color/tab_font"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        style="@style/activity_title_text_attrs"
+                        android:text="@string/report_total_complete_order_number"
+                        android:textColor="@color/title_font" />
+
+                    <TextView
+                        android:id="@+id/report_total_complete_order_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        style="@style/activity_title_text_attrs"
+                        android:text="@string/report_total_effect_order_number"
+                        android:textColor="@color/title_font" />
+
+                    <TextView
+                        android:id="@+id/report_total_effect_order_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        style="@style/activity_title_text_attrs"
+                        android:text="@string/report_total_order_sales"
+                        android:textColor="@color/title_font" />
+
+                    <TextView
+                        android:id="@+id/report_total_order_sales_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

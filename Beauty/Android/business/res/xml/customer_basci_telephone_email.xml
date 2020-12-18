@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <View
+        style="@style/activity_content_divide_view_attrs"/>
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <ImageButton
+            android:id="@+id/del_customer_basic_info_table_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="#00000000"
+            android:src="@drawable/del_table_row" />
+        <Spinner
+            android:id="@+id/customer_basic_telephone_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/del_customer_basic_info_table_row"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:entries="@array/telephone_type_array"
+            android:background="@null"/>
+        <EditText
+            android:id="@+id/customer_basic_info_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/customer_basic_telephone_spinner"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:maxLength="20"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/gray"
+            android:inputType="number"
+            android:background="@null"/>
+    </RelativeLayout>
+
+</LinearLayout>

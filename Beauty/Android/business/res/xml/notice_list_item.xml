@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/noticelist_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/text_size_18sp" />
+    <TextView
+        android:id="@+id/noticelist_createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/noticelist_title"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_size_16sp" />
+
+    <ImageView
+        android:id="@+id/notice_arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/join_in_arrowhead" />
+
+</RelativeLayout>

@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "我的账户";
+    Model.View_Model.GetCardInfo_Model model = Model;
+    string colorCss = " card1Bkg ";
+    if (model.CardType == 2)
+    {
+        colorCss = " card3Bkg ";
+    }
+    else if (model.CardType == 3)
+    {
+        colorCss = " card4Bkg ";
+    }
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    //else
+    //{
+    //    Response.Redirect("/Login/Login?err=1");
+    //}
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+    
+}
+
+@{
+    if (model != null)
+    {
+    <div class="whiteBkg">
+        <div class="width100 blockC P10Table borderB textL">
+            <div class="width90 pTB5P blockC">
+                <div class="itemCard @(colorCss)">
+                    <h4 class="font18 whiteTex MT10">@(model.CardName)</h4>
+                    <div class="MT20 lineHeight2x whiteTex textR">
+                        @if (model.RealCardNo != null && model.RealCardNo != "")
+                        {
+                        <p>实体卡<span id="" class="ML5">@(model.RealCardNo)</span></p>
+                        }
+                        <p>NO.<span id="" class="ML5">@(model.UserCardNo)</span></p>
+                        <p>有效期<span id="" class="ML5">@(model.CardExpiredDate.ToString("yyyy-MM-dd"))</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="width100 blockC textL">
+            <ul class="width90 blockC rowUl">
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">账户类型</div>
+                    <div class="grayTex textR fr">@(model.CardTypeName)</div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">余额</div>
+                    <div class="grayTex textR fr">@(model.CardType != 2? CurrencySymbol : "")@(model.Balance)</div>
+                </li>
+                @{
+        if (model.DiscountList != null && model.DiscountList.Count > 0)
+        { 
+                    <li class="borderB">
+                        <div class="PT15">
+                            <h4 class="borderB PB15">折扣政策</h4>
+                            <div class="blockC clearfix">
+                                <ol class="width95 rowUl fr">
+                                    @{
+            foreach (Model.View_Model.CardDiscountList_Model item in model.DiscountList)
+            {
+                                        <li class="ML10 borderB pTB15 clearfix">
+                                            <div class="blackTex fl">@(item.DiscountName)</div>
+                                            <div class="grayTex textR fr">@(item.Discount)</div>
+                                        </li>
+            }
+                                    }
+                                </ol>
+                            </div>
+                        </div>
+                    </li>
+        }
+                }
+
+                <li class="borderB"><a href="/Account/TransactionList?cn=@(model.UserCardNo)&t=@(model.CardType)" class="positionR">
+                    <div class="blackTex fl">交易明细</div>
+                    <div class="grayTex fr MR30">
+                        <span class="rightArrowRow">
+                            <img src="/pic/rightArrow.png" height="20"></span>
+                    </div>
+                </a></li>
+                <li class="borderB pTB15 whiteBkg clearfix">
+					<h4 class="PB15">账户描述</h4>
+					<div class="width98 fr grayTex lineHeight1_5x">@(model.CardDescription)</div>
+				</li>
+			</ul>
+        </div>
+    </div>
+        if (!model.IsDefaultCard && model.CardType == 1)
+        {
+    <div class="width90 blockC MT30 MB30"><a class="btnLarge bkgColor1 width100" onclick="setDefaultCard(@(model.UserCardNo));">设为默认账户</a></div>
+        }
+    }
+
+    else
+    {
+    <div class="whiteBkg">
+        没有数据
+    </div>
+    }
+    <script src="/Scripts/Account.js"></script>
+}
+

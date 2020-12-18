@@ -1,0 +1,209 @@
+﻿@{
+    ViewBag.Title = "促销详情";
+    Model.View_Model.PromotionDetail_Model model = Model;
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+    string jsParam = "";
+    if (ViewBag.JsParam != null)
+    {
+        jsParam = ViewBag.JsParam;
+    }
+}
+
+<script src="/js/Swipe.js"></script>
+<script src="/js/jweixin-1.0.0.js"></script>
+<script src="/Scripts/WXShare.js"></script>
+<script src="/Scripts/Promotion.js"></script>
+<input type="hidden" id="hidParam" value="@(jsParam)"/>
+<script type="text/javascript">
+    $(function () {
+        Swipe(document.getElementById('slider'), {
+            auto: 3000,
+            continuous: true,
+            callback: function (pos) {
+                var bullets = $("#position li");
+                var i = bullets.length;
+                while (i--) {
+                    bullets[i].className = ' ';
+                }
+                bullets[pos].className = 'on';
+            }
+        });
+    });
+</script>
+
+@{
+    if (model != null)
+    { 
+    <!--轮显图片开始-->
+    <div class="banner swipe" id="slider">
+        <div class="swipe-wrap">
+            <figure>
+                <a href="">
+                    <img src="@(model.PromotionPictureURL == "" ? "/pic/nopicbg.jpg" : model.PromotionPictureURL)" alt=""/></a>
+            </figure>
+        </div>
+        <nav>
+            <ul id="position">
+                <li></li>
+            </ul>
+        </nav>
+    </div>
+    <!--轮显图片结束-->
+    
+
+    <div class="whiteBkg textC pTB2P MB5 lineHeight1_5x">
+        <a class="block width100 share-iconR height25P" onclick="GotoShare('@(model.PromotionCode)','@(model.Title)','@(model.Description)','@(model.PromotionPictureURL)',1)">
+            <span class="color1 font18">@(model.Title)</span></a>
+    </div>
+    <div class="wrapper whiteBkg PT20 PB20 MB5">
+        <div class="width90 blockC">
+            <div class="positionR MB10"><span class="separation inlineB bkgColor1"></span><span class="font18">促销内容</span></div>
+            <div class="grayTex MB10 lineHeight1_5x">@Html.Raw(model.Description.Replace("\n", "<br />").Replace("\r", "<br />").Replace("\r\n", "<br />"))</div>
+        </div>
+    </div>
+    <div class="wrapper whiteBkg PT20 PB20 MB5">
+        <div class="whiteBkg width90 blockC PB20 MB10">
+            <div class="positionR MB10">
+                <span class="separation inlineB bkgColor1"></span>
+                <span class="font18">促销时间</span>
+            </div>
+            <div class="PB20">
+                <span class="block width75 fl MB10 ML5P">@(model.StartDate.ToString("yyyy-MM-dd HH:mm:ss"))</span>
+                <span class="block width20 fr MB10 textR grayTex">起</span>
+                <span class="block width75 fl ML5P">@(model.EndDate.ToString("yyyy-MM-dd HH:mm:ss"))</span>
+                <span class="block width20 fr textR grayTex">止</span>
+            </div>
+        </div>
+    </div>
+    
+        if (model.ProductList != null && model.ProductList.Count > 0)
+        {
+
+    <div class="wrapper whiteBkg PT20 MB5">
+        <div class="whiteBkg width90 blockC PB10">
+            <div class="positionR MB10"><span class="separation inlineB bkgColor1"></span><span class="font18">抢购</span></div>
+            <div class="wrapper ">
+                @foreach (Model.View_Model.PromotionProductList_Model item in model.ProductList)
+                {
+                    decimal SurplusQty = item.PRValue - item.SoldQuantity;
+                    string url = "/RushOrder/CreateRushOrder?pi=" + item.ProductID + "&t=" + item.ProductType + "&pc=" + model.PromotionCode;
+
+
+                    if ((item.PRValue == -1 || SurplusQty > 0) && DateTime.Now.ToLocalTime() > model.StartDate && DateTime.Now.ToLocalTime() < model.EndDate)
+                    {
+                    <div class=" MB10 PTB15 PL15S PR15S borderGray ">
+                        <a @(SurplusQty == 0 ? "" : "href=" + url) class="clearfix">
+                            <h4 class="blackTex fl MB10 clearfix">@(item.ProductPromotionName)</h4>
+                            <p class=" MB10 clearfix">
+                                <span class="fr color1 ">@(CurrencySymbol)<em class="font18">@(item.DiscountPrice.ToString("0.00"))</em></span>
+                                <del class="fl grayTex">@(CurrencySymbol + item.UnitPrice.ToString("0.00"))</del>
+                            </p>
+                            <p class=" clearfix">
+                                <span class="fr btnSmall bkgColor1 PLR_5EM ML5 ">抢购</span>
+                                @if (item.PRValue == -1)
+                                {
+
+                                }
+                                else
+                                {
+                                    <span class="fl grayTex">剩余@(SurplusQty.ToString("0"))件</span>
+                                }
+                            </p>
+                        </a>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class=" MB10 PTB15 PL15S PR15S borderGray ">
+                        <h4 class="blackTex fl MB10 clearfix">@(item.ProductPromotionName)</h4>
+                        <p class=" MB10 clearfix">
+                            <span class="fr color1 ">@(CurrencySymbol)<em class="font18">@(item.DiscountPrice.ToString("0.00"))</em></span>
+                            <del class="fl grayTex">@(CurrencySymbol + item.UnitPrice.ToString("0.00"))</del>
+                        </p>
+                        <p class=" clearfix">
+                            @if (SurplusQty == 0)
+                            {
+                                <span class="fl grayTex">已抢完</span>
+                            }
+                            else if (SurplusQty > 0)
+                            {
+                                <span class="fl grayTex">剩余@(SurplusQty.ToString("0"))件</span>
+                            }
+                        </p>
+                    </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+        }
+    
+    <div class="wrapper whiteBkg PT20 MB10">
+        <div class="width90 blockC">
+            <div class="positionR MB10"><span class="separation inlineB bkgColor1"></span><span class="font18">适用门店</span></div>
+            @{
+                <div class="wrapper whiteBkg">
+                    <ul class="width100 rowUl">
+                        @foreach (Model.Table_Model.SimpleBranch_Model item in model.BranchList)
+                        {
+                            <li class="borderB clearfix">
+                                <a href="/Company/BranchDetail?b=@(item.BranchID)" class="positionR">
+                                    <div class="blackTex fl ML10">@(item.BranchName)</div>
+                                    <div class="grayTex fr MR30">
+                                        <span class="rightArrowRow">
+                                            <img src="/pic/rightArrow.png" height="20"></span>
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+    }
+    else
+    {
+    <div class="wrapper whiteBkg PT30 PB50">
+        <div class="width90 blockC">
+            <div class="positionR MB10"><span class="font18">没有数据</span></div>
+        </div>
+    </div>
+    }
+}
+
+<div id="guideImg1" class="block" style="display: none;">
+    <a class="closedBtn">
+        <img src="/pic/closedBtn.png" height="30" /></a>
+    <img src="/pic/RightShare.png" class="width100" />
+</div>
+<script>
+    var jsParams = $("#hidParam").val();
+
+    if (jsParams != "") {
+        var jsModel = eval("(" + jsParams + ")");
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: jsModel.appid, // 必填，公众号的唯一标识
+            timestamp: jsModel.timestamp, // 必填，生成签名的时间戳
+            nonceStr: jsModel.noncestr, // 必填，生成签名的随机串
+            signature: jsModel.signature,// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+
+        $(".closedBtn").click(function () {
+            $("#guideImg1").hide();
+
+        })
+
+
+        GotoShare('@(model.PromotionCode)', '@(model.Title)', '@(model.Description)', '@(model.PromotionPictureURL)', 0);
+    }
+</script>

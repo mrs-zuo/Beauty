@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "美丽记录";
+    int year = 0;
+    if (ViewBag.Year != null)
+    {
+        year = ViewBag.Year;
+    }
+    List<Model.View_Model.AllCustomerRecPic> list = new List<Model.View_Model.AllCustomerRecPic>();
+    list = Model;
+}
+<script src="/Scripts/mobiscroll_002.js" type="text/javascript"></script>
+<script src="/Scripts/mobiscroll_004.js" type="text/javascript"></script>
+<link href="/css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+<link href="/css/mobiscroll.css" rel="stylesheet" type="text/css">
+<script src="/Scripts/mobiscroll.js" type="text/javascript"></script>
+<script src="/Scripts/mobiscroll_003.js" type="text/javascript"></script>
+<script src="/Scripts/mobiscroll_005.js" type="text/javascript"></script>
+<link href="/css/mobiscroll_003.css" rel="stylesheet" type="text/css">
+
+<script src="/Scripts/BeautyMoment.js"></script>
+<div class="width100">
+    <div class="width90 blockC dropyears">
+        <span class="filter-icon">
+            <select id="ddlYear" onchange="selectYear()" class="width100 filter-icon">
+                @{
+                    int yy = DateTime.Now.Year;
+                    for (int i = 2015; i <= yy; i++)
+                    {
+                        if (i == year)
+                        {
+                    <option value="@(i)" selected="selected">@(i)</option>
+                        }
+                        else
+                        {
+                    <option value="@(i)">@(i)</option>
+                        }
+                    }
+                }
+            </select>
+        </span>
+    </div>
+</div>
+
+@if (list != null && list.Count > 0)
+{
+    foreach (Model.View_Model.AllCustomerRecPic item in list)
+    {
+    <div class="part width100 whiteBkg">
+        <div class="width90 blockC rowU4 FL MB10 clearfix">
+            <a href="/BeautyMoment/BeautyMomentDetail?pc=@(item.ServiceCode)&yy=@(year)">
+                <span class="borderB am-row clearfix">@(item.ServiceName)
+                </span>
+                <span class="width100">
+                    @if (item.ImageURL != null)
+                    {
+                        foreach (string url in item.ImageURL)
+                        {
+                        <span>
+                            <img src="@(url)"></span>
+                        }
+                    }
+                </span>
+            </a>
+        </div>
+    </div>
+    }
+}

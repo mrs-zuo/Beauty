@@ -1,0 +1,319 @@
+﻿@{
+    ViewBag.Title = "编辑优惠劵";
+    Model.Table_Model.BenefitPolicy_Model model = new Model.Table_Model.BenefitPolicy_Model();
+    model = Model;
+
+    string branchhidcss = "";
+    if (model.PolicyID == "" || model.PolicyID == null)
+    {
+        branchhidcss = " hidden ";
+    }
+
+    int active = ViewBag.active;
+    string PolicyActiveClass = "";
+    string branchActiveClass = "";
+    if (active == 0)
+    {
+        PolicyActiveClass = " active in ";
+        branchActiveClass = " ";
+    }
+    else
+    {
+        PolicyActiveClass = "  ";
+        branchActiveClass = " active in ";
+    }
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSManger", true);
+    WebManager.Models.Cookie_Model cookieModel = new WebManager.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebManager.Models.Cookie_Model>(srtCookie);
+    }
+
+    int loginBranch = cookieModel.BR;
+
+    bool EditFlag = ViewBag.EditFlag;
+    bool NoStart = model.StartDate > DateTime.Now.ToLocalTime() || string.IsNullOrEmpty(model.PolicyID);
+    
+}
+
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+<script src="/Script/Benefit.js"></script>
+<div class="page-container">
+    <!-- 添加优惠券 开始 -->
+    <!-- Page Content -->
+    @Html.Partial("Sidebar", 25)
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a></li>
+                <li><a href="/Promotion/GetPromotionListNew">优惠券列表</a></li>
+                @if (active == 0)
+                {
+                    <li class="active">添加优惠券</li>
+                }
+                else
+                {
+                    <li class="active">编辑优惠券</li>
+                }
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @if (active == 0)
+                {
+                    <h1>添加优惠券</h1>
+                }
+                else
+                {
+                    <h1>编辑优惠券</h1>
+                }
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i></a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i></a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i></a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="@(PolicyActiveClass)" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">
+                            @if (active == 0)
+                            {
+                                <text>添加优惠券</text>
+                            }
+                            else
+                            {
+                                <text>编辑优惠券</text>
+                            }
+                        </a>
+                    </li>
+                    <li class="@(branchhidcss) @(branchActiveClass) " role="presentation">
+                        <a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile">选择门店</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="home-tab" id="home" role="tabpanel" class="tab-pane fade @(PolicyActiveClass)" role="tabpanel">
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	优惠政策名称
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="输入优惠政策名称" class="form-control" id="txtPolicyName" value="@(model.PolicyName)" @(NoStart? "" :"disabled='disabled'")>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">优惠政策种类</label>
+                                <div class="col-sm-4">
+                                    <select style="width: 100%;" id="ddlPolicyType" @(NoStart? "" :"disabled='disabled'")>
+                                        <option value="1" selected="selected">
+                                        优惠券
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">实施类型</label>
+                                <div class="col-sm-4">
+                                    <select style="width: 100%;" id="ddlPolicyActType" @(NoStart? "" :"disabled='disabled'")>
+                                        <option value="1" selected="selected">
+                                        自动
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">实施位置</label>
+                                <div class="col-sm-4">
+                                    <select style="width: 100%;"  id="ddlPolicyActPosition" @(NoStart? "" :"disabled='disabled'")>
+                                        <option value="10001"  @(model.PolicyActPosition == 10001? "selected='selected'" : "")>
+                                        注册
+                                        <option value="10002" @(model.PolicyActPosition == 10002? "selected='selected'" : "")>
+                                        生日
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	政策实施起始日期
+                                <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <span class="input-icon icon-right time-layer">
+                                        <input id="txtstartDate" class="form-control date-picker" placeholder="开始时间"  onclick="@(NoStart ? "laydate({ istime: true, format: 'YYYY-MM-DD hh:mm:ss' })" : "")" value="@(model.StartDate.ToString("yyyy-MM-dd HH:mm:ss"))" @(NoStart ? "" : "readonly=readonly")>
+                                        <i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">数量</label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入数量" id="txtAmount" type="text" value="@(model.Amount)" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">优惠方式</label>
+                                <div class="col-sm-4">
+                                    <select style="width: 100%;" id="ddlPRCode" @(NoStart? "" :"disabled='disabled'")>
+                                        @if (model.listRule != null && model.listRule.Count > 0)
+                                        {
+                                            foreach (Model.Table_Model.PromotionRule_Model item in model.listRule)
+                                            {
+                                                 <option value="@(item.PRCode)" @(item.PRCode == model.PRCode ? "selected='selected'":"")> @(item.PromotionTypeName)</option>
+                                       
+                                            }
+                                        }
+
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+                                <div>
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-5">
+                                        <label class="col-xs-4 control-label">
+                                        	满足金额
+                                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                        </label>
+                                        <!--<i class="col-sm-05 control-label glyphicon glyphicon-asterisk darkorange txt06em txtR"></i>-->
+                                        <div class="col-xs-8">
+                                            <input placeholder="输入满足金额" class="form-control" type="text" id="txtPRValue1" value="@(model.PRValue1)" @(NoStart? "" :"disabled='disabled'")>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div>
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-5">
+                                        <label class="col-xs-4 control-label">
+                                        	抵扣金额
+                                			<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                        </label>
+                                        <div class="col-xs-8">
+                                            <input placeholder="输入抵扣金额" class="form-control" type="text" id="txtPRValue2" value="@(model.PRValue2)" @(NoStart? "" :"disabled='disabled'")>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	有效天数
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="输入有效天数" class="form-control" type="text" id="txtValidDays" value="@(model.ValidDays)">
+                                </div>
+                                <p class="n-p-15 help-block">天</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">优惠政策内容</label>
+                                <div class="col-sm-10">
+                                    <textarea id="txtPolicyDescription" class="form-control" rows="6"  placeholder="输入优惠政策内容" @(NoStart? "" :"disabled='disabled'")>@(model.PolicyDescription)</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">细则说明</label>
+                                <div class="col-sm-10">
+                                    <textarea id="txtPolicyComments" class="form-control" rows="6" placeholder="输入细则说明内容" @(NoStart? "" :"disabled='disabled'")>@(model.PolicyComments)</textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    @if(EditFlag){
+                                    <a class="btn btn-primary" onclick="EditBenefit('@(model.PolicyID)')">确 定</a>
+                                    }
+                                    <a class="btn btn-default" href="/Benefit/GetBenefitList">返 回</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- /21 -->
+                    @if (!string.IsNullOrEmpty(model.PolicyID))
+                    {
+                        <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade @(branchActiveClass) " role="tabpanel">
+                            <table class="table table-striped">
+                                <colgroup class="row">
+                                    <col class="col-xs-12">
+                                </colgroup>
+                                <tbody>
+                                    <table class="table table-hover table-striped ">
+                                        <colgroup class="row">
+                                            <col class="col-xs-12">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    <label class="btn-group no-pm" title="全选">
+                                                        <input id="chkAll" name="chkAll" type="checkbox" onclick="selectAllBranch(this)" />
+                                                        <span class="text"><strong>门店名称</strong></span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            @if (model.listBranch.Count != null && model.listBranch.Count > 0)
+                                            {
+                                                string imgoldBranchs = "";
+
+                                                foreach (Model.Table_Model.BranchSelection_Model item in model.listBranch)
+                                                {
+
+                                                    string ischecked = "";
+                                                    if (item.IsExist)
+                                                    {
+                                                        imgoldBranchs += "|" + item.BranchID;
+                                                        ischecked = " checked=\"checked\"";
+                                                    }
+                                                <tr>
+                                                    <td>
+                                                        <label class="btn-group no-pm">
+                                                            <input  name="imgBranchID" type="checkbox" value="@(item.BranchID)" @(ischecked)   />
+                                                            <span class="text">@(item.BranchName)</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                    
+                                                }
+                                                <input type="hidden" id="hid_imgOldBranchs" value="@(imgoldBranchs)">
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    @if (loginBranch == 0 && EditFlag)
+                                    {
+                                        <button type="submit" class="btn btn-primary" onclick="submitBranch('@(model.PolicyID
+                                )')">
+                                            确 定</button>
+                                    }
+                                    <a class="btn btn-default"  href="/Benefit/GetBenefitList">返 回</a>
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                     <!-- /21 -->
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+    </div>
+</div>
+<!-- /Page Content -->
+<!-- 添加优惠券 结束 -->

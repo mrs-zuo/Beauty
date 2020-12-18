@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_content_table_relativelayout_attrs"
+    android:layout_centerVertical="true"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/fly_message_head_image_framelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <ImageView
+            android:id="@+id/fly_message_head_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"/>
+
+        <ImageButton
+            android:id="@+id/fly_message_new_message_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/home_page_remind_red_margin_left"
+            android:background="#00000000"
+            android:contentDescription="@string/unread_remind" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/fly_message_customer_name"
+        android:layout_width="@dimen/fly_message_lsit_customer_name_width"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/fly_message_head_image"
+        android:layout_toRightOf="@id/fly_message_head_image_framelayout"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textColor="@color/title_font"
+        android:textSize="@dimen/text_size" 
+        android:layout_marginLeft="5dip"/>
+    <TextView
+        android:id="@+id/fly_message_last_content"
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fly_message_head_image"
+        android:layout_below="@id/fly_message_customer_name"
+        android:layout_toRightOf="@id/fly_message_head_image_framelayout"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textSize="@dimen/text_size" 
+        android:layout_marginLeft="5dip"/>
+
+    <ImageView
+        android:id="@+id/arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/join_in_arrowhead" />
+
+    <TextView
+        android:id="@+id/fly_message_send_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dip"
+        android:layout_toLeftOf="@id/arrowhead"
+        android:singleLine="false"
+        android:textSize="@dimen/text_size" />
+
+</RelativeLayout>

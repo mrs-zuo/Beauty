@@ -1,0 +1,122 @@
+﻿@{
+    List<Model.Table_Model.Service_Model> list = new List<Model.Table_Model.Service_Model>();
+    if (ViewBag.ServiceList != null)
+    {
+        list = ViewBag.ServiceList;
+    }
+    
+}
+    
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 29)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>业绩提成</li>
+                <li>服务列表</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>服务列表</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form">
+                <div class="input-group">
+                    <input id="txtInputSearch" type="text" class="form-control" style="min-width: 195px;" placeholder="请输入服务名称">
+                    <span class="input-group-btn">
+                        <a class="btn btn-default" onclick="SearchService()"><i class="fa fa-search"></i></a>
+                    </span>
+                </div>
+            </div>
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-8">
+                        <col class="col-xs-3">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>服务信息</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (list != null && list.Count > 0)
+                        {
+                            int rows = 0;
+                            foreach (Model.Table_Model.Service_Model item in list)
+                            {
+                                rows++;
+                        <tr id="@(item.ServiceCode)">
+                            <td>@(rows)</td>
+                            <td>
+                                <div class="over-text">
+                                    <img name="ServiceHead"  data-original="@(string.IsNullOrEmpty(item.ThumbnailUrl) ? "/assets/img/pic70.png" :item.ThumbnailUrl)" alt="" class="pull-left img-thumbnail s-img">
+                                    <span>@(item.ServiceName)</span>
+                                    <br />
+                                    定价：<span>@(item.UnitPrice.ToString("0.00"))</span>元
+                                    <br />
+                                </div>
+                            </td>
+                            <td>
+                                <a href="/Commission/EditService?cd=@(item.ServiceCode)&e=1" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                <a href="/Commission/EditService?cd=@(item.ServiceCode)" class="btn btn-default btn-sm"><i class="fa fa-sliders"></i>详情</a>
+                            </td>
+                        </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/Script/Commission.js"></script>
+<script src="/assets/js/jquery.lazyload.min.js"></script>
+<script>
+    $(function () {
+        $('img[name="ServiceHead"]').lazyload({
+            effect: "fadeIn"
+        });
+    });
+
+</script>
+
+

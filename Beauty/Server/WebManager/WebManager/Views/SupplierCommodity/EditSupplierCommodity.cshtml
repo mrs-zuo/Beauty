@@ -1,0 +1,137 @@
+﻿<div class="page-container" id="divContent">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 10)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li class="active">供应商商品关系</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>供应商商品关系</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="widget-body no-padding">
+
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-4 margin-top-20">
+                        <table class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <label class="pull-left label-m"><strong>供应商</strong></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" id="txtSearchSupplier" placeholder="名称/地址/电话/联系人" style="min-width: 160px;" class="form-control" onkeyup="showSupplierList()">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="no-padding">
+                                        <div class="over-down-tb">
+                                            <table class="table active-table table-hover margin-top-1" id="tbSupplier"></table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+
+                                    <td>共 <span class="label label-success" id="SupplierCnt"></span>家</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="col-xs-2 arrow-client">
+                        <i class="fa fa-arrow-right fa-5x"></i>
+                    </div>
+
+                    <div class="col-xs-4 margin-top-20">
+                        <table class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <label class="pull-left label-m"><strong>选择&nbsp;&nbsp;商品&nbsp;&nbsp;&nbsp;&nbsp;</strong></label>
+                                            <div class="col-sm-8 no-padding-left">
+                                                <input type="text" id="txtSearchCommodity" placeholder="名称/生产厂家/批准文号" class="form-control" onkeyup="showCommodityList(1)">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="no-padding">
+                                        <div class="over-down-tb">
+                                            <table id="tbCommodity" class="table table-hover margin-top-1"></table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>共 <span class="label label-success" id="CommodityCnt"></span>种</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="col-xs-1"></div>
+                </div>
+
+                <br>
+                <div class="col-sm-offset-1 no-padding-left col-sm-10">
+                    <button type="submit" class="btn btn-primary" onclick="submit()">确 定</button>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <input type="hidden" id="selectSupplierId" />
+            <input type="hidden" id="mutiSelect" />
+            <input type="hidden" id="hidData" />
+        </div>
+        <!-- /Page Body -->
+
+
+
+        
+    </div>
+    <!--/Page Content-->
+</div>
+<script src="/Script/SupplierCommodity.js"></script>

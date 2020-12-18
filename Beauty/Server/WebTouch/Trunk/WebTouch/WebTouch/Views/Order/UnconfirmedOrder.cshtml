@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "我的订单";
+    List<Model.View_Model.TGList_Model> list = Model;
+}
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width25"><a href="/Order/AllOrder">所有订单</a></li><li class="width25"><a href="/Order/UnpaidOrder">待付款</a></li><li class="width25 positionR">待确认<span class="btmline bkgColor1"></span></li><li class="width25"><a href="/Order/UnReviewedOrder">待评价</a></li>
+        </ul>
+            @{
+                if (list != null && list.Count > 0)
+                {
+                    <ul class="width100 pTB15">
+                        @foreach (Model.View_Model.TGList_Model item in list)
+                        {
+                        <li class="borderB">
+                            <h4 class="blackTex font16 MB10 longTex">@(item.ProductName)</h4>
+                            <ol class="width100">
+                                <li class="clearfix">
+                                    <div class="fl grayTex">
+                                        <font class="MR10 block">@(item.TGStartTime.ToString("yyyy-MM-dd HH:mm"))</font>
+                                        <font class="MT10 block">@(item.ServicePICName)</font>
+                                    </div>
+                                    <div class="fr grayTex">
+                                        <font class="block">@(item.ProductType == 0 ? "服务1次" : "交付" + item.FinishedCount + "件")/@(item.TotalCount == 0 ? "不限次" : "共" + item.TotalCount + "次")</font>
+                                        <a class="MT5 block btnSmall bkgColor1 width120P pTB2P" onclick="confirmTG(@(item.ProductType),@(item.OrderID),@(item.OrderObjectID),@(item.GroupNo));">确认完成</a>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                        <div class="width100 textC PT30 PB30 MB60 clearfix">
+                            <div class="MT10P MB10P "><img src="/pic/noorderpic.png" height="100" class="graybkg borderRad50" /></div>
+                            <p class=" MT10P PB30 grayTex">亲，您还木有订单噢~</p>
+                            <div class="width90 blockC MB30 clearfix"><a class="btnMid borderPink width50 color1" href="/Home/Index">去转转</a></div>
+                        </div>
+                }
+            }
+
+                    
+    </div>
+</div>
+<script src="/Scripts/Order.js"></script>

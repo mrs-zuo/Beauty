@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "抢抢抢";
+    Model.View_Model.PromotionProductDetail_Model model = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+@if (model != null)
+{
+    <script src="/js/Swipe.js"></script>
+    <script>
+        $(function () {
+            Swipe(document.getElementById('slider'), {
+                auto: 3000,
+                continuous: true,
+                callback: function (pos) {
+                    var bullets = $("#position li");
+                    var i = bullets.length;
+                    while (i--) {
+                        bullets[i].className = ' ';
+                    }
+                    bullets[pos].className = 'on';
+                }
+            });
+
+            $("input.txtProductNumber").keyup(function () {
+                this.value = this.value.replace(/[^\d]/g, '');
+                //如果输入为空，则替换为1
+                if (this.value == "") {
+                    this.value = 1;
+                }
+            })
+
+            var Qty = parseInt($("#txtQty").val());
+            var Total = Qty * @(model.DiscountPrice);
+            $("#txtSalePrice").text(Total.toFixed(2));
+        });
+    </script>
+    <script src="/Scripts/RushOrder.js"></script>
+    <div class="wrapper MB80">
+        @if (model.ProductImage != null && model.ProductImage.Count > 0)
+        {
+            <div class="wrapper whiteBkg MB60">
+                <!--轮显图片开始-->
+                <div class="banner swipe" id="slider">
+                    <div class="swipe-wrap">
+                        @foreach (string item in model.ProductImage)
+                        {
+                            <figure>
+                                <a href="">
+                                    <img src="@(item == "" ? "/pic/nopicbg.jpg" : item)" alt=""/></a>
+                            </figure>
+                        }
+
+                    </div>
+                    <nav>
+                        <ul id="position">
+                            @for (int i = 0; i < model.ProductImage.Count; i++)
+                            {
+                                <li></li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+                <!--轮显图片结束-->
+            </div>
+				
+        }
+        <!--轮显图片结束-->
+        <div class="whiteBkg width100 MB10">
+            <ul class="width90 rowUl15 blockC P10Table">
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">@(model.ProductPromotionName)</div>
+                </li>
+                <li class="borderB clearfix">
+                    <div class="grayTex fl"><del>原价：@(CurrencySymbol)&nbsp;@(model.UnitPrice.ToString("0.00"))</del></div>
+                    <div class="color1 fr">@(CurrencySymbol)&nbsp;@(model.DiscountPrice.ToString("0.00"))</div>
+                </li>
+            </ul>
+        </div>
+        <div class="whiteBkg width100 MB10">
+            <ul class="width90 rowUl15 blockC P10Table">
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">@(model.Notice)</div>
+                </li>
+            </ul>
+        </div>
+        <div class="whiteBkg width100 MB10">
+            <ul class="width90 rowUl15 blockC P10Table">
+                <li class="borderB clearfix">
+                    <a class="block" href="#">
+                        <div class="blackTex fl">购买门店</div>
+                        <div class="grayTex fr LinkUnderLine" onclick="showBranchDiv()" id="divBranchName" bid=" @(model.BranchList != null && model.BranchList.Count == 1 ? model.BranchList[0].BranchID.ToString():"")">
+                             @(model.BranchList != null && model.BranchList.Count == 1 ? model.BranchList[0].BranchName:"请选择")
+                            </div>
+                    </a>
+                </li>
+                <li class="borderB clearfix">
+                    @if (model.PRValue == -1) { 
+                    
+                    }else{
+                    <div class="blackTex fl">抢购数量<span class="grayTex ML10">(剩余<span class="blackTex">@((model.PRValue - model.SoldQuantity).ToString("0"))</span>件)</span></div>
+                    }
+                    <div class="grayTex fr">
+                        <input class="min color1" name="" type="button" value="-" onclick="QuantityChange(-1,@(model.DiscountPrice))" />
+                        <input class="textBox textC width40P txtProductNumber" id="txtQty" type="text" maxlength="4" value="1" onchange="QuantityChange(0,@(model.DiscountPrice))" />
+                        <input class="add greenTex" name="" type="button" value="+"  onclick="QuantityChange(1,@(model.DiscountPrice))" />
+                    </div>
+                </li>
+                <li class="borderB clearfix">
+                    <div class="blackTex fl">合计金额</div>
+                    <div class="grayTex fr">@(CurrencySymbol)&nbsp;<span id="txtSalePrice"></span></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btnBtm width100 whiteBkg">
+        <div class="width90 blockC MT10 MB10"><a class="btnLarge bkgColor1 width100" onclick="submitRushOrder('@(model.PromotionID)',@(model.ProductID),@(model.ProductType))">抢购</a></div>
+    </div>
+    <input type="hidden" name="txtHidden" id="txtHidden" />
+    <div id="guideImg1" class="block" style="display: none;">
+        <a class="closedBtn" onclick="closePop()">
+            <img src="/pic/closedBtn.png" height="30" /></a>
+        <div class="popupDiv whiteBkg width100">
+            <ul class="rowUl3 width90 ML5P MR5P">
+                @if (model.BranchList != null && model.BranchList.Count > 0)
+                {
+                    foreach (Model.Table_Model.SimpleBranch_Model item in model.BranchList)
+                    {
+                    <li class="borderB">
+                        <a onClick="selectBranch(@(item.BranchID),'@(item.BranchName)')">
+                            <div class="grayTex fl">@(item.BranchName)</div>
+                        </a>
+                    </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+}

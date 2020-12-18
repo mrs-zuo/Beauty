@@ -1,0 +1,196 @@
+2015-09-09 18:04:56[6] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/9 18:04:56
+Title=GetAccountPerformanceReport
+Message=161661
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:4E9466D9A4734215FCAFE9B9C27DEC50
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/9 18:02:14
+GU:89457c0d-ff30-4a24-967b-3c0c2e27c714
+
+
+2015-09-09 18:24:14[35] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/9 18:24:14
+Title=GetAccountPerformanceReport
+Message=76619
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:147CB8F6E8F7FF4EB45D49DF9F05FF34
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/9 18:22:58
+GU:89457c0d-ff30-4a24-967b-3c0c2e27c714
+
+
+2015-09-09 18:29:12[32] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/9 18:29:12
+Title=GetAccountPerformanceReport
+Message=76448
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:147CB8F6E8F7FF4EB45D49DF9F05FF34
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/9 18:27:48
+GU:89457c0d-ff30-4a24-967b-3c0c2e27c714
+
+
+2015-09-09 18:30:45[37] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/9 18:30:45
+Title=GetAccountPerformanceReport
+Message=72907
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:147CB8F6E8F7FF4EB45D49DF9F05FF34
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/9 18:29:32
+GU:89457c0d-ff30-4a24-967b-3c0c2e27c714
+
+
+2015-09-09 18:33:41[32] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/9 18:33:41
+Title=GetAccountPerformanceReport
+Message=64000
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:147CB8F6E8F7FF4EB45D49DF9F05FF34
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/9 18:32:37
+GU:89457c0d-ff30-4a24-967b-3c0c2e27c714
+
+
+2015-09-09 18:35:21[20] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/9 18:35:21
+Title=GetAccountPerformanceReport
+Message=115530
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:F44A0BACA848EAFAACD59D45E150655D
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/9 18:33:25
+GU:8702d136-00ce-4df0-895f-8209fa0df3cb
+
+
+2015-09-09 18:36:57[37] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/9/9 18:36:57
+Title=GetAccountPerformanceReport
+Message=73983
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=
+RawUrl=/Report_M/GetAccountPerformanceReport
+Header=Content-Length:74
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:147CB8F6E8F7FF4EB45D49DF9F05FF34
+Expect:100-continue
+Host:www.webapi.com
+Accept-Languag:zh-cn
+CO:14
+BR:0
+US:757
+CT:3
+DT:3
+AV:1.0
+ME:GETACCOUNTPERFORMANCEREPORT
+TI:2015/9/9 18:35:43
+GU:89457c0d-ff30-4a24-967b-3c0c2e27c714
+
+

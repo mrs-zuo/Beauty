@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="@color/tg_background_color">
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/commodity_delivery_finished_no_text"
+            style="@style/activity_content_table_row_title_attrs"/>
+        <TextView
+            android:id="@+id/commodity_delivery_finished_start_time_text"
+            style="@style/activity_content_table_row_title_attrs"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@id/commodity_delivery_finished_no_text"/>
+       <TextView
+            android:id="@+id/commodity_delivery_finished_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:textSize="@dimen/text_size"/>
+    </RelativeLayout>
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:textSize="@dimen/text_size" 
+            android:textColor="@color/title_font"
+            android:text="@string/service_responsible_person"
+            android:layout_alignLeft="@id/commodity_delivery_finished_start_time_text"/>
+        <TextView
+            android:id="@+id/commodity_delivery_finished_pic_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size" 
+            android:layout_alignRight="@id/commodity_delivery_finished_status_text"/>
+    </RelativeLayout>
+</LinearLayout>

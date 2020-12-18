@@ -1,0 +1,136 @@
+﻿@{
+    Model.View_Model.SupplierList_Model model = new Model.View_Model.SupplierList_Model();
+    if (Model != null)
+    {
+        model = Model;
+    }
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 10)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Supplier/GetSupplierList">供应商</a></li>
+                @if (Model != null)
+                { 
+                
+                    <li class="active">编辑供应商</li>
+                }
+                else
+                {
+                    <li class="active">添加供应商</li>
+                }
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @if (Model != null)
+                {
+                    <h1>编辑供应商</h1>
+                }
+                else
+                {
+                    <h1>添加供应商</h1>
+                }
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-horizontal form-bordered widget-body"> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                        供应商名称
+                        <i class="control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入供应商名称" type="text" class="form-control" id="txtSupplierName" value="@(model.SupplierName)" maxlength="20" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                        供应商地址
+                    </label>
+                    <div class="col-sm-4">
+                        <div class="textarea">
+                            <input placeholder="请输入供应商地址" type="text" class="form-control" id="txtSupplierAddr" value="@(model.SupplierAddr)" maxlength="20">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                        供应商电话
+                    </label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入供应商电话" type="tel" class="form-control" id="txtSupplierTel" value="@(model.SupplierTel)" maxlength="20">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                        供应商联系人名称
+                    </label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入供应商联系人名称" type="text" class="form-control" id="txtSupplierContactName" value="@(model.SupplierContactName)" maxlength="20">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                        供应商联系人电话
+                    </label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入供应商联系人电话" type="tel" class="form-control" id="txtSupplierContactTel" value="@(model.SupplierContactTel)" maxlength="20">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        @{
+                            if (!ViewBag.isBranch)
+                            {
+                                <button class="btn btn-primary" type="button" onclick="@(Model != null ? "UpdateSupplier()" : "AddSupplier()")">确 定</button>
+                            }
+                        }
+                        <a href="javascript:history.go(-1);" class="btn btn-default">返 回 </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+</div>
+
+<script src="/Script/Supplier.js"></script>
+<script src="/assets/js/jquery.lazyload.min.js"></script>

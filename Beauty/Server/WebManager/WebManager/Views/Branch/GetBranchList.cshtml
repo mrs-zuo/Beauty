@@ -1,0 +1,284 @@
+﻿@{
+    List<Model.Table_Model.Branch_Model> list = new List<Model.Table_Model.Branch_Model>();
+    if (ViewBag.BranchList != null)
+    {
+        list = ViewBag.BranchList;
+    }
+
+    Model.Table_Model.Company_Model model = new Model.Table_Model.Company_Model();
+    if (ViewBag.Company != null)
+    {
+        model = ViewBag.Company;
+    }
+    List<Model.Table_Model.ImageCommon_Model> listCompanyImage = new List<Model.Table_Model.ImageCommon_Model>();
+    if (ViewBag.CompanyImageList != null)
+    {
+        listCompanyImage = ViewBag.CompanyImageList;
+    }
+
+    WebManager.Models.Cookie_Model model_Cookied = new WebManager.Models.Cookie_Model();
+    if (ViewBag.Cookie != null)
+    {
+        model_Cookied = ViewBag.Cookie;
+    }
+
+    int loginBranch = model_Cookied.BR;
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 1)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li class="active">商家信息</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>商家信息</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+
+            <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="active" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">公司信息</a></li>
+                    <li role="presentation">
+                        <a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile">门店信息</a></li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="home-tab" id="home" class="tab-pane fade in active" role="tabpanel">
+                        <div class="form-group navbar-form">
+                            <a href="/Company/EditCompany" class="btn btn-default"><i class="fa fa-edit"></i>编辑公司</a>
+                        </div>
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">公司信息查看</label>
+                                @if (model.Visible)
+                                {
+                                    <div class="col-sm-4 control-label text-align-left">允许</div>
+                                }
+                                else
+                                {
+                                    <div class="col-sm-4 control-label text-align-left">不允许</div>
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">名称</label>
+                                <div class="col-sm-4 control-label text-align-left">@(model.Name)</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Search input-->
+                                <label class="col-sm-2 control-label no-padding-right">公司简称</label>
+                                <div class="col-sm-4 control-label text-align-left">@(model.Abbreviation)</div>
+                            </div>
+                            <div class="form-group">
+
+                                <!-- Search input-->
+                                <label class="col-sm-2 control-label no-padding-right">联系人</label>
+                                <div class="col-sm-4 control-label text-align-left">@(model.Contact)</div>
+
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">电话</label>
+                                <div class="col-sm-4 control-label text-align-left">@(model.Phone)</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">传真</label>
+                                <div class="col-sm-4 control-label text-align-left">@(model.Fax)</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Text input-->
+                                <label class="col-sm-2 control-label no-padding-right">网址</label>
+                                <div class="col-sm-4 control-label text-align-left">@(model.Web)</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Textarea -->
+                                <label class="col-sm-2 control-label no-padding-right">简介</label>
+                                <div class="col-sm-10 control-label text-align-left">@(model.Summary.Replace("\n", "<br />"))</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">照片</label>
+
+                                <!-- File Upload -->
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        @if (listCompanyImage == null || listCompanyImage.Count == 0)
+                                        {
+                                            <div class="col-lg-2 col-sm-4 col-xs-6">
+                                                <div class="databox">
+                                                    <div class="databox-left no-padding">
+                                                        <img style="width: 65px; height: 65px;" src="/assets/img/pic70.png">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            foreach (Model.Table_Model.ImageCommon_Model item in listCompanyImage)
+                                            {
+                                            <div class="col-lg-2 col-sm-4 col-xs-6">
+                                                <div class="databox">
+                                                    <div class="databox-left no-padding">
+                                                        <img style="width: 65px; height: 65px;" src=@(item.FileUrl)>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            }
+
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">余额变动通知</label>
+                                @if (model.BalanceRemind)
+                                {
+                                    <div class="col-sm-4 control-label text-align-left">允许</div>
+                                }
+                                else
+                                {
+                                    <div class="col-sm-4 control-label text-align-left">不允许</div>
+                                }
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">业绩提成计算</label>
+                                @if (model.ComissionCalc)
+                                {
+                                    <div class="col-sm-4 control-label text-align-left">使用</div>
+                                }
+                                else
+                                {
+                                    <div class="col-sm-4 control-label text-align-left">不使用</div>
+                                }
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">销售顾问提成比例</label>
+                                <div class="col-sm-2 control-label text-align-left">@(model.CommissionRate)%</div>
+                                <label class="col-sm-2 control-label no-padding-right">生效日期</label>
+                                <div class="col-sm-4 control-label text-align-left">
+                                   @{
+                                       string IssuedDateData = "";
+                                       if (model.IssuedDate != null)
+                                       {
+                                           IssuedDateData = model.IssuedDate.ToString();
+                                           IssuedDateData = IssuedDateData.Substring(0, IssuedDateData.LastIndexOf(" ")).Replace("/", "-");
+                                       }
+
+                                    }
+                                     @(IssuedDateData)
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
+                        @if (loginBranch == 0)
+                        {
+                            <div class="form-group navbar-form">
+                                <a onclick="isCanAddBranch()" class="btn btn-default"><i class="fa fa-plus-square"></i>添加门店</a>
+                            </div>
+                        }
+                        <table class="table table-hover table-striped">
+                            <colgroup class="row">
+                                <col class="col-xs-1">
+                                <col class="col-xs-6">
+                                <col class="col-xs-3">
+                                <col class="col-xs-2">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>门店信息</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (list.Count != 0 && list != null)
+                                {
+                                    int index = 1;
+                                    foreach (Model.Table_Model.Branch_Model item in list)
+                                    {
+                                    <tr>
+                                        <td>@(index)</td>
+                                        <td>@(item.BranchName)<br />
+                                            @(item.Address)&nbsp;
+                                        </td>
+                                        @if (item.Available)
+                                        {
+                                            <td>激活</td>
+                                        }
+                                        else
+                                        {
+                                            <td>已关闭</td>
+                                        }
+                                        <td>
+                                            <a class="btn btn-default btn-sm" href="/Branch/EditBranch?BranchID=@(item.ID)"><i class="fa fa-edit"></i>编辑</a>
+                                            @if(item.Available){
+                                            <a class="btn btn-default btn-sm"   onclick="delBranch(@(item.ID),0)"><i class="fa fa-trash-o"></i>删除</a>
+                                            }else{
+                                              <a class="btn btn-default btn-sm"   onclick="delBranch(@(item.ID),1)"><i class="fa fa-trash-o"></i>激活</a>
+                                            }
+
+                                        </td>
+                                    </tr>
+                                        index++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                @*            <nav>
+                <ul class="pagination">
+                    <li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>*@
+            </div>
+            <!-- /Page Body -->
+
+        </div>
+        <!-- /Page Content -->
+    </div>
+</div>
+<script src="~/Script/Branch.js"></script>

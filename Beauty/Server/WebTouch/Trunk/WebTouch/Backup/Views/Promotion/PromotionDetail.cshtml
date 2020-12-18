@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "促销详情";
+    Model.View_Model.PromotionDetail_Model model = Model;
+}
+
+@{
+    if (model != null)
+    { 
+    <div id="newIndex">
+        <div class="banner mb10">
+            <ul class="bannerUl clearfix">
+                <li style="background-color: #FFF;"><a title='' target="_blank" href="#">
+                    <img alt='' src="@(model.PromotionPictureURL)" height="250"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="bkgColor3 textC pTB2P lineHeight1_5x">
+        <font class="color1">@(model.StartDate.ToString("yyyyMMdd"))</font><font class="pLR5">至</font><font class="color1">@(model.EndDate.ToString("yyyyMMdd"))</font>
+        <p class="blackTex">@(model.Title)</p>
+    </div>
+    <div class="wrapper whiteBkg PT30 PB50">
+        <div class="width90 blockC">
+            <div class="positionR MB10"><span class="separation inlineB bkgColor1"></span><font class="font18">促销内容</font></div>
+            @(model.Description)
+        </div>
+        <div class="width90 blockC">
+            <div class="positionR MB10"><span class="separation inlineB bkgColor1"></span><font class="font18">适用门店</font></div>
+            @{
+        foreach (Model.Table_Model.SimpleBranch_Model item in model.BranchList)
+        {
+                <text>@(item.BranchName)</text>
+        }
+            }
+        </div>
+    </div>
+    }
+    else
+    {
+    <div class="wrapper whiteBkg PT30 PB50">
+        <div class="width90 blockC">
+            <div class="positionR MB10"><font class="font18">没有数据</font></div>
+        </div>
+    </div>
+    }
+}
+

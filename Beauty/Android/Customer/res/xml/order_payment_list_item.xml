@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/table_layout_attrs" >
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/order_pay_code_prompt"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/payment_code"
+            style="@style/relative_layout_right_child_attrs" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#f4f4f4" >
+    </View>
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/order_pay_time_prompt"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/payment_time"
+            style="@style/relative_layout_right_child_attrs" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/order_payment_list_branch_name_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#f4f4f4"
+        android:visibility="gone" >
+    </View>
+
+    <RelativeLayout
+        android:id="@+id/order_payment_list_branch_name_layout"
+        style="@style/relative_layout_has_child_attrs"
+        android:visibility="gone" >
+        <TextView
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/order_pay_branch_title"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/order_branch_name_content"
+            style="@style/relative_layout_right_child_attrs" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#f4f4f4" >
+    </View>
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/operator_prompt"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/operator"
+            style="@style/relative_layout_right_child_attrs" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#f4f4f4" >
+    </View>
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/payment_amount_prompt"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/payment_amount"
+            style="@style/relative_layout_right_child_attrs" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/bank_card_layout_above_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="#f4f4f4" >
+    </View>
+
+    <com.glamourpromise.beauty.customer.view.NoScrollListView
+        android:id="@+id/payment_detail_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null" />
+
+</TableLayout>

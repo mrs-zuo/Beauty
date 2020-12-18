@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/telephone_email_divide_view"
+        style="@style/activity_content_divide_view_attrs"/>
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+        
+        <TextView
+            android:id="@+id/telephone_email_title"
+            style="@style/activity_content_table_row_title_attrs"/>
+        
+        <TextView
+            android:id="@+id/telephone_email_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size"/>
+        <TextView
+            android:id="@+id/telephone_email_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/telephone_email_type"
+            android:layout_centerVertical="true"
+            android:maxWidth="250dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size"/>
+    </RelativeLayout>
+
+</LinearLayout>

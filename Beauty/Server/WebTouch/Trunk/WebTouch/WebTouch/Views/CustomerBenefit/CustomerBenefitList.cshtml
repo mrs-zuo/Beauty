@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "福利包";
+    List<Model.View_Model.CustomerBenefitList_Model> list = new List<Model.View_Model.CustomerBenefitList_Model>();
+    list = Model;
+    int type = 1;
+    if (ViewBag.Type != null)
+    {
+        type = ViewBag.Type;
+    }
+    string color = "card5Bkg";
+    if (type == 2 || type == 3)
+    {
+        color = "card2Bkg";
+    }
+}
+
+
+<div class="wrapper whiteBkg">
+    <div class="width95 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            @if (type == 1)
+            {
+                <li class="width33_3 positionR">未使用<span class="btmline bkgColor1"></span></li><li class="width33_3 "><a href="/CustomerBenefit/CustomerBenefitList?t=2">已过期</a></li><li class="width33_3"><a href="/CustomerBenefit/CustomerBenefitList?t=3">已使用</a></li>
+            }
+            else if (type == 2)
+            { 
+                <li class="width33_3 "><a href="/CustomerBenefit/CustomerBenefitList?t=1">未使用</a></li><li class="width33_3 positionR">已过期<span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/CustomerBenefit/CustomerBenefitList?t=3">已使用</a></li>
+            }
+            else if (type == 3)
+            { 
+                <li class="width33_3 "><a href="/CustomerBenefit/CustomerBenefitList?t=1">未使用</a></li><li class="width33_3"><a href="/CustomerBenefit/CustomerBenefitList?t=2">已过期</a></li><li class="width33_3 positionR">已使用<span class="btmline bkgColor1"></span></li>            }
+
+        </ul>
+        <ul class="width100">
+            @if (list != null && list.Count > 0)
+            {
+                foreach (Model.View_Model.CustomerBenefitList_Model item in list)
+                {
+                <li class="itemCard @(color) MB10 MT10">
+                    <a href="/CustomerBenefit/CustomerBenefitDetail?b=@(item.BenefitID)" class="whiteTex positionR clearfix ">
+                        <div class="textL fl width90 ML15 clearfix">
+                            <span class="longTex MR10 block font20">@(item.PolicyName)</span>
+                            <span class="longTex MT10 block">@(item.PolicyDescription)</span>
+                        </div>
+                        <div class="fr rightArrowRow">
+                            <img src="/pic/rightArrowWhite.png" height="20" />
+                        </div>
+                    </a>
+                </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

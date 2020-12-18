@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "编辑报表分类信息";
+    Model.Table_Model.StatementCategory_Model model = new Model.Table_Model.StatementCategory_Model();
+    model = Model;
+}
+
+<script src="/Script/Statement.js"></script>
+<script>
+    $(function () {
+        changeProductCategory();
+    })
+
+</script>
+<!-- 编辑报表分类信息 -->
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 24)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li class="active"><a href="#">编辑报表分类信息</a></li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">          
+                    <h1>编辑报表分类信息</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            @if(model != null){
+            <div class="form-horizontal form-bordered widget-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                    	报表分类名称
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="text" maxlength="20" id="txtCategoryName" name="fullName" data-bv-field="fullName" placeholder="请输入报表分类名称" class="form-control" value="@(model.CategoryName)" >
+                    </div>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                    	选择产品
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-sm-10">
+                        <div class="row">
+
+                            <div class="col-xs-5">
+                                <div style="height: 356px;" class="select-down border">
+                                    <table class="table table-striped table-hover margin-top-1">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label class="pull-left label-m col-sm-4"><strong>产品类别</strong></label>
+                                                    <div class="col-sm-8">
+                                                        <select id="ddlProductType" style="width: 100%;" onchange="changeProductCategory()" >
+                                                            <option  value="0" />服务
+                                                            <option  value="1" />商品
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="pull-left label-m col-sm-4"><strong>产品分类</strong></label>
+                                                    <div class="col-sm-8">
+                                                        <select id="ddlProductCategory" style="width: 100%;" onchange="GetProductListByCategory()">
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="no-padding">
+                                                    <table class="table active-table table-hover margin-top-1">
+                                                        <tbody id="tbProduct">
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button onclick="addAllProduct()"  class="col-sm-12 btn btn-default">全部添加</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-xs-1 arrow-client">
+                                <i class="margin-b fa fa-arrow-right fa-4x"></i>
+                            </div>
+                            <div class="col-xs-5">
+                                <div style="height: 356px;" class="select-down border">
+                                    <table class="table table-striped table-hover margin-top-1">
+                                        <tbody>
+                                            <tr>
+                                                <td class="no-padding">
+                                                    <table class="table active-table table-hover margin-top-1">
+                                                        <tbody id="foo">
+                                                            @if (model.ListStatement != null && model.ListStatement.Count > 0) {
+                                                                foreach (Model.Table_Model.Statement_Model item in model.ListStatement)
+                                                                {
+                                                                    <tr pt="@(item.ProductType)" pcd=@(item.ProductCode)>
+                                                                        <td>
+                                                                            <span class="text over-text col-xs-12 no-pm">@(item.ProductName)</span>
+                                                                            <a style="cursor: pointer; display: block;" onclick="minusProduct(this)"> 
+                                                                                <i class="eag-plus fa fa-minus"></i></a></td></tr>
+                                                                }
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button onclick="EditStatement(@(model.ID))" class="btn btn-primary">确 定</button>
+                        <a class="btn btn-default" href="javascript:history.go(-1);">返 回 </a>
+                    </div>
+                </div>
+            </div>
+
+            }
+        </div>
+        <input id="hidData" type="hidden" />
+    </div>
+    <!-- /Page Body -->
+
+</div>
+<!-- /Page Content -->
+
+
+<!-- /编辑报表分类信息 -->

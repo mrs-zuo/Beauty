@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "我的抢购单";
+    List<Model.View_Model.GetRushOrderList_Model> list = new List<Model.View_Model.GetRushOrderList_Model>();
+    list = Model;
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+    bool showPay = false;
+}
+
+@if (list != null && list.Count > 0)
+{ 
+    <script src="/Scripts/RushOrder.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/goTop.js"></script>
+    <div class="wrapper whiteBkg MB60">
+        <div class="width90 blockC P10Table MB60">
+            <ul class="width100 pTB15">
+                @foreach (Model.View_Model.GetRushOrderList_Model item in list)
+                {
+                    
+                    <li class="borderB clearfix">
+                        <div class="fl width6 PT25">
+                            @if (item.PaymentStatus == 1)
+                            {
+                                <input class="MR10" type="radio" placeholder="" name="buylist" value="@(item.RushOrderID)" />
+                            }
+                        </div>
+                        <a href="/RushOrder/RushOrderDetail?ro=@(item.RushOrderID)" class="block">
+                            <ol class="fr width93">
+                                <li class="clearfix">
+                                    <div class="fl grayTex">
+                                        <span class=" block">@(item.RushTime.ToString("yyyy-MM-dd HH:mm"))</span>
+                                    </div>
+                                    <div class="fr grayTex">
+                                        @if (item.PaymentStatus == 1)
+                                        {
+                                            showPay = true;
+                                            <span class=" block">未支付</span>
+                                        }
+                                        else
+                                        {
+                                            <span class=" block">已支付</span>
+                                        }
+                                    </div>
+                                </li>
+                                <li class="MT10 clearfix">
+                                    <div class="fl blackTex font16 width80 ">
+                                        <span class="block longTex">@(item.ProductPromotionName)</span>
+                                    </div>
+                                    <div class="fr grayTex">
+                                        <span class="fr block">*@(item.RushQuantity.ToString())</span>
+                                    </div>
+                                </li>
+                                <li class="MT10 clearfix">
+                                    <div class="fl grayTex">
+                                        <span class="block">@(item.BranchName)</span>
+                                    </div>
+                                    <div class="fr grayTex">
+                                        <span class="block">@(CurrencySymbol)<span>@(item.TotalRushPrice.ToString("0.00"))</span></span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </a>
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+                if (showPay)
+                {
+    <div class="btnBtm width100 whiteBkg">
+        <ul class="width100 btnBtmUL1 clearfix">
+            <li class="width100 bkgColor1 textC font18"><a onclick="GotoPay()" class="block whiteTex">支付</a></li>
+        </ul>
+    </div>
+                }
+
+}

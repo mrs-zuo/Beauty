@@ -1,0 +1,452 @@
+﻿@{
+    ViewBag.Title = "ReportDownlaodNew";
+
+    string role = "";
+    WebManager.Models.Cookie_Model model = new WebManager.Models.Cookie_Model();
+    if (ViewBag.Cookie != null)
+    {
+        model = ViewBag.Cookie;
+        role = model.Role;
+    }
+    int BranchId = ViewBag.BranchID;
+}
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+<script src="~/Script/Common.js"></script>
+<script src="~/Script/jquery.timers-1.2.js"></script>
+<script src="~/Script/ReportNew.js"></script>
+<input type="hidden" id="txtDownloadFile" />
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 18)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li class="active">数据下载</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>数据下载</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped report-down">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-3">
+                        <col class="col-xs-6">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>报表名称</th>
+                            <th>条件筛选</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><div class="over-text">顾客信息</div></td>
+                            <td>
+                                 <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="消费总额统计开始时间" onclick="laydate({ istime: true, format: 'YYYY/MM/DD' })" id="CustomerStartDay">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="消费总额统计结束时间" onclick="laydate({ istime: true, format: 'YYYY/MM/DD' })" id="CustomerEndDay">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_CUSTOMERINFO_DOWNLOAD))
+                                {
+                                <a id="btnCustomer" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="btnCustomerDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                                    
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <div class="over-text">库存及批次信息</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                @if (role.Contains(WebAPI.Common.Const.ROLE_COMMODITYSTOCKOPERATELOG_DOWNLOAD))
+                                {
+                                    <a id="btnCommodityStock" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                    <a id="btnCommodityStockDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <div class="over-text">库存变动信息</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="laydate({ istime: true, format: 'YYYY/MM/DD' })" id="stockLogStartDay">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="laydate({ istime: true, format: 'YYYY/MM/DD' })" id="stockLogEndDay">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_COMMODITYSTOCKOPERATELOG_DOWNLOAD))
+                                {
+                                <a id="btnProductStockOperateLog" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="btnProductStockOperateLogDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <div class="over-text">员工业绩</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="laydate({ istime: true, format: 'YYYY/MM/DD' })" id="AccountPerformanceStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="AccountPerformanceEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_ACCOUNTPERFORMANCE_DOWNLOAD))
+                                {
+                                <a id="AccountPerformance" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="AccountPerformanceDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <div class="over-text">门店业绩</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="BranchPerformanceStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="BranchPerformanceEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_ACCOUNTPERFORMANCE_DOWNLOAD))
+                                {
+                                <a id="BranchPerformance" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="BranchPerformanceDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>
+                                <div class="over-text">员工分类业绩</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="laydate({ istime: true, format: 'YYYY/MM/DD' })" id="AccountStatementStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="AccountStatementEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_ACCOUNTPERFORMANCE_DOWNLOAD))
+                                {
+                                <a id="AccountStatement" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="AccountStatementDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>
+                                <div class="over-text">门店分类业绩</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="BranchStatementStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="BranchStatementEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_ACCOUNTPERFORMANCE_DOWNLOAD))
+                                {
+                                <a id="BranchStatement" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="BranchStatementDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>
+                                <div class="over-text">储值卡变动数据</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="BalanceDetailDataStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="BalanceDetailDataEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_BALANCEDETAILDATA_DOWNLOAD))
+                                {
+                                <a id="BalanceDetailData" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="BalanceDetailDataDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>
+                                <div class="over-text">待完成订单信息</div>
+                            </td>
+                            <td></td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_PEOPLESTATISTICS_DOWNLOAD))
+                                {
+                                <a id="btnNoCompleteTreatment" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="btnNoCompleteTreatmentDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>
+                                <div class="over-text">员工考勤</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="AccountAttendanceStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="AccountAttendanceEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_ATTENDANCE))
+                                {
+                                <a id="AccountAttendanceStatement" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="AccountAttendanceDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>11</td>
+                            <td>
+                                <div class="over-text">业绩提成</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="CommDetailStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="CommDetailEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_ACCOUNTPERFORMANCE_DOWNLOAD))
+                                {
+                                <a id="CommDetailStatement" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="CommDetailDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>12</td>
+                            <td>
+                                <div class="over-text">顾客顾问信息</div>
+                            </td>
+                            <td></td>
+                            <td>@if (role.Contains(WebAPI.Common.Const.ROLE_CUSTOMERINFO_DOWNLOAD))
+                                {
+                                <a id="btnCustomerRelationShip" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="btnCustomerRelationShipDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>13</td>
+                            <td>
+                                <div class="over-text">顾客评价</div>
+                            </td>
+                            <td>
+                                <div class="navbar-form diy-wmd">
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="开始时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="ServiceRateStartTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                    <div class="input-group col-md-5">
+                                        <span class="input-icon icon-right time-layer">
+                                            <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="ServiceRateEndTime">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                @if (role.Contains(WebAPI.Common.Const.ROLE_ACCOUNTPERFORMANCE_DOWNLOAD))
+                                {
+                                    <a id="btnServiceRate" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                    <a id="btnServiceRateDownload"  class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>
+                            <div class="over-text">订单录入</div>
+                        </td>
+                        <td>
+                            <div class="navbar-form diy-wmd">
+                                <div class="input-group col-md-5">
+                                    <span class="input-icon icon-right time-layer">
+                                        <input class="form-control date-picker" placeholder="开始时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="InputOrderStartTime">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                                <div class="input-group col-md-5">
+                                    <span class="input-icon icon-right time-layer">
+                                        <input class="form-control date-picker" placeholder="结束时间" onclick="    laydate({ istime: true, format: 'YYYY/MM/DD' })" id="InputOrderEndTime">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            @if (role.Contains(WebAPI.Common.Const.ROLE_ACCOUNTPERFORMANCE_DOWNLOAD))
+                            {
+                                <a id="btnInputOrder" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                <a id="btnInputOrderDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                            }
+                        </td>
+                    </tr>
+                        @if (BranchId == 0)
+                        {
+                            <tr>
+                                <td>15</td>
+                                <td>
+                                    <div class="over-text">储值卡信息</div>
+                                </td>
+                                <td></td>
+                                <td>@if (role.Contains(WebAPI.Common.Const.ROLE_BALANCEDETAILDATA_DOWNLOAD))
+                                    {
+                                    <a id="CardInfo" class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i>生成</a>
+                                    <a id="CardInfoDownload" class="btn btn-default btn-sm" style="display: none"><i class="fa fa-cloud-download"></i>下载</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>

@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "服务效果";
+    int type = ViewBag.Type;
+    long MainKey = ViewBag.MainKey;
+    Model.View_Model.GetServiceEffectImage_Model model = Model;
+}
+
+
+@if (type == 1)
+{
+    <div class="wrapper whiteBkg">
+        <div class="width90 blockC P10Table">
+            <ul class="borderB width100 rowUl2">
+                <li class="width33_3"><a href="/Treatment/ServiceRecord?t=1&gn=@(MainKey)">服务记录</a></li><li class="width33_3 positionR"><a href="/Treatment/ServiceEffect?t=1&gn=@(MainKey)" class="">服务效果</a><span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Treatment/ReviewDetail?t=1&gn=@(MainKey)">服务评价</a></li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <div class="wrapper whiteBkg">
+        <div class="width90 blockC P10Table">
+            <ul class="borderB width100 rowUl2">
+                <li class="width33_3"><a href="/Treatment/ServiceRecord?t=2&tId=@(MainKey)">服务记录</a></li><li class="width33_3 positionR"><a href="/Treatment/ServiceEffect?t=2&tId=@(MainKey)" class="">服务效果</a><span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Treatment/ReviewDetail?t=2&tId=@(MainKey)">服务评价</a></li>
+            </ul>
+        </div>
+    </div>
+}
+@if (model != null)
+{
+
+    if (model.ImageBeforeTreatment != null && model.ImageBeforeTreatment.Count > 0)
+    {
+    <div class="width90 blockC">
+        <ul class="width100 rowUl">
+            <li class="clearfix">
+                <a href="#">
+                    <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><font class="ML10">服务前</font></div>
+                </a>
+                <ol class="width100 clearfix PB5 borderB">
+                    @foreach (Model.View_Model.ImageEffect_Model item in model.ImageBeforeTreatment)
+                    {
+                        <li class="width32 fl MR1P imgBlock MB2">
+                            @if (!string.IsNullOrEmpty(item.ThumbnailURL))
+                            {
+                            <img src="@(item.ThumbnailURL)" style="width: 100%; height: auto;" onclick="showBigImg('@(item.OriginalImageURL)')" />
+                            }</li>
+                                
+                    }
+                </ol>
+            </li>
+        </ul>
+    </div>
+    }
+
+    if (model.ImageAfterTreatment != null && model.ImageAfterTreatment.Count > 0)
+    {
+    <div class="width90 blockC">
+        <ul class="width100 rowUl">
+            <li class="clearfix">
+                <a href="#">
+                    <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><font class="ML10">服务后</font></div>
+                </a>
+                <ol class="width100 clearfix PB5 borderB">
+                    @foreach (Model.View_Model.ImageEffect_Model item in model.ImageAfterTreatment)
+                    {
+                        <li class="width32 fl MR1P imgBlock MB2">
+                               @if (!string.IsNullOrEmpty(item.ThumbnailURL))
+                               {
+                            <img src="@(item.ThumbnailURL)" style="width: 100%; height: auto;" onclick="showBigImg('@(item.OriginalImageURL)')" />
+                               }
+                        </li>
+                    }
+                </ol>
+            </li>
+        </ul>
+    </div>
+    }
+    if (type == 1)
+    {
+        if (model.TMList != null && model.TMList.Count > 0)
+        {
+        <div class="wrapper whiteBkg MT10">
+            <div class="width100 blockC textL">
+                <ul class="width90 rowUl blockC">
+                    @foreach (Model.View_Model.TMinTG_Model item in model.TMList)
+                    {
+                        <li class="borderB clearfix">
+                            <a href="/Treatment/ServiceEffect?t=2&tId=@(item.TreatmentID)">
+                                <div class="blackTex fl"><font class="ML10">@(item.SubServiceName)</font></div>
+                                <div class="grayTex fr">
+                                    <img src="/pic/rightArrow.png" height="20" />
+                                </div>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        }
+    }
+}
+
+<div id="guideImg1" class="block" style="display:none;">
+    <a class="closedBtn">
+        <img src="/pic/closedBtn.png" height="30" /></a>
+    <div class="whiteBkg width100 positionA T15P">
+        <img id="imgBig" class="width100" src="">
+    </div>
+</div>
+<script src="/Scripts/Treatment.js"></script>
+<script>
+    function overlayShow() {
+        document.getElementById("guideImg1").style.display = "";
+    }
+    //关闭弹框
+    function closePop() {
+        $("#guideImg1").hide();
+    }
+    $(".closedBtn").click(function () {
+        closePop();
+    })
+</script>

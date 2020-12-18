@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "账户交易记录";
+    List<Model.View_Model.GetCustomerBalanceList_Model> balanceList = Model;
+}
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC">
+        <ul class="width100 rowUl">
+            @{
+                if (balanceList != null && balanceList.Count > 0)
+                {
+                    foreach (Model.View_Model.GetCustomerBalanceList_Model item in balanceList)
+                    {
+                <li class="borderB clearfix"><a href="/Account/TransactionDetail?id=@(item.BalanceID)&t=@(item.ChangeType)" class="positionR">
+                    <div class="blackTex fl">@(item.ChangeTypeName)</div>
+                    <div class="grayTex fr MR30">
+                        <span>@(item.CreateTime.ToString("yyyy-MM-dd"))</span><span class=" MLR5">@(item.CreateTime.ToString("HH:mm"))</span><span class="rightArrowRow">
+                            <img src="/pic/rightArrow.png" height="20"/></span>
+                    </div>
+                </a></li>
+                    }
+                }
+ }
+        </ul>
+    </div>
+
+</div>

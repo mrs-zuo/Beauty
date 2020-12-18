@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@xml/shape_no_left_line_and_no_right_line" 
+        android:layout_marginTop="15dp">
+        <RelativeLayout
+            android:id="@+id/tg_detail_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dip" >
+            <TextView
+                android:id="@+id/start_time"
+                style="@style/relative_layout_left_child_attrs"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:text="@string/ellipsis" />
+
+            <ImageView
+                android:id="@+id/order_join_arrowhead"
+                style="@style/relative_layout_right_child_attrs"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/join_in_arrowhead" />
+
+            <TextView
+                android:id="@+id/tg_service_name"
+                style="@style/relative_layout_left_child_attrs"
+                android:layout_marginRight="5dip"
+                android:layout_toLeftOf="@id/order_join_arrowhead"
+                android:layout_toRightOf="@id/start_time"
+                android:singleLine="true"
+                android:gravity="right"
+                android:text="@string/ellipsis"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/photo_divide_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tg_detail_rl"
+            android:background="#A6DAF0" />
+
+        <com.GlamourPromise.Beauty.view.TreatmentImageGridView
+            android:id="@+id/treatment_image_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/photo_divide_view"
+            android:columnWidth="100dp"
+            android:numColumns="3"
+            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="5dp"
+            android:padding="8dp">
+        </com.GlamourPromise.Beauty.view.TreatmentImageGridView>
+    </RelativeLayout>
+
+</RelativeLayout>

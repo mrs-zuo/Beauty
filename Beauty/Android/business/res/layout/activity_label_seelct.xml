@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d9eff7"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/label_list_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/label_list_head_layout" >
+
+        <TextView
+            android:id="@+id/commodity_list_title_text"
+            style="@style/activity_title_text_attrs"
+            android:layout_alignParentLeft="true"
+            android:text="@string/label_list_title" />
+
+        <ImageView
+            android:id="@+id/add_new_label_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/search"
+            android:src="@drawable/add_new_label_btn" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/label_listview"
+        style="@style/activity_content_listview_attrs"
+        android:layout_below="@id/title_layout"
+        android:layout_marginBottom="42dp"
+        android:background="@color/white" />
+
+    <Button
+        android:id="@+id/confirm_button"
+        style="@style/submit_big_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ok" />
+
+</RelativeLayout>

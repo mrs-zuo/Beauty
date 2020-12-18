@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="/Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn1").click(function () {
+                $.cookie("test", Date().toString(), { path: "/" });
+            });
+
+            $("#btn2").click(function () {
+                alert($.cookie("test"));
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" value="设置cookie" id="btn1" />     
+        <input type="button" value="获取cookie" id="btn2" />     
+    </div>
+</body>
+</html>

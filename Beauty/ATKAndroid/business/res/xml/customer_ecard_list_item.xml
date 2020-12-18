@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ecard_tablelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingBottom="10dip">
+	<RelativeLayout 
+	   android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:id="@+id/ecard_relativelayout"
+	    >
+	    <LinearLayout 
+		   android:layout_width="fill_parent"
+	       android:layout_height="wrap_content"
+	       android:orientation="vertical"
+		    >
+			<RelativeLayout
+			    android:id="@+id/ecard_default_content_relativelayout"
+			  	android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_vertical"
+			   	android:padding="10dip" >
+			   <ImageView
+			        android:id="@+id/customer_ecard_default"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="10dip"
+			        android:layout_alignParentLeft="true"
+			        android:layout_centerVertical="true"/>
+			</RelativeLayout>
+			
+			<RelativeLayout
+			  	android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_vertical"
+			   	android:padding="10dip" >
+			    <TextView
+			        android:id="@+id/customer_ecard_name"
+			        android:layout_width="180dip"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="30dip"
+			        android:singleLine="true"
+			        android:text="@string/ellipsis"
+			        android:textColor="@color/white"
+			        android:textSize="@dimen/text_size" />
+			    <TextView
+			        android:id="@+id/customer_ecardno"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentRight="true"
+			        android:layout_marginRight="15dip"
+			        android:textColor="@color/white"
+			        android:textSize="@dimen/text_size_16sp" />
+			
+			</RelativeLayout>
+			<RelativeLayout
+			    android:id="@+id/ecard_histroy_content_relativelayout"
+			  	android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_vertical"
+			   	android:padding="10dip" >
+			    <TextView
+			        android:id="@+id/customer_ecard_balance"
+			        android:layout_width="180dip"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="30dip"
+			        android:singleLine="true"
+			        android:text="@string/ellipsis"
+			        android:textColor="@color/white"
+			        android:textSize="@dimen/text_size" />
+			    <TextView
+			        android:id="@+id/customer_ecard_balance_cur"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentRight="true"
+			        android:layout_marginRight="15dip"
+			        android:textSize="@dimen/text_size_16sp" />
+			
+			</RelativeLayout>
+			</LinearLayout>
+			<ImageView
+		        android:id="@+id/customer_ecard_arrowhead"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentRight="true"
+		        android:layout_centerVertical="true"
+		        android:layout_marginRight="5dip"
+		        android:src="@drawable/customer_ecard_white_arrows"/>
+	</RelativeLayout>
+</TableLayout>

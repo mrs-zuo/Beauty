@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+			<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+                <ImageView
+                    android:id="@+id/photo_album_image"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="5dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/search" />
+             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+                <View
+                    android:id="@+id/photo_album_image_dvide_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="50dp"
+                    android:background="#F7F7F7" />
+                <EditText
+                    android:id="@+id/photo_album_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/photo_album_image_dvide_view"
+                    android:layout_margin="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@null"
+                    android:hint="@string/new_photo_album_tag"
+                    android:maxLength="20" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/photo_album_tag"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#F7F7F7" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        style="@style/activity_title_layout_attrs"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/photo_album_delete"
+                style="@style/search_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_weight="1"
+                android:contentDescription="@string/search"
+                android:text="@string/delete"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/photo_album_update"
+                style="@style/search_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_weight="1"
+                android:contentDescription="@string/search"
+                android:text="@string/ok"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

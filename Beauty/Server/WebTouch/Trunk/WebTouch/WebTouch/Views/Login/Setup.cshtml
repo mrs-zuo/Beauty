@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNoTop.cshtml";
+    ViewBag.Title = "设置";
+}
+
+<div class="part width100 whiteBkg MT15">
+    <div class="width90 blockC">
+        <ul class="width100 rowUl">
+            <li class="borderB clearfix">
+                <a href="/Login/ChangePassword">
+                    <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><span class="ML10">修改密码</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/></div>
+                </a>
+            </li>
+            <li class="borderB clearfix">
+                <a href="http://beauty.glamise.com/download">
+                    <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><span class="ML10">应用下载</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20" />
+                    </div>
+                </a>
+           </li>
+            <li class="borderB clearfix">
+                <a onclick="UnBindWeChat()">
+                    <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><span class="ML10">退出登录</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20" />
+                    </div>
+                </a>
+           </li>
+            @*<li class=" clearfix">
+                <a href="#">
+                    <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><span class="ML10">关于美丽约定</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/></div>
+                </a>
+            </li>*@
+        </ul>
+
+
+    </div>
+</div>
+<script src="/Scripts/Login.js"></script>
+@*<div class="part width100 whiteBkg MT15">
+    <a href="#" class="font20 block PTB15">退出登录</a>
+</div>*@

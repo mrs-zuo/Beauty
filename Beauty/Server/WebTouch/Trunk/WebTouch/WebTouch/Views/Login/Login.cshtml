@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNoTop.cshtml";
+    ViewBag.Title = "会员登录";
+    string WeChatOpenID = ViewBag.WeChatOpenID;
+    int co = ViewBag.CompanyID;
+
+    string RSA_E = ViewBag.RSA_E;
+    string RSA_M = ViewBag.RSA_M;
+}
+
+
+<script src="/js/BigInt.js"></script>
+<script src="/js/Barrett.js"></script>
+<script src="/js/RSA.js"></script>
+<script src="/js/CodeManage.js"></script>
+<div class="width100 blockC">
+    <div class="MT30 borderT borderB whiteBkg">
+        <div class="width90 blockC">
+            <ul>
+                <li class="borderB">
+                    <div class="inputArea positionR PB10">
+                        <span class="iconBkg bkgColor1 inlineB innerIcon">
+                            <img src="/pic/userIcon.png" height="50"></span><input type="text" id="loginMobile" placeholder="请输入用户名" class="innerIconInput inlineB ML30 MT10">
+                    </div>
+                </li>
+                <li>
+                    <div class="inputArea positionR PB10">
+                        <span class="iconBkg bkgColor1 inlineB innerIcon">
+                            <img src="/pic/password.png" height="50"></span><input type="password" id="password" placeholder="请输入密码" class="innerIconInput inlineB ML30 MT10">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" id="hidUrlPath" name="hidUrlPath" value="@(ViewBag.UrlPath)" />
+    <div class="width90 blockC">
+        <a href="/ResetPassword/ResetPassword" class="linkA grayTex font16 MB10 fr inlineB">忘记密码？</a>
+        <a href="/Register/Register?co=@(co)" class="linkA grayTex font16 MB10 fr inlineB MR20">注册</a>
+        @{
+            if (!string.IsNullOrWhiteSpace(WeChatOpenID))
+            {
+            <div class="btnArea MT20"><a class="btnLarge bkgColor1 width100" onclick="BindSumbit('@(RSA_E)','@(RSA_M)');">绑定用户</a></div>
+            }
+            else
+            {
+            <div class="btnArea MT20"><a class="btnLarge bkgColor1 width100" onclick="loginSumbit('@(RSA_E)','@(RSA_M)');">立即登录</a></div>
+            }
+        }
+
+    </div>
+</div>
+<script src="/Scripts/Login.js"></script>

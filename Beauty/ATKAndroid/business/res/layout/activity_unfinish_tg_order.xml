@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.UnfishTGListActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/customer_unpaid_order_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/unfinish_tg_order_title_text" />
+
+        <ImageView
+            android:id="@+id/select_all_unfinish_tg_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip" 
+            android:contentDescription="@string/search"/>
+       <ImageView
+         android:id="@+id/unfinish_tg_order_filter_btn"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:contentDescription="@string/search"
+         android:src="@drawable/customer_advanced_filter_icon"
+         android:layout_centerVertical="true"
+         android:layout_toLeftOf="@id/select_all_unfinish_tg_order"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/unfinsh_tg_order_list_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+        <ListView
+            android:id="@+id/unfinsh_tg_order_list"
+            style="@style/activity_content_listview_attrs"
+            android:layout_marginBottom="45dip"/>
+        <Button
+            android:id="@+id/complete_unfinsh_tg_order_btn"
+            style="@style/submit_big_btn"
+            android:layout_alignParentBottom="true"
+            android:text="@string/treatment_group_complete"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

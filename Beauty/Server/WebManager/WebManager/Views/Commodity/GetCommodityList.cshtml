@@ -1,0 +1,274 @@
+﻿@{
+    List<Model.Table_Model.Commodity_Model> list = ViewBag.CommodityList as List<Model.Table_Model.Commodity_Model>;
+    List<Model.Table_Model.Branch_Model> listBranch = null;
+    if (ViewBag.BranchList != null && ViewBag.BranchList is List<Model.Table_Model.Branch_Model>)
+    {
+        listBranch = ViewBag.BranchList as List<Model.Table_Model.Branch_Model>;
+    }
+
+    List<Model.View_Model.CategoryList_Model> listCategoryList = null;
+    if (ViewBag.CategoryList != null && ViewBag.CategoryList is List<Model.View_Model.CategoryList_Model>)
+    {
+        listCategoryList = ViewBag.CategoryList as List<Model.View_Model.CategoryList_Model>;
+    }
+
+    int branchID = ViewBag.branchID;
+    int categoryID = ViewBag.categoryID;
+
+    List<Model.Table_Model.Supplier_Model> listSupplierList = null;
+    if (ViewBag.SupplierList != null && ViewBag.SupplierList is List<Model.Table_Model.Supplier_Model>)
+    {
+        listSupplierList = ViewBag.SupplierList as List<Model.Table_Model.Supplier_Model>;
+    }
+
+    int supplierID = ViewBag.supplierID;
+
+    Model.View_Model.CompanyListForAccountLogin_Model model = Newtonsoft.Json.JsonConvert.DeserializeObject<Model.View_Model.CompanyListForAccountLogin_Model>(HS.Framework.Common.Util.CookieUtil.GetCookieValue("CompanyInfo", true));
+    string branchName = ViewBag.BranchName;
+    bool isBranch = ViewBag.IsBranch;
+}
+<div class="page-container" id="divContent">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 10)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/index">首页</a>
+                </li>
+                <li class="active">商品</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>商品</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form much-btn">
+                <!--div class="btn-group">
+					<a class="btn btn-default" data-toggle="dropdown" href="javascript:void(0);">选择信息</a>
+					<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-default select-down over-text">
+						<li><a selectid="1" class="fa fa-check-square-o" href="javascript:void(0);"> 全部</a></li>
+						<li><a selectid="2" class="fa fa-square-o" href="javascript:void(0);"> 文本</a></li>
+						<li><a selectid="3" class="fa fa-square-o" href="javascript:void(0);"> 单选选择</a></li>
+						<li><a selectid="4" class="fa fa-square-o" href="javascript:void(0);"> 多选选择</a></li>
+					</ul>
+                    <input type="hidden" value="">
+				</div-->
+                <div class="btn-group select-div">
+                    <div class="select-titel" >选择门店:</div>
+                    <select class="select-control" id="selBra" onchange="selectCommodity()">
+                        @{
+                            if (!isBranch)
+                            {
+                            <option value="-1" @(branchID == -1 ? "selected='selected'" : "")>全部</option>
+                            <option value="0" @(branchID == 0 ? "selected='selected'" : "")>无所属</option>
+                                if (listBranch != null && listBranch.Count > 0)
+                                {
+                                    for (int i = 0; i < listBranch.Count; i++)
+                                    {
+                                        if (listBranch[i].ID == branchID)
+                                        {
+                            <option value="@(listBranch[i].ID)" selected="selected">@(listBranch[i].BranchName) </option>
+                                        }
+                                        else
+                                        {
+                            <option value="@(listBranch[i].ID)">@(listBranch[i].BranchName) </option>
+                                        }
+                                    }
+                                }           
+                            }
+                            else
+                            {
+                            <option value="@(branchID)" selected="selected">@(branchName)</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择商品:</div>
+                    <select class="select-control" id="seCal" onchange="selectCommodity()">
+                        @{
+                            if (listCategoryList != null && listCategoryList.Count > 0)
+                            {
+                                for (int i = 0; i < listCategoryList.Count; i++)
+                                {
+                                    if (listCategoryList[i].CategoryID == categoryID)
+                                    {
+                            <option value="@(listCategoryList[i].CategoryID)" selected="selected">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                    }
+                                    else
+                                    {
+                            <option value="@(listCategoryList[i].CategoryID)">@(listCategoryList[i].CategoryName)(@(listCategoryList[i].ProductCount)) </option>
+                                    }
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="btn-group select-div">
+                    <div class="select-titel" >选择供应商:</div>
+                    <select class="select-control" id="selSup" style="padding-left: 78px;" onchange="selectCommodity()">
+                        @{
+                            <option value="-1" @(supplierID == -1 ? "selected='selected'" : "")>全部</option>
+                            <option value="0" @(supplierID == 0 ? "selected='selected'" : "")>无所属</option>
+                            if (listSupplierList != null && listSupplierList.Count > 0)
+                            {
+                                for (int i = 0; i < listSupplierList.Count; i++)
+                                {
+                                    if (listSupplierList[i].SupplierID == supplierID)
+                                    {
+                                        <option value="@(listSupplierList[i].SupplierID)" selected="selected">@(listSupplierList[i].SupplierName) </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@(listSupplierList[i].SupplierID)">@(listSupplierList[i].SupplierName) </option>
+                                    }
+                                }
+                            }                       
+                        }
+                    </select>
+                </div>
+                <a onclick="editCommodity(0)" class="btn btn-default"><i class="fa fa-plus-square"></i>添加商品</a>
+                @{
+                    if (!isBranch)
+                    {
+                    <a href="/BatchImport/BatchImport?Type=1" class="btn btn-default"><i class="fa fa-plus-square"></i>批量添加商品</a>
+                    <a href="/Commodity/EditCommoditySort?c=-1&d=-1" class="btn btn-default"><i class="fa fa-sort-alpha-asc"></i>修改排序</a>
+                    <a href="#" class="btn btn-default" onclick="mulityDelete()"><i class="fa fa-trash-o"></i>删除选中项</a>
+                    }
+                }
+                <a href="#" class="btn btn-default" onclick="printProduct()"><i class="fa fa-print"></i>打印选中项</a>
+                <a href="#" class="btn btn-default" onclick="downloadCommodity()"><i class="fa fa-cloud-download"></i>下载</a>
+                <a href="#" class="btn btn-default" onclick="checkBranch()"><i class="fa fa-plus-square"></i>批量添加商品批次</a>
+            </div>
+            <div class="widget-body no-padding">
+                <table id="comList" class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-7">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label class="choose-num">
+                                    <input type="checkbox" onclick="AllSelect(this)">
+                                    <span class="btn-group text"><strong>编号</strong></span>
+                                </label>
+                            </th>
+                            <th>商品信息</th>
+                            <th>新品</th>
+                            <th>推荐</th>
+                            <th>有效期<br />提醒</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (list != null && list.Count > 0)
+                            {
+                                string[] strMarketingPolicy = new string[] { "无优惠", "按等级打折", "促销价" };
+                                for (int i = 0; i < list.Count; i++)
+                                {
+                            <tr id="tr@(list[i].CommodityCode)">
+
+                                <td>
+
+                                    <label class="choose-num no-margin">
+                                        <input type="checkbox" name="chk_Com" code="@(list[i].CommodityCode)"/>
+                                        <span class="text">@(i + 1)</span>
+                                    </label>
+
+                                </td>
+
+                                @*<td><input type="checkbox" name="chk_Com" code="@(list[i].CommodityCode)"/> <span class="btn-group text">@(i + 1)</span> </td>*@
+                                <td>
+                                    <div class="over-text">
+                                        <img name="CommodityHead"  data-original="@(string.IsNullOrEmpty(list[i].ThumbnailUrl)?"/assets/img/pic70.png":list[i].ThumbnailUrl)" alt="" class="pull-left img-thumbnail s-img">
+                                        @(list[i].CommodityName)<br>
+                                        @(!string.IsNullOrEmpty(list[i].Specification) ? "规格:" + list[i].Specification : "")<br />
+                                        定价:@(Convert.ToDecimal(list[i].UnitPrice.ToString("0.00")))元<br>
+                                        营销策略:@(strMarketingPolicy[list[i].MarketingPolicy])<br>
+                                    </div>
+                                </td>
+                                <td><i class="@(list[i].New?" fa fa-check":"")"></i></td>
+                                <td><i class="@(list[i].Recommended?" fa fa-check":"")"></i></td>
+                                <td><i class="@(list[i].ExpiryRemind?" fa fa-check":"")"></i></td>
+                                <td>
+                                    <a onclick="editCommodity(@(list[i].CommodityCode))"  class="btn btn-default btn-sm"><i class="fa fa-edit"></i>编辑</a>
+                                    @{
+                                    if (!isBranch)
+                                    {
+                                        <a href="javascript:void(0)" class="btn btn-default btn-sm" id="@(list[i].CommodityCode)" onclick="delCommodity(this)"><i class="fa fa-trash-o"></i>删除</a>
+                                    }
+                                    }
+                                </td>
+                            </tr>
+                                }
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!--最大弹窗层-->
+                <div class="text-align-center top-layer hidden">
+                    <i style="margin-top:26%" class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i>
+                </div>
+			<!--/最大弹窗层-->
+        </div>
+    </div>
+</div>
+
+<div id="divPrint" style="display: none">
+    <!--startprint1-->
+    <div id="divWholeQRcode" class="row margin-top-10"></div>
+    <!--endprint1-->
+    <br>
+    <br>
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="button" value="打印" class="btn btn-primary" onclick="gotoPrint();" />
+        <input type="button" value="返回" class="btn btn-default" onclick="closeDiv();" />
+    </div>
+    <asp:hiddenfield id="hiddenQRcodeName" runat="server" />
+</div>
+<script src="/Script/Commodity.js"></script>
+<script src="/assets/js/jquery.lazyload.min.js"></script>
+<script>
+    $(function () {
+        $('img[name="CommodityHead"]').lazyload({
+            effect: "fadeIn"
+        });
+    });
+
+</script>

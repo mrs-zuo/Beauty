@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@xml/shape_corner_round"
+    android:layout_marginLeft="@dimen/table_layout_attrs_layout_marginleft"
+    android:layout_marginRight="@dimen/table_layout_attrs_layout_marginleft"
+    android:layout_marginTop="@dimen/margin_top" >
+
+    <RelativeLayout
+        android:id="@+id/layout_one"
+        style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/course_prompt"
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/title_course"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/treatment_count"
+            android:textColor="@android:color/black"
+            style="@style/relative_layout_right_child_attrs" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/group_linearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:orientation="vertical">
+    </LinearLayout>
+
+</TableLayout>

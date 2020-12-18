@@ -1,0 +1,231 @@
+﻿@{
+    Model.Table_Model.Company_Model model = new Model.Table_Model.Company_Model();
+    if (ViewBag.Company != null)
+    {
+        model = ViewBag.Company;
+    }
+    List<Model.Table_Model.ImageCommon_Model> listCompanyImage = new List<Model.Table_Model.ImageCommon_Model>();
+    if (ViewBag.BigImageList != null)
+    {
+        listCompanyImage = ViewBag.BigImageList;
+    }
+}
+<script src="/assets/js/jquery.cookie.js"></script>
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 1)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Branch/GetBranchList">商家信息</a></li>
+                <li class="active">商家信息编辑</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>商家信息编辑</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+
+            <div class="form-horizontal form-bordered widget-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">公司信息查看</label>
+                    <div class="col-sm-10 radio">
+
+                        <label>
+                            <input type="radio" id="radioVisibleY" @(model.Visible ? "checked='checked'" : "") name="radioVisible">
+                            <span class="text">允许 </span>
+                        </label>
+                        <label>
+                            <input type="radio"  id="radioVisibleN"  @(!model.Visible ? "checked='checked'" : "")   name="radioVisible">
+                            <span class="text">不允许</span>
+                        </label>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                        名称
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-sm-4 ">
+                        <input placeholder="请输入公司名称" type="text" class="form-control " value="@(model.Name)" id="txtCompanyName" maxlength="30">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Search input-->
+                    <label class="col-sm-2 control-label no-padding-right">公司简称</label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入公司简称" class="form-control" type="text" value="@(model.Abbreviation)" id="txtCompanyAbbreviation" maxlength="5">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <!-- Search input-->
+                    <label class="col-sm-2 control-label no-padding-right">联系人</label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入联系人" class="form-control" type="text" value="@(model.Contact)" id="txtCompanyContact" maxlength="30">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <!-- Text input-->
+                    <label class="col-sm-2 control-label no-padding-right">电话</label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入联系电话" class="form-control" type="tel" value="@(model.Phone)" id="txtCompanyPhone" maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Text input-->
+                    <label class="col-sm-2 control-label no-padding-right">传真</label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入传真" class="form-control" type="text" value="@(model.Fax)" id="txtCompanyFax" maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Text input-->
+                    <label class="col-sm-2 control-label no-padding-right">网址</label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入网址" class="form-control" type="text"  value="@(model.Web)" id="txtCompanyWeb" maxlength="100">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Textarea -->
+                    <label class="col-sm-2 control-label no-padding-right">简介</label>
+                    <div class="col-sm-10">
+                        <div class="textarea">
+                            <textarea placeholder="请输入简介" rows="6" class="form-control" id="txtCompanySummary" maxlength="500">@(model.Summary)</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">照片</label>
+                    @Html.Partial("FileUpload", 6)
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">余额变动通知</label>
+                    <div class="col-sm-4 radio">
+
+                        <label>
+                            <input type="radio" id="radioBalanceY" @(model.BalanceRemind ? "checked='checked'" : "class='inverted'")  name="radioBalance">
+                            <span class="text">允许 </span>
+                        </label>
+                        <label>
+                            <input type="radio" id="radioBalanceN" @(model.BalanceRemind ? "class='inverted'" : "checked='checked'") name="radioBalance">
+                            <span class="text">不允许</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Text input-->
+                    <label class="col-sm-2 control-label no-padding-right">触屏站颜色</label>
+                    <div class="col-sm-4">
+                        <input placeholder="请输入颜色值" class="form-control" type="text"  value="@(model.Style)" id="txtStyle" maxlength="10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">业绩提成计算</label>
+                    <div class="col-sm-4 radio">
+
+                        <label>
+                            <input type="radio" id="radioCommissionY" name="radioCommission"  @(model.ComissionCalc ? "checked='checked'" : "class='inverted'") >
+                            <span class="text">使用 </span>
+                        </label>
+                        <label>
+                            <input type="radio" id="radioCommissionN" name="radioCommission"  @(model.ComissionCalc ? "class='inverted'" : "checked='checked'")>
+                            <span class="text">不使用</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">销售顾问提成比例</label>
+                    <div class="col-sm-2" >
+                        <input placeholder="请输入销售顾问提成比例" class="form-control" type="text" value="@(model.CommissionRate)" id="txtCommissionRateWeb" maxlength="100" style="text-align:right">
+                    </div>
+                    <p class="n-p-15 help-block">%</p>
+                    <label class="col-sm-2 control-label no-padding-right">生效日期</label>
+                    <div class="col-sm-2">
+                        <span class="input-icon icon-right time-layer">
+                            @{
+                                string IssuedDateData = "";
+                                if (model.IssuedDate != null)
+                                {
+                                    IssuedDateData = model.IssuedDate.ToString();
+                                    IssuedDateData = IssuedDateData.Substring(0, IssuedDateData.LastIndexOf(" ")).Replace("/", "-");
+                                }
+
+                            }
+                            <input class="form-control date-picker" placeholder="请输入生效日期" onclick="laydate({ istime: true, format: 'YYYY-MM-DD'})" id="txtCompanyIssuedDate" value="@(IssuedDateData)" style="text-align:right;">
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">预约显示于结账后</label>
+                    <div class="col-sm-4 radio">
+
+                        <label>
+                            <input type="radio" id="appointmentMustPaidY" name="appointmentMustPaid" @(model.AppointmentMustPaid ? "checked='checked'" : "class='inverted'")>
+                            <span class="text">是 </span>
+                        </label>
+                        <label>
+                            <input type="radio" id="appointmentMustPaidN" name="appointmentMustPaid" @(model.AppointmentMustPaid ? "class='inverted'" : "checked='checked'")>
+                            <span class="text">否</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">微信头像</label>
+                    <div class="col-sm-4 radio">
+                        <input class="input-file pull-left" id="WXfileInput" name="WXfileInput" type="file">
+                        <button class="btn btn-sm btn-primary" onclick="WXUpload()">
+                            <i class="fa fa-upload"></i>上传
+                        </button>
+                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-primary" type="submit" onclick="CompanySubmit()">确 定</button>
+                    <a class="btn btn-default" href="javascript:history.go(-1);">返 回 </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Page Body -->
+</div>
+<!-- /Page Content -->
+</div>
+<script src="/Script/ajaxfileupload.js"></script>
+<script src="~/Script/Branch.js"></script>
+

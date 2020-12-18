@@ -1,0 +1,57 @@
+2015-05-27 18:10:20[8] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/27 18:10:20
+Title=e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\Paper\GetPaperList.cshtml(2): error CS0234: 命名空间“Model.Table_Model”中不存在类型或命名空间名称“Paper_Model”(是否缺少程序集引用?)
+Message=Message:e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\Paper\GetPaperList.cshtml(2): error CS0234: 命名空间“Model.Table_Model”中不存在类型或命名空间名称“Paper_Model”(是否缺少程序集引用?)
+TargetSite:System.CodeDom.Compiler.CompilerResults Compile()
+Data:
+StackTrace:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetObjectFactory(String virtualPath, Boolean throwIfNotFound)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.<>c__DisplayClass4.<GetPathFromGeneralName>b__0(String path)
+   在 System.Web.WebPages.DefaultDisplayMode.GetDisplayInfo(HttpContextBase httpContext, String virtualPath, Func`2 virtualPathExists)
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   在 System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   在 System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   在 System.Web.Mvc.ViewEngineCollection.FindView(ControllerContext controllerContext, String viewName, String masterName)
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.71
+UrlReferrer=http://www.webmanager.com/Home/index
+RawUrl=/Paper/GetPaperList
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:navbar-fixed-top=true; sidebar-fixed=true; breadcrumbs-fixed=true; page-header-fixed=true; ASP.NET_SessionId=5pytq1s4r54k0hxk5i40ujec; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/N1X1t7YezfPU02paGD4bcE6gCiCUEDQJmZWEnsknwMz90OuBB9IqcSwAVM1gz7EE2rBxMJPC1H229QugmhDPLjZ7ZplBNYggWthRcLx7EZ8kgyLfOuKmJRmp2sYL9yLOQy2CYQXiCJKBVi6VZkqfJwc+MOX+P4zm7MYo4QAkPIrLFs6vM0KVJJN63IFs4Oosyrjrt0ZUvVdu5Ehqb2OPrUGqYfdXkZokUo6cr59SXWh3UF4YlOoeJC+qCoCGLFdxA0DNwBdRpD6YccM85apeOH5rQuxUymQUJOx+6ruaiU0XMz2PsR592h/pdeerwbUY2Hi4Mkqx2Ej1Amh2stcX7KE1IhH5igSpo43+HwR1RuSIeolVsV258qNT1UHm0ykyD8ZBQ9GgmJuDwO4XPtsz1SraRqreLljrwwqCVtYt2sH4fHLbmLjfa5ZYUkgpNBOeEL4BQiCOyd6SJvvCYfhlM7sa4aWOjtWCkvmv1UNdWtXgNOb6+X8qmPr8kk/njvWKz/e+EMGS+7hjTcFGelWUGOQjEMKUi789lXvS4FzrBbyJpcvmfb4lOZmtPUH5gOnD26CPNBxRjLSUnx4seU0cF6w+Hjm5BtQybWGW70+C+szUN/FeR9cvmSODY/RH3jfP9UCTvyOQgnczJrHsuxfBp/uyDCmAwdYb9wxive9yEfuYMpX9hj4Zfr8yjYaSYqRJAOPYEG786RwUwIEr30wA4ARuztg73h/1IuIlO7eoTeVoYIpsPZm97pWjBECi4Ko/5GMjVgHUU8yI07zOBWtqJa6uoGCBXH1w0XfQrp336ik=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwKizZ47SqS1R9nOSPTw4wIZFeAQx+LSGJ9wdQD0G59BjdQL7Cv+AuM1IMmf4BrkccNB/j8kTasDypKUXeBBz5G6cIz+OYif4EM80bYnaTOjq0dLFf3+NSW1EU2Z2rbGs7+wE2Qbtu5Ry+trOP/aQ4n5pwvsJ4BWqdmJOD3OkEXQpARgMAER5xVotTdAoRKDzjxi75WjbVo9nn3E7czDPa3DiqlCfn/LUNLNtCPu/W9Yw1m3/XzBGb7sl7rZgIJnLBKTQvC02x/SrrQI817LyWq4zbB4owxOzGlMyBho/Z33jRSBq1sGGjsX3sfsWOxWijLpco2aoyyAUtJ3zioUeLO6ZBTAtUoXOhGh1Cbem46AB2schKchXS6crka3+j2yaJkekZrzk7NxOdWnHvxbKIP//s+CupBC/OyhuYY5s/wgkXPsihl8se66Vg0UjOvc02zy3YTBi2YzlGsi+KcwMA+NGoaI2iVNAVnmPEvKpOf+5jrzRfa9V8y0WAvbP2amnCtkn780wh5UrBWgo38U5PJwui8EgzBC5sj1n0TCHqcdV5xrtCtGmF/Vf4JhJyWVSZhzeRH7XJSAEpV95AuM0GEFQGt6e+/hnKgQYnBxDfnPw1SmILYPYNAkdc9zkpyf5MBt8YNV0WNwevWY3yZAw7WO7scouBIUhcn6Hg1jpNlAp
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Home/index
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0
+
+

@@ -1,0 +1,466 @@
+﻿.img-verify {
+    margin: 0;
+    position: relative;
+    left: 150px;
+    top: -27px;
+}
+
+.login-logo {
+    width: 225px;
+    margin-left: 26px;
+    position: absolute;
+    top: -109px;
+}
+
+.browsehappy {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.navbar-brand {
+    font-weight: bolder;
+}
+
+    .navbar-brand small {
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+.navbar-form {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.noradius {
+    border-radius: 0;
+}
+
+.s-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+}
+
+.diy-search {
+    position: relative;
+}
+
+    .diy-search button {
+        position: absolute;
+        right: 7px;
+        top: 17%;
+        border: none;
+        background: none;
+    }
+
+.diy-wmd {
+    width: auto;
+    margin: 0;
+    display: inline-block;
+}
+
+.table-bordered > tbody > tr > td.table-td, .table-bordered > tbody > tr > th.table-td, .table-bordered > tfoot > tr > td.table-td, .table-bordered > tfoot > tr > th.table-td, .table-bordered > thead > tr > td.table-td, .table-bordered > thead > tr > th.table-td {
+    padding: 0px;
+    border: 0;
+}
+
+.searchicon {
+    left: -22px;
+    top: -1px;
+    position: relative;
+}
+
+.databox img {
+    border: 1px solid #ddd;
+}
+
+.databox .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.over-down {
+    height: 264px;
+    overflow-y: auto;
+}
+
+.over-down-tb {
+    height: 386px;
+    overflow-y: auto;
+}
+
+    .over-down-tb .table tr td {
+        height: 40px;
+    }
+
+.padding-r-4 {
+    padding-right: 4px;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.over-text {
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dd {
+    min-width: 100%;
+}
+
+.dd-item {
+    cursor: pointer;
+}
+
+.widget-header {
+    background: none;
+    box-shadow: none;
+}
+
+.choose-num {
+    position: absolute;
+    z-index: 0;
+    margin-top: -19px;
+}
+
+.n-p-15 {
+    padding-left: 15px;
+}
+
+.wizard ul.steps li.active::before {
+    background-color: #fff;
+    position: initial;
+}
+
+.wizard ul.steps li {
+    float: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.h35 {
+    height: 35px;
+}
+
+.pic-padding .databox {
+    margin-bottom: 40px;
+}
+
+    .pic-padding .databox .databox-left {
+        height: auto;
+        padding-bottom: 10px;
+        font-size: 12px;
+        color: #999;
+    }
+
+.pic-h {
+    height: 280px;
+}
+
+.choice-th {
+    position: absolute;
+    top: 23px;
+    left: 16px;
+}
+
+.label-m {
+    position: relative;
+    top: 8px;
+}
+
+.no-p {
+    padding: 0;
+}
+
+.no-m {
+    margin: 0;
+}
+
+.no-pm {
+    padding: 0;
+    margin: 0;
+}
+
+.arrow-client {
+    height: 100%;
+}
+
+.form-group .arrow-client i.margin-b {
+    margin-top: 156px;
+}
+
+.arrow-client i.fa {
+    color: #aaa;
+    display: block;
+    width: 56px;
+    height: 64px;
+    margin: 0 auto;
+    margin-top: 207px;
+}
+
+margin-b {
+    margin-top: 156px;
+}
+
+.account-width {
+    min-width: 170px;
+}
+
+table.active-table tr.selected {
+    background-color: #eee;
+    color: #444;
+}
+
+.home-size {
+    display: inline-block;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: -3px;
+    min-width: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.l-m-w {
+    min-width: 55px;
+}
+
+.site-store {
+    display: block;
+    float: left;
+    height: 30px;
+    min-width: 30px;
+    text-align: center;
+    line-height: 26px;
+    color: #fff;
+}
+
+    .site-store .fa {
+        font-size: 16px;
+    }
+
+.nav-tabs li {
+    z-index: 0;
+}
+/*.element-select{width:auto;position:relative;}.element-select .select-down{max-height:360px;position:absolute; overflow-y:auto; background:#fff;z-index:9;border:1px solid #ddd;top:34px;}*/
+
+.select-down {
+    max-height: 356px;
+    overflow-y: auto;
+}
+
+.select-div {
+    background: none repeat scroll 0 0 #fff;
+    height: 34px;
+    border-radius: 2px;
+}
+
+    .select-div .select-titel {
+        position: relative;
+        top: 7px;
+        left: 9px;
+        z-index: 1;
+    }
+
+    .select-div .select-control {
+        z-index: 3;
+        border-radius: 2px;
+        top: -19px;
+        text-align: left;
+        line-height: 12px;
+        width: 100%;
+        height: 34px;
+        padding-left: 65px;
+        background: none;
+        position: relative;
+    }
+
+    .select-div select.select-control:focus {
+        background: none;
+    }
+
+    .select-div .select-control option {
+        margin-right: -65px;
+    }
+
+.much-btn {
+    margin-top: -5px;
+}
+
+    .much-btn .select-div, .much-btn .btn, .much-btn .btn-group + .btn {
+        margin-top: 5px;
+    }
+
+.time-layer {
+    background: #fff;
+}
+
+    .time-layer input, .time-layer .form-control:focus {
+        background: none;
+        position: relative;
+        z-index: 4;
+        border-radius: 0;
+    }
+
+.top-layer {
+    bottom: 0;
+    left: 0;
+    outline: 0 none;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1051;
+    background: #fff;
+    opacity: 0.75;
+}
+
+    .top-layer i.fa {
+        opacity: 1;
+        position: relative;
+        z-index: 1052;
+    }
+
+.spinner .spinner-buttons .spinner-down i, .spinner .spinner-buttons .spinner-up i {
+    opacity: 1;
+    color: #333;
+}
+
+.cry {
+    width: 30%;
+    height: 100px;
+    position: absolute;
+    margin-top: -15px;
+    background: url("/assets/img/cry.gif") no-repeat right 0px;
+    background-size: 100px 100px;
+}
+
+.error h1, .welcome h1 {
+    font-size: 24px;
+    padding-bottom: 8px;
+    line-height: 160%;
+    color: #2dc3e8;
+    border-bottom: 1px dotted #d4d4d4;
+}
+
+.error h2 {
+    font-size: 16px;
+    color: #666;
+}
+
+.error p, .welcome p {
+    font-size: 14px;
+    line-height: 160%;
+    color: #999;
+}
+
+.error h1, .welcome h1, .error h2, .error p, .welcome p {
+    padding-left: 40%;
+    font-family: "微软雅黑";
+}
+
+.welcome h1, .welcome p {
+    padding-left: 0;
+    text-align: center;
+}
+
+.order-table table.table tr th, .order-table table tr td {
+    height: 42px;
+    padding: 8px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.order-table table.table tr th {
+    text-align: right;
+}
+
+.order-table #hs table.table tr th, .order-table #TreatmentDetail tr th, .order-table #cancelOrder_Treatment tr th {
+    text-align: left;
+}
+
+#Payment_Detail_One {
+    border: none;
+}
+
+.yahei {
+    font-family: 'Microsoft YaHei';
+}
+
+.order-table #hs table.table tr th.site-t {
+    text-align: right;
+    vertical-align: top;
+}
+
+.order-table #hs table.order-Partici tr td {
+    vertical-align: top;
+}
+
+table.order-Partici a.site-r {
+    border-radius: 0;
+    float: right;
+    margin-right: -9px;
+    margin-top: -9px;
+    position: relative;
+}
+
+.report-down tr td {
+    height: 54px;
+}
+
+.border {
+    border: 1px solid #d5d5d5;
+}
+
+.no-border-top {
+    border-top: none;
+}
+
+.no-border-bottom {
+    border-bottom: none;
+}
+
+.margin-top-1 {
+    position: relative;
+    margin-top: -1px;
+}
+
+.margin-top-2 {
+    position: relative;
+    margin-top: -2px;
+}
+
+.eag-plus {
+    right: 18px;
+    margin-top: 4px;
+    position: absolute;
+}
+
+a .eag-plus {
+    color: #737373;
+}
+
+a:hover .eag-plus {
+    color: #444;
+}
+
+no-radius {
+    border-radius: initial;
+}
+
+.radius-2 {
+    border-radius: 2px;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background-color: #eee; /*f5f5f5 f0f0f0 eee*/
+}

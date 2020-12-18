@@ -1,0 +1,234 @@
+﻿@{
+    Model.Table_Model.Commission_Product_Model model = new Model.Table_Model.Commission_Product_Model();
+    if (ViewBag.Service != null)
+    {
+        model = ViewBag.Service;
+    }
+    int sub = 0;
+    int EditFlag = 0;
+    if (ViewBag.EditFlag != null)
+    {
+        EditFlag = ViewBag.EditFlag;
+    }
+}
+
+@if (model != null)
+{
+    <div class="page-container">
+        <!-- Page Sidebar -->
+        @Html.Partial("Sidebar", 29)
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page 面包屑 -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="/Home/Index">首页</a>
+                    </li>
+                    <li><a href="/Account/GetAccountList">业绩提成</a></li>
+                    <li class="active">编辑服务业绩提成方式</li>
+                </ul>
+            </div>
+            <!-- /Page 面包屑 -->
+            <!-- Page Header -->
+            <div class="page-header position-relative">
+                <div class="header-title">
+                    <h1>编辑服务业绩提成方式</h1>
+                </div>
+                <!--Header Buttons-->
+                <div class="header-buttons">
+                    <a class="sidebar-toggler" href="#">
+                        <i class="fa fa-arrows-h"></i>
+                    </a>
+                    <a class="refresh" id="refresh-toggler" href="">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                    <a class="fullscreen" id="fullscreen-toggler" href="#">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </a>
+                </div>
+                <!--Header Buttons End-->
+            </div>
+            <!-- /Page Header -->
+
+            <!-- Page Body -->
+            <div class="page-body">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <li class="active in" role="presentation">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">编辑服务业绩提成方式</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="home-tab" id="home" class="tab-pane fade active in" role="tabpanel">
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">服务名称</label>
+                                <div class="col-sm-4">
+                                    <p class="n-p-15 help-block">@(model.ProductName)</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">定价</label>
+                                <div class="col-sm-4">
+                                    <p class="n-p-15 help-block">@(model.UnitPrice.ToString("0.00"))</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Search input-->
+                                <label class="col-sm-2 control-label no-padding-right">
+                                	业绩计算比例
+                                	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </label>
+                                <div class="col-sm-4">
+                                    <input placeholder="业绩计算比例" class="form-control" type="text" value="@(model.ProfitPct == -1 ? "" : (model.ProfitPct * 100).ToString("0.0"))" id="txtProfitPct">
+                                </div>
+                                <p class="n-p-15 help-block">(%)</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">销售提成</label>
+                                <div class="col-sm-1 radio no-padding-right text-right">
+                                    e账户 
+                                    <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </div>
+                                <div class="col-sm-2 ">
+                                    <input placeholder="请输入提成数额" class="form-control" type="text" id="txtECardSACommValue" value="@(model.ECardSACommValue == -1 ? "" :model.ECardSACommType == 1 ? (model.ECardSACommValue * 100).ToString("0.0"): model.ECardSACommValue.ToString("0.00"))">
+                                </div>
+                                <div class="col-sm-2 no-padding-left">
+                                    <select id="ddlECardSACommType" style="width: 100%;">
+                                        <option value="1" @(model.ECardSACommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(model.ECardSACommType == 2 ? "selected='selected'" : "")>元</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" style="border: none;">
+                                <label class="col-sm-2 control-label no-padding-right"></label>
+                                <div class="col-sm-1 radio no-padding-right text-right">
+                                    	非e账户
+                                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </div>
+                                <div class="col-sm-2 ">
+                                    <input placeholder="请输入提成数额" class="form-control" type="text" id="txtNECardSACommValue" value="@(model.ECardSACommValue == -1 ? "" : model.NECardSACommType == 1 ? (model.NECardSACommValue * 100).ToString("0.0"): model.NECardSACommValue.ToString("0.00"))">
+                                </div>
+                                <div class="col-sm-2 no-padding-left">
+                                    <select id="ddlNECardSACommType" style="width: 100%;">
+                                        <option value="1" @(model.NECardSACommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(model.NECardSACommType == 2 ? "selected='selected'" : "")>元</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" style="border: none;">
+                                <label class="col-sm-2 control-label no-padding-right">操作业绩和提成</label>
+                                <div class="col-sm-5 radio no-padding-right text-center">
+                                   	 指定
+                                   	 <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </div>
+                                <div class="col-sm-4 radio no-padding-right text-center">
+                                   	 非指定 
+                                   	 <i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                                </div>
+                            </div>
+                            <div id="divSubService" style="padding: 10px 0;">
+                                @if (!model.HaveSubService)
+                                {
+                                    <div class="form-group" style="border: none;">
+    	                                <label class="col-sm-2 control-label no-padding-right"></label>
+    	                                <div class="col-sm-1 radio no-padding-right text-center">
+    	                                </div>
+    	                                <div class="col-sm-2 no-padding-left">
+    	                                    <input placeholder="数额" class="form-control" type="text" name="txtDesOPCommValue"  value="@(model.DesOPCommValue == -1 ? "" :model.DesOPCommType == 1 ? (model.DesOPCommValue * 100).ToString("0.0"): model.DesOPCommValue.ToString("0.00"))">
+    	                                </div>
+    	                                <div class="col-sm-1 no-padding-left">
+    	                                    <select name="ddlDesOPCommType" style="width: 100%;">
+                                        <option value="1" @(model.DesOPCommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(model.DesOPCommType == 2 ? "selected='selected'" : "")>元</option>
+    	                                    </select>
+    	                                </div>
+    	                                
+    	                                <div class="col-sm-2 radio no-padding-right text-center">
+    	                                </div>
+    	                                <div class="col-sm-2 no-padding-left">
+    	                                    <input placeholder="数额" class="form-control" type="text" name="txtOPCommValue"  value="@(model.OPCommValue == -1 ? "" :model.OPCommType == 1 ? (model.OPCommValue * 100).ToString("0.0"): model.OPCommValue.ToString("0.00"))">
+    	                                </div>
+    	                                <div class="col-sm-1 no-padding-left">
+    	                                    <select name="ddlOPCommType" style="width: 100%;">
+                                        <option value="1" @(model.OPCommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(model.OPCommType == 2 ? "selected='selected'" : "")>元</option>
+    	                                    </select>
+    	                                </div>
+    	                            </div>
+                                }
+                                else
+                                {
+                                    if (model.listSubService != null && model.listSubService.Count > 0)
+                                    {
+                                        sub = 1;
+                                        foreach (Model.Table_Model.Commission_SubService_Model item in model.listSubService)
+                                        {  
+	                                        <div class="form-group" style="border: none;" tId="@(item.SubServiceCode)" name="divSubServiceOP">
+	                                            <label class="col-sm-2 control-label no-padding-right"></label>
+	                                            <div class="col-sm-1 radio no-padding-left no-padding-right text-center">
+	                                               	 @(item.SubServiceName)
+	                                            </div>
+	                                            <div class="col-sm-1 no-padding-left PR0">
+	                                                <input placeholder="数额" class="form-control" type="text"  name="txtDesSubServiceProfitPct"  value="@(item.DesSubServiceProfitPct == -1 ? "" :(item.DesSubServiceProfitPct * 100).ToString("0.0"))">
+	                                            </div>
+	                                            <div class="col-sm-05 radio no-padding-right text-center">
+	                                               	 % 
+	                                            </div>
+	                                            <div class="col-sm-1 no-padding-left">
+	                                                <input placeholder="数额" class="form-control" type="text"  name="txtDesSubOPCommValue"  value="@(item.DesSubOPCommValue == -1 ? "" :item.DesSubOPCommType == 1 ? (item.DesSubOPCommValue * 100).ToString("0.0"): item.DesSubOPCommValue.ToString("0.00"))">
+	                                            </div>
+	                                            <div class="col-sm-1 no-padding-left">
+        	                                    <select name="ddlDesSubOPCommType" style="width: 100%;">
+                                        <option value="1" @(item.DesSubOPCommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(item.DesSubOPCommType == 2 ? "selected='selected'" : "")>元</option>
+        	                                    </select>
+	                                </div>
+	                                            <div class="col-sm-05 radio no-padding-left no-padding-right text-center">
+	                                            </div>
+	                                            <div class="col-sm-1 no-padding-left PR0">
+	                                    <input placeholder="数额" class="form-control" type="text" name="txtSubServiceProfitPct"  value="@(item.SubServiceProfitPct == -1 ? "" :(item.SubServiceProfitPct * 100).ToString("0.0"))">
+	                                </div>
+	                                            <div class="col-sm-05 radio no-padding-right text-center">
+	                                   	 % 
+	                                </div>
+	                                            <div class="col-sm-1 no-padding-left">
+	                                    <input placeholder="数额" class="form-control" type="text" name="txtSubOPCommValue"  value="@(item.SubOPCommValue == -1 ? "" :item.SubOPCommType == 1 ? (item.SubOPCommValue * 100).ToString("0.0"): item.SubOPCommValue.ToString("0.00"))">
+	                                </div>
+	                                            <div class="col-sm-1 no-padding-left">
+	                                    <select name="ddlSubOPCommType" style="width: 100%;">
+                                        <option value="1" @(item.SubOPCommType == 1 ? "selected='selected'" : "")>%</option>
+                                        <option value="2" @(item.SubOPCommType == 2 ? "selected='selected'" : "")>元</option>
+	                                    </select>
+	                                </div>
+	                            </div>
+                                        }
+                                    }
+                                }
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <br>
+                                    @if (EditFlag == 1){
+                                    <button class="btn btn-primary" type="submit" onclick="SubmitService(@(model.ProductCode),@(sub))">确 定</button>
+                                    }
+                                    <a href="/Commission/ServiceList?#@(model.ProductCode)" class="btn btn-default">返 回 </a>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+    </div>
+}
+<script src="/Script/Commission.js"></script>

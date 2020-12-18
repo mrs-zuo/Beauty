@@ -1,0 +1,24 @@
+<resources>
+    <color name="black_overlay">#66000000</color>
+    <color name="blue">#0677bb</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="ecard_background_green">#81C137</color>
+    <color name="ecard_background_purple">#9057CB</color>
+	<color name="ecard_background_orange">#F99837</color>
+    <color name="lightgrey">#F5F5F5</color>
+    <color name="green">#00FF00</color>
+    <color name="text_color">#7f6e5a</color>
+    <color name="background_color">#fafafa</color>
+    <color name="background_color_2">#f9f4ee</color>
+    <color name="background_color_3">#d5c5b5</color>
+	<color name="black">#000000</color>
+	<color name="dark_green">#359F1B</color>
+	<!--粉红色-->
+	<color name="pink_color">#F75483</color>
+	<color name="gray">#A2A2A2</color>
+	<color name="background_bt_color">#F69295</color>
+	<color name="ecard_background_dark_red">#C13737</color>
+	<!--深灰颜色-->
+	<color name="dark_gray">#717171</color>
+</resources>

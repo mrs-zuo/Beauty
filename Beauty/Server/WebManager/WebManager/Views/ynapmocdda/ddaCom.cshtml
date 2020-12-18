@@ -1,0 +1,73 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "ddaCom";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <title>添加公司</title>
+</head>
+<body>
+    <div><span>公司名称</span><input id="txtCompanyName"></div>
+    <br />
+    <div><span>公司简称</span><input id="txtAbbreviation"></div>
+    <br />
+    <div><span>负责人</span><input id="txtBossName"></div>
+    <br />
+    <div><span>登录手机号</span><input id="txtMobilePhone"></div>
+    <br />
+    <div><span>可发短信件数</span><input id="txtSMSNum"></div>
+    <br />
+    <input type="button" onclick="submit()" value="提交" />
+    <script>
+        function submit() {
+            var CompanyName = $.trim($("#txtCompanyName").val());
+            var Abbreviation = $.trim($("#txtAbbreviation").val());
+            var BossName = $.trim($("#txtBossName").val());
+            var MobilePhone = $.trim($("#txtMobilePhone").val());
+            var SMSNum = $.trim($("#txtSMSNum").val());
+
+            if (CompanyName == "" || Abbreviation == "" || BossName == "" || MobilePhone == "" || SMSNum == "") {
+                alert("有未输入项目，请确认。");
+                return;
+            }
+
+            var Model = {
+                CompanyName: CompanyName,
+                Abbreviation: Abbreviation,
+                BossName: BossName,
+                MobilePhone: MobilePhone,
+                SMSNum: SMSNum
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/ynapmocdda/addCompany",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(Model),
+                async: false,
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("网络繁忙,请稍后再登！(错误代码：" + XMLHttpRequest.status + "-" + XMLHttpRequest.readyState + "-" + textStatus + ")");
+                },
+                success: function (data) {
+                    if (data.Data && data.Code == "1")
+                        alert(data.Message);
+                    else
+                        alert(data.Message);
+                }
+            });
+
+
+        }
+
+    </script>
+</body>
+</html>

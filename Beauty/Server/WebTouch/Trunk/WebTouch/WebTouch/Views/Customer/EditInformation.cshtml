@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "修改资料";
+    Model.View_Model.CustomerBasic_Model model = Model;
+}
+<script src="/Scripts/Customer.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/css/default.css">
+<style>
+    #clipArea {
+        margin: 20px;
+        height: 300px;
+    }
+
+    #file,
+    #clipBtn {
+        margin: 20px;
+    }
+
+    #view {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+@if (model != null)
+{
+    <div class="wrapper whiteBkg">
+        <div class="width100 blockC textL">
+            <ul class="width90 rowUl blockC">
+                <li class="borderB pTB15 clearfix">
+                    <a class="P0" href="#">
+                        <div class="width30 blackTex fl MT40 clearfix">头像</div>
+                        <div class="width70 grayTex textR fr clearfix ">
+                            <span class="block fr MT40 dispNone">
+                                <img src="/pic/rightArrow.png" height="20"></span>
+                            <div class="myphotoArea bkgColor1 fr">
+                                <span>
+                                     @*<img src="@(model.HeadImageURL == "" ? "/pic/nopicbg.jpg" : model.HeadImageURL)" /> *@
+                                     @{
+                                        string url = "url('/pic/nopicbg.jpg')";
+                                        if (model.HeadImageURL != "") {
+                                            url = "url('" + model.HeadImageURL + "')";
+                                        }
+                                    <input type="file" id="file" style="display:none;" />
+                                    <div id="view" style="background-image :@(url)" onclick="ChoosePic()" ></div>
+                                     }
+                                </span>
+                            </div>
+                        </div> 
+                    </a>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">姓名</div>
+                    <div class="grayTex textR fr">
+                        <form>
+                            <input class="textBox textR grayTex width120P" type="text" id="txtCustomerName" value="@(model.CustomerName)" />
+                        </form>
+                    </div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">性别</div>
+                    <form>
+                        <div class="grayTex textR fr">
+                            <input class="MR10" type="radio"  name="userSex" id="tadioSexMale" value="male" @(model.Gender == 0 ? "checked=checked" : "") />女
+                        </div>
+                        <div class="grayTex textR fr MR20">
+                            <input class="MR10" type="radio"  name="userSex" value="female" @(model.Gender == 1 ? "checked=checked" : "")  />男
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" id="hidtxt" />
+    <div class="width90 blockC MT30 MB30"><a class="btnLarge bkgColor1 width100" onclick="submit()">保存</a></div>
+    
+<div id="guideImg1" class="block" style="display:none;"> 
+    <a class="closedBtn">
+        <img src="/pic/closedBtn.png" height="30" /></a>
+    <div class="popupDiv whiteBkg width100">
+    <div id="clipArea" onclick="ClipPic();"></div>
+    <button id="clipBtn" style="display:none;">截取</button>
+    </div>
+</div>
+
+}
+<script src="/js/iscroll-zoom.js"></script>
+<script src="/js/hammer.js"></script>
+<script src="/js/jquery.photoClip.js"></script>
+<script>
+    function ChoosePic() {
+        $("#file").click();
+    }
+
+    function ClipPic() {
+        $("#clipBtn").click();
+    }
+    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    $("#clipArea").photoClip({
+        width: 100,
+        height: 100,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function () {
+            showDiv();
+            console.log("照片读取中");
+        },
+        loadComplete: function () {
+            console.log("照片读取完成");
+        },
+        clipFinish: function (dataURL) {
+            console.log(dataURL);
+            closePop();
+            $("#hidtxt").data("HeadFlg", 1);
+        }
+    });
+
+    function overlayShow() {
+        document.getElementById("guideImg1").style.display = "";
+    }
+    //关闭弹框
+    function closePop() {
+        $("#guideImg1").hide();
+    }
+    $(".closedBtn").click(function () {
+        closePop();
+    })
+
+    function showDiv() {
+        $("#guideImg1").show();
+    }
+</script>

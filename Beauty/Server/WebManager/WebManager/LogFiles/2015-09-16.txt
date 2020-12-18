@@ -1,0 +1,52 @@
+2015-09-16 11:01:37[19] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/9/16 11:01:37
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\Vss\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.CancelTG(EditTGForWebOperation_Model model) 位置 e:\Vss\WebManager\WebManager\Controllers\OrderController.cs:行号 348
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.150
+UrlReferrer=http://www.webmanager.com/Order/OrderEditNew
+RawUrl=/Order/CancelTG
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:73
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=o5zzt0uaebg1znmerseu5ybo; HSManger=UtlFyH75FFwxwrP3OrtYFQOdeKU61vd5Ul3r8XV4v3l/hKF/L4A+DAxgeKUsRKvm34HPPcv2h3EwrJalzNnmtj+wltBqBlTCXW6dir5XsSl4oIDJ/C+yvfn2e58AxGsGJWUbkhbs/teJMfHjAY3f6xff3B8jJEhTPto/T9jlQhXhnG4SHzOa7+kr+mial3AIdLdXwR5sWTyEJdmn0AbPG/DXAI8svcK8OCzfOI2moaWe96Tut0MW+HKRouwLrSsyvkizBfIerrJwJBKm5UIS2wweKES5rjDGqqVHd6C/c/6cBHMz3upLknJEmoIHvjFBp4rDm7mqgjFTBgFXgJKiHlnJdtm/RNIHQYsJAm4tVV1mJq5PEINWCKRG8uq4eC0fQNQqIpmUNT2x6pFe1dzWlZrS0gob6N+KnF2Kbdfw0PMDWZhrC5kjcwZ3W2JmiE3rBCV8u5PVXMzb7pONdTVjZQfH4WjN5sc/XMkUNcgsyCW+3loPJ8LvcxSx8OrWOMpZHQkIn6o0rW1Asihuny1Rb124LzMjqTjaiwFh4dWAdGYtXRvdIgVnQjPP8hycjupcEvr+pXQMk6s/rqlI652i93VyR5Ze3Rx9amJN7ZraMDDLMZg/3DPkoVkAeR9qLmHutu/7rv4MMqDt8q5nN4eQItiyCMMjubkkZP6A8WRRoFvFBHlCZO/c9jcxkZ7O6vM98/sObWJFAd/W23iw8J622xmelfPsb7TSPJGznQ5lZ4QG/CYlta1ASvOKSko7Iw09FDMHVsqBgn2DpKXVk69hUOqzIILADy8OcAj72fk+iBvpcfDk8WDDEiCIpvnvg2bABieKv8gY2VduW+VpRkNxgslWEn/igR+8AOhKdKi1eLyG/p61t4RI8YIsf6pqMV3bMdomNMboPi8QN+ZqX6j22cLpQqtEupaZ; CompanyInfo=QKxDuUzF8sMU5t4fPo5BN5TnwotUu1FHWSdk5KsfkpIh+6BqF4MltgkeXTdYpZXxNAqy0sKY4ga2b4Ut3h8MncAEtmLzYN55mc60nKY+x23mzlRjZDwu2Lzq5o+MMyO0cmMhaynn9tYIEMv1Nrjg8dx52C4fJk1V8VkgdoU49pGjI1fB6/SLMIl1mci9rKlTwgmtTkvvTfV1G1BjwoteQOlK33bgwNxWswf7Jm/XG6vTtGzRQT9/bJc1WOp8DUJ9nOx98gsEHl0mqWZM0xoNGRko7H2MG0hcO+3Bb2ybx1nsxuM8r9qnNlOKGc842j0ZeIt2ICnKmgELsYzU0p2dgkinNQuFGN2m+fdYF8NuPgYKye0UeY8Je/Ilvdb/jnqxAq0dkwwTSa8nLNRoWvnMlCddjR+oBFb3EHWQ48IyygjtgwXt7pIgpYXD062jvKM3ZkMNpN/vxcbfOBR8QDh094Y0ZCDVPTlfvAuEh8YJvA9fjpKL7IQyFDmi6KjgINhp9QmnkVwtYasymIdFMYILAmAxh+8FNBniJf8JiETS2ehI4xqZo/tRrjVyMGMpxE5FOQZYtUmAQJV6Ih2kGjkwuJs8SYuaG/l4/x0N6XxzGJKvpe0Qs/kF9QZK2/NWF8fPyIxoR18UPFh2ENLTG9JXi0tiT6/+8hlM54KstQIN4skIM6/bduwvU/8EEWehZdZloQMYfsKiu2g=
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEditNew
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
+X-Requested-With:XMLHttpRequest
+
+

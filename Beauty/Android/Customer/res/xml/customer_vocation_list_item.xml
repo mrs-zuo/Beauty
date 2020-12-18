@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#f7f7f7" />
+
+    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+        <ImageView
+            android:id="@+id/customer_vocation_status_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/report_main_down_icon"
+            android:contentDescription="@string/search" />
+
+        <TextView
+            android:id="@+id/customer_vocation_type_name"
+            style="@style/relative_layout_left_child_attrs"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="#FE931E"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:id="@+id/customer_vocation_question_name"
+            style="@style/relative_layout_left_child_attrs"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/customer_vocation_status_icon"
+            android:layout_toRightOf="@id/customer_vocation_type_name"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+</LinearLayout>

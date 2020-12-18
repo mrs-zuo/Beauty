@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ABA12B13-78A5-4BC5-A079-18BBF0E3479A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CustomeDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FFC289DB-13C7-4F9F-8B7A-B65EF474D19F</key>
+		<string>https://try-server/svn/GlamourPromise/Client-Customer-new/Client-Customer-WX</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CustomeDemo/CustomeDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FFC289DB-13C7-4F9F-8B7A-B65EF474D19F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>FFC289DB-13C7-4F9F-8B7A-B65EF474D19F</key>
+		<string>https://try-server/svn/GlamourPromise</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://try-server/svn/GlamourPromise/Client-Customer-new/Client-Customer-WX/CustomeDemo/CustomeDemo.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FFC289DB-13C7-4F9F-8B7A-B65EF474D19F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>Client-Customer/iOS</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FFC289DB-13C7-4F9F-8B7A-B65EF474D19F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Client-Customer-WX</string>
+		</dict>
+	</array>
+</dict>
+</plist>

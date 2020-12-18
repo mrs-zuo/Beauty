@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_content_table_relativelayout_attrs"
+    android:padding="15dip" >
+    <ImageView
+        android:id="@+id/customer_vocation_status_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/report_main_down_icon"
+        android:contentDescription="@string/search" />
+    <TextView
+        android:id="@+id/customer_vocation_index"
+        style="@style/relative_layout_left_child_attrs"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/customer_vocation_question_name"
+        style="@style/relative_layout_left_child_attrs"
+        android:layout_marginRight="5dip"
+        android:layout_toLeftOf="@id/customer_vocation_status_icon"
+        android:layout_toRightOf="@id/customer_vocation_index"
+        android:textColor="@color/black" />
+</RelativeLayout>

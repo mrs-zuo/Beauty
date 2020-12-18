@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css?t=20151204001" />
+    <style>
+        .bkgColor1 {
+            background-color: @(string.IsNullOrWhiteSpace(ViewBag.CompanyStyle) ? "#f75483" : ViewBag.CompanyStyle);
+        }
+        .color1 {
+            color:@(string.IsNullOrWhiteSpace(ViewBag.CompanyStyle) ? "#f75483" : ViewBag.CompanyStyle);
+        }
+        .borderPink {
+            border: 1px solid @(string.IsNullOrWhiteSpace(ViewBag.CompanyStyle) ? "#f75483" : ViewBag.CompanyStyle);
+        }
+    </style>
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/goTop.js"></script>
+	
+</head>
+<body>
+    <div class="outermost">
+        <div class="header bkgColor1 positionR">
+            <a class="positionL headerLeftIcon" href="javascript:history.go(-1);">
+                <img src="/pic/leftArrow.png" height="45" />
+            </a><span>@(ViewBag.Title)</span><a class="positionL headerRightIcon" href="/Home/Index"><img src="/pic/homeIcon.png" height="45" /></a>
+        </div>
+        @RenderBody()
+        <div class="goTopSite">
+            <ul class="tab">
+                <li><a class="goTtop bkgColor1" href="/Product/MyCart"><div class="imgArea MT5"><img src="/pic/cartIcon.png" height="35"/></div></a></li>
+                <li>
+                    <a class="goTtop bkgColor1 MT10 goTop" style="display:none;">
+                        <div class="imgArea MT10">
+                            <img src="/pic/upArrow.png" height="30" />
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

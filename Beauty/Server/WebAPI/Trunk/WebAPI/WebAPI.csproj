@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82ECA24A-8A57-4EC7-BBB6-96BFE60C104C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAPI</RootNamespace>
+    <AssemblyName>WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AopSdk">
+      <HintPath>..\lib\AopSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching, Version=2.12.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="HS.Framework.Common, Version=1.0.0.26, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\HS.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\sysMsg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sysMsg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\sysMsg.resx.zh-cn.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sysMsg.resx.zh-cn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authorize\HTTPBasicAuthorizeAttribute.cs" />
+    <Compile Include="Controllers\API\AccountController.cs" />
+    <Compile Include="Controllers\API\BaseController.cs" />
+    <Compile Include="Controllers\API\JournalController.cs" />
+    <Compile Include="Controllers\API\PaperController.cs" />
+    <Compile Include="Controllers\API\PushToolController.cs" />
+    <Compile Include="Controllers\API\StatisticsController.cs" />
+    <Compile Include="Controllers\API\TaskController.cs" />
+    <Compile Include="Controllers\Customer\Base_CController.cs" />
+    <Compile Include="Controllers\Customer\Category_CController.cs" />
+    <Compile Include="Controllers\Customer\Customer_CController.cs" />
+    <Compile Include="Controllers\Customer\ECard_CController.cs" />
+    <Compile Include="Controllers\Customer\Login_CController.cs" />
+    <Compile Include="Controllers\Customer\Order_CController.cs" />
+    <Compile Include="Controllers\Customer\Promotion_CController.cs" />
+    <Compile Include="Controllers\Customer\Task_CController.cs" />
+    <Compile Include="Controllers\Manager\Account_MController.cs" />
+    <Compile Include="Controllers\Manager\Appointment_MController.cs" />
+    <Compile Include="Controllers\Manager\Benefit_MController.cs" />
+    <Compile Include="Controllers\Manager\Branch_MController.cs" />
+    <Compile Include="Controllers\Manager\Card_MController.cs" />
+    <Compile Include="Controllers\Manager\Category_MController.cs" />
+    <Compile Include="Controllers\Manager\Commission_MController.cs" />
+    <Compile Include="Controllers\Manager\CommoditySupplier_MController.cs" />
+    <Compile Include="Controllers\Manager\Commodity_MController.cs" />
+    <Compile Include="Controllers\Manager\Company_MController.cs" />
+    <Compile Include="Controllers\Manager\CustomerSource_MController.cs" />
+    <Compile Include="Controllers\Manager\Image_MController.cs" />
+    <Compile Include="Controllers\Manager\Journal_MController.cs" />
+    <Compile Include="Controllers\Manager\Level_MController.cs" />
+    <Compile Include="Controllers\Manager\Login_MController.cs" />
+    <Compile Include="Controllers\Manager\Message_MController.cs" />
+    <Compile Include="Controllers\Manager\Notice_MController.cs" />
+    <Compile Include="Controllers\Manager\Order_MController.cs" />
+    <Compile Include="Controllers\Manager\Paper_MController.cs" />
+    <Compile Include="Controllers\Manager\Promotion_MController.cs" />
+    <Compile Include="Controllers\Manager\Queston_MController.cs" />
+    <Compile Include="Controllers\Manager\RelationShip_MController.cs" />
+    <Compile Include="Controllers\Manager\Report_MController.cs" />
+    <Compile Include="Controllers\Manager\InOutItem_MController.cs" />
+    <Compile Include="Controllers\Manager\Role_MController.cs" />
+    <Compile Include="Controllers\Manager\Service_MController.cs" />
+    <Compile Include="Controllers\Manager\SMS_MController.cs" />
+    <Compile Include="Controllers\Manager\Statement_MController.cs" />
+    <Compile Include="Controllers\Manager\Step_MController.cs" />
+    <Compile Include="Controllers\Manager\SubService_MController.cs" />
+    <Compile Include="Controllers\Manager\SupplierCommodity_MController.cs" />
+    <Compile Include="Controllers\Manager\Supplier_MController.cs" />
+    <Compile Include="Controllers\Manager\Tag_MController.cs" />
+    <Compile Include="Controllers\Manager\WebUtility_MController.cs" />
+    <Compile Include="Controllers\Third\Branch_TController.cs" />
+    <Compile Include="Controllers\API\CartController.cs" />
+    <Compile Include="Controllers\API\CategoryController.cs" />
+    <Compile Include="Controllers\API\CommodityController.cs" />
+    <Compile Include="Controllers\API\CompanyController.cs" />
+    <Compile Include="Controllers\API\CustomerController.cs" />
+    <Compile Include="Controllers\API\ECardController.cs" />
+    <Compile Include="Controllers\API\HSManageController.cs" />
+    <Compile Include="Controllers\API\ImageController.cs" />
+    <Compile Include="Controllers\API\LevelController.cs" />
+    <Compile Include="Controllers\API\LoginController.cs" />
+    <Compile Include="Controllers\API\MessageController.cs" />
+    <Compile Include="Controllers\Third\Commodity_TController.cs" />
+    <Compile Include="Controllers\Third\Company_TController.cs" />
+    <Compile Include="Controllers\Third\News_TController.cs" />
+    <Compile Include="Controllers\API\NotepadController.cs" />
+    <Compile Include="Controllers\API\NoticeController.cs" />
+    <Compile Include="Controllers\API\OpportunityController.cs" />
+    <Compile Include="Controllers\API\OrderController.cs" />
+    <Compile Include="Controllers\API\PaymentController.cs" />
+    <Compile Include="Controllers\API\PromotionController.cs" />
+    <Compile Include="Controllers\API\RecordController.cs" />
+    <Compile Include="Controllers\API\ReportController.cs" />
+    <Compile Include="Controllers\API\ReviewController.cs" />
+    <Compile Include="Controllers\API\ServiceController.cs" />
+    <Compile Include="Controllers\API\TagController.cs" />
+    <Compile Include="Controllers\API\TemplateController.cs" />
+    <Compile Include="Controllers\API\VersionController.cs" />
+    <Compile Include="Controllers\API\WebUtilityController.cs" />
+    <Compile Include="Controllers\Third\Account_TController.cs" />
+    <Compile Include="Controllers\Third\Promotion_TController.cs" />
+    <Compile Include="Controllers\Third\Service_TController.cs" />
+    <Compile Include="Filter\GlobalExceptionFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\HttpHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\WebAPI.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{30281631-bc7c-46c2-9ded-3512250c601f}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{82de9571-33f1-4c9a-a7b3-5d503a9cb386}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{e172fdb3-c760-42fa-ba3a-4571759a1786}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\sysMsg.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>sysMsg.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\sysMsg.resx.zh-cn.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>sysMsg.resx.zh-cn.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7717/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

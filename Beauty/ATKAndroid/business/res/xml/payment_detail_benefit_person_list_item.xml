@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+	<View 
+	    android:id="@+id/benefit_person_before_divide_view"
+	    style="@style/activity_content_divide_view_attrs" />
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/benefit_person_name"
+            style="@style/activity_content_table_row_title_attrs"
+            android:layout_marginLeft="20dp"
+            android:text="@string/benefit_person_prompt"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/benefit_person_percent_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:text="@string/percent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/benefit_person_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/benefit_person_percent_mark"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+     <View 
+         android:id="@+id/benefit_person_after_divide_view"
+         style="@style/activity_content_divide_view_attrs" />
+</LinearLayout>

@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RemindListActivity">
+    <ListView
+        android:id="@+id/remind_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_marginTop="@dimen/list_view_attrs_layout_margin"
+        android:divider="@null"
+        android:dividerHeight="@dimen/remind_listview_dividerheight"
+        android:scrollbars="none"/>
+</LinearLayout>

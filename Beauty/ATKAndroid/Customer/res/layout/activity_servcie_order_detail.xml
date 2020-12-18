@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ServcieOrderDetailActivity"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        >
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TableLayout
+                android:id="@+id/service_order_time_tablelayout"
+                style="@style/table_layout_attrs"
+                android:focusable="true"
+                android:focusableInTouchMode="true" >
+                <RelativeLayout
+                    android:id="@+id/layout_order_serial_number"
+                    style="@style/relative_layout_has_child_attrs" >
+                    <TextView
+                        android:id="@+id/servcie_order_serial_number_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/order_serial_number"
+                        android:textColor="@color/text_color" />
+                    <ImageView
+                        android:id="@+id/order_changeable_layout_image_view"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/report_main_down_icon" />
+                    <TextView
+                        android:id="@+id/servcie_order_serial_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:layout_toLeftOf="@id/order_changeable_layout_image_view"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/service_order_changeable_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_order_branch"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/order_branch"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/servcie_order_branch"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_one"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/servcie_order_time_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/commodity_order_time_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/servcie_order_time"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                     <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_expirationtime"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/responsible_expirationtime_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/expirationtime_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/responsible_expirationtime"
+                            style="@style/relative_layout_right_child_attrs" />
+
+                        <ImageView
+                            android:id="@+id/expirationtime_overdue_prompt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/layout_marginright"
+                            android:layout_toLeftOf="@id/responsible_expirationtime"
+                            android:background="@drawable/expirationtime_overdue_icon"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_responsible_personname"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/responsible_personname_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/responsible_personname_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/responsible_personname"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/service_detail_tablelayout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/service_name_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/service_name"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/product_type_status_0" />
+
+                    <ImageView
+                        android:id="@+id/price_changeable_layout_image_view"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/report_main_down_icon" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/service_price_detail_changeable_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                     <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/service_quantity_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/count_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/service_quantity"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                     <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/total_orig_price_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/total_orig_price_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                     <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/total_memeber_sale_price_title"
+                            android:textColor="@color/text_color" />
+
+                        <TextView
+                            android:id="@+id/total_member_sale_price_content"
+                            style="@style/relative_layout_right_child_attrs" />
+                    </RelativeLayout>
+
+                     <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <LinearLayout
+                        android:id="@+id/activity_service_order_detail_total_sale_price_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                            <TextView
+                                android:id="@+id/activity_service_order_detail_total_sale_price_title"
+                                style="@style/relative_layout_left_child_attrs"
+                                android:text="@string/total_sale_price_title"
+                                android:textColor="@color/text_color" />
+
+                            <TextView
+                                android:id="@+id/total_sale_price_content"
+                                style="@style/relative_layout_right_child_attrs" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/status_tablelayout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/order_status_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/service_order_status_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/commodity_order_status_title"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/service_order_status"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/order_payment_detail_changeable_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                     <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <RelativeLayout
+                        android:id="@+id/order_pay_detail_relativelayout"
+                        style="@style/relative_layout_has_child_attrs" >
+
+                        <TextView
+                            android:id="@+id/service_order_vay_status_title"
+                            style="@style/relative_layout_left_child_attrs"
+                            android:text="@string/commodity_order_pay_detail_title"
+                            android:textColor="@color/text_color" />
+
+                        <ImageView
+                            android:id="@+id/order_pay_detail_arrowhead"
+                            style="@style/relative_layout_right_child_attrs"
+                            android:background="@drawable/join_in_arrowhead_gray" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout style="@style/table_layout_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/service_finish_status_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/service_finish_status_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/order_status_2"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/service_finish_status_content"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <com.glamourpromise.beauty.customer.view.NoScrollListView
+                    android:id="@+id/unfinish_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/service_order_detail_scdl_tablelayout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/scdl_title"
+                        android:textColor="@color/text_color" />
+
+                    <ImageView
+                        android:id="@+id/activity_service_order_detail_changeable_layout_arrow"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/report_main_down_icon" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/activity_service_order_detail_scdl_list_changeable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <com.glamourpromise.beauty.customer.view.NoScrollListView
+                        android:id="@+id/activity_service_order_detail_scdl_list_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@null" />
+                </LinearLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/service_finish_table_layout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/finished_service_record"
+                        android:textColor="@color/text_color" />
+
+                    <ImageView
+                        android:id="@+id/finish_list_changeable_layout_image_view"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/report_main_down_icon" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/show_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/activity_service_order_detail_past_count_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                         <View style="@style/divide_view" >
+                    	</View>
+
+                        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                            <TextView
+                                android:id="@+id/activity_service_order_detail_finished_count_text_content"
+                                style="@style/relative_layout_left_child_attrs" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <View
+                        style="@style/divide_view" >
+                    </View>
+
+                    <LinearLayout
+                        android:id="@+id/order_annual_changeable_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <com.glamourpromise.beauty.customer.view.NoScrollListView
+                            android:id="@+id/order_annual_list_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:divider="@null" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/order_appointment_bt"
+                style="@style/search_btn"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/search"
+                android:text="@string/left_menu_appointment"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <!--  <LinearLayout
+                android:id="@+id/course_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/table_layout_attrs_layout_marginleft"
+                android:layout_marginRight="@dimen/table_layout_attrs_layout_marginleft"
+                android:layout_marginTop="@dimen/margin_top"
+                android:orientation="vertical" >
+            </LinearLayout>-->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

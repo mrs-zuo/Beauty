@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color" >
+    <RelativeLayout
+        android:id="@+id/head_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/narbar_backgroup" >
+        <ImageButton
+            android:id="@+id/btn_main_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_backbutton" />
+        <ImageButton
+            android:id="@+id/btn_main_home" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_home_button" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ecard_level_title"
+        style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/ecard_level_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/title_ecard_level"
+            android:textColor="@color/text_color" />
+    </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/table_layout_attrs_layout_marginleft"
+        android:layout_marginRight="@dimen/table_layout_attrs_layout_marginleft"
+        android:background="#f4f4f4" >
+    </View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/table_layout_attrs_layout_marginleft"
+        android:layout_marginRight="@dimen/table_layout_attrs_layout_marginleft"
+        android:layout_marginTop="@dimen/margin_top"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/layout_padding"
+        android:paddingTop="@dimen/layout_padding" >
+        <TextView
+            android:id="@+id/level_title_text"
+            style="@style/relative_layout_left_child_attrs"
+            android:text="@string/title_ecard_level_detail"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/level_content_text"
+            style="@style/relative_layout_right_child_attrs" />
+    </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/table_layout_attrs_layout_marginleft"
+        android:layout_marginRight="@dimen/table_layout_attrs_layout_marginleft"
+        android:background="#f4f4f4" >
+    </View>
+    <ListView
+        android:id="@+id/ecard_level_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/list_view_attrs_layout_margin"
+        android:layout_marginLeft="@dimen/list_view_attrs_layout_margin"
+        android:layout_marginRight="@dimen/list_view_attrs_layout_margin"
+        android:layout_marginTop="5dp"
+        android:background="@color/white" />
+</LinearLayout>

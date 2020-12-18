@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <!--  
+    <FrameLayout
+        android:id="@+id/layout_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <ImageView
+            android:id="@+id/image_remind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:contentDescription="@string/unread_remind"
+            android:src="@drawable/homepage_remind" />
+        <ImageView
+            android:id="@+id/image_remind_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dip"
+            android:contentDescription="@string/unread_remind" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/layout_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dip"
+        android:layout_toRightOf="@id/layout_1"
+        android:layout_alignWithParentIfMissing="true"
+        android:orientation="vertical" >
+        <ImageView
+            android:id="@+id/image_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:contentDescription="@string/unread_notice"
+            android:src="@drawable/homepage_notice" />
+        <ImageView
+            android:id="@+id/image_notice_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dip"
+            android:contentDescription="@string/unread_notice" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/layout_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dip"
+        android:layout_toRightOf="@id/layout_2"
+        android:orientation="vertical" >
+        <ImageView
+            android:id="@+id/image_promotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:contentDescription="@string/unread_promotion"
+            android:src="@drawable/homepage_promotion" />
+        <ImageView
+            android:id="@+id/image_promotion_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dip"
+            android:contentDescription="@string/unread_promotion" />
+    </FrameLayout>-->
+
+</RelativeLayout>

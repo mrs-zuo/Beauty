@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    			style="@style/activity_content_table_relativelayout_attrs" >
+
+    <TextView
+        android:id="@+id/company_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        style="@style/relative_layout_left_child_attrs" 
+        android:textColor="@color/blue"/>
+
+    <!--  
+    <ImageView
+        android:id="@+id/arrowhead"
+        style="@style/relative_layout_right_child_attrs"
+        android:src="@drawable/join_in_arrowhead" />-->
+
+</RelativeLayout>

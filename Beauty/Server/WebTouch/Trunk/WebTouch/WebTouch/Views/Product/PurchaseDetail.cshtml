@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "购买详情";
+    List<Model.View_Model.ProductInfoList_Model> list = new List<Model.View_Model.ProductInfoList_Model>();
+    list = Model;
+
+    List<Model.View_Model.CustomerEcardDiscount_Model> listCard = new List<global::Model.View_Model.CustomerEcardDiscount_Model>();
+    listCard = ViewBag.listCard;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+    decimal totalUnitPrice = 0;
+    decimal totalPromotionPrice = 0;
+}
+
+<script src="/Scripts/Product.js"></script>
+<script src="/js/EasyTemplate.js"></script>
+<script src="/js/sslr.js"></script>
+<script id="templateSign" type="text/x-easy-template">
+<#macro bjTest data>
+	<#list data as list>
+		 <li class="borderB">
+                    <a onclick="selectCard('${list.aId}',${list.CardID},'${list.CardName}',${list.Discount},${list.Quantity},${list.MarketingPolicy})">
+                        <div class="grayTex fl">${list.CardName}</div>
+                        <div class="grayTex fr"></div></a></li>
+	</#list>
+</#macro>
+</script>
+@if (list != null && list.Count > 0)
+{
+    int index = 1;
+    foreach (Model.View_Model.ProductInfoList_Model item in list)
+    {
+        string aId = "aCard" + index.ToString(); ;
+        index++;
+        totalUnitPrice += item.UnitPrice * item.Quantity;
+        totalPromotionPrice += item.PromotionPrice * item.Quantity;
+    <div class="wrapper whiteBkg MB10" name="divPurchaseDetail" cId="@(item.CartID)" pCd="@(item.Code)" pId="@(item.ID)" bId="@(item.BranchID)" pt="@(item.ProductType)">
+        <div class="width90 blockC textL">
+            <ul class="width100 rowUl15">
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">购买门店</div>
+                    <div class="grayTex textR fr">@(item.BranchName)</div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl longTex">@(item.Name)</div>
+                    <div class="grayTex textR fr"></div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">数量</div>
+                    <div class="grayTex textR fr" name="divQty">@(item.Quantity)</div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="blackTex fl">e账户</div>
+                    <div class="grayTex textR fr">
+                        @if (item.MarketingPolicy == 0)
+                        {
+                            <span  name="aCard" cdId="@(item.CardID)">不使用e账户</span>
+                        }
+                        else
+                        {
+                            <a id="@(aId)" name="aCard" cdId="@(item.CardID)" class="grayTex LinkUnderLine" onclick="showDiv(this,@(item.BranchID),@(item.ProductType),'@(item.Code)',@(item.Quantity),@(item.MarketingPolicy))" >@(item.CardName)</a>
+                        }
+                    </div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <div class="fl">原价</div>
+                    <div name="UnitPrice" class="dispNone">@(item.UnitPrice)</div>
+                    <div class="grayTex textR fr" name="OriginalPrice"><span class="MR5">@(CurrencySymbol)</span>@((item.UnitPrice * item.Quantity).ToString("0.00"))</div>
+                    <li class="pTB15 clearfix">
+                        <div class="blackTex fl">会员价</div>
+                        <div class="grayTex textR fr"><span class="MR5">@(CurrencySymbol)</span><span name="PromotionPrice">@((item.PromotionPrice * item.Quantity).ToString("0.00"))</span></div> 
+                    </li>
+            </ul>
+        </div>
+    </div>
+    }
+    <div class="whiteBkg width100 MT10">
+        <div class="width90 blockC">
+            <ul class="width100 rowUl15">
+                <li class="clearfix">
+                    <div class="blackTex fl">合计</div>
+                    <div class="grayTex fr redTex" ><span class="MR5">@(CurrencySymbol)</span><span id="divPromotionTotal">@(totalPromotionPrice.ToString("0.00"))</span></div>
+                    <del class="grayTex fr MR10" id="delUnitTotal"><span class="MR5">@(CurrencySymbol)</span><span>@(totalUnitPrice.ToString("0.00"))</span></del></li>
+            </ul>
+        </div>
+    </div>
+    <div class="width90 blockC MT30 MB30"><a class="btnLarge bkgColor1 width100" onclick="AddOrder()">确定购买</a></div>
+    <div id="guideImg1" class="block" style="display:none;" >
+        <a class="closedBtn" onclick="closePop()">
+            <img src="/pic/closedBtn.png" height="30" /></a>
+        <div class="popupDiv whiteBkg width100">
+            <ul class="rowUl3 ML5P MR5P" id="ulCard">
+            </ul>
+        </div>
+    </div>
+   
+    <input type="hidden" id="txtCardList" />
+}

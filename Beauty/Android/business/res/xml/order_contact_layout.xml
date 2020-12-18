@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   	  style="@style/activity_content_table_relativelayout_attrs" 
+   >
+
+    <TextView
+        android:id="@+id/contact_id_text"
+        style="@style/activity_content_table_row_title_attrs"/>
+    <ImageButton
+        android:id="@+id/contact_arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/join_in_arrowhead" />
+
+    <TextView
+        android:id="@+id/contact_time_text"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:layout_toLeftOf="@id/contact_arrowhead"
+        android:textSize="@dimen/text_size" />
+</RelativeLayout>

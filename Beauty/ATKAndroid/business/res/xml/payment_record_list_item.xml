@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/payment_record_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:textColor="@color/title_font"
+        android:textSize="@dimen/text_size" />
+
+    <ImageView
+        android:id="@+id/payment_record_remark_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="10dip"
+        android:layout_toRightOf="@id/payment_record_title_text"
+        android:src="@drawable/payment_record_remark_icon" />
+
+    <TextView
+        android:id="@+id/payment_record_time_text"
+        android:layout_width="@dimen/order_list_product_name_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/payment_record_title_text"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/payment_record_amount_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/order_list_item_margin_right"
+        android:layout_marginTop="5dip"
+        android:textSize="@dimen/text_size" />
+	 <ImageView
+        android:id="@+id/payment_record_arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:src="@drawable/join_in_arrowhead" />
+    <ImageView
+        android:id="@+id/payment_record_paymentmode_bank_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/payment_record_amount_text"
+        android:layout_toLeftOf="@id/payment_record_arrowhead"
+        android:contentDescription="@string/search"
+        android:src="@drawable/payment_mode_bank_card"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/payment_record_paymentmode_weixin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/payment_record_amount_text"
+        android:layout_toLeftOf="@id/payment_record_arrowhead"
+        android:contentDescription="@string/search"
+        android:src="@drawable/payment_mode_weixin"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/payment_record_paymentmode_e_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_below="@id/payment_record_amount_text"
+        android:layout_toLeftOf="@id/payment_record_paymentmode_bank_card"
+        android:layout_alignWithParentIfMissing="true"
+        android:contentDescription="@string/search"
+        android:src="@drawable/payment_mode_ecard"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/payment_record_paymentmode_crash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_toLeftOf="@id/payment_record_paymentmode_e_card"
+        android:layout_below="@id/payment_record_amount_text"
+        android:layout_alignWithParentIfMissing="true"
+        android:contentDescription="@string/search"
+        android:src="@drawable/payment_mode_crash"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/payment_record_paymentmode_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_toLeftOf="@id/payment_record_paymentmode_crash"
+        android:layout_below="@id/payment_record_amount_text"
+        android:layout_alignWithParentIfMissing="true"
+        android:contentDescription="@string/search"
+        android:src="@drawable/payment_mode_other"
+        android:visibility="gone" />
+   
+
+</RelativeLayout>

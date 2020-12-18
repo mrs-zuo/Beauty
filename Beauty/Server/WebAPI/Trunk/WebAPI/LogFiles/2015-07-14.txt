@@ -1,0 +1,213 @@
+2015-07-14 13:46:39[13] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/14 13:46:39
+Title=必须声明标量变量 "@OrderID"。
+Message=Message:必须声明标量变量 "@OrderID"。
+RequestParm:{"OrderObjectID":128,"OrderID":2595,"DeleteType":1,"ProductType":0}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.Order_DAL.deleteOrder(Int32 CompanyID, Int32 OrderID, Int32 ObjectID, Int32 ProductType, Int32 DeleteType, Int32 updaterId) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 6867
+   在 WebAPI.Controllers.API.OrderController.DeleteOrder(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 2109
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.82
+UrlReferrer=
+RawUrl=/order/deleteorder
+Header=Content-Length:67
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+
+2015-07-14 13:48:22[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/14 13:48:22
+Title=必须声明标量变量 "@OrderID"。
+Message=Message:必须声明标量变量 "@OrderID"。
+RequestParm:{"OrderObjectID":128,"OrderID":2595,"DeleteType":1,"ProductType":0}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.Order_DAL.deleteOrder(Int32 CompanyID, Int32 OrderID, Int32 ObjectID, Int32 ProductType, Int32 DeleteType, Int32 updaterId) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 6867
+   在 WebAPI.Controllers.API.OrderController.DeleteOrder(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 2109
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.82
+UrlReferrer=
+RawUrl=/order/deleteorder
+Header=Content-Length:67
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+
+2015-07-14 13:48:25[15] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/14 13:48:25
+Title=必须声明标量变量 "@OrderID"。
+Message=Message:必须声明标量变量 "@OrderID"。
+RequestParm:{"OrderObjectID":128,"OrderID":2595,"DeleteType":1,"ProductType":0}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.Order_DAL.deleteOrder(Int32 CompanyID, Int32 OrderID, Int32 ObjectID, Int32 ProductType, Int32 DeleteType, Int32 updaterId) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 6867
+   在 WebAPI.Controllers.API.OrderController.DeleteOrder(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 2109
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.82
+UrlReferrer=
+RawUrl=/order/deleteorder
+Header=Content-Length:67
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+
+2015-07-14 13:51:45[16] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/14 13:51:45
+Title=必须声明标量变量 "@OrderID"。
+Message=Message:必须声明标量变量 "@OrderID"。
+RequestParm:{"OrderObjectID":128,"OrderID":2595,"DeleteType":1,"ProductType":0}
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteNonQueryInternal()
+   在 BLToolkit.Data.DbManager.ExecuteNonQuery()
+   在 WebAPI.DAL.Order_DAL.deleteOrder(Int32 CompanyID, Int32 OrderID, Int32 ObjectID, Int32 ProductType, Int32 DeleteType, Int32 updaterId) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 6867
+   在 WebAPI.BLL.Order_BLL.deleteOrder(Int32 CompanyID, Int32 OrderID, Int32 ObjectID, Int32 ProductType, Int32 DeleteType, Int32 updaterId) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 387
+   在 WebAPI.Controllers.API.OrderController.DeleteOrder(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\API\OrderController.cs:行号 2111
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.82
+UrlReferrer=
+RawUrl=/order/deleteorder
+Header=Content-Length:67
+Content-Type:application/json
+Accept-Encoding:gzip
+Authorization:701CF0B185F8EC8A96682B1CE85FE6F7
+Host:www.webapi.com
+CT:1
+DT:2
+AV:2.4.5
+ME:DeleteOrder
+CO:69
+BR:98
+US:11727
+GU:e34c923b-4824-4878-b985-7e4a21420d25
+TI:2015-07-14 13:40:43.114
+
+

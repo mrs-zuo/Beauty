@@ -1,0 +1,69 @@
+﻿@{
+    int productType = ViewBag.ProductType;
+    int categoryID = ViewBag.CategoryID;
+
+    if (productType == 1)
+    {
+        ViewBag.Title = "商品分类";
+    }
+    else
+    {
+        ViewBag.Title = "服务分类";
+    }
+
+    Model.View_Model.CategoryInfo_Model model = Model;
+    List<Model.View_Model.CategoryList_Model> categoryList = new List<Model.View_Model.CategoryList_Model>();
+    if (model != null)
+    {
+        categoryList = model.CategoryList;
+    }
+}
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC">
+        <ul class="width100 rowUl">
+            @{
+                <li class="borderB clearfix"><a href="/Product/ProductList?t=@(productType)&c=@(model.CategoryID)" class="positionR">
+                    <div class="blackTex fl">@(model.CategoryName)</div>
+                    <div class="grayTex fr">
+                        <span class="rightArrowRow">
+                            <img src="/pic/rightArrow.png" height="20" class="doubleArrow"><img src="/pic/rightArrow.png" height="20"></span>
+                    </div>
+                </a></li>
+            }
+            @{
+                if (categoryList != null && categoryList.Count > 0)
+                {
+                    foreach (Model.View_Model.CategoryList_Model item in categoryList)
+                    {
+                        if (item.NextCategoryCount > 0)
+                        {
+                <li class="borderB clearfix">
+                    <a href="/Product/ProductCategory?t=@(productType)&c=@(item.CategoryID)" class="positionR">
+                        <div class="blackTex fl">@(item.CategoryName)</div>
+                        <div class="grayTex fr">
+                            <span class="rightArrowRow">
+                                <img src="/pic/rightArrow.png" height="20"></span>
+                        </div>
+                    </a></li>
+                        }
+                        else
+                        {
+                <li class="borderB clearfix">
+                    <a href="/Product/ProductList?t=@(productType)&c=@(item.CategoryID)" class="positionR">
+                        <div class="blackTex fl">@(item.CategoryName)</div>
+                        <div class="grayTex fr">
+                            <span class="rightArrowRow">
+                                <img src="/pic/rightArrow.png" height="20"></span>
+                        </div>
+                    </a></li>
+                        }
+                    }
+
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+

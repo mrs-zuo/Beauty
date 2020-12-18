@@ -1,0 +1,386 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".BranchTotalReportActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            style="@style/activity_title_text_attrs" 
+            android:text="@string/branch_total_title_text"/>
+
+        <com.GlamourPromise.Beauty.view.SegmentBar
+            android:id="@+id/branch_total_segment_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/branch_total_report_by_other_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/report_by_date_other_background"
+        android:padding="8dip"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/report_by_other_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/report_by_other_location"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/report_by_other_text_size" />
+
+        <TextView
+            android:id="@+id/report_by_other_date_divide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/report_by_other_start_date"
+            android:text="@string/report_by_other_date_divide"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/report_by_other_text_size" />
+
+        <TextView
+            android:id="@+id/report_by_other_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/report_by_other_date_divide"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/report_by_other_text_size" />
+
+        <ImageView
+            android:id="@+id/branch_total_report_by_date_query_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:contentDescription="@string/search"
+            android:src="@drawable/report_by_date_query_btn" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:orientation="vertical" >
+            <TableLayout style="@style/activity_content_table_attrs" >
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_customer_count"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_customer_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_customer_tips"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+               
+            </TableLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+				<RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/simple_blue" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_report_service_status"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_tg_executing_count"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_tg_executing_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_tg_finished_count"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_tg_finished_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="40dip"
+                        android:text="@string/branch_total_tg_unconfirmed_count"
+                        android:textSize="@dimen/text_size_16sp" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_tg_unconfirmed_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size_16sp" />
+                </RelativeLayout>
+                
+            </TableLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+				<RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/simple_blue" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_report_new_order"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_service_order_count"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_service_order_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_commodity_order_count"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_commodity_order_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+			<TableLayout style="@style/activity_content_table_attrs" >
+				<RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height"
+                    android:background="@color/simple_blue" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_report_cancel_order"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_service_order_count"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_cancel_service_order_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View style="@style/activity_content_divide_view_attrs"/>
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_commodity_order_count"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_cancel_commodity_order_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+            <TableLayout
+                android:id="@+id/ecard_balance_table_layout"
+                style="@style/activity_content_table_attrs">
+
+                <RelativeLayout
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:layout_height="@dimen/report_relativelayout_height">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:text="@string/branch_total_sales_amount"
+                        android:textSize="@dimen/text_size" 
+                        android:textColor="@color/blue"/>
+
+                    <TextView
+                        android:id="@+id/branch_total_sales_amount_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

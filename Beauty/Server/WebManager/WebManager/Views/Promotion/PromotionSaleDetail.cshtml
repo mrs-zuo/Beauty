@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "PromotionSaleDetail";
+    List<Model.Table_Model.PromotionSale_Model> list = new List<Model.Table_Model.PromotionSale_Model>();
+    list = Model;
+}
+
+
+<script src="/Script/PromotionNew.js"></script>
+
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 4)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- 促销产品列表 开始 -->
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Promotion/GetPromotionListNew">促销信息</a></li>
+                <li>促销产品详情</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>促销产品详情</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+        <!-- Page Body -->
+
+
+        <div class="page-body">
+            <div class="widget-body no-padding">
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-2">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                        <col class="col-xs-1">
+                    </colgroup>
+                    <thead>
+                        <tr class="txtC">
+                            <th>编号</th>
+                            <th>促销产品</th>
+                            <th>门店</th>
+                            <th>优惠价</th>
+                            <th>促销数量</th>
+                            <th>抢购次数</th>
+                            <th>抢购数量</th>
+                            <th>成交次数</th>
+                            <th>成交数量</th>
+                            <th>剩余数量</th>
+                            <th>成交额</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (list != null && list.Count > 0)
+                        {
+                            int rows = 0;
+                            foreach (Model.Table_Model.PromotionSale_Model item in list)
+                            {
+                                rows++;
+                            <tr>
+                                <td>@(rows)</td>
+                                <td>@(item.ProductPromotionName)</td>
+                                <td>@(item.BranchName)</td>
+                                <td>@(item.DiscountPrice.ToString("0.00"))</td>
+                                <td>@(item.PRValue)</td>
+                                <td>@(item.RushOrderCount)</td>
+                                <td>@(item.RushQuantity)</td>
+                                <td>@(item.PayOrder)</td>
+                                <td>@(item.SoldQuantity)</td>
+                                <td>@(item.SurplusQuantity)</td>
+                                <td>@(item.PayAmount.ToString("0.00"))</td>
+                            </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- /Page Body -->
+<!-- 促销产品列表 结束 -->

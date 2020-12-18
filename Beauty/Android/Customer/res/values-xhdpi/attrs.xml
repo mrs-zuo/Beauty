@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="table_layout_attrs">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_top</item>
+        <item name="android:background">@xml/shape_corner_round</item>
+    </style>
+    <style name="list_view_attrs">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <!--  <item name="android:layout_marginLeft">@dimen/list_view_attrs_layout_margin</item>-->
+        <!--  <item name="android:layout_marginRight">@dimen/list_view_attrs_layout_margin</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/list_view_attrs_layout_margin</item>-->
+        <item name="android:background">@color/white</item>
+        <item name="android:dividerHeight">1px</item>
+        <item name="android:divider">#f4f4f4</item>
+    </style>
+
+    <style name="activity_title_layout_attrs">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/title_bar</item>
+    </style>
+
+    <style name="activity_title_text_attrs">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/activity_title_text_attrs_layout_marginleft</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    
+    <style name="relative_layout_left_child_attrs">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <!--  <item name="android:layout_marginLeft">11dp</item>-->
+        <!-- <item name="android:layout_marginRight">@dimen/layout_marginright</item> -->
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+    <style name="relative_layout_right_child_attrs">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <!--  <item name="android:layout_marginRight">@dimen/layout_marginright</item>-->
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:maxWidth">@dimen/relative_layout_right_child_attrs_maxwidth</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+</resources>

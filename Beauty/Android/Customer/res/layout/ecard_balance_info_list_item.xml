@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/balance_detail_info_list_layout"
+        style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/balance_detail_info_list_title"
+            style="@style/relative_layout_left_child_attrs"
+            android:textColor="@color/text_color" />
+    </RelativeLayout>
+
+    <com.glamourpromise.beauty.customer.view.NoScrollListView
+        android:id="@+id/balance_card_list_view"
+        android:layout_width="match_parent"
+        android:listSelector="#ffffffff"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

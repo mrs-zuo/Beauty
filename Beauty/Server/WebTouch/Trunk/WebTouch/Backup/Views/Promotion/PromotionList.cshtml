@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "促销信息";
+    List<Model.View_Model.PromotionList_Model> list = Model;
+}
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC PT20">
+        <ul class="P10Table width100">
+            @{
+                if (list != null && list.Count > 0)
+                {
+                    foreach (Model.View_Model.PromotionList_Model item in list)
+                    {
+                <li class="borderB clearfix PB10">
+                    <a href="/Promotion/PromotionDetail?pc=@(item.PromotionCode)">
+                        <div class="width120P fl width35">
+                            <div class="imgArea bkgColor1 viewImgArea positionR">
+                                <span class="positionA newIcon">
+                                    <img src="/pic/new.png" height="60"></span><img src="@(item.PromotionPictureURL)" alt="">
+                            </div>
+                        </div>
+                        <div class="fl width60">
+                            <p class="grayTex MT25">@(item.StartDate.ToString("yyyy-MM-dd"))-@(item.EndDate.ToString("yyyy-MM-dd"))</p>
+                            <h4 class="strong blackTex font16 MT15 longTex">@(item.Title)</h4>
+                        </div>
+                    </a>
+                </li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>

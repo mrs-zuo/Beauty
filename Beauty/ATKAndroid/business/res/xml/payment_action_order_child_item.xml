@@ -1,0 +1,65 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <ImageButton
+            android:id="@+id/select_payment_action_order_card_child_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/no_select_btn" />
+
+        <TextView
+            android:id="@+id/payment_action_order_card_child_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/select_payment_action_order_card_child_button"
+            android:text="@string/payment_action_order_gold_card"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/payment_action_order_card_child_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="@string/please_input_pay_amount"
+            android:inputType="numberDecimal"
+            android:maxLength="12"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+
+        <Button
+            android:id="@+id/this_time_pay_amount_card_child_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_right"
+            android:layout_toLeftOf="@id/payment_action_order_card_child_edit"
+            android:background="@drawable/payment_shape_btn_blue"
+            android:contentDescription="@string/search"
+            android:paddingBottom="3dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            android:text="@string/payment_action_order_total"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/this_time_pay_amount_card_child_divide_view"
+        style="@style/activity_content_divide_view_attrs"
+        />
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/service_detail_tablelayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="@dimen/margin_top"
+    android:background="@xml/shape_rectangle" >
+    <RelativeLayout
+        style="@style/relative_layout_has_child_attrs"
+        android:background="@color/background_color_3" >
+        <TextView
+            android:id="@+id/record_time"
+            style="@style/relative_layout_left_child_attrs"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/record_create_name"
+            style="@style/relative_layout_right_child_attrs"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#f4f4f4" >
+    </View>
+    <LinearLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/consult_title"
+            style="@style/relative_layout_left_child_attrs"
+            android:padding="2dp"
+            android:text="@string/consult"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/consult_content"
+            style="@style/relative_layout_left_child_attrs"
+            android:padding="2dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#f4f4f4" >
+    </View>
+
+    <LinearLayout style="@style/relative_layout_has_child_attrs" >
+        <TextView
+            android:id="@+id/suggest_title"
+            style="@style/relative_layout_left_child_attrs"
+            android:padding="2dp"
+            android:text="@string/suggest"
+            android:textColor="@color/text_color" />
+        <TextView
+            android:id="@+id/suggest_content"
+            style="@style/relative_layout_left_child_attrs"
+            android:padding="2dp" />
+    </LinearLayout>
+
+</TableLayout>

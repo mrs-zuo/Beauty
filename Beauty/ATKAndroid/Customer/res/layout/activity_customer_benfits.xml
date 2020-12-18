@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".CustomerBenefitsActivity" >
+    <RelativeLayout
+	    android:id="@+id/navigation_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D5C5B5"
+        android:padding="3dip" >
+         <ImageButton
+            android:id="@+id/btn_main_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_backbutton" 
+            android:contentDescription="@string/search"/>
+        <TextView
+            android:id="@+id/navigation_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_headline"
+            android:text="@string/activity_customer_benefits_title"/>
+        <ImageButton
+            android:id="@+id/btn_main_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_home_button" 
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+    <include
+        android:id="@+id/customer_benefits_layout"
+        layout="@xml/customer_benefits_related_tab_layout" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/customer_benefits_list_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/order_appointment_title_text"
+            style="@style/activity_content_table_row_title_attrs" />
+
+        <ImageView
+            android:id="@+id/order_appointment_up_down_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+    <View style="@style/activity_content_divide_view_attrs" />
+</LinearLayout>

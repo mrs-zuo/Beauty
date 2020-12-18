@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "福利详情";
+    Model.View_Model.CustomerBenefitDetail_Model model = new Model.View_Model.CustomerBenefitDetail_Model();
+    model = Model;
+}
+@if (model != null)
+{
+    <div class="wrapper whiteBkg">
+        <div class="width100 blockC textL">
+            <ul class="width90 rowUl blockC">
+                <li class="borderB pTB15 clearfix textC">
+                    <div class="width98 fl lineHeight1_5x">@(model.PolicyName)</div>
+                    <div class="width98 fl lineHeight1_5x">@(model.GrantDate.ToString("yyyy-MM-dd"))&nbsp;至&nbsp;@(model.ValidDate.ToString("yyyy-MM-dd"))</div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <h4 class="PB15 blackTex">规则内容</h4>
+                    <div class="width98 fl grayTex lineHeight1_5x">
+                        @(model.PolicyDescription)
+                    </div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <h4 class="PB15 blackTex">细则说明</h4>
+                    <div class="width98 fl grayTex lineHeight1_5x">
+                        @(model.PolicyComments)
+                    </div>
+                </li>
+                <li class="borderB pTB15 clearfix">
+                    <h4 class="PB15 blackTex">适用门店</h4>
+                    @if (model.BranchList != null && model.BranchList.Count > 0)
+                    {
+                        foreach (Model.Table_Model.SimpleBranch_Model item in model.BranchList)
+                        {
+                        
+                        <div class="width98 fl grayTex lineHeight1_5x">@(item.BranchName)</div>
+                        }
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+}

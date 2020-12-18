@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "选择预约项目";
+    List<Model.View_Model.ProductList_Model> list = Model;
+    int BranchID = 0;
+    if (ViewBag.BranchID != null)
+    {
+        BranchID = ViewBag.BranchID;
+    }
+    
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/goTop.js"></script>
+<div class="wrapper whiteBkg MB80">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width33_3 positionR">推荐<span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Appointment/SelAPTitem2?b=@(BranchID)">存单</a></li><li class="width33_3"><a href="/Appointment/SelAPTitem3?b=@(BranchID)">买过</a></li>
+        </ul>
+        @if (list != null && list.Count > 0)
+        {
+            foreach (Model.View_Model.ProductList_Model item in list)
+            {
+	        <ul class="P10Table width100">
+                 <li class="borderB clearfix PB10 MT10">
+                     <div class="width100P fl">
+                         <div class="imgArea bkgColor1 viewImgArea">
+                             <img src="@(item.ThumbnailURL)" alt="" /></div>
+                     </div>
+                     <div class="ML105">
+                         <h4 style="height: 2.55em;; overflow: hidden;">@(item.ProductName)</h4>
+                         <p class=" MT5 color1">@(CurrencySymbol + item.UnitPrice.ToString("0.00"))</p>
+						 <p class=" PT5 clearfix">
+							<a class="fr btnSmall bkgColor1 PLR_5EM  ML5 clearfix" href="/Appointment/CreateAppointment?bi=@(BranchID)&cd=@(item.ProductCode)&tk=2">预约</a>
+                            <a class="fr btnSmall bkgColor1 PLR_5EM  ML5 clearfix" href="/Product/ServiceDetail?lc=@(item.ProductCode)">详情</a>
+						 </p>
+                     </div>
+                 </li>
+             </ul>	
+            }
+        }
+    </div>
+</div>
+<div class="btnBtm width100 whiteBkg">
+	<ul class="width100 btnBtmUL1 clearfix">
+		<li class="width100 textC "><a href="/Product/ServiceCategory" class="block">查看全部服务</a></li>
+	</ul>
+</div>

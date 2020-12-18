@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "我的首页";
+    Model.View_Model.CustomerInfo_Model model = Model;
+    string QrcodeUrl = ViewBag.QRCode;
+    if (!string.IsNullOrEmpty(ViewBag.QRCode))
+    {
+        QrcodeUrl = ViewBag.QRCode;
+    }
+} 
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+<script src="/Scripts/Account.js"></script>
+<script type="text/javascript">
+    $(function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showMap, handleError, { enableHighAccuracy: true, maximumAge: 1000 });
+        } else {
+            alert("您的浏览器不支持使用HTML 5来获取地理位置服务");
+        }
+    });
+
+    function showMap(value) {
+        var longitude = value.coords.longitude;
+        var latitude = value.coords.latitude;
+        CustomerLocation(longitude, latitude);
+    }
+
+    function handleError(value) {
+        switch (value.code) {
+            case 1:
+                alert("位置服务被拒绝");
+                break;
+            case 2:
+                alert("暂时获取不到位置信息");
+                break;
+            case 3:
+                alert("获取信息超时");
+                break;
+            case 4:
+                alert("未知错误");
+                break;
+        }
+    }
+</script>
+
+<div class="whiteBkg">
+    <div class="bkgColor4 width100 height140 positionR">
+        <div class="photoArea bkgColor1">
+            <a href="/Customer/MyInformation"><img src="@(model.HeadImageURL == "" ? "/pic/nopicbg.jpg" : model.HeadImageURL)"/></a> 
+        </div>
+        <div class="positionR desUserSite">
+            <div class="font16 whiteTex MB10">@(model.CustomerName)</div>
+            <div class="font16 whiteTex">@(model.LoginMobile)</div>
+            <div class="positionA qrcode">
+                <a onclick="overlayShow()">
+                    <img src="@(QrcodeUrl)" height="50"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="borderB PB20 MB10">
+        <div class="width100 MT30">
+            <ul class="rowUl1 pLR2P">
+                <li class="width25"><a href="/Order/AllOrder"><span class="blackTex font16 block MB10">@(model.AllOrderCount)</span><span class="grayTex">所有订单</span></a></li><li class="width25"><a href="/Order/UnpaidOrder"><span class="blackTex font16 block MB10">@(model.UnPaidCount)</span><span class="grayTex">待付款</span></a></li><li class="width25"><a href="/Order/UnconfirmedOrder"><span class="blackTex font16 block MB10">@(model.NeedConfirmTGCount)</span><span class="grayTex">待确认</span></a></li><li class="width25"><a href="/Order/UnReviewedOrder"><span class="blackTex font16 block MB10">@(model.NeedReviewTGCount)</span><span class="grayTex">待评价</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC">
+        <ul class="width100 rowUl15">
+            <li class="borderB clearfix">
+                <a href="/Account/MyAccount">
+                    <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">e账户</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/>
+                    </div>
+                </a>
+            </li>
+            <li class="borderB clearfix">
+                <a href="/Product/MyCart">
+                    <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">购物车</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/>
+                    </div>
+                </a>
+            </li>
+            <li class="borderB clearfix">  
+                <a href="/Order/UnfinishedOrder">
+		                <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">存单</span></div>
+		                <div class="grayTex fr">
+		                    <img src="/pic/rightArrow.png" height="20"/>
+		                </div>
+                </a>
+            </li>
+            <li class="borderB clearfix">
+                <a href="/Appointment/MyAppointment?s=1">
+                    <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">预约</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/>
+                    </div>
+                </a>
+            </li>
+            <li class="borderB clearfix">
+                <a href="/RushOrder/MyRushOrder">
+                    <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">抢购单</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/>
+                    </div>
+                </a>
+            </li>
+            <li class="borderB clearfix">
+                <a href="/Customer/MyFavorite">
+                    <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">收藏</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/>
+                    </div>
+                </a>
+            </li>
+            <li class="borderB clearfix">
+                <a href="/BeautyMoment/BeautyMomentList">
+                    <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">美丽记录</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/>
+                    </div>
+                </a>
+            </li>
+            @*<li class="borderB clearfix">
+                <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><span class="ML10">收藏</span></div>
+                <div class="grayTex fr">
+                    <img src="/pic/rightArrow.png" height="20"/></div>
+            </li>
+            <li class="borderB clearfix">
+                <div class="blackTex fl"><span class="separation inlineB bkgColor1"></span><span class="ML10">美丽记录</span></div>
+                <div class="grayTex fr">
+                    <img src="/pic/rightArrow.png" height="20"/></div>
+            </li>*@
+            <li class="clearfix">
+                <a href="/Login/Setup">
+                    <div class="blackTex fl width80"><span class="separation inlineB bkgColor1"></span><span class="ML10">设置</span></div>
+                    <div class="grayTex fr">
+                        <img src="/pic/rightArrow.png" height="20"/>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="guideImg1" style="display: none;">
+    <a class="closedBtn">
+        <img src="/pic/closedBtn.png" height="30" /></a>
+    <div class="imgDiv">
+        <img src="@(QrcodeUrl)" />
+    </div>
+</div>
+<script>
+    function overlayShow() {
+        document.getElementById("guideImg1").style.display = "";
+    }
+    //关闭弹框
+    function closePop() {
+        $("#guideImg1").hide();
+    }
+    $(".closedBtn").click(function () {
+        closePop();
+    })
+</script>

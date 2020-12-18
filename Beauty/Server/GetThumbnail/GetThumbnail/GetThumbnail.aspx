@@ -1,0 +1,2 @@
+﻿<%@ Page Language="C#" AutoEventWireup="false" CodeBehind="GetThumbnail.aspx.cs" Inherits="GetThumbnail.GetThumbnail" %>
+<%@ OutputCache Location="Any" Duration="300" VaryByParam="fn;tw;th;cq;bg;biFlg" %>

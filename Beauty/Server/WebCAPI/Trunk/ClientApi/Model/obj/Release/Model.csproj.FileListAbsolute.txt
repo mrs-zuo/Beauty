@@ -1,0 +1,6 @@
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\bin\Release\Model.dll
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\bin\Release\Model.pdb
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Release\Model.csprojAssemblyReference.cache
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Release\Model.dll
+D:\svn\GlamourPromise\branches\T027\Server\WebCAPI\Trunk\ClientApi\Model\obj\Release\Model.pdb

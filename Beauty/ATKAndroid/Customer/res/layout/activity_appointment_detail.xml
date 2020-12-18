@@ -1,0 +1,279 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <TableLayout style="@style/table_layout_attrs" >
+                <RelativeLayout
+                    android:id="@+id/appointment_detail_num_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/appointment_detail_num_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/appointment_detail_num"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_num"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view"/>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/appointment_status"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_status_text"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view"/>
+
+                <RelativeLayout
+                    android:id="@+id/appointment_detail_choose_branch_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/appointment_detail_branch_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/appointment_detail_branch"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_branch_text"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+               	<View style="@style/divide_view"/>
+
+                <RelativeLayout
+                    android:id="@+id/appointment_detail_date_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/appointment_detail_date_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/appointment_to_the_branch_time_text"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_date_text"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view"/>
+
+                <RelativeLayout
+                    android:id="@+id/appointment_detail_service_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/appointment_detail_service_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/appointment_service"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_service_text"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View style="@style/divide_view"/>
+
+                <RelativeLayout
+                    android:id="@+id/designated_responsible_person_relativelayout"
+                    style="@style/relative_layout_has_child_attrs">
+
+                    <TextView
+                        android:id="@+id/designated_responsible_person_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/designated_responsible_person"
+                        android:textColor="@color/text_color" />
+
+                    <ImageView
+                        android:id="@+id/delete_responsible_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/note_label_delete_icon"
+                        android:visibility="gone" 
+                        android:contentDescription="@string/search"/>
+
+                    <TextView
+                        android:id="@+id/designated_responsible_person_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/delete_responsible_person"
+                        android:maxWidth="@dimen/relative_layout_right_child_attrs_maxwidth"
+                        android:text="@string/appointment_to_the_branch_designat_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/appointment_remark_tablelayout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/customer_appointment_remark"
+                        android:textColor="@color/text_color" />
+                </RelativeLayout>
+                <View style="@style/divide_view"/>
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <EditText
+                        android:id="@+id/appointment_remark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:background="@null"
+                        android:hint="@string/please_input_customer_appointment_remark"
+                        android:maxLength="300"
+                        android:minLines="3"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/order_tablelayout"
+                style="@style/table_layout_attrs"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:id="@+id/appointment_detail_order_relativelayout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/appointment_detail_order_num_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/order_serial_number"
+                        android:textColor="@color/text_color" />
+
+                    <ImageButton
+                        android:id="@+id/appointment_detail_order_icon"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:background="@drawable/join_in_arrowhead_gray"
+                        android:contentDescription="@string/search"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_order_num_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@+id/appointment_detail_order_icon"
+                        android:gravity="right"
+                        android:textSize="@dimen/text_size_normal" 
+                        />
+                </RelativeLayout>
+
+                <View style="@style/divide_view"/>
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/appointment_detail_order_product_name_text"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+                <View style="@style/divide_view"/>
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/appointment_detail_order_price_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/payment_record_detail_order_total_price"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_order_price_currency_text"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:layout_toLeftOf="@+id/appointment_detail_order_price_text"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/appointment_detail_order_price_text"
+                        style="@style/relative_layout_right_child_attrs"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/appointment_detail_cancel"
+                        style="@style/cancel_btn_red"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/search"
+                        android:text="@string/appointment_detail_cancel"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/appointment_detail_edit"
+                        style="@style/search_btn"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/search"
+                        android:text="@string/appointment_detail_edit"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/appointment_detail_confirm"
+                        style="@style/search_btn"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/search"
+                        android:text="@string/appointment_detail_edit_save"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

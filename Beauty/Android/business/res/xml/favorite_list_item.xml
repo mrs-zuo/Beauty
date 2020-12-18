@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:padding="5dip"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/favorite_item_commodity_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:text="@string/ellipsis"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_14sp"
+            android:ellipsize="end" />
+        <ImageView
+            android:id="@+id/favorite_commodity_discount_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favorite_item_commodity_name"
+            />
+        <TextView
+            android:id="@+id/favorite_commodity_promotion_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favorite_item_commodity_name"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/favorite_commodity_discount_icon"
+            android:textSize="@dimen/text_size_14sp" 
+            />
+        <TextView
+            android:id="@+id/favorite_commodity_unit_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favorite_item_commodity_name"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/favorite_commodity_promotion_price"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_14sp" />
+    </RelativeLayout>
+    <ImageButton
+        android:id="@+id/favorite_product_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/no_select_btn" />
+    <!--收藏失效图片-->
+     <ImageView
+        android:id="@+id/favorite_lose_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/has_lose_effectiveness_icon" 
+        android:visibility="gone"/>
+</RelativeLayout>

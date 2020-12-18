@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">30dp</dimen>
+    <dimen name="activity_vertical_margin">26dp</dimen>
+    <dimen name="shadow_width"> 3dp</dimen >
+    <dimen name="slidingmenu_offset"> 320dp</dimen >
+    <dimen name="slidingmenu_width"> 160dp</dimen >
+
+    <dimen name="width_400dp"> 400dp</dimen >
+    <dimen name="width_300dp"> 300dp</dimen >
+    <dimen name="width_120dp"> 120dp</dimen >
+    <dimen name="width_140dp"> 140dp</dimen>
+    <dimen name="width_160dp"> 160dp</dimen>
+    <dimen name="margin_15dp"> 15dp</dimen >
+    <dimen name="margin_top"> 10dp</dimen >
+    <dimen name="padding_5dp"> 5dp</dimen >
+    <dimen name="padding_4dp"> 4dp</dimen >
+    <dimen name="padding_10dp"> 10dp</dimen >
+    <dimen name="padding_menu"> 9dp</dimen>
+    <dimen name="layout_padding"> 8dp</dimen >
+    <dimen name="head_iamge_80dp"> 80dp</dimen >
+     <!--大标题的文字的大小-->
+     
+    <dimen name="text_size_headline">16sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    
+    <dimen name="text_height_16dp"> 27dp</dimen >
+    
+    <dimen name="map_width"> 470dp</dimen >
+    
+    <dimen name="home_page_margin_top"> 450dp</dimen >
+    
+    <dimen name="relative_layout_right_child_attrs_maxwidth"> 220dp</dimen>
+    <dimen name="table_layout_attrs_layout_marginleft"> 5dp</dimen>
+    <dimen name="list_view_attrs_layout_margin"> 5dp</dimen>
+    <dimen name="activity_title_layout_attrs_layout_margin"> 5dp</dimen>
+    <dimen name="activity_title_text_attrs_layout_marginleft"> 9dp</dimen>
+    <dimen name="layout_marginright"> 10dp</dimen>
+    
+    <!-- 菜单 -->
+    <dimen name="left_menu_head_image_padding"> 5dp</dimen>
+    
+    <!-- login -->
+    <dimen name="login_username_paddingleft"> 40dp</dimen >
+    <!-- 选择商家 -->
+    <dimen name="item_padding"> 8dp</dimen >
+    <dimen name="company_image_layout_height"> 160dp</dimen>
+    <dimen name="company_image_viewpager_layout_margin"> 10dp</dimen>
+    <dimen name="company_map_layout_width"> 350dp</dimen>
+    <dimen name="company_map_layout_height"> 210dp</dimen>
+    <!-- 提醒 -->
+    <dimen name="remind_listview_dividerheight"> 5dp</dimen>
+    <!-- 待确认 -->
+    <dimen name="unconfirm_item_layout_margintop"> 5dp</dimen>
+    <dimen name="unconfirm_item_order_time_margintop"> 5dp</dimen>
+    <dimen name="unconfirm_item_order_responsible_person_name_marginLeft"> 10dp</dimen>
+     <!-- 服务人员 -->
+    <dimen name="account_name_maxwidth"> 70dp</dimen>
+    <!-- 相册 -->
+    <dimen name="columnWidth"> 88dp</dimen >
+    <dimen name="spacing"> 8dp</dimen >
+    
+    <!-- cartList -->
+    <dimen name="commodity_thumbnail_size"> 50dp</dimen >
+    <dimen name="edit_commodity_count_layout_width"> 90dp</dimen >
+    <dimen name="commodity_name_textSize"> 18sp</dimen >
+    <dimen name="edit_commodity_count_textSize"> 18sp</dimen >
+    <dimen name="commodity_total_sale_price_textSize"> 16sp</dimen >
+    <dimen name="commodity_total_price_textSize"> 12sp</dimen >
+    <dimen name="cart_commodity_name_marginleft"> 10dp</dimen >
+    <dimen name="cart_commodity_total_price_margintop"> 11dp</dimen >
+    
+    
+    <!-- 待付款 -->
+    <dimen name="order_pay_listview_marginbottom">60dp</dimen>
+    <dimen name="unconfirm_listview_marginbottom">70dp</dimen>
+    
+    <!-- 飞语发送信息页面-->
+    <dimen name="contact_account_thumbnail_framelayout_width"> 55dp</dimen >
+    <dimen name="contact_image_new_message_num_layout_marginleft"> 30dp</dimen >
+    <dimen name="last_message_time_margintop"> 6dp</dimen >
+    <dimen name="chat_send_time_textSize"> 12dp</dimen >
+    <dimen name="thumbnail_image_size"> 50dp</dimen >
+    <dimen name="message_content_maxwidth"> 250dp</dimen >
+    <dimen name="sendmessage_edit_layout_width"> 250dp</dimen >
+    <dimen name="chat_bottom_padding"> 10dp</dimen >
+    <dimen name="sendmessage_edit_padding"> 5dp</dimen >
+    
+    <!-- 商城 -->
+    <dimen name="commodity_thumbnail_framelayout_layout_margin"> 5dp</dimen >
+    <dimen name="recommended_commodity_icon_layout_margin_top"> 5dp</dimen >
+    <dimen name="new_commodity_icon_layout_margin_top"> 20dp</dimen >
+    <dimen name="commodity_name_layout_margin_top"> 5dp</dimen >
+    <dimen name="commodity_name_layout_margin_right"> 25dp</dimen >
+    <dimen name="commodity_name_max_width"> 300dp</dimen >
+    <dimen name="commodity_discount_icon_layout_margin_top"> 5dp</dimen >
+    <dimen name="commodity_promotion_price_layout_margin_top"> 4dp</dimen >
+    <dimen name="commodity_unit_price_layout_margin_top"> 6dp</dimen >
+    <dimen name="scrollview_layout_marginbottom"> 50dp</dimen >
+    <dimen name="add_cart_button_layout_height">46dp</dimen >
+    
+    <!-- 设置页面 -->
+    <dimen name="setting_head_image_size"> 60dp</dimen >
+    <dimen name="setting_head_qr_code_size"> 22dp</dimen >
+    
+    <!-- 身份验证 -->
+    <dimen name="input_phone_number_paddingleft"> 40dp</dimen >
+    <dimen name="input_authentication_code_padding_top"> 1dp</dimen >
+    <dimen name="prompt_layout_margin"> 25dp</dimen >
+    <dimen name="cancel_margin_left"> 22dp</dimen >
+    <dimen name="cancel_margin_top"> 20dp</dimen >
+    <dimen name="category_name_width">180dp</dimen>
+</resources>

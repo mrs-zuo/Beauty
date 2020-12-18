@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <RelativeLayout
+        android:id="@+id/fly_message_detail_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <cn.com.antika.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <cn.com.antika.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/fly_message_detail_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fly_message_detail_head_layout"
+        android:background="@drawable/title_bar" >
+
+        <TextView
+            android:id="@+id/receiver_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fly_message_detail_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FAFAFA"
+        android:padding="5dip" >
+
+        <RelativeLayout
+            android:id="@+id/fly_message_content_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dip" >
+                <ImageButton
+                    android:id="@+id/choose_fly_message_template_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/choose_fly_message_template"
+                    android:contentDescription="@string/search" />
+               
+                <Button
+                    android:id="@+id/send_fly_message_button"
+                    style="@style/send_message_btn"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/send_btn_text" />
+                 <ImageButton
+                    android:id="@+id/fly_message_expression_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/send_fly_message_button"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/fly_message_expression_icon"
+                    android:contentDescription="@string/search" />
+                 <EditText
+                    android:id="@+id/send_message_text"
+                    android:layout_width="@dimen/fly_message_detail_edittext_width"
+                    android:layout_height="wrap_content"
+                    android:maxLines="4"
+                    android:layout_toLeftOf="@id/fly_message_expression_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
+                    android:background="@xml/rounded_edittext"
+                    android:hint="@string/hint_new_message"
+                    android:maxLength="300"
+                    android:padding="5dip"
+                    android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/fly_message_expression_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="160dip"
+            android:layout_below="@id/fly_message_content_relativelayout"
+            android:visibility="gone" >
+             <android.support.v4.view.ViewPager
+                android:id="@+id/fly_message_expression_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="130dip">
+            </android.support.v4.view.ViewPager>
+            <LinearLayout
+                android:id="@+id/fly_message_expression_point"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <cn.com.antika.view.RefreshListView
+        android:id="@+id/fly_message_detail_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fly_message_detail_bottom"
+        android:layout_below="@id/fly_message_detail_title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:divider="@null"
+        android:dividerHeight="5dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none" />
+
+</RelativeLayout>

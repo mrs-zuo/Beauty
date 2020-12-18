@@ -1,0 +1,151 @@
+﻿@{
+    List<Model.View_Model.CustomerList_Model> customerList = new List<Model.View_Model.CustomerList_Model>();
+    customerList = Model;
+    string AccountName = ViewBag.AccountName;
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 6)
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/MarketMessage/GetMarketMessageList">市场营销列表</a></li>
+                <li class="active">添加市场营销</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>添加市场营销</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body" id="mainDiv">
+            <div class="form-horizontal form-bordered widget-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                    	接收人
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-xs-4">
+                        <!--s-->
+                        <input id="txt_allCustomer" type="text" data-toggle="modal" data-target=".bs-example-modal-sm" class="form-control over-text col-xs-12" placeholder="点击选择接受人">
+
+                        <!--最小弹窗层-->
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title" id="mySmallModalLabel">选择接收人</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="select-down">
+                                            <table class="table table-striped table-hover">
+                                                <tr>
+                                                    <td class="no-border">
+                                                        <span class="checkbtn">
+                                                            <label title="全选" class="btn-group no-pm">
+                                                                <input type="checkbox" onclick="allcheck()" class="btn-group" name="chk_All" id="chk_All">
+                                                                <span class="text"><strong>全选</strong></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                @{
+                                                    if (customerList != null && customerList.Count > 0)
+                                                    {
+                                                        foreach (Model.View_Model.CustomerList_Model item in customerList)
+                                                        {
+                                                    <tr>
+                                                        <td>
+                                                            <label class="btn-group no-pm">
+                                                                <input type="checkbox" value="@(item.CustomerID)" name="chk_customer" customerName="@(item.CustomerName)">
+                                                                <span class="text over-text col-xs-12 no-pm">@(item.CustomerName)</span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                        }
+                                                    }
+                                                }
+                                            </table>
+                                        </div>
+                                        <br>
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <a data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-primary" onclick="customerOk()">确 定</a>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!--/最小弹窗层-->
+
+                        <!--e-->
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">发送人</label>
+                    <div class="col-sm-4">
+                        <label class="control-label no-padding-right">@(AccountName)</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">发送时间</label>
+                    <div class="col-sm-4">
+                        <input id="definput" class="form-control" type="text" disabled="disabled" placeholder="@(DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd HH:mm"))">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                    	发送内容
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <!-- File Upload -->
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="6" id="txt_content" placeholder="请输入营销文字"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <a class="btn btn-primary" onclick="addMessage()">确 定</a>
+                        <a href="javascript:history.go(-1);" class="btn btn-default">返 回 </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+</div>
+<script src="/Script/MarketMessage.js"></script>
+<script src="/assets/js/datetime/bs-datepicker.js"></script>

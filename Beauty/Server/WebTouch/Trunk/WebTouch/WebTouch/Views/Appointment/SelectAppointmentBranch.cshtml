@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "选择商家";
+    List<Model.View_Model.GetBranchList_Model> list = Model;
+}
+
+@if (list != null && list.Count > 0)
+{
+    foreach (Model.View_Model.GetBranchList_Model item in list)
+    {
+    <div class="wrapper whiteBkg">
+        <div class="width90 blockC">
+            <ul class="width100 rowUl">
+                <li class="borderB clearfix"><a href="/Appointment/SelAPTitem1?b=@(item.BranchID)" class="positionR">
+                    <div class="blackTex fl longTex90">@(item.BranchName)</div>
+                    <div class="grayTex fr">
+                        <span class="rightArrowRow">
+                            <img src="/pic/rightArrow.png" height="20" /></span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    }
+}

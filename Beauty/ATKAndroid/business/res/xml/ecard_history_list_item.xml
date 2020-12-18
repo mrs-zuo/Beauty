@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/ecard_histroy_content_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp" >
+        <TextView
+            android:id="@+id/ecard_histroy_remark_rechargemode"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/ecard_histroy_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ecard_histroy_remark_rechargemode"
+            android:layout_marginLeft="10dip"
+            android:textSize="@dimen/text_size_16sp" />
+        <TextView
+            android:id="@+id/ecard_histroy_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dip"
+            android:textSize="@dimen/text_size_16sp" />
+        <TextView
+            android:id="@+id/ecard_histroy_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ecard_histroy_amount"
+            android:layout_marginRight="15dip"
+            android:textSize="@dimen/text_size_16sp" />
+    </RelativeLayout>
+	<ImageView
+            android:id="@+id/ecard_histroy_arrowhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ecard_histroy_content_relativelayout"
+            android:background="@drawable/join_in_arrowhead" />
+</RelativeLayout>

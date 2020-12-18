@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+        <TextView
+            style="@style/activity_title_text_attrs" 
+            android:text="@string/attendance_code"/>
+        <ImageButton
+            android:id="@+id/attendance_code_refresh_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/order_detail_refresh_icon"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableLayout
+            style="@style/activity_content_table_attrs" >
+            <RelativeLayout
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_height="wrap_content" >
+               <FrameLayout
+                   android:id="@+id/attendance_code_image_framelayout"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                   android:layout_centerHorizontal="true">
+                <ImageView
+                    android:id="@+id/attendance_code_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/search"
+                    android:layout_gravity="center"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/search"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_launcher"/>
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/attendance_code_image_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/attendance_code_image_framelayout"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size" 
+                    android:text="@string/attendance_code_image_tips"/>
+            </RelativeLayout>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

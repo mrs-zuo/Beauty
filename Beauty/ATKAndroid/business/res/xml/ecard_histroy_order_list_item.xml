@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/ecard_histroy_order_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/ecard_histroy_order_product_name_text"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ecard_histroy_order_time_text"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/ecard_histroy_order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ecard_histroy_order_product_name_text"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:textSize="@dimen/text_size" 
+        android:textColor="@color/title_font"/>
+    <TextView
+        android:id="@+id/ecard_histroy_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="5dip"
+        android:textColor="@color/title_font"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/ecard_histroy_order_product_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/ecard_histroy_order_status"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:textSize="@dimen/text_size" />
+    <TextView
+        android:id="@+id/ecard_histroy_order_responsible_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_below="@id/ecard_histroy_order_product_quantity"
+        android:textSize="@dimen/text_size" />
+     <TextView
+        android:id="@+id/ecard_histroy_order_customer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/ecard_histroy_order_responsible_person_name"
+        android:layout_below="@id/ecard_histroy_order_product_quantity"
+        android:layout_marginTop="5dip"
+        android:textSize="@dimen/text_size" />
+    
+
+</RelativeLayout>

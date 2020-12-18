@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNoTop.cshtml";
+    ViewBag.Title = "商家详情";
+    List<string> imgList = ViewBag.ImgList;
+    Model.View_Model.GetCompanyDetail_Model model = Model;
+}
+<script src="/js/Swipe.js"></script>
+<script type="text/javascript">
+    $(function(){
+        Swipe(document.getElementById('slider'), {
+            auto: 3000,
+            continuous: true,
+            callback: function (pos) {
+                var bullets = $("#position li");
+                var i = bullets.length;
+                while (i--) {
+                    bullets[i].className = ' ';
+                }
+                bullets[pos].className = 'on';
+            }
+        });
+    });
+</script>
+<div class="wrapper whiteBkg MB60">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width33_3 positionR">商家介绍<span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Company/BranchList">门店一览</a></li><li class="width33_3"><a href="/Company/NoticeList">公告信息</a>
+        </ul>
+		
+        @if (imgList != null && imgList.Count > 0)
+        {
+			<!--轮显图片开始-->
+			<div class="banner swipe" id="slider">
+				<div class="swipe-wrap">
+					@foreach (string item in imgList)
+                        {
+							<figure><a href=""><img src="@(item == "" ? "/pic/nopicbg.jpg" : item)" alt=""/></a></figure>
+                        }
+				</div>
+				<nav>
+					<ul id="position">
+					@for(int i = 0;i<imgList.Count;i++){
+					  <li></li>
+					}
+					</ul>
+				</nav>
+			</div>
+			<!--轮显图片结束-->
+	
+        }
+        <div class="wrapper whiteBkg">
+            <div class="blockC P10Table">
+                <ul class=" rowUl">
+                    <li class="borderB clearfix">
+                        <a href="#" class="block">
+                            <div class="blackTex fl">@(model.CompanyName)</div>
+                        </a>
+                    </li>
+                    @if (model.Abbreviation != "" && model.Abbreviation != null)
+                    {
+                        <li class="borderB clearfix">
+                            <a href="#" class="block">
+                                <div class="blackTex width30 fl">简称</div>
+                                <div class="grayTex textR fr">@(model.Abbreviation)</div>
+                            </a>
+                        </li>
+                    }
+
+
+
+                    @if (model.Contact != "" && model.Contact != null)
+                    {
+                        <li class="borderB clearfix">
+                            <a href="#" class="block">
+                                <div class="blackTex width30 fl">联系人</div>
+                                <div class="grayTex fr">@(model.Contact)</div>
+                            </a>
+                        </li>
+                    }
+                    @if (model.Phone != "" && model.Phone != null)
+                    {
+                        <li class="borderB clearfix">
+                            <a href="tel:@(model.Phone)" class="block grayTex">
+                                <div class="blackTex width30 fl">电话</div>
+                                <div class="fr">@(model.Phone)</div>
+                            </a>
+                        </li>
+                    }
+                    @if (model.Fax != "" && model.Fax != null)
+                    {
+                        <li class="borderB clearfix">
+                            <a href="#" class="block">
+                                <div class="blackTex width30 fl">传真</div>
+                                <div class="grayTex fr">@(model.Fax)</div>
+                            </a>
+                        </li>
+                    }
+                    @if (model.Web != "" && model.Web != null)
+                    {
+                        <li class="borderB clearfix">
+						<a class="block grayTex" href="http://@Html.Raw(model.Web.Replace("\n", "<br />").Replace("\r", "<br />").Replace("\r\n", "<br />").Replace("http://", ""))">
+                            <h4 class="PB15 blackTex">网址</h4>
+                            <div class="width98 PB15 fr grayTex lineHeight1_5x">
+                                @Html.Raw(model.Web.Replace("\n", "<br />").Replace("\r", "<br />").Replace("\r\n", "<br />"))
+                            </div>
+						</a>
+                        </li>
+                    }
+                    @if (model.Summary != "" && model.Summary != null)
+                    {
+                        <li class="borderB pTB15 clearfix">
+                            <h4 class="PB15 blackTex">简介</h4>
+                            <div class="width98 fr grayTex lineHeight1_5x">
+                                @Html.Raw(model.Summary.Replace("\n", "<br />").Replace("\r", "<br />").Replace("\r\n", "<br />"))
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>            
+        </div>
+    </div>
+</div>

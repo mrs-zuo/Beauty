@@ -1,0 +1,133 @@
+﻿@{
+    bool isAdd = true;
+    Model.View_Model.GetDiscountDetail_Model model = Model;
+    isAdd = ViewBag.IsAdd;   
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 5)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Discount/GetDiscountList">折扣分类</a></li>
+                @{
+                    if (!isAdd)
+                    {
+                    <li class="active">编辑折扣分类</li>
+                    }
+                    else
+                    {
+                    <li class="active">添加折扣分类</li>
+                    }
+                }
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+
+                @{
+                    if (!isAdd)
+                    {
+                    <h1>编辑折扣分类</h1>
+                    }
+                    else
+                    {
+                    <h1>添加折扣分类</h1>
+                    }
+                }
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-horizontal form-bordered widget-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                    	折扣分类名称
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="hidden" id="hidDiscountName" value="@(model.DiscountName)">
+                        <input type="text" class="form-control" id="txt_DiscountName" placeholder="输入折扣分类名称" value="@(model.DiscountName)">
+                    </div>
+                </div>
+       @*         <div class="form-group">
+                    <div class="col-bm-4 col-sm-offset-2">
+                        <label class="col-sm-12 control-label no-padding-right text-align-left">折扣率</label>
+                    </div>
+                </div>
+                @{
+                    foreach (Model.View_Model.GetLevelInfo_Model item in model.LevelList)
+                    {
+                        string isCheck = "";
+                        if (item.IsExist)
+                        {
+                            isCheck = " checked=\"checked\"";
+                        }
+                    <div class="form-group level">
+                        <label class="checkbox col-sm-2 control-label no-padding-right" title="@(item.LevelName)">
+                            <input id="chk_Level" name="chk_Level" type="checkbox" class="btn-group no-pm" value="@(item.LevelID)"  @(isCheck) >
+                            <span class="text over-text col-xs-12">@(item.LevelName)</span>
+                        </label>
+
+                        <div class="col-sm-4 ">
+                            <input type="hidden" id="hidLevelID" value="@(item.LevelID)">
+                            <input type="hidden" id="hidDiscount" value="@(item.Discount)">
+                            <input type="text" class="form-control" placeholder="1.0" id="txt_discount" value="@(item.Discount)">
+                        </div>
+                    </div>
+                    }
+                }
+*@
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        @{
+                            if (!isAdd)
+                            {
+                            <a class="btn btn-primary" onclick="editDiscount(@(model.DiscountID))">保 存</a>
+                            <a href="javascript:history.go(-1);" class="btn btn-default"> 返 回 </a>
+                            }
+                            else
+                            {
+                            <a class="btn btn-primary" onclick="addDiscount()">确 定</a>
+                            <a href="javascript:history.go(-1);" class="btn btn-default"> 返 回 </a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<!--编辑框脚本-->
+<script src="/Script/Level.js"></script>
+
+

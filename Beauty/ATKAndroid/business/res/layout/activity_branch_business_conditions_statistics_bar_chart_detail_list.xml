@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.BranchBusinessConditionsStatisticsBarChartDetailListActivity" >
+    <RelativeLayout
+        android:id="@+id/branch_business_conditions_detail_list_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <cn.com.antika.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <cn.com.antika.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/branch_business_conditions_detail_list_title"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/branch_business_conditions_detail_list_head_layout" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/branch_business_conditions_analysis_title_text"/>
+
+        <ImageButton
+            android:id="@+id/branch_business_conditions_bar_chart_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/customer_statistics_bar_chart_icon"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:id="@+id/branch_business_conditions_bar_chart_detail_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/branch_business_conditions_detail_list_title"
+        android:background="@color/white"
+        android:layout_marginTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/title_font"
+            android:gravity="center"
+            android:text="@string/branch_business_conditions_bar_chart_detail_list_title_text"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/branch_business_conditions_bar_chart_detail_list_for_ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/branch_business_conditions_bar_chart_detail_list_title"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:orientation="vertical"
+        android:background="@color/white">
+	    <ScrollView
+	        android:id="@+id/branch_business_conditions_bar_chart_detail_list_ScrollView"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:scrollbars="vertical"
+	        android:fadingEdge="vertical"
+	        android:fillViewport="true" >
+		    <LinearLayout
+		        android:id="@+id/branch_business_conditions_bar_chart_detail_list_linearlayout"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="5dip"
+		        android:layout_marginRight="5dip"
+		        android:orientation="vertical"
+		        android:background="@color/white"
+		        android:scrollbarStyle="outsideInset"    
+		        android:scrollbars="vertical">
+		    </LinearLayout>
+	    </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

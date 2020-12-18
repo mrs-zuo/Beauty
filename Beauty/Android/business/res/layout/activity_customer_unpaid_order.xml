@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".CustomerUnpaidOrderActivity" 
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs">
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:id="@+id/customer_unpaid_order_title_text"
+            android:text="@string/customer_unpaid_order_title_text"
+            />
+        <TextView 
+            style="@style/activity_title_text_attrs"
+            android:id="@+id/customer_unpaid_order_customer_name_text"
+            android:layout_toRightOf="@+id/customer_unpaid_order_title_text"
+            />
+        
+        <ImageView
+            android:id="@+id/customer_unpaid_order_customer_convert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical ="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@+id/select_all_unpaid_order"
+            android:src="@drawable/customer_unpaid_order_customer_convert_icon"
+            android:contentDescription="@string/search"/>
+        
+        <ImageView
+            android:id="@+id/select_all_unpaid_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical ="true"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/search"/>
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/customer_unpaid_order_list_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/customer_unpaid_order_list"
+            style="@style/activity_content_listview_attrs"
+            android:layout_marginBottom="45dip"/>
+        <Button
+            android:id="@+id/pay_for_unpaid_order_btn"
+            style="@style/submit_big_btn"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/pay_order"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

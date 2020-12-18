@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="3dip">
+    <ImageView
+            android:id="@+id/treatment_is_designated_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/search"
+            android:src="@drawable/is_designated_icon"
+            android:visibility="invisible" />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dip"
+            android:layout_centerVertical="true"
+            android:text="@string/treatment_placeholder"
+            android:textSize="30sp" 
+            android:textColor="@color/treatment_placeholder_text_color"/>
+	 <TextView
+            android:id="@+id/treatment_subservice_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dip"
+            android:layout_centerVertical="true"
+            android:maxLength="5"
+            android:textSize="@dimen/text_size" />
+    <ImageView
+        android:id="@+id/arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:src="@drawable/join_in_arrowhead" />
+    <ImageView
+        android:id="@+id/treatment_update"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:src="@drawable/treatment_update_icon" />
+
+    <TextView
+        android:id="@+id/textview_executor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/treatment_update"
+        android:layout_marginRight="5dip"
+        android:maxWidth="100dip"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textSize="@dimen/text_size" />
+
+</RelativeLayout>

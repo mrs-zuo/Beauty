@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/order_total_sale_price_new_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/gray"
+            android:inputType="numberDecimal"
+            android:maxWidth="200dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginTop="20dip"/>
+</RelativeLayout>

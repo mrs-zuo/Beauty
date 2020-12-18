@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TableLayout
+        android:id="@+id/balance_history_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@xml/shape_corner_round" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <RelativeLayout
+                style="@style/relative_layout_has_child_attrs"
+                android:padding="7dp" >
+                <TextView
+                    android:id="@+id/card_action_mode_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/card_action_amount_title"
+                    style="@style/relative_layout_right_child_attrs"
+                    android:layout_marginRight="7dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/create_time_balance_layout"
+                style="@style/relative_layout_has_child_attrs"
+                android:padding="7dp" >
+                <TextView
+                    android:id="@+id/card_create_time_title"
+                    style="@style/relative_layout_left_child_attrs"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/card_balance_title"
+                    style="@style/relative_layout_right_child_attrs"
+                    android:layout_marginRight="7dp"
+                    android:text="@string/balance_title" />
+            </RelativeLayout>
+        </LinearLayout>
+    </TableLayout>
+
+</LinearLayout>

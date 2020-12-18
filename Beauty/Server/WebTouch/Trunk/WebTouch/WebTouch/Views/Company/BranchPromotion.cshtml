@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "促销一览";
+    int branchId = HS.Framework.Common.Safe.QueryString.IntSafeQ("b");
+
+    List<Model.View_Model.PromotionList_Model> list = new List<Model.View_Model.PromotionList_Model>();
+    list = Model;
+}
+
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width33_3 "><a href="/Company/BranchDetail?b=@(branchId)">门店介绍</a></li><li class="width33_3 positionR ">促销一览<span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Company/ConsultantList?b=@(branchId)">服务团队</a></li>
+        </ul>
+
+        @if (list != null && list.Count > 0)
+        { 
+            <ul class="MT20 P10Table width100 homeUl">
+                @foreach (Model.View_Model.PromotionList_Model item in list)
+                {  
+                    <li class="borderB clearfix PB10">
+                        <a href="/Promotion/PromotionDetail?pc=@(item.PromotionCode)">
+                            <div class="width100P fl">
+                                <div class="imgArea bkgColor1 viewImgArea positionR">
+                                    <img src="@(item.PromotionPictureURL == "" ? "/pic/nopicbg.jpg" : item.PromotionPictureURL)" alt="" />
+                                </div>
+                            </div>
+                            <div class="positionR ML105 positionR">
+                                @*<p class="grayTex MT10">@(item.StartDate.ToString("yyyy-MM-dd") + "至" + item.EndDate.ToString("yyyy-MM-dd"))</p>*@
+                                @if(item.StartDate <= DateTime.Now.ToLocalTime() && DateTime.Now.ToLocalTime() <= item.EndDate && item.HasProduct){
+                                <span class="promotionListrushIcon"></span>
+                                }
+                                <h4 class="strong blackTex font16 MT15">@(item.Title)</h4>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

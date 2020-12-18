@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="14dp" >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+        <TextView
+            android:id="@+id/appointment_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:id="@+id/appointment_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical" >
+        <TextView
+            android:id="@+id/appointment_item_order_product_name"
+            android:layout_width="500dip"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical" >
+        <TextView
+            android:id="@+id/appointment_item_designated_responsible_person_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/designated_responsible_person"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:id="@+id/appointment_item_designated_responsible_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+</LinearLayout>

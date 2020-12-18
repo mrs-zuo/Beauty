@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "服务记录";
+    int type = ViewBag.Type;
+    long MainKey = ViewBag.MainKey;
+}
+@if (type == 1)
+{
+    
+    <div class="wrapper whiteBkg">
+        <div class="width90 blockC P10Table">
+            <ul class="borderB width100 rowUl2"><li class="width33_3 positionR"><a href="/Treatment/ServiceRecord?t=1&gn=@(MainKey)" class="">服务记录</a><span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Treatment/ServiceEffect?t=1&gn=@(MainKey)">服务效果</a></li><li class="width33_3"><a href="/Treatment/ReviewDetail?t=1&gn=@(MainKey)">服务评价</a></li></ul>
+        </div>
+        @{
+            Model.View_Model.GetTGDetail_Model model = Model;
+            if (model != null)
+            { 
+                <div class="width90 blockC">
+                <ul class="width100 rowUl15">
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">服务编号</div>
+                        <div class="grayTex fr">@(model.GroupNo)</div>
+                    </li>
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">服务门店</div>
+                        <div class="grayTex fr">@(model.BranchName)</div>
+                    </li>
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">状态</div>
+                        @switch (model.TGStatus)
+                        {
+                            case 1:
+                            <div class="grayTex fr">进行中</div>
+                                break;
+                            case 2:
+                            <div class="grayTex fr">已完成</div>
+                                break;
+                            case 3:
+                            <div class="grayTex fr">已取消</div>
+                                break;
+                            case 4:
+                            <div class="grayTex fr">已终止</div>
+                                break;
+                            case 5:
+                            <div class="grayTex fr">待确认</div>
+                                break;
+                        }
+                    </li>
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">开始时间</div>
+                        <div class="grayTex fr">@(model.TGStartTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="blackTex fl">结束时间</div>
+                        <div class="grayTex fr">@(model.TGEndTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                    </li>
+                </ul>
+            </div>
+            }
+        }
+    </div>
+}
+else
+{
+    <div class="wrapper whiteBkg">
+        <div class="width90 blockC P10Table">
+            <ul class="borderB width100 rowUl2">
+                <li class="width33_3 positionR"><a href="/Treatment/ServiceRecord?t=2&tId=@(MainKey)" class="">服务记录</a><span class="btmline bkgColor1"></span></li><li class="width33_3"><a href="/Treatment/ServiceEffect?t=2&tId=@(MainKey)">服务效果</a></li><li class="width33_3"><a href="/Treatment/ReviewDetail?t=2&tId=@(MainKey)">服务评价</a></li>
+            </ul>
+        </div>
+        @{ 
+    Model.View_Model.GetTreatmentDetail_Model model = Model;
+    if (model != null)
+    { 
+            <div class="width90 blockC">
+                <ul class="width100 rowUl15">
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">服务编号</div>
+                        <div class="grayTex fr">@(model.ID)</div>
+                    </li>
+                    @*             <li class="borderB clearfix">
+                    <div class="blackTex fl">服务门店</div>
+                    <div class="grayTex fr">@(model.b)</div>
+                </li>*@
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">状态</div>
+                        @switch (model.Status)
+                        {
+                            case 1:
+                            <div class="grayTex fr">进行中</div>
+                                break;
+                            case 2:
+                            <div class="grayTex fr">已完成</div>
+                                break;
+                            case 3:
+                            <div class="grayTex fr">已取消</div>
+                                break;
+                            case 4:
+                            <div class="grayTex fr">已终止</div>
+                                break;
+                            case 5:
+                            <div class="grayTex fr">待确认</div>
+                                break;
+                        }
+                    </li>
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">开始时间</div>
+                        <div class="grayTex fr">@(model.StartTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="blackTex fl">结束时间</div>
+                        <div class="grayTex fr">@(model.FinishTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                    </li>
+                </ul>
+            </div>
+
+    }
+        }
+    </div>
+}

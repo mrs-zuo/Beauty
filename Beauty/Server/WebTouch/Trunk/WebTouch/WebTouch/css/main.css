@@ -1,0 +1,545 @@
+@charset "utf-8";
+
+@import url("reset.css");
+@import url("layout.css");
+
+body {
+    width: 100%;
+    font-size: 100%;
+    text-align: center;
+    color: #070707;
+}
+.wrapper {
+    text-align: left;
+}
+
+.imgArea {
+	text-align: center;
+}
+.carouselInner {
+	margin: 1% auto;
+	text-align: center;
+}
+.carouselInner .item {
+	border-radius: 50px;
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	*display: inline;
+	zoom: 1; 
+	margin: 0 1%;
+}
+.tab {
+	text-align: center;
+	width: 100%;
+	margin: auto;
+}
+.tab .tabItem {
+	border-radius: 100px;
+	width: 65px;               
+	height: 65px;             
+	display: inline-block;
+	*display: inline;
+	zoom: 1; 
+	margin: 0 1%;
+}
+/*---------20150918 new add-------------*/
+.tab .goTtop{             
+	border-radius: 100px;
+	border:#e7e7e7 1px solid;
+	opacity:0.6; 
+	filter:alpha(opacity=60);	
+	width: 45px;               
+	height: 45px;              
+	display: inline-block;
+	*display: inline;
+	zoom: 1; 
+	margin: 0 1%；
+}
+.separation {
+	width: 5px;
+	height: 22px;
+	border-radius: 5px;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.rightSite {
+	position: absolute;
+	right: 2%;
+	top: 3px;
+}
+.viewImgArea {
+	width: 98px;
+	height: 98px;
+	text-align: center;
+	padding: 1px;
+}
+.viewImgArea > img {
+	width: 98px;
+	height: 98px;
+}
+.newIcon {
+	position: absolute;
+	top: -2px;
+	left: -1px;
+	height: 30px;
+}
+.P10Table tr td {
+	padding: 15px 0;
+	vertical-align: middle;
+}
+.header {
+	height: 60px;
+	text-align: center;
+	color: #FFF;
+	font-size: 18px;
+}
+/*---------20151010 new add-------------*/
+.header > span{
+	line-height: 60px;
+}
+.headerLeftIcon {
+	position: absolute;
+	padding-top: 8px;
+	left: 1%;
+	text-decoration:none;	
+}
+.headerRightIcon {
+	position: absolute;
+	padding-top: 8px;
+	right: 2%;
+	text-decoration:none;	
+}
+.iconBkg {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+}
+.innerIconInput {
+	padding: 12px;
+	outline: none;
+	margin-left: 50px;
+	font-size: 16px;
+	width: 80%;
+	border: none;
+}
+.innerIcon {
+	position: absolute;;
+	left: 0;
+	top: 5px;
+}
+.detailImg {
+	width: 100%;
+}
+.detailImg >img {
+	width: 100%;
+	height: auto;
+}
+.height140 {
+	height: 140px;
+}
+.transparent8 {
+	opacity: 0.8; 
+}
+.photoArea {
+	width: 100px;
+	height: 100px;
+	padding: 1px;
+	border-radius: 100px;
+	text-align: center;
+	position: absolute;
+	bottom: -20px;
+	left: 5%;
+	overflow:hidden;
+}
+.photoArea  a > img {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+}
+/*---------20151011 new add start-------------*/
+.myphotoArea {
+	width: 100px;
+	height: 100px;
+	padding: 1px;
+	border-radius: 100px;
+	text-align: center;
+	overflow:hidden;
+}
+.myphotoArea img {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	
+}
+/*---------20151011 new add end-------------*/
+.desUserSite {
+	width: 55%;
+	position: absolute;
+	bottom: 20px;
+	right: 5%;
+	text-align: left;
+}
+.qrcode {
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+}
+.btnSmall {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #FFF;
+	border-radius: 5px;
+}
+.itemCard {
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+.card1Bkg {
+	background-color: #fbb03b;
+}
+.card2Bkg {
+	background-color: #b3b3b3;
+}
+.card3Bkg {
+	background-color: #8dc73f;
+}
+.card4Bkg {
+	background-color: #2aabe4;
+}
+.btnLarge {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	text-align: center;
+	padding-top: 14px;
+	color: #FFF;
+	padding-bottom: 14px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.P10LRTable tr td {
+	padding-left: 10px;
+	padding-right: 10px;
+} 
+.P10Table .PB0 td {
+	padding-bottom: 0;
+}
+.rightArrow {
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+.rightArrowRow {
+	position: absolute;;
+	right: 0;
+	top: 50%;
+	margin-top: -10px;
+}
+.icon {
+	color: #FFF;
+	border-radius: 5px;
+	padding: 2px;
+	line-height: 100%;
+	text-align: center;
+	margin-right: 5px;
+}
+.linkA {
+	text-decoration: underline;
+}
+.rowUl li {
+	padding: 0;
+}
+.rowUl li a {
+	padding: 13px 0;
+	display: block;
+	min-height: 20px;
+} 
+.rowUl15 > li {
+	padding: 15px 0;
+}
+#guideImg1 {
+	background: url(../pic/black50.png) repeat;
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	z-index: 100;
+	text-align: right;
+}
+#guideImg1 .imgDiv {
+	margin: 40% auto;
+	width: 250px;
+}
+#guideImg1 .imgDiv img {
+	width: 100%;
+	height: auto;
+}
+.closedBtn {
+	position: absolute;
+	top: 10%;
+	right: 10%;
+}
+.longTex {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+.longTex95 {
+	width: 95%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+.longTex90 {
+	width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+.P20Ul > li {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.rowUl .pTB15 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.homeUl li > a {
+	min-height: 100px;
+	display: block;
+}
+.inputBox {
+	border: none;
+	padding: 15px 0;
+}
+.pTB15 > li{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.checkbox {
+	width: 80px;
+	height: 80px;
+}
+.height40 {
+	height: 40px;
+} 
+.rightIconArrow {
+	top: 50%;
+	margin-top: -20px;
+	right: 4%;
+	cursor: pointer;
+}
+.imgBlock {
+	overflow: hidden;
+}
+.doubleArrow {
+	position: relative;
+	left: 10px;	
+}
+.search {
+	padding: 10px 3%;
+	width: 80%;
+	border: 1px solid #eeeeee;
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+.searchBtn {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	text-align: center;
+	padding: 11px 0px;
+	width: 20%;
+	color: #FFF;
+	font-size: 16px;
+	margin-left: -1px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+input.min, input.add {
+	border: 1px solid #eee;
+	width: 20px;
+	background: #FFF;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-appearance: none;
+	line-height: 20px;
+	height: 22px!important;
+}
+.textBox {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid #eee;
+	border-radius:0%;
+	line-height: 20px;
+}
+/*---------20151019 new add end-------------*/
+.favorIcon1 a,.favorIcon2 a{
+	display:block;
+	height:60px;
+	width:100%;
+	line-height:5.5rem;
+}
+.favorIcon1 a{
+	background: url(../pic/favoriteIcon.png) 50% 10px no-repeat;
+}
+.favorIcon2 a{
+	background: url(../pic/favoriteIcon.png) 50% -41px no-repeat;
+}
+.selConsultantIcon{
+	background: url(../pic/serviceResponsibleInco.png) left top no-repeat;
+	background-size:20px;
+	-moz-background-size:20px;
+	-webkit-background-size:20px;
+}
+/*---------20151110 new add end-------------*/   
+.btnMid {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	text-align: center;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+/*---------banner-------------*/
+.banner {
+	padding-top: 0px;
+}
+.banner img {
+	width: 100%;
+}
+.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+}
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+}
+.swipe-wrap > figure {
+	float: left;
+	width: 100%;
+	position: relative;
+	margin: 0;
+}
+#position{
+	position: absolute;
+	bottom: 10px;
+	right:10px;
+}
+#position li{
+	background-color: rgba(255,2555,255,0.5);
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	margin: 0 2px;
+	display: inline-block;
+}
+#position li.on{
+	background-color: rgba(255,2555,255,1);
+}
+.stateIconPaidOK{
+	background: url(../pic/stateIcon.png) left -13px no-repeat;
+}
+.stateIconNotpaid{
+	background: url(../pic/stateIcon.png) left -57px no-repeat;
+}
+.stateIconUnknown{
+	background: url(../pic/stateIcon.png) left -101px no-repeat;
+}
+.stateIconPaidOK,.stateIconNotpaid,.stateIconUnknown{
+	background-size:38px auto;
+}
+.promotionListrushIcon{
+	width:40px;
+	height:40px;
+	background:url(../pic/rushicon.png) no-repeat;
+	background-size:70% 70%;
+	display:block;
+	position:absolute;
+	z-index:999;
+	right:0;
+	margin-top:-10px;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}  
+/*-------------------------------------------2015-12-29 add -------------------------*/
+.branchlistspace{
+	background-size:20px auto;
+	line-height:1em;
+}
+/*-------------------------------------------2016-02-25 add -------------------------*/
+.card5Bkg {
+	background-color: #f54c34;
+}
+/*-------------------------------------------2016-2-26 add -------------------------*/
+
+.rowU4>a>span{
+	text-align: left;
+	display: block;
+	padding: 13px 0px;
+	box-sizing:border-box;
+}
+.rowU4>a>span>span{
+	width:25%;
+	display: block;
+	float: left;
+	padding: 5px;
+	box-sizing:border-box;
+}
+.rowU4>a>span>span>img{
+	width:100%;
+	height: auto;
+	border-radius:20%;
+	border: 1px solid #eee;	
+} 
+/*-------------------------------------------2016-2-29 add -------------------------*/
+.rowU5>.rowU5-title>span{
+	padding: 13px 0px;
+}
+.rowU5>.rowU5-title>span i{
+	font-style:normal;
+}
+.rowU5>.rowU5-fourpic>span{
+
+	display: block;
+	float: left;
+	width:25%;
+	padding: 5px;
+	box-sizing:border-box;	
+}
+.rowU5>.rowU5-fourpic>span i{
+	display: block;
+	height: 20px;
+	line-height: 20px;
+}
+.rowU5>.rowU5-fourpic>span img,.rowU5>.rowU5-onepic>span img{
+	width:100%;
+	height: auto;
+	border-radius:20%;
+	border: 1px solid #eee;
+}  
+.rowU5 textarea{
+	border: solid 1px #eee;
+	width: 100%;
+	height: auto;
+}
+/*-------------------------------------------2016-3-2 add -------------------------*/
+.dropyears select{
+	position: relative;
+	height: auto;
+	border: none;
+	margin: 13px 0px;
+}

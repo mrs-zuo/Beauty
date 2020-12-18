@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@xml/shape_corner_round"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        	style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/to_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        	style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/from_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+       	style="@style/activity_content_table_relativelayout_attrs">
+        <TextView
+            android:id="@+id/send_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        style="@style/activity_content_divide_view_attrs"/>
+
+    <RelativeLayout
+        	style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/send_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+</TableLayout>

@@ -1,0 +1,333 @@
+﻿@{
+    Model.Table_Model.Card_Model model = new Model.Table_Model.Card_Model();
+    if (ViewBag.CardDetail != null)
+    {
+        model = ViewBag.CardDetail;
+    }           
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 15)
+    <!-- /Page Sidebar -->
+
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li><a href="/Card/EditCard">会员账户设定</a></li>
+                @if (model.ID == 0)
+                {
+                    <li class="active">添加会员账户</li>
+                }
+                else
+                {
+                    <li class="active">编辑会员账户</li>
+                }
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @if (model.ID == 0)
+                {
+                    <h1>添加会员账户</h1>
+                }
+                else
+                {
+                    <h1>编辑会员账户</h1>
+                }
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-horizontal form-bordered widget-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">会员账户代码</label>
+                    <div class="col-sm-4">
+                        <input type="text" maxlength="15" value="@(model.CardCode == 0 ? "" :model.CardCode.ToString())" disabled="disabled" placeholder="会员账号代码" class="form-control" id="txtCardCode" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                    	会员账户名称
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="text" value="@(model.CardName)" id="txtCardName" placeholder="输入账号名称" class="form-control" maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">会员账户类型</label>
+                    <div class="col-sm-4">
+                        <select class="select-control" style="width: 100%" id="ddlCardType" disabled="disabled">
+                            <option value="1"  @(model.CardTypeID == 1 || model.CardTypeID == 0 ? "selected='selected'" : "") >储值卡账户</option>
+                            <option value="3"  @(model.CardTypeID == 2 ? "selected='selected'" : "") >积分账户</option>
+                            <option value="2"  @(model.CardTypeID == 3 ? "selected='selected'" : "")>现金消费券账户</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--s切换	储值卡账户-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">描述</label>
+                    <div class="col-sm-4">
+                        <textarea maxlength="200" class="form-control" rows="4" placeholder="输入少于200的描述" id="txtCardDescription">@(model.CardDescription)</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">有效期间</label>
+                    <div class="col-xs-2">
+                        <input type="text" maxlength="2"  data-bv-notempty="true" placeholder="输入有效期间" name="firstName" class="form-control"  @(model.ValidPeriodUnit == 4 || model.ValidPeriodUnit == 0  ? "disabled='disabled'" : "") value="@(model.ValidPeriodUnit == 4 || model.ValidPeriodUnit == 0 ? "" : model.VaildPeriod.ToString())" id="txtVaildPeriod" >
+                    </div>
+                    <div class="col-xs-2">
+                        <select style="width: 100%" class="select-control" id="ddlVaildPeriodUnit" onchange="ValidPeriodUnitChange(this)">
+                            <option value="4"  @(model.ValidPeriodUnit == 4 || model.ValidPeriodUnit == 0 ? "selected='selected'" : "")>无期限</option>
+                            <option value="1"  @(model.ValidPeriodUnit == 1 ? "selected='selected'" : "") >年</option>
+                            <option value="2" @(model.ValidPeriodUnit == 2 ? "selected='selected'" : "")>月</option>
+                            <option value="3"  @(model.ValidPeriodUnit == 3 ? "selected='selected'" : "")>日</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">业绩折算率</label>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="请输入业绩折算率" class="form-control"  value="@(model.ProfitRate == 0 ? 1 : model.ProfitRate)" id="txtProfitRate">
+                        </div>
+                </div>
+                <div class="form-group">
+                    @{string strPlace = "";
+                      if (model.CardTypeID == 1 || model.CardTypeID == 0)
+                      {
+                          strPlace = "输入基础折扣率";
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	基础折扣率
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                      }
+                      else
+                      {
+                          strPlace = "输入基础折扣率";
+                        <label class="col-sm-2 control-label no-padding-right">金额抵扣率</label>
+                      }
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="@(strPlace)" class="form-control"  value="@(model.Rate)" id="txtRate">
+                        </div>
+                        @*
+                        <p class="n-p-15 help-block">%</p>*@
+                    }
+                </div>
+                @if (model.CardTypeID == 1 || model.CardTypeID == 0)
+                {
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">起充金额</label>
+                        <div class="col-sm-4">
+                            <input type="text"  placeholder="输入起充金额" class="form-control" value="@(model.StartAmount)" id="txtStartAmount">
+                        </div>
+                        <p class="n-p-15 help-block">元</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">余额提醒阈值</label>
+                        <div class="col-sm-4">
+                            <input type="text"  placeholder="输入余额提醒值" class="form-control" value="@(model.BalanceNotice)" id="txtBalanceNotice">
+                        </div>
+                        <p class="n-p-15 help-block">元</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">折扣分类</label>
+                        <div class="col-sm-4">
+                            <a data-toggle="modal" data-target=".bs-example-modal-sm1" class="form-control btn over-text col-xs-12" onclick="showDiscountList(this)">点击选择折扣分类</a>
+                            <!--最小弹窗层-->
+                            <div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title">折扣分类</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="select-down">
+                                                <table class="table table-striped table-hover" id="tbDiscount">
+                                                    <tr>
+                                                        <td>
+                                                            <label class="btn-group no-pm">
+                                                                <input type="checkbox" value="" onclick="selectDiscountAll(this)">
+                                                                <span class="text over-text col-xs-12 no-pm">全选
+                                                                </span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    @if (model.listDiscount != null && model.listDiscount.Count > 0)
+                                                    {
+                                                        foreach (Model.Table_Model.CardDiscount_Model item in model.listDiscount)
+                                                        {
+                                                        <tr>
+                                                            <td>
+                                                                <label class="btn-group no-pm">
+                                                                    <input type="checkbox" name="chkDiscount" value="@(item.DiscountID)">
+                                                                    <span class="text over-text col-xs-12 no-pm">@(item.DiscountName)
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                        </tr> 
+                                                        }
+
+                                                    }
+                                                </table>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <a data-toggle="modal" data-target=".bs-example-modal-sm1" class="btn btn-primary" onclick="showSelectedDiscount()">确 定</a>
+                                            </div>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!--/e最小弹窗层-->
+                        </div>
+                    </div>
+                    <!--s选择出来显示的折扣列表-->
+
+                    <div id="divDiscount">
+                        @if (model.listDiscount != null && model.listDiscount.Count > 0)
+                        {
+                            foreach (Model.Table_Model.CardDiscount_Model item in model.listDiscount)
+                            {
+                                if (item.CardID == model.ID && model.ID >0)
+                                {
+                            <div class="form-group" id="@(item.DiscountID)" name ="showDiscountDiv">
+                                <label class="col-sm-3 control-label no-padding-right">@(item.DiscountName)</label>
+                                <div class="col-xs-3">
+                                    <input type="text" value="@(item.Discount)" class="form-control" name="firstName" placeholder="输入折扣值" data-bv-notempty="true"  maxlength="5">
+                                </div>
+                        @*        <p class="n-p-15 help-block">%</p>*@
+                            </div>
+                                }
+                            }
+
+                        }
+                    </div>
+
+                    <!--e选择出来显示的折扣列表-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">适用门店</label>
+                        <div class="col-sm-4">
+                            <div data-toggle="modal" data-target=".bs-example-modal-sm" class="btn form-control over-text col-xs-12" onclick="showBranchList();">选择门店</div>
+                            <!--最小弹窗层-->
+                            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="mySmallModalLabel">选择门店</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="select-down">
+                                                <table class="table table-striped table-hover" id="tbBranch">
+                                                    <tr>
+                                                        <td>
+                                                            <label class="btn-group no-pm">
+                                                                <input type="checkbox" value="" onclick="selectBranchAll(this)">
+                                                                <span class="text over-text col-xs-12 no-pm">全选</span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    @if (model.listBranch != null && model.listBranch.Count > 0)
+                                                    {
+                                                        foreach (Model.Table_Model.CardBranch_Model item in model.listBranch)
+                                                        {
+                                                        <tr>
+                                                            <td>
+                                                                <label class="btn-group no-pm">
+                                                                    <input type="checkbox" value="@(item.BranchID)" name="chkBranch">
+                                                                    <span class="text over-text col-xs-12 no-pm">@(item.BranchName)</span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        }
+                                                    }
+                                                </table>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <a data-toggle="modal" data-target=".bs-example-modal-sm" class="btn btn-primary" onclick="showSelectedBranch()">确 定</a>
+                                            </div>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!--/e最小弹窗层-->
+                        </div>
+                    </div>
+                    <div id="divBranch">
+                        @if (model.listBranch != null && model.listBranch.Count > 0)
+                        {
+                            foreach (Model.Table_Model.CardBranch_Model item in model.listBranch)
+                            {
+                                if (item.CardID == model.ID && model.ID > 0)
+                                {
+                            <div class="form-group" id="@(item.BranchID)" name="showBranchDiv">
+                                <label class="col-sm-3 control-label no-padding-right">@(item.BranchName)</label>
+                            </div>
+                                }
+                            }
+
+                        }
+                    </div>
+                    <!--e切换	储值卡账户-->
+                }
+                else
+                {
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">赠送比例</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="txtPresentRate" value="@(model.PresentRate)" placeholder="输入赠送比例" class="form-control" >
+                        </div>
+                    @*    <p class="n-p-15 help-block">%</p>*@
+                    </div>
+                    
+                }
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <a onclick="submit(@(model.ID),@(model.CardTypeID))" class="btn btn-primary">确 定</a>
+                        <a class="btn btn-default" href="javascript:history.go(-1);">返 回 </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+        <input type="hidden" id="hidData" />
+    </div>
+</div>
+<script src="~/Script/Card.js"></script>

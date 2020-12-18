@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/order_edit_course_tablelayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@xml/shape_corner_round"
+     >
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/order_edit_course_no"
+            style="@style/activity_content_table_row_title_attrs" />
+        <TextView
+            android:id="@+id/order_edit_course_treatment_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size" 
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <View
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+       style="@style/activity_content_table_relativelayout_attrs" >
+        <ImageButton
+            android:id="@+id/add_new_course_treatment_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/add_table_row"
+            android:contentDescription="@string/search"
+            android:layout_centerVertical="true" />
+
+        <EditText
+            android:id="@+id/add_new_course_treatment_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/add_new_course_treatment_btn"
+            android:background="@null"
+            android:hint="@string/add_new_course_time_text" 
+          	android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+</TableLayout>

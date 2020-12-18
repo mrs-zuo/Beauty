@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "BatchImport";
+    int BranchID = ViewBag.BranchID;
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", Model==1?10:20)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>
+                    <a @(Model==0?"href=/Service/GetServiceList?b=-1&c=-1":"href=/Commodity/GetCommodityList?b=-1&c=-1") >@(Model==0?"服务":"商品")</a>
+                </li>
+                <li>批次批量导入</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>批量导入</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body" >
+            <div class="form-horizontal form-bordered widget-body">
+                <div class="form-group filePath">
+                    <br>
+                    <label class="col-sm-2 control-label no-padding-right">文件路径</label>
+                    <div class="col-sm-4">
+                        <input class="input-file pull-left" id="fileInput" type="file" name="fileInput">
+                    </div>
+                    <div  class="col-sm-4">
+                        <a href="#" class="btn btn-default" onclick="downloadCommodityBatchTemplate()"><i class="fa fa-cloud-download"></i>批量商品批次模板下载</a>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+
+                <div class="form-group filePath">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <br>
+                        <button class="btn btn-primary" type="button"  onclick="SelectFile(@(Model),@(BranchID))">确 定</button>
+                        <a href="javascript:history.go(-1);" class="btn btn-default"> 返 回 </a>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+
+                <div id="div_View" class="hidden">                
+                    
+			    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="hid_FileName"/>
+<input type="hidden" id="hid_Type" value="@(Model)" />
+<input type="hidden" id="hid_BranchID" value="@(BranchID)" />
+<script src="~/Script/BatchCommodityImport.js"></script>
+<script src="~/Script/ajaxfileupload.js"></script>

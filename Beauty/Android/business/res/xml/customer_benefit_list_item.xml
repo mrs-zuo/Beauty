@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/benefit_tablelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingBottom="10dip">
+    <RelativeLayout
+        android:id="@+id/benefit_relativelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="10dip"
+            android:layout_centerVertical="true">
+            <TextView
+                android:id="@+id/benefit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:singleLine="true"
+                android:text="@string/ellipsis"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size" />
+            <TextView
+                android:id="@+id/benefit_rule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/benefit_name"
+                android:layout_alignLeft="@id/benefit_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp"
+                android:singleLine="true"
+                android:text="@string/ellipsis"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/customer_ecard_white_arrows" />
+    </RelativeLayout>
+</TableLayout>

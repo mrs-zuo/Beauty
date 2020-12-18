@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <TableLayout style="@style/table_layout_attrs" >
+
+        <RelativeLayout
+            android:id="@+id/appointment_create_choose_branch_relativelayout"
+            style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                android:id="@+id/appointment_create_choose_branch_title"
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/choose_branch"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/appointment_create_choose_branch_text"
+                style="@style/relative_layout_right_child_attrs"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#f4f4f4" >
+        </View>
+
+        <RelativeLayout
+            android:id="@+id/appointment_create_appointment_date_relativelayout"
+            style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                android:id="@+id/appointment_create_appointment_date_title"
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/appointment_to_the_branch_time_text"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/appointment_create_appointment_date_text"
+                style="@style/relative_layout_right_child_attrs"
+                android:hint="@string/appointment_time_hint_text"
+                android:textColor="@color/gray" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#f4f4f4" >
+        </View>
+
+        <RelativeLayout
+            android:id="@+id/appointment_create_service_relativelayout"
+            style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                android:id="@+id/appointment_service_title"
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/appointment_service"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/appointment_service_text"
+                style="@style/relative_layout_right_child_attrs"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#f4f4f4" >
+        </View>
+
+        <RelativeLayout
+            android:id="@+id/designated_responsible_person_relativelayout"
+            style="@style/relative_layout_has_child_attrs">
+
+            <TextView
+                android:id="@+id/designated_responsible_person_title"
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/designated_responsible_person"
+                android:textColor="@color/text_color" />
+
+            <ImageView
+                android:id="@+id/delete_responsible_person"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/note_label_delete_icon"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/designated_responsible_person_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/delete_responsible_person"
+                android:maxWidth="@dimen/relative_layout_right_child_attrs_maxwidth"
+                android:text="@string/appointment_to_the_branch_designat_text"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_normal" />
+        </RelativeLayout>
+    </TableLayout>
+
+    <TableLayout style="@style/table_layout_attrs" >
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <TextView
+                style="@style/relative_layout_left_child_attrs"
+                android:text="@string/customer_appointment_remark"
+                android:textColor="@color/text_color" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#f4f4f4" >
+        </View>
+
+        <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+            <EditText
+                android:id="@+id/appointment_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:background="@null"
+                android:hint="@string/please_input_customer_appointment_remark"
+                android:maxLength="300"
+                android:minLines="3"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_normal"
+                android:lineSpacingExtra="8dp"/>
+        </RelativeLayout>
+    </TableLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip" >
+        <Button
+                android:id="@+id/order_search_new_make_sure_btn"
+                style="@style/search_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:contentDescription="@string/search"
+                android:text="@string/ok"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/white" />
+    </RelativeLayout>
+</LinearLayout>

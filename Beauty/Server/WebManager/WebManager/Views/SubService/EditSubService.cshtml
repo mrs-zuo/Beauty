@@ -1,0 +1,117 @@
+﻿@{
+    Model.Table_Model.SubService_Model model = new global::Model.Table_Model.SubService_Model();
+    if (Model != null)
+    {
+        model = Model;
+    }
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 8)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li class="active"><a href="/SubService/GetSubServiceList">子服务</a></li>
+                <li class="active">@{
+                    if (Model != null)
+                    {<text>编辑子服务</text>}
+                    else
+                    {<text>添加子服务</text>}
+                }</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @{
+                    if (Model != null)
+                    {<h1>编辑子服务</h1>}
+                    else
+                    {<h1>添加子服务</h1>}
+                }
+
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-horizontal form-bordered widget-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">
+                    	子服务名称
+                    	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                    </label>
+                    <div class="col-sm-4">
+                        <input class="form-control" maxlength="5" id="txtSubServiceName" placeholder="输入子服务名称" value="@(model.SubServiceName)" type="text">
+                    </div>
+                    <p class="n-p-15 help-block">(请填字数不得超过5个字)</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">服务时间</label>
+                    <div class="col-sm-4">
+                        <span class="input-icon icon-right time-layer">
+                            <input class="form-control date-picker" id="txtSpendTime" value="@(model.SpendTime)" placeholder="服务时间">
+                        </span>
+                    </div>
+                    <p class="n-p-15 help-block">分钟 (请填写5的倍数,如果不填则为60分钟)</p>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right">回访周期</label>
+                    <div class="input-group radio">
+                        <label>
+                            <input type="radio" name="form-field-radio" @(model.NeedVisit ? "" : "checked=checked") onclick="showVisitTime()">
+                            <span class="text">无需回访</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="form-field-radio" onclick="showVisitTime()" id="rdNeedVisit"  @(model.NeedVisit ? "checked=checked" : "")>
+                            <span class="text">需要回访</span>
+                            <label id="lb_VisitTime" @(model.NeedVisit ? "" : "style=display:none")>
+
+                                <input type="text" name="form-field-radio" id="txtVisitTime" value="@(model.VisitTime)">
+                                <label>天 (如果填0则表示需要当天回访)</label>
+                            </label>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="btn btn-primary" type="button" onclick="@(Model != null ? "UpdateSubService()" : "AddSubService()")">确 定</button>
+                        <a href="javascript:history.go(-1);" class="btn btn-default">返 回 </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/Script/SubService.js"></script>

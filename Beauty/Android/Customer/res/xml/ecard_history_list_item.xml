@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cell_layout"
+    style="@style/relative_layout_has_child_attrs"
+    android:layout_centerVertical="true"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/join_in_arrowhead_gray" />
+
+    <TextView
+        android:id="@+id/ecard_trading_create_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/arrowhead"
+        android:textSize="@dimen/text_size_normal"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/ecard_history_type_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal" />
+
+</RelativeLayout>

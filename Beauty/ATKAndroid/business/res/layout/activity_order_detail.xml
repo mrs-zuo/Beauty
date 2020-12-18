@@ -1,0 +1,620 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.OrderDetailActivity">
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/order_detail_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/order_detail_title_text" />
+
+        <ImageButton
+            android:id="@+id/order_detail_refresh_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/order_detail_refresh_icon"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/order_operation_btn_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dip">
+
+                <Button
+                    android:id="@+id/order_detail_pay_btn"
+                    style="@style/submit_small_btn"
+                    android:text="@string/pay_order" />
+
+                <Button
+                    android:id="@+id/order_detail_delete_btn"
+                    style="@style/cancel_small_btn"
+                    android:layout_toRightOf="@id/order_detail_pay_btn" />
+
+                <Button
+                    android:id="@+id/order_detail_complete_btn"
+                    style="@style/submit_small_btn"
+                    android:layout_toRightOf="@id/order_detail_delete_btn"
+                    android:text="@string/treatment_confirm" />
+            </RelativeLayout>
+
+            <TableLayout
+                android:id="@+id/order_detail_basic_tablelayout"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/layout_order_serial_number"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_serial_number" />
+
+                    <ImageView
+                        android:id="@+id/order_basic_up_down_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:contentDescription="@string/search" />
+
+                    <TextView
+                        android:id="@+id/order_serial_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@id/order_basic_up_down_icon"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_branch_name_title_text" />
+
+                    <TextView
+                        android:id="@+id/order_branch_name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_edit_time" />
+
+                    <TextView
+                        android:id="@+id/order_detail_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/order_detail_expiration_date_divide_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_expiration_date_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_order_expiration_date" />
+
+                    <ImageButton
+                        android:id="@+id/order_detail_service_order_expiration_date_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/change_service_expiration_icon"
+                        android:contentDescription="@string/search" />
+
+                    <EditText
+                        android:id="@+id/order_detail_service_expiration_date_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@id/order_detail_service_order_expiration_date_btn"
+                        android:background="@null"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+
+                    <ImageView
+                        android:id="@+id/order_detail_service_order_has_expiration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@id/order_detail_service_expiration_date_text"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/has_expiration_icon"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_customer_name_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/right_menu_customer" />
+
+                    <ImageButton
+                        android:id="@+id/order_detail_select_customer_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/join_in_arrowhead"
+                        android:contentDescription="@string/search"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/order_detail_customer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@id/order_detail_select_customer_icon"
+                        android:maxWidth="200dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_order_detail_creator" />
+
+                    <TextView
+                        android:id="@+id/order_detail_creator_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:maxWidth="200dip"
+                        android:singleLine="true"
+                        android:text="@string/ellipsis"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/responsible_name_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_order_detail_reaponsible" />
+
+                    <ImageView
+                        android:id="@+id/order_detail_reaponsible_name_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/change_order_detail_reaponsible_name_icon" />
+
+                    <TextView
+                        android:id="@+id/order_detail_reaponsible_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@id/order_detail_reaponsible_name_icon"
+                        android:maxWidth="200dip"
+                        android:singleLine="true"
+                        android:text="@string/ellipsis"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/sales_name_divide_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/sales_name_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_sales" />
+
+                    <TextView
+                        android:id="@+id/order_detail_sales_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:maxWidth="200dip"
+                        android:singleLine="true"
+                        android:text="@string/ellipsis"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/order_detail_product_name_tablelayout"
+                style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_product_name_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <ImageView
+                        android:id="@+id/order_product_up_down_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:contentDescription="@string/search" />
+
+                    <TextView
+                        android:id="@+id/order_detail_product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/order_product_up_down_icon"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/opportunity_order_num" />
+
+                    <TextView
+                        android:id="@+id/order_detail_product_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:background="@null"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/opportunity_order_total_price" />
+
+                    <TextView
+                        android:id="@+id/order_detail_total_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/order_detail_total_calculate_price_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_total_calculate_price_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_detail_total_calculate_price" />
+
+                    <TextView
+                        android:id="@+id/order_detail_total_calculate_price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+				<View
+                    android:id="@+id/order_detail_customer_benefit_divide_view"
+                    style="@style/activity_content_divide_view_attrs" />
+               	<RelativeLayout
+                    android:id="@+id/order_detail_customer_benefit_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/add_order_customer_benefits_title" />
+                </RelativeLayout>
+                <View
+                    android:id="@+id/order_detail_customer_benefit_item_divide_view"
+                    style="@style/activity_content_divide_view_attrs" />
+                <RelativeLayout
+                    android:id="@+id/order_detail_customer_benefit_item_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+                    
+                </RelativeLayout>
+                <View
+                    android:id="@+id/order_detail_total_sale_price_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_total_sale_price_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/opportunity_detail_total_sale_price" />
+
+                    <TextView
+                        android:id="@+id/order_detail_total_sale_price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/order_detail_upaid_price_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_unpaid_price_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_detail_unpaid_sale_price" />
+
+                    <TextView
+                        android:id="@+id/order_detail_unpaid_price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+                <View
+                    android:id="@+id/order_detail_refund_price_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_refund_price_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_detail_refund_price" />
+
+                    <TextView
+                        android:id="@+id/order_detail_refund_price_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout
+                    android:id="@+id/order_status_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/service_order_detail_status" />
+
+                    <TextView
+                        android:id="@+id/order_detail_status_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/order_detail_pay_detail_divide_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_pay_detail_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_detail_pay_detail_title" />
+
+                    <ImageView
+                        android:id="@+id/order_detail_pay_detail_join"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/join_in_arrowhead" />
+                </RelativeLayout>
+                <View
+                    android:id="@+id/order_detail_third_part_pay_divide_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_third_part_pay_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/order_detail_third_part_pay_title" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/join_in_arrowhead" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/order_course_tablelayout"
+                style="@style/activity_content_table_attrs"
+                android:visibility="gone">
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/order_uncomplete_tablelayout"
+                style="@style/activity_content_table_attrs" >
+            </TableLayout>
+
+            <RelativeLayout
+                android:id="@+id/add_order_appointment_relativelayout"
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:visibility="gone"
+                android:padding="0dip">
+
+                <Button
+                    android:id="@+id/add_order_for_treatment_group"
+                    style="@style/submit_small_btn"
+                    android:text="@string/prepare_order_detail_title_text" />
+
+                <Button
+                    android:id="@+id/add_appointment_for_order"
+                    style="@style/submit_small_btn"
+                    android:layout_toRightOf="@id/add_order_for_treatment_group"
+                    android:text="@string/treatment_edit" />
+            </RelativeLayout>
+
+            <TableLayout
+                android:id="@+id/order_appointment_info_tablelayout"
+                style="@style/activity_content_table_attrs" 
+                android:visibility="gone">
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/order_complete_info_tablelayout"
+                style="@style/activity_content_table_attrs" 
+                android:visibility="gone">
+            </TableLayout>
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/customer_remark" />
+
+                    <ImageView
+                        android:id="@+id/order_detail_remark_edit_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/order_detail_remark_edit_btn" />
+
+                    <ImageView
+                        android:id="@+id/order_detail_remark_save_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/order_detail_remark_save_btn"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <EditText
+                        android:id="@+id/order_detail_remark_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:background="@null"
+                        android:hint="@string/please_input_customer_remark"
+                        android:maxLength="300"
+                        android:minLines="3"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

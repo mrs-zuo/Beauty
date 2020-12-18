@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "我的订单";
+    List<Model.View_Model.GetReviewList_Model> List = Model;
+}
+
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width25"><a href="/Order/AllOrder">所有订单</a></li><li class="width25"><a href="/Order/UnpaidOrder">待付款</a></li><li class="width25"><a href="/Order/UnconfirmedOrder">待确认</a></li><li class="width25 positionR">待评价<span class="btmline bkgColor1"></span></li>
+        </ul>
+
+        @if (List != null && List.Count > 0)
+        {
+            <ul class="width100 pTB15">
+                @foreach (Model.View_Model.GetReviewList_Model item in List)
+                {
+                <a href="/Order/OrderDetail?oId=@(item.OrderObjectID)&t=0">
+                    <li class="borderB">
+                        <h4 class="blackTex font16 MB10 longTex">@(item.ServiceName)</h4>
+                        <ol class="width100">
+                            <li class="clearfix">
+                                <div class="fl grayTex">
+                                    <span class="MR10 block">@(item.TGEndTime.ToString("yyyy-MM-dd HH:mm"))</span>
+                                    <span class="MT10 block">@(item.ResponsiblePersonName)</span>
+                                </div>
+                                <div class="fr grayTex">
+                                    <span class="MR10 block">完成@(item.TGFinishedCount)次/共@(item.TGTotalCount)次</span>
+                                    <a class="MT5 block btnSmall bkgColor1 width120P pTB2P" href="/Order/ReviewOrder?gn=@(item.GroupNo)">评&nbsp;价</a>
+                                </div>
+                            </li>
+                        </ol>
+                    </li>
+                </a>
+                }
+            </ul>
+        }
+        else
+        {
+            <div class="width100 textC PT30 PB30 MB60 clearfix">
+                <div class="MT10P MB10P "><img src="/pic/noorderpic.png" height="100" class="graybkg borderRad50" /></div>
+                <p class=" MT10P PB30 grayTex">亲，您还木有订单噢~</p>
+                <div class="width90 blockC MB30 clearfix"><a class="btnMid borderPink width50 color1" href="/Home/Index">去转转</a></div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <RelativeLayout 
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/activity_appointment_customer_list_title_text"
+            android:text="@string/treatment_edit"
+            style="@style/activity_title_text_attrs" />
+        
+        <ImageButton
+            android:id="@+id/activity_appointment_create_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@+id/activity_appointment_customer_search_new_btn"
+            android:background="@drawable/appointment_create_icon" 
+            android:contentDescription="@string/search"/>
+        
+        <ImageButton
+            android:id="@+id/activity_appointment_customer_search_new_btn"
+            style="@style/activity_title_button_attrs"
+            android:layout_alignWithParentIfMissing="true"
+            android:background="@drawable/customer_advanced_filter_icon" 
+            android:contentDescription="@string/search"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/activity_appointment_customer_list_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+        <com.GlamourPromise.Beauty.view.XListView
+            android:id="@+id/activity_appointment_customer_list_view"
+            style="@style/activity_content_listview_attrs" />
+    </RelativeLayout>
+
+</LinearLayout>

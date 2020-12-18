@@ -1,0 +1,239 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EstablishOpportunityOrderActivity" 
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/title_backcolor">
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/establish_opportunity_order_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/establish_opportunity_order_info"
+             />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/cestablish_opportunity_order_customer_tablelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               	android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="15dip"
+                android:padding="5dip" 
+                android:background="@xml/shape_corner_round" >
+
+               <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:text="@string/establish_opportunity_order_customer"
+                        android:textColor="@color/title_font"
+                        android:textSize="@dimen/text_size"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content" 
+                    	android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:id="@+id/establish_opportunity_order_customer"
+                        android:layout_marginTop="5dip"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_alignParentRight="true"/>
+               </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/cestablish_opportunity_order_detail_tablelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="15dip"
+                android:padding="5dip" 
+                android:background="@xml/shape_corner_round">
+
+                 <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+					 <TextView
+                        android:id="@+id/establish_opportunity_order_part_item"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"/>
+					 
+                    <TextView
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                        android:layout_marginTop="5dip"
+                        android:textColor="@color/title_font"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_alignParentRight="true"/>                   
+               </RelativeLayout>
+			 <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/table_row_color" />
+               <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:text="@string/opportunity_order_num"
+                        android:textColor="@color/title_font"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_alignParentLeft="true"/>
+                   
+					 <ImageButton 
+					    android:id="@+id/plus_quantity_btn"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:src="@drawable/add_table_row"
+					   	android:layout_alignParentRight="true"
+					   	android:background="#00000000"
+					   	android:contentDescription="@string/search"
+					    />
+                    <TextView
+                        android:id="@+id/establish_opportunity_order_num"
+                        android:layout_marginTop="5dip"
+                        android:background="@null"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_toLeftOf="@id/plus_quantity_btn"/>
+            		<ImageButton 
+					    android:id="@+id/reduce_quantity_btn"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:src="@drawable/del_table_row"
+					    android:layout_toLeftOf="@id/establish_opportunity_order_num"
+					    android:background="#00000000" 
+					    android:contentDescription="@string/search"
+					    />
+                </RelativeLayout>
+				<View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/table_row_color" />
+               <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_price_relativelayout" >
+                    <TextView
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:text="@string/opportunity_order_total_price"
+                        android:textColor="@color/title_font"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_alignParentLeft="true"/>
+
+                    <EditText
+                        android:id="@+id/establish_opportunity_order_total_price"
+                        android:layout_marginTop="5dip"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="20"/>
+               </RelativeLayout>
+               <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/table_row_color" 
+                    android:id="@+id/tablerow_view"/>
+               <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" 
+                    android:id="@+id/total_sale_price_relativelayout">
+                    <TextView
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="5dip"
+                        android:text="@string/opportunity_detail_total_sale_price"
+                        android:textColor="@color/title_font"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_alignParentLeft="true"/>
+
+                    <EditText
+                        android:id="@+id/establish_opportunity_order_total_sale_price"
+                        android:layout_marginTop="5dip"
+                        android:textSize="@dimen/text_size" 
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:inputType="number"
+                    	android:maxLength="20"/>
+               </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:padding="5dip" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageButton
+                        android:id="@+id/establish_opp_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginTop="10dip"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/eatablish_opp_btn"
+                        android:layout_alignParentLeft="true" 
+                        android:background="#00000000"/>
+
+                    <ImageButton
+                        android:id="@+id/establish_order_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:layout_marginTop="10dip"
+                        android:contentDescription="@string/search"
+                        android:src="@drawable/establish_order_btn" 
+                        android:layout_alignParentRight="true"
+                        android:background="#00000000"/>
+                 </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

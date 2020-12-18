@@ -1,0 +1,153 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.TreatmentGroupTreatmentDetailActivity" >
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/treatment_treatment_detail_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/treatment_group_treatment_detail"/>
+
+        <ImageButton
+            android:id="@+id/treatment_treatment_detail_edit_btn"
+            style="@style/activity_title_button_attrs"
+            android:background="@drawable/customer_detail_edit" />
+    </RelativeLayout>
+
+    <cn.com.antika.view.ImageScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout style="@style/activity_content_table_attrs" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/treatment_broswer_text" />
+
+                    <Switch
+                        android:id="@+id/treatment_broswer_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:textOff="不同步"
+                        android:textOn="同步" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" >
+                </View>
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/before_treatment_group_text" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dip" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="180dip"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/arrow_left_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dip"
+                            android:contentDescription="@string/search" />
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/before_treatment_viewpager"
+                            android:layout_width="@dimen/treatment_treatment_detail_viewpager_width"
+                            android:layout_height="150dip"
+                            android:layout_gravity="center"
+                            android:background="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/arrow_right_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dip"
+                            android:contentDescription="@string/search" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" >
+                </View>
+
+                <TextView
+                    style="@style/activity_content_table_row_title_attrs"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/after_treatment_group_text" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dip" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="180dip"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/arrow_left_icon_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dip"
+                            android:contentDescription="@string/search" />
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/after_treatment_viewpager"
+                            android:layout_width="@dimen/treatment_treatment_detail_viewpager_width"
+                            android:layout_height="150dip"
+                            android:layout_gravity="center"
+                            android:background="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/arrow_right_icon_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="1dip"
+                            android:contentDescription="@string/search" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/treatment_list_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="5dip">
+            </LinearLayout>
+        </LinearLayout>
+    </cn.com.antika.view.ImageScrollView>
+
+</LinearLayout>

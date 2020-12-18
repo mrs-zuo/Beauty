@@ -1,0 +1,349 @@
+@charset "utf-8";
+/*Common style*/
+.btn {
+	*overflow:visible;/*消除IE按钮左右padding随字数长度变化的BUG*/
+}
+/*Custom layout
+--------------------------------------------------------------------*/
+body {
+	text-align:center;
+	height: 100%;
+	background: #f4f4f4;
+}
+.textC {
+	text-align: center;
+}
+.textL {
+	text-align: left;
+}
+.textR {
+	text-align: right;
+}
+.blockC {
+	margin: auto;
+}
+.font12 {
+	font-size: 12px;
+}
+.font14 {
+	font-size: 14px;
+}
+.font16 {
+	font-size: 16px;
+}
+.font18 {
+	font-size: 18px;
+}
+.font20 {
+	font-size: 20px;
+}
+.font22 {
+	font-size: 22px;
+}
+.font24 {
+	font-size: 24px;
+}
+.font28 {
+	font-size: 28px;
+}
+.font40 {
+	font-size: 40px;
+}
+.font48 {
+	font-size: 48px;
+}
+.fontIt{
+	font-style:italic;
+}
+.whiteTex {
+	color: #FFF;
+}
+.lineHeight1_5x {
+	line-height: 1.5em;
+}
+.lineHeight2x {
+	line-height: 2em;
+}
+.lineHeight3x {
+	line-height: 3em;
+}
+.lineHeigt20 {
+	line-height: 20px;
+}
+.pTB2P {
+	padding: 2% 0;
+}
+.pTB5P {
+	padding: 5% 0;
+}
+.pLR5 {
+	padding: 0 5px;
+}
+.PT10 {
+	padding-top: 10px;
+}
+.PT15 {
+	padding-top: 15px;
+}
+.PT20 {
+	padding-top: 20px;
+}
+.PT30 {
+	padding-top: 30px;
+}
+.PB0 {
+	padding-bottom: 0;
+}
+.PB10 {
+	padding-bottom: 10px;
+}
+.PB15 {
+	padding-bottom: 15px;
+}
+.PB20 {
+	padding-bottom: 20px;
+}
+.PB30 {
+	padding-bottom: 30px;
+}
+.PB50 {
+	padding-bottom: 50px;
+}
+.PL10 {
+	padding-left: 10px;
+}
+.PL15 {
+	padding-left: 15px;
+}
+.PL20 {
+	padding-left: 20px;
+}
+.PL30 {
+	padding-left: 30px;
+}
+.ML5 {
+	margin-left: 5px;
+}
+.ML10 {
+	margin-left: 10px;
+}
+.ML20 {
+	margin-left: 20px;
+}
+.ML30 {
+	margin-left: 30px;
+}
+.ML100 {
+	margin-left: 100px;
+}
+.MR5P {
+	margin-right: 5%;
+}
+.MR10P {
+	margin-right: 10%;
+}
+.MR15P {
+	margin-right: 15%;
+}
+.MR10 {
+	margin-right: 10px;
+}
+.MR20 {
+	margin-right: 20px;
+}
+.MR30 {
+	margin-right: 30px;
+}
+.MT10 {
+	margin-top: 10px;
+}
+.MT15 {
+	margin-top: 15px;
+}
+.MT20 {
+	margin-top: 20px;
+}
+.MT25 {
+	margin-top: 25px;
+}
+.MT30 {
+	margin-top: 30px;
+}
+.MT40 {
+	margin-top: 40px;
+}
+.MT50 {
+	margin-top: 50px;
+}
+.MT70 {
+	margin-top: 70px;
+}
+.MT75 {
+	margin-top: 75px;
+}
+.MA0 {
+	margin: 0;
+}
+.MB0 {
+	margin-bottom: 0;
+}
+.MB5 {
+	margin-bottom: 5px;
+}
+.MB10 {
+	margin-bottom: 10px;
+}
+.MB20 {
+	margin-bottom: 20px;
+}
+.MB30 {
+	margin-bottom: 30px;
+}
+.MB50 {
+	margin-bottom: 50px;
+}
+.PA0 {
+	padding: 0;
+}
+.MT5P {
+	margin-top: 5%;
+}
+.MT10P {
+	margin-top: 10%;
+}
+.MB5P {
+	margin-bottom: 5%;
+}
+.MB10P {
+	margin-bottom: 10%;
+}
+.block {
+	display: block;
+}
+.inlineB {
+	display: inline-block;
+	*display: inline;
+	zoom: 1; 
+}
+.width150P {
+	width: 150px;
+}
+.width120P {
+	width: 120px;
+}
+.width100{
+	width: 100%;
+}
+.width90{
+	width: 90%;
+}
+.width80{
+	width: 80%;
+}
+.width75{
+	width: 75%;
+}
+.width70{
+	width: 70%;
+}
+.width65{
+	width: 65%;
+}
+.width60 {
+	width: 60%;
+}
+.width40 {
+	width: 40%;
+}
+.width44 {
+	width: 44%;
+}
+.width35 {
+	width: 35%;
+}
+.width30 {
+	width: 30%;
+}
+.width33_3 {
+	width: 33.3%;
+}
+.width25 {
+	width: 25%;
+}
+.width20 {
+	width: 20%;
+}
+.width24 {
+	width: 24%;
+}
+.positionR{
+	position: relative;
+}
+.positionA{
+	position: absolute;
+}
+.borderT {
+	border-top: 1px solid #eeeeee;
+}
+.borderB {
+	border-bottom: 1px solid #eeeeee;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.MLR5 {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+/****************颜色值******************/
+.whiteBkg {
+	background-color: #FFF;
+}
+.bkgColor1 {
+	background-color: #f75483;
+}
+.bkgColor2 {
+	background-color: #fa88a9;
+}
+.bkgColor3 {
+	background-color: #fffafc;
+}
+.bkgColor4 {
+	background: #323e3a url(../pic/bkg1.png) repeat center top;
+}
+.bkgColor5 {
+	background-color: #f4f4f4;
+}
+.grayTex {
+	color: #818181;
+}
+.redTex {
+	color: #fd0e2b;
+}
+.greenTex {
+	color: #7ac64c;
+}
+.color1 {
+	color: #f75483;
+}
+a {
+	cursor: pointer;
+	color: #070707;
+}
+.goTopSite {
+	right: 3%;
+	bottom: 15%;
+	position: fixed;
+}
+.banner .bannerBtn.site {
+	bottom: 15px;
+	z-index: 2000;
+}
+.rowUl1 li {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}

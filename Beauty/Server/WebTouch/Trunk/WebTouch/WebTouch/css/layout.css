@@ -1,0 +1,788 @@
+﻿@charset "utf-8";
+/*Common style*/
+.btn {
+	*overflow:visible;/*消除IE按钮左右padding随字数长度变化的BUG*/
+}
+/*Custom layout
+--------------------------------------------------------------------*/
+body {
+	text-align:center;
+	height: 100%;
+	background: #f4f4f4;
+}
+
+.textC {
+	text-align: center;
+}
+.textL {
+	text-align: left;
+}
+.textR {
+	text-align: right;
+}
+.blockC {
+	margin: auto;
+}
+.font12 {
+	font-size: 12px;
+}
+.font14 {
+	font-size: 14px;
+}
+.font16 {
+	font-size: 16px;
+}
+.font18 {
+	font-size: 18px;
+}
+.font20 {
+	font-size: 20px;
+}
+.font22 {
+	font-size: 22px;
+}
+.font24 {
+	font-size: 24px;
+}
+.font28 {
+	font-size: 28px;
+}
+.font40 {
+	font-size: 40px;
+}
+.font48 {
+	font-size: 48px;
+}
+.fontIt{
+	font-style:italic;
+}
+.lineHeight1_5x {
+	line-height: 1.5em;
+}
+.lineHeight2x {
+	line-height: 2em;
+}
+.lineHeight3x {
+	line-height: 3em;
+}
+.lineHeigt20 {
+	line-height: 20px;
+}
+.pTB2P {
+	padding: 2% 0;
+}
+.pTB5P {
+	padding: 5% 0;
+}
+/*-------------------------------------------2015-09-17 add start-------------------------*/
+.pLR2P {
+	padding: 0 2%;
+}
+/*-------------------------------------------2015-09-17 add end-------------------------*/
+.PTB5 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.PTB15 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.P0 {
+	padding: 0;
+}
+.PT5 {
+	padding-top: 5px;
+}
+.PT10 {
+	padding-top: 10px;
+}
+.PT15 {
+	padding-top: 15px;
+}
+.PT20 {
+	padding-top: 20px;
+}
+.PT25 {
+	padding-top: 25px;
+}
+.PT30 {
+	padding-top: 30px;
+}
+.PB0 {
+	padding-bottom: 0;
+}
+.PB5 {
+	padding-bottom: 5px;
+}
+.PB10 {
+	padding-bottom: 10px;
+}
+.PB15 {
+	padding-bottom: 15px;
+}
+.PB20 {
+	padding-bottom: 20px;
+}
+.PB30 {
+	padding-bottom: 30px;
+}
+.PB50 {
+	padding-bottom: 50px;
+}
+.PL10 {
+	padding-left: 10px;
+}
+.PL15 {
+	padding-left: 15px;
+}
+.PL20 {
+	padding-left: 20px;
+}
+.PL30 {
+	padding-left: 30px;
+}
+.ML5 {
+	margin-left: 5px;
+}
+.ML10 {
+	margin-left: 10px;
+}
+.ML15 {
+	margin-left: 15px;
+}
+.ML20 {
+	margin-left: 20px;
+}
+.ML25 {
+	margin-left: 25px;
+}
+.ML30 {
+	margin-left: 30px;
+}
+/*-------------------------------------------2015-09-14 add start-------------------------*/
+.ML40 {
+	margin-left: 40px;
+}
+/*-------------------------------------------2015-09-14 add end--------------------------*/
+.ML100 {
+	margin-left: 100px;
+}
+.ML105 {
+	margin-left: 105px;
+}
+.ML135 {
+	margin-left: 135px;
+}
+.MR5P {
+	margin-right: 5%;
+}
+.MR10P {
+	margin-right: 10%;
+}
+.MR15P {
+	margin-right: 15%;
+}
+
+.ML5P {             /*-------------------------------------------2015-10-12 new add -------------------------*/
+	margin-left: 5%;
+}
+.ML10P {             /*-------------------------------------------2015-10-12 new add -------------------------*/
+	margin-left: 10%;
+}
+.MR5P {             /*-------------------------------------------2015-10-12 new add -------------------------*/
+	margin-left: 5%;
+}
+
+.MR10 {
+	margin-right: 10px;
+}
+.MR20 {
+	margin-right: 20px;
+}
+.MR30 {
+	margin-right: 30px;
+}
+.MT5 {
+	margin-top: 5px;
+}
+.MT10 {
+	margin-top: 10px;
+}
+.MT15 {
+	margin-top: 15px;
+}
+.MT20 {
+	margin-top: 20px;
+}
+.MT25 {
+	margin-top: 25px;
+}
+.MT30 {
+	margin-top: 30px;
+}
+.MT40 {
+	margin-top: 40px;
+}
+.MT50 {
+	margin-top: 50px;
+}
+.MT70 {
+	margin-top: 70px;
+}
+.MT75 {
+	margin-top: 75px;
+}
+.MA0 {
+	margin: 0;
+}
+.MB0 {
+	margin-bottom: 0;
+}
+/*-------------------------------------------2015-09-16 add start-------------------------*/
+.MB2 {
+	margin-bottom: 2px;
+}
+/*-------------------------------------------2015-09-16 add end-------------------------*/
+.MB5 {
+	margin-bottom: 5px;
+}
+.MB10 {
+	margin-bottom: 10px;
+}
+.MB15 {
+	margin-bottom: 15px;
+}
+.MB20 {
+	margin-bottom: 20px;
+}
+.MB30 {
+	margin-bottom: 30px;
+}
+.MB50 {
+	margin-bottom: 50px;
+}
+.MB60 {
+	margin-bottom: 60px;
+}
+.PA0 {
+	padding: 0;
+}
+.MLR1_5P {
+	margin-right: 1.5%;
+	margin-left: 1.5%;
+}
+.MR1P {
+	margin-right: 1%;
+}
+.MT5P {
+	margin-top: 5%;
+}
+.MT10P {
+	margin-top: 10%;
+}
+.MB5P {
+	margin-bottom: 5%;
+}
+.MB10P {
+	margin-bottom: 10%;
+}
+.block {
+	display: block;
+}
+/*-------------------------------------------2015-09-17 add start-------------------------*/
+.dispNone{         
+	display:none;
+	display:none!important;
+}
+/*-------------------------------------------2015-09-17 add end-------------------------*/
+.inlineB {
+	display: inline-block;
+	*display: inline;
+	zoom: 1; 
+}
+.width150P {
+	width: 150px;
+}
+.width120P {
+	width: 120px;
+}
+.width25P {
+	width: 25px;
+}
+.width40P {
+	width: 40px;
+}
+.width100{
+	width: 100%;
+}
+.width98 {
+	width: 98%;
+}
+.width95 {
+	width: 95%;
+}
+.width90{
+	width: 90%;
+}
+.width88 {
+	width: 88%;
+}
+.width83 {
+	width: 83%;
+}
+.width80{
+	width: 80%;
+}
+.width75{
+	width: 75%;
+}
+.width70{
+	width: 70%;
+}
+.width65{
+	width: 65%;
+}
+.width60 {
+	width: 60%;
+}
+.width55 {
+	width: 55%;
+}
+.width50 {
+	width: 50%;
+}
+.width48 {
+	width: 48%;
+}
+.width45 {
+	width: 45%;
+}
+.width44 {
+	width: 44%;
+}
+.width40 {
+	width: 40%;
+}
+.width35 {
+	width: 35%;
+}
+.width33_3 {
+	width: 33.3%;
+}
+.width32 {
+	width: 32%;
+}
+.width30 {
+	width: 30%;
+}
+.width25 {
+	width: 25%;
+}
+.width24 {
+	width: 24%;
+}
+/*-------------------------------------------2015-09-25 add start-------------------------*/
+.width23 {
+	width: 23%;
+}
+/*-------------------------------------------2015-09-25 add end-------------------------*/
+.width20 {
+	width: 20%;
+}
+.width15 {
+	width: 15%;
+}
+.width10 {
+	width: 10%;
+}
+.width6 {
+	width: 6%;
+}
+.width5 {
+	width: 5%;
+}
+/*-------------------------------------------2015-09-14 add start-------------------------*/
+.height100 {
+	height: 100%;
+}
+.height90 {
+	height: 90%;
+}
+/*-------------------------------------------2015-09-14 add end--------------------------*/
+.height60px {
+	height: 60px;
+}
+/*-------------------------------------------2015-09-21 add end--------------------------*/
+.positionR{
+	position: relative;
+}
+.positionA{
+	position: absolute;
+}
+.borderT {
+	border-top: 1px solid #eee;
+}
+.borderB {
+	border-bottom: 1px solid #eee;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.MLR5 {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.MR5 {
+	margin-right: 5px;
+}
+/****************颜色值******************/
+.whiteBkg {
+	background-color: #FFF;
+}
+.bkgColor1 {
+	background-color: #f75483;
+}
+.bkgColor2 {
+	background-color: #fa88a9;
+}
+.bkgColor3 {
+	background-color: #fffafc;
+}
+.bkgColor4 {
+	background: #323e3a url(../pic/bkg1.png) repeat center top;
+}
+.bkgColor5 {
+	background-color: #f4f4f4;
+}
+/*-------------------------------------------2015-10-11 add bkgColor6 -------------------------*/
+.bkgColor6 {
+	background-color: #888;
+}
+.grayTex {
+	color: #818181;
+}
+.redTex {
+	color: #fd0e2b;
+}
+.greenTex {
+	color: #7ac64c;
+}
+.blueTex {
+	color: #3ea8f4;
+}
+.blackTex {
+	color: #070707!important;	
+}
+.whiteTex {
+	color: #FFF;
+}
+/* .color1 {
+	color: #f75483;
+} */
+
+/*-------------------------------------------2015-09-18 add start-------------------------*/
+.boldTex {
+	font-weight: bold;
+}
+.texBold {
+	font-weight: bold;
+}
+
+/*-------------------------------------------2015-09-18 add end--------------------------*/
+a {
+	cursor: pointer;
+	color: #070707;
+}
+.goTopSite {
+	right: 3%;
+	bottom: 10%;
+	position: fixed;
+
+}
+.banner .bannerBtn.site {
+	bottom: 15px;
+	z-index: 2000;
+}
+.rowUl1 li {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+.rowUl2 li {
+	font-size: 16px;
+	padding: 20px 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	text-align: center;
+}
+.btmline {
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+}
+.LinkUnderLine {
+	text-decoration: underline;
+}
+/* .textarea {
+	padding: 10px 2%;
+	width: 96%;
+	resize: none;
+	border: 1px solid #eee;
+} */
+.textarea {
+	padding: 10px;
+	width: 96%;
+	resize: none;
+	border: 1px solid #eee;
+	box-sizing:border-box;
+}
+.popupDiv {
+	position: absolute;
+	top: 20%;
+	left: 0;
+	height: 360px;
+	overflow-y: auto;
+}
+.popUpImgArea img {
+	width: 60px;
+	height: 60px;
+}
+.rowUl3 li {
+	vertical-align: middle;	
+}	
+.rowUl3 > li > a{
+	height: 60px;
+	display: block;
+	padding: 15px 0 15px 0;
+	line-height: 60px;
+} 
+.rowUl li a.P0 {
+	padding: 0;
+}
+.PL20Ul li {
+	padding-left: 20px;
+}
+.btnBtm {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.PB100 {
+	padding-bottom: 100px;
+}
+/*-------------------------------------------2015-10-09 add btnBtmUL2-------------------------*/
+.btnBtmUL1,.btnBtmUL2,.btnBtmUL3 {
+	border-top: 1px solid #eee;
+}
+.borderR {
+	border-right: 1px solid #eee;
+}
+/*-------
+.btnBtmUL li {
+	display: block;
+	padding: 0px;
+	height: 60px;
+	line-height: 60px;
+	width: 25%;
+}
+---*/
+/*-------------------------------------------2015-10-09 add start-------------------------*/
+.btnBtmUL2  li {
+	display: block;
+	padding: 0px;
+	height: 60px;
+	line-height: 60px;
+	width: 33.33%;
+}
+/*-------------------------------------------2015-10-11 add start-------------------------*/
+.btnBtmUL3  li {
+	display: block;
+	padding: 0px;
+	height: 60px;
+	line-height: 60px;
+	width: 50%;
+}
+/*-------------------------------------------2015-10-11 add start-------------------------*/
+.btnBtmUL1  li {
+	display: block;
+	padding: 0px;
+	height: 60px;
+	line-height: 60px;
+}
+/*-------------------------------------------2015-10-09 add end-------------------------*/
+.border {
+	background: #eee;
+	width: 1px; 
+	height: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+/*-------------------------------------------2015-10-10 add start-------------------------*/
+.borderInput {
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	border-bottom:1px solid #eee;
+	text-align:right;
+	color:#818181;
+	background:none;
+	width:145px;
+}
+/*-------------------------------------------2015-09-21 add start-------------------------*/
+.borderRadius img{
+	border-radius:50%;
+	border:#e7e7e7 1px solid;
+}
+/*-------------------------------------------2015-09-21 add end-------------------------*/
+.btnBtmUL li a {
+	display: block;
+	padding: 0px;
+	height: 60px;
+	line-height: 60px;
+}
+.PL15S {
+	padding-left: 15px;
+}
+.PR15S {
+	padding-right: 15px;
+}
+input{
+	border-radius:0;
+	-moz-border-radius:0;
+	-webkit-border-radius:0;
+}
+ li:last-child{
+	border-bottom:none!important;
+}
+/*---
+.borderPink{
+	border:1px solid #f75483!important;
+}
+---*/
+.borderNone{
+	border: none!important;
+}
+.width40P {
+	width: 40px;
+}
+.width20P {
+	width: 20px;
+}
+.height20P {
+	height: 20px;
+}
+.borderRad50{
+	border-radius: 50%;
+}
+.delTex {
+	font-style:!important;	
+}
+.overflowHidd{
+	overflow: hidden!important;
+}
+.width93{
+	width: 93%;
+}
+.bkgOpacity7{
+	opacity: 0.7;
+	filter:alpha(opacity=70);
+}
+.borderPink{
+	border:1px solid #f75483;
+}
+.pLR2P {
+	padding: 0 2%;
+}
+/*-------------------------------------------2015-11-19 add -------------------------*/
+.graybkg{
+	background-color:#eee;
+}
+.PR10 {
+	padding-right: 10px;
+}
+.PLR_5EM{
+	padding-left:0.5em!important;
+	padding-right:0.5em!important;
+}
+.PL40 {
+	padding-left: 40px;
+}
+/*-------------------------------------------2015-12-18 add -------------------------*/
+.MB80 {
+	margin-bottom: 80px;
+}
+.borderGray{
+	border:1px solid #ddd;
+}
+/*-------------------------------------------2015-12-29 add -------------------------*/
+.PR25 {
+	padding-right: 25px;
+}
+.ddTex {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+/*-------------------------------------------2016-1-20 add -------------------------*/
+.T15P {
+	top: 15%;
+}
+
+/*-------------------------------------------2016-2-26 add -------------------------*/
+.am-row{
+    background: url(../pic/rightArrow.png) no-repeat right;
+    background-size: 20px;
+}
+/*-------------------------------------------2016-2-29 add -------------------------*/
+.edit-icon{
+    background: url(../pic/editicon.png) no-repeat right;
+    background-size: 25px;
+}
+.filter-icon{
+    background: url(../pic/filtericon.png) no-repeat right;
+    background-size: 20px;
+}
+.share-icon{
+	background: url(../pic/shareicon.png) no-repeat left;
+    background-size: 25px;
+}
+.share-iconR{
+	background: url(../pic/shareicon.png) no-repeat 98% 0% ;
+    background-size: 25px;
+}
+.del-icon{
+	width: 20px;
+	height: 20px;
+	background: url(../pic/delicon.png) no-repeat right;
+    background-size: 20px;
+}
+/*-------------------------------------------2016-3-1 add -------------------------*/
+.Bradius0{
+	border-radius:0!important;
+	-moz-border-radius:0!important;
+	-webkit-border-radius:0!important;
+}
+.height25P{
+	height: 25px;
+}
+/*-------------------------------------------2016-3-29 add -------------------------*/
+select {
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border:none;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand{
+    display: none;
+}

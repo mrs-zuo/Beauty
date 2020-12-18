@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".TodayServiceListActivity" >
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+        <TextView
+            android:id="@+id/today_service_list_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/today_service_tab_title" />
+        <TextView 
+        	android:id="@+id/today_service_page_info_text"
+         	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size"
+           android:layout_toRightOf="@id/today_service_list_title_text"/>
+        <ImageView
+            android:id="@+id/today_service_search_new_btn"
+            style="@style/activity_title_button_attrs"
+            android:background="@drawable/customer_advanced_filter_icon"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+        <com.GlamourPromise.Beauty.view.XListView
+            android:id="@+id/today_service_list_view"
+            style="@style/activity_content_listview_attrs" />
+    </RelativeLayout>
+</LinearLayout>

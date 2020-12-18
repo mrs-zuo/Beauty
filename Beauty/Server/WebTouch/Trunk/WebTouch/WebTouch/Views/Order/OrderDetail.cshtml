@@ -1,0 +1,433 @@
+﻿@{
+    ViewBag.Title = "订单详情";
+    Model.View_Model.GetOrderDetail_Model model = Model;
+    List<Model.View_Model.Group> listComplete = ViewBag.CompleteList;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+    //else
+    //{
+    //    Response.Redirect("/Login/Login?err=1");
+    //}
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+    
+}
+
+
+@if (model != null)
+{
+    <div class="wrapper">
+        <div class="whiteBkg width100">
+            <div class="width90 blockC">
+                <ul class="width100 rowUl15">
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">NO.@(model.OrderNumber)</div>
+                        <div class="blackTex fr">@(model.OrderTime)</div>
+                    </li>
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">@(model.BranchName)</div>
+                        <div class="grayTex fr"><span class="blackTex MLR5">@(model.ResponsiblePersonName)</span></div>
+                    </li>
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">@(model.ProductName)</div>
+                        <div class="grayTex fr">*@(model.Quantity)</div>
+                    </li>
+                    @if (model.ProductType == 0)
+                    {
+                        <li class="borderB clearfix">
+                            <div class="blackTex fl">有效期</div>
+                            @if (model.ExpirationTime > DateTime.Now.ToLocalTime())
+                            {
+                                <div class="grayTex fr">@(model.ExpirationTime.ToString("yyyy-MM-dd"))</div>
+                            }
+                            else
+                            {
+                                <div class="redTex fr">@(model.ExpirationTime.ToString("yyyy-MM-dd"))</div>
+                            }
+                        </li>
+                    }
+                    <li class="borderB clearfix">
+                        <div class="blackTex fl">总价</div>
+                        <div class="grayTex fr">@(CurrencySymbol)@(model.TotalSalePrice.ToString("0.00"))</div>
+                    </li>
+                    @if (model.PaymentStatus == 2)
+                    {
+                        <li class="clearfix">
+                            <div class="blackTex fl">未付余额</div>
+                            <div class="grayTex fr">@(CurrencySymbol)@(model.UnPaidPrice.ToString("0.00"))</div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="part width100 whiteBkg MT10">
+            <div class="width90 blockC">
+                <ul class="width100 rowUl">
+                    <li class="">
+                        @{
+                    string targetUrl = "";
+                    if (model.PaymentStatus != 1)
+                    {
+                        targetUrl = "/Payment/PaymentDetail?oId=" + (model.OrderID);
+                    }
+                        }
+                        <a href="@(targetUrl)">
+                            <ol class="width100">
+                                <li class="clearfix positionR">
+                                    <div class="clearfix">
+                                        <div class="fl width30">
+                                            <h4 class="blackTex font16">订单状态</h4>
+                                        </div>
+                                        <div class="grayTex fr width65">
+                                            <div class="grayTex fr">
+                                                @{
+                    switch (model.Status)
+                    {
+                        case 1:
+                                                    <span>未完成</span>
+                            break;
+                        case 2:
+                                                    <span>已完成</span>
+                            break;
+                        case 3:
+                                                    <span>已取消</span>
+                            break;
+                        case 4:
+                                                    <span>已终止</span>
+                            break;
+                    }
+                                                }
+                                                <span class="MLR5">|</span>@{
+                    switch (model.PaymentStatus)
+                    {
+                        case 1:
+                                                    <span>未支付</span>
+                            break;
+                        case 2:
+                                                    <span>部分付</span>
+                            break;
+                        case 3:
+                                                    <span>已支付</span>
+                            break;
+                        case 4:
+                                                    <span>已退款</span>
+                            break;
+                        case 5:
+                                                    <span>免支付</span>
+                            break;
+                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @{
+                    if (model.PaymentStatus != 1)
+                    { 
+                                        <div class="clearfix PT15">
+                                            <div class="blackTex fl">支付详情</div>
+                                            <div class="fr">
+                                                <img src="/pic/rightArrow.png" height="16" />
+                                            </div>
+                                        </div>
+                    }
+                                    }
+
+                                </li>
+                            </ol>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        @if (model.ProductType == 0)
+        {
+            <div class="part width100 MB10">
+                <div class="whiteBkg width100 MT10 blockC">
+                    <div class="blockC width90">
+                        <ul class="width100 rowUl15">
+                            <li class="borderB clearfix">
+                                <div class="clearfix">
+                                    <div class="blackTex fl">已完成@(model.FinishedCount)次/@(model.TotalCount == 0 ? "无限" : "共" + model.TotalCount)次</div>
+                                    @{
+            if (model.TotalCount != 0)
+            {
+                                        <div class="grayTex fr">剩余@(model.SurplusCount)次</div>
+            }
+                                    }
+
+                                </div>
+                            </li>
+
+                            @if (model.GroupList != null && model.GroupList.Count > 0)
+                            {
+                                foreach (Model.View_Model.Group item in model.GroupList)
+                                {
+                                   
+                                <li class="borderB clearfix">
+                                    <div class="clearfix">
+                                        <div class="blackTex fl"><span class="color1 MR5"></span>@(item.StartTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                                    </div>
+                                    <div class="PT15 clearfix">
+                                        <div class="blackTex fl ML25">服务顾问</div>
+                                        @*<div class="fr">
+                                            <img src="/pic/rightArrow.png" height="16">
+                                        </div>*@
+                                        <div class="grayTex fr MR5">@(item.ServicePicName)</div>
+                                    </div>
+
+                                    @if (item.TreatmentList != null && item.TreatmentList.Count > 0)
+                                    {
+
+                                        foreach (var itemTM in item.TreatmentList)
+                                        {        
+                                        <div class="PT15 clearfix">
+                                            @if (itemTM.IsDesignated)
+                                            {
+												<div class="fl width20P height20P selConsultantIcon"></div>
+                                            }
+
+                                            @{
+                                            if (string.IsNullOrWhiteSpace(itemTM.SubServiceName))
+                                            {
+                                                itemTM.SubServiceName = "服务操作";
+                                            }   
+                                            }
+
+                                            <div class="blackTex fl ML5">@(itemTM.SubServiceName)</div>
+                                            @*<div class="fr">
+                                                <img src="/pic/rightArrow.png" height="16">
+                                            </div>*@
+                                            <div class="grayTex fr MR5">@(itemTM.ExecutorName)</div>
+                                        </div>
+                                        }
+                                    }
+                                </li>
+                                }
+
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+                            if (model.ScdlList != null && model.ScdlList.Count > 0)
+                            {
+                               
+            <div class="part width100  MB10">
+                <div class="bkgColor1 positionR">
+                    <h4 class="blockC width90 whiteTex PTB15 term">已确认预约</h4>
+                    <span class="positionA rightIconArrow term">
+                        <img src="/pic/upArrow.png" height="40"></span>
+                </div>
+                <div class="whiteBkg width100 blockC subCon subCon1 content">
+                    <div class="blockC width90">
+                        <ul class="width100 rowUl15">
+                            @foreach (Model.View_Model.TaskSimpleList_Model item in model.ScdlList)
+                            {
+                                <li class="borderB clearfix">
+                                    <a href="/Appointment/AppointmentDetail?a=@(item.TaskID)">
+                                        <div class="clearfix">
+                                            <div class="blackTex fl"><span class="color1 MR5"></span>@(item.ResponsiblePersonName)</div>
+                                            <div class="fr">
+                                                <img src="/pic/rightArrow.png" height="16">
+                                            </div>
+                                            <div class="grayTex fr MR5">@(item.TaskScdlStartTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                            }
+
+
+                            if ((listComplete != null && listComplete.Count > 0) || model.PastCount > 0)
+                            {
+            <div class="part width100  MB10">
+                <div class="bkgColor1 positionR">
+                    <h4 class="blockC width90 whiteTex PTB15 term">已完成服务记录</h4>
+                    <span class="positionA rightIconArrow term">
+                        <img src="/pic/upArrow.png" height="40"></span>
+                </div>
+                <div class="whiteBkg width100 blockC subCon subCon1 content">
+                    <div class="blockC width90">
+                        <ul class="width100 rowUl15">
+                            @if (model.PastCount > 0)
+                            {
+                                <li class="borderB clearfix">
+                                    <div class="clearfix">
+                                        <div class="blackTex fl">过去完成@(model.PastCount)次</div>
+                                    </div>
+                                </li>
+                            }
+
+                            @{
+                            if (listComplete != null && listComplete.Count > 0)
+                            {
+                                int i = 0;
+                                foreach (Model.View_Model.Group item in listComplete)
+                                {
+                                    i++;
+                                <li class="borderB clearfix">
+                                    <a href="/Treatment/ServiceRecord?t=1&gn=@(item.GroupNo)">
+                                        <div class="clearfix">
+                                            <div class="blackTex fl"><span class="color1 MR5">@(model.PastCount + i).</span>@(item.StartTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                                        </div>
+                                        <div class="clearfix PT15">
+                                            @*<div class="fl">
+                                                                <img src="/pic/serviceResponsibleInco.png" height="20">
+                                                            </div>*@
+                                            <div class="blackTex fl ML5">服务顾问</div>
+                                            <div class="fr">
+                                                <img src="/pic/rightArrow.png" height="16">
+                                            </div>
+                                            <div class="grayTex fr MR5">@(item.ServicePicName)</div>
+                                        </div>
+                                    </a>
+                                    @if (item.TreatmentList != null && item.TreatmentList.Count > 0)
+                                    {
+
+                                        foreach (var itemTM in item.TreatmentList)
+                                        {     
+                                        <a href="/Treatment/ServiceRecord?t=2&tId=@(itemTM.TreatmentID)">
+                                            <div class="clearfix PT15">
+                                                @if (itemTM.IsDesignated)
+                                                {
+                                                    <div class="fl">
+                                                        <img src="/pic/serviceResponsibleInco.png" height="20">
+                                                    </div>
+                                                }
+                                                @{
+                                                if (string.IsNullOrWhiteSpace(itemTM.SubServiceName))
+                                                {
+                                                    itemTM.SubServiceName = "服务操作";
+                                                }
+                                                }
+                                                <div class="blackTex fl ML40">@(itemTM.SubServiceName)</div>
+                                                <div class="fr">
+                                                    <img src="/pic/rightArrow.png" height="16">
+                                                </div>
+                                                <div class="grayTex fr MR5">@(itemTM.ExecutorName)</div>
+                                            </div>
+                                        </a>
+                                        }
+                                    }
+                                </li>
+                                }
+                            }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                            }
+
+        }
+        else if (model.ProductType == 1)
+        {
+            <div class="part width100 MB10">
+                <div class="whiteBkg width100 MT10 blockC">
+                    <div class="blockC width90">
+                        <ul class="width100 rowUl15">
+                            <li class="borderB clearfix">
+                                <div class="clearfix">
+                                    <div class="blackTex fl">已交@(model.FinishedCount)件/共@(model.TotalCount)件</div>
+                                    <div class="grayTex fr">剩余@(model.SurplusCount)件</div>
+                                </div>
+                            </li>
+                            @if (model.GroupList != null && model.GroupList.Count > 0)
+                            {
+                                foreach (Model.View_Model.Group item in model.GroupList)
+                                {
+                                <li class="clearfix">
+                                    <div class="clearfix">
+                                        <div class="blackTex fl">
+                                            <div class="">@(item.StartTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                                            <div class="blackTex fl MT15">本次交付数量</div>
+                                        </div>
+                                        <div class="grayTex fr">
+                                            <div class="MT10">@(item.Quantity)件</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+                            if (listComplete != null && listComplete.Count > 0)
+                            {
+                                int i = 1;
+            <div class="part width100">
+                <div class="bkgColor1 positionR">
+                    <h4 class="blockC width90 whiteTex PTB15 term">已交付商品记录</h4>
+                    <span class="positionA rightIconArrow term">
+                        <img src="/pic/upArrow.png" height="40"></span>
+                </div>
+                <div class="whiteBkg width100 blockC subCon subCon1 content">
+                    <div class="blockC width90">
+                        <ul class="width100 rowUl15">
+                            @foreach (Model.View_Model.Group item in listComplete)
+                            {
+                                <li class="borderB clearfix">
+                                    <div class="clearfix">
+                                        <div class="blackTex fl"><span class="color1 MR5">@(i).</span>@(item.StartTime.ToString("yyyy-MM-dd HH:mm"))</div>
+                                        <div class="grayTex fr">
+                                            @{
+                                string strDeliStatus = "";
+                                switch (item.Status)
+                                {
+                                    case 1:
+                                        strDeliStatus = "进行中";
+                                        break;
+                                    case 2:
+                                        strDeliStatus = "已完成";
+                                        break;
+                                    case 3:
+                                        strDeliStatus = "已取消";
+                                        break;
+                                    case 4:
+                                        strDeliStatus = "已终止";
+                                        break;
+                                    case 5:
+                                        strDeliStatus = "待确认";
+                                        break;
+                                }
+
+                                                @strDeliStatus
+                                            }<span class="MLR5">|</span>@(item.Quantity)件
+                                        </div>
+                                    </div>
+                                    <div class="clearfix PT15">
+                                        <div class="blackTex fl">服务顾问</div>
+                                        <div class="grayTex fr">@(item.ServicePicName)</div>
+                                    </div>
+                                </li>
+                                i++;
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                            }
+        }
+    </div>
+    <script>
+        $(".term").on("click", function () {
+            $(this).parent().next(".content").toggle();
+        });
+    </script>
+}

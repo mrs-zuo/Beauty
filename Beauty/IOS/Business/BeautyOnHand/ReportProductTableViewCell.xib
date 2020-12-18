@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportProductCell" id="KGk-i7-Jjw" customClass="ReportProductTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3p6-5e-hlG">
+                        <rect key="frame" x="5" y="11" width="39" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="beg-UF-LZB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALH-Bt-Z1y">
+                        <rect key="frame" x="52" y="11" width="199" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="USR-aE-YO8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1000次" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1n-OU-NUx">
+                        <rect key="frame" x="256" y="11" width="56" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ufA-wK-wag"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="i1n-OU-NUx" firstAttribute="leading" secondItem="ALH-Bt-Z1y" secondAttribute="trailing" constant="5" id="1wU-aj-zmk"/>
+                    <constraint firstItem="ALH-Bt-Z1y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="7JG-E0-kvD"/>
+                    <constraint firstItem="3p6-5e-hlG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Fnw-8H-75w"/>
+                    <constraint firstItem="3p6-5e-hlG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="GzC-1b-UoV"/>
+                    <constraint firstItem="i1n-OU-NUx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Oio-Y9-11p"/>
+                    <constraint firstItem="ALH-Bt-Z1y" firstAttribute="leading" secondItem="3p6-5e-hlG" secondAttribute="trailing" constant="8" id="YWc-92-Tea"/>
+                    <constraint firstItem="i1n-OU-NUx" firstAttribute="leading" secondItem="ALH-Bt-Z1y" secondAttribute="trailing" constant="5" id="kgc-yB-C06"/>
+                    <constraint firstAttribute="trailing" secondItem="i1n-OU-NUx" secondAttribute="trailing" constant="8" id="lIp-bp-bnc"/>
+                    <constraint firstItem="ALH-Bt-Z1y" firstAttribute="leading" secondItem="3p6-5e-hlG" secondAttribute="trailing" constant="8" id="qy4-TQ-DFd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLab" destination="i1n-OU-NUx" id="gBu-fD-PYR"/>
+                <outlet property="nameLab" destination="ALH-Bt-Z1y" id="JLw-Fb-EZm"/>
+                <outlet property="numLab" destination="3p6-5e-hlG" id="3ie-wg-tA6"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

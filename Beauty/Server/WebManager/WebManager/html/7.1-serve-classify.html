@@ -1,0 +1,653 @@
+﻿<!DOCTYPE html>
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>添加服务分类</title>
+
+    <meta name="description" content="美丽约定-后台系统" />
+	<meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<!--跟上面meta可进行切换主要对手机进行可放大name="viewport" content="width=device-width, initial-scale=1.0"-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/img/favicon.png" rel="shortcut icon">
+
+    <!--Basic Styles-->
+    <link href="/assets/css/bs.min.css" rel="stylesheet"/>
+	<link href="/assets/css/bs.css" rel="stylesheet"/>
+    <link id="bs-rtl-link" href="" rel="stylesheet"/>
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/assets/css/weather-icons.min.css" rel="stylesheet"/>	
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="/assets/css/beyond.min.css" rel="stylesheet"/>
+    <link href="/assets/css/demo.min.css" rel="stylesheet"/>
+    <link href="/assets/css/typicons.min.css" rel="stylesheet"/>
+    <link href="/assets/css/animate.min.css" rel="stylesheet"/>
+    <link id="skin-link" href="" rel="stylesheet"/>
+
+    <!--皮肤脚本: 以上有加ID的LINK的是加载皮肤的样式,以下是皮肤的脚本-->
+    <script src="/assets/js/skins.min.js"></script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!--[if lte IE 9]>
+	<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，美丽约定-后台系统 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+	  或直载进入<a href="http://www.firefox.com.cn/" target="_blank">火狐官网</a>下载浏览器以获得更好的体验！</p>
+	<![endif]-->
+    <!-- 加载区 -->
+    <div class="loading-container">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!-- /加载区 -->
+    <!-- 顶部导航 -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <img src="/assets/img/logo.png" alt="" />
+                        </small>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <!-- 账户区域 --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+						<ul class="account-area">
+                            <li>
+                                <a class=" dropdown-toggle" data-toggle="dropdown" title="帮助信息" href="#">
+                                    <i class="icon fa fa-warning"></i>
+                                </a>
+                                <!--帮助下拉(这一块是插件自带的先预留可在以后添加这样的功能中使用，如果不使用可以进行删除或注释)-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-notifications">
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <div class="notification-icon">
+                                                    <i class="fa fa-volume-down bg-themeprimary white"></i>
+                                                </div>
+                                                <div class="notification-body">
+                                                    <span class="title">一般通知信息标题</span>
+                                                    <span class="description">一般信息简单描述</span>
+                                                </div>
+                                                <div class="notification-extra">
+                                                    <i class="fa fa-clock-o themeprimary"></i>
+                                                    <span class="description">下午01:00</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <div class="notification-icon">
+                                                    <i class="fa fa-volume-down bg-darkorange white"></i>
+                                                </div>
+                                                <div class="notification-body">
+                                                    <span class="title">重要通知信息标题</span>
+                                                    <span class="description">紧急信息简单描述</span>
+                                                </div>
+                                                <div class="notification-extra">
+                                                    <i class="fa fa-clock-o darkorange"></i>
+													<span class="description">下午01:50</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-footer ">
+                                        <span>
+                                            2015-03-24
+                                        </span>
+                                        <span class="pull-right">
+                                            10°c
+                                            <i class="wi wi-cloudy"></i>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <!--/帮助下拉-->
+                            </li>
+                            <li>
+                                <a class="wave in dropdown-toggle" data-toggle="dropdown" title="通知" href="#">
+                                    <i class="icon fa fa-envelope"></i>
+                                    <span class="badge">3</span>
+                                </a>
+                                <!--通知下拉(这一块是插件自带的先预留可在以后添加这样的功能中使用，如果不使用可以进行删除或注释)-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
+                                    <li>
+                                        <a href="#">
+                                            <img src="assets/img/avatars/divyia.jpg" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    lisa
+                                                </span>
+                                                <span class="message-time">
+                                                    2分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    Hi,你好！这里是我发送给你的主标题。
+                                                </span>
+                                                <span class="message-body">
+                                                    这里是发送给你的关于这条信息的内容部分。
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="assets/img/avatars/bing.png" class="message-avatar" alt="Microsoft Bing">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    pudding
+                                                </span>
+                                                <span class="message-time">
+                                                    5分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    Hi,你好！这里是我发送给你的主标题。
+                                                </span>
+                                                <span class="message-body">
+                                                    这里是发送给你的关于这条信息的内容部分。
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="assets/img/avatars/adam-jansen.jpg" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    kevin
+                                                </span>
+                                                <span class="message-time">
+                                                    33分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    Hi,你好！这里是我发送给你的主标题。
+                                                </span>
+                                                <span class="message-body">
+                                                    这里是发送给你的关于这条信息的内容部分。
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/通知下拉-->
+                            </li>
+
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" title="任务" href="#">
+                                    <i class="icon fa fa-tasks"></i>
+                                    <span class="badge">4</span>
+                                </a>
+                                <!--任务下拉(这一块是插件自带的先预留可在以后添加这样的功能中使用，如果不使用可以进行删除或注释)-->
+                                <ul class="pull-right dropdown-menu dropdown-tasks dropdown-arrow ">
+                                    <li class="dropdown-header bordered-darkorange">
+                                        <i class="fa fa-tasks"></i>
+                                        4 任务进展
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">账号个数</span>
+                                                <span class="pull-right">65%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:65%" class="progress-bar"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">剖面数据</span>
+                                                <span class="pull-right">35%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:35%" class="progress-bar progress-bar-success"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">更新的数据</span>
+                                                <span class="pull-right">75%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:75%" class="progress-bar progress-bar-darkorange"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">新增联络人</span>
+                                                <span class="pull-right">10%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:10%" class="progress-bar progress-bar-warning"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-footer">
+                                        <a href="#">
+                                            查看所有任务
+                                        </a>
+                                        <button class="btn btn-xs btn-default shiny darkorange icon-only pull-right"><i class="fa fa-check"></i></button>
+                                    </li>
+                                </ul>
+                                <!--/任务下拉-->
+                            </li>
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="assets/img/avatars/adam-jansen.jpg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>zheng chang yi</span></span></h2>
+                                    </section>
+                                </a>
+                                <!--登录区域下拉-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username"><a>zheng chang yi</a></li>
+                                    <li class="email"><a>137766050@qq.com</a></li>
+                                    <!--头像区域-->
+                                    <li>
+                                        <div class="avatar-area">
+                                            <img src="assets/img/avatars/adam-jansen.jpg" class="avatar">
+                                            <span class="caption">更改头像</span>
+                                        </div>
+                                    </li>
+                                    <!--/头像区域-->
+									<!--主题选择器-->
+                                    <li class="edit">
+                                        <a class="pull-left">选择主题</a>
+                                        <a href="#" class="pull-right"><i class="fa fa-cog"></i>设置</a>
+                                    </li>                                    
+                                    <li class="theme-area">
+                                        <ul class="colorpicker" id="skin-changer">
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#5DB2FF;" rel="assets/css/skins/blue.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#2dc3e8;" rel="assets/css/skins/azure.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#03B3B2;" rel="assets/css/skins/teal.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#53a93f;" rel="assets/css/skins/green.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#FF8F32;" rel="assets/css/skins/orange.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#cc324b;" rel="assets/css/skins/pink.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#AC193D;" rel="assets/css/skins/darkred.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#8C0095;" rel="assets/css/skins/purple.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#0072C6;" rel="assets/css/skins/darkblue.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#585858;" rel="assets/css/skins/gray.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#474544;" rel="assets/css/skins/black.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#001940;" rel="assets/css/skins/deepblue.min.css"></a></li>
+                                        </ul>
+                                    </li>
+                                    <!--/主题选择器-->
+                                    <li class="dropdown-footer">									 
+                                        <a href="login.html">
+										<i class="fa fa-power-off"></i>
+                                            退出登录
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/登录区域下拉-->
+                            </li>
+                            <!-- /帐户区域 -->
+                            <!--提示:请注意,必须登录后才会显示账户列表.和设置主题的DIV元素之间没有影响-->
+                            <!-- 设置 -->
+                        </ul><div class="setting">
+                            <a id="btn-setting" title="设置" href="#">
+                                <i class="icon glyphicon glyphicon-cog"></i>
+                            </a>
+                        </div><div class="setting-container">
+                            <label>
+                                <input type="checkbox" id="checkbox_fixednavbar">
+                                <span class="text">固定导航条</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedsidebar">
+                                <span class="text">固定侧栏</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedbreadcrumbs">
+                                <span class="text">固定的面包屑</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedheader">
+                                <span class="text">固定头</span>
+                            </label>
+                        </div>
+						<!-- 设置 -->
+                    </div>
+                </div>
+                <!-- /账户区域 --->
+            </div>
+        </div>
+    </div>
+    <!-- /顶部导航 -->
+    <!-- 主要容器 -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- 侧边导航 -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+                <div class="sidebar-header-wrapper">
+                    <input type="text" class="searchinput" />
+                    <i class="searchicon fa fa-search"></i>
+                    <div class="searchhelper">输入搜索内容</div>
+                </div>
+                <!-- /Page Sidebar Header -->
+                                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <!--商家信息-->
+                    <li class="active">
+                        <a href="1.0-company.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text">商家信息</span>
+                        </a>
+                    </li>
+                    <!--公告-->
+                    <li>
+                        <a href="2.0-notice.html">
+                            <i class="menu-icon fa fa-volume-up"></i>
+                            <span class="menu-text">公告</span>
+                        </a>
+                    </li>
+                    <!--新闻-->
+                    <li>
+                        <a href="3.0-news.html">
+                            <i class="menu-icon fa fa-video-camera"></i>
+                            <span class="menu-text">新闻</span>
+                        </a>
+                    </li>
+					<!--服务与商品并子级-->
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-tags"></i>
+                            <span class="menu-text">促销与折扣分类</span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="4.0-sales.html">
+                                    <span class="menu-text">促销</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="5.0-discount.html">
+                                    <span class="menu-text">折扣分类</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+					
+                    <!--市场营销-->
+                    <li>
+                        <a href="6.0-bazaar.html" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                            <span class="menu-text">市场营销</span>
+                        </a>
+                    </li>					
+                    <!--服务与商品并子级-->
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-heart"></i>
+                            <span class="menu-text">服务与商品</span>
+
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="7.0-serve-classify.html">
+                                    <span class="menu-text">服务分类</span>
+                                </a>
+                            </li>
+							<li>
+                                <a href="8.0-serve.html">
+                                    <span class="menu-text">服务</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="9.0-sub-serve.html">
+                                    <span class="menu-text">子服务</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="10.0-goods-classify.html">
+                                    <span class="menu-text">商品分类</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="11.0-goods.html">
+                                    <span class="menu-text">商品</span>
+                                </a>
+                            </li>						
+                        </ul>
+                    </li>
+                    <!--账户管理并子级-->
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon fa fa-users"></i>
+                            <span class="menu-text">账户管理</span>
+
+                            <i class="menu-expand"></i>
+                        </a>						
+                        <ul class="submenu">
+                            <li>
+                                <a href="12.0-account.html">
+                                    <span class="menu-text">账户</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="13.0-account-tier.html">
+                                    <span class="menu-text">账户层级</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="14.0-role-power.html">
+                                    <span class="menu-text">角色权限</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="15.0-account-client.html">
+                                    <span class="menu-text">账户顾客关系</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="16.0-vip-Level.html">
+                                    <span class="menu-text">会员等级政策</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--专业信息-->
+                    <li>
+                        <a href="17.0-special-info.html" class="menu-dropdown">
+                            <i class="menu-icon fa fa-envelope"></i>
+                            <span class="menu-text">专业信息</span>
+                        </a>
+                    </li>
+                    <!--销售步骤-->
+                    <li>
+                        <a href="18.0-sell-step.html">
+                            <i class="menu-icon fa fa-sort-numeric-desc"></i>
+                            <span class="menu-text">销售步骤</span>
+                        </a>
+                    </li>
+                    <!--数据下载-->
+                    <li>
+                        <a href="19.0-data-down.html" class="menu-dropdown">
+                            <i class="menu-icon fa fa-cloud-download"></i>
+                            <span class="menu-text">数据下载</span>
+                        </a>
+                    </li>
+					<!--订单高级编辑-->
+					<li>
+                        <a href="20.0-orders-edit.html" class="menu-dropdown">
+                            <i class="menu-icon fa fa-file-text"></i>
+                            <span class="menu-text">订单高级编辑</span>
+                        </a>
+                    </li>
+				</ul>
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /侧边导航 -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page 包碎屑 -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li><a href="7.0-serve-classify.html">服务分类</a></li>
+						<li class="active">添加服务分类</li>
+                    </ul>
+                </div>
+                <!-- /Page 包碎屑 -->
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    <div class="header-title">
+                        <h1>添加服务分类</h1>
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+				
+                <!-- Page Body -->
+                <div class="page-body">				
+				
+				<div class="widget">
+				<div class="form-horizontal form-bordered widget-body">
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="inputPassword3">所属商品分类</label>
+						<div class="col-md-4">
+							<select style="width:100%;">
+								<option selected="selected" value="商品分类" />商品分类
+								<option value="商品分类1" />商品分类1
+								<option value="商品分类2" />商品分类2
+								<option value="商品分类3" />商品分类3
+								<option value="商品分类4" />商品分类4
+								<option value="商品分类5" />商品分类5
+								<option value="商品分类6" />商品分类6
+								<option value="商品分类7" />商品分类7
+								<option value="商品分类8" />商品分类8
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+								<option value="商品分类9" />商品分类9
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="inputPassword3">商品分类名称</label>
+						<div class="col-sm-4">
+							<input class="form-control" placeholder="输入门店名称" type="text" data-bv-field="fullName" name="fullName">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button class="btn btn-primary" type="submit">确 定</button>
+						</div>
+					</div>
+					
+				</div>
+				</div>
+				</div>
+                <!-- /Page Body -->
+				
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- 主要容器 -->
+
+    </div>
+
+    
+	<!--基础脚本-->
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/bs.min.js"></script>
+
+    <!--主题脚本-->
+    <script src="/assets/js/beyond.min.js"></script>
+	<!--时间选择器脚本-->
+	<script src="/assets/js/datetime/bs-datepicker.js"></script>
+	
+	
+</body>
+<!--  /Body -->
+</html>

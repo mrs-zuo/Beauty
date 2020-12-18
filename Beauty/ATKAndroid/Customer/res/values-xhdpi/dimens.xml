@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">30dp</dimen>
+    <dimen name="activity_vertical_margin">26dp</dimen>
+    <dimen name="shadow_width"> 20dp</dimen>
+    <dimen name="slidingmenu_offset"> 400dp</dimen>
+    <dimen name="slidingmenu_width"> 190dp</dimen>
+    <dimen name="width_400dp"> 300dp</dimen>
+    <dimen name="width_300dp"> 260dp</dimen>
+    <dimen name="width_140dp"> 100dp</dimen>
+    <dimen name="width_160dp"> 120dp</dimen>
+    <dimen name="width_ecard_history_type"> 220dp</dimen>
+    <dimen name="width_commodity_name"> 230dp</dimen>
+    <dimen name="width_120dp"> 75dp</dimen>
+    <dimen name="width_cart_commodity_name"> 240dp</dimen>
+    <dimen name="margin_right"> 10dp</dimen>
+    <dimen name="margin_15dp"> 9.4dp</dimen>
+    <dimen name="margin_top"> 5dp</dimen>
+    <dimen name="padding_5dp"> 3dp</dimen>
+    <dimen name="padding_4dp"> 4dp</dimen>
+    <dimen name="padding_10dp"> 10dp</dimen>
+    <dimen name="padding_menu"> 5dp</dimen>
+    <dimen name="layout_padding"> 10dp</dimen>
+    <dimen name="head_iamge_80dp"> 80dp</dimen>
+    <dimen name="commodity_iamge"> 80dp</dimen>
+    <dimen name="list_image"> 50dp</dimen>
+    <!--大标题的文字的大小-->
+    <dimen name="text_size_headline">16sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    
+    <dimen name="map_width">350dp</dimen>
+    <dimen name="home_page_margin_top">370dp</dimen>
+    <dimen name="input_authentication_code_margin_left"> 22dp</dimen>
+    <dimen name="get_authentication_code_margin_left"> 24dp</dimen>
+    <dimen name="recommended_commodity_icon_margin_left"> -5dp</dimen>
+    <dimen name="recommended_commodity_icon_margin_top"> 8dp</dimen>
+    <dimen name="new_commodity_icon_margin_top"> 20dp</dimen>
+    <dimen name="commodity_image_size"> 120dp</dimen >
+    <!-- ecard页面的值 -->
+    <dimen name="ecard_layout_company_name_text_size"> 20sp</dimen>
+    <dimen name="ecard_layout_ecard_number_size"> 16sp</dimen>
+    <dimen name="ecard_layout_company_name_margin_left"> 30dp</dimen>
+    <dimen name="ecard_layout_company_name_margin_top"> 35dp</dimen>
+    <dimen name="ecard_layout_ecard_number_prompt_margin_left">65dp</dimen>
+    <dimen name="ecard_layout_ecard_number_prompt_margin_top">145dp</dimen>
+    <dimen name="ecard_layout_head_image_size">40dp</dimen>
+    <dimen name="ecard_layout_head_image_margin">46dp</dimen>
+    <dimen name="ecard_layout_framelayout_margin_left">50dp</dimen>
+    <!-- 飞语发送信息页面-->
+    <dimen name="chat_message_chat_bottom_layout_height">50dp</dimen>
+    <dimen name="contact_account_name_max_width">120dp</dimen>
+    <dimen name="last_message_content_max_width">350dp</dimen>
+    <dimen name="sendmessage_edit_layout_width">240dp</dimen >
+    <!-- 订单页面 -->
+    <dimen name="order_classify_count_text_size">12dp</dimen>
+    <dimen name="order_responsible_person_name_max_width">150dp</dimen>
+    <dimen name="account_department_max_width">120dp</dimen>
+    <dimen name="account_title_max_width">120dp</dimen>
+    <!-- 服务订单详情 -->
+    <dimen name="executor_name_margin_right">36dip</dimen>
+    <dimen name="executor_name_max_width">80dp</dimen>
+    <!-- 商品详情 -->
+    <dimen name="commodity_image_height">400dp</dimen>
+    <dimen name="commodity_image_width">600dp</dimen>
+    <!-- cartList -->
+    <dimen name="commodity_thumbnail_size"> 50dp</dimen >
+    <dimen name="edit_commodity_count_layout_width"> 64dp</dimen >
+    <dimen name="commodity_name_textSize"> 16sp</dimen >
+    <dimen name="edit_commodity_count_textSize"> 14sp</dimen >
+    <dimen name="commodity_total_sale_price_textSize"> 14sp</dimen >
+    <dimen name="commodity_total_price_textSize"> 12sp</dimen >
+     <dimen name="cart_commodity_total_price_margintop"> 11dp</dimen >
+    <dimen name="cart_commodity_total_sale_price_margintop"> 10dp</dimen >
+    <!-- 待确认页面 -->
+    <dimen name="unconfirm_list_order_responsible_person_name_max_width">80dp</dimen>
+    <!-- 自助付款 -->
+    <dimen name="order_pay_list_order_responsible_person_name_max_width">150dp</dimen>
+</resources>

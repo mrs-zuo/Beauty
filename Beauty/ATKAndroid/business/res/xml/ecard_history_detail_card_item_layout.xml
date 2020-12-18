@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/activity_content_table_attrs" >
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/balance_card_name_text"
+            style="@style/activity_content_table_row_title_attrs"
+            />
+        <TextView
+            android:id="@+id/balance_card_amount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/ecard_balance" />
+        <TextView
+            android:id="@+id/balance_card_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+</TableLayout>

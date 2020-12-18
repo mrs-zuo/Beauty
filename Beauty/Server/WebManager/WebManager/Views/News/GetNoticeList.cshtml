@@ -1,0 +1,118 @@
+﻿@{
+    List<Model.Table_Model.Notice_Model> list = Model;
+    int flag = ViewBag.Flag;
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 2)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="#">首页</a>
+                </li>
+                <li class="active">公告列表</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>公告列表</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="form-group navbar-form">
+                <div class="btn-group select-div">
+                    <div class="select-titel">选择状态:</div>
+                    <select class="select-control" onchange="selNews(0)" id="sel_flag">
+                        <option value="-1">全部</option>
+                        <option value="0">已结束</option>
+                        <option value="1">进行中</option>
+                        <option value="2">未开始</option>
+                    </select>
+                </div>
+                <a href="/News/EditNotice" class="btn btn-default"><i class="fa fa-plus-square"></i>添加公告</a>
+            </div>
+            <div class="widget-body no-padding">
+            <table class="table table-hover table-striped ">
+                <colgroup class="row">
+                    <col class="col-xs-1">
+                    <col class="col-xs-6">
+                    <col class="col-xs-3">
+                    <col class="col-xs-2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>标题</th>
+                        <th>生效时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (list != null && list.Count > 0)
+                        {
+                            int index = 0;
+                            foreach (Model.Table_Model.Notice_Model item in list)
+                            {
+                                index++;
+                        <tr>
+                            <td>@(index)</td>
+                            <td>
+                                <div class="over-text">@(item.NoticeTitle)</div>
+                            </td>
+                            <td>@(item.StartDate.ToString("yyyy-MM-dd"))~@(item.EndDate.ToString("yyyy-MM-dd"))</td>
+                            <td>
+                                <a class="btn btn-default btn-sm" href="/News/EditNotice?id=@(item.ID)"><i class="fa fa-edit"></i>编辑</a>
+                                <a class="btn btn-default btn-sm" onclick="delNews(@(item.ID),0)"><i class="fa fa-trash-o"></i>删除</a>
+                            </td>
+                        </tr>
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+            </div>
+            <br>
+            @*<nav>
+                <ul class="pagination">
+                    <li class="disabled"><a aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>*@
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+	<!--下午单选选 Scripts-->
+<script src="/Script/News.js"></script>

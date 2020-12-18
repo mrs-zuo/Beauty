@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30281631-BC7C-46C2-9DED-3512250C601F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAPI.BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.7.2.0, Culture=neutral, PublicKeyToken=00725b1ceb58d0a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="HS.Framework.Common, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\HS.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account_BLL.cs" />
+    <Compile Include="Appointment_BLL.cs" />
+    <Compile Include="Benefit_BLL.cs" />
+    <Compile Include="Branch_BLL.cs" />
+    <Compile Include="Card_BLL.cs" />
+    <Compile Include="Cart_BLL.cs" />
+    <Compile Include="Category_BLL.cs" />
+    <Compile Include="Commission_BLL.cs" />
+    <Compile Include="CommoditySupplier_BLL.cs" />
+    <Compile Include="Commodity_BLL.cs" />
+    <Compile Include="Company_BLL.cs" />
+    <Compile Include="CustomerSource_BLL.cs" />
+    <Compile Include="Customer\Category_CBLL.cs" />
+    <Compile Include="Customer\Customer_CBLL.cs" />
+    <Compile Include="Customer\ECard_CBLL.cs" />
+    <Compile Include="Customer\Login_CBLL.cs" />
+    <Compile Include="Customer\Order_CBLL.cs" />
+    <Compile Include="Customer\Payment_CBLL.cs" />
+    <Compile Include="Customer\Promotion_CBLL.cs" />
+    <Compile Include="Customer\Task_CBLL.cs" />
+    <Compile Include="Customer_BLL.cs" />
+    <Compile Include="ECard_BLL.cs" />
+    <Compile Include="Image_BLL.cs" />
+    <Compile Include="InOutItem_BLL.cs" />
+    <Compile Include="Journal_BLL.cs" />
+    <Compile Include="Level_BLL.cs" />
+    <Compile Include="Login_BLL.cs" />
+    <Compile Include="Message_BLL.cs" />
+    <Compile Include="News_BLL.cs" />
+    <Compile Include="Notepad_BLL.cs" />
+    <Compile Include="Notice_BLL.cs" />
+    <Compile Include="Opportunity_BLL.cs" />
+    <Compile Include="Order_BLL.cs" />
+    <Compile Include="Paper_BLL.cs" />
+    <Compile Include="Payment_BLL.cs" />
+    <Compile Include="Promotion_BLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PushTool_BLL.cs" />
+    <Compile Include="Queston_BLL.cs" />
+    <Compile Include="Record_BLL.cs" />
+    <Compile Include="RelationShip_BLL.cs" />
+    <Compile Include="ReportDownload_BLL.cs" />
+    <Compile Include="Report_BLL.cs" />
+    <Compile Include="Review_BLL.cs" />
+    <Compile Include="RoleCheck_BLL.cs" />
+    <Compile Include="Service_BLL.cs" />
+    <Compile Include="SMSINFO_BLL.cs" />
+    <Compile Include="Statement_BLL.cs" />
+    <Compile Include="Statistics_BLL.cs" />
+    <Compile Include="Step_BLL.cs" />
+    <Compile Include="SubService_BLL.cs" />
+    <Compile Include="SupplierCommodity_BLL.cs" />
+    <Compile Include="Supplier_BLL.cs" />
+    <Compile Include="Tag_BLL.cs" />
+    <Compile Include="Task_BLL.cs" />
+    <Compile Include="Template_BLL.cs" />
+    <Compile Include="Version_BLL.cs" />
+    <Compile Include="WebUtilty_BLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{82de9571-33f1-4c9a-a7b3-5d503a9cb386}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{1eee7d43-777c-45c6-aebf-b9d28c9f1083}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{e172fdb3-c760-42fa-ba3a-4571759a1786}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="API\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

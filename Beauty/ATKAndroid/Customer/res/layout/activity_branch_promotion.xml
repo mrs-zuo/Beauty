@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/head_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D5C5B5"
+        android:padding="3dp" >
+
+        <ImageButton
+            android:id="@+id/btn_main_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_backbutton"
+            android:contentDescription="@string/search" />
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:layout_centerInParent="true"
+            android:text="@string/left_menu_promotion"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_headline" />
+
+        <ImageButton
+            android:id="@+id/btn_main_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_home_button"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <com.glamourpromise.beauty.customer.custom.view.NewRefreshListView
+        android:id="@+id/promotion_listview"
+        style="@style/list_view_attrs" />
+
+</LinearLayout>

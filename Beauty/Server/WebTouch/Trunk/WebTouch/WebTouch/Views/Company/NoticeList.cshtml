@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "公告信息";
+
+    List<Model.Table_Model.Notice_Model> list = new List<Model.Table_Model.Notice_Model>();
+    list = Model;
+}
+  
+<div class="wrapper whiteBkg">
+    <div class="width90 blockC P10Table">
+        <ul class="borderB width100 rowUl2">
+            <li class="width33_3"><a href="/Company/CompanyDetail">商家介绍</a></li><li class="width33_3"><a href="/Company/BranchList">门店一览</a></li><li class="width33_3 positionR">公告信息<span class="btmline bkgColor1"></span></li>
+        </ul>
+        @if (list != null && list.Count > 0)
+        {
+            <ul class="width100 rowUl15">
+                @foreach (Model.Table_Model.Notice_Model item in list)
+                {
+                    <li class="borderB PT15 PB15 clearfix ">
+                        <a href="/Company/NoticeDetail?n=@(item.ID)">
+                            <em class="width80 fl MB15">@(item.NoticeTitle)</em>
+                            <span class="width20 fr MT20 textR">
+                                <img src="/pic/rightArrow.png" height="20" /></span>
+                            <p class="width80 grayTex fl clearfix">@(item.StartDate.ToString("yyyy-MM-dd"))</p>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

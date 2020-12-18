@@ -1,0 +1,501 @@
+﻿@{
+    string strCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSManger", true);
+    string role = "";
+    string advanced = "";
+    int branchId = 0;
+    bool comissionCalc = false;
+    WebManager.Models.Cookie_Model model = null;
+    if (string.IsNullOrEmpty(strCookie))
+    {
+        Response.Redirect("/Login/Login?err=1");
+
+    }
+    else
+    {
+        model = new WebManager.Models.Cookie_Model();
+        model = Newtonsoft.Json.JsonConvert.DeserializeObject<WebManager.Models.Cookie_Model>(strCookie);
+        role = model.Role;
+        advanced = model.Advanced;
+        branchId = model.BR;
+        comissionCalc = model.ComissionCalc;
+    }
+
+}
+<div class="page-sidebar" id="sidebar">
+    <!-- Sidebar Menu -->
+    <ul class="nav sidebar-menu">
+        <!--首页-->
+        @{
+            <li class="@(Model == 21 ? "active" : "")">
+                <a href="/Home/Index">
+                    <i class="fa fa-home home-size"></i>
+                    <span class="menu-text">首页</span>
+                </a>
+            </li>
+        }
+        <!--商家信息-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_BUSINESSINFO_WRITE))
+            {
+                <li class="@(Model == 1 ? "active" : "")">
+                    <a href="/Branch/GetBranchList">
+                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                        <span class="menu-text">商家信息</span>
+                    </a>
+                </li>
+            }
+        }
+        <!--新闻与公告-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_NOTICE_WRITE))
+            {
+            <li class="@(Model == 2 || Model == 3 ? "active open" : "")">
+                <a href="#" class="menu-dropdown">
+                    <i class="menu-icon fa fa-bullhorn"></i>
+                    <span class="menu-text">新闻与公告</span>
+
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+
+                    <!--新闻-->
+                    <li class="@(Model == 3 ? "active" : "")">
+                        <a href="/News/GetNewsList">
+                            <span class="menu-text">新闻</span>
+                        </a>
+                    </li>
+                    <!--公告-->
+                    <li class="@(Model == 2 ? "active" : "")">
+                        <a href="/News/GetNoticeList">
+                            <span class="menu-text">公告</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            }
+        }
+        <!--商家活动-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_PROMOTION_WRITE))
+            {
+            <!-- <li class="@(Model == 4 ? "active" : "")">
+                <a href="/Promotion/GetPromotionListNew">
+                    <i class="menu-icon fa fa-volume-up"></i>
+                    <span class="menu-text">促销信息</span>
+                </a>
+            </li> -->
+
+            <li class="@(Model == 4 || Model == 25 ? "active open" : "")">
+                <a href="#" class="menu-dropdown">
+                    <i class="menu-icon fa fa-volume-up"></i>
+                    <span class="menu-text">商家活动</span>
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+
+                    <!--促销-->
+                    <li class="@(Model == 4 ? "active" : "")">
+                        <a href="/Promotion/GetPromotionListNew">
+                            <span class="menu-text">促销</span>
+                        </a>
+                    </li>
+                    <!--优惠券-->
+                    <li class="@(Model == 25 ? "active" : "")">
+                        <a href="/Benefit/GetBenefitList">
+                            <span class="menu-text">优惠券</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            }
+        }
+
+        <!--预约总览-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_SERVICE_WRITE))
+            {
+                <li class="@(Model == 26 ? "active" : "")">
+                    <a href="/Appointment/GetAppointmentList">
+                        <i class="menu-icon glyphicon glyphicon-time"></i>
+                        <span class="menu-text">预约总览</span>
+                    </a>
+                </li>
+            }
+        }
+
+        <!--服务信息-->
+        <li class="@(Model == 7 || Model == 8 || Model == 20 ? "active open" : "")">
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-heart"></i>
+                <span class="menu-text">服务信息</span>
+
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                @{
+                    if (role.Contains(WebAPI.Common.Const.ROLE_SERVICE_WRITE))
+                    {
+                    <li class="@(Model == 7 ? "active" : "")">
+                        <a href="/Category/GetCategoryList?Type=0&p=-1">
+                            <span class="menu-text">服务分类</span>
+                        </a>
+                    </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_SERVICE_WRITE))
+                    {
+                    <li class="@(Model == 20 ? "active" : "")">
+                        <a href="/Service/GetServiceList?b=@(model.BR > 0 ? model.BR.ToString() : "-1")&c=-1">
+                            <span class="menu-text">服务</span>
+                        </a>
+                    </li>
+                    }
+
+                    if (role.Contains(WebAPI.Common.Const.ROLE_SERVICE_WRITE))
+                    {
+                    <li class="@(Model == 8 ? "active" : "")">
+                        <a href="/Subservice/GetSubServiceList">
+                            <span class="menu-text">子服务</span>
+                        </a>
+                    </li>
+                    } 
+                }
+            </ul>
+        </li>
+
+        <!--商品信息-->
+        <li class="@(Model == 9 || Model == 10 ? "active open" : "")">
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-cube"></i>
+                <span class="menu-text">商品信息</span>
+
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                @{
+                    if (role.Contains(WebAPI.Common.Const.ROLE_COMMODITY_WRITE))
+                    {
+                    <li class="@(Model == 9 ? "active" : "")">
+                        <a href="/Category/GetCategoryList?Type=1&p=-1">
+                            <span class="menu-text">商品分类</span>
+                        </a>
+                    </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_COMMODITY_WRITE))
+                    {
+                    <li class="@(Model == 10 ? "active" : "")">
+                        <a href="/Commodity/GetCommodityList?b=@(model.BR > 0 ? model.BR.ToString() : "-1")&c=-1&d=-1">
+                            <span class="menu-text">商品</span>
+                        </a>
+                    </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_COMMODITY_WRITE))
+                    {
+                        <li class="@(Model == 10 ? "active" : "")">
+                            <a href="/Supplier/GetSupplierList">
+                                <span class="menu-text">供应商</span>
+                            </a>
+                        </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_COMMODITY_WRITE))
+                    {
+                        <li class="@(Model == 10 ? "active" : "")">
+                            <a href="/SupplierCommodity/EditSupplierCommodity">
+                                <span class="menu-text">供应商商品关系</span>
+                            </a>
+                        </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_COMMODITY_WRITE))
+                    {
+                        <li class="@(Model == 10 ? "active" : "")">
+                            <a href="/CommoditySupplier/EditCommoditySupplier">
+                                <span class="menu-text">商品供应商关系</span>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </li>
+
+        <!--账户信息-->
+        <li class="@(Model == 11 || Model == 12 || Model == 13 || Model == 14 || Model == 22 ? "active open" : "")">
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-users"></i>
+                <span class="menu-text">员工信息</span>
+
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                @{
+                    if (role.Contains(WebAPI.Common.Const.ROLE_MYINFO_WRITE))
+                    {
+                    <li class="@(Model == 11 ? "active" : "")">
+                        @{
+                        int selectBranchId = 0;
+                        if (branchId == 0)
+                        {
+                            selectBranchId = -1;
+                        }
+                        else
+                        {
+                            selectBranchId = branchId;
+                        }
+                        }
+                        <a href="/Account/GetAccountList?BranchID=@(selectBranchId)&Available=1">
+                            <span class="menu-text">员工</span>
+                        </a>
+                    </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_MYINFO_WRITE) && branchId == 0)
+                    {
+                    <li class="@(Model == 22 ? "active" : "")">
+                        <a href="/Account/GetAccountGroupList">
+                            <span class="menu-text">员工分组</span>
+                        </a>
+                    </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_HIERARCHY_WRITE))
+                    {
+                    <li class="@(Model == 12 ? "active" : "")">
+                        <a href="/Account/AccountHierarchy?Type=1">
+                            <span class="menu-text">员工层级</span>
+                        </a>
+                    </li>
+                    }
+
+                    if (role.Contains(WebAPI.Common.Const.ROLE_ROLEPERMISSION_WRITE))
+                    {
+                    <li class="@(Model == 13 ? "active" : "")">
+                        <a href="/Role/GetRoleList">
+                            <span class="menu-text">角色权限</span>
+                        </a>
+                    </li>
+                    }
+                    if (role.Contains(WebAPI.Common.Const.ROLE_RELATIONSHIP_WRITE))
+                    {
+                    <li class="@(Model == 14 ? "active" : "")">
+                        <a href="/RelationShip/EditRelationShip?Type=1">
+                            <span class="menu-text">员工顾客关系</span>
+                        </a>
+                    </li>
+                    }
+                    
+                }
+            </ul>
+        </li>
+        <!--等级与折扣-->
+        <li class="@(Model == 5 || Model == 15 ? "active open" : "")">
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-ticket"></i>
+                <span class="menu-text">等级与折扣</span>
+
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                @{                   
+                    <!--会员等级-->            
+                    if (role.Contains(WebAPI.Common.Const.ROLE_LEVELPOLICY_WRITE))
+                    {
+                    <li class="@(Model == 15 ? "active" : "")">
+                        <a href="/Card/GetCardList">
+                            <span class="menu-text">会员账户</span>
+                        </a>
+                    </li>
+                    }
+                    <!--折扣分类-->
+                    if (role.Contains(WebAPI.Common.Const.ROLE_LEVELPOLICY_WRITE))
+                    {
+                    <li class="@(Model == 5 ? "active" : "")">
+                        <a href="/Discount/GetDiscountList">
+                            <span class="menu-text">折扣分类</span>
+                        </a>
+                    </li>
+                    }                       
+                }
+            </ul>
+        </li>
+
+        <!--专业信息-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_QUESTION_WRITE))
+            {            
+                
+            <li class="@(Model == 16 || Model == 23 ? "active open" : "")">
+                <a href="#" class="menu-dropdown">
+                    <i class="menu-icon fa fa-paste"></i>
+                    <span class="menu-text">专业记录</span>
+
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+                    @{                   
+             
+                        <li class="@(Model == 23 ? "active" : "")">
+                            <a href="/Paper/GetPaperList" class="menu-dropdown">
+                                <span class="menu-text">专业记录模板</span>
+                            </a>
+                        </li>
+                        <li class="@(Model == 16 ? "active" : "")">
+                            <a href="/Question/GetQuestionList" class="menu-dropdown">
+                                <span class="menu-text">问题集</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+                
+            }
+        }
+        <!--销售步骤-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_STEP_WRITE) && advanced.IndexOf("2") > 0)
+            {
+            <li class="@(Model == 17 ? "active" : "")">
+                <a href="/Step/GetStepList">
+                    <i class="menu-icon fa fa-list-ol"></i>
+                    <span class="menu-text">销售步骤</span>
+                </a>
+            </li>
+            }
+        }
+        <!--市场营销-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_MARKETING_READ) && advanced.IndexOf("3") > 0)
+            {
+            <li class="@(Model == 6 ? "active" : "")">
+                <a href="/MarketMessage/GetMarketMessageList" class="menu-dropdown">
+                    <i class="menu-icon glyphicon glyphicon-flag"></i>
+                    <span class="menu-text">市场营销</span>
+                </a>
+            </li>
+             
+            }
+        }
+        <!--验证短信-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_SMSInfo))
+            {
+                <li class="@(Model == 35 ? "active" : "")">
+                    <a href="/SMS/GetSMSNum" class="menu-dropdown">
+                        <i class="menu-icon glyphicon glyphicon-envelope"></i>
+                        <span class="menu-text">验证短信</span>
+                    </a>
+                </li>
+
+            }
+        }
+        <!--数据下载-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_DOWNLOAD))
+            {
+            <li class="@(Model == 18 ? "active" : "")">
+                <a href="/Report/ReportDownloadNew" class="menu-dropdown">
+                    <i class="menu-icon fa fa-cloud-download"></i>
+                    <span class="menu-text">数据下载</span>
+                </a>
+            </li>
+            }
+        }
+        <!--订单高级编辑-->
+        @{
+            if (role.Contains(WebAPI.Common.Const.ROLE_SENIORFUNCTION_USE))
+            {
+            <li class="@(Model == 19 ? "active" : "")">
+                <a class="menu-dropdown" href="/Order/OrderEditNew">
+                    <i class="menu-icon typcn typcn-pencil"></i>
+                    <span class="menu-text">高级编辑</span>
+                </a>
+            </li>
+            }
+        }
+
+        <!--业绩提成-->
+        @if (branchId == 0 && comissionCalc && role.Contains(WebAPI.Common.Const.ROLE_PROFITCOMMRULE))
+        {
+            <li class="@(Model == 28 || Model == 29 || Model == 30 || Model == 31 ? "active open" : "")">
+                <a href="#" class="menu-dropdown">
+                    <i class="menu-icon fa fa-money"></i>
+                    <span class="menu-text">业绩提成</span>
+
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+                    <li class="@(Model == 28 ? "active" : "")">
+                        <a href="/Commission/AccountList" class="menu-dropdown">
+                            <span class="menu-text">员工</span>
+                        </a>
+                    </li>
+                    <li class="@(Model == 29 ? "active" : "")">
+                        <a href="/Commission/ServiceList" class="menu-dropdown">
+                            <span class="menu-text">服务</span>
+                        </a>
+                    </li>
+                    <li class="@(Model == 30 ? "active" : "")">
+                        <a href="/Commission/CommodityList" class="menu-dropdown">
+                            <span class="menu-text">商品</span>
+                        </a>
+                    </li>
+                    <li class="@(Model == 31 ? "active" : "")">
+                        <a href="/Commission/CardList" class="menu-dropdown">
+                            <span class="menu-text">会员卡</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        }
+        <!--收支记录-->
+
+        <li class="@(Model == 32 ? "active open" : "")">
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-jpy"></i>
+                <span class="menu-text">收支记录</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li class="@(Model == 32 ? "active" : "")">
+                    <a href="/Journal/JournalList">
+                        <span class="menu-text">收支记录</span>
+                    </a>
+                </li>
+                <li class="@(Model == 32 ? "active" : "")">
+                    <a href="/InOutItem/GetInOutItemList">
+                        <span class="menu-text">收支项目</span>
+                    </a>
+                </li>
+               
+            </ul>
+            <!--<a class="menu-dropdown" href="/Journal/JournalList">
+                <i class="menu-icon fa fa-jpy"></i>
+                <span class="menu-text">收支记录</span>
+            </a>-->
+        </li>
+        
+
+        <!--其他设置-->
+
+        <li class="@(Model == 24 || Model == 33 ? "active open" : "")">
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-coffee"></i>
+                <span class="menu-text">其他设置</span>
+
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li class="@(Model == 24 ? "active" : "")">
+                    <a class="menu-dropdown" href="/Statement/GetStatementList">
+                    
+                        <span class="menu-text">业绩分类</span>
+                    </a>
+                </li>
+                <li class="@(Model == 33 ? "active" : "")">
+                    <a href="/CustomerSource/CustomerSourceList" class="menu-dropdown">
+                        <span class="menu-text">顾客来源</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <!-- /Sidebar Menu -->
+</div>

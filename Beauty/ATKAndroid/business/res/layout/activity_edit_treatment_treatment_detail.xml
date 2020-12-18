@@ -1,0 +1,145 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="cn.com.antika.business.EditTreatmentTreatmentDetailActivity" >
+
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/treatment_treatment_detail_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/edit_treatment_treatment_detail" />
+    </RelativeLayout>
+
+    <TableLayout
+        style="@style/activity_content_table_attrs" >
+
+        <TextView
+            android:id="@+id/before_treatment_text"
+            style="@style/activity_content_table_row_title_attrs"
+            android:layout_marginLeft="10dip"
+            android:text="@string/before_treatment_text"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_treatment_treatment_detail_height"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/arrow_left_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dip"
+                android:contentDescription="@string/search" />
+
+            <cn.com.antika.view.SyncHorizontalScrollView
+                android:id="@+id/before_treatment_scrollview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clipChildren="false" 
+                android:layout_centerVertical="true">
+
+                <LinearLayout
+                    android:id="@+id/before_treatment_image_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </cn.com.antika.view.SyncHorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/arrow_right_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dip"
+                android:contentDescription="@string/search" />
+        </RelativeLayout>
+
+        <View
+            style="@style/activity_content_divide_view_attrs" >
+        </View>
+
+        <TextView
+            android:id="@+id/after_treatment_text"
+            style="@style/activity_content_table_row_title_attrs"
+            android:layout_marginLeft="10dip"
+            android:text="@string/after_treatment_text"
+             />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_treatment_treatment_detail_height"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/arrow_left_icon_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dip"
+                android:contentDescription="@string/search" />
+
+            <cn.com.antika.view.SyncHorizontalScrollView
+                android:id="@+id/after_treatment_scrollview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_centerVertical="true">
+                <LinearLayout
+                    android:id="@+id/after_treatment_image_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </cn.com.antika.view.SyncHorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/arrow_right_icon_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dip"
+                android:contentDescription="@string/search" />
+        </RelativeLayout>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/edit_treatment_treatment_detail_make_sure_btn"
+                style="@style/submit_big_btn"
+                android:text="@string/ok" />
+        </RelativeLayout>
+    </TableLayout>
+
+</LinearLayout>

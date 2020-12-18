@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/service_list_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+    <SearchView
+        android:id="@+id/search_service"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/search_service_text" >
+     </SearchView>
+ <RelativeLayout 
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/service_list_title_relativelayout" 
+        style="@style/activity_title_layout_attrs">
+
+        <TextView
+            android:id="@+id/service_list_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/title_service_list" />
+    </RelativeLayout>
+
+    
+	<Button
+	    android:id="@+id/choose_service_make_sure_btn"
+	    style="@style/submit_big_btn"
+	    android:layout_alignParentBottom="true"
+	    android:text="@string/ok"
+	    />
+	<com.GlamourPromise.Beauty.view.RefreshListView
+        android:id="@+id/service_listview"
+        style="@style/activity_content_listview_attrs"
+        android:layout_below="@id/service_list_title_relativelayout"
+        android:layout_above="@id/choose_service_make_sure_btn"/>
+ </RelativeLayout>
+</LinearLayout>

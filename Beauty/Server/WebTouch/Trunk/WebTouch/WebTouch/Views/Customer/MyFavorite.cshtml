@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "我的收藏";
+    List<Model.View_Model.FavoriteList_Model> list = Model;
+
+    string srtCookie = HS.Framework.Common.Util.CookieUtil.GetCookieValue("HSTouch", true);
+    WebTouch.Models.Cookie_Model cookieModel = new WebTouch.Models.Cookie_Model();
+    if (!string.IsNullOrWhiteSpace(srtCookie))
+    {
+        cookieModel = Newtonsoft.Json.JsonConvert.DeserializeObject<WebTouch.Models.Cookie_Model>(srtCookie);
+    }
+
+    string CurrencySymbol = cookieModel.CurrencySymbol;
+}
+
+<div class="wrapper whiteBkg PT20">
+    <div class="width95 blockC clearfix">
+        @if (list != null && list.Count > 0)
+        {
+            <ul class="P10Table width100">
+                @foreach (Model.View_Model.FavoriteList_Model item in list)
+                {
+                    <li class="borderB clearfix PB10">
+                        <a class="block" href='@(item.ProductType == 0 ? "/Product/ServiceDetail?lc=" + item.ProductCode : "/Product/CommodityDetail?lc=" + item.ProductCode   )'>
+                            <div class="width100P fl">
+                                <div class="imgArea bkgColor1 viewImgArea">
+                                    <img src="@(item.ImgUrl == "" ? "/pic/nopicbg.jpg" : item.ImgUrl)" alt="" />
+                                </div>
+                            </div>
+                            <div class="positionR ML105">
+                                <h4 class="width95 height60px">@(item.ProductName)<span class="ML5">@(item.Specification)</span></h4>
+                                <p class="MT10 color1">@(CurrencySymbol) @(item.UnitPrice.ToString("0.00"))</p>
+                                <span class="rightArrowRow">
+                                    <img src="/pic/rightArrow.png" height="20" />
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <div class="width100 textC PT30 PB30 MB60 clearfix">
+                <div class="MT10P MB10P "><img src="/pic/nofavoritepic.png" height="100" class="graybkg borderRad50" /></div>
+                <p class=" PB30 grayTex">想要变美丽，要行动起来噢~</p>
+                <div class="width90 blockC MB30 clearfix"><a class="btnMid borderPink width50 color1" href="/Appointment/SelectAppointmentBranch">好主意,Let's&nbsp;GO</a></div>
+            </div>
+        }
+    </div>
+</div>
+<div class="goTopSite">
+    <ul class="tab">
+        <li class="">
+            <a class="goTtop bkgColor2 goTop" style="display: none;">
+                <div class="imgArea MT5">
+                    <img src="/pic/upArrow.png" height="35">
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/newIndex.js"></script>
+<script src="js/goTop.js"></script>

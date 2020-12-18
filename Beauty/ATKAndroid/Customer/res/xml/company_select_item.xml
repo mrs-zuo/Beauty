@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/relative_layout_has_child_attrs" >
+
+    <TextView
+        android:id="@+id/company_name"
+        style="@style/relative_layout_left_child_attrs" />
+
+    <ImageButton
+        android:id="@+id/company_select_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_15dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

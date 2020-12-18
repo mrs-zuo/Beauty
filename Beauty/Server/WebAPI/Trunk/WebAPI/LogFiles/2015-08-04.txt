@@ -1,0 +1,116 @@
+2015-08-04 11:53:04[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/8/4 11:53:04
+Title=列名 'ProductID' 无效。
+Message=Message:列名 'ProductID' 无效。
+RequestParm:
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteScalar()
+   在 BLToolkit.Data.DbManager.ExecuteScalar[T]()
+   在 WebAPI.DAL.Notice_DAL.getVisitCountByAccountID(Int32 accountId, Int32 branchID) 位置 e:\Vss\WebApi\DAL\Notice_DAL.cs:行号 288
+   在 WebAPI.BLL.Notice_BLL.getVisitCountByAccountID(Int32 accountId, Int32 branchID) 位置 e:\Vss\WebApi\BLL\Notice_BLL.cs:行号 69
+   在 WebAPI.Controllers.API.NoticeController.GetRemindCountByAccountID() 位置 e:\Vss\WebApi\WebAPI\Controllers\API\NoticeController.cs:行号 102
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.68
+UrlReferrer=
+RawUrl=/Notice/GetRemindCountByAccountID
+Header=Connection:keep-alive
+Content-Length:0
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:B3079EE05DBC1C3289E40D341EC3065D
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.0 CFNetwork/672.1.14 Darwin/14.0.0
+GU:49162de3-69fc-42da-b7c5-a09db2e2828e
+BR:106
+DT:1
+CO:76
+CT:1
+TI:2015-08-04 11:41:21.097
+ME:GetRemindCountByAccountID
+US:11834
+AV:3.0
+
+
+2015-08-04 11:56:34[7] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/8/4 11:56:34
+Title=列名 'ProductID' 无效。
+Message=Message:列名 'ProductID' 无效。
+RequestParm:
+TargetSite:Void OnOperationException(BLToolkit.Data.OperationType, BLToolkit.Data.DataException)
+Data:
+StackTrace:   在 BLToolkit.Data.DbManager.OnOperationException(OperationType op, DataException ex)
+   在 BLToolkit.Data.DbManager.HandleOperationException(OperationType op, Exception ex)
+   在 BLToolkit.Data.DbManager.ExecuteOperation[T](OperationType operationType, Func`1 operation)
+   在 BLToolkit.Data.DbManager.ExecuteReaderInternal(CommandBehavior commandBehavior)
+   在 BLToolkit.Data.DbManager.ExecuteScalar()
+   在 BLToolkit.Data.DbManager.ExecuteScalar[T]()
+   在 WebAPI.DAL.Notice_DAL.getVisitCountByAccountID(Int32 accountId, Int32 branchID) 位置 e:\Vss\WebApi\DAL\Notice_DAL.cs:行号 288
+   在 WebAPI.BLL.Notice_BLL.getVisitCountByAccountID(Int32 accountId, Int32 branchID) 位置 e:\Vss\WebApi\BLL\Notice_BLL.cs:行号 69
+   在 WebAPI.Controllers.API.NoticeController.GetRemindCountByAccountID() 位置 e:\Vss\WebApi\WebAPI\Controllers\API\NoticeController.cs:行号 102
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=127.0.0.1
+ServerIp=10.0.0.68
+UrlReferrer=
+RawUrl=/Notice/GetRemindCountByAccountID
+Header=Connection:keep-alive
+Content-Length:0
+Content-Type:Application/json; charset=utf-8
+Accept:*/*
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-cn
+Authorization:B3079EE05DBC1C3289E40D341EC3065D
+Host:www.webapi.com
+User-Agent:%E7%BE%8E%E4%B8%BD%E7%BA%A6%E5%AE%9A%E5%95%86%E5%AE%B6%E7%89%88/3.0 CFNetwork/672.1.14 Darwin/14.0.0
+GU:49162de3-69fc-42da-b7c5-a09db2e2828e
+BR:106
+DT:1
+CO:76
+CT:1
+TI:2015-08-04 11:41:21.097
+ME:GetRemindCountByAccountID
+US:11834
+AV:3.0
+
+

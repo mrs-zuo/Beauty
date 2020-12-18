@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/com/zhonghe/beauty/adapter/CartListAdapter.java=UTF-8
+encoding//src/com/zhonghe/beauty/adapter/CommodityListAdapter.java=UTF-8
+encoding//src/com/zhonghe/beauty/adapter/EcardHistoryListAdapter.java=UTF-8
+encoding//src/com/zhonghe/beauty/adapter/OrderListAdapter.java=UTF-8
+encoding//src/com/zhonghe/beauty/adapter/OrderPayListAdapter.java=UTF-8
+encoding//src/com/zhonghe/beauty/program/CartListActivity.java=UTF-8
+encoding//src/com/zhonghe/beauty/program/CommodityDetailActivity.java=UTF-8
+encoding//src/com/zhonghe/beauty/program/CommodityOrderDetailActivity.java=UTF-8
+encoding//src/com/zhonghe/beauty/program/EcardDetailActivity.java=UTF-8
+encoding//src/com/zhonghe/beauty/program/LoginActivity.java=UTF-8
+encoding//src/com/zhonghe/beauty/program/OrderPayActivity.java=UTF-8
+encoding//src/com/zhonghe/beauty/program/ServcieOrderDetailActivity.java=UTF-8
+encoding//src/com/zhonghe/beauty/util/CreateLayoutInTableLayout.java=UTF-8
+encoding//src/com/zhonghe/beauty/view/RefreshListView.java=UTF-8
+encoding/<project>=UTF-8

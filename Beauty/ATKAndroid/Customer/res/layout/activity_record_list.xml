@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   	 <RelativeLayout
+	    android:id="@+id/record_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D5C5B5">
+        <ImageButton
+            android:id="@+id/record_main_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/navbar_backbutton" 
+            android:contentDescription="@string/search"/>
+        <TextView
+            android:id="@+id/record_list_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/record_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:textColor="@color/white"
+            android:text="@string/ellipsis"
+            android:textSize="28sp"
+            android:paddingBottom="20dp"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+  
+    <ExpandableListView
+        android:id="@+id/record_list_view"
+        style="@style/list_view_attrs"
+        android:divider="#f4f4f4"
+        android:dividerHeight="1px"/>
+
+</LinearLayout>

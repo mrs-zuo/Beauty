@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".BranchEmployeeBusinessDetailBarChartActivity">
+    <RelativeLayout
+        android:id="@+id/branch_employee_business_detail_bar_chart_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/branch_employee_business_detail_bar_chart_title_relativelayout"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/branch_employee_business_detail_bar_chart_head_layout" >
+        <TextView	
+            	  android:id="@+id/branch_employee_business_detail_bar_chart_title"
+            	  style="@style/activity_title_text_attrs" />
+    </RelativeLayout>
+	 <LinearLayout
+        android:id="@+id/branch_employee_business_switch_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/switch_operation_btn"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dip"
+            android:background="@xml/shape_btn_blue_no_round"
+            android:text="@string/switch_operation_btn"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size" />
+        <Button
+            android:id="@+id/switch_sales_btn"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_weight="1"
+            android:background="@xml/shape_btn_white_no_round"
+            android:text="@string/switch_sales_btn_text"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+        <Button
+            android:id="@+id/switch_recharge_btn"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_weight="1"
+            android:layout_marginRight="5dip"
+            android:background="@xml/shape_btn_white_no_round"
+            android:text="@string/switch_recharge_btn_text"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/branch_employee_business_switch_linearlayout"
+        android:layout_below="@id/branch_employee_business_detail_bar_chart_title_relativelayout"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+            android:id="@+id/branch_employee_business_detail_bar_chart_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

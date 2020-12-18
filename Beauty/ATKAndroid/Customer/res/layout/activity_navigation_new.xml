@@ -1,0 +1,166 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".NavigationNew" >
+	<RelativeLayout
+	    android:id="@+id/navigation_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D5C5B5"
+        android:padding="8dp" 
+        android:layout_alignParentTop="true">
+        <TextView
+            android:id="@+id/navigation_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_headline" />
+        <TextView
+            android:id="@+id/add_new_appointment_btn"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:textColor="@color/white"
+            android:text="@string/add_new_appointment_btn_text"
+            android:textSize="28sp"
+            android:visibility="invisible"
+            android:paddingBottom="5dp"/>
+         <TextView
+            android:id="@+id/cart_edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:text="@string/cart_edit_btn_text"
+            android:textSize="@dimen/text_size_headline"
+            android:visibility="invisible"/>
+         <TextView
+            android:id="@+id/cart_edit_complete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:text="@string/cart_edit_complete_btn_text"
+            android:textSize="@dimen/text_size_headline"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/navigation_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <RelativeLayout
+            android:id="@+id/menu_homepage"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+            <ImageView
+                android:id="@+id/menu_homepage_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/menu_homepage_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/menu_appointment"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dip"
+            android:saveEnabled="false" >
+
+            <ImageView
+                android:id="@+id/menu_appointment_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/menu_appointment_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/menu_cart"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/menu_cart_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/menu_cart_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/menu_message"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/menu_message_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/menu_message_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/menu_my"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/menu_setting_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/menu_setting_icon" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/navigation_divide_view"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@id/navigation_tab_layout"
+        android:background="@color/gray" />
+
+    <com.glamourpromise.beauty.customer.custom.view.NoScrollViewPager
+        android:id="@+id/navigation_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navigation_divide_view" 
+        android:layout_below="@id/navigation_title_bar">
+    </com.glamourpromise.beauty.customer.custom.view.NoScrollViewPager>
+	 
+</RelativeLayout>

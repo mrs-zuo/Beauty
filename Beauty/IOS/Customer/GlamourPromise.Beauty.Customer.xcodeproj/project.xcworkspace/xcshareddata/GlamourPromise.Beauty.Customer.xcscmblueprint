@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "b89bc7ff-954f-be42-9567-72248823bf31",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "b89bc7ff-954f-be42-9567-72248823bf31" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "b89bc7ff-954f-be42-9567-72248823bf31" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CB0D1090-0775-41AC-A40E-C5EA64BA68FC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "b89bc7ff-954f-be42-9567-72248823bf31" : "GlamourPromise\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GlamourPromise.Beauty.Customer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "src\/iOS\/Customer\/GlamourPromise.Beauty.Customer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/172.16.18.24\/svn\/GlamourPromise",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "b89bc7ff-954f-be42-9567-72248823bf31"
+    }
+  ]
+}

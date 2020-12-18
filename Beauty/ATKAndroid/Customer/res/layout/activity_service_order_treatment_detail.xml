@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".CustomerActivity" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/treatment_code_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_treament_code"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/treatment_code"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/branch_name_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_service_branch_name"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/branch_name"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/treatment_status_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_contact_status"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/treatment_status"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/start_time_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_start_time"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/start_time"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#f4f4f4" >
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/activity_service_order_treatment_detail_end_time_layout"
+                    style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/end_time_title"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_end_time"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/end_time"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/activity_service_order_treatment_remark_layout"
+                style="@style/table_layout_attrs" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/remark_prompt"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#f4f4f4" >
+                    </View>
+
+                    <TextView
+                        android:id="@+id/activity_service_order_treatment_remark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="@dimen/text_size_normal" />
+                </LinearLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

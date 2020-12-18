@@ -1,0 +1,35 @@
+//
+// Prefix header for all source files of the 'Customers' target in the 'Customers' project
+//
+
+#import <Availability.h>
+
+#define ScreenSize [UIScreen mainScreen].bounds.size
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#ifndef __IPHONE_6_0
+   #warning "This project uses features only available in iOS SDK 6.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "BaseViewController.h"
+
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+
+    #import "DEBUG.h"
+    #import "DEFINE.h"
+    #import "ZWJson.h"
+    #import "OverallMethods.h"
+    #import"OverallMethods.h"
+
+#include "zbar.h"
+
+    #import"OverallMethods.h"
+    #import "PermissionDoc.h"
+#endif
+
+

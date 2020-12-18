@@ -1,0 +1,196 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg" >
+
+        <ImageButton
+            android:id="@+id/order_search_new_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_backbutton"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/activity_title_layout_attrs" >
+
+        <TextView
+            android:id="@+id/order_search_new_title_text"
+            style="@style/activity_title_text_attrs"
+            android:text="@string/appointment_task_search_new_title_text" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/visit_task_type"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size" />
+
+        <Spinner
+            android:id="@+id/appointmrnt_task_search_new_appointment_type_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@null"
+            android:gravity="right"
+            android:paddingLeft="50dip" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/appointment_search_new_customer_divide_view"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/tab_backcolor" >
+    </View>
+
+    
+
+    <RelativeLayout
+        android:id="@+id/appointmrnt_task_search_new_appointment_status_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/appointment_task_status"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size" />
+
+        <Spinner
+            android:id="@+id/appointmrnt_task_search_new_appointment_status_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@null"
+            android:gravity="right"
+            android:paddingLeft="50dip" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/tab_backcolor" >
+    </View>
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/task_responsible_person"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/designated_responsible_person_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:maxWidth="250dip"
+            android:layout_marginRight="5dip"
+            android:gravity="right"
+            android:hint="@string/choose_appointment_responsible_person"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/tab_backcolor" >
+    </View>
+     <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/appointment_task_search_customer_text"
+            android:textColor="@color/title_font"
+            android:textSize="@dimen/text_size"/>
+        <TextView
+            android:id="@+id/visit_task_search_customer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:maxWidth="250dip"
+            android:gravity="right"
+            android:hint="@string/advanced_customer_text"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/appointment_search_new_reset_btn"
+                style="@style/search_reset_btn"
+                android:layout_weight="1"
+                android:contentDescription="@string/search" 
+                android:text="@string/reset_btn_text"/>
+
+            <Button
+                android:id="@+id/appointment_search_new_make_sure_btn"
+                style="@style/search_btn"
+                android:layout_weight="1"
+                android:contentDescription="@string/search"
+                android:text="@string/search_btn_text" />
+        </LinearLayout>
+    </TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,150 @@
+2015-07-21 10:22:27[8] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/21 10:22:27
+Title=指定的转换无效。
+Message=Message:指定的转换无效。
+RequestParm:{"Date":null,"GroupNo":0,"OrderObjectID":0,"CardCode":null,"ChangeType":0,"CardType":0,"isOnlyMoneyCard":false,"isShowAll":false,"PaymentMode":0,"Type":0,"ID":0,"OrderID":0,"UpdaterID":0,"PaymentID":0,"AccountID":0,"AccountIDList":null,"CustomerID":0,"CreatorID":0,"CompanyID":0,"BranchID":0,"UserID":0,"UserType":0,"ProductType":0,"TagIDs":null,"ProductCode":0,"ImageWidth":0,"ImageHeight":0,"PageIndex":0,"PageSize":0,"ServiceCode":0,"CommodityCode":0,"strSearch":null,"GUID":null,"BrowseHistoryCodes":null,"TotalSalePrice":0.0,"ScheduleID":0,"TreatmentID":0,"Time":"0001-01-01T00:00:00","ExecutorID":0,"ScheduleTime":"0001-01-01T00:00:00","ResponsiblePersonID":0,"SalesID":0,"Remark":null,"IsComplete":false,"Status":0,"ExpirationTime":"0001-01-01T00:00:00","IsAddUp":false,"IsDesignated":false,"OrderIDList":null,"OpportunityID":0,"ProgressID":0,"CategoryID":0,"LevelID":null,"IsBusiness":false,"Flag":0,"IDs":null,"Available":0,"RecordID":0,"ObjectType":0,"StartTime":null,"EndTime":null,"DiscountName":null,"CategoryName":null,"SubserviceName":null,"Advanced":null,"OrderCode":"072100324615","PaymentCode":null,"TreatmentCode":null,"TreatmentListFlag":false,"UserCardNo":null,"SelectTreatment":false,"FileName":null,"FavoriteID":0,"LoginMobile":null,"FilterByTimeFlag":0,"InputSearch":null,"Prama":null,"listOrderID":null,"CommodityID":0,"SubServiceCode":0,"DiscountID":0,"IsToday":false,"DeleteType":0,"ServicePIC":0}
+TargetSite:Model.View_Model.OrderDetailForWeb_Model getOrderDetailForWeb(Int32, Int32, Int32)
+Data:
+StackTrace:   在 WebAPI.DAL.Order_DAL.getOrderDetailForWeb(Int32 OrderID, Int32 CompanyID, Int32 BranchID) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 7418
+   在 WebAPI.BLL.Order_BLL.getOrderDetailForWeb(String OrderCode, Int32 CompanyID, Int32 BranchID) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 355
+   在 WebAPI.Controllers.Manager.Order_MController.getOrderDetail(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Order_MController.cs:行号 53
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=10.0.0.81
+ServerIp=10.0.0.85
+UrlReferrer=
+RawUrl=/Order_M/getOrderDetail
+Header=Content-Length:1424
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:008C76F9E5C05431A61FAA5773471A8D
+Expect:100-continue
+Host:10.0.0.85:45678
+Accept-Languag:zh-cn
+CO:69
+BR:0
+US:11720
+CT:3
+DT:3
+AV:1.0
+ME:GETORDERDETAIL
+TI:2015/7/21 10:22:26
+GU:37543ecb-4dc3-4c39-a436-f3b5b63861c2
+
+
+2015-07-21 10:23:08[6] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/21 10:23:08
+Title=指定的转换无效。
+Message=Message:指定的转换无效。
+RequestParm:{"Date":null,"GroupNo":0,"OrderObjectID":0,"CardCode":null,"ChangeType":0,"CardType":0,"isOnlyMoneyCard":false,"isShowAll":false,"PaymentMode":0,"Type":0,"ID":0,"OrderID":0,"UpdaterID":0,"PaymentID":0,"AccountID":0,"AccountIDList":null,"CustomerID":0,"CreatorID":0,"CompanyID":0,"BranchID":0,"UserID":0,"UserType":0,"ProductType":0,"TagIDs":null,"ProductCode":0,"ImageWidth":0,"ImageHeight":0,"PageIndex":0,"PageSize":0,"ServiceCode":0,"CommodityCode":0,"strSearch":null,"GUID":null,"BrowseHistoryCodes":null,"TotalSalePrice":0.0,"ScheduleID":0,"TreatmentID":0,"Time":"0001-01-01T00:00:00","ExecutorID":0,"ScheduleTime":"0001-01-01T00:00:00","ResponsiblePersonID":0,"SalesID":0,"Remark":null,"IsComplete":false,"Status":0,"ExpirationTime":"0001-01-01T00:00:00","IsAddUp":false,"IsDesignated":false,"OrderIDList":null,"OpportunityID":0,"ProgressID":0,"CategoryID":0,"LevelID":null,"IsBusiness":false,"Flag":0,"IDs":null,"Available":0,"RecordID":0,"ObjectType":0,"StartTime":null,"EndTime":null,"DiscountName":null,"CategoryName":null,"SubserviceName":null,"Advanced":null,"OrderCode":"072100324615","PaymentCode":null,"TreatmentCode":null,"TreatmentListFlag":false,"UserCardNo":null,"SelectTreatment":false,"FileName":null,"FavoriteID":0,"LoginMobile":null,"FilterByTimeFlag":0,"InputSearch":null,"Prama":null,"listOrderID":null,"CommodityID":0,"SubServiceCode":0,"DiscountID":0,"IsToday":false,"DeleteType":0,"ServicePIC":0}
+TargetSite:Model.View_Model.OrderDetailForWeb_Model getOrderDetailForWeb(Int32, Int32, Int32)
+Data:
+StackTrace:   在 WebAPI.DAL.Order_DAL.getOrderDetailForWeb(Int32 OrderID, Int32 CompanyID, Int32 BranchID) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 7418
+   在 WebAPI.BLL.Order_BLL.getOrderDetailForWeb(String OrderCode, Int32 CompanyID, Int32 BranchID) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 355
+   在 WebAPI.Controllers.Manager.Order_MController.getOrderDetail(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Order_MController.cs:行号 53
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=10.0.0.81
+ServerIp=10.0.0.85
+UrlReferrer=
+RawUrl=/Order_M/getOrderDetail
+Header=Content-Length:1424
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:008C76F9E5C05431A61FAA5773471A8D
+Expect:100-continue
+Host:10.0.0.85:45678
+Accept-Languag:zh-cn
+CO:69
+BR:0
+US:11720
+CT:3
+DT:3
+AV:1.0
+ME:GETORDERDETAIL
+TI:2015/7/21 10:23:08
+GU:37543ecb-4dc3-4c39-a436-f3b5b63861c2
+
+
+2015-07-21 10:24:22[11] ERROR index (null) - 
+AppName=WebApi
+LogTime=2015/7/21 10:24:22
+Title=指定的转换无效。
+Message=Message:指定的转换无效。
+RequestParm:{"Date":null,"GroupNo":0,"OrderObjectID":0,"CardCode":null,"ChangeType":0,"CardType":0,"isOnlyMoneyCard":false,"isShowAll":false,"PaymentMode":0,"Type":0,"ID":0,"OrderID":0,"UpdaterID":0,"PaymentID":0,"AccountID":0,"AccountIDList":null,"CustomerID":0,"CreatorID":0,"CompanyID":0,"BranchID":0,"UserID":0,"UserType":0,"ProductType":0,"TagIDs":null,"ProductCode":0,"ImageWidth":0,"ImageHeight":0,"PageIndex":0,"PageSize":0,"ServiceCode":0,"CommodityCode":0,"strSearch":null,"GUID":null,"BrowseHistoryCodes":null,"TotalSalePrice":0.0,"ScheduleID":0,"TreatmentID":0,"Time":"0001-01-01T00:00:00","ExecutorID":0,"ScheduleTime":"0001-01-01T00:00:00","ResponsiblePersonID":0,"SalesID":0,"Remark":null,"IsComplete":false,"Status":0,"ExpirationTime":"0001-01-01T00:00:00","IsAddUp":false,"IsDesignated":false,"OrderIDList":null,"OpportunityID":0,"ProgressID":0,"CategoryID":0,"LevelID":null,"IsBusiness":false,"Flag":0,"IDs":null,"Available":0,"RecordID":0,"ObjectType":0,"StartTime":null,"EndTime":null,"DiscountName":null,"CategoryName":null,"SubserviceName":null,"Advanced":null,"OrderCode":"072100324615","PaymentCode":null,"TreatmentCode":null,"TreatmentListFlag":false,"UserCardNo":null,"SelectTreatment":false,"FileName":null,"FavoriteID":0,"LoginMobile":null,"FilterByTimeFlag":0,"InputSearch":null,"Prama":null,"listOrderID":null,"CommodityID":0,"SubServiceCode":0,"DiscountID":0,"IsToday":false,"DeleteType":0,"ServicePIC":0}
+TargetSite:Model.View_Model.OrderDetailForWeb_Model getOrderDetailForWeb(Int32, Int32, Int32)
+Data:
+StackTrace:   在 WebAPI.DAL.Order_DAL.getOrderDetailForWeb(Int32 OrderID, Int32 CompanyID, Int32 BranchID) 位置 e:\Vss\WebApi\DAL\Order_DAL.cs:行号 7418
+   在 WebAPI.BLL.Order_BLL.getOrderDetailForWeb(String OrderCode, Int32 CompanyID, Int32 BranchID) 位置 e:\Vss\WebApi\BLL\Order_BLL.cs:行号 355
+   在 WebAPI.Controllers.Manager.Order_MController.getOrderDetail(JObject obj) 位置 e:\Vss\WebApi\WebAPI\Controllers\Manager\Order_MController.cs:行号 53
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeUsingResultConverterAsync>d__8.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.ApiController.<InvokeActionWithExceptionFilters>d__1.MoveNext()
+
+ProcessName=webapi
+ClientIp=10.0.0.81
+ServerIp=10.0.0.85
+UrlReferrer=
+RawUrl=/Order_M/getOrderDetail
+Header=Content-Length:1424
+Content-Type:application/json
+Accept-Charset:UTF-8
+Authorization:008C76F9E5C05431A61FAA5773471A8D
+Expect:100-continue
+Host:10.0.0.85:45678
+Accept-Languag:zh-cn
+CO:69
+BR:0
+US:11720
+CT:3
+DT:3
+AV:1.0
+ME:GETORDERDETAIL
+TI:2015/7/21 10:23:39
+GU:37543ecb-4dc3-4c39-a436-f3b5b63861c2
+
+

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/white">
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="5dip">
+    
+		    <RelativeLayout 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_vertical"
+		        android:layout_marginTop="5dip">
+			      <TextView
+			        android:id="@+id/appointment_item_time"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentLeft="true"
+			        android:textSize="@dimen/text_size"
+			        android:textColor="@color/title_font" />
+			      <!-- <TextView
+			        android:id="@+id/appointment_item_divide"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/appointment_item_time"
+			        android:layout_marginLeft="5dip"
+			        android:textSize="@dimen/text_size" 
+			        android:text="|"/> -->
+			       <TextView
+			        android:id="@+id/appointment_item_customer"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dip"
+			        android:layout_alignParentRight="true"
+			        android:singleLine="true"
+			        android:maxEms="3"  
+                    android:ellipsize="end" 
+                    android:textColor="@color/black"
+			        android:textSize="@dimen/text_size" />
+			       
+		  </RelativeLayout>
+		
+	     <RelativeLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical"
+	        android:layout_marginTop="5dip"
+	        android:layout_marginBottom="5dip">
+	        <!-- <TextView
+		        android:id="@+id/appointment_item_designated_responsible_person_text"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:text="@string/designated_responsible_person"
+		        android:textSize="@dimen/text_size" /> -->
+	        
+	        <TextView
+		        android:id="@+id/appointment_item_designated_responsible_person"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:textColor="@color/gray"
+		        android:text="@string/designated_responsible_person"
+		        android:textSize="@dimen/text_size" />
+	        
+	        <TextView
+		        android:id="@+id/appointment_item_status"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginRight="5dip"
+		        android:textColor="@color/black"
+		        android:layout_alignParentRight="true"
+		        android:textSize="@dimen/text_size" />
+	        
+	    </RelativeLayout>
+    
+       <RelativeLayout 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="5dip">
+        <TextView
+	        android:id="@+id/appointment_item_order_product_name"
+	        android:layout_width="@dimen/order_list_product_name_width"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="5dip"
+	        android:singleLine="true"
+	        android:text="@string/ellipsis"
+	        android:textSize="@dimen/text_size"
+	        android:textColor="@color/gray" />
+      </RelativeLayout>
+   </LinearLayout>
+   <ImageView
+        android:id="@+id/arrowhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/join_in_arrowhead"        
+        android:layout_marginRight="5dip"/>
+    
+</RelativeLayout>

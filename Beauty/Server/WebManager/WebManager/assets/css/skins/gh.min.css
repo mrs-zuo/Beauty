@@ -1,0 +1,73 @@
+.cancelbtnstyle{
+	background:#c00;
+	color:#fff;
+	border-color:#e00
+}
+.cancelbtnstyle:hover{
+	background:#b00;
+	color:#fff;
+	border-color:#e00
+}
+.FL{
+	float:left!important;
+}
+.FR{
+	float:right!important;
+}
+.txtL{
+	text-align:left!important;
+}
+.txtR{
+	text-align:right!important;
+}
+.txtC{
+	text-align:center!important;
+}
+.width100P{
+	width:100%;
+}
+.MR5P{
+	margin-right:5%;
+}
+.ML15P{
+	margin-left:15%;
+}
+.MT3{
+	margin-top: 3px;
+}
+.MT5{
+	margin-top: 5px;
+}
+.borderNone{
+	border:none!important;
+}
+.borderTop{
+	border-top: 1px solid #E5E5E5;
+}
+.PT10{
+	padding-top:10px;
+}
+.PT15{
+	padding-top:15px;
+}
+.PR10{
+	padding-right:10px;
+}
+.BKG1{
+	background: pink;
+}
+.Font18px{
+	font-size: 1.7rem!important;
+}
+.PR0{
+	padding-right: 0!important;
+}
+.txt06em{
+	font-size:0.6em;
+}
+.width10{
+	width: 10px;
+}
+.BKNone{
+	background: none!important;
+}

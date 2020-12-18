@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+	 <View
+        style="@style/activity_content_divide_view_attrs"/>
+    <RelativeLayout
+       style="@style/activity_content_table_relativelayout_attrs" >
+        <ImageButton
+            android:id="@+id/plus_customer_email_tablerow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical="true"
+            android:background="@drawable/add_table_row"
+            android:contentDescription="@string/search" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/plus_customer_email_tablerow"
+            android:text="@string/new_customer_email"
+            android:textColor="@color/gray"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="5dip" 
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/servicing_customer_headImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/servicing_customer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@id/servicing_customer_headImage"
+        android:maxWidth="@dimen/customer_lsit_customer_name_width"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:textColor="@color/title_font"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/servicing_service_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/servicing_customer_name"
+        android:layout_below="@id/servicing_customer_name"
+        android:textColor="@color/gray"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/servicing_service_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/servicing_service_name"
+        android:layout_alignLeft="@id/servicing_service_name"
+        android:textColor="@color/gray"
+        android:textSize="14sp" />
+    
+    <TextView
+        android:id="@+id/servicing_service_responsible_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dip"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+     <ImageView
+        android:id="@+id/servicing_service_is_designated_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/servicing_service_responsible_person"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="2dip"
+        android:src="@drawable/servicing_service_is_designated_icon" />
+    <TextView
+        android:id="@+id/servicing_service_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/servicing_service_responsible_person"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/servicing_service_responsible_person"
+        android:layout_marginRight="10dip"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+</RelativeLayout>

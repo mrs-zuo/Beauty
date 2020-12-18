@@ -1,0 +1,151 @@
+﻿@{
+    bool isAdd = true;
+    Model.Table_Model.Notice_Model model = new Model.Table_Model.Notice_Model();
+    isAdd = ViewBag.IsAdd;
+    model = ViewBag.noticeModel;
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 2)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li class="active"><a href="/News/GetNoticeList">公告列表</a></li>
+                @{
+                    if (!isAdd)
+                    {
+                    <li class="active">修改公告</li>
+                    }
+                    else
+                    {
+                    <li class="active">添加公告</li>
+                    }
+                }
+
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @{
+                    if (!isAdd)
+                    {
+                    <h1>修改公告</h1>
+                    }
+                    else
+                    {
+                    <h1>添加公告</h1>
+                    }
+                }
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+            <div class="widget">
+                <div class="form-horizontal form-bordered widget-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	标题
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        	
+                        </label>
+                        <div class="col-sm-4">
+                            <input class="form-control" placeholder="输入公告标题" type="text" id="xlginput" value="@(model.NoticeTitle)">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	开始时间
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        	
+                        </label>
+                        <div class="col-sm-4">
+                            <span class="input-icon icon-right time-layer">
+                                <input class="form-control date-picker" id="txt_StartDate" placeholder="开始时间" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" value="@(model.StartDate.ToString("yyyy-MM-dd"))">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                         </div>
+                    </div>
+                    <div class="form-group">
+                         <label class="col-sm-2 control-label no-padding-right">
+                         	结束时间
+                         	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                         	
+                         </label>
+                         <div class="col-sm-4">
+                                <span class="input-icon icon-right time-layer">
+                                <input class="form-control date-picker" id="txt_EndDate" placeholder="结束时间" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" value="@(model.EndDate.ToString("yyyy-MM-dd"))">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <!-- Text input-->
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	内容
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        	
+                        </label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="6" id="form-field-8" placeholder="请输入公告内容">@(model.NoticeContent)</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            @{
+                                if (!isAdd)
+                                {
+                                <a class="btn btn-primary" onclick="editNews(@(model.ID),0)">保 存</a>
+                                <a href="javascript:history.go(-1);" class="btn btn-default"> 返 回 </a>
+                                }
+                                else
+                                {
+                                <a class="btn btn-primary" onclick="addNews(0)">确 定</a>
+                                <a href="javascript:history.go(-1);" class="btn btn-default"> 返 回 </a>
+                                }
+                            }
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+</div>
+<!--编辑框脚本-->
+<script src="/Script/News.js"></script>
+<!--bs Date Picker-->
+<script src="/assets/js/datetime/bs-datepicker.js"></script>
+
+

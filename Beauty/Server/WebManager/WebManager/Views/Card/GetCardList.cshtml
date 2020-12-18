@@ -1,0 +1,145 @@
+﻿@{
+    List<Model.Table_Model.Card_Model> list = new List<Model.Table_Model.Card_Model>();
+    if (ViewBag.CardList != null)
+    {
+        list = ViewBag.CardList;
+    }
+                               
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 15)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>会员卡设定</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>会员卡设定</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-group navbar-form">
+                <a href="/Card/EditCard?CD=0" class="btn btn-default"><i class="fa fa-plus-square"></i>添加会员账户</a>
+            </div>
+            <div class="widget-body no-padding">
+
+                <table class="table table-hover table-striped">
+                    <colgroup class="row">
+                        <col class="col-xs-1">
+                        <col class="col-xs-2">
+                        <col class="col-xs-3">
+                        <col class="col-xs-3">
+                        <col class="col-xs-3">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="over-text">编号</th>
+                            <th class="over-text">会员账户名称</th>
+                            <th class="over-text">基础折扣率/金额抵扣率</th>
+                            <th>查看折扣</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @if (list != null && list.Count > 0)
+                        {
+                            int index = 1;
+                            foreach (Model.Table_Model.Card_Model item in list)
+                            {
+                            <tr>
+                                <td>@(index)</td>
+                                <td class="over-text">@(item.CardName)</td>
+                                <td>@(item.Rate * 100)%</td>
+                                <td>
+                                    @if (item.CardTypeID == 1)
+                                    {
+                                        <div class="dropdown">
+                                            <a data-toggle="dropdown" class="dropdown-toggle btn btn-default btn-sm" href="#">查看折扣<span class="caret"></span>
+                                            </a>
+                                            <ul aria-labelledby="drop1" class="dropdown-menu select-down">
+
+                                                @if (item.listDiscount != null && item.listDiscount.Count > 0)
+                                                {
+                                                    List<Model.Table_Model.CardDiscount_Model> temp = item.listDiscount.Where(c => c.CardID == item.ID).OrderBy(c => c.DiscountID).ToList<Model.Table_Model.CardDiscount_Model>();
+                                                    if (temp != null && temp.Count > 0)
+                                                    {
+
+                                                        foreach (Model.Table_Model.CardDiscount_Model itemDiscount in temp)
+                                                        {
+                                                    <li><a>@(itemDiscount.DiscountName)  @(itemDiscount.Discount * 100)%</a></li>
+                                                        }
+                                                    }
+
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                                </td>
+
+                                <td>
+                                    @{
+                                    <a class="btn btn-default btn-sm" href="/Card/EditCard?CD=@(item.CardCode)"><i class="fa fa-edit"></i>编辑</a>
+
+                                    if (item.CardTypeID == 1)
+                                    {
+                                        if (item.IsDefault)
+                                        {
+                                        <a class="btn btn-default btn-sm" onclick="setDefaultCard(@(item.CardCode),'1')">
+                                            <i class="fa fa-check-square-o"></i>默认</a>
+                                        }
+                                        else
+                                        {   
+                                        <a class="btn btn-default btn-sm" onclick="setDefaultCard(@(item.CardCode),'0')">
+                                            <i class="fa fa-square-o"></i>默认</a>
+                                        }
+                                    
+                                        <a class="btn btn-default btn-sm" onclick="deleteCard(@(item.ID))"><i class="fa fa-minus-circle"></i>停用</a>
+                                    }
+                                        }
+                                    
+                                </td>
+                            </tr>
+                                    index++;   
+                            }
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- /Page Body -->
+    </div>
+</div>
+<script src="~/Script/Card.js"></script>

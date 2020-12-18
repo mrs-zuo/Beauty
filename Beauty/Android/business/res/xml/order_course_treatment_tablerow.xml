@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        style="@style/activity_content_table_relativelayout_attrs" >
+         <TextView
+            android:id="@+id/order_course_treatment_no" 
+            style="@style/activity_content_table_row_title_attrs"/>
+         
+        <ImageButton
+            android:id="@+id/del_course_treatment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:src="@drawable/del_table_row" 
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical="true"/>
+         <TextView
+            android:id="@+id/order_course_treatment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/del_course_treatment"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size"
+            android:layout_marginRight="5dip"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerVertical="true"/>
+         <TextView
+            android:id="@+id/order_course_treatment_responsible_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_toLeftOf="@id/order_course_treatment_time"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size"/>
+    </RelativeLayout>
+    <View
+        style="@style/activity_content_divide_view_attrs" />
+
+</LinearLayout>

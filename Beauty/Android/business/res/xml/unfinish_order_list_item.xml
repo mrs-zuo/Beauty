@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/unfinish_order_product_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:textSize="@dimen/text_size"
+        android:text="@string/ellipsis"
+        android:textColor="@color/blue"
+        android:singleLine="true"
+       />
+    
+    <TextView
+        android:id="@+id/unfinish_order_payment_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/unfinish_order_product_name_text"
+        android:layout_below ="@id/unfinish_order_product_name_text"
+        android:textSize="@dimen/text_size" 
+        android:textColor="@color/gray"
+       />
+
+    <TextView
+        android:id="@+id/unfinish_order_product_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/unfinish_order_product_name_text"
+        android:layout_below ="@id/unfinish_order_payment_status_text"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/gray"
+       />
+    <ImageView
+            android:id="@+id/select_unfinish_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_centerVertical ="true"
+            android:layout_alignParentRight="true"/>
+    <TextView
+        android:id="@+id/unfinish_order_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/select_unfinish_order"
+        android:layout_below="@id/unfinish_order_product_name_text"
+        android:layout_marginRight="5dip"
+        android:textSize="@dimen/text_size"
+        android:singleLine="true"
+        android:text="@string/ellipsis"
+        android:maxWidth="200dip"
+        android:textColor="@color/gray"/>
+    <TextView
+        android:id="@+id/unfinish_order_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/select_unfinish_order"
+        android:layout_below="@id/unfinish_order_person_name"
+        android:layout_alignRight="@id/unfinish_order_person_name"
+        android:layout_alignBottom="@id/unfinish_order_product_status_text"
+        android:textSize="@dimen/text_size_16sp"
+       />
+</RelativeLayout>

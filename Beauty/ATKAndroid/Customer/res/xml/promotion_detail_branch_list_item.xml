@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="14dp" >
+        <TextView
+            android:id="@+id/promotion_detail_branch_list_item_branch_name"
+            style="@style/relative_layout_left_child_attrs"
+            android:layout_marginLeft="14dp"
+            android:textColor="@color/gray" />
+
+        <ImageView
+            style="@style/relative_layout_right_child_attrs"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/join_in_arrowhead_gray" />
+    </RelativeLayout>
+
+    <View style="@style/divide_view" />
+
+</LinearLayout>

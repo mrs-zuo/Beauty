@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView
+    	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/group_listview"
+        style="@style/activity_content_listview_attrs"
+        android:background="@color/white" />

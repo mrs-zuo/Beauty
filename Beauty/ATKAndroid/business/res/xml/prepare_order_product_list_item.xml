@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/order_product_tablelayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@xml/shape_corner_round" >
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            android:id="@+id/prepare_order_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_responsible_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/service_order_detail_reaponsible" />
+
+        <ImageView
+            android:id="@+id/prepare_order_reaponsible_name_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:contentDescription="@string/search"
+            android:src="@drawable/change_order_detail_reaponsible_name_icon" />
+
+        <TextView
+            android:id="@+id/prepare_order_reaponsible_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/prepare_order_reaponsible_name_icon"
+            android:maxWidth="200dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/service_order_expiration_date_divide_view"
+        style="@style/activity_content_divide_view_attrs"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/service_order_expiration_date_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:visibility="gone" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/service_order_expiration_date" />
+
+        <ImageButton
+            android:id="@+id/service_order_expiration_date_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/change_service_expiration_icon"
+            android:contentDescription="@string/search" />
+
+        <EditText
+            android:id="@+id/service_order_expiration_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/service_order_expiration_date_btn"
+            android:background="@null"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/opportunity_order_num" />
+
+        <ImageButton
+            android:id="@+id/prepare_order_plus_quantity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/add_table_row"
+            android:contentDescription="@string/search" />
+
+        <EditText
+            android:id="@+id/prepare_order_product_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@id/prepare_order_plus_quantity_btn"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:minWidth="20dip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+
+        <ImageButton
+            android:id="@+id/prepare_order_reduce_quantity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/prepare_order_product_quantity"
+            android:background="@drawable/del_table_row"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_service_quantity_divide_view"
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_quantity_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/prepare_order_service_num" />
+
+        <ImageButton
+            android:id="@+id/prepare_order_service_plus_quantity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/add_table_row"
+            android:contentDescription="@string/search" />
+
+        <EditText
+            android:id="@+id/prepare_order_service_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@id/prepare_order_service_plus_quantity_btn"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:minWidth="20dip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+
+        <ImageButton
+            android:id="@+id/prepare_order_service_reduce_quantity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/prepare_order_service_quantity"
+            android:background="@drawable/del_table_row"
+            android:contentDescription="@string/search" />
+
+        <TextView
+            android:id="@+id/prepare_order_service_quantity_zero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:text="@string/prepare_order_service_quantity_zero"
+            android:textSize="@dimen/text_size"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_product_total_price_divide_view"
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_total_price_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/opportunity_order_total_price" />
+        <TextView
+            android:id="@+id/prepare_order_product_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dip"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/prepare_order_product_total_price_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/prepare_order_product_total_price"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_product_total_spinner_view"
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_total_spinner_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/opportunity_order_card" />
+
+        <Spinner
+            android:id="@+id/add_opportunity_confirm_step_template_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="6dip"
+            android:background="@null"
+            android:gravity="right"
+            android:paddingLeft="50dip" />
+    </RelativeLayout>
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_promotion_price_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/order_detail_total_calculate_price" />
+        <TextView
+            android:id="@+id/prepare_order_product_promotion_price_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@+id/prepare_order_product_promotion_price"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+
+        <EditText
+            android:id="@+id/prepare_order_product_promotion_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="6dip"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:maxWidth="200dip"
+            android:textSize="@dimen/text_size" >
+        </EditText>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_product_benfit_divide_view"
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout 
+        android:id="@+id/prepare_order_product_benfit_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/add_order_customer_benefits_title" />
+
+        <Spinner
+            android:id="@+id/add_order_customer_benefits_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="6dip"
+            android:background="@null"
+            android:gravity="right"
+            android:paddingLeft="50dip" />
+    </RelativeLayout>
+	<View
+        android:id="@+id/prepare_order_product_benfit_rule_divide_view"
+        style="@style/activity_content_divide_view_attrs" 
+        android:visibility="gone"/>
+	 <RelativeLayout 
+        android:id="@+id/prepare_order_product_benfit_rule_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" 
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/prepare_order_product_benfit_rule_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:gravity="right"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size"
+            android:singleLine="true"
+            android:text="@string/ellipsis"/>
+    </RelativeLayout>
+    <View
+        android:id="@+id/prepare_order_product_total_sale_price1_divide_view"
+        style="@style/activity_content_divide_view_attrs"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_total_discuss_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:visibility="gone" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/opportunity_detail_total_sale_price" />
+
+        <EditText
+            android:id="@+id/prepare_order_product_total_sale_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dip"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:maxWidth="200dip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/prepare_order_product_total_sale_price_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/prepare_order_product_total_sale_price"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_product_has_paid_relativelayout_divide_view"
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_has_paid_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/opportunity_order_has_paid_title" />
+
+        <ImageView
+            android:id="@+id/prepare_order_product_has_paid_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/customer_scan_record_status_gray_icon" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_product_has_paid_price_divide_view"
+        style="@style/activity_content_divide_view_attrs"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_has_paid_price_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/opportunity_detail_has_paid_price" />
+
+        <EditText
+            android:id="@+id/prepare_order_product_has_paid_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dip"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:maxWidth="200dip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/prepare_order_product_has_paid_price_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/prepare_order_product_has_paid_price"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_product_has_paid_price_divide_view"
+        style="@style/activity_content_divide_view_attrs"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_has_completenum_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/opportunity_detail_has_completenum" />
+
+        <ImageButton
+            android:id="@+id/prepare_order_plus_has_quantity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/add_table_row"
+            android:contentDescription="@string/search" />
+
+        <EditText
+            android:id="@+id/prepare_order_product_has_completenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@id/prepare_order_plus_has_quantity_btn"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:minWidth="20dip"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+
+        <ImageButton
+            android:id="@+id/prepare_order_reduce_has_quantity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/prepare_order_product_has_completenum"
+            android:background="@drawable/del_table_row"
+            android:contentDescription="@string/search" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/prepare_order_product_total_sale_price_divide_view"
+        style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout
+        android:id="@+id/prepare_order_product_total_sale_price_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" >
+        <TextView
+            style="@style/activity_content_table_row_title_attrs"
+            android:text="@string/remark" />
+    </RelativeLayout>
+
+    <View style="@style/activity_content_divide_view_attrs" />
+
+    <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+        <EditText
+            android:id="@+id/prepare_order_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@null"
+            android:gravity="left"
+            android:hint="@string/please_input_customer_remark"
+            android:maxLength="300"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+</TableLayout>

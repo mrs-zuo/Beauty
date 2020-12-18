@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:padding="5dip">
+	
+    <FrameLayout
+        android:id="@+id/thumbnail_framelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:scaleType="centerInside" >
+        <FrameLayout
+            android:id="@+id/thumbnail_framelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@xml/shape_corner_round"
+            android:orientation="vertical"
+            android:layout_margin="5dip"
+            android:padding="2dp"
+            android:scaleType="centerInside" >
+            <ImageView
+                android:id="@+id/commodity_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/commodity_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/recommended_commodity_icon"
+            android:layout_width="@dimen/new_recommended_icon_width"
+            android:layout_height="@dimen/new_recommended_icon_height"
+            android:layout_marginTop="3dip"
+            android:contentDescription="@string/unread_remind"
+            android:src="@drawable/recomended_commodity_icon"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/new_commodity_icon"
+            android:layout_width="@dimen/new_recommended_icon_width"
+            android:layout_height="@dimen/new_recommended_icon_height"
+            android:layout_marginTop="@dimen/new_recommended_margin_top"
+            android:contentDescription="@string/unread_remind"
+            android:src="@drawable/new_commodity_icon"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/stored_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:contentDescription="@string/unread_remind"
+            android:src="@drawable/favorited_prompt_icon"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/thumbnail_framelayout" >
+        <TextView
+            android:id="@+id/item_commodity_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:paddingRight="20dp"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:minLines="2"
+            android:text="@string/ellipsis"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size"
+            android:ellipsize="end" />
+
+        <ImageView
+            android:id="@+id/commodity_discount_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_commodity_name"
+            android:layout_marginTop="5dip" />
+
+        <TextView
+            android:id="@+id/commodity_promotion_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_commodity_name"
+            android:layout_marginTop="5dip"
+            android:layout_toRightOf="@id/commodity_discount_icon"
+            android:textSize="@dimen/text_size" />
+        <TextView
+            android:id="@+id/commodity_unit_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_commodity_name"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:layout_toRightOf="@id/commodity_promotion_price"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_16sp" />
+    </RelativeLayout>
+	
+    <ImageButton
+        android:id="@+id/product_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/no_select_btn" />
+    <!--收藏失效图片-->
+     <ImageView
+        android:id="@+id/favorite_lose_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/has_lose_effectiveness_icon" 
+        android:visibility="gone"/>
+
+</RelativeLayout>

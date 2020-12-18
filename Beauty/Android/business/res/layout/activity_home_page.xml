@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".HomePageActivity" 
+    android:background="@color/activity_background_color">
+    <RelativeLayout
+        android:id="@+id/home_page_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/home_page_title_relativelayout"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/home_page_head_layout" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/home_page_title_text" />
+        <ImageView
+            android:id="@+id/branch_total_report"
+            style="@style/activity_title_button_attrs"
+            android:src="@drawable/branch_total_report_icon" 
+            android:visibility="gone"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/default_home_page_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/home_page_title_relativelayout"
+        android:background="@drawable/welcome"
+        android:visibility="gone"/>
+    <com.GlamourPromise.Beauty.view.NewRefreshListView
+        android:id="@+id/servicing_info_list_view"
+        style="@style/activity_content_listview_attrs"
+        android:layout_below="@id/home_page_title_relativelayout" 
+        android:layout_marginBottom="61dip"/>
+    <LinearLayout
+        android:id="@+id/servicing_info_sort_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:background="#3EBEFF">
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="2.5" >
+            <TextView
+                android:id="@+id/sort_by_tg_status_servicing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dip"
+                android:text="@string/sort_by_tg_status_servicing"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="2.5" >
+            <TextView
+                android:id="@+id/sort_by_tg_status_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sort_by_tg_status_completed"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="2" >
+            <TextView
+                android:id="@+id/sort_by_tg_status_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sort_by_tg_status_all"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="1.1" >
+            <View
+                android:id="@+id/sort_by_tg_status_divide_view"
+                android:layout_width="1dip"
+                android:layout_height="40dip"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="60dip"
+            android:layout_weight="3" >
+            <TextView
+                android:id="@+id/sort_by_tg_service_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/service_responsible_person"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp" />
+            <ImageView
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="5dip"
+                android:layout_toLeftOf="@id/sort_by_tg_service_person"
+                android:src="@drawable/sort_by_tg_service_person_icon"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

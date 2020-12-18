@@ -1,0 +1,263 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/title_backcolor"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/payment_action_result_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical" >
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/payment_action_result_title"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/payment_action_result_head_layout" >
+
+        <TextView
+            style="@style/activity_title_text_attrs"
+            android:text="@string/payment_action_weixin_result" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_below="@id/payment_action_result_title">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/payment_action_result_status_btn_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/payment_action_result_success_btn"
+                    style="@style/payment_action_result_success_btn"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/payment_action_result_unsuccess_btn"
+                    style="@style/cancel_big_btn"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/payment_action_result_unknown_btn"
+                    style="@style/unknown_status_btn"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/payment_action_result_tablelayout"
+                style="@style/activity_content_table_attrs"
+                android:layout_below="@id/payment_action_result_status_btn_linearlayout" >
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_net_trade_no" />
+
+                    <TextView
+                        android:id="@+id/payment_action_result_net_trade_no_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        android:id="@+id/payment_action_result_product_name_text"
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:singleLine="true"
+                        android:text="@string/ellipsis"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_amount" />
+
+                    <TextView
+                        android:id="@+id/payment_action_result_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/payment_action_result_time_divide_view"
+                    style="@style/activity_content_divide_view_attrs"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/payment_action_result_time_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_result_time" />
+
+                    <TextView
+                        android:id="@+id/payment_action_result_time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/payment_action_bank_name_divide_view"
+                    style="@style/activity_content_divide_view_attrs"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/payment_action_bank_name_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_bank_name" />
+
+                    <TextView
+                        android:id="@+id/payment_action_result_bank_name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/payment_action_result_trade_id_divide_view"
+                    style="@style/activity_content_divide_view_attrs"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/payment_action_result_trade_id_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/payment_action_result_trade_id" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/payment_action_result_trade_id_value_divide_view"
+                    style="@style/activity_content_divide_view_attrs"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/payment_action_result_trade_id_value_relativelayout"
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/payment_action_result_trade_id_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+            </TableLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/payment_action_weixin_next_btn"
+            style="@style/submit_big_btn"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            android:text="@string/confirm"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/payment_action_weixin_back_btn"
+            style="@style/submit_big_btn"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            android:text="@string/payment_action_order_return"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/payment_action_weixin_refresh_btn"
+            style="@style/submit_big_btn"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            android:text="@string/refresh_result"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

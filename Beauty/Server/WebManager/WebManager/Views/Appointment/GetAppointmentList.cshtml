@@ -1,0 +1,205 @@
+﻿@{
+    List<Model.Table_Model.Appointment_Model> appointmentlist = Model;
+    if (ViewBag.appointmentlist != null && ViewBag.appointmentlist is List<Model.Table_Model.Appointment_Model>)
+    {
+        appointmentlist = ViewBag.Appointment as List<Model.Table_Model.Appointment_Model>;
+    }
+    int branchID = ViewBag.branchID;
+    string branchName = ViewBag.BranchName;
+    bool isBranch = ViewBag.IsBranch;
+    string timedate = DateTime.Now.ToString("yyyy-MM-dd");
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 26)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li class="active">预约总览</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>预约总览</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="widget-body no-padding">
+                <div class="row">
+                    <div class="col-xs-1" style="width: 50px;"></div>
+                    <div class="col-xs-4 margin-top-20" style="max-width: 280px;">
+                        <table class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-4">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="col-xs-12 form-group">
+                                            <label class="pull-left label-m">选择日期：</label>
+                                            <div class="col-xs-6 no-padding-left">
+                                                <span class="input-icon icon-right time-layer" style="min-width: 120px;">
+                                                    <input class="form-control date-picker" placeholder="请输入日期" onclick="laydate({ istime: true, format: 'YYYY-MM-DD' })" id="txtTimeDate" style="text-align:center;" value="@(timedate)">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>    
+                                    <td>
+                                        <div class="col-xs-12 form-group">
+                                            <label class="pull-left label-m">选择门店：</label>
+                                            <div class="col-xs-6 no-padding-left">                                           
+                                                <select class="select-control" id="selBra" style="min-width: 120px;"></select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-xs-12 form-group">
+                                            <label class="pull-left label-m">选择顾客：</label>
+                                            <div class="col-xs-7 no-padding-left">
+                                                <input id="inputCustomer" type="text" class="form-control" style="min-width: 120px;" placeholder="请输入顾客姓名">                                              
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="col-xs-12 form-group">
+                                            <label class="pull-left label-m">选择员工：</label>
+                                            <div class="col-xs-7 no-padding-left">
+                                                <input id="inputStaff" type="text" class="form-control" style="min-width: 120px;" placeholder="请输入员工姓名">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-xs-12 form-group">
+                                            <label class="pull-left label-m">选择服务：</label>
+                                            <div class="col-xs-7 no-padding-left">
+                                                <input id="inputService" type="text" class="form-control" style="min-width: 120px;" placeholder="请输入服务名称">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-xs-12 form-group">
+                                            <label class="col-sm-5 control-label no-padding-left">选择状态：</label>
+                                        </div>
+                                        <div class="col-xs-12 form-group">
+                                            <label><input type="checkbox" id="chk_Sta1" name="chk_Sta" code="1" checked/><span class="text">待确认&nbsp;</span></label>
+                                            <label><input type="checkbox" id="chk_Sta2" name="chk_Sta" code="2" checked/><span class="text">已确认&nbsp;</span></label>
+                                            <label><input type="checkbox" id="chk_Sta3" name="chk_Sta" code="3" checked/><span class="text">已执行</span></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;">
+                                        <div class="form-group">         
+                                            <button type="submit" class="btn btn-primary " onclick="SearchOption()">搜索</button>
+                                        </div>
+                                    </td>
+                                </tr>  
+                            </tbody>
+                        </table>
+                        <div class="col-xs-2 arrow-client" style="min-height: 190px;"></div>
+                    </div>
+
+                    <div class="col-xs-7 margin-top-20" style="min-width: 660px;">
+                        <table class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table class="table table-hover table-striped">
+                                            <colgroup class="row">
+                                                <col class="col-xs-4">
+                                                <col class="col-xs-5">
+                                                <col class="col-xs-10">
+                                                <col class="col-xs-5">
+                                                <col class="col-xs-8">
+                                                <col class="col-xs-6">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>时间</th>
+                                                    <th>姓名</th>
+                                                    <th>项目</th>
+                                                    <th>员工</th>
+                                                    <th>备注</th>
+                                                    <th>状态</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="no-padding" colspan="6">
+                                                        <div class="over-down-tb" style="min-height: 550px;">
+                                                            <table  class="table table-hover margin-top-1">
+                                                                <colgroup class="row">
+                                                                    <col class="col-xs-4">
+                                                                    <col class="col-xs-5">
+                                                                    <col class="col-xs-10">
+                                                                    <col class="col-xs-5">
+                                                                    <col class="col-xs-8">
+                                                                    <col class="col-xs-5">
+                                                                </colgroup>
+                                                                <tbody id="tbAppointment"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <input type="hidden" id="hidData" />
+                <input type="hidden" id="hidbraid" value="@(branchID)"/>
+                <input type="hidden" id="hidisbra" value="@(isBranch)" />
+                <input type="hidden" id="hidbrana" value="@(branchName)" />
+            </div>
+                <!-- /Page Body -->
+        </div>
+
+                    <!-- /Page Content -->
+    </div>
+</div>
+<script src="~/Script/Appointment.js"></script>
+<script src="~/assets/js/datetime/bs-datepicker.js"></script>
+

@@ -1,0 +1,168 @@
+﻿@{
+    Layout = null;
+    List<Model.View_Model.PromotionList_Model> topList = ViewBag.TopList;
+    List<Model.View_Model.PromotionList_Model> bottomList = ViewBag.ButtomList;
+    List<Model.View_Model.ProductList_Model> RecommendedList = ViewBag.RecommendedList;
+	
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css?t=20151204001" />
+    <style>
+        .bkgColor1 {
+            background-color:@(string.IsNullOrWhiteSpace(ViewBag.CompanyStyle) ? "#f75483" : ViewBag.CompanyStyle);
+        }
+        .color1 {
+            color: @(string.IsNullOrWhiteSpace(ViewBag.CompanyStyle) ? "#f75483" : ViewBag.CompanyStyle);
+        }
+        .borderPink{
+            border:1px solid @(string.IsNullOrWhiteSpace(ViewBag.CompanyStyle) ? "#f75483" : ViewBag.CompanyStyle);
+        }
+    </style>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/goTop.js"></script>
+	<script src="/js/Swipe.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            Swipe(document.getElementById('slider'), {
+                auto: 3000,
+                continuous: true,
+                callback: function (pos) {
+                    var bullets = $("#position li");
+                    var i = bullets.length;
+                    while (i--) {
+                        bullets[i].className = ' ';
+                    }
+                    bullets[pos].className = 'on';
+                }
+            });
+        });
+    </script>
+</head>
+<body class="positionR">
+<div class="outermost">
+    <div class="wrapper whiteBkg">
+		<!--轮显图片开始-->
+		<div class="banner swipe" id="slider">
+			@if (topList != null && topList.Count > 0)
+                    {
+						<div class="swipe-wrap">
+							@foreach (Model.View_Model.PromotionList_Model item in topList)
+                            {
+									<figure>
+										<a href="/Promotion/PromotionDetail?pc=@(item.PromotionCode)">
+											<img src="@(item.PromotionPictureURL == "" ? "/pic/nopicbg.jpg" : item.PromotionPictureURL)"/>
+										</a>
+									</figure>
+                                
+                            }
+						</div>	
+						<nav>
+							<ul id="position">
+							@for(int i = 0;i<topList.Count;i++){   
+							  <li></li>
+							}
+							</ul>
+						</nav>
+                    }
+						</div>
+		</div>
+		
+		<!--轮显图片结束-->
+        <div class="width95 blockC">
+            <div class="MT5P width100 MB50">
+                <ul class="tab">
+                    <li class="tabItem width23"><a class="tabItem bkgColor1" href="/Product/ServiceCategory"><div class="imgArea MT15"><img src="/pic/icon1.png" height="40" /></div><span class="MT15 inlineB">服务</span></a></li>
+                    <li class="tabItem width23"><a class="tabItem bkgColor1" href="/Product/CommodityCategory"><div class="imgArea MT15"><img src="/pic/icon2.png" height="40" /></div><span class="MT15 inlineB">商品</span></a></li>
+                    <li class="tabItem width23"><a class="tabItem bkgColor1" href="/Company/CompanyDetail"><div class="imgArea MT15"><img src="/pic/icon3.png" height="40" /></div><span class="MT15 inlineB">商家</span></a></li>
+                    <li class="tabItem width23"><a class="tabItem bkgColor1" href="/Account/MyHome"><div class="imgArea MT10"><img src="/pic/icon4.png" height="45" /></div><span class="MT15 inlineB">我的</span></a></li>
+                 @*       <li class="tabItem width23"><a class="tabItem bkgColor1" href="/Home/test"><div class="imgArea MT10"><img src="/pic/icon4.png" height="45" /></div><span class="MT15 inlineB">test</span></a></li>*@
+                </ul>
+            </div>
+            <div class="positionR MT5P textL">
+                @{
+                    if (bottomList != null && bottomList.Count > 0)
+                    {
+                        <span class="separation inlineB bkgColor1"></span><span class="font18">促销</span>
+                        <a class="positionA grayTex rightSite" href="/Promotion/PromotionList">更多 >></a>
+                    }
+                }
+            </div>
+            <ul class="MT20 P10Table width100 homeUl">
+                @{
+                    if (bottomList != null && bottomList.Count > 0)
+                    {
+                        foreach (Model.View_Model.PromotionList_Model item in bottomList)
+                        {
+                            <li class="borderB PB10 textL clearfix">
+                                <a href="/Promotion/PromotionDetail?pc=@(item.PromotionCode)">
+                                    <div class="width100P fl">
+                                        <div class="imgArea bkgColor1 viewImgArea positionR">
+                                            <span class="positionA newIcon dispNone"><img src="/pic/new.png" height="60" /></span><img src="@(item.PromotionPictureURL == ""  ? "/pic/nopicbg.jpg" : item.PromotionPictureURL)"  />
+                                        </div>
+                                    </div>
+                                    <div class="positionR ML105">
+                                        <p class="grayTex MT10">@*@(item.StartDate.ToString("yyyy-MM-dd")) 至 @(item.EndDate.ToString("yyyy-MM-dd"))*@</p>
+                                        <h4 class="strong blackTex font16 MT15">@(item.Title)</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+            @{
+                if (RecommendedList != null && RecommendedList.Count > 0)
+                {
+                    <div class="positionR MT5P textL"><span class="separation inlineB bkgColor1"></span><span class="font18">推荐</span></div>
+                    <ul class="MT20 width100 homeUl textC clearfix">
+                        @{
+                            foreach (Model.View_Model.ProductList_Model item in RecommendedList)
+                            {
+                                string url = "";
+                                if (item.ProductType == 1)
+                                {
+                                    url = "/Product/CommodityDetail?lc=" + item.ProductCode;
+                                }
+                                else
+                                {
+                                    url = "/Product/ServiceDetail?lc=" + item.ProductCode;
+                                }
+                                <li class="fl width45 pLR2P MB15 clearfix">
+                                    <a href="@(url)" class="block width100 ">
+                                        <img src="@(item.ThumbnailURL == "" ? "/pic/nopicbg.jpg" : item.ThumbnailURL)" alt="" class="width100 fl borderPink" />
+                                        <span class="fl width100">
+                                            <h4 class="strong blackTex font14 MT15 longTex">@(item.ProductName)</h4>
+                                        </span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                }
+            }
+        </div>
+    </div>
+    <div class="goTopSite">
+        <ul class="tab">
+            <li><a class="goTtop bkgColor1" href="/Product/MyCart"><div class="imgArea MT5"><img src="/pic/cartIcon.png" height="35" /></div></a></li>
+            <li>
+                <a class="goTtop bkgColor1 MT10 goTop" style="display: none;">
+                    <div class="imgArea MT5">
+                        <img src="/pic/upArrow.png" height="35">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

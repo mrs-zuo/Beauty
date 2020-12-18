@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical" >
+   <RelativeLayout
+        android:id="@+id/order_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+		<Button
+                android:id="@+id/order_confirm_btn"
+                style="@style/add_favorite_btn"
+                android:layout_width="match_parent"
+                android:layout_margin="1dip"
+                android:background="#D5C5B5"
+                android:text="@string/btn_order_confirm_button"
+                android:textColor="@color/white" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/order_confirm">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/commodity_linearlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/total_price_layout"
+                style="@style/table_layout_attrs" >
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/total_price_title_text"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/total_price"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/total_price_content_text"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+
+                <View  style="@style/divide_view" />
+
+                <RelativeLayout style="@style/relative_layout_has_child_attrs" >
+
+                    <TextView
+                        android:id="@+id/sale_price_title_text"
+                        style="@style/relative_layout_left_child_attrs"
+                        android:text="@string/title_order_confirm_member_sale_price"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:id="@+id/sale_price_content_text"
+                        style="@style/relative_layout_right_child_attrs" />
+                </RelativeLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

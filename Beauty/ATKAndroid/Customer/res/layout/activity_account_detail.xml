@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".AccountDetailActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@color/white"
+                android:orientation="horizontal" 
+                android:padding="14dp">
+
+                <ImageView
+                    android:id="@+id/account_headimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/head_image_null_big" />
+
+                <TextView
+                    android:id="@+id/account_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/account_headimage"
+                    android:maxWidth="@dimen/account_name_maxwidth"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <ImageView
+                    android:id="@+id/send_message_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/remind_feiyu_responser_person_icon" />
+            </RelativeLayout>
+
+            <TableLayout
+                android:id="@+id/account_phone"
+                style="@style/table_layout_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_title_and_department"
+                style="@style/table_layout_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_branch_name"
+                style="@style/table_layout_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_expert"
+                style="@style/table_layout_attrs" >
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/account_introduction"
+                style="@style/table_layout_attrs" >
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

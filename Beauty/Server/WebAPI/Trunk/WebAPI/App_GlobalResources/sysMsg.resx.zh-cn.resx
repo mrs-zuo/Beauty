@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="balanceRecharge" xml:space="preserve">
+    <value>充值</value>
+  </data>
+  <data name="errAccAdd" xml:space="preserve">
+    <value>0|美容师信息添加失败!</value>
+  </data>
+  <data name="errAccAvailable" xml:space="preserve">
+    <value>0|状态变更失败!</value>
+  </data>
+  <data name="errAccUpdate" xml:space="preserve">
+    <value>0|美容师信息更新失败!</value>
+  </data>
+  <data name="errBalanceNotEnough" xml:space="preserve">
+    <value>0|余额不足!</value>
+  </data>
+  <data name="errBalanceRecharge" xml:space="preserve">
+    <value>0|充值失败!</value>
+  </data>
+  <data name="errComAvailabel0" xml:space="preserve">
+    <value>0|本公司允许添加人数为0!</value>
+  </data>
+  <data name="errComAvailabeMax" xml:space="preserve">
+    <value>0|本公司允许添加人数已经达到最大值!</value>
+  </data>
+  <data name="errCompanyUpdate" xml:space="preserve">
+    <value>0|美容院信息更新失败!</value>
+  </data>
+  <data name="errCustomerAdd" xml:space="preserve">
+    <value>0|客户添加失败!</value>
+  </data>
+  <data name="errCustomerDel" xml:space="preserve">
+    <value>0|客户删除失败!</value>
+  </data>
+  <data name="errCustomerUpdateBasic" xml:space="preserve">
+    <value>0|客户基本信息更新失败!</value>
+  </data>
+  <data name="errCustomerUpdateDetail" xml:space="preserve">
+    <value>0|客户详细信息更新失败!</value>
+  </data>
+  <data name="errDataError" xml:space="preserve">
+    <value>0|处理数据出现异常!</value>
+  </data>
+  <data name="errExistMobile" xml:space="preserve">
+    <value>0|该手机号码已经存在!</value>
+  </data>
+  <data name="errImageDel" xml:space="preserve">
+    <value>0|图片删除失败!</value>
+  </data>
+  <data name="errImageUpload" xml:space="preserve">
+    <value>0|图片上传失败!</value>
+  </data>
+  <data name="errLevelAdd" xml:space="preserve">
+    <value>0|会员卡添加失败!</value>
+  </data>
+  <data name="errLevelChange" xml:space="preserve">
+    <value>0|用户等级修改失败!</value>
+  </data>
+  <data name="errLevelDel" xml:space="preserve">
+    <value>0|会员卡删除失败!</value>
+  </data>
+  <data name="errLevelUpdate" xml:space="preserve">
+    <value>0|会员卡更新失败!</value>
+  </data>
+  <data name="errNoAbout" xml:space="preserve">
+    <value>0|本公司没有关于</value>
+  </data>
+  <data name="errNoStep" xml:space="preserve">
+    <value>0|本公司不存在处理步骤!</value>
+  </data>
+  <data name="errOppAdd" xml:space="preserve">
+    <value>0|添加需求失败!</value>
+  </data>
+  <data name="errOppDel" xml:space="preserve">
+    <value>0|删除需求失败!</value>
+  </data>
+  <data name="errOppUpdate" xml:space="preserve">
+    <value>0|更新需求失败!</value>
+  </data>
+  <data name="errOrderAdd" xml:space="preserve">
+    <value>0|订单添加失败!</value>
+  </data>
+  <data name="errPay" xml:space="preserve">
+    <value>0|支付失败!</value>
+  </data>
+  <data name="errProgressUpdate" xml:space="preserve">
+    <value>0|进度变更失败!</value>
+  </data>
+  <data name="errQuestionAdd" xml:space="preserve">
+    <value>0|问卷添加失败!</value>
+  </data>
+  <data name="errQuestionUpt" xml:space="preserve">
+    <value>0|问卷更新失败!</value>
+  </data>
+  <data name="errRecAdd" xml:space="preserve">
+    <value>0|美容记录添加失败!</value>
+  </data>
+  <data name="errRecDel" xml:space="preserve">
+    <value>0|美容记录删除成功!</value>
+  </data>
+  <data name="errRecUpdate" xml:space="preserve">
+    <value>0|美容记录更新成功!</value>
+  </data>
+  <data name="errSettingCustomer" xml:space="preserve">
+    <value>0|个人基本信息设置失败!</value>
+  </data>
+  <data name="errStepInputNumber" xml:space="preserve">
+    <value>0|步骤数请输入0至</value>
+  </data>
+  <data name="errSubmit" xml:space="preserve">
+    <value>0|提交失败!</value>
+  </data>
+  <data name="errTemplateAdd" xml:space="preserve">
+    <value>0|模板添加失败!</value>
+  </data>
+  <data name="errTemplateDel" xml:space="preserve">
+    <value>0|模板删除失败!</value>
+  </data>
+  <data name="errTemplateUpdate" xml:space="preserve">
+    <value>0|模板更新失败!</value>
+  </data>
+  <data name="newMsg" xml:space="preserve">
+    <value>您有新消息!!</value>
+  </data>
+  <data name="newRemind" xml:space="preserve">
+    <value>收到提醒!!</value>
+  </data>
+  <data name="remindAppoint" xml:space="preserve">
+    <value>有一个预约!</value>
+  </data>
+  <data name="remindYou" xml:space="preserve">
+    <value>您在</value>
+  </data>
+  <data name="strBetween" xml:space="preserve">
+    <value>之间!</value>
+  </data>
+  <data name="strProduct" xml:space="preserve">
+    <value>的产品!</value>
+  </data>
+  <data name="sucAccAdd" xml:space="preserve">
+    <value>1|美容师信息添加成功!</value>
+  </data>
+  <data name="sucAccAvailable" xml:space="preserve">
+    <value>1|状态变更成功!</value>
+  </data>
+  <data name="sucAccUpdate" xml:space="preserve">
+    <value>1|美容师信息更新成功!</value>
+  </data>
+  <data name="sucBalanceRecharge" xml:space="preserve">
+    <value>1|充值成功!</value>
+  </data>
+  <data name="sucCompanyUpdate" xml:space="preserve">
+    <value>1|美容院信息更新成功!</value>
+  </data>
+  <data name="sucCustomerAdd" xml:space="preserve">
+    <value>|客户添加成功!</value>
+  </data>
+  <data name="sucCustomerAddErr" xml:space="preserve">
+    <value>|客户添加成功!但头像上传失败!!</value>
+  </data>
+  <data name="sucCustomerDel" xml:space="preserve">
+    <value>1|客户删除成功!</value>
+  </data>
+  <data name="sucCustomerUpdateBasic" xml:space="preserve">
+    <value>1|客户基本信息更新成功!</value>
+  </data>
+  <data name="sucCustomerUpdateDetail" xml:space="preserve">
+    <value>1|客户详细信息更新成功!</value>
+  </data>
+  <data name="sucImageDel" xml:space="preserve">
+    <value>1|图片删除成功!</value>
+  </data>
+  <data name="sucImageUpload" xml:space="preserve">
+    <value>1|图片上传成功!</value>
+  </data>
+  <data name="sucLevelAdd" xml:space="preserve">
+    <value>1|会员卡添加成功!</value>
+  </data>
+  <data name="sucLevelChange" xml:space="preserve">
+    <value>1|用户等级修改成功!</value>
+  </data>
+  <data name="sucLevelDel" xml:space="preserve">
+    <value>1|会员卡删除成功!</value>
+  </data>
+  <data name="sucLevelUpdate" xml:space="preserve">
+    <value>1|会员卡更新成功!</value>
+  </data>
+  <data name="sucOppAdd" xml:space="preserve">
+    <value>1|添加需求成功!</value>
+  </data>
+  <data name="sucOppDel" xml:space="preserve">
+    <value>1|删除需求成功!</value>
+  </data>
+  <data name="sucOppUpdate" xml:space="preserve">
+    <value>1|更新需求成功!</value>
+  </data>
+  <data name="sucOrderAdd" xml:space="preserve">
+    <value>1|订单添加成功!</value>
+  </data>
+  <data name="sucPay" xml:space="preserve">
+    <value>1|支付成功!</value>
+  </data>
+  <data name="sucProgressUpdate" xml:space="preserve">
+    <value>1|进度变更成功!</value>
+  </data>
+  <data name="sucQuestionAdd" xml:space="preserve">
+    <value>1|问卷添加成功!</value>
+  </data>
+  <data name="sucQuestionUpt" xml:space="preserve">
+    <value>1|问卷更新成功!</value>
+  </data>
+  <data name="sucRecAdd" xml:space="preserve">
+    <value>1|美容记录添加成功!</value>
+  </data>
+  <data name="sucRecDel" xml:space="preserve">
+    <value>1|美容记录删除成功!</value>
+  </data>
+  <data name="sucRecUpdate" xml:space="preserve">
+    <value>1|美容记录更新成功!</value>
+  </data>
+  <data name="sucSettingCustomer" xml:space="preserve">
+    <value>1|个人基本信息设置成功!</value>
+  </data>
+  <data name="sucSubmit" xml:space="preserve">
+    <value>1|提交成功!</value>
+  </data>
+  <data name="sucTemplateAdd" xml:space="preserve">
+    <value>1|模板添加成功!</value>
+  </data>
+  <data name="sucTemplateDel" xml:space="preserve">
+    <value>1|模板删除成功!</value>
+  </data>
+  <data name="sucTemplateUpdate" xml:space="preserve">
+    <value>1|模板更新成功!</value>
+  </data>
+</root>

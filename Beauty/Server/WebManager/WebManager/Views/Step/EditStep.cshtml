@@ -1,0 +1,106 @@
+﻿@{   
+    Model.Table_Model.Step_Model model = new global::Model.Table_Model.Step_Model();
+    if (Model != null)
+    {
+        model = Model;
+    }
+    
+    //string step = string.Empty;
+    //if (Model != null)
+    //{
+    //    step = ((Model.Table_Model.Step_Model)Model).StepContent.Replace("|", "\r\n");
+    //}
+}
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", 17)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/home/index">首页</a>
+                </li>
+                <li><a href="/Step/GetStepList">销售步骤</a></li>
+                <li class="active">@{
+                    if (Model != null)
+                    {<text>编辑销售步骤</text>}
+                    else
+                    {<text>添加销售步骤</text>}
+                }</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                @{
+                    if (Model != null)
+                    {<h1>编辑销售步骤</h1>}
+                    else
+                    {<h1>添加销售步骤</h1>}
+                }
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="widget-body">
+
+                <div class="form-horizontal form-bordered">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	销售步骤模版名称
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="col-xs-4">
+                            <input type="text" placeholder="请输入销售步骤模版名称" id="txtStepName" value="@(model.StepName)" class="form-control over-text col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right">
+                        	步骤内容
+                        	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
+                        </label>
+                        <div class="col-sm-10">
+                            <div class="textarea">
+                                <textarea class="form-control" maxlength="50" rows="6" id="txtStepContent" placeholder="输入步骤内容每步内容,每步骤内容以回车进行换行">@( !string.IsNullOrEmpty(model.StepContent)?model.StepContent.Replace("|", "\r\n"):"")</textarea>
+                                <p class="n-p-15 help-block">(小贴士:步骤内容请换行填写,一行代表一个步骤)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="button" onclick="@(Model!=null ? "UpdateStep("+model.StepCode+")":"AddStep()")" class="btn btn-primary" value="确 定" />
+                            <a href="/Step/GetStepList" class="btn btn-default">返 回 </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /Page Body -->
+
+    </div>
+    <!-- /Page Content -->
+</div>
+<script src="/Script/Step.js"></script>

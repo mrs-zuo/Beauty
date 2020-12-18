@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <RelativeLayout
+         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/product_old_order_subservice_relativelayout"
+        style="@style/activity_content_table_relativelayout_attrs" 
+        android:layout_marginLeft="25dp">
+        
+      <ImageView
+            android:id="@+id/product_old_order_is_designated_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:visibility="gone"
+            android:contentDescription="@string/search"
+            android:src="@drawable/is_designated_icon" />
+      
+        <TextView
+            android:id="@+id/product_old_order_subservice_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text_size"
+            android:layout_marginLeft="18dp"
+             />
+
+        <ImageView
+            android:id="@+id/product_order_subservice_name_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/search"
+            android:src="@drawable/service_and_product_sales_filter_btn" />
+
+        <TextView
+            android:id="@+id/product_order_reaponsible_child_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/product_order_subservice_name_icon"
+            android:maxWidth="200dip"
+            android:layout_marginRight="5dip"
+            android:singleLine="true"
+            android:text="@string/ellipsis"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size" />
+  </RelativeLayout>

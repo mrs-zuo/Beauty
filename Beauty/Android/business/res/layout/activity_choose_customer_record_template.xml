@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ChooseCustomerRecordTemplateActivity" >
+    <include
+        android:id="@+id/head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@xml/head" />
+     <RelativeLayout style="@style/activity_title_layout_attrs" >
+        <TextView
+            android:id="@+id/customer_record_template_title_text"
+            style="@style/activity_title_text_attrs"
+            android:layout_alignParentLeft="true"
+            android:text="@string/choose_customer_record_template_title"/>
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/customer_record_template_list_view"
+        style="@style/activity_content_listview_attrs"
+        android:layout_marginTop="5dip"/>
+</LinearLayout>

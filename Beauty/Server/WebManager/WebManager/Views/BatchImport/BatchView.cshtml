@@ -1,0 +1,94 @@
+﻿@{
+    System.Data.DataTable dt = null;
+
+    if (ViewBag.ProductList != null)
+    {
+        dt = ViewBag.ProductList as System.Data.DataTable;
+    }
+    string errorRowNumber = ViewBag.errorRowNumber;
+
+    bool error = string.IsNullOrEmpty(errorRowNumber) || errorRowNumber == "|";
+    
+}
+
+<div class="page-container">
+    <!-- Page Sidebar -->
+    @Html.Partial("Sidebar", Model == 1 ? 10 : 20)
+    <!-- /Page Sidebar -->
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Page 面包屑 -->
+        <div class="page-breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="/Home/Index">首页</a>
+                </li>
+                <li>
+                    <a @(Model == 0 ? "href=/Service/GetServiceList?b=-1&c=-1" : "href=/Commodity/GetCommodityList?b=-1&c=-1") >@(Model == 0 ? "服务" : "商品")</a>
+                </li>
+                <li>批量导入</li>
+            </ul>
+        </div>
+        <!-- /Page 面包屑 -->
+        <!-- Page Header -->
+        <div class="page-header position-relative">
+            <div class="header-title">
+                <h1>批量导入</h1>
+            </div>
+            <!--Header Buttons-->
+            <div class="header-buttons">
+                <a class="sidebar-toggler" href="#">
+                    <i class="fa fa-arrows-h"></i>
+                </a>
+                <a class="refresh" id="refresh-toggler" href="">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </a>
+                <a class="fullscreen" id="fullscreen-toggler" href="#">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+            </div>
+            <!--Header Buttons End-->
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+            <div class="form-horizontal form-bordered widget-body">
+                <div id="div_View">
+                    <table class="table table-condensed">
+                        @{if (dt != null && dt.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+                                <tr @((!error && errorRowNumber.Contains("|" + i + "|")) ? "bgcolor=red" : "")>
+                                    @{
+                                for (int j = 0; j < dt.Columns.Count; j++)
+                                {
+                                    <td style="word-wrap:break-word;word-break:break-all;">
+                                        @(dt.Rows[i][j].ToString())
+                                    </td>
+                                }
+                                    }
+                                </tr>
+                            }
+                        }
+                        }
+                    </table>
+
+                    @{if (error)
+                      {
+                        <input type="button" class="btn btn-primary" onclick='importSubmit()' value="确定" />
+                      }
+                    }
+                    <a href='javascript:history.go(-1);' class='btn btn-default'>返 回 </a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="hid_FileName" value="@(ViewBag.fileName)"/>
+<input type="hidden" id="hid_Type" value="@(Model)" />
+<script src="~/Script/BatchImport.js"></script>

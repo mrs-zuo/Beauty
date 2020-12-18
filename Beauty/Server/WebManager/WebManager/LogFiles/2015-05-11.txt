@@ -1,0 +1,1370 @@
+2015-05-11 10:23:27[27] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 10:23:27
+Title=序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+Message=Message:序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+TargetSite:Void SerializeValueInternal(System.Object, System.Text.StringBuilder, Int32, System.Collections.Hashtable, SerializationFormat, System.Reflection.MemberInfo)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:53040
+Content-Type:multipart/form-data; boundary=---------------------------149763195424805
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjVE50o+GNuth6j+njfseLrS02K0oEtiWeF9RWsp0FWchq7GgANNqgqp+8YtagM4zyg4mFyIA7GgHyNsfe4XVwp+cSg5afIpj36SO8Q95o0TQCYOJsNT1LiINH/ld4VtzyReGAs/CLLCzTP7X0o/N3fiRr12ufv7jw0aLs+XU4A3OBtekMpdhamK6aSRTA4BKJ9rIsl6D0YCjJzg55yLzbiXc87rpSzQh2QZW2XQfoKN9ajgoKY3b/K2VRmsvVu5hkl0UkPNAg3yixEEox5H3rU/YJsdb1PKuJZXzfo+el4pBbRT0w0zc+FZHPcWYwi5pI+viaC/TRqUI8G4Ctkc39+CGjcJ/eugf+1mjJUZMSqfjOgV5iyQuUnD2pnJUTDYpUJN8PmbiDRxz9rOh5e98VWDmJFcl72fp4FNlRfRUrNC5oIUx6IN79vajegGVKahtLdrhLguQgHNYkw2vf1sLfc29c/ppLQ6Kx+nTDwRUFHwsE0PJmFFKBPnAK8LoBdd5qHBYLIoI+32Q1Y2gQsHQw0qAtrdBEngI460kyryXKMmNtnhSIc9jHgE6pvkyCsHPpraDp65duUiVrM+c3stNMQI1Yrc1TxGsUaYAK7S7qwwZnZ4KFJChpSKU5LY1OI2k8haNxzGZ2wZsyIr/svltazP8v9E3iRtu9dVI+a7O2HlHv/IRN5G2GdYt7CIEqHpklkD/y9YA2n3BxcldVob5j0E1gsr7SJSKjkxWA3jNWqWFP6PwUdk237b9XjevjjbmZ6UcHWKSaZmhy5r+f3iDxqXSGxGdC2jJCL4QOtYRf5u9Kb1Z/5/2DWpGB99doDZkfIgngwHm/rCiXO4F+J9ccXyKIoTMnLoU4=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 10:26:20[11] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 10:26:20
+Title=序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+Message=Message:序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+TargetSite:Void SerializeValueInternal(System.Object, System.Text.StringBuilder, Int32, System.Collections.Hashtable, SerializationFormat, System.Reflection.MemberInfo)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:53040
+Content-Type:multipart/form-data; boundary=---------------------------267552235922085
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjVE50o+GNuth6j+njfseLrS02K0oEtiWeF9RWsp0FWchq7GgANNqgqp+8YtagM4zyg4mFyIA7GgHyNsfe4XVwp+cSg5afIpj36SO8Q95o0TQCYOJsNT1LiINH/ld4VtzyReGAs/CLLCzTP7X0o/N3fiRr12ufv7jw0aLs+XU4A3OBtekMpdhamK6aSRTA4BKJ9rIsl6D0YCjJzg55yLzbiXc87rpSzQh2QZW2XQfoKN9ajgoKY3b/K2VRmsvVu5hkl0UkPNAg3yixEEox5H3rU/YJsdb1PKuJZXzfo+el4pBbRT0w0zc+FZHPcWYwi5pI+viaC/TRqUI8G4Ctkc39+CGjcJ/eugf+1mjJUZMSqfjOgV5iyQuUnD2pnJUTDYpUJN8PmbiDRxz9rOh5e98VWDmJFcl72fp4FNlRfRUrNC5oIUx6IN79vajegGVKahtLdrhLguQgHNYkw2vf1sLfc29c/ppLQ6Kx+nTDwRUFHwsE0PJmFFKBPnAK8LoBdd5qHBYLIoI+32Q1Y2gQsHQw0qAtrdBEngI460kyryXKMmNtnhSIc9jHgE6pvkyCsHPpraDp65duUiVrM+c3stNMQI1Yrc1TxGsUaYAK7S7qwwZnZ4KFJChpSKU5LY1OI2k8haNxzGZ2wZsyIr/svltazP8v9E3iRtu9dVI+a7O2HlHv/IRN5G2GdYt7CIEqHpklkD/y9YA2n3BxcldVob5j0E1gsr7SJSKjkxWA3jNWqWFP6PwUdk237b9XjevjjbmZ6UcHWKSaZmhy5r+f3iDxqXSGxGdC2jJCL4QOtYRf5u9Kb1Z/5/2DWpGB99doDZkfIgngwHm/rCiXO4F+J9ccXyKIoTMnLoU4=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 10:27:27[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 10:27:27
+Title=序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+Message=Message:序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+TargetSite:Void SerializeValueInternal(System.Object, System.Text.StringBuilder, Int32, System.Collections.Hashtable, SerializationFormat, System.Reflection.MemberInfo)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:53034
+Content-Type:multipart/form-data; boundary=---------------------------8681963226308
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjVE50o+GNuth6j+njfseLrS02K0oEtiWeF9RWsp0FWchq7GgANNqgqp+8YtagM4zyg4mFyIA7GgHyNsfe4XVwp+cSg5afIpj36SO8Q95o0TQCYOJsNT1LiINH/ld4VtzyReGAs/CLLCzTP7X0o/N3fiRr12ufv7jw0aLs+XU4A3OBtekMpdhamK6aSRTA4BKJ9rIsl6D0YCjJzg55yLzbiXc87rpSzQh2QZW2XQfoKN9ajgoKY3b/K2VRmsvVu5hkl0UkPNAg3yixEEox5H3rU/YJsdb1PKuJZXzfo+el4pBbRT0w0zc+FZHPcWYwi5pI+viaC/TRqUI8G4Ctkc39+CGjcJ/eugf+1mjJUZMSqfjOgV5iyQuUnD2pnJUTDYpUJN8PmbiDRxz9rOh5e98VWDmJFcl72fp4FNlRfRUrNC5oIUx6IN79vajegGVKahtLdrhLguQgHNYkw2vf1sLfc29c/ppLQ6Kx+nTDwRUFHwsE0PJmFFKBPnAK8LoBdd5qHBYLIoI+32Q1Y2gQsHQw0qAtrdBEngI460kyryXKMmNtnhSIc9jHgE6pvkyCsHPpraDp65duUiVrM+c3stNMQI1Yrc1TxGsUaYAK7S7qwwZnZ4KFJChpSKU5LY1OI2k8haNxzGZ2wZsyIr/svltazP8v9E3iRtu9dVI+a7O2HlHv/IRN5G2GdYt7CIEqHpklkD/y9YA2n3BxcldVob5j0E1gsr7SJSKjkxWA3jNWqWFP6PwUdk237b9XjevjjbmZ6UcHWKSaZmhy5r+f3iDxqXSGxGdC2jJCL4QOtYRf5u9Kb1Z/5/2DWpGB99doDZkfIgngwHm/rCiXO4F+J9ccXyKIoTMnLoU4=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 10:28:14[25] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 10:28:14
+Title=序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+Message=Message:序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+TargetSite:Void SerializeValueInternal(System.Object, System.Text.StringBuilder, Int32, System.Collections.Hashtable, SerializationFormat, System.Reflection.MemberInfo)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:55085
+Content-Type:multipart/form-data; boundary=---------------------------16842483626593
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjVE50o+GNuth6j+njfseLrS02K0oEtiWeF9RWsp0FWchq7GgANNqgqp+8YtagM4zyg4mFyIA7GgHyNsfe4XVwp+cSg5afIpj36SO8Q95o0TQCYOJsNT1LiINH/ld4VtzyReGAs/CLLCzTP7X0o/N3fiRr12ufv7jw0aLs+XU4A3OBtekMpdhamK6aSRTA4BKJ9rIsl6D0YCjJzg55yLzbiXc87rpSzQh2QZW2XQfoKN9ajgoKY3b/K2VRmsvVu5hkl0UkPNAg3yixEEox5H3rU/YJsdb1PKuJZXzfo+el4pBbRT0w0zc+FZHPcWYwi5pI+viaC/TRqUI8G4Ctkc39+CGjcJ/eugf+1mjJUZMSqfjOgV5iyQuUnD2pnJUTDYpUJN8PmbiDRxz9rOh5e98VWDmJFcl72fp4FNlRfRUrNC5oIUx6IN79vajegGVKahtLdrhLguQgHNYkw2vf1sLfc29c/ppLQ6Kx+nTDwRUFHwsE0PJmFFKBPnAK8LoBdd5qHBYLIoI+32Q1Y2gQsHQw0qAtrdBEngI460kyryXKMmNtnhSIc9jHgE6pvkyCsHPpraDp65duUiVrM+c3stNMQI1Yrc1TxGsUaYAK7S7qwwZnZ4KFJChpSKU5LY1OI2k8haNxzGZ2wZsyIr/svltazP8v9E3iRtu9dVI+a7O2HlHv/IRN5G2GdYt7CIEqHpklkD/y9YA2n3BxcldVob5j0E1gsr7SJSKjkxWA3jNWqWFP6PwUdk237b9XjevjjbmZ6UcHWKSaZmhy5r+f3iDxqXSGxGdC2jJCL4QOtYRf5u9Kb1Z/5/2DWpGB99doDZkfIgngwHm/rCiXO4F+J9ccXyKIoTMnLoU4=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 11:41:07[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 11:41:07
+Title=服务器无法在发送 HTTP 标头之后设置内容类型。
+Message=Message:服务器无法在发送 HTTP 标头之后设置内容类型。
+TargetSite:Void set_ContentType(System.String)
+Data:
+StackTrace:   在 System.Web.HttpResponse.set_ContentType(String value)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:55088
+Content-Type:multipart/form-data; boundary=---------------------------101031765529584
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjVE50o+GNuth6j+njfseLrS02K0oEtiWeF9RWsp0FWchq7GgANNqgqp+8YtagM4zyg4mFyIA7GgHyNsfe4XVwp+cSg5afIpj36SO8Q95o0TQCYOJsNT1LiINH/ld4VtzyReGAs/CLLCzTP7X0o/N3fiRr12ufv7jw0aLs+XU4A3OBtekMpdhamK6aSRTA4BKJ9rIsl6D0YCjJzg55yLzbiXc87rpSzQh2QZW2XQfoKN9ajgoKY3b/K2VRmsvVu5hkl0UkPNAg3yixEEox5H3rU/YJsdb1PKuJZXzfo+el4pBbRT0w0zc+FZHPcWYwi5pI+viaC/TRqUI8G4Ctkc39+CGjcJ/eugf+1mjJUZMSqfjOgV5iyQuUnD2pnJUTDYpUJN8PmbiDRxz9rOh5e98VWDmJFcl72fp4FNlRfRUrNC5oIUx6IN79vajegGVKahtLdrhLguQgHNYkw2vf1sLfc29c/ppLQ6Kx+nTDwRUFHwsE0PJmFFKBPnAK8LoBdd5qHBYLIoI+32Q1Y2gQsHQw0qAtrdBEngI460kyryXKMmNtnhSIc9jHgE6pvkyCsHPpraDp65duUiVrM+c3stNMQI1Yrc1TxGsUaYAK7S7qwwZnZ4KFJChpSKU5LY1OI2k8haNxzGZ2wZsyIr/svltazP8v9E3iRtu9dVI+a7O2HlHv/IRN5G2GdYt7CIEqHpklkD/y9YA2n3BxcldVob5j0E1gsr7SJSKjkxWA3jNWqWFP6PwUdk237b9XjevjjbmZ6UcHWKSaZmhy5r+f3iDxqXSGxGdC2jJCL4QOtYRf5u9Kb1Z/5/2DWpGB99doDZkfIgngwHm/rCiXO4F+J9ccXyKIoTMnLoU4=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 11:41:48[21] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 11:41:48
+Title=值不能为 null。
+参数名: value
+Message=Message:值不能为 null。
+参数名: value
+TargetSite:System.Object DeserializeObject(System.String, System.Type, Newtonsoft.Json.JsonSerializerSettings)
+Data:
+StackTrace:   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 ASP._Page_Views_Shared_Sidebar_cshtml.Execute() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\Shared\Sidebar.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   在 ASP._Page_Views_BatchImport_BatchImport_cshtml.Execute() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\BatchImport\BatchImport.cshtml:行号 6
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Service/GetServiceList?b=-1&c=-1
+RawUrl=/BatchImport/BatchImport?Type=0
+Header=Cache-Control:max-age=0
+Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Service/GetServiceList?b=-1&c=-1
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 11:42:19[18] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 11:42:19
+Title=序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+Message=Message:序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+TargetSite:Void SerializeValueInternal(System.Object, System.Text.StringBuilder, Int32, System.Collections.Hashtable, SerializationFormat, System.Reflection.MemberInfo)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:55088
+Content-Type:multipart/form-data; boundary=---------------------------165031394314331
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjrVpM9A3ELl46+KI0rKaqR31OQDSa/i1hmbF1z8ApUURTE/pTKTwhzMYGA0Hp+h/noWNGOtl4jrq88uYMc/O+tKTKOGLv/i6I63UTLXjfmItk0dQOIAMHv2L/hblngmWKq5nKFuG2VIjPgm0P38cw1gLrWb0bqRAg3arxPwTHPxGuc868O4F1CF3DGGWB8UAZtdmpx39578ClOpz45frsP9lrvuMJYgvYRei9OEOFvJkgbcbdtLR4icQT77NsC7P+hI6U4377/KReOflnmKPaZLpI2JG6BE2HgMQ2pCQa3iYxif4F+AFsO9xvAndSCpwCTgHvzsK96awJxJaEIZX5DhdeNWBABS7LshS6h1k9zpfjSGg32BX1Y+bbgkbLHVp3BjBKsUuIgH0iRa7938Rg9rTGw3m3WzKVKL9a/CKtZhQWT/XH4eZQdKPEbU+rLjT+IYYaY0mkWij40128ml+ZwibNdLeGqLbEME/U3rjeChK1JOxAYz9QWg29zZj2XKC8VZQzxM6jHstxtwNDLYdhiR8v/YmPJ42g6wjucqQXD5/d9R6ZSAlW78cmQBAxLTSudeOnQM1QYt9IRQRhE0RG2U3gv+MhryqmJFMfmgssrwvdhe4xrF606oSWl4JQYEtlEhjXsQptV07VcshGg1pmlraI/VNvjFz6E7r0KFHwpqt63AA19mEimQAwv+64xoxKZy8hIAvp/gxxQ850C5YFEaD7+ixM+M6iErN0P6w2L1TNx0w8dUvF9uk6lcGIM8SHL1DHSGjvzlBduS0br3k3R+8ylVrbmk736xLlfs0iycyBCL+/QS6dxwkaVJVLY24H30ilG/W5xHBkYMEnwD2YBTSLfRu/oXF8=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 11:43:15[19] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 11:43:15
+Title=序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+Message=Message:序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+TargetSite:Void SerializeValueInternal(System.Object, System.Text.StringBuilder, Int32, System.Collections.Hashtable, SerializationFormat, System.Reflection.MemberInfo)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:55079
+Content-Type:multipart/form-data; boundary=---------------------------904458928745
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjrVpM9A3ELl46+KI0rKaqR31OQDSa/i1hmbF1z8ApUURTE/pTKTwhzMYGA0Hp+h/noWNGOtl4jrq88uYMc/O+tKTKOGLv/i6I63UTLXjfmItk0dQOIAMHv2L/hblngmWKq5nKFuG2VIjPgm0P38cw1gLrWb0bqRAg3arxPwTHPxGuc868O4F1CF3DGGWB8UAZtdmpx39578ClOpz45frsP9lrvuMJYgvYRei9OEOFvJkgbcbdtLR4icQT77NsC7P+hI6U4377/KReOflnmKPaZLpI2JG6BE2HgMQ2pCQa3iYxif4F+AFsO9xvAndSCpwCTgHvzsK96awJxJaEIZX5DhdeNWBABS7LshS6h1k9zpfjSGg32BX1Y+bbgkbLHVp3BjBKsUuIgH0iRa7938Rg9rTGw3m3WzKVKL9a/CKtZhQWT/XH4eZQdKPEbU+rLjT+IYYaY0mkWij40128ml+ZwibNdLeGqLbEME/U3rjeChK1JOxAYz9QWg29zZj2XKC8VZQzxM6jHstxtwNDLYdhiR8v/YmPJ42g6wjucqQXD5/d9R6ZSAlW78cmQBAxLTSudeOnQM1QYt9IRQRhE0RG2U3gv+MhryqmJFMfmgssrwvdhe4xrF606oSWl4JQYEtlEhjXsQptV07VcshGg1pmlraI/VNvjFz6E7r0KFHwpqt63AA19mEimQAwv+64xoxKZy8hIAvp/gxxQ850C5YFEaD7+ixM+M6iErN0P6w2L1TNx0w8dUvF9uk6lcGIM8SHL1DHSGjvzlBduS0br3k3R+8ylVrbmk736xLlfs0iycyBCL+/QS6dxwkaVJVLY24H30ilG/W5xHBkYMEnwD2YBTSLfRu/oXF8=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 11:43:22[28] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 11:43:22
+Title=序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+Message=Message:序列化类型为“System.Reflection.RuntimeModule”的对象时检测到循环引用。
+TargetSite:Void SerializeValueInternal(System.Object, System.Text.StringBuilder, Int32, System.Collections.Hashtable, SerializationFormat, System.Reflection.MemberInfo)
+Data:
+StackTrace:   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat, MemberInfo currentMember)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 System.Web.Mvc.JsonResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/Import
+Header=Connection:keep-alive
+Content-Length:55085
+Content-Type:multipart/form-data; boundary=---------------------------31693138976002
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=lzfukish2bojq2o1ga0t5fwa; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjrVpM9A3ELl46+KI0rKaqR31OQDSa/i1hmbF1z8ApUURTE/pTKTwhzMYGA0Hp+h/noWNGOtl4jrq88uYMc/O+tKTKOGLv/i6I63UTLXjfmItk0dQOIAMHv2L/hblngmWKq5nKFuG2VIjPgm0P38cw1gLrWb0bqRAg3arxPwTHPxGuc868O4F1CF3DGGWB8UAZtdmpx39578ClOpz45frsP9lrvuMJYgvYRei9OEOFvJkgbcbdtLR4icQT77NsC7P+hI6U4377/KReOflnmKPaZLpI2JG6BE2HgMQ2pCQa3iYxif4F+AFsO9xvAndSCpwCTgHvzsK96awJxJaEIZX5DhdeNWBABS7LshS6h1k9zpfjSGg32BX1Y+bbgkbLHVp3BjBKsUuIgH0iRa7938Rg9rTGw3m3WzKVKL9a/CKtZhQWT/XH4eZQdKPEbU+rLjT+IYYaY0mkWij40128ml+ZwibNdLeGqLbEME/U3rjeChK1JOxAYz9QWg29zZj2XKC8VZQzxM6jHstxtwNDLYdhiR8v/YmPJ42g6wjucqQXD5/d9R6ZSAlW78cmQBAxLTSudeOnQM1QYt9IRQRhE0RG2U3gv+MhryqmJFMfmgssrwvdhe4xrF606oSWl4JQYEtlEhjXsQptV07VcshGg1pmlraI/VNvjFz6E7r0KFHwpqt63AA19mEimQAwv+64xoxKZy8hIAvp/gxxQ850C5YFEaD7+ixM+M6iErN0P6w2L1TNx0w8dUvF9uk6lcGIM8SHL1DHSGjvzlBduS0br3k3R+8ylVrbmk736xLlfs0iycyBCL+/QS6dxwkaVJVLY24H30ilG/W5xHBkYMEnwD2YBTSLfRu/oXF8=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 14:00:26[7] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 14:00:26
+Title=e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\BatchImport\BatchView.cshtml(65): error CS1501: “ToString”方法没有任何重载采用 1 个参数
+Message=Message:e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\BatchImport\BatchView.cshtml(65): error CS1501: “ToString”方法没有任何重载采用 1 个参数
+TargetSite:System.CodeDom.Compiler.CompilerResults Compile()
+Data:
+StackTrace:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.<>c__DisplayClass4.<GetPathFromGeneralName>b__0(String path)
+   在 System.Web.WebPages.DefaultDisplayMode.GetDisplayInfo(HttpContextBase httpContext, String virtualPath, Func`2 virtualPathExists)
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   在 System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   在 System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   在 System.Web.Mvc.ViewEngineCollection.FindView(ControllerContext controllerContext, String viewName, String masterName)
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/BatchView?Type=0&FileName=O20150511135726105212106.XLS
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjV2Xwh94lYk+AA6UTGGFmG6OgbPWBmwH1wLWkAvIJz6ZLWaF5q8TZnG3vmU5DBxJLa5cMLhe/I2dyGd1CPaVywyaZMK4vNdTQ+2lu7PdbKo+JHBhwmIfOtWzE2CLLvlstP8QUy1ik9gGIkC3MJIHNsfOaPNWhXYyJuiqt0WYWfi6JJybTTQDa7f+wd7M2NwVUJbb2ClfWd8vIK93OSGyqEEcmtpMsX4Grzv1mdbroghQUXMgqGWebHOiR3YW4HAZ7XpWrMPFa8MDXW727irv2qrr9B+mkKKHoDTJcYrHLzZvlfltuUdmvXC7/B0KyFMqw/g7/Zz1rUYC2XJtx+VNdMqZFxeFWANRyPaNiIQg3SC+g+S6ZND2TH9Y54UReIl6M7xgVMudoWKuWEJFpvneDbFlTAor921YtpHJT/PKAuJjszDCbhooZ3BC0x0JyRM1JawaPbD8we7sZexsaRwWLtBKgAWqiFlLcj8549f9EBPUrfN8qnPiGBii3HHF40BZvhlGt+yLIZ23Z9Rqmb/eK6s7Z+UfbreIDbaDD/bRbIY4MA/sq3SdvUjDYdMxf77SGpH5fmiMZX9Sv0lIE0+I1bq5wO8JmqlXs6SzHnd9S1o9xdgR/VLsxKrjPqKvInJlmtY9fm7IRCQaKQySAt1uo1T2esfNPHzuMGlyCGvGsMIwdeUd986DfqJDIx9ve8tnxt4EhAuI16yq2osbAVWvDwy735H5oBj+cHi1WnevovkvfTcNJc74pl1DY60tCVsLlNW+FsJc8lEs5Kx5Rn7n0TpukJuABWhjDSvJN4TqFR4G1EV+y7wvRL7FeetASXIaXKEpqKm3J/6p/auuFrX2yIRUbNDNOvRhY=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 14:00:35[30] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 14:00:35
+Title=e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\BatchImport\BatchView.cshtml(65): error CS1501: “ToString”方法没有任何重载采用 1 个参数
+Message=Message:e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\BatchImport\BatchView.cshtml(65): error CS1501: “ToString”方法没有任何重载采用 1 个参数
+TargetSite:System.CodeDom.Compiler.CompilerResults Compile()
+Data:
+StackTrace:   在 System.Web.Compilation.BuildManager.PostProcessFoundBuildResult(BuildResult result, Boolean keyFromVPP, VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.FileExists(String virtualPath)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.<>c__DisplayClass4.<GetPathFromGeneralName>b__0(String path)
+   在 System.Web.WebPages.DefaultDisplayMode.GetDisplayInfo(HttpContextBase httpContext, String virtualPath, Func`2 virtualPathExists)
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.GetPathFromGeneralName(ControllerContext controllerContext, List`1 locations, String name, String controllerName, String areaName, String cacheKey, String[]& searchedLocations)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.GetPath(ControllerContext controllerContext, String[] locations, String[] areaLocations, String locationsPropertyName, String name, String controllerName, String cacheKeyPrefix, Boolean useCache, String[]& searchedLocations)
+   在 Microsoft.Web.Mvc.ViewEngineFixWorker`1.FindView(ControllerContext controllerContext, String viewName, String masterName, Boolean useCache)
+   在 System.Web.Mvc.ViewEngineCollection.<>c__DisplayClassc.<FindView>b__b(IViewEngine e)
+   在 System.Web.Mvc.ViewEngineCollection.Find(Func`2 lookup, Boolean trackSearchedPaths)
+   在 System.Web.Mvc.ViewEngineCollection.FindView(ControllerContext controllerContext, String viewName, String masterName)
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/BatchView?Type=0&FileName=O20150511140033954849141.XLS
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjV2Xwh94lYk+AA6UTGGFmG6OgbPWBmwH1wLWkAvIJz6ZLWaF5q8TZnG3vmU5DBxJLa5cMLhe/I2dyGd1CPaVywyaZMK4vNdTQ+2lu7PdbKo+JHBhwmIfOtWzE2CLLvlstP8QUy1ik9gGIkC3MJIHNsfOaPNWhXYyJuiqt0WYWfi6JJybTTQDa7f+wd7M2NwVUJbb2ClfWd8vIK93OSGyqEEcmtpMsX4Grzv1mdbroghQUXMgqGWebHOiR3YW4HAZ7XpWrMPFa8MDXW727irv2qrr9B+mkKKHoDTJcYrHLzZvlfltuUdmvXC7/B0KyFMqw/g7/Zz1rUYC2XJtx+VNdMqZFxeFWANRyPaNiIQg3SC+g+S6ZND2TH9Y54UReIl6M7xgVMudoWKuWEJFpvneDbFlTAor921YtpHJT/PKAuJjszDCbhooZ3BC0x0JyRM1JawaPbD8we7sZexsaRwWLtBKgAWqiFlLcj8549f9EBPUrfN8qnPiGBii3HHF40BZvhlGt+yLIZ23Z9Rqmb/eK6s7Z+UfbreIDbaDD/bRbIY4MA/sq3SdvUjDYdMxf77SGpH5fmiMZX9Sv0lIE0+I1bq5wO8JmqlXs6SzHnd9S1o9xdgR/VLsxKrjPqKvInJlmtY9fm7IRCQaKQySAt1uo1T2esfNPHzuMGlyCGvGsMIwdeUd986DfqJDIx9ve8tnxt4EhAuI16yq2osbAVWvDwy735H5oBj+cHi1WnevovkvfTcNJc74pl1DY60tCVsLlNW+FsJc8lEs5Kx5Rn7n0TpukJuABWhjDSvJN4TqFR4G1EV+y7wvRL7FeetASXIaXKEpqKm3J/6p/auuFrX2yIRUbNDNOvRhY=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 15:18:17[31] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 15:18:17
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:Void Execute()
+Data:
+StackTrace:   在 ASP._Page_Views_BatchImport_BatchView_cshtml.Execute() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\BatchImport\BatchView.cshtml:行号 64
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/BatchImport/BatchImport?Type=0
+RawUrl=/BatchImport/BatchView?Type=0&FileName=O20150511150223505921386.XLS
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjV2Xwh94lYk+AA6UTGGFmG6OgbPWBmwH1wLWkAvIJz6ZLWaF5q8TZnG3vmU5DBxJLa5cMLhe/I2dyGd1CPaVywyaZMK4vNdTQ+2lu7PdbKo+JHBhwmIfOtWzE2CLLvlstP8QUy1ik9gGIkC3MJIHNsfOaPNWhXYyJuiqt0WYWfi6JJybTTQDa7f+wd7M2NwVUJbb2ClfWd8vIK93OSGyqEEcmtpMsX4Grzv1mdbroghQUXMgqGWebHOiR3YW4HAZ7XpWrMPFa8MDXW727irv2qrr9B+mkKKHoDTJcYrHLzZvlfltuUdmvXC7/B0KyFMqw/g7/Zz1rUYC2XJtx+VNdMqZFxeFWANRyPaNiIQg3SC+g+S6ZND2TH9Y54UReIl6M7xgVMudoWKuWEJFpvneDbFlTAor921YtpHJT/PKAuJjszDCbhooZ3BC0x0JyRM1JawaPbD8we7sZexsaRwWLtBKgAWqiFlLcj8549f9EBPUrfN8qnPiGBii3HHF40BZvhlGt+yLIZ23Z9Rqmb/eK6s7Z+UfbreIDbaDD/bRbIY4MA/sq3SdvUjDYdMxf77SGpH5fmiMZX9Sv0lIE0+I1bq5wO8JmqlXs6SzHnd9S1o9xdgR/VLsxKrjPqKvInJlmtY9fm7IRCQaKQySAt1uo1T2esfNPHzuMGlyCGvGsMIwdeUd986DfqJDIx9ve8tnxt4EhAuI16yq2osbAVWvDwy735H5oBj+cHi1WnevovkvfTcNJc74pl1DY60tCVsLlNW+FsJc8lEs5Kx5Rn7n0TpukJuABWhjDSvJN4TqFR4G1EV+y7wvRL7FeetASXIaXKEpqKm3J/6p/auuFrX2yIRUbNDNOvRhY=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/BatchImport/BatchImport?Type=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 16:07:42[21] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 16:07:42
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.ServiceController.addService(ServiceDetailOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\ServiceController.cs:行号 156
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Service/EditService?CD=0
+RawUrl=/Service/addService
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:379
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBhKDF+ERWBN+2Hn7tCf+7AMd/bECGXq6MKAqtIxd5ADWzTBnMezIfKK5kkgELczfUMWyyhOnNDp4bpi2099/RUzJY3KhXl8lDxLiSHtD6QyupeSykwoQHj4mKZdWyjby5+d9cTsKbnDLEjsFULpVnhiXGoZC4xj2IJm0jgv27k9pQYdVMo0xQQy6pbqRMD1x5llzHMveSdxRVL1wIpnnDwvShUSjfAN0sYQJVo1cxITpz7hbvuSznoOrPn62Vl9G3tKPQSx4S/3KRz/GXgbBA1KEU4LtKgujx+env75gt/9JmDLrCq7zw5dT4p29UPDi7osKOWYZeEUqPa5S5ZRnHOBkDowOVnMRiysX2sF2wlPMQJUMNvAexXxMr2Vi0FvafqEktUxRUclsLv/u4L+1cQbF59HvqOEizkqbIAob+ulv2h28Ze1PRcAt7MuCa/qnUs+MNHl3BZKN+p3ebnYyi75U5cvHf3kmcSLsIxmrVKfyNbsJuA2tVdZp4VBmPCf0uLUqs7BmVDwHmw2fn4USIjW2rHFp58heFWYCv2VogQlJXB8xWa2OZUv935uX3hXiG8G8/ANct0VyCxsLpgGW2QyC0EB2q52qJXWJF+cktWZDD2SUnTNCBxwxr6TwjKZd/zm43z6zh+PN40Ld3oKZKZOg2KdlQzVJtD4Cd56fSQj/nxTLnc9tFtjxygi9C2vok82KDyl//9LGl7qauDIHV+DL5CActUzzS4uelx1+dgcMuYhhZVTpWafbZkNNA9VSMBBr+cc8Rlm+DZ5f08qnre84dWqqo0y6DOLsfbM2y79XkQOHbD2d2LrRL9MhO00BXdJk1ND5WWp/CU1G0lirxQHF9PHqfg/dmg=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Service/EditService?CD=0
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 16:32:22[14] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 16:32:22
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.CommodityController.updateCommodity(CommodityDetailOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\CommodityController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Commodity/EditCommodity?CD=1505110000000087
+RawUrl=/Commodity/updateCommodity
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:445
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBhKDF+ERWBN+2Hn7tCf+7AMd/bECGXq6MKAqtIxd5ADWzTBnMezIfKK5kkgELczfUMWyyhOnNDp4bpi2099/RUzJY3KhXl8lDxLiSHtD6QyupeSykwoQHj4mKZdWyjby5+d9cTsKbnDLEjsFULpVnhiXGoZC4xj2IJm0jgv27k9pQYdVMo0xQQy6pbqRMD1x5llzHMveSdxRVL1wIpnnDwvShUSjfAN0sYQJVo1cxITpz7hbvuSznoOrPn62Vl9G3tKPQSx4S/3KRz/GXgbBA1KEU4LtKgujx+env75gt/9JmDLrCq7zw5dT4p29UPDi7osKOWYZeEUqPa5S5ZRnHOBkDowOVnMRiysX2sF2wlPMQJUMNvAexXxMr2Vi0FvafqEktUxRUclsLv/u4L+1cQbF59HvqOEizkqbIAob+ulv2h28Ze1PRcAt7MuCa/qnUs+MNHl3BZKN+p3ebnYyi75U5cvHf3kmcSLsIxmrVKfyNbsJuA2tVdZp4VBmPCf0uLUqs7BmVDwHmw2fn4USIjW2rHFp58heFWYCv2VogQlJXB8xWa2OZUv935uX3hXiG8G8/ANct0VyCxsLpgGW2QyC0EB2q52qJXWJF+cktWZDD2SUnTNCBxwxr6TwjKZd/zm43z6zh+PN40Ld3oKZKZOg2KdlQzVJtD4Cd56fSQj/nxTLnc9tFtjxygi9C2vok82KDyl//9LGl7qauDIHV+DL5CActUzzS4uelx1+dgcMuYhhZVTpWafbZkNNA9VSMBBr+cc8Rlm+DZ5f08qnre84dWqqo0y6DOLsfbM2y79XkQOHbD2d2LrRL9MhO00BXdJk1ND5WWp/CU1G0lirxQHF9PHqfg/dmg=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Commodity/EditCommodity?CD=1505110000000087
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 16:36:12[43] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 16:36:12
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.CommodityController.updateCommodity(CommodityDetailOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\CommodityController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Commodity/EditCommodity?CD=1505110000000088
+RawUrl=/Commodity/updateCommodity
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:377
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBhKDF+ERWBN+2Hn7tCf+7AMd/bECGXq6MKAqtIxd5ADWzTBnMezIfKK5kkgELczfUMWyyhOnNDp4bpi2099/RUzJY3KhXl8lDxLiSHtD6QyupeSykwoQHj4mKZdWyjby5+d9cTsKbnDLEjsFULpVnhiXGoZC4xj2IJm0jgv27k9pQYdVMo0xQQy6pbqRMD1x5llzHMveSdxRVL1wIpnnDwvShUSjfAN0sYQJVo1cxITpz7hbvuSznoOrPn62Vl9G3tKPQSx4S/3KRz/GXgbBA1KEU4LtKgujx+env75gt/9JmDLrCq7zw5dT4p29UPDi7osKOWYZeEUqPa5S5ZRnHOBkDowOVnMRiysX2sF2wlPMQJUMNvAexXxMr2Vi0FvafqEktUxRUclsLv/u4L+1cQbF59HvqOEizkqbIAob+ulv2h28Ze1PRcAt7MuCa/qnUs+MNHl3BZKN+p3ebnYyi75U5cvHf3kmcSLsIxmrVKfyNbsJuA2tVdZp4VBmPCf0uLUqs7BmVDwHmw2fn4USIjW2rHFp58heFWYCv2VogQlJXB8xWa2OZUv935uX3hXiG8G8/ANct0VyCxsLpgGW2QyC0EB2q52qJXWJF+cktWZDD2SUnTNCBxwxr6TwjKZd/zm43z6zh+PN40Ld3oKZKZOg2KdlQzVJtD4Cd56fSQj/nxTLnc9tFtjxygi9C2vok82KDyl//9LGl7qauDIHV+DL5CActUzzS4uelx1+dgcMuYhhZVTpWafbZkNNA9VSMBBr+cc8Rlm+DZ5f08qnre84dWqqo0y6DOLsfbM2y79XkQOHbD2d2LrRL9MhO00BXdJk1ND5WWp/CU1G0lirxQHF9PHqfg/dmg=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Commodity/EditCommodity?CD=1505110000000088
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 17:19:00[42] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 17:19:00
+Title=值不能为 null。
+参数名: value
+Message=Message:值不能为 null。
+参数名: value
+TargetSite:System.Object DeserializeObject(System.String, System.Type, Newtonsoft.Json.JsonSerializerSettings)
+Data:
+StackTrace:   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 ASP._Page_Views_Shared_Sidebar_cshtml.Execute() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\Shared\Sidebar.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   在 ASP._Page_Views_Home_index_cshtml.Execute() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\Home\index.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Home/Index?err=2
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 17:19:00[33] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 17:19:00
+Title=值不能为 null。
+参数名: value
+Message=Message:值不能为 null。
+参数名: value
+TargetSite:System.Object DeserializeObject(System.String, System.Type, Newtonsoft.Json.JsonSerializerSettings)
+Data:
+StackTrace:   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 ASP._Page_Views_Shared_Sidebar_cshtml.Execute() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\Shared\Sidebar.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   在 ASP._Page_Views_Home_index_cshtml.Execute() 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Views\Home\index.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Home/Index?err=2
+Header=Connection:keep-alive
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+
+
+2015-05-11 18:40:21[68] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 18:40:21
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.getOrderDetail(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\OrderController.cs:行号 57
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Order/getOrderDetail
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:50
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjgSjtJAf5e6k3ieaKuDhU/dwhMFWmmhjB9oA9e6aV0RrTh/gsDefOvh3PQutxUEK7+A95rgxG6IyiV9bG39VigAWx6ZiKbXvZ84DJvkPCvWL9HRwHy1okBq4EmG7yektL5ETJcUx/jT3lWgDWigCEMCAszXowEydA6GM9R+5Cj/Pt+oJXeZiJ3rPV6cTNAG2wfr3c76eDo7N4cEvpzFuwu1lFzknXaJHUDpj3PAZSLFD6F+tzA+TJCFYfBjkvdomApkmfx2+ecdhprHxQcB7bywdFUWPde8EgI2P2y8q2awFDljqwLniKw+iwrT06kMs93Jv2D4YByknfjPsBbpRxGkn6Y5jOpzXgkDkxg4JOmYo/hPc6IjkPCwahneqpTMQpRteL2GFY+4tLQfGje5cxMCtyhUubmXi3UDl5IBza+mTJJQ+jtfHqtQzL602GFqe2uPZnZe72uleIDrrE9vTuBdqASO01RJmCplHF01hXw8aM7I6cDZ3GdYPFwiovO9MMPsY4k/l75Gl8yI88dDzeqCciQfDDxfjz7W7UiH3Yxa3crT2RKpk5VKAkDPaYGfRmrYvHaj2GmsHt7qfIQ0lVDUG7KmnKfeCUHSRvFPRSm7c5/UrHDVemkvhdX8d66catAOfVp5P60gE67qHQWG9XVNd9ipTVIsi097T0oxbZwVobC0OeemF/OldJcxpQ/8TDdiZXrAHMEFpuINqe+EPJKc72IBHuqZUxi3flXA9d/+4KnP95KJ8qAI6J27Mm8hSqXhQapMEYlMp7xuD5rkBzIYAnr56zwrGmAff+e4DEgwjzeKtpznbVJEKK/xf+yNb124W5SSXFo6Z/HeX8CXtFEPPZhgalIPsM=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 18:41:04[54] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 18:41:04
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.getOrderDetail(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\OrderController.cs:行号 57
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Order/getOrderDetail
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:50
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjgSjtJAf5e6k3ieaKuDhU/dwhMFWmmhjB9oA9e6aV0RrTh/gsDefOvh3PQutxUEK7+A95rgxG6IyiV9bG39VigAWx6ZiKbXvZ84DJvkPCvWL9HRwHy1okBq4EmG7yektL5ETJcUx/jT3lWgDWigCEMCAszXowEydA6GM9R+5Cj/Pt+oJXeZiJ3rPV6cTNAG2wfr3c76eDo7N4cEvpzFuwu1lFzknXaJHUDpj3PAZSLFD6F+tzA+TJCFYfBjkvdomApkmfx2+ecdhprHxQcB7bywdFUWPde8EgI2P2y8q2awFDljqwLniKw+iwrT06kMs93Jv2D4YByknfjPsBbpRxGkn6Y5jOpzXgkDkxg4JOmYo/hPc6IjkPCwahneqpTMQpRteL2GFY+4tLQfGje5cxMCtyhUubmXi3UDl5IBza+mTJJQ+jtfHqtQzL602GFqe2uPZnZe72uleIDrrE9vTuBdqASO01RJmCplHF01hXw8aM7I6cDZ3GdYPFwiovO9MMPsY4k/l75Gl8yI88dDzeqCciQfDDxfjz7W7UiH3Yxa3crT2RKpk5VKAkDPaYGfRmrYvHaj2GmsHt7qfIQ0lVDUG7KmnKfeCUHSRvFPRSm7c5/UrHDVemkvhdX8d66catAOfVp5P60gE67qHQWG9XVNd9ipTVIsi097T0oxbZwVobC0OeemF/OldJcxpQ/8TDdiZXrAHMEFpuINqe+EPJKc72IBHuqZUxi3flXA9d/+4KnP95KJ8qAI6J27Mm8hSqXhQapMEYlMp7xuD5rkBzIYAnr56zwrGmAff+e4DEgwjzeKtpznbVJEKK/xf+yNb124W5SSXFo6Z/HeX8CXtFEPPZhgalIPsM=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 18:51:05[55] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 18:51:05
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.cancelCompletedOrder(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\OrderController.cs:行号 137
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Order/cancelCompletedOrder
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:28
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjgSjtJAf5e6k3ieaKuDhU/dwhMFWmmhjB9oA9e6aV0RrTh/gsDefOvh3PQutxUEK7+A95rgxG6IyiV9bG39VigAWx6ZiKbXvZ84DJvkPCvWL9HRwHy1okBq4EmG7yektL5ETJcUx/jT3lWgDWigCEMCAszXowEydA6GM9R+5Cj/Pt+oJXeZiJ3rPV6cTNAG2wfr3c76eDo7N4cEvpzFuwu1lFzknXaJHUDpj3PAZSLFD6F+tzA+TJCFYfBjkvdomApkmfx2+ecdhprHxQcB7bywdFUWPde8EgI2P2y8q2awFDljqwLniKw+iwrT06kMs93Jv2D4YByknfjPsBbpRxGkn6Y5jOpzXgkDkxg4JOmYo/hPc6IjkPCwahneqpTMQpRteL2GFY+4tLQfGje5cxMCtyhUubmXi3UDl5IBza+mTJJQ+jtfHqtQzL602GFqe2uPZnZe72uleIDrrE9vTuBdqASO01RJmCplHF01hXw8aM7I6cDZ3GdYPFwiovO9MMPsY4k/l75Gl8yI88dDzeqCciQfDDxfjz7W7UiH3Yxa3crT2RKpk5VKAkDPaYGfRmrYvHaj2GmsHt7qfIQ0lVDUG7KmnKfeCUHSRvFPRSm7c5/UrHDVemkvhdX8d66catAOfVp5P60gE67qHQWG9XVNd9ipTVIsi097T0oxbZwVobC0OeemF/OldJcxpQ/8TDdiZXrAHMEFpuINqe+EPJKc72IBHuqZUxi3flXA9d/+4KnP95KJ8qAI6J27Mm8hSqXhQapMEYlMp7xuD5rkBzIYAnr56zwrGmAff+e4DEgwjzeKtpznbVJEKK/xf+yNb124W5SSXFo6Z/HeX8CXtFEPPZhgalIPsM=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 18:55:38[54] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 18:55:38
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.getOrderDetail(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\OrderController.cs:行号 57
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Order/getOrderDetail
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:50
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjgSjtJAf5e6k3ieaKuDhU/dwhMFWmmhjB9oA9e6aV0RrTh/gsDefOvh3PQutxUEK7+A95rgxG6IyiV9bG39VigAWx6ZiKbXvZ84DJvkPCvWL9HRwHy1okBq4EmG7yektL5ETJcUx/jT3lWgDWigCEMCAszXowEydA6GM9R+5Cj/Pt+oJXeZiJ3rPV6cTNAG2wfr3c76eDo7N4cEvpzFuwu1lFzknXaJHUDpj3PAZSLFD6F+tzA+TJCFYfBjkvdomApkmfx2+ecdhprHxQcB7bywdFUWPde8EgI2P2y8q2awFDljqwLniKw+iwrT06kMs93Jv2D4YByknfjPsBbpRxGkn6Y5jOpzXgkDkxg4JOmYo/hPc6IjkPCwahneqpTMQpRteL2GFY+4tLQfGje5cxMCtyhUubmXi3UDl5IBza+mTJJQ+jtfHqtQzL602GFqe2uPZnZe72uleIDrrE9vTuBdqASO01RJmCplHF01hXw8aM7I6cDZ3GdYPFwiovO9MMPsY4k/l75Gl8yI88dDzeqCciQfDDxfjz7W7UiH3Yxa3crT2RKpk5VKAkDPaYGfRmrYvHaj2GmsHt7qfIQ0lVDUG7KmnKfeCUHSRvFPRSm7c5/UrHDVemkvhdX8d66catAOfVp5P60gE67qHQWG9XVNd9ipTVIsi097T0oxbZwVobC0OeemF/OldJcxpQ/8TDdiZXrAHMEFpuINqe+EPJKc72IBHuqZUxi3flXA9d/+4KnP95KJ8qAI6J27Mm8hSqXhQapMEYlMp7xuD5rkBzIYAnr56zwrGmAff+e4DEgwjzeKtpznbVJEKK/xf+yNb124W5SSXFo6Z/HeX8CXtFEPPZhgalIPsM=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 18:56:10[69] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 18:56:10
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.cancelCompletedOrder(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\OrderController.cs:行号 137
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Order/cancelCompletedOrder
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:28
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjgSjtJAf5e6k3ieaKuDhU/dwhMFWmmhjB9oA9e6aV0RrTh/gsDefOvh3PQutxUEK7+A95rgxG6IyiV9bG39VigAWx6ZiKbXvZ84DJvkPCvWL9HRwHy1okBq4EmG7yektL5ETJcUx/jT3lWgDWigCEMCAszXowEydA6GM9R+5Cj/Pt+oJXeZiJ3rPV6cTNAG2wfr3c76eDo7N4cEvpzFuwu1lFzknXaJHUDpj3PAZSLFD6F+tzA+TJCFYfBjkvdomApkmfx2+ecdhprHxQcB7bywdFUWPde8EgI2P2y8q2awFDljqwLniKw+iwrT06kMs93Jv2D4YByknfjPsBbpRxGkn6Y5jOpzXgkDkxg4JOmYo/hPc6IjkPCwahneqpTMQpRteL2GFY+4tLQfGje5cxMCtyhUubmXi3UDl5IBza+mTJJQ+jtfHqtQzL602GFqe2uPZnZe72uleIDrrE9vTuBdqASO01RJmCplHF01hXw8aM7I6cDZ3GdYPFwiovO9MMPsY4k/l75Gl8yI88dDzeqCciQfDDxfjz7W7UiH3Yxa3crT2RKpk5VKAkDPaYGfRmrYvHaj2GmsHt7qfIQ0lVDUG7KmnKfeCUHSRvFPRSm7c5/UrHDVemkvhdX8d66catAOfVp5P60gE67qHQWG9XVNd9ipTVIsi097T0oxbZwVobC0OeemF/OldJcxpQ/8TDdiZXrAHMEFpuINqe+EPJKc72IBHuqZUxi3flXA9d/+4KnP95KJ8qAI6J27Mm8hSqXhQapMEYlMp7xuD5rkBzIYAnr56zwrGmAff+e4DEgwjzeKtpznbVJEKK/xf+yNb124W5SSXFo6Z/HeX8CXtFEPPZhgalIPsM=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 19:02:13[69] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 19:02:13
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.cancelCompletedOrder(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\OrderController.cs:行号 137
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Order/cancelCompletedOrder
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:28
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjgSjtJAf5e6k3ieaKuDhU/dwhMFWmmhjB9oA9e6aV0RrTh/gsDefOvh3PQutxUEK7+A95rgxG6IyiV9bG39VigAWx6ZiKbXvZ84DJvkPCvWL9HRwHy1okBq4EmG7yektL5ETJcUx/jT3lWgDWigCEMCAszXowEydA6GM9R+5Cj/Pt+oJXeZiJ3rPV6cTNAG2wfr3c76eDo7N4cEvpzFuwu1lFzknXaJHUDpj3PAZSLFD6F+tzA+TJCFYfBjkvdomApkmfx2+ecdhprHxQcB7bywdFUWPde8EgI2P2y8q2awFDljqwLniKw+iwrT06kMs93Jv2D4YByknfjPsBbpRxGkn6Y5jOpzXgkDkxg4JOmYo/hPc6IjkPCwahneqpTMQpRteL2GFY+4tLQfGje5cxMCtyhUubmXi3UDl5IBza+mTJJQ+jtfHqtQzL602GFqe2uPZnZe72uleIDrrE9vTuBdqASO01RJmCplHF01hXw8aM7I6cDZ3GdYPFwiovO9MMPsY4k/l75Gl8yI88dDzeqCciQfDDxfjz7W7UiH3Yxa3crT2RKpk5VKAkDPaYGfRmrYvHaj2GmsHt7qfIQ0lVDUG7KmnKfeCUHSRvFPRSm7c5/UrHDVemkvhdX8d66catAOfVp5P60gE67qHQWG9XVNd9ipTVIsi097T0oxbZwVobC0OeemF/OldJcxpQ/8TDdiZXrAHMEFpuINqe+EPJKc72IBHuqZUxi3flXA9d/+4KnP95KJ8qAI6J27Mm8hSqXhQapMEYlMp7xuD5rkBzIYAnr56zwrGmAff+e4DEgwjzeKtpznbVJEKK/xf+yNb124W5SSXFo6Z/HeX8CXtFEPPZhgalIPsM=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
+2015-05-11 19:03:59[54] ERROR index (null) - 
+AppName=WebManager
+LogTime=2015/5/11 19:03:59
+Title=未将对象引用设置到对象的实例。
+Message=Message:未将对象引用设置到对象的实例。
+TargetSite:System.Net.HttpStatusCode GetResponse(System.String, System.String, System.String ByRef, System.Collections.Specialized.NameValueCollection, System.String, System.String, System.String, System.Text.Encoding, Int32)
+Data:
+StackTrace:   在 HS.Framework.Common.Net.NetUtil.GetResponse(String Url, String param, String& Data, NameValueCollection Headers, String ContentType, String Method, String UserAgent, Encoding encoding, Int32 Timeout)
+   在 WebManager.Controllers.Base.BaseController.GetPostResponse(String strController, String strAction, String strParam, String& Data, Boolean isAjax) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\Base\BaseController.cs:行号 136
+   在 WebManager.Controllers.OrderController.cancelCompletedOrder(UtilityOperation_Model model) 位置 e:\SourceCode\WebManager\Trunk\WebManager\WebManager\WebManager\Controllers\OrderController.cs:行号 137
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+ProcessName=webManager
+ClientIp=127.0.0.1
+ServerIp=10.0.0.75
+UrlReferrer=http://www.webmanager.com/Order/OrderEdit
+RawUrl=/Order/cancelCompletedOrder
+Header=Cache-Control:no-cache
+Connection:keep-alive
+Pragma:no-cache
+Content-Length:28
+Content-Type:application/json; charset=utf-8
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,en-US;q=0.7,en;q=0.3
+Cookie:ASP.NET_SessionId=eszgrrbtp4h30o2t4szlppvx; HSManger=KO4HAolh0C47/Qm9Z74eW7y59RCWCzq/UJ9bL1uAuBjgSjtJAf5e6k3ieaKuDhU/dwhMFWmmhjB9oA9e6aV0RrTh/gsDefOvh3PQutxUEK7+A95rgxG6IyiV9bG39VigAWx6ZiKbXvZ84DJvkPCvWL9HRwHy1okBq4EmG7yektL5ETJcUx/jT3lWgDWigCEMCAszXowEydA6GM9R+5Cj/Pt+oJXeZiJ3rPV6cTNAG2wfr3c76eDo7N4cEvpzFuwu1lFzknXaJHUDpj3PAZSLFD6F+tzA+TJCFYfBjkvdomApkmfx2+ecdhprHxQcB7bywdFUWPde8EgI2P2y8q2awFDljqwLniKw+iwrT06kMs93Jv2D4YByknfjPsBbpRxGkn6Y5jOpzXgkDkxg4JOmYo/hPc6IjkPCwahneqpTMQpRteL2GFY+4tLQfGje5cxMCtyhUubmXi3UDl5IBza+mTJJQ+jtfHqtQzL602GFqe2uPZnZe72uleIDrrE9vTuBdqASO01RJmCplHF01hXw8aM7I6cDZ3GdYPFwiovO9MMPsY4k/l75Gl8yI88dDzeqCciQfDDxfjz7W7UiH3Yxa3crT2RKpk5VKAkDPaYGfRmrYvHaj2GmsHt7qfIQ0lVDUG7KmnKfeCUHSRvFPRSm7c5/UrHDVemkvhdX8d66catAOfVp5P60gE67qHQWG9XVNd9ipTVIsi097T0oxbZwVobC0OeemF/OldJcxpQ/8TDdiZXrAHMEFpuINqe+EPJKc72IBHuqZUxi3flXA9d/+4KnP95KJ8qAI6J27Mm8hSqXhQapMEYlMp7xuD5rkBzIYAnr56zwrGmAff+e4DEgwjzeKtpznbVJEKK/xf+yNb124W5SSXFo6Z/HeX8CXtFEPPZhgalIPsM=; CompanyInfo=QKxDuUzF8sMWnaYtZkHLwBrvtHQUWNvmG0iBzaWhDdnlTRUkThrBf7xDEwaSk2DLh2UL+EWFuP14aBrjeYaUPxbBwjeW3IwyRDBhaUBlkq7vOhK2nfCBNfCk2aSHWofOhUFjS2liA8fCdmEGypuyXDpjZKS0J3953Egdg4xfdiO8JchIMdwoZlnhJgyqvycXxxzcGqmN7JiMkfURKVHnFEhWcmsB/8Oz9V9D8++/fSt90+OQhfO9yutKHRO4CUlvTD9Mrn1Tqb5BZ7HOTszgwzj7nlB2Nh2LNS2YGNDZpRjogEdeJy/FDqgrDxFYeHW+j+ecM2wuJF8NCsziv0YI9bXvjQ8j6usueY86Yu+peFzsxvS38FbnsEAqlkEafA6KqerD4wL02/siZDz/4jeX8Esp/mEReRRuBXuk4Lmm1JpuLPUURAXQTvjyA5JI7sImIsVkwUEqz/Vvzx79n/yI41LSGlxPSNPl24cDS18w9qnaVLZT8qUeHnMosf+fK5yqU/FEfhcqph+TBUoTWjcSumIbzyxcPyUvn0pl/8ONLeXHIMI1lg6so0Vunc13QXiBtww4lpqSaMEX+5mXXAMktWcTn36YAPXQD8/ZUnsUTB6J8wT8a4wWkjfofnxDztoK+XzuLKPM4CDXZEDMu6TLDqyJ9ro98RrE2qKnmdikQmHI7IOSYuT2lJKWeFtc8261Kve1pQL/hF71Usvp2T6bT1dA+JroKOdWfYpIhUp+64sucvtkRmACYIiotZEwgNkZgScj1ThB+UvHClnAJ7zw7MuMNm4h4tNGS3xysPBjw8PZVHBbUwS+stVPuJ2l3onGsKIy7PFosk5YXwbZNm0lwbhIRWjal+8SrnDM2NooF9EhTcnxj6fE4Hl3Y8mQMwvQKzEP0yrkUT0owLRsDr434PCsvDRpLne5PP0biSJfX6haomhytBND1799KQw8JwfzuWT7hR2z9hNwVkoNpJ0s+I91Xpk368IQlvzAsOH41l4jaMnYMYeCL9YVoj8gjNSeITWWeuDjY7NeEXNzAy8pdsEEHuQ4fHBEQy4XRR8DYz/gkwzIAi0W4Zqi5RVCZmvTqTgwslZJtFr4dl6oHQ4s7hQEkindTCH8Cie/ZTGSjLAVH+3QVqMHiyW029K8KXRkFi1F/FyFHsZj9wWITVxHetA+A4bcoGdejPJm7JUR68HB60MOqeyJWZeGYh631JUrQ8AMtaiNpL15ddGkcnMP4yfRzbZGjVMXHewNq/bRPDPv2fG6fm4hdQ==
+Host:www.webmanager.com
+Referer:http://www.webmanager.com/Order/OrderEdit
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
+X-Requested-With:XMLHttpRequest
+
+
