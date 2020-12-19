@@ -78,7 +78,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 	private TextView prepareOrderCustomerText,prepareOrderTitleText,prepareOrderTotalPriceText,prepareOrderTotalSalePriceText;
 	private LinearLayout prepareOrderProductListView,prepareOrderOldListView;
 	private Button         prepareOrderCommit;
-	private ProgressDialog progressDialog;
+	private ProgressDialog progressDialog, progressDialog2;
 	private Thread requestWebServiceThread;
 	private List<OrderProduct> orderProductList;
 	private TableLayout prepareOrderTotalCountTableLayout;
@@ -89,6 +89,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 	private List<OrderInfo>   quickBalanceOrderList;
 	private List<StepTemplate> stepTemplateList;//商机模板集合
 	private List<CustomerBenefit> customerBenefitsList;
+	// 获取优惠券状态标志
+	private boolean getCustomerBenefitListRunning = false;
 	DecimalFormat df=new DecimalFormat("#.00");
 	JSONArray OldOrderIdArray=new JSONArray();
 	List<EcardInfo> ecardInfoList;
@@ -101,6 +103,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		// 开单闪退对应(PrepareOrderActivity初期化开始)
+		progressDialog2 = ProgressDialogUtil.createProgressDialog(this);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_prepare_order);
 		// 初始化数据信息
@@ -750,6 +754,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 		}
 	}
 	private  void getCustomerBenefitListData(final View prepareOrderProductView,final int k,final double prepareOrderPromotionPrice) {
+		// 单件商品开单闪退对应(获取Ecard开始)
+		getCustomerBenefitListRunning = true;
 		requestWebServiceThread = new Thread() {
 			@Override
 			public void run() {
@@ -832,6 +838,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 								customerBenefits.add(cb);
 							}
 						}
+						// 单件商品开单闪退对应(获取Ecard结束)
+						getCustomerBenefitListRunning = false;
 						Message message=new Message();
 						BenefitSpinnerBean bsb=new BenefitSpinnerBean();
 						bsb.setCustomerBenefitList(customerBenefits);
@@ -1160,6 +1168,16 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 					public void afterTextChanged(Editable arg0) {
 						// TODO Auto-generated method stub
 						if(orderProductList.size()==1){
+							// 单件商品开单闪退对应(等待获取优惠券信息)
+							while (getCustomerBenefitListRunning){
+								Log.v("PrepareOrderActivity", "等待获取优惠券信息...");
+								try {
+									Thread.sleep(200);
+								} catch (InterruptedException e) {
+									e.printStackTrace();
+								}
+							}
+							Log.v("PrepareOrderActivity", "获取优惠券信息成功");
 							List<CustomerBenefit> customerBenefits=new ArrayList<CustomerBenefit>();
 							for(CustomerBenefit cb:customerBenefitsList){
 								if(TextUtils.isEmpty(cb.getBenefitID()) || cb.getPrValue1()<=Double.valueOf(((EditText) prepareOrderProductListView.getChildAt(orderProductPos).findViewById(R.id.prepare_order_product_promotion_price)).getText().toString())){
@@ -1642,6 +1660,11 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 		}
 		prepareOrderTotalPriceText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(prepareTotalPrice))));
 		prepareOrderTotalSalePriceText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(prepareTotalSalePrice))));
+		// 开单闪退对应(PrepareOrderActivity初期化结束)
+		if (progressDialog2 != null) {
+			progressDialog2.dismiss();
+			progressDialog2 = null;
+		}
 	}
 
 	@Override
