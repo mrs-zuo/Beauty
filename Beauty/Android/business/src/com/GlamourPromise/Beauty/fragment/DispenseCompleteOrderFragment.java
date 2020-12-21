@@ -149,6 +149,9 @@ public class DispenseCompleteOrderFragment extends Fragment implements
 
 		@Override
 		public void handleMessage(Message msg) {
+			if (dispenseCompleteOrderFragment == null || dispenseCompleteOrderFragment.getActivity() == null) {
+				UserInfoApplication.getInstance().exitForLogin(null);
+			}
 			if (dispenseCompleteOrderFragment.progressDialog != null) {
 				dispenseCompleteOrderFragment.progressDialog.dismiss();
 				dispenseCompleteOrderFragment.progressDialog = null;

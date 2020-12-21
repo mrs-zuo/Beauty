@@ -143,6 +143,9 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
 
 		@Override
 		public void handleMessage(Message msg) {
+			if (dispenseCustomerOldOrderFragment == null || dispenseCustomerOldOrderFragment.getActivity() == null){
+				UserInfoApplication.getInstance().exitForLogin(null);
+			}
 			switch (msg.what) {
 				case 0:
 					DialogUtil.createShortDialog(dispenseCustomerOldOrderFragment.getActivity(), (String) msg.obj);

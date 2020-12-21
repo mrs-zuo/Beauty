@@ -210,6 +210,9 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
 
 		@Override
 		public void handleMessage(Message msg) {
+			if (orderDetailActivity == null) {
+				UserInfoApplication.getInstance().exitForLogin(null);
+			}
 			if (orderDetailActivity.progressDialog != null) {
 				orderDetailActivity.progressDialog.dismiss();
 				orderDetailActivity.progressDialog = null;

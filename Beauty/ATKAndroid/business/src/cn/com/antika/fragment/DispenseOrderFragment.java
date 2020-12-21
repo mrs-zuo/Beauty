@@ -75,7 +75,9 @@ public class DispenseOrderFragment extends Fragment implements OnClickListener{
 		super.setUserVisibleHint(isVisibleToUser);
 		if(isVisibleToUser && dispenseOrderListView!=null){
 			((TextView)getActivity().findViewById(R.id.tab_prepare_order_title)).setText("待开"+"("+orderProductList.size()+")");
-			dispenseOrderListView.setAdapter(new DispenseOrderListAdapter(getActivity(),orderProductList));
+			DispenseOrderListAdapter dispenseOrderListAdapter = new DispenseOrderListAdapter(getActivity(), orderProductList);
+			dispenseOrderListView.setAdapter(dispenseOrderListAdapter);
+			dispenseOrderListAdapter.notifyDataSetChanged();
 		}	
 	}
 	@Override

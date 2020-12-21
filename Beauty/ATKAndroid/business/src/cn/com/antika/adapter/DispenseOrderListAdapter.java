@@ -83,9 +83,11 @@ public class DispenseOrderListAdapter extends BaseAdapter {
 							@Override
 							public void onClick(DialogInterface dialog,int which) {
 								dialog.dismiss();
-								mOrderProductList.remove(mOrderProductList.get(pos));
-								DispenseOrderListAdapter.this.notifyDataSetChanged();
-								((TextView)((Activity)mContext).findViewById(R.id.tab_prepare_order_title)).setText("待开("+mOrderProductList.size()+")");
+								if (mOrderProductList!=null && mOrderProductList.size() > pos){
+									mOrderProductList.remove(mOrderProductList.get(pos));
+									DispenseOrderListAdapter.this.notifyDataSetChanged();
+								}
+								((TextView) ((Activity) mContext).findViewById(R.id.tab_prepare_order_title)).setText("待开(" + (mOrderProductList != null ? mOrderProductList.size() : 0) + ")");
 							}
 						})
 				.setNegativeButton(mContext.getString(R.string.delete_cancel),

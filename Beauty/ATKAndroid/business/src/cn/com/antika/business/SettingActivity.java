@@ -82,7 +82,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 		personalMessageRelativeLayout.setOnClickListener(this);
 		aboutUsRelativeLayout.setOnClickListener(this);
 		if (userInfoApplication.getAccountInfoListSize() > 1
-				|| userInfoApplication.getLoginBranchList().get(0).size() > 1) {
+				|| (userInfoApplication.getLoginBranchList().size() >= 1 && userInfoApplication.getLoginBranchList().get(0).size() > 1)) {
 			changeRelativeLayout = (RelativeLayout) findViewById(R.id.change_company_relativelayout);
 			((View) findViewById(R.id.change_company_relativelayout_before_line))
 					.setVisibility(View.VISIBLE);

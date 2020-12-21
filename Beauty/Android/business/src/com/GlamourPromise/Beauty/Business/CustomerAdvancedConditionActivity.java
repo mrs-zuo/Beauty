@@ -595,6 +595,10 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 			// 所有顾客
 			if (customerTypeSelectedPosition == 2)
 				customerType = 1;
+			// 闪退对应（ecard未选中的情况）
+			if(ecardConditionSpinner.getSelectedItemPosition() == -1){
+				ecardConditionSpinner.setSelection(0);
+			}
 			String cardCode = ecardInfoList.get(ecardConditionSpinner.getSelectedItemPosition()).getUserEcardCode();
 			int    sourceTypeID=sourceTypeList.get(customerSourceTypeSpinner.getSelectedItemPosition()).getSourceTypeID();
 			//顾客状态

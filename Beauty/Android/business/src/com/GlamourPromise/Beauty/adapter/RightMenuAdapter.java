@@ -6,6 +6,7 @@ import com.GlamourPromise.Beauty.Business.R;
 import com.GlamourPromise.Beauty.application.UserInfoApplication;
 import com.GlamourPromise.Beauty.bean.OrderProduct;
 import com.GlamourPromise.Beauty.util.ImageLoaderUtil;
+import com.GlamourPromise.Beauty.util.StringUtil;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -20,6 +21,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import org.jivesoftware.smack.util.StringUtils;
+
+@SuppressLint({"NewApi", "ResourceType"})
 public class RightMenuAdapter extends BaseAdapter {
 	private LayoutInflater layoutInflater;
 	private Context mContext;
@@ -67,7 +72,6 @@ public class RightMenuAdapter extends BaseAdapter {
 		this.selectedCustomerName = selectedCustomerName;
 	}
 
-	@SuppressLint("NewApi")
 	@Override
 	public View getView(int position, View convertView, ViewGroup viewGroup) {
 		// TODO Auto-generated method stub
@@ -88,7 +92,7 @@ public class RightMenuAdapter extends BaseAdapter {
 		String menuText = (String) menuMap.get(position).get("menu_text");
 		menuItem.menuIcon.setBackgroundResource(menuIcon);
 		if(userInfoApplication.getSelectedCustomerID()!=0){
-			if (menuText.equals(userInfoApplication.getSelectedCustomerName())) {
+			if (menuText != null && menuText.equals(userInfoApplication.getSelectedCustomerName())) {
 				ImageLoader imageLoader =ImageLoader.getInstance();
 				DisplayImageOptions displayImageOptions=ImageLoaderUtil.getDisplayImageOptions(R.drawable.head_image_null);
 				imageLoader.displayImage(selectedCustomerHeadImageUrl,menuItem.menuIcon,displayImageOptions);

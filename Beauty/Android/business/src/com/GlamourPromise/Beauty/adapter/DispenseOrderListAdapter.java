@@ -7,6 +7,7 @@ import com.GlamourPromise.Beauty.application.UserInfoApplication;
 import com.GlamourPromise.Beauty.bean.OrderProduct;
 import com.GlamourPromise.Beauty.util.NumberFormatUtil;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 /*
  * 待开单界面的适配器
  * */
+@SuppressLint("ResourceType")
 public class DispenseOrderListAdapter extends BaseAdapter {
 	private LayoutInflater     layoutInflater;
 	private Context            mContext;
@@ -75,27 +77,29 @@ public class DispenseOrderListAdapter extends BaseAdapter {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Dialog dialog = new AlertDialog.Builder(mContext,R.style.CustomerAlertDialog)
-				.setTitle(mContext.getString(R.string.delete_dialog_title))
-				.setMessage(R.string.delete_prepare_order)
-				.setPositiveButton(mContext.getString(R.string.delete_confirm),new DialogInterface.OnClickListener() {
+						.setTitle(mContext.getString(R.string.delete_dialog_title))
+						.setMessage(R.string.delete_prepare_order)
+						.setPositiveButton(mContext.getString(R.string.delete_confirm),new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog,int which) {
 								dialog.dismiss();
-								mOrderProductList.remove(mOrderProductList.get(pos));
-								DispenseOrderListAdapter.this.notifyDataSetChanged();
-								((TextView)((Activity)mContext).findViewById(R.id.tab_prepare_order_title)).setText("待开("+mOrderProductList.size()+")");
+								if (mOrderProductList!=null && mOrderProductList.size() > pos){
+									mOrderProductList.remove(mOrderProductList.get(pos));
+									DispenseOrderListAdapter.this.notifyDataSetChanged();
+								}
+								((TextView) ((Activity) mContext).findViewById(R.id.tab_prepare_order_title)).setText("待开(" + (mOrderProductList != null ? mOrderProductList.size() : 0) + ")");
 							}
 						})
-				.setNegativeButton(mContext.getString(R.string.delete_cancel),
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,int which) {
-								dialog.dismiss();
-								dialog = null;
-							}
-						}).create();
-		dialog.show();
-		dialog.setCancelable(false);
+						.setNegativeButton(mContext.getString(R.string.delete_cancel),
+								new DialogInterface.OnClickListener() {
+									@Override
+									public void onClick(DialogInterface dialog,int which) {
+										dialog.dismiss();
+										dialog = null;
+									}
+								}).create();
+				dialog.show();
+				dialog.setCancelable(false);
 			}
 		});
 		return convertView;

@@ -119,6 +119,9 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
 
 		@Override
 		public void handleMessage(Message msg) {
+			if (dispenseFavoriteListFragment == null || dispenseFavoriteListFragment.getActivity() == null) {
+				UserInfoApplication.getInstance().exitForLogin(null);
+			}
 			switch (msg.what) {
 				case 1:
 					favoriteListAdapter = new FavoriteListAdapter(dispenseFavoriteListFragment.getActivity(), dispenseFavoriteListFragment.favoriteList);

@@ -394,7 +394,9 @@ public class UserInfoApplication extends Application {
 	}
 	// 登出
 	public void exitForLogin(Context currentActivity) {
-		exit(currentActivity);
+		if (currentActivity != null) {
+			exit(currentActivity);
+		}
 		clearLoginInformation();
 		Intent destIntent=new Intent(this,LoginActivity.class);
 		currentActivity.startActivity(destIntent);

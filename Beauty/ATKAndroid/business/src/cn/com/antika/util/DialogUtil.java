@@ -16,16 +16,23 @@ import cn.com.antika.business.R;
 public class DialogUtil {
 	public static void createMakeSureDialog(Context context, String title,
 			String message) {
-		new AlertDialog.Builder(context,R.style.CustomerAlertDialog).setMessage(message)
-				.setPositiveButton("确定", null).create().show();
+		if (context != null) {
+			new AlertDialog.Builder(context, R.style.CustomerAlertDialog).setMessage(message)
+					.setPositiveButton("确定", null).create().show();
+		}
 	}
 	public static AlertDialog createShortShowDialog(Context context, String title,
 			String message){
-		AlertDialog ad=new AlertDialog.Builder(context,R.style.CustomerAlertDialog).setMessage(message)
-		.setPositiveButton("确定", null).create();
+		AlertDialog ad = null;
+		if (context != null) {
+			ad = new AlertDialog.Builder(context, R.style.CustomerAlertDialog).setMessage(message)
+					.setPositiveButton("确定", null).create();
+		}
 		return ad;
 	}
 	public static void createShortDialog(Context context, String message) {
-		Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+		if (context != null) {
+			Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+		}
 	}
 }

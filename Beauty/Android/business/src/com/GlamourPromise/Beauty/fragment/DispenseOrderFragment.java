@@ -15,6 +15,8 @@ import com.GlamourPromise.Beauty.adapter.DispenseOrderListAdapter;
 import com.GlamourPromise.Beauty.application.UserInfoApplication;
 import com.GlamourPromise.Beauty.bean.OrderProduct;
 import com.GlamourPromise.Beauty.util.DialogUtil;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -32,6 +34,7 @@ import android.widget.TextView;
  * @author tim.zhang@bizapper.com
  * 2015年7月6日 下午1:48:56
  */
+@SuppressLint("ResourceType")
 public class DispenseOrderFragment extends Fragment implements OnClickListener{
 	private ListView   dispenseOrderListView;
 	private List<OrderProduct> orderProductList;
@@ -68,7 +71,9 @@ public class DispenseOrderFragment extends Fragment implements OnClickListener{
 		super.setUserVisibleHint(isVisibleToUser);
 		if(isVisibleToUser && dispenseOrderListView!=null){
 			((TextView)getActivity().findViewById(R.id.tab_prepare_order_title)).setText("待开"+"("+orderProductList.size()+")");
-			dispenseOrderListView.setAdapter(new DispenseOrderListAdapter(getActivity(),orderProductList));
+			DispenseOrderListAdapter dispenseOrderListAdapter = new DispenseOrderListAdapter(getActivity(), orderProductList);
+			dispenseOrderListView.setAdapter(dispenseOrderListAdapter);
+			dispenseOrderListAdapter.notifyDataSetChanged();
 		}	
 	}
 	@Override
