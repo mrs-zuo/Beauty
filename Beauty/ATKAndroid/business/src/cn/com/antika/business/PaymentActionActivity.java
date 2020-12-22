@@ -522,6 +522,8 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		ecardInfoListSize=ecardInfoList.size();
 		paidOrderTotalPriceText.setText(userinfoApplication.getAccountInfo().getCurrency()+NumberFormatUtil.currencyFormat(String.valueOf(orderTotalCalcPrice)));
 		shouldPayAmountEdit.setText(NumberFormatUtil.currencyFormat(String.valueOf(orderShouldPayAmountTotal)));
+		// 应付款不可编辑
+		shouldPayAmountEdit.setEnabled(false);
 		paymentActionOrderCardSpinnerText.setText(NumberFormatUtil.currencyFormat(String.valueOf(orderTotalCalcPrice)));
 		paidOrderCountText.setText(String.valueOf(orderListSize));
 		thisTimeGivePoint.setText(NumberFormatUtil.currencyFormat("0"));
