@@ -396,6 +396,10 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 		progressDialog.setMessage(getString(R.string.please_wait));
 		progressDialog.show();
 		ecardInfoList=new ArrayList<EcardInfo>();
+		EcardInfo defaultEcardInfo=new EcardInfo();
+		defaultEcardInfo.setUserEcardName("全部");
+		defaultEcardInfo.setUserEcardCode("");
+		ecardInfoList.add(defaultEcardInfo);
 		requestWebServiceThread = new Thread() {
 			public void run() {
 				String methodName ="GetBranchCardList";
@@ -429,11 +433,6 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 							ecardJsonArray = resultJson.getJSONArray("Data");
 						} catch (JSONException e) {
 						}
-						ecardInfoList=new ArrayList<EcardInfo>();
-						EcardInfo defaultEcardInfo=new EcardInfo();
-						defaultEcardInfo.setUserEcardName("全部");
-						defaultEcardInfo.setUserEcardCode("");
-						ecardInfoList.add(defaultEcardInfo);
 						if (ecardJsonArray!= null) {
 							for (int i = 0; i < ecardJsonArray.length(); i++) {
 								JSONObject ecardJson = null;
@@ -473,6 +472,10 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 	}
 	protected void getSourceTypeList() {
 		sourceTypeList=new ArrayList<SourceType>();
+		SourceType  defaultSourceType=new SourceType();
+		defaultSourceType.setSourceTypeID(-1);
+		defaultSourceType.setSourceTypeName("全部");
+		sourceTypeList.add(defaultSourceType);
 		requestWebServiceThread = new Thread() {
 			public void run() {
 				String methodName ="GetCustomerSourceType";
@@ -501,10 +504,6 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 							customerSourceTypeJsonArray =resultJson.getJSONArray("Data");
 						} catch (JSONException e) {
 						}
-						SourceType  defaultSourceType=new SourceType();
-						defaultSourceType.setSourceTypeID(-1);
-						defaultSourceType.setSourceTypeName("全部");
-						sourceTypeList.add(defaultSourceType);
 						if (customerSourceTypeJsonArray!= null) {
 							for (int i = 0; i < customerSourceTypeJsonArray.length(); i++) {
 								JSONObject sourceTypeJson = null;
