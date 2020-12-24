@@ -16,12 +16,5 @@ namespace WebAPI.Common
                 file.WriteLine(line);
             }
         }
-        public static void WriteLog(string fname, string line)
-        {
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(ConfigurationManager.AppSettings["ImageServer"] + "/" + ConfigurationManager.AppSettings["ImageFolder"] + "temp/" + fname + @".log", true))
-            {
-                file.WriteLine(line);
-            }
-        }
     }
 }

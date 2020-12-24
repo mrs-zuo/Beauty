@@ -139,7 +139,7 @@ namespace WebAPI.Common
 
         //到日导出列名
         public static readonly Dictionary<string, string> EXPORT_SERVICENAMEEXCHANGE = new Dictionary<string, string>{
-        {"CategoryName", "所属分类"},{"CategoryID","所属分类编号"},{"ServiceName", "服务名称"},{"UnitPrice", "单价"},{"RelativePath", "路径"}
+        {"ServiceID", "服务编号"},{"CategoryName", "所属分类"},{"CategoryID","所属分类编号"},{"ServiceName", "服务名称"},{"UnitPrice", "单价"},{"RelativePath", "路径"}
         ,{"MarketingPolicy", "营销策略"},{"PromotionPrice", "促销价"},{"SubServiceName","服务子项"},{"SubServiceCodes","服务子项编号"},{"Describe", "服务描述"}
         ,{"CourseFrequency", "服务次数"},{"SpendTime", "服务时间"},{"VisitTime", "回访周期"}
         ,{"Available", "是否有效"},{"VisibleForCustomer", "是否对客户可见"},{"ExpirationDate", "服务有效期"}
@@ -147,7 +147,7 @@ namespace WebAPI.Common
         ,{"DiscountName","折扣名称"},{"DiscountID","折扣编号"},{"IsConfirmed","确认方式"},{"AutoConfirm","自动确认"},{"AutoConfirmDays","自动确认等待日数"}
         };
         public static readonly Dictionary<string, string> EXPORT_COMMODITYNAMEEXCHANGE = new Dictionary<string, string>{
-        {"CategoryName", "所属分类"},{"CategoryID","所属分类编号"},{"CommodityName", "商品名称"},{"UnitPrice", "单价"},{"RelativePath", "路径"}
+        {"CommodityID", "商品编号"},{"CategoryName", "所属分类"},{"CategoryID","所属分类编号"},{"CommodityName", "商品名称"},{"UnitPrice", "单价"},{"RelativePath", "路径"}
         ,{"MarketingPolicy", "营销策略"},{"PromotionPrice", "促销价"},{"Describe", "描述"}
         ,{"Specification", "规格"},{"New", "新品"}
         ,{"Recommended", "推荐"},{"Available", "是否有效"},{"VisibleForCustomer", "客户是否可见"}

@@ -801,7 +801,7 @@
         par = [par stringByAppendingString:[NSString stringWithFormat:@",\"PageIndex\":%d",(int)self.pageIndex]];
         par = [par stringByAppendingString:[NSString stringWithFormat:@",\"PageSize\":%d",(int)self.pageSize]];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss:SSS"];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:SSS"];
         par = [par stringByAppendingString:[NSString stringWithFormat:@",\"SearchDateTime\":\"%@\"",[formatter stringFromDate:[NSDate date]]]];
     }
     // 所有顾客

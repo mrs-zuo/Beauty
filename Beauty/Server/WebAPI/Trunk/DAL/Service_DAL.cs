@@ -857,11 +857,12 @@ namespace WebAPI.DAL
             }
         }
 
-        public bool BatchAddService(DataTable dt, Service_Model mService)
+        public bool BatchAddService(DataTable dt, Service_Model mService, out string errMsg)
         {
             List<long> listServiceCode = new List<long>();
             string destFolder = Const.uploadServer + "/" + Const.strImage + mService.CompanyID.ToString() + "/Service/";
             string tempFolder = Const.uploadServer + "/" + Const.strImage + "temp/ServiceImage/";
+            errMsg = "";
 
             using (DbManager db = new DbManager())
             {
@@ -873,6 +874,32 @@ namespace WebAPI.DAL
                                          values (
                                         @CompanyID,@BranchID,@CategoryID,@Code,@ServiceName,@UnitPrice,@MarketingPolicy,@PromotionPrice,@Describe,@CourseFrequency,@SpendTime,@VisitTime,@Available,@CreatorID,@CreateTime,@VisibleForCustomer,@ExpirationDate,@NeedVisit,@HaveExpiration,@DiscountID,@SubServiceCodes,@IsConfirmed, @AutoConfirm, @AutoConfirmDays)
                                         ;select @@IDENTITY";
+
+                    string strSqlUpdate = @"
+                        update [SERVICE]
+                        set
+                            CategoryID = @CategoryID,
+                            ServiceName = @ServiceName,
+                            UnitPrice = @UnitPrice,
+                            MarketingPolicy = @MarketingPolicy,
+                            PromotionPrice = @PromotionPrice,
+                            Describe = @Describe,
+                            CourseFrequency = @CourseFrequency,
+                            SpendTime = @SpendTime,
+                            VisitTime = @VisitTime,
+                            Available = @Available,
+                            UpdaterID = @UpdaterID,
+                            UpdateTime = @UpdateTime,
+                            VisibleForCustomer = @VisibleForCustomer,
+                            ExpirationDate = @ExpirationDate,
+                            NeedVisit = @NeedVisit,
+                            HaveExpiration = @HaveExpiration,
+                            DiscountID = @DiscountID,
+                            SubServiceCodes = @SubServiceCodes,
+                            IsConfirmed = @IsConfirmed,
+                            AutoConfirm = @AutoConfirm,
+                            AutoConfirmDays = @AutoConfirmDays
+                        Where CompanyID = @CompanyID and ID = @ServiceID";
 
                     //string strSqlSelect = " select ID,Code from SERVICE where ID =@ID ";
 
@@ -956,126 +983,187 @@ namespace WebAPI.DAL
                                     AutoConfirm = 0;
                                     break;
                             }
-                            int serviceId = db.SetCommand(strSqlAdd
-                                , db.Parameter("@CompanyID", mService.CompanyID, DbType.Int32)
-                                , db.Parameter("@BranchID", mService.BranchID == -1 ? 0 : mService.BranchID, DbType.Int32)
-                                , db.Parameter("@CategoryID", dt.Rows[i]["CategoryID"].ToString() == "-1" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CategoryID"]), DbType.Int32)
-                                , db.Parameter("@ServiceName", dt.Rows[i]["ServiceName"].ToString(), DbType.String)
-                                , db.Parameter("@UnitPrice", Convert.ToDecimal(dt.Rows[i]["UnitPrice"]), DbType.Decimal)
-                                , db.Parameter("@MarketingPolicy", MarketingPolicy, DbType.Int32)
-                                , db.Parameter("@PromotionPrice", promotionPrice == 0 ? (object)DBNull.Value : promotionPrice, DbType.Decimal)
-                                , db.Parameter("@Describe", dt.Rows[i]["Describe"].ToString(), DbType.String)
-                                , db.Parameter("@CourseFrequency", Object.Equals(dt.Rows[i]["CourseFrequency"], string.Empty) ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CourseFrequency"]), DbType.Int32)
-                                , db.Parameter("@SpendTime", Object.Equals(dt.Rows[i]["SpendTime"], string.Empty) ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["SpendTime"]), DbType.Int32)
-                                , db.Parameter("@VisitTime", Object.Equals(dt.Rows[i]["VisitTime"], string.Empty) ? 0 : StringUtils.GetDbInt(dt.Rows[i]["VisitTime"]), DbType.Int32)
-                                , db.Parameter("@NeedVisit", dt.Rows[i]["NeedVisit"].ToString() == "是" ? true : false, DbType.Boolean)
-                                , db.Parameter("@ExpirationDate", ExpirationDate, DbType.Int32)
-                                , db.Parameter("@HaveExpiration", dt.Rows[i]["HaveExpiration"].ToString() == "是" ? true : false, DbType.Boolean)
-                                , db.Parameter("@SubServiceCodes", Object.Equals(dt.Rows[i]["SubServiceCodes"], string.Empty) ? (object)DBNull.Value : (dt.Rows[i]["SubServiceCodes"]).ToString(), DbType.String)
-                                , db.Parameter("@Available", dt.Rows[i]["Available"].ToString() == "是" ? true : false, DbType.Boolean)
-                                , db.Parameter("@CreatorID", mService.CreatorID, DbType.Int32)
-                                , db.Parameter("@CreateTime", mService.CreateTime, DbType.DateTime2)
-                                , db.Parameter("@VisibleForCustomer", dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? true : false, DbType.Int32)
-                                , db.Parameter("@DiscountID", dt.Rows[i]["DiscountID"].ToString() == "" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["DiscountID"]), DbType.Int32)
-                                , db.Parameter("@Code", StringUtils.GetDbLong(Code), DbType.Int64)
-                                , db.Parameter("@IsConfirmed", IsConfirmed, DbType.Int32)
-                                , db.Parameter("@AutoConfirm", AutoConfirm, DbType.Int16)
-                                , db.Parameter("@AutoConfirmDays", dt.Rows[i]["AutoConfirmDays"].ToString(), DbType.Int32)).ExecuteScalar<Int32>();
-
-                            if (serviceId <= 0)
+                            //Common.WriteLOG.WriteLog("ServiceID = " + dt.Rows[i]["ServiceID"].ToString());
+                            if (dt.Rows[i]["ServiceID"].ToString() != @"")
                             {
-                                db.RollbackTransaction();
-                                return false;
+                                //Common.WriteLOG.WriteLog("@CompanyID int = " +  mService.CompanyID.ToString());
+                                //Common.WriteLOG.WriteLog("@CategoryID int = " + (dt.Rows[i]["CategoryID"].ToString() == "-1" ? "null" : dt.Rows[i]["CategoryID"].ToString()));
+                                //Common.WriteLOG.WriteLog("@ServiceName varchar(max) = " + "'" + dt.Rows[i]["ServiceName"].ToString() + "'");
+                                //Common.WriteLOG.WriteLog("@UnitPrice decimal = " + dt.Rows[i]["UnitPrice"].ToString());
+                                //Common.WriteLOG.WriteLog("@MarketingPolicy int = " + MarketingPolicy.ToString());
+                                //Common.WriteLOG.WriteLog("@PromotionPrice decimal = " + (promotionPrice == 0 ? "null" : promotionPrice.ToString()));
+                                //Common.WriteLOG.WriteLog("@Describe varchar(max) = " + "'" + dt.Rows[i]["Describe"].ToString() + "'");
+                                //Common.WriteLOG.WriteLog("@CourseFrequency int = " + (Object.Equals(dt.Rows[i]["CourseFrequency"], string.Empty) ? "null" : dt.Rows[i]["CourseFrequency"].ToString()));
+                                //Common.WriteLOG.WriteLog("@SpendTime int = " + (Object.Equals(dt.Rows[i]["SpendTime"], string.Empty) ? "null" : dt.Rows[i]["SpendTime"].ToString()));
+                                //Common.WriteLOG.WriteLog("@VisitTime int = " + (Object.Equals(dt.Rows[i]["VisitTime"], string.Empty) ? "0" : dt.Rows[i]["VisitTime"].ToString()));
+                                //Common.WriteLOG.WriteLog("@NeedVisit bit = " + (dt.Rows[i]["NeedVisit"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog("@ExpirationDate int = " + ExpirationDate.ToString());
+                                //Common.WriteLOG.WriteLog("@HaveExpiration bit = " + (dt.Rows[i]["HaveExpiration"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog("@SubServiceCodes varchar(max) = " + (Object.Equals(dt.Rows[i]["SubServiceCodes"], string.Empty) ? "null" : "'" + (dt.Rows[i]["SubServiceCodes"]).ToString() + "'"));
+                                //Common.WriteLOG.WriteLog("@Available bit = " + (dt.Rows[i]["Available"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog("@UpdaterID int = " + mService.CreatorID.ToString());
+                                //Common.WriteLOG.WriteLog("@UpdateTime Datetime = " + "'" + mService.CreateTime + "'");
+                                //Common.WriteLOG.WriteLog("@VisibleForCustomer int = " + (dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog("@DiscountID int = " + (dt.Rows[i]["DiscountID"].ToString() == "" ? "null" : dt.Rows[i]["DiscountID"].ToString()));
+                                //Common.WriteLOG.WriteLog("@IsConfirmed int = " + IsConfirmed.ToString());
+                                //Common.WriteLOG.WriteLog("@AutoConfirm tinyint = " + AutoConfirm.ToString());
+                                //Common.WriteLOG.WriteLog("@AutoConfirmDays int = " + dt.Rows[i]["AutoConfirmDays"].ToString());
+                                //Common.WriteLOG.WriteLog("@ServiceID int = " + dt.Rows[i]["ServiceID"].ToString());
+                                //Common.WriteLOG.WriteLog(strSqlUpdate);
+
+                                int result = db.SetCommand(strSqlUpdate, db.Parameter("@CompanyID", mService.CompanyID, DbType.Int32)
+                                    , db.Parameter("@CategoryID", dt.Rows[i]["CategoryID"].ToString() == "-1" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CategoryID"]), DbType.Int32)
+                                    , db.Parameter("@ServiceName", dt.Rows[i]["ServiceName"].ToString(), DbType.String)
+                                    , db.Parameter("@UnitPrice", Convert.ToDecimal(dt.Rows[i]["UnitPrice"]), DbType.Decimal)
+                                    , db.Parameter("@MarketingPolicy", MarketingPolicy, DbType.Int32)
+                                    , db.Parameter("@PromotionPrice", promotionPrice == 0 ? (object)DBNull.Value : promotionPrice, DbType.Decimal)
+                                    , db.Parameter("@Describe", dt.Rows[i]["Describe"].ToString(), DbType.String)
+                                    , db.Parameter("@CourseFrequency", Object.Equals(dt.Rows[i]["CourseFrequency"], string.Empty) ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CourseFrequency"]), DbType.Int32)
+                                    , db.Parameter("@SpendTime", Object.Equals(dt.Rows[i]["SpendTime"], string.Empty) ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["SpendTime"]), DbType.Int32)
+                                    , db.Parameter("@VisitTime", Object.Equals(dt.Rows[i]["VisitTime"], string.Empty) ? 0 : StringUtils.GetDbInt(dt.Rows[i]["VisitTime"]), DbType.Int32)
+                                    , db.Parameter("@NeedVisit", dt.Rows[i]["NeedVisit"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@ExpirationDate", ExpirationDate, DbType.Int32)
+                                    , db.Parameter("@HaveExpiration", dt.Rows[i]["HaveExpiration"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@SubServiceCodes", Object.Equals(dt.Rows[i]["SubServiceCodes"], string.Empty) ? (object)DBNull.Value : (dt.Rows[i]["SubServiceCodes"]).ToString(), DbType.String)
+                                    , db.Parameter("@Available", dt.Rows[i]["Available"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@UpdaterID", mService.CreatorID, DbType.Int32)
+                                    , db.Parameter("@UpdateTime", mService.CreateTime, DbType.DateTime2)
+                                    , db.Parameter("@VisibleForCustomer", dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? true : false, DbType.Int32)
+                                    , db.Parameter("@DiscountID", dt.Rows[i]["DiscountID"].ToString() == "" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["DiscountID"]), DbType.Int32)
+                                    , db.Parameter("@IsConfirmed", IsConfirmed, DbType.Int32)
+                                    , db.Parameter("@AutoConfirm", AutoConfirm, DbType.Int16)
+                                    , db.Parameter("@AutoConfirmDays", dt.Rows[i]["AutoConfirmDays"].ToString(), DbType.Int32)
+                                    , db.Parameter("@ServiceID", dt.Rows[i]["ServiceID"].ToString(), DbType.Int32)).ExecuteNonQuery();
+                                //Common.WriteLOG.WriteLog("Service_DAL.Instance.BatchAddService result = " + result.ToString());
+                                if (result <= 0)
+                                {
+                                    errMsg = "服务ID不存在：" + dt.Rows[i]["ServiceID"].ToString();
+                                    db.RollbackTransaction();
+                                    return false;
+                                }
                             }
-                            else
-                            {
-                                long serviceCode = StringUtils.GetDbLong(Code);
+                            else{
+                                int serviceId = db.SetCommand(strSqlAdd
+                                    , db.Parameter("@CompanyID", mService.CompanyID, DbType.Int32)
+                                    , db.Parameter("@BranchID", mService.BranchID == -1 ? 0 : mService.BranchID, DbType.Int32)
+                                    , db.Parameter("@CategoryID", dt.Rows[i]["CategoryID"].ToString() == "-1" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CategoryID"]), DbType.Int32)
+                                    , db.Parameter("@ServiceName", dt.Rows[i]["ServiceName"].ToString(), DbType.String)
+                                    , db.Parameter("@UnitPrice", Convert.ToDecimal(dt.Rows[i]["UnitPrice"]), DbType.Decimal)
+                                    , db.Parameter("@MarketingPolicy", MarketingPolicy, DbType.Int32)
+                                    , db.Parameter("@PromotionPrice", promotionPrice == 0 ? (object)DBNull.Value : promotionPrice, DbType.Decimal)
+                                    , db.Parameter("@Describe", dt.Rows[i]["Describe"].ToString(), DbType.String)
+                                    , db.Parameter("@CourseFrequency", Object.Equals(dt.Rows[i]["CourseFrequency"], string.Empty) ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CourseFrequency"]), DbType.Int32)
+                                    , db.Parameter("@SpendTime", Object.Equals(dt.Rows[i]["SpendTime"], string.Empty) ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["SpendTime"]), DbType.Int32)
+                                    , db.Parameter("@VisitTime", Object.Equals(dt.Rows[i]["VisitTime"], string.Empty) ? 0 : StringUtils.GetDbInt(dt.Rows[i]["VisitTime"]), DbType.Int32)
+                                    , db.Parameter("@NeedVisit", dt.Rows[i]["NeedVisit"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@ExpirationDate", ExpirationDate, DbType.Int32)
+                                    , db.Parameter("@HaveExpiration", dt.Rows[i]["HaveExpiration"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@SubServiceCodes", Object.Equals(dt.Rows[i]["SubServiceCodes"], string.Empty) ? (object)DBNull.Value : (dt.Rows[i]["SubServiceCodes"]).ToString(), DbType.String)
+                                    , db.Parameter("@Available", dt.Rows[i]["Available"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@CreatorID", mService.CreatorID, DbType.Int32)
+                                    , db.Parameter("@CreateTime", mService.CreateTime, DbType.DateTime2)
+                                    , db.Parameter("@VisibleForCustomer", dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? true : false, DbType.Int32)
+                                    , db.Parameter("@DiscountID", dt.Rows[i]["DiscountID"].ToString() == "" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["DiscountID"]), DbType.Int32)
+                                    , db.Parameter("@Code", StringUtils.GetDbLong(Code), DbType.Int64)
+                                    , db.Parameter("@IsConfirmed", IsConfirmed, DbType.Int32)
+                                    , db.Parameter("@AutoConfirm", AutoConfirm, DbType.Int16)
+                                    , db.Parameter("@AutoConfirmDays", dt.Rows[i]["AutoConfirmDays"].ToString(), DbType.Int32)).ExecuteScalar<Int32>();
 
-                                if (serviceCode <= 0)
+                                if (serviceId <= 0)
                                 {
                                     db.RollbackTransaction();
                                     return false;
                                 }
                                 else
                                 {
-                                    int val = db.SetCommand(strSqlInsertSort, db.Parameter("@Companyid", mService.CompanyID, DbType.Int32)
-                                                                            , db.Parameter("@ServiceCode", serviceCode, DbType.Int64)).ExecuteNonQuery();
+                                    long serviceCode = StringUtils.GetDbLong(Code);
 
-                                    if (val == 0)
+                                    if (serviceCode <= 0)
                                     {
                                         db.RollbackTransaction();
                                         return false;
                                     }
                                     else
                                     {
-                                        if (!string.IsNullOrEmpty(dt.Rows[i]["RelativePath"].ToString().Trim()))
+                                        int val = db.SetCommand(strSqlInsertSort, db.Parameter("@Companyid", mService.CompanyID, DbType.Int32)
+                                                                                , db.Parameter("@ServiceCode", serviceCode, DbType.Int64)).ExecuteNonQuery();
+
+                                        if (val == 0)
                                         {
-                                            string[] strImagesInfo = dt.Rows[i]["RelativePath"].ToString().Split('|');
-                                            if (strImagesInfo.Length > 0)
+                                            db.RollbackTransaction();
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            if (!string.IsNullOrEmpty(dt.Rows[i]["RelativePath"].ToString().Trim()))
                                             {
-                                                string tempedFolder = tempFolder + serviceCode + "/";
-                                                if (!Directory.Exists(tempedFolder))
+                                                string[] strImagesInfo = dt.Rows[i]["RelativePath"].ToString().Split('|');
+                                                if (strImagesInfo.Length > 0)
                                                 {
-                                                    Directory.CreateDirectory(tempedFolder);
-                                                }
-                                                for (int j = 0; j < strImagesInfo.Length; j++)
-                                                {
-                                                    if (strImagesInfo[j] != "")
+                                                    string tempedFolder = tempFolder + serviceCode + "/";
+                                                    if (!Directory.Exists(tempedFolder))
                                                     {
-                                                        string[] strImageInfo = strImagesInfo[j].Split(',');
-                                                        string orignalFile = Const.uploadServer + strImageInfo[0];
-                                                        if (File.Exists(orignalFile))
+                                                        Directory.CreateDirectory(tempedFolder);
+                                                    }
+                                                    for (int j = 0; j < strImagesInfo.Length; j++)
+                                                    {
+                                                        if (strImagesInfo[j] != "")
                                                         {
-                                                            string filename = string.Format("{0:yyyyMMddHHmmssffff}", DateTime.Now.ToLocalTime()) + (new Random().Next(100000) + j).ToString("d5") + Path.GetExtension(strImageInfo[0]);
-                                                            if (Convert.ToInt32(strImageInfo[1]) == 0)
+                                                            string[] strImageInfo = strImagesInfo[j].Split(',');
+                                                            string orignalFile = Const.uploadServer + strImageInfo[0];
+                                                            if (File.Exists(orignalFile))
                                                             {
-                                                                filename = "TC" + filename;
-                                                            }
-                                                            else
-                                                            {
-                                                                filename = "C" + filename;
-                                                            }
+                                                                string filename = string.Format("{0:yyyyMMddHHmmssffff}", DateTime.Now.ToLocalTime()) + (new Random().Next(100000) + j).ToString("d5") + Path.GetExtension(strImageInfo[0]);
+                                                                if (Convert.ToInt32(strImageInfo[1]) == 0)
+                                                                {
+                                                                    filename = "TC" + filename;
+                                                                }
+                                                                else
+                                                                {
+                                                                    filename = "C" + filename;
+                                                                }
 
-                                                            string strCommand = @"INSERT INTO [IMAGE_SERVICE]
-                                                             ([CompanyID]
-                                                             ,[ServiceCode]
-                                                             ,[ServiceID]
-                                                             ,[ImageType]
-                                                             ,[FileName]
-                                                             ,[CreatorID]
-                                                             ,[CreateTime])
-                                                        VALUES
-                                                            (@CompanyID
-                                                            ,@ServiceCode
-                                                            ,@ServiceID
-                                                            ,@ImageType
-                                                            ,@FileName
-                                                            ,@CreatorID
-                                                            ,@CreateTime)";
+                                                                string strCommand = @"INSERT INTO [IMAGE_SERVICE]
+                                                                 ([CompanyID]
+                                                                 ,[ServiceCode]
+                                                                 ,[ServiceID]
+                                                                 ,[ImageType]
+                                                                 ,[FileName]
+                                                                 ,[CreatorID]
+                                                                 ,[CreateTime])
+                                                            VALUES
+                                                                (@CompanyID
+                                                                ,@ServiceCode
+                                                                ,@ServiceID
+                                                                ,@ImageType
+                                                                ,@FileName
+                                                                ,@CreatorID
+                                                                ,@CreateTime)";
 
-                                                            val = db.SetCommand(strCommand, db.Parameter("@CompanyID", mService.CompanyID, DbType.Int32)
-                                                                            , db.Parameter("@ServiceCode", serviceCode, DbType.Int64)
-                                                                            , db.Parameter("@ServiceID", serviceId, DbType.Int32)
-                                                                            , db.Parameter("@ImageType", Convert.ToInt32(strImageInfo[1]), DbType.Int32)
-                                                                            , db.Parameter("@FileName", filename, DbType.String)
-                                                                            , db.Parameter("@CreatorID", mService.CreatorID, DbType.Int32)
-                                                                            , db.Parameter("@CreateTime", DateTime.Now.ToLocalTime(), DbType.DateTime2)).ExecuteNonQuery();
+                                                                val = db.SetCommand(strCommand, db.Parameter("@CompanyID", mService.CompanyID, DbType.Int32)
+                                                                                , db.Parameter("@ServiceCode", serviceCode, DbType.Int64)
+                                                                                , db.Parameter("@ServiceID", serviceId, DbType.Int32)
+                                                                                , db.Parameter("@ImageType", Convert.ToInt32(strImageInfo[1]), DbType.Int32)
+                                                                                , db.Parameter("@FileName", filename, DbType.String)
+                                                                                , db.Parameter("@CreatorID", mService.CreatorID, DbType.Int32)
+                                                                                , db.Parameter("@CreateTime", DateTime.Now.ToLocalTime(), DbType.DateTime2)).ExecuteNonQuery();
 
-                                                            if (val == 0)
-                                                            {
-                                                                db.RollbackTransaction();
-                                                                return false;
-                                                            }
-                                                            else
-                                                            {
-                                                                string tempFile = tempedFolder + filename;
-                                                                FileInfo fi = new FileInfo(orignalFile);
-                                                                fi.CopyTo(tempFile);
+                                                                if (val == 0)
+                                                                {
+                                                                    db.RollbackTransaction();
+                                                                    return false;
+                                                                }
+                                                                else
+                                                                {
+                                                                    string tempFile = tempedFolder + filename;
+                                                                    FileInfo fi = new FileInfo(orignalFile);
+                                                                    fi.CopyTo(tempFile);
+                                                                }
                                                             }
                                                         }
                                                     }
+                                                    listServiceCode.Add(serviceCode);
                                                 }
-                                                listServiceCode.Add(serviceCode);
                                             }
                                         }
                                     }

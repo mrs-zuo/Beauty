@@ -33,8 +33,10 @@ namespace WebAPI.BLL
         }
         #endregion
 
-        public bool batchImport(string filename, int addType, int branchID, int userID, int companyId)
+        public bool batchImport(string filename, int addType, int branchID, int userID, int companyId, out string errMsg)
         {
+            errMsg = "";
+
             string filePath = Const.uploadServer + "/" + Const.strImage + "temp/batchImport/" + filename;
             if (File.Exists(filePath))
             {
@@ -177,8 +179,7 @@ namespace WebAPI.BLL
                     mCommodity.BranchID = branchID;
                     mCommodity.CreatorID = userID;
                     mCommodity.CreateTime = DateTime.Now.ToLocalTime();
-
-                    bool res = Commodity_DAL.Instance.BatchAddCommodity(dt, mCommodity);
+                    bool res = Commodity_DAL.Instance.BatchAddCommodity(dt, mCommodity, out errMsg);
 
                     return res;
                 }
@@ -191,7 +192,7 @@ namespace WebAPI.BLL
                     mService.CreatorID = userID;
                     mService.CreateTime = DateTime.Now.ToLocalTime();
 
-                    bool res = Service_DAL.Instance.BatchAddService(dt, mService);
+                    bool res = Service_DAL.Instance.BatchAddService(dt, mService, out errMsg);
 
                     return res;
                 }
@@ -252,7 +253,5 @@ namespace WebAPI.BLL
             return dt;
 
         }
-
-
     }
 }

@@ -163,8 +163,8 @@ function importSubmit() {
             location.href = "/Home/Index?err=2";
         },
         success: function (data) {
-            if (data == "0") {
-                alert("添加失败!");
+            if (data.Code == "0") {
+                alert("添加失败! \n" + data.Message);
                 return;
             }
             else {

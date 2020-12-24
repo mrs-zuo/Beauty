@@ -388,6 +388,7 @@ namespace WebAPI.Controllers.Manager
             model.mCommodity.BranchID = this.BranchID;
 
             bool result = Commodity_BLL.Instance.BatchAddCommodity(model);
+            //Common.WriteLOG.WriteLog("Commodity_BLL.Instance.BatchAddCommodity result = " + result.ToString());
             if (result)
             {
                 res.Code = "1";

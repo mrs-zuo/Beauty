@@ -25,7 +25,7 @@ namespace WebAPI.Controllers.Manager
             ObjectResult<bool> res = new ObjectResult<bool>();
             res.Code = "0";
             res.Data = false;
-            res.Message = "添加失败！";
+            res.Message = "";
 
             if (obj == null)
             {
@@ -42,9 +42,15 @@ namespace WebAPI.Controllers.Manager
 
             UtilityOperation_Model model = new UtilityOperation_Model();
             model = Newtonsoft.Json.JsonConvert.DeserializeObject<UtilityOperation_Model>(strSafeJson);
-
-            WebUtilty_BLL.Instance.batchImport(model.FileName,model.Type,this.BranchID,this.UserID,this.CompanyID);
-
+            string errMsg;
+            bool result = WebUtilty_BLL.Instance.batchImport(model.FileName,model.Type,this.BranchID,this.UserID,this.CompanyID, out errMsg);
+            if (result)
+            {
+                res.Code = "1";
+                res.Data = true;
+                res.Message = "添加成功！";
+            }
+            res.Message = errMsg;
             return toJson(res);
         }
         [HttpPost]

@@ -222,7 +222,7 @@ namespace WebAPI.BLL
                 }
                 dt.Rows[i]["RelativePath"] = sb.ToString();
             }
-            dt.Columns.Remove("ServiceID");
+            //dt.Columns.Remove("ServiceID");
 
             dt = dtNormalizing(dt, Const.EXPORT_SERVICENAMEEXCHANGE);
 

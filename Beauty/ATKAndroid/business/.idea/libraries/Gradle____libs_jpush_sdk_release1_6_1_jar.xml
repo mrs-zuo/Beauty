@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./libs/jpush-sdk-release1.6.1.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/jpush-sdk-release1.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

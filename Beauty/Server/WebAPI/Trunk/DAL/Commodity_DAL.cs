@@ -1830,11 +1830,13 @@ namespace WebAPI.DAL
             }
         }
 
-        public bool BatchAddCommodity(DataTable dt, Commodity_Model mCommodity)
+        public bool BatchAddCommodity(DataTable dt, Commodity_Model mCommodity, out String errMsg)
         {
             List<long> listCommodityCode = new List<long>();
             string destFolder = Const.uploadServer + "/" + Const.strImage + mCommodity.CompanyID.ToString() + "/Commodity/";
             string tempFolder = Const.uploadServer + "/" + Const.strImage + "temp/CommodityImage/";
+            errMsg = "";
+
             using (DbManager db = new DbManager())
             {
                 try
@@ -1845,6 +1847,30 @@ namespace WebAPI.DAL
                          values( 
                          @CompanyID, @BranchID, @CategoryID, @Code, @CommodityName, @UnitPrice,@MarketingPolicy,@PromotionPrice, @Specification, @Describe, @New, @Recommended, @Available, @CreatorID, @CreateTime,@VisibleForCustomer,@DiscountID,@IsConfirmed, @AutoConfirm, @AutoConfirmDays, @Manufacturer,@ApprovalNumber) 
                         ;select @@IDENTITY";
+
+                    string strSqlUpdate = @"
+                        update COMMODITY
+                        set
+                            CategoryID = @CategoryID, 
+                            CommodityName = @CommodityName, 
+                            UnitPrice = @UnitPrice,
+                            MarketingPolicy = @MarketingPolicy,
+                            PromotionPrice = @PromotionPrice, 
+                            Specification = @Specification, 
+                            Describe = @Describe, 
+                            New = @New, 
+                            Recommended = @Recommended, 
+                            Available = @Available, 
+                            UpdaterID = @UpdaterID, 
+                            UpdateTime = @UpdateTime,
+                            VisibleForCustomer = @VisibleForCustomer,
+                            DiscountID = @DiscountID,
+                            IsConfirmed = @IsConfirmed, 
+                            AutoConfirm = @AutoConfirm, 
+                            AutoConfirmDays = @AutoConfirmDays, 
+                            Manufacturer = @Manufacturer,
+                            ApprovalNumber = @ApprovalNumber 
+                        where CompanyID = @CompanyID and ID = @CommodityID";
 
                     string strSqlInsertSort =
                                             @" insert into TBL_COMMODITYSORT ( 
@@ -1924,87 +1950,145 @@ namespace WebAPI.DAL
                                     AutoConfirm = 0;
                                     break;
                             }
-                            int commodityId = db.SetCommand(strSqlInsert, db.Parameter("@CompanyID", mCommodity.CompanyID, DbType.Int32)
-                                , db.Parameter("@BranchID", mCommodity.BranchID == -1 ? 0 : mCommodity.BranchID, DbType.Int32)
-                                , db.Parameter("@CategoryID", dt.Rows[i]["CategoryID"].ToString() == "-1" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CategoryID"]), DbType.Int32)
-                                , db.Parameter("@CommodityName", dt.Rows[i]["CommodityName"].ToString(), DbType.String)
-                                , db.Parameter("@UnitPrice", Convert.ToDecimal(dt.Rows[i]["UnitPrice"]), DbType.Decimal)
-                                , db.Parameter("@MarketingPolicy", MarketingPolicy, DbType.Int32)
-                                , db.Parameter("@PromotionPrice", promotionPrice == 0 ? (object)DBNull.Value : promotionPrice, DbType.Decimal)
-                                , db.Parameter("@Specification", dt.Rows[i]["Specification"].ToString(), DbType.String)
-                                , db.Parameter("@Describe", dt.Rows[i]["Describe"].ToString(), DbType.String)
-                                , db.Parameter("@New", dt.Rows[i]["New"].ToString() == "是" ? true : false, DbType.Boolean)
-                                , db.Parameter("@Recommended", dt.Rows[i]["Recommended"].ToString() == "是" ? true : false, DbType.Boolean)
-                                , db.Parameter("@Available", dt.Rows[i]["Available"].ToString() == "是" ? true : false, DbType.Boolean)
-                                , db.Parameter("@CreatorID", mCommodity.CreatorID, DbType.Int32)
-                                , db.Parameter("@CreateTime", mCommodity.CreateTime, DbType.DateTime2)
-                                , db.Parameter("@VisibleForCustomer", dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? true : false, DbType.Int32)
-                                , db.Parameter("@DiscountID", dt.Rows[i]["DiscountID"].ToString() == "" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["DiscountID"]), DbType.Int32)
-                                , db.Parameter("@Code", StringUtils.GetDbLong(CommodictCode), DbType.Int64)
-                                , db.Parameter("@IsConfirmed", IsConfirmed, DbType.Int32)
-                                , db.Parameter("@AutoConfirm", AutoConfirm, DbType.Int16)
-                                , db.Parameter("@AutoConfirmDays", dt.Rows[i]["AutoConfirmDays"].ToString(), DbType.Int32)
-                                , db.Parameter("@Manufacturer", dt.Rows[i]["Manufacturer"].ToString(), DbType.String)
-                                , db.Parameter("@ApprovalNumber", dt.Rows[i]["ApprovalNumber"].ToString(), DbType.String)).ExecuteScalar<Int32>();
-
-
-                            if (commodityId <= 0)
+                            //Common.WriteLOG.WriteLog("CommodityID = " + dt.Rows[i]["CommodityID"].ToString());
+                            if (dt.Rows[i]["CommodityID"].ToString() != @"")
                             {
-                                db.RollbackTransaction();
-                                return false;
+                                //Common.WriteLOG.WriteLog("update");
+                                //Common.WriteLOG.WriteLog(", @CategoryID int = " + (dt.Rows[i]["CategoryID"].ToString() == "-1" ? "null" : StringUtils.GetDbInt(dt.Rows[i]["CategoryID"]).ToString()));
+                                //Common.WriteLOG.WriteLog(", @CommodityName varchar(max) = " + "'" + dt.Rows[i]["CommodityName"].ToString() + "'");
+                                //Common.WriteLOG.WriteLog(", @UnitPrice decimal = " + Convert.ToDecimal(dt.Rows[i]["UnitPrice"]).ToString());
+                                //Common.WriteLOG.WriteLog(", @MarketingPolicy int = " + MarketingPolicy.ToString());
+                                //Common.WriteLOG.WriteLog(", @PromotionPrice decimal = " + (promotionPrice == 0 ? "null" : promotionPrice.ToString()));
+                                //Common.WriteLOG.WriteLog(", @Specification varchar(max) = " + "'" + dt.Rows[i]["Specification"].ToString() + "'");
+                                //Common.WriteLOG.WriteLog(", @Describe varchar(max) = " + "'" + dt.Rows[i]["Describe"].ToString() + "'");
+                                //Common.WriteLOG.WriteLog(", @New bit = " + (dt.Rows[i]["New"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog(", @Recommended bit = " + (dt.Rows[i]["Recommended"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog(", @Available bit = " + (dt.Rows[i]["Available"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog(", @UpdaterID int = " + mCommodity.CreatorID.ToString());
+                                //Common.WriteLOG.WriteLog(", @UpdateTime DateTime2 = " + "'" + mCommodity.CreateTime.ToString() + "'");
+                                //Common.WriteLOG.WriteLog(", @VisibleForCustomer bit = " + (dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? "1" : "0"));
+                                //Common.WriteLOG.WriteLog(", @DiscountID int = " + (dt.Rows[i]["DiscountID"].ToString() == "" ? "null" : StringUtils.GetDbInt(dt.Rows[i]["DiscountID"]).ToString()));
+                                //Common.WriteLOG.WriteLog(", @IsConfirmed int = " + IsConfirmed.ToString());
+                                //Common.WriteLOG.WriteLog(", @AutoConfirm tinyint = " + AutoConfirm.ToString());
+                                //Common.WriteLOG.WriteLog(", @AutoConfirmDays int = " + dt.Rows[i]["AutoConfirmDays"].ToString());
+                                //Common.WriteLOG.WriteLog(", @Manufacturer varchar(max) = " + "'" + dt.Rows[i]["Manufacturer"].ToString() + "'");
+                                //Common.WriteLOG.WriteLog(", @ApprovalNumber varchar(max) = " + "'" + dt.Rows[i]["ApprovalNumber"].ToString() + "'");
+                                //Common.WriteLOG.WriteLog(", @CommodityID int = " + dt.Rows[i]["CommodityID"].ToString());
+                                //Common.WriteLOG.WriteLog(strSqlUpdate);
+
+                                int result = db.SetCommand(strSqlUpdate, db.Parameter("@CompanyID", mCommodity.CompanyID, DbType.Int32) 
+                                    , db.Parameter("@CategoryID", dt.Rows[i]["CategoryID"].ToString() == "-1" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CategoryID"]), DbType.Int32)
+                                    , db.Parameter("@CommodityName", dt.Rows[i]["CommodityName"].ToString(), DbType.String)
+                                    , db.Parameter("@UnitPrice", Convert.ToDecimal(dt.Rows[i]["UnitPrice"]), DbType.Decimal)
+                                    , db.Parameter("@MarketingPolicy", MarketingPolicy, DbType.Int32)
+                                    , db.Parameter("@PromotionPrice", promotionPrice == 0 ? (object)DBNull.Value : promotionPrice, DbType.Decimal)
+                                    , db.Parameter("@Specification", dt.Rows[i]["Specification"].ToString(), DbType.String)
+                                    , db.Parameter("@Describe", dt.Rows[i]["Describe"].ToString(), DbType.String)
+                                    , db.Parameter("@New", dt.Rows[i]["New"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@Recommended", dt.Rows[i]["Recommended"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@Available", dt.Rows[i]["Available"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@UpdaterID", mCommodity.CreatorID, DbType.Int32)
+                                    , db.Parameter("@UpdateTime", mCommodity.CreateTime, DbType.DateTime2)
+                                    , db.Parameter("@VisibleForCustomer", dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? true : false, DbType.Int32)
+                                    , db.Parameter("@DiscountID", dt.Rows[i]["DiscountID"].ToString() == "" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["DiscountID"]), DbType.Int32)
+                                    , db.Parameter("@IsConfirmed", IsConfirmed, DbType.Int32)
+                                    , db.Parameter("@AutoConfirm", AutoConfirm, DbType.Int16)
+                                    , db.Parameter("@AutoConfirmDays", dt.Rows[i]["AutoConfirmDays"].ToString(), DbType.Int32)
+                                    , db.Parameter("@Manufacturer", dt.Rows[i]["Manufacturer"].ToString(), DbType.String)
+                                    , db.Parameter("@ApprovalNumber", dt.Rows[i]["ApprovalNumber"].ToString(), DbType.String)
+                                    , db.Parameter("@CommodityID", dt.Rows[i]["CommodityID"].ToString(), DbType.Int32)).ExecuteNonQuery();
+                                //Common.WriteLOG.WriteLog("Commodity_DAL.Instance.BatchAddCommodity result = " + result.ToString());
+                                if (result <= 0)
+                                {
+                                    db.RollbackTransaction();
+                                    errMsg = "商品ID不存在：" + dt.Rows[i]["CommodityID"].ToString();
+                                    return false;
+                                }
                             }
                             else
                             {
-                                long commodityCode = db.SetCommand(strSqlSel, db.Parameter("@CommodityID", commodityId, DbType.Int32)
-                                                        ).ExecuteScalar<Int64>();
+                                //Common.WriteLOG.WriteLog("Insert");
+                                int commodityId = db.SetCommand(strSqlInsert, db.Parameter("@CompanyID", mCommodity.CompanyID, DbType.Int32)
+                                    , db.Parameter("@BranchID", mCommodity.BranchID == -1 ? 0 : mCommodity.BranchID, DbType.Int32)
+                                    , db.Parameter("@CategoryID", dt.Rows[i]["CategoryID"].ToString() == "-1" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["CategoryID"]), DbType.Int32)
+                                    , db.Parameter("@CommodityName", dt.Rows[i]["CommodityName"].ToString(), DbType.String)
+                                    , db.Parameter("@UnitPrice", Convert.ToDecimal(dt.Rows[i]["UnitPrice"]), DbType.Decimal)
+                                    , db.Parameter("@MarketingPolicy", MarketingPolicy, DbType.Int32)
+                                    , db.Parameter("@PromotionPrice", promotionPrice == 0 ? (object)DBNull.Value : promotionPrice, DbType.Decimal)
+                                    , db.Parameter("@Specification", dt.Rows[i]["Specification"].ToString(), DbType.String)
+                                    , db.Parameter("@Describe", dt.Rows[i]["Describe"].ToString(), DbType.String)
+                                    , db.Parameter("@New", dt.Rows[i]["New"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@Recommended", dt.Rows[i]["Recommended"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@Available", dt.Rows[i]["Available"].ToString() == "是" ? true : false, DbType.Boolean)
+                                    , db.Parameter("@CreatorID", mCommodity.CreatorID, DbType.Int32)
+                                    , db.Parameter("@CreateTime", mCommodity.CreateTime, DbType.DateTime2)
+                                    , db.Parameter("@VisibleForCustomer", dt.Rows[i]["VisibleForCustomer"].ToString() == "是" ? true : false, DbType.Int32)
+                                    , db.Parameter("@DiscountID", dt.Rows[i]["DiscountID"].ToString() == "" ? (object)DBNull.Value : StringUtils.GetDbInt(dt.Rows[i]["DiscountID"]), DbType.Int32)
+                                    , db.Parameter("@Code", StringUtils.GetDbLong(CommodictCode), DbType.Int64)
+                                    , db.Parameter("@IsConfirmed", IsConfirmed, DbType.Int32)
+                                    , db.Parameter("@AutoConfirm", AutoConfirm, DbType.Int16)
+                                    , db.Parameter("@AutoConfirmDays", dt.Rows[i]["AutoConfirmDays"].ToString(), DbType.Int32)
+                                    , db.Parameter("@Manufacturer", dt.Rows[i]["Manufacturer"].ToString(), DbType.String)
+                                    , db.Parameter("@ApprovalNumber", dt.Rows[i]["ApprovalNumber"].ToString(), DbType.String)).ExecuteScalar<Int32>();
 
-                                if (commodityCode <= 0)
+
+                                if (commodityId <= 0)
                                 {
                                     db.RollbackTransaction();
                                     return false;
                                 }
                                 else
                                 {
-                                    int val = db.SetCommand(strSqlInsertSort, db.Parameter("@Companyid", mCommodity.CompanyID, DbType.Int32)
-                                                                            , db.Parameter("@CommodityCode", commodityCode, DbType.Int64)).ExecuteNonQuery();
+                                    long commodityCode = db.SetCommand(strSqlSel, db.Parameter("@CommodityID", commodityId, DbType.Int32)
+                                                            ).ExecuteScalar<Int64>();
 
-                                    if (val == 0)
+                                    if (commodityCode <= 0)
                                     {
                                         db.RollbackTransaction();
                                         return false;
                                     }
                                     else
                                     {
-                                        if (!string.IsNullOrEmpty(dt.Rows[i]["RelativePath"].ToString().Trim()))
-                                        {
-                                            string[] strImagesInfo = dt.Rows[i]["RelativePath"].ToString().Split('|');
-                                            if (strImagesInfo.Length > 0)
-                                            {
-                                                string tempedFolder = tempFolder + commodityCode + "/";
-                                                if (!Directory.Exists(tempedFolder))
-                                                {
-                                                    Directory.CreateDirectory(tempedFolder);
-                                                }
-                                                for (int j = 0; j < strImagesInfo.Length; j++)
-                                                {
-                                                    if (strImagesInfo[j] != "")
-                                                    {
-                                                        string[] strImageInfo = strImagesInfo[j].Split(',');
-                                                        string orignalFile = Const.uploadServer + strImageInfo[0];
-                                                        if (File.Exists(orignalFile))
-                                                        {
-                                                            Random rd = new Random(new Guid().GetHashCode());
-                                                            string filename = string.Format("{0:yyyyMMddHHmmssffff}", DateTime.Now.ToLocalTime()) + (rd.Next(100000) + j).ToString("d5") + Path.GetExtension(strImageInfo[0]);
-                                                            if (Convert.ToInt32(strImageInfo[1]) == 0)
-                                                            {
-                                                                filename = "TC" + filename;
-                                                            }
-                                                            else
-                                                            {
-                                                                filename = "T" + filename;
-                                                            }
+                                        int val = db.SetCommand(strSqlInsertSort, db.Parameter("@Companyid", mCommodity.CompanyID, DbType.Int32)
+                                                                                , db.Parameter("@CommodityCode", commodityCode, DbType.Int64)).ExecuteNonQuery();
 
-                                                            string strCommand = @"INSERT INTO [IMAGE_COMMODITY]
+                                        if (val == 0)
+                                        {
+                                            db.RollbackTransaction();
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            if (!string.IsNullOrEmpty(dt.Rows[i]["RelativePath"].ToString().Trim()))
+                                            {
+                                                string[] strImagesInfo = dt.Rows[i]["RelativePath"].ToString().Split('|');
+                                                if (strImagesInfo.Length > 0)
+                                                {
+                                                    string tempedFolder = tempFolder + commodityCode + "/";
+                                                    if (!Directory.Exists(tempedFolder))
+                                                    {
+                                                        Directory.CreateDirectory(tempedFolder);
+                                                    }
+                                                    for (int j = 0; j < strImagesInfo.Length; j++)
+                                                    {
+                                                        if (strImagesInfo[j] != "")
+                                                        {
+                                                            string[] strImageInfo = strImagesInfo[j].Split(',');
+                                                            string orignalFile = Const.uploadServer + strImageInfo[0];
+                                                            if (File.Exists(orignalFile))
+                                                            {
+                                                                Random rd = new Random(new Guid().GetHashCode());
+                                                                string filename = string.Format("{0:yyyyMMddHHmmssffff}", DateTime.Now.ToLocalTime()) + (rd.Next(100000) + j).ToString("d5") + Path.GetExtension(strImageInfo[0]);
+                                                                if (Convert.ToInt32(strImageInfo[1]) == 0)
+                                                                {
+                                                                    filename = "TC" + filename;
+                                                                }
+                                                                else
+                                                                {
+                                                                    filename = "T" + filename;
+                                                                }
+
+                                                                string strCommand = @"INSERT INTO [IMAGE_COMMODITY]
                                                              ([CompanyID]
                                                              ,[CommodityCode]
                                                              ,[CommodityID]
@@ -2021,30 +2105,31 @@ namespace WebAPI.DAL
                                                             ,@CreatorID
                                                             ,@CreateTime)";
 
-                                                            val = db.SetCommand(strCommand, db.Parameter("@Companyid", mCommodity.CompanyID, DbType.Int32)
-                                                                            , db.Parameter("@CommodityCode", commodityCode, DbType.Int64)
-                                                                            , db.Parameter("@CommodityID", commodityId, DbType.Int32)
-                                                                            , db.Parameter("@ImageType", Convert.ToInt32(strImageInfo[1]), DbType.Int32)
-                                                                            , db.Parameter("@FileName", filename, DbType.String)
-                                                                            , db.Parameter("@CreatorID", mCommodity.CreatorID, DbType.Int32)
-                                                                            , db.Parameter("@CreateTime", DateTime.Now.ToLocalTime(), DbType.DateTime2)).ExecuteNonQuery();
+                                                                val = db.SetCommand(strCommand, db.Parameter("@Companyid", mCommodity.CompanyID, DbType.Int32)
+                                                                                , db.Parameter("@CommodityCode", commodityCode, DbType.Int64)
+                                                                                , db.Parameter("@CommodityID", commodityId, DbType.Int32)
+                                                                                , db.Parameter("@ImageType", Convert.ToInt32(strImageInfo[1]), DbType.Int32)
+                                                                                , db.Parameter("@FileName", filename, DbType.String)
+                                                                                , db.Parameter("@CreatorID", mCommodity.CreatorID, DbType.Int32)
+                                                                                , db.Parameter("@CreateTime", DateTime.Now.ToLocalTime(), DbType.DateTime2)).ExecuteNonQuery();
 
 
-                                                            if (val == 0)
-                                                            {
-                                                                db.RollbackTransaction();
-                                                                return false;
-                                                            }
-                                                            else
-                                                            {
-                                                                string tempFile = tempedFolder + filename;
-                                                                FileInfo fi = new FileInfo(orignalFile);
-                                                                fi.CopyTo(tempFile);
+                                                                if (val == 0)
+                                                                {
+                                                                    db.RollbackTransaction();
+                                                                    return false;
+                                                                }
+                                                                else
+                                                                {
+                                                                    string tempFile = tempedFolder + filename;
+                                                                    FileInfo fi = new FileInfo(orignalFile);
+                                                                    fi.CopyTo(tempFile);
+                                                                }
                                                             }
                                                         }
                                                     }
+                                                    listCommodityCode.Add(commodityCode);
                                                 }
-                                                listCommodityCode.Add(commodityCode);
                                             }
                                         }
                                     }

@@ -233,7 +233,8 @@ namespace WebAPI.BLL
 
         public bool BatchAddCommodity(BatchAddCommodity_Model model)
         {
-            return Commodity_DAL.Instance.BatchAddCommodity(model.dt, model.mCommodity);
+            string errMsg;
+            return Commodity_DAL.Instance.BatchAddCommodity(model.dt, model.mCommodity, out errMsg);
         }
 
         public string downloadCommodityList(UtilityOperation_Model model)
@@ -259,7 +260,7 @@ namespace WebAPI.BLL
 
                 dt.Rows[i]["RelativePath"] = sb.ToString();
             }
-            dt.Columns.Remove("CommodityID");
+            //dt.Columns.Remove("CommodityID");
 
             dt = dtNormalizing(dt, Const.EXPORT_COMMODITYNAMEEXCHANGE);
             if (dt != null)
