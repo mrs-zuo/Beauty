@@ -56,6 +56,7 @@ public class AccountInfo implements Serializable {
 	private int authBalanceCharge = 0;// 允许余额转入
 	private int authDirectExpend = 0;// 允许直扣
 	private int authTerminateOrder = 0; // 允许终止订单
+	private boolean payAmountWrite = false;
 	
 	public AccountInfo() {
 		isComissionCalc=false;
@@ -496,6 +497,9 @@ public class AccountInfo implements Serializable {
 			// 允许终止订单
 			if(accountPermissionStr.contains("|55|"))
 				authTerminateOrder=1;
+			// 允许修改应付款
+			if (accountPermissionStr.contains("|57|"))
+				payAmountWrite = true;
 		}
 		UserInfoApplication.getInstance().setGUID(GUID);
 	}
@@ -537,5 +541,13 @@ public class AccountInfo implements Serializable {
 
 	public void setAuthTerminateOrder(int authTerminateOrder) {
 		this.authTerminateOrder = authTerminateOrder;
+	}
+
+	public boolean isPayAmountWrite() {
+		return payAmountWrite;
+	}
+
+	public void setPayAmountWrite(boolean payAmountWrite) {
+		this.payAmountWrite = payAmountWrite;
 	}
 }
