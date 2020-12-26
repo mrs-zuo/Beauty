@@ -33,7 +33,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RGBIDIG6WSJV7P79]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -63,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../package/T060/Android/business/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
@@ -158,9 +158,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608785348220">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="617" y="227" key="FileChooserDialogImpl" timestamp="1608904583835">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state x="617" y="227" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1608904583835" />
     <state x="740" y="274" key="FileChooserDialogImpl/1920.63.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1608785348220" />
     <state width="1875" height="414" key="GridCell.Tab.0.bottom" timestamp="1608785349173">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -56,6 +56,7 @@ public class AccountInfo implements Serializable {
 	private int authBalanceCharge = 0;// 允许余额转入
 	private int authDirectExpend = 0;// 允许直扣
 	private int authTerminateOrder = 0; // 允许终止订单
+	// 应付款修改权
 	private boolean payAmountWrite = false;
 	
 	public AccountInfo() {
