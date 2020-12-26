@@ -32,6 +32,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -394,12 +395,14 @@ public class UserInfoApplication extends Application {
 	}
 	// 登出
 	public void exitForLogin(Context currentActivity) {
+		clearLoginInformation();
+		Intent destIntent = new Intent(this, LoginActivity.class);
 		if (currentActivity != null) {
 			exit(currentActivity);
+			currentActivity.startActivity(destIntent);
+		} else {
+			this.startActivity(destIntent);
 		}
-		clearLoginInformation();
-		Intent destIntent=new Intent(this,LoginActivity.class);
-		currentActivity.startActivity(destIntent);
 	}
 	//清除登陆信息
 	private void clearLoginInformation(){
