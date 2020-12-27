@@ -110,7 +110,7 @@ public class OrderListActivity extends BaseActivity implements OnClickListener,O
 						orderListActivity.pageIndex += 1;
 					}
 					if (orderListActivity.getOrderListFlag == 1 || orderListActivity.getOrderListFlag == 2) {
-						orderListActivity.orderInfoList.clear();
+						orderListActivity.orderInfoList = new ArrayList<OrderInfo>();
 						orderListActivity.orderInfoList.addAll(tmpList);
 					} else if (orderListActivity.getOrderListFlag == 3 && tmpList != null && tmpList.size() > 0) {
 						orderListActivity.orderInfoList.addAll(orderListActivity.orderInfoList.size(), tmpList);
