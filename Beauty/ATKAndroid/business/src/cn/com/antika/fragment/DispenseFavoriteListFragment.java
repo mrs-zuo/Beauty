@@ -374,6 +374,7 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
 		if(view.getId()==R.id.favorite_list_add_order_btn){
+			orderProductList = new ArrayList<OrderProduct>();
 			List<OrderProduct> selectedFavoriteList=null;
 			if(favoriteListAdapter!=null)
 				selectedFavoriteList=favoriteListAdapter.getSelectedFavoriteList();
@@ -385,6 +386,7 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
 				for(OrderProduct op:selectedFavoriteList){
 					orderProductList.add(op);
 				}
+				userinfoApplication.getOrderInfo().setOrderProductList(orderProductList);
 				Intent destIntent=new Intent(getActivity(),PrepareOrderActivity.class);
 				destIntent.putExtra("FROM_SOURCE","MENU");
 				startActivity(destIntent);

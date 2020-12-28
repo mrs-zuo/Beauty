@@ -172,6 +172,12 @@ public class OrderListActivity extends BaseActivity implements OnClickListener,O
 					((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
 					break;
 			}
+			if (orderListActivity.orderInfoList == null){
+				orderListActivity.orderInfoList = new ArrayList<OrderInfo>();
+			}
+			orderListActivity.orderListAdapter = new OrderListAdapter(orderListActivity, orderListActivity.orderInfoList, orderListActivity.userRole);
+			orderListActivity.mListView.setAdapter(orderListActivity.orderListAdapter);
+			orderListActivity.orderListAdapter.notifyDataSetChanged();
 			orderListActivity.onLoad();
 		}
 	}

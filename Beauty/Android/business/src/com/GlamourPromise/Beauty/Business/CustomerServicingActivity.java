@@ -252,6 +252,7 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
 		dispenseCompleteOrderFragment = new DispenseCompleteOrderFragment();
 		dispenseCustomerOldOrderFragment = new DispenseCustomerOldOrderFragment();
 		dispenseFavoriteListFragment = new DispenseFavoriteListFragment();
+		fragmentList = new ArrayList<Fragment>();
 		fragmentList.add(dispenseOrderFragment);
 		fragmentList.add(dispenseCompleteOrderFragment);
 		fragmentList.add(dispenseCustomerOldOrderFragment);

@@ -1,5 +1,5 @@
 /**
- * DispenseOrderFragment.java
+ * DispenseCompleteOrderFragment.java
  * com.GlamourPromise.Beauty.fragment
  * tim.zhang@bizapper.com
  * 2015年7月6日 下午1:48:56
@@ -52,7 +52,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * DispenseOrderFragment 待结单的Fragment
+ * DispenseCompleteOrderFragment 待结单的Fragment
  * 
  * @author tim.zhang@bizapper.com 2015年7月6日 下午1:48:56
  */

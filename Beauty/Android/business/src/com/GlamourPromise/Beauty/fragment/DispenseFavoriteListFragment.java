@@ -1,5 +1,5 @@
 /**
- * DispenseOrderFragment.java
+ * DispenseFavoriteListFragment.java
  * com.GlamourPromise.Beauty.fragment
  * tim.zhang@bizapper.com
  * 2015年7月6日 下午1:48:56
@@ -55,7 +55,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *DispenseOrderFragment
+ *DispenseFavoriteListFragment
  *收藏列表的Fragment
  * @author tim.zhang@bizapper.com
  * 2015年7月6日 下午1:48:56
@@ -373,6 +373,7 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
 		if(view.getId()==R.id.favorite_list_add_order_btn){
+			orderProductList = new ArrayList<OrderProduct>();
 			List<OrderProduct> selectedFavoriteList=null;
 			if(favoriteListAdapter!=null)
 				selectedFavoriteList=favoriteListAdapter.getSelectedFavoriteList();
@@ -384,6 +385,7 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
 				for(OrderProduct op:selectedFavoriteList){
 					orderProductList.add(op);
 				}
+				userinfoApplication.getOrderInfo().setOrderProductList(orderProductList);
 				Intent destIntent=new Intent(getActivity(),PrepareOrderActivity.class);
 				destIntent.putExtra("FROM_SOURCE","MENU");
 				startActivity(destIntent);

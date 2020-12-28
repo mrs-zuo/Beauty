@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.GlamourPromise.Beauty.Business"
     android:versionCode="6"
-    android:versionName="4.6.019" >
+    android:versionName="4.6.020" >
 
     <uses-sdk
         android:minSdkVersion="14"
