@@ -372,7 +372,12 @@ public class OrderListActivity extends BaseActivity implements OnClickListener,O
 	 */
 	@Override
 	public void onRefresh() {
-		refreshList(2);
+		if (pageIndex > 1 && pageIndex <= pageCount) {
+			pageIndex = pageIndex - 1;
+			refreshList(3);
+		} else {
+			refreshList(2);
+		}
 	}
 
 	/**

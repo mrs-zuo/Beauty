@@ -33,7 +33,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[bc7574dc0b4f]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -199,9 +199,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="151" key="SettingsEditor/1920.63.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1609120106295" />
-    <state x="681" y="250" width="582" height="524" key="StructurePopup" timestamp="1609153001792">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="568" y="207" width="582" height="434" key="StructurePopup" timestamp="1609168077161">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state x="568" y="207" width="582" height="434" key="StructurePopup/0.0.1600.860@0.0.1600.860" timestamp="1609168077161" />
     <state x="681" y="250" width="582" height="524" key="StructurePopup/1920.63.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1609153001792" />
     <state x="750" y="207" width="596" height="594" key="find.popup" timestamp="1609122705136">
       <screen x="0" y="0" width="1920" height="1040" />
