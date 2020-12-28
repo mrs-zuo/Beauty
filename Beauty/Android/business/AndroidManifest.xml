@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.GlamourPromise.Beauty.Business"
     android:versionCode="6"
-    android:versionName="4.6.019">
+    android:versionName="4.6.020">
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"

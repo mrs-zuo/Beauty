@@ -30,6 +30,7 @@ begin
        T20.OrderNumber,
        T20.GroupNo,
        T20.TGTotalCount,
+       T20.ServicePicName,
        isnull(T20.PeopleCnt, '1') PeopleCnt,
        CASE
            WHEN T20.SubServiceID IS NULL AND (t35.name is null or ltrim(t35.name) = '') then ''
@@ -79,6 +80,7 @@ begin
                   WHEN 0 THEN '²»ÏÞ´Î'
                   ELSE CONVERT(VARCHAR(20),T4.TGTotalCount)
              END TGTotalCount,
+             max(t51.name) as ServicePicName,
              CASE T1.SubServiceID
                   WHEN NULL THEN T11.PeopleCnt
                   ELSE T10.PeopleCnt
@@ -105,6 +107,7 @@ begin
               left join (select UserID, max(PhoneNumber) as CustomerPhoneNumber from PHONE group by UserID) T60 on T60.UserID = T7.UserID
               LEFT JOIN [BRANCH] T38 ON T7.BranchID = T38.ID
               LEFT JOIN [SERVICE] T8 ON T4.ServiceID = T8.ID
+              inner join ACCOUNT t51 on t51.UserID = T2.ServicePIC
               LEFT JOIN (
                   select
                       COUNT(isnull(T9.SubServiceID, '')) PeopleCnt,

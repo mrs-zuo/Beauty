@@ -1,0 +1,1647 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:1-953:12
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:1-953:12
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:1-953:12
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:1-953:12
+MERGED from [com.tencent.bugly:crashreport:3.3.1] C:\Users\ScsDeveloper\.gradle\caches\transforms-2\files-2.1\52c8afbe6c6422e17ebeb8b4031128fd\crashreport-3.3.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.500] C:\Users\ScsDeveloper\.gradle\caches\transforms-2\files-2.1\0b752c1f789c7b47cc15a8c746d58800\nativecrashreport-3.7.500\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:1-953:12
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:1-953:12
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:1-953:12
+	package
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:4:5-37
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:6:5-34
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:5:5-28
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+supports-screens
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:7:5-12:39
+	android:largeScreens
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:9:9-36
+	android:smallScreens
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:12:9-36
+	android:normalScreens
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:10:9-37
+	android:resizeable
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:11:9-34
+	android:anyDensity
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:8:9-34
+permission#cn.com.antika.business.permission.JPUSH_MESSAGE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:14:5-16:47
+	android:protectionLevel
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:16:9-44
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:15:9-71
+uses-permission#android.permission.KILL_BACKGROUND_PROCESSES
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:17:2-80
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:17:19-78
+uses-permission#cn.com.antika.business.permission.JPUSH_MESSAGE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:18:5-87
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:18:22-84
+uses-permission#android.permission.RECEIVE_USER_PRESENT
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:19:5-79
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:19:22-76
+uses-permission#android.permission.INTERNET
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:20:5-67
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:20:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:21:5-68
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:21:22-65
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:22:5-75
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:22:22-72
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:23:5-83
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:23:22-80
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:24:5-81
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:24:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:25:5-80
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:25:22-77
+uses-permission#android.permission.VIBRATE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:26:5-66
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:26:22-63
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:27:5-28:47
+	tools:ignore
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:28:9-44
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:27:22-81
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:29:5-79
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:29:22-76
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:30:5-78
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:30:22-75
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:31:5-32:47
+	tools:ignore
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:32:9-44
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:31:22-70
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:33:5-81
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:33:22-78
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:34:5-76
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:34:22-73
+uses-permission#android.permission.READ_LOGS
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:35:5-36:47
+	tools:ignore
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:36:9-44
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:35:22-65
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:37:5-76
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:37:22-73
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:38:5-79
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:38:22-76
+uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:39:5-89
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:39:22-86
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:40:5-79
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:40:22-76
+uses-permission#android.permission.CAMERA
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:41:5-65
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:41:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:42:5-69
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:42:22-66
+uses-permission#android.permission.GET_TASKS
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:43:5-68
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:43:22-65
+uses-feature#android.hardware.camera
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:44:5-60
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:44:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:45:5-70
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:45:19-67
+application
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:46:5-952:19
+	android:label
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:51:9-41
+	android:hardwareAccelerated
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:49:9-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:53:9-50
+	android:icon
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:50:9-45
+	android:allowBackup
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:48:9-35
+	android:theme
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:52:9-40
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:47:9-69
+provider#android.support.v4.content.FileProvider
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:54:7-62:18
+	android:grantUriPermissions
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:58:11-45
+	android:authorities
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:56:11-68
+	android:exported
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:57:11-35
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:55:11-65
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:59:8-61:49
+	android:resource
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:61:12-46
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:60:12-62
+meta-data#com.baidu.lbsapi.API_KEY
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:63:8-65:59
+	android:value
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:65:9-57
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:64:9-48
+activity#cn.com.antika.business.SplashActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:66:9-76:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:70:13-49
+	android:label
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:69:13-45
+	android:alwaysRetainTaskState
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:68:13-49
+	android:theme
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:71:13-60
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:67:13-65
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:72:13-75:29
+action#android.intent.action.MAIN
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:73:17-69
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:73:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:74:17-77
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:74:27-74
+activity#org.achartengine.GraphicalActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:77:9-71
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:77:19-68
+activity#cn.com.antika.business.LoginActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:78:9-82:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:81:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:80:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:79:13-64
+activity#cn.com.antika.business.HomePageActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:83:9-87:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:86:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:85:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:84:13-67
+activity#cn.com.antika.business.CompanySelectActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:88:10-92:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:91:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:90:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:89:13-72
+activity#cn.com.antika.business.CustomerActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:93:9-98:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:96:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:95:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:97:13-64
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:94:13-67
+activity#cn.com.antika.business.RemindListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:99:9-103:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:102:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:101:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:100:13-69
+activity#cn.com.antika.business.AddNewCustomerActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:104:9-108:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:107:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:106:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:105:13-73
+activity#cn.com.antika.business.CustomerInfoActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:109:9-113:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:112:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:111:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:110:13-71
+activity#cn.com.antika.business.CustomerBasicInfoActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:114:9-117:20
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:116:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:115:13-76
+activity#cn.com.antika.business.CustomerDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:118:9-122:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:121:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:120:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:119:13-73
+activity#cn.com.antika.business.CustomerRecordActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:123:9-127:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:126:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:125:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:124:13-73
+activity#cn.com.antika.business.OrderListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:128:9-132:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:131:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:130:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:129:13-68
+activity#cn.com.antika.business.EditCustomerBasicActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:133:9-136:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:135:13-49
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:134:13-76
+activity#cn.com.antika.business.EditCustomerDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:137:9-141:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:140:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:139:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:138:13-77
+activity#cn.com.antika.business.AddCustomerRecordActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:142:9-146:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:145:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:144:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:143:13-76
+activity#cn.com.antika.business.EditCustomerRecordActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:147:9-151:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:150:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:149:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:148:13-77
+activity#cn.com.antika.business.AddNewCustomerVocationActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:152:9-157:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:155:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:154:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:156:13-52
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:153:13-81
+activity#cn.com.antika.business.EditCustomerVocationActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:158:9-163:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:161:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:160:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:162:13-52
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:159:13-79
+activity#cn.com.antika.business.ServiceActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:164:9-168:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:167:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:166:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:165:13-66
+activity#cn.com.antika.business.CommodityCategoryActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:169:9-173:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:172:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:171:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:170:13-76
+activity#cn.com.antika.business.OpportunityListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:174:9-178:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:177:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:176:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:175:13-74
+activity#cn.com.antika.business.CommodityListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:179:9-184:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:182:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:181:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:183:13-52
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:180:13-72
+activity#cn.com.antika.business.CommodityDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:185:9-189:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:188:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:187:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:186:13-74
+activity#cn.com.antika.business.OpportunityDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:190:9-194:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:193:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:192:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:191:13-76
+activity#cn.com.antika.business.OpportunityDetailMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:195:9-199:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:198:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:197:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:196:13-80
+activity#cn.com.antika.business.OpportunityHistoryActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:200:9-204:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:203:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:202:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:201:13-77
+activity#cn.com.antika.business.EditOpportunityProgressActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:205:9-209:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:208:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:207:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:206:13-82
+activity#cn.com.antika.business.EditProgressHistoryActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:210:9-214:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:213:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:212:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:211:13-78
+activity#cn.com.antika.business.ChoosePersonActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:215:9-220:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:218:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:217:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:219:13-52
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:216:13-71
+activity#cn.com.antika.business.OrderDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:221:9-225:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:224:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:223:13-42
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:222:13-70
+activity#cn.com.antika.business.TreatmentDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:226:9-230:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:229:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:228:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:227:13-74
+activity#cn.com.antika.business.TreatmentServiceDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:231:9-235:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:234:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:233:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:232:13-81
+activity#cn.com.antika.business.TreatmentGroupDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:236:9-240:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:239:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:238:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:237:13-79
+activity#cn.com.antika.business.TreatmentTreatmentDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:241:9-245:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:244:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:243:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:242:13-83
+activity#cn.com.antika.business.ServiceOrderContactDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:246:9-250:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:249:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:248:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:247:13-84
+activity#cn.com.antika.business.EditServiceOrderContactDetailMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:251:9-255:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:254:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:253:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:252:13-92
+activity#cn.com.antika.business.EditTreatmentTreatmentDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:256:9-260:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:259:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:258:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:257:13-87
+activity#cn.com.antika.business.EMarketingActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:261:9-265:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:264:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:263:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:262:13-69
+activity#cn.com.antika.business.SendNewEmarketingMessageActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:266:9-270:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:269:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:268:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:267:13-83
+activity#cn.com.antika.business.SendMarketingTemplateActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:271:9-275:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:274:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:273:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:272:13-80
+activity#cn.com.antika.business.AddMessageTemplateActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:276:9-280:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:279:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:278:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:277:13-77
+activity#cn.com.antika.business.EditMessageTemplateActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:281:9-285:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:284:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:283:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:282:13-78
+activity#cn.com.antika.business.FlyMessageListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:286:9-290:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:289:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:288:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:287:13-73
+activity#cn.com.antika.business.FlyMessageDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:291:9-296:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:294:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:293:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:295:13-67
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:292:13-75
+activity#cn.com.antika.business.SettingActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:297:9-301:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:300:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:299:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:298:13-66
+activity#cn.com.antika.business.SettingPersonalMessageActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:302:9-306:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:305:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:304:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:303:13-81
+activity#cn.com.antika.business.AboutUsActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:307:9-311:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:310:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:309:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:308:13-66
+activity#cn.com.antika.business.EditPersonalMessageActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:312:9-316:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:315:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:314:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:313:13-78
+activity#cn.com.antika.business.EditPersonalPasswordActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:317:9-321:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:320:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:319:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:318:13-79
+activity#cn.com.antika.business.CropImageViewActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:322:9-326:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:325:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:324:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:323:13-72
+activity#cn.com.antika.business.CustomerEcardActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:327:9-331:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:330:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:329:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:328:13-72
+activity#cn.com.antika.business.EcardHistoryListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:332:9-336:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:335:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:334:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:333:13-75
+activity#cn.com.antika.business.AllEcardHistoryListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:337:9-341:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:340:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:339:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:338:13-78
+activity#cn.com.antika.business.AddNewCustomerEcardActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:342:9-346:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:345:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:344:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:343:13-78
+activity#cn.com.antika.business.EditEcardBalanceActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:347:9-351:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:350:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:349:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:348:13-75
+activity#cn.com.antika.business.EditEcardTypeOtherBalanceActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:352:9-356:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:355:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:354:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:353:13-84
+activity#cn.com.antika.business.DecodeQRCodeActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:357:9-364:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:361:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:360:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:363:13-60
+	android:configChanges
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:359:13-63
+	android:theme
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:362:13-71
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:358:13-71
+activity#cn.com.antika.business.ChooseServicePeopleActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:365:9-370:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:369:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:368:13-43
+	android:hardwareAccelerated
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:367:13-47
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:366:13-78
+activity#cn.com.antika.business.ReportMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:371:9-375:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:374:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:373:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:372:13-69
+activity#cn.com.antika.business.ReportByDateActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:376:9-380:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:379:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:378:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:377:13-71
+activity#cn.com.antika.business.ReportListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:381:9-385:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:384:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:383:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:382:13-69
+activity#cn.com.antika.business.ReportDetailListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:386:9-390:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:389:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:388:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:387:13-75
+activity#cn.com.antika.business.ServiceListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:391:9-396:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:394:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:393:13-43
+	android:windowSoftInputMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:395:13-52
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:392:13-70
+activity#cn.com.antika.business.FavoriteListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:397:9-401:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:400:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:399:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:398:13-71
+activity#cn.com.antika.business.ServiceDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:402:9-406:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:405:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:404:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:403:13-72
+activity#cn.com.antika.business.PrepareOrderActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:407:9-411:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:410:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:409:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:408:13-71
+activity#cn.com.antika.business.ProductAndOldOrderListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:413:10-417:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:416:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:415:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:414:13-81
+activity#cn.com.antika.business.CustomerViewOrderActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:419:9-423:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:422:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:421:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:420:13-76
+activity#cn.com.antika.business.CustomerUnpaidOrderActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:424:9-428:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:427:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:426:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:425:13-78
+activity#cn.com.antika.business.TreatmentReviewActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:429:9-433:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:432:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:431:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:430:13-74
+activity#cn.com.antika.business.PaymentActionActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:434:9-438:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:437:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:436:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:435:13-72
+activity#cn.com.antika.business.MemorySpaceActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:439:9-443:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:442:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:441:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:440:13-70
+activity#cn.com.antika.business.EcardMoneyOut
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:449:9-453:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:452:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:451:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:450:13-64
+activity#cn.com.antika.business.EcardTypeOtherMoneyOut
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:454:9-458:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:457:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:456:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:455:13-73
+activity#cn.com.antika.business.ReportTotalActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:459:9-463:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:462:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:461:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:460:13-70
+activity#cn.com.antika.business.Company
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:464:9-468:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:467:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:466:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:465:13-58
+activity#cn.com.antika.business.BranchListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:469:9-473:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:472:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:471:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:470:13-69
+activity#cn.com.antika.business.BranchDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:474:9-478:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:477:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:476:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:475:13-71
+activity#cn.com.antika.business.NoticeListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:479:9-483:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:482:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:481:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:480:13-69
+activity#cn.com.antika.business.AccountDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:484:9-488:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:487:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:486:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:485:13-72
+activity#cn.com.antika.business.AccountListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:489:9-493:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:492:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:491:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:490:13-70
+activity#cn.com.antika.business.NoticeDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:494:9-498:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:497:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:496:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:495:13-71
+activity#cn.com.antika.business.AppDownloadActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:499:9-503:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:502:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:501:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:500:13-70
+activity#cn.com.antika.business.NotepadListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:504:10-508:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:507:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:506:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:505:13-70
+activity#cn.com.antika.business.AddNoteActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:509:9-513:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:512:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:511:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:510:13-66
+activity#cn.com.antika.business.LabelListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:514:9-518:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:517:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:516:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:515:13-68
+activity#cn.com.antika.business.AddLabelActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:519:9-523:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:522:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:521:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:520:13-67
+activity#cn.com.antika.business.PaymentRecordListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:524:9-528:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:527:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:526:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:525:13-76
+activity#cn.com.antika.business.PaymentRecordDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:529:9-533:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:532:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:531:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:530:13-78
+activity#cn.com.antika.business.RechargeDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:534:10-538:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:537:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:536:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:535:13-73
+activity#cn.com.antika.business.OrderPaymentDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:539:9-543:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:542:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:541:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:540:13-77
+activity#cn.com.antika.business.EcardDiscountDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:544:9-548:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:547:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:546:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:545:13-78
+activity#cn.com.antika.business.UnpaidCustomerListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:549:9-553:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:552:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:551:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:550:13-77
+activity#cn.com.antika.business.CustomerAdvancedConditionActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:554:9-558:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:557:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:556:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:555:13-84
+activity#cn.com.antika.business.OrderAdvancedSearchActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:560:9-564:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:563:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:562:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:561:13-78
+activity#cn.com.antika.business.OrderSearchNewActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:565:9-569:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:568:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:567:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:566:13-73
+activity#cn.com.antika.business.CustomerEcardBalanceChangeAnalyticsActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:570:9-574:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:573:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:572:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:571:13-94
+activity#cn.com.antika.business.ServiceAndProductSalesAnalyticsActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:575:9-579:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:578:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:577:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:576:13-90
+activity#cn.com.antika.business.OpportunityAdvancedSearchActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:580:9-584:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:583:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:582:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:581:13-84
+activity#cn.com.antika.business.AddOpportunityConfirmActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:585:9-589:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:588:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:587:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:586:13-80
+activity#cn.com.antika.business.CustomerRecordTemplateActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:590:9-594:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:593:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:592:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:591:13-81
+activity#cn.com.antika.business.ChooseCustomerRecordTemplateActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:595:9-599:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:598:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:597:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:596:13-87
+activity#cn.com.antika.business.CustomerEcardListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:600:9-604:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:603:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:602:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:601:13-76
+activity#cn.com.antika.business.EcardHistoryDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:605:9-609:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:608:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:607:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:606:13-77
+activity#cn.com.antika.business.CustomerServicingActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:610:10-614:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:613:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:612:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:611:13-76
+activity#cn.com.antika.business.UnfishTGListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:615:9-619:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:618:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:617:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:616:13-71
+activity#cn.com.antika.business.UnFinishTGOrderAdvancedSearchActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:620:9-624:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:623:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:622:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:621:13-88
+activity#cn.com.antika.business.ChoosePersonLocalActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:625:9-629:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:628:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:627:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:626:13-76
+activity#cn.com.antika.business.BranchTotalReportActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:630:10-634:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:633:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:632:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:631:13-76
+activity#cn.com.antika.business.AppointmentListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:635:9-639:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:638:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:637:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:636:13-74
+activity#cn.com.antika.business.AppointmentTaskListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:640:9-644:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:643:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:642:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:641:13-78
+activity#cn.com.antika.business.AppointmentCreateActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:645:9-649:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:648:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:647:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:646:13-76
+activity#cn.com.antika.business.VisitTaskSearchActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:650:9-654:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:653:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:652:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:651:13-74
+activity#cn.com.antika.business.AppointmentDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:655:9-659:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:658:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:657:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:656:13-76
+activity#cn.com.antika.business.AppointmentCusOldOrderActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:660:10-664:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:663:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:662:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:661:13-81
+activity#cn.com.antika.business.AppointmentSearchNewActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:670:9-674:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:673:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:672:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:671:13-79
+activity#cn.com.antika.business.OrderListTabActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:675:9-679:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:678:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:677:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:676:13-71
+activity#cn.com.antika.business.TodayServiceListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:680:9-684:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:683:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:682:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:681:13-75
+activity#cn.com.antika.business.AppointmentTaskDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:685:9-689:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:688:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:687:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:686:13-80
+activity#cn.com.antika.business.TreatmentGroupDetailTabActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:690:9-694:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:693:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:692:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:691:13-82
+activity#cn.com.antika.business.TreatmentGroupReviewActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:695:9-699:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:698:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:697:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:696:13-79
+activity#cn.com.antika.business.PaymentActionThirdPartActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:700:9-704:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:703:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:702:13-44
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:701:13-81
+activity#cn.com.antika.business.PaymentActionThirdPartModeActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:705:9-709:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:708:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:707:13-42
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:706:13-85
+activity#cn.com.antika.business.PaymentActionThirdPartResultActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:710:9-714:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:713:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:712:13-42
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:711:13-87
+activity#cn.com.antika.business.OrderDetailThirdPartPayListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:715:10-719:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:718:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:717:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:716:13-86
+activity#cn.com.antika.business.ThirdPartPayHelpActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:720:9-724:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:723:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:722:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:721:13-75
+activity#cn.com.antika.business.OrderRefundActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:725:9-729:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:728:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:727:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:726:13-70
+activity#cn.com.antika.business.CustomerStatisticsMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:730:9-734:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:733:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:732:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:731:13-81
+activity#cn.com.antika.business.CustomerStatisticsPieActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:735:9-739:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:738:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:737:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:736:13-80
+activity#cn.com.antika.business.CustomerStatisticsListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:740:9-744:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:743:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:742:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:741:13-81
+activity#cn.com.antika.business.CustomerStatisticsBarChartActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:745:9-749:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:748:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:747:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:746:13-85
+activity#cn.com.antika.business.CustomerStatisticsBarChartDetailListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:750:9-754:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:753:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:752:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:751:13-95
+activity#cn.com.antika.business.OrderSearchActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:755:9-759:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:758:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:757:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:756:13-70
+activity#cn.com.antika.business.TaskListTabActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:760:9-764:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:763:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:762:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:761:13-70
+activity#cn.com.antika.business.VisitTaskListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:765:9-769:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:768:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:767:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:766:13-72
+activity#cn.com.antika.business.AppointmentTaskSearchActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:770:9-774:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:773:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:772:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:771:13-80
+activity#cn.com.antika.business.TreatmentGroupTreatmentDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:775:9-779:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:778:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:777:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:776:13-88
+activity#cn.com.antika.business.CustomerServicingPhotoActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:780:9-784:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:783:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:782:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:781:13-81
+activity#cn.com.antika.business.CustomerBenefitsActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:785:9-789:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:788:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:787:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:786:13-75
+activity#cn.com.antika.business.CustomerBenefitDetailActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:790:9-794:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:793:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:792:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:791:13-80
+activity#cn.com.antika.business.TodayServiceSearchActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:795:9-799:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:798:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:797:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:796:13-77
+activity#cn.com.antika.business.AssignToNewCustomerEcardActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:801:9-805:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:804:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:803:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:802:13-83
+activity#cn.com.antika.business.AccountAttendanceActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:807:9-811:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:810:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:809:13-44
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:808:13-76
+activity#cn.com.antika.business.AccountAttendanceCodeActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:812:9-816:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:815:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:814:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:813:13-80
+activity#cn.com.antika.view.sign.HandwritingActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:818:9-821:21
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:820:13-50
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:819:13-71
+activity#cn.com.antika.business.BranchStatisticsMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:823:9-827:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:826:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:825:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:824:13-79
+activity#cn.com.antika.business.BranchBusinessConditionsBarChartActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:828:9-832:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:831:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:830:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:829:13-91
+activity#cn.com.antika.business.BranchBusinessConditionsStatisticsBarChartDetailListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:833:9-837:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:836:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:835:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:834:13-111
+activity#cn.com.antika.business.BranchEmployeeBusinessMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:838:9-842:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:841:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:840:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:839:13-85
+activity#cn.com.antika.business.BranchEmployeeBusinessStatisticsPieActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:843:9-847:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:846:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:845:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:844:13-94
+activity#cn.com.antika.business.BranchEmployeeBusinessListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:848:9-852:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:851:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:850:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:849:13-85
+activity#cn.com.antika.business.BranchProductStatisticsMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:853:9-857:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:856:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:855:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:854:13-86
+activity#cn.com.antika.business.BranchProductStatisticsPieActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:858:9-862:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:861:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:860:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:859:13-85
+activity#cn.com.antika.business.BranchProductStatisticsListActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:863:9-867:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:866:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:865:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:864:13-86
+activity#cn.com.antika.business.BranchEmployeeBusinessDetailBarChartActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:868:9-872:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:871:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:870:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:869:13-95
+activity#cn.com.antika.business.MyReportMainActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:873:9-877:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:876:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:875:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:874:13-71
+activity#cn.com.antika.business.MyReportPercentageActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:878:10-882:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:881:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:880:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:879:13-77
+activity#cn.com.antika.business.BranchJournalReportActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:883:9-887:20
+	android:screenOrientation
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:886:13-49
+	android:launchMode
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:885:13-43
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:884:13-78
+activity#cn.jpush.android.ui.PushActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:888:9-897:20
+	android:configChanges
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:890:13-63
+	android:theme
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:891:13-72
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:889:13-60
+intent-filter#action:name:cn.jpush.android.ui.PushActivity+category:name:android.intent.category.DEFAULT+category:name:cn.com.antika.business
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:892:13-896:29
+action#cn.jpush.android.ui.PushActivity
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:893:17-75
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:893:25-72
+category#android.intent.category.DEFAULT
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:894:17-76
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:894:27-73
+category#cn.com.antika.business
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:895:17-67
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:895:27-64
+service#cn.jpush.android.service.DownloadService
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:899:9-903:19
+	android:enabled
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:901:13-35
+	android:exported
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:902:13-37
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:900:13-68
+service#cn.jpush.android.service.PushService
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:904:9-914:19
+	android:enabled
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:906:13-35
+	android:exported
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:907:13-37
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:905:13-64
+intent-filter#action:name:cn.jpush.android.intent.PUSH_TIME+action:name:cn.jpush.android.intent.PushService+action:name:cn.jpush.android.intent.REGISTER+action:name:cn.jpush.android.intent.REPORT
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:908:13-913:29
+action#cn.jpush.android.intent.REGISTER
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:909:17-75
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:909:25-72
+action#cn.jpush.android.intent.REPORT
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:910:17-73
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:910:25-70
+action#cn.jpush.android.intent.PushService
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:911:17-78
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:911:25-75
+action#cn.jpush.android.intent.PUSH_TIME
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:912:17-76
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:912:25-73
+receiver#cn.jpush.android.service.PushReceiver
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:915:9-932:20
+	android:enabled
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:917:13-35
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:916:13-65
+intent-filter#action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+category:name:cn.com.antika.business
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:918:13-922:29
+	android:priority
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:918:28-51
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:919:17-94
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:919:25-91
+intent-filter#action:name:android.intent.action.USER_PRESENT+action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:923:13-926:29
+action#android.intent.action.USER_PRESENT
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:924:17-77
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:924:25-74
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:925:17-79
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:925:25-76
+intent-filter#action:name:android.intent.action.PACKAGE_ADDED+action:name:android.intent.action.PACKAGE_REMOVED+data:scheme:package
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:927:13-931:29
+action#android.intent.action.PACKAGE_ADDED
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:928:17-78
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:928:25-75
+action#android.intent.action.PACKAGE_REMOVED
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:929:17-80
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:929:25-77
+data
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:930:17-50
+	android:scheme
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:930:23-47
+receiver#cn.jpush.android.service.AlarmReceiver
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:933:9-75
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:933:19-72
+receiver#cn.com.antika.Jpush.JpushMessageReceiver
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:934:9-945:20
+	android:enabled
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:936:13-35
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:935:13-68
+intent-filter#action:name:cn.jpush.android.intent.MESSAGE_RECEIVED+action:name:cn.jpush.android.intent.NOTIFICATION_OPENED+action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED+action:name:cn.jpush.android.intent.REGISTRATION+action:name:cn.jpush.android.intent.UNREGISTRATION+category:name:cn.com.antika.business
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:937:13-944:29
+action#cn.jpush.android.intent.REGISTRATION
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:938:17-79
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:938:25-76
+action#cn.jpush.android.intent.UNREGISTRATION
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:939:17-81
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:939:25-78
+action#cn.jpush.android.intent.MESSAGE_RECEIVED
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:940:17-83
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:940:25-80
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:941:17-88
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:941:25-85
+action#cn.jpush.android.intent.NOTIFICATION_OPENED
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:942:17-86
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:942:25-83
+meta-data#JPUSH_CHANNEL
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:946:9-948:49
+	android:value
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:948:13-46
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:947:13-41
+meta-data#JPUSH_APPKEY
+ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:949:10-951:56
+	android:value
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:951:13-53
+	android:name
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml:950:13-40
+uses-sdk
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+MERGED from [com.tencent.bugly:crashreport:3.3.1] C:\Users\ScsDeveloper\.gradle\caches\transforms-2\files-2.1\52c8afbe6c6422e17ebeb8b4031128fd\crashreport-3.3.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:crashreport:3.3.1] C:\Users\ScsDeveloper\.gradle\caches\transforms-2\files-2.1\52c8afbe6c6422e17ebeb8b4031128fd\crashreport-3.3.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.500] C:\Users\ScsDeveloper\.gradle\caches\transforms-2\files-2.1\0b752c1f789c7b47cc15a8c746d58800\nativecrashreport-3.7.500\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.500] C:\Users\ScsDeveloper\.gradle\caches\transforms-2\files-2.1\0b752c1f789c7b47cc15a8c746d58800\nativecrashreport-3.7.500\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+		ADDED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
+		INJECTED from D:\ZGZ\2020\Beauty\ATKAndroid\business\AndroidManifest.xml
