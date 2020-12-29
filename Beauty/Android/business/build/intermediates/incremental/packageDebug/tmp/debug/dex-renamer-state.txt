@@ -1,4 +1,0 @@
-#Mon Dec 28 19:47:37 CST 2020
-base.0=D\:\\ZGZ\\2020\\Beauty\\Android\\business\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
