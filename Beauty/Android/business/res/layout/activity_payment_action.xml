@@ -241,7 +241,7 @@
                         android:layout_centerVertical="true"
                         android:textColor="@color/red"
                         android:textSize="@dimen/text_size" />
-                    
+
                     <EditText
                         android:id="@+id/payment_action_should_pay_amount_edit"
                         android:layout_width="wrap_content"

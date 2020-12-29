@@ -64,6 +64,7 @@ static PermissionDoc *permissionDoc = nil;
     permissionDoc.rule_BalanceCharge = [self isExsit:@"|53|" andSource:sourceString];
     permissionDoc.rule_DirectExpend = [self isExsit:@"|54|" andSource:sourceString];
     permissionDoc.rule_TerminateOrder = [self isExsit:@"|55|" andSource:sourceString];
+    permissionDoc.rule_PayAmountWrite = [self isExsit:@"|57|" andSource:sourceString];
 }
 -(void)resetPermission:(NSString *)record_marketing_oppotun
 {
@@ -103,6 +104,7 @@ static PermissionDoc *permissionDoc = nil;
     permissionDoc.rule_BalanceCharge = NO;
     permissionDoc.rule_DirectExpend = NO;
     permissionDoc.rule_TerminateOrder = NO;
+    permissionDoc.rule_PayAmountWrite = NO;
 }
 // -- Record
 -(BOOL)isExsit:(NSString *)string andSource:(NSString *)sourceString

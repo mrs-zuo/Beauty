@@ -102,9 +102,6 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 	// 成交价 EditText
 	private EditText prepareOrderProductTotalSalePriceText;
 
-	public PrepareOrderActivity() {
-	}
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

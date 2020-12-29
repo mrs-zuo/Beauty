@@ -119,6 +119,7 @@
 @property (nonatomic, assign) BOOL rule_BalanceCharge;      //是否可以余额转入
 @property (nonatomic, assign) BOOL rule_DirectExpend;       //是否可以直扣
 @property (nonatomic, assign) BOOL rule_TerminateOrder;     //是否可以终止订单
+@property (nonatomic, assign) BOOL rule_PayAmountWrite;     //是否可以修改应付款
 
 @property (nonatomic, strong) NSString *record_marketing_oppotun;
 -(void)setPermission:(NSString *)sourceString;

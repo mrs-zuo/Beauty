@@ -1674,7 +1674,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 
 	@Override
 	public void onClick(View view) {
-		if(ProgressDialogUtil.isFastClick())
+		if (ProgressDialogUtil.isFastClick())
 			return;
 		switch (view.getId()) {
 			case R.id.treatment_update:
@@ -1684,82 +1684,76 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 				if ((prepareOrderProductTotalSalePriceText.getText().toString()).length() < 1 || "".equals(prepareOrderProductTotalSalePriceText.getText().toString().trim())) {
 					prepareOrderProductTotalSalePriceText.setText("0");
 				}
-				boolean isPaidPriceCorrect=true;
+				boolean isPaidPriceCorrect = true;
 				int k = 0;
-				for(int j=0;j<orderProductList.size();j++)
-				{
-					OrderProduct op=orderProductList.get(j);
+				for (int j = 0; j < orderProductList.size(); j++) {
+					OrderProduct op = orderProductList.get(j);
 					String hasPaidPriceString = null;
-					if(!op.isOldOrder()){
-						hasPaidPriceString=((TextView) prepareOrderProductListView.getChildAt(k).findViewById(R.id.prepare_order_product_has_paid_price)).getText().toString();
+					if (!op.isOldOrder()) {
+						hasPaidPriceString = ((TextView) prepareOrderProductListView.getChildAt(k).findViewById(R.id.prepare_order_product_has_paid_price)).getText().toString();
 						k++;
 					}
-					if(op.isPast())
-					{
+					if (op.isPast()) {
 						if (hasPaidPriceString != null && !hasPaidPriceString.equals("")) {
-							String orderProductPromotionPriceInput=((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_promotion_price)).getText().toString();
-							if(orderProductPromotionPriceInput==null || orderProductPromotionPriceInput.equals(""))
-							{
+							String orderProductPromotionPriceInput = ((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_promotion_price)).getText().toString();
+							if (orderProductPromotionPriceInput == null || orderProductPromotionPriceInput.equals("")) {
 								//监听输入的过去支付金额不能大于商品或者服务的成交价
-								if(op.getMarketingPolicy()==1 || op.getMarketingPolicy()==2){
-									if(NumberFormatUtil.doubleCompare(Double.valueOf(hasPaidPriceString),Double.valueOf(op.getPromotionPrice()))>0){
-										isPaidPriceCorrect=false;
+								if (op.getMarketingPolicy() == 1 || op.getMarketingPolicy() == 2) {
+									if (NumberFormatUtil.doubleCompare(Double.valueOf(hasPaidPriceString), Double.valueOf(op.getPromotionPrice())) > 0) {
+										isPaidPriceCorrect = false;
+										break;
+									}
+								} else {
+									if (NumberFormatUtil.doubleCompare(Double.valueOf(hasPaidPriceString), Double.valueOf(op.getUnitPrice())) > 0) {
+										isPaidPriceCorrect = false;
 										break;
 									}
 								}
-								else{
-									if(NumberFormatUtil.doubleCompare(Double.valueOf(hasPaidPriceString),Double.valueOf(op.getUnitPrice()))>0){
-										isPaidPriceCorrect=false;
-										break;
-									}
-								}
-							}
-							else
-							{
-								if(NumberFormatUtil.doubleCompare(Double.valueOf(hasPaidPriceString),Double.valueOf(orderProductPromotionPriceInput))>0){
-									isPaidPriceCorrect=false;
+							} else {
+								if (NumberFormatUtil.doubleCompare(Double.valueOf(hasPaidPriceString), Double.valueOf(orderProductPromotionPriceInput)) > 0) {
+									isPaidPriceCorrect = false;
 									break;
 								}
 							}
 						}
 					}
 				}
-				boolean isCommodityOrderResponsibleNull=false;
-				for(OrderProduct op:orderProductList){
-					if(op.getProductType()==Constant.COMMODITY_ORDER && op.getResponsiblePersonID()==0){
-						isCommodityOrderResponsibleNull=true;
+				boolean isCommodityOrderResponsibleNull = false;
+				for (OrderProduct op : orderProductList) {
+					if (op.getProductType() == Constant.COMMODITY_ORDER && op.getResponsiblePersonID() == 0) {
+						isCommodityOrderResponsibleNull = true;
 					}
 				}
 				if (selectedCustomerID == 0)
 					DialogUtil.createShortDialog(this, "请选择客户！");
 				else if (orderProductList == null || orderProductList.size() == 0)
 					DialogUtil.createShortDialog(this, "请先选择商品或者服务");
-				else if(!isPaidPriceCorrect)
+				else if (!isPaidPriceCorrect)
 					DialogUtil.createShortDialog(this, "过去支付金额不能大于服务/商品的价格");
-				else if(isCommodityOrderResponsibleNull)
-					DialogUtil.createShortDialog(this,"商品单美丽顾问不能为空");
+				else if (isCommodityOrderResponsibleNull)
+					DialogUtil.createShortDialog(this, "商品单美丽顾问不能为空");
 				else {
-					progressDialog =ProgressDialogUtil.createProgressDialog(this);
+					progressDialog = ProgressDialogUtil.createProgressDialog(this);
 					final JSONArray orderProductArray = new JSONArray();
 					double productTotalPrice = 0;
 					//所有订单过去支付的金额
-					double productPastPaidPrice=0;
+					double productPastPaidPrice = 0;
 					// 判断是否有销售顾问的功能
 					boolean hasSales = false;
 					if (userinfoApplication.getAccountInfo().getModuleInUse().contains("|4|"))
 						hasSales = true;
-					int j=0;
+					int j = 0;
 					for (int i = 0; i < orderProductList.size(); i++) {
-						if(!orderProductList.get(i).isOldOrder()){
+						if (!orderProductList.get(i).isOldOrder()) {
 							JSONObject orderProductJson = new JSONObject();
 							OrderProduct orderProduct = orderProductList.get(i);
 							try {
-								orderProductJson.put("ResponsiblePersonID",orderProduct.getResponsiblePersonID());
+								orderProductJson.put("ResponsiblePersonID", orderProduct.getResponsiblePersonID());
 								// 如果有销售顾问功能并且销售顾问不等于美丽顾问
 								if (hasSales && (orderProduct.getResponsiblePersonID() != 0 && orderProduct.getSalesID() != orderProduct.getResponsiblePersonID()) || (orderProduct.getResponsiblePersonID() == 0 && orderProduct.getSalesID() != 0))
-									orderProductJson.put("SalesID",orderProduct.getSalesID());
+									orderProductJson.put("SalesID", orderProduct.getSalesID());
 								if (orderProduct.getProductType() == Constant.SERVICE_TYPE)
-									orderProductJson.put("Expirationtime",(((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.service_order_expiration_date_text)).getText().toString()));
+									orderProductJson.put("Expirationtime", (((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.service_order_expiration_date_text)).getText().toString()));
 								else if (orderProduct.getProductType() == Constant.COMMODITY_TYPE)
 									orderProductJson.put("Expirationtime", "2099-12-31");
 							} catch (JSONException e1) {
@@ -1775,36 +1769,36 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 							String orderProductRemark = (((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_remark)).getText().toString());
 							try {
 								if (orderProductRemark != null && !(("").equals(orderProductRemark))) {
-									orderProductJson.put("Remark",orderProductRemark);
+									orderProductJson.put("Remark", orderProductRemark);
 								} else
-									orderProductJson.put("Remark","");
+									orderProductJson.put("Remark", "");
 							} catch (JSONException e) {
 							}
 
 
 							try {
-								orderProductJson.put("TaskID",taskID);
-								String hasCompletenumString=((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_has_completenum)).getText().toString();
+								orderProductJson.put("TaskID", taskID);
+								String hasCompletenumString = ((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_has_completenum)).getText().toString();
 								orderProductJson.put("CardID", orderProduct.getUserEcardID());
 								orderProductJson.put("ProductID", orderProduct.getProductID());
 								orderProductJson.put("OpportunityID", 0);
-								orderProductJson.put("ProductType",orderProduct.getProductType());
-								orderProductJson.put("ProductCode",orderProduct.getProductCode());
-								orderProductJson.put("Quantity",((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_quantity)).getText().toString());
-								orderProductJson.put("TotalSalePrice",orderProductTotalSalePrice);
-								orderProductJson.put("TotalOrigPrice", NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(orderProduct.getUnitPrice())* orderProductJson.getInt("Quantity"))));
+								orderProductJson.put("ProductType", orderProduct.getProductType());
+								orderProductJson.put("ProductCode", orderProduct.getProductCode());
+								orderProductJson.put("Quantity", ((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_quantity)).getText().toString());
+								orderProductJson.put("TotalSalePrice", orderProductTotalSalePrice);
+								orderProductJson.put("TotalOrigPrice", NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(orderProduct.getUnitPrice()) * orderProductJson.getInt("Quantity"))));
 								orderProductJson.put("TotalCalcPrice", Double.valueOf(((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_promotion_price)).getText().toString()));
-								orderProductJson.put("BranchID",userinfoApplication.getAccountInfo().getBranchId());
+								orderProductJson.put("BranchID", userinfoApplication.getAccountInfo().getBranchId());
 								orderProductJson.put("TGPastCount", hasCompletenumString);
-								orderProductJson.put("IsPast",orderProduct.isPast());
-								orderProductJson.put("BenefitID",orderProduct.getBenefitID());
-								orderProductJson.put("PRValue2",orderProduct.getPrValue2());
-								String hasPaidPriceString=((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_has_paid_price)).getText().toString();
+								orderProductJson.put("IsPast", orderProduct.isPast());
+								orderProductJson.put("BenefitID", orderProduct.getBenefitID());
+								orderProductJson.put("PRValue2", orderProduct.getPrValue2());
+								String hasPaidPriceString = ((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_has_paid_price)).getText().toString();
 								orderProductJson.put("PaidPrice", hasPaidPriceString);
 
-								if(orderProduct.getProductType()==0 && orderProduct.getCourseFrequency()!=0){
+								if (orderProduct.getProductType() == 0 && orderProduct.getCourseFrequency() != 0) {
 									orderProductJson.put("TGTotalCount", ((EditText) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_service_quantity)).getText().toString());
-								}else{
+								} else {
 									orderProductJson.put("TGTotalCount", 0);
 								}
 
@@ -1820,8 +1814,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 					if (productTotalPrice == 0)
 						isZeroOrder = 1;
 					//判断订单的过去支付金额是不是都小于订单应付金额
-					if(NumberFormatUtil.doubleCompare(productTotalPrice,productPastPaidPrice)==0)
-						isPastPayAll=1;
+					if (NumberFormatUtil.doubleCompare(productTotalPrice, productPastPaidPrice) == 0)
+						isPastPayAll = 1;
 					requestWebServiceThread = new Thread() {
 						@Override
 						public void run() {
@@ -1843,11 +1837,11 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 								}
 							} else {
 								try {
-									prepareOrderJson.put("CustomerID",userinfoApplication.getSelectedCustomerID());
+									prepareOrderJson.put("CustomerID", userinfoApplication.getSelectedCustomerID());
 								} catch (JSONException e) {
 								}
 							}
-							String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint,methodName, prepareOrderJson.toString(),userinfoApplication);
+							String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, prepareOrderJson.toString(), userinfoApplication);
 							JSONObject resultJson = null;
 							try {
 								resultJson = new JSONObject(serverResultResult);
@@ -1886,8 +1880,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 									}
 									Message msg = new Message();
 									mHandler.sendEmptyMessage(9);
-								}
-								else if(Integer.parseInt(code)==Constant.APP_VERSION_ERROR || Integer.parseInt(code)==Constant.LOGIN_ERROR)
+								} else if (Integer.parseInt(code) == Constant.APP_VERSION_ERROR || Integer.parseInt(code) == Constant.LOGIN_ERROR)
 									mHandler.sendEmptyMessage(Integer.parseInt(code));
 								else if (Integer.parseInt(code) == -2) {
 									Message msg = new Message();

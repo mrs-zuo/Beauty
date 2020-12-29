@@ -308,20 +308,22 @@
     {
         switch (indexPath.row) {
             case 0:
-                /*
-                if (self.payStatus == 1) {
-                    cell.valueText.userInteractionEnabled = YES ;
-                    cell.valueText.enabled = YES;
-                    cell.valueText.textColor = kColor_Editable;
-                    cell.valueText.delegate = self;
-                    cell.valueText.keyboardType = UIKeyboardTypeDecimalPad;
-                    cell.valueText.tag = 102;
-                }
-                */
-                cell.titleLabel.text =  @"应付款";
                 cell.valueText.userInteractionEnabled = NO;
                 cell.valueText.enabled = NO;
                 cell.valueText.textColor = [UIColor redColor];
+                // 未支付状态
+                if (self.payStatus == 1) {
+                    // 应付款修改权限
+                    if ([[PermissionDoc sharePermission] rule_PayAmountWrite]) {
+                        cell.valueText.userInteractionEnabled = YES ;
+                        cell.valueText.enabled = YES;
+                        // cell.valueText.textColor = kColor_Editable;
+                        cell.valueText.delegate = self;
+                        cell.valueText.keyboardType = UIKeyboardTypeDecimalPad;
+                        cell.valueText.tag = 102;
+                    }
+                }
+                cell.titleLabel.text =  @"应付款";
                 cell.valueText.placeholder = @"0.00";
                 cell.valueText.text  = needPay > 0?[NSString stringWithFormat:@"%@ %.2f",MoneyIcon,needPay]:@"";
                 cell.valueText.clearButtonMode = UITextFieldViewModeWhileEditing;
