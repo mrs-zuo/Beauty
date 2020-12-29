@@ -1,5 +1,5 @@
 /**
- * DispenseOrderFragment.java
+ * DispenseFavoriteListFragment.java
  * cn.com.antika.fragment
  * tim.zhang@bizapper.com
  * 2015年7月6日 下午1:48:56
@@ -55,7 +55,7 @@ import cn.com.antika.view.menu.BusinessRightMenu;
 import cn.com.antika.webservice.WebServiceUtil;
 
 /**
- * DispenseOrderFragment
+ * DispenseFavoriteListFragment
  * 收藏列表的Fragment
  *
  * @author tim.zhang@bizapper.com

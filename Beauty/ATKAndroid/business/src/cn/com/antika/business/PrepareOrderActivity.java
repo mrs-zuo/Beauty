@@ -100,6 +100,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 	long taskID=0;
 	String fromSource;
 	RelativeLayout orderProductCardSpinnerRelativeLayout;
+	// 成交价 EditText
+	private EditText prepareOrderProductTotalSalePriceText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -938,7 +940,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 					TextView prepareOrderResponsiblePersonNameText = (TextView) prepareOrderProductView.findViewById(R.id.prepare_order_reaponsible_name);
 					final EditText prepareOrderProductQuantityText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_quantity);
 					final TextView prepareOrderProductTotalPriceText = (TextView) prepareOrderProductView.findViewById(R.id.prepare_order_product_total_price);
-					final EditText prepareOrderProductTotalSalePriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_total_sale_price);
+					// 成交价 EditText
+					prepareOrderProductTotalSalePriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_total_sale_price);
 					final EditText prepareOrderProductHasPaidPriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_has_paid_price);
 					final EditText prepareOrderProductPromotionPriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_promotion_price);
 					final EditText prepareOrderProductHasCompletenumText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_has_completenum);
@@ -953,6 +956,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 					final RelativeLayout orderProductPromotionPriceRelativeLayout = (RelativeLayout) prepareOrderProductView.findViewById(R.id.prepare_order_product_promotion_price_relativelayout);
 					final RelativeLayout orderProductHadPaidPriceRelativeLayout = (RelativeLayout) prepareOrderProductView.findViewById(R.id.prepare_order_product_has_paid_price_relativelayout);
 					final RelativeLayout orderProductHadCompleteNumRelativeLayout = (RelativeLayout) prepareOrderProductView.findViewById(R.id.prepare_order_product_has_completenum_relativelayout);
+					// 成交价 Layout
 					final RelativeLayout orderProductHadDiscussRelativeLayout = (RelativeLayout) prepareOrderProductView.findViewById(R.id.prepare_order_product_total_discuss_relativelayout);
 					final RelativeLayout prepareOrderQuantityRelativelayout=(RelativeLayout) prepareOrderProductView.findViewById(R.id.prepare_order_quantity_relativelayout);
 					View prepareOrderServiceQuantityDivideView=prepareOrderProductView.findViewById(R.id.prepare_order_service_quantity_divide_view);
@@ -1213,9 +1217,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 							}
 							@Override
 							public void afterTextChanged(Editable s) {
-								if((prepareOrderProductTotalSalePriceText.getText().toString()).length()<1){
+								/*if((prepareOrderProductTotalSalePriceText.getText().toString()).length()<1){
 									prepareOrderProductTotalSalePriceText.setText("0");
-								}
+								}*/
 								if (s != null && !s.toString().equals("")) {
 									double orderProductPromotionTotalSalePrice = 0;
 									int k=0;
@@ -1429,7 +1433,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 							}
 						}
 					});
-					prepareOrderProductTotalSalePriceText.addTextChangedListener(new TextWatcher() {
+					/*prepareOrderProductTotalSalePriceText.addTextChangedListener(new TextWatcher() {
 
 						@Override
 						public void beforeTextChanged(CharSequence s, int start,
@@ -1449,7 +1453,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 
 						}
 
-					});
+					});*/
 					// 手动修改商品或者服务的数量
 					prepareOrderProductQuantityText
 							.addTextChangedListener(new TextWatcher() {
@@ -1677,6 +1681,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 				break;
 			// 下单
 			case R.id.prepare_order_commit:
+				if ((prepareOrderProductTotalSalePriceText.getText().toString()).length() < 1 || "".equals(prepareOrderProductTotalSalePriceText.getText().toString().trim())) {
+					prepareOrderProductTotalSalePriceText.setText("0");
+				}
 				boolean isPaidPriceCorrect=true;
 				int k = 0;
 				for(int j=0;j<orderProductList.size();j++)

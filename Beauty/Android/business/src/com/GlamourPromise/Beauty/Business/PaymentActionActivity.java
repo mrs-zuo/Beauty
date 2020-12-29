@@ -640,9 +640,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		shouldPayAmountEdit.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,int count) {
-				if( shouldPayAmountEdit.getText().toString().length() < 1){
+				/*if( shouldPayAmountEdit.getText().toString().length() < 1){
 					shouldPayAmountEdit.setText("0");
-				}
+				}*/
 			}
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
@@ -1740,6 +1740,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 			return;
 		switch (view.getId()) {
 		case R.id.payment_action_order_down:
+			if (shouldPayAmountEdit.getText().toString().length() < 1 || "".equals(shouldPayAmountEdit.getText().toString().trim())) {
+				shouldPayAmountEdit.setText("0");
+			}
 			thisTimePayAmountView.setVisibility(View.VISIBLE);
 			if(orderList.get(0).getPaymentStatus()==1){
 				if( shouldPayAmountEdit.getText().toString()!= null && !(("").equals(shouldPayAmountEdit.getText().toString()))&& Double.valueOf(shouldPayAmountEdit.getText().toString()) > 0){

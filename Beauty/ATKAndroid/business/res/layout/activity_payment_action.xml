@@ -252,6 +252,7 @@
                         android:textColor="@color/red"
                         android:gravity="right"
                         android:hint="0"
+						android:selectAllOnFocus="true"
                         android:inputType="numberDecimal"
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>

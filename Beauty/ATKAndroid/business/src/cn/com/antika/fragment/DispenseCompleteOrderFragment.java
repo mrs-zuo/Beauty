@@ -1,5 +1,5 @@
 /**
- * DispenseOrderFragment.java
+ * DispenseCompleteOrderFragment.java
  * cn.com.antika.fragment
  * tim.zhang@bizapper.com
  * 2015年7月6日 下午1:48:56
@@ -53,7 +53,7 @@ import cn.com.antika.view.sign.HandwritingActivity;
 import cn.com.antika.webservice.WebServiceUtil;
 
 /**
- * DispenseOrderFragment 待结单的Fragment
+ * DispenseCompleteOrderFragment 待结单的Fragment
  *
  * @author tim.zhang@bizapper.com 2015年7月6日 下午1:48:56
  */
