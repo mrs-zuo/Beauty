@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./libs/baidumapapi_v3_0_0.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/baidumapapi_v3_0_0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -105,10 +105,10 @@ public class OrderListActivity extends BaseActivity implements OnClickListener,O
 						orderListActivity.orderListPageInfoText.setText("");
 					}
 					// 有老数据时，当前页数加一
-					if (tmpList.size() > 0) {
+					/*if (tmpList.size() > 0) {
 						//设置订单列表页数信息
 						orderListActivity.pageIndex += 1;
-					}
+					}*/
 					if (orderListActivity.getOrderListFlag == 1 || orderListActivity.getOrderListFlag == 2) {
 						orderListActivity.orderInfoList = new ArrayList<OrderInfo>();
 						orderListActivity.orderInfoList.addAll(tmpList);
@@ -365,23 +365,32 @@ public class OrderListActivity extends BaseActivity implements OnClickListener,O
 	}
 
 	/**
-	 * 取最新数据
+	 * 取最新数据(下拉刷新)
 	 */
 	@Override
 	public void onRefresh() {
-		if (pageIndex > 1 && pageIndex <= pageCount) {
-			pageIndex = pageIndex - 1;
+		pageIndex = pageIndex - 1;
+		if (pageIndex >= 1 && pageIndex <= pageCount) {
 			refreshList(3);
 		} else {
+			pageIndex = 1;
 			refreshList(2);
 		}
 	}
 
 	/**
-	 * 取老数据
+	 * 取老数据(加载更多)
 	 */
 	@Override
 	public void onLoadMore() {
+		pageIndex = pageIndex + 1;
+		if (pageIndex > pageCount || orderInfoList.size() < 10) {
+			DialogUtil.createShortDialog(this, "没有更早的订单！");
+			onLoad();
+			mListView.hideFooterView();
+			pageIndex = pageCount;
+			return;
+		}
 		refreshList(3);
 	}
 
