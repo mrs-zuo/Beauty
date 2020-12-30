@@ -204,17 +204,12 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 				if (customerActivity.customerAdvancedCondition.isPageFlg()) {
 					// 是否还有更多
 					if (customerActivity.customerList.size() == 0 || customerActivity.customerList.size() < customerActivity.customerAdvancedCondition.getPageSize()
-							|| customerActivity.customerAdvancedCondition.getPageSize() >= customerActivity.customerCnt) {
+							|| (customerActivity.customerAdvancedCondition.getPageSize() * customerActivity.customerAdvancedCondition.getPageIndex()) >= customerActivity.customerCnt) {
 						customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
 						customerActivity.mFooterText.setText(R.string.load_more_no_data);
 						customerActivity.mFooter.setVisibility(View.VISIBLE);
-						if (customerActivity.customerList.size() == 0) {
-							customerActivity.customerAdvancedCondition.setPageIndex(customerActivity.customerAdvancedCondition.getPageIndex() - 1);
-						}
 					} else {
 						customerActivity.customerAdvancedCondition.setLoadMoreFlg(true);
-						customerActivity.mFooterText.setText(R.string.load_more_no_data);
-						customerActivity.mFooter.setVisibility(View.VISIBLE);
 					}
 				} else {
 					customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
@@ -670,25 +665,25 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
 		// TODO Auto-generated method stub
 		switch (scrollState) {
-		// 当不滚动时
-		case OnScrollListener.SCROLL_STATE_IDLE:
-			if(customerAdvancedCondition.isPageFlg() && !loadFlg) {
-				// 分页加载
-				if (view.getFirstVisiblePosition() == 0) {
-					// 顶部
-					if(customerAdvancedCondition.getPageIndex() > 1) {
-						// 上一页
-						loadData(false);
-					}
-				}else if(view.getLastVisiblePosition() == (view.getCount() - 1)) {
-					// 底部
-					if ( customerAdvancedCondition.isLoadMoreFlg()) {
-						// 下一页
-						loadData(true);
+			// 当不滚动时
+			case OnScrollListener.SCROLL_STATE_IDLE:
+				if (customerAdvancedCondition.isPageFlg() && !loadFlg) {
+					// 分页加载
+					if (view.getFirstVisiblePosition() == 0) {
+						// 顶部
+						if (customerAdvancedCondition.getPageIndex() > 1) {
+							// 上一页
+							loadData(false);
+						}
+					} else if (view.getLastVisiblePosition() == (view.getCount() - 1)) {
+						// 底部
+						if (customerAdvancedCondition.isLoadMoreFlg()) {
+							// 下一页
+							loadData(true);
+						}
 					}
 				}
-			}
-			break;
+				break;
 		}
 	}
 
