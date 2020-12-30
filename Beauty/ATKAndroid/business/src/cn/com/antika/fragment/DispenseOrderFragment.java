@@ -44,6 +44,7 @@ public class DispenseOrderFragment extends Fragment implements OnClickListener{
 	private List<OrderProduct> orderProductList;
 	private UserInfoApplication userinfoApplication;
 	private Button              prepareOrderBtn;
+	private DispenseOrderListAdapter dispenseOrderListAdapter;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -55,9 +56,8 @@ public class DispenseOrderFragment extends Fragment implements OnClickListener{
 		if (userinfoApplication.getOrderInfo() != null) {
 			orderProductList = userinfoApplication.getOrderInfo().getOrderProductList();
 		}
-		DispenseOrderListAdapter dispenseOrderListAdapter = new DispenseOrderListAdapter(getActivity(), orderProductList);
+		dispenseOrderListAdapter = new DispenseOrderListAdapter(getActivity(), orderProductList);
 		dispenseOrderListView.setAdapter(dispenseOrderListAdapter);
-		dispenseOrderListAdapter.notifyDataSetChanged();
 		prepareOrderBtn=(Button) dispenseOrderView.findViewById(R.id.prepare_order_btn);
 		prepareOrderBtn.setOnClickListener(this);
 		((TextView)getActivity().findViewById(R.id.tab_prepare_order_title)).setText("待开"+"("+orderProductList.size()+")");
@@ -77,8 +77,7 @@ public class DispenseOrderFragment extends Fragment implements OnClickListener{
 		super.setUserVisibleHint(isVisibleToUser);
 		if(isVisibleToUser && dispenseOrderListView!=null){
 			((TextView)getActivity().findViewById(R.id.tab_prepare_order_title)).setText("待开"+"("+orderProductList.size()+")");
-			DispenseOrderListAdapter dispenseOrderListAdapter = new DispenseOrderListAdapter(getActivity(), orderProductList);
-			dispenseOrderListView.setAdapter(dispenseOrderListAdapter);
+			dispenseOrderListAdapter.setmOrderProductList(orderProductList);
 			dispenseOrderListAdapter.notifyDataSetChanged();
 		}	
 	}

@@ -73,7 +73,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 	// 检索的key
 	private String searchName;
 	private ImageButton customerAdvancedFilterButton, addNewCustomerButton;
-	public static CustomerListItemAdapter customerListItemAdapter;
+	private CustomerListItemAdapter customerListItemAdapter;
 	private AccountInfo accountInfo;
 	private int screenWidth;
 	private UserInfoApplication userinfoApplication;
@@ -181,72 +181,71 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 				customerActivity.mHeader.setVisibility(View.GONE);
 			}
 			if (msg.what == 1) {
+				customerActivity.customerListItemAdapter = new CustomerListItemAdapter(customerActivity, customerActivity.customerList, customerActivity.fromSource,
+						customerActivity.convertOrderList);
+				customerActivity.customerListView.setAdapter(customerActivity.customerListItemAdapter);
+				// 展开
+				customerActivity.expandGroupAll(customerActivity.customerListItemAdapter);
+				// 隐藏头部和底部视图
+				customerActivity.mFooter.setVisibility(View.GONE);
+				customerActivity.mHeader.setVisibility(View.GONE);
 				// 暂无数据
 				if (customerActivity.customerCnt == 0) {
-					customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
-					// 隐藏头部视图
-					customerActivity.mHeader.setVisibility(View.GONE);
-					// 暂无数据
 					customerActivity.mFooterText.setText(R.string.load_no_data);
 					customerActivity.mFooter.setVisibility(View.VISIBLE);
+				}
+				// 所有顾客 废除条件筛选
+				if (customerActivity.customerAdvancedCondition.getCustomerType() == Constant.CUSTOMER_FILTER_TYPE_COMPANY) {
+					customerActivity.searchCustomerView.setVisibility(View.GONE);
 				} else {
-					// 所有顾客
-					if (customerActivity.customerAdvancedCondition.getCustomerType() == Constant.CUSTOMER_FILTER_TYPE_COMPANY) {
-						// 废除条件筛选
-						customerActivity.searchCustomerView.setVisibility(View.GONE);
-						// 是否还有更多
-						if (customerActivity.customerList.size() == 0 || customerActivity.customerList.size() < customerActivity.customerAdvancedCondition.getPageSize()
-								|| customerActivity.customerAdvancedCondition.getPageSize() >= customerActivity.customerCnt) {
-							customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
-							customerActivity.mFooterText.setText(R.string.load_more_no_data);
-							customerActivity.mFooter.setVisibility(View.VISIBLE);
-							if (customerActivity.customerList.size() == 0) {
-								customerActivity.customerAdvancedCondition.setPageIndex(customerActivity.customerAdvancedCondition.getPageIndex() - 1);
-							}
-						} else {
-							customerActivity.customerAdvancedCondition.setLoadMoreFlg(true);
+					customerActivity.searchCustomerView.setVisibility(View.VISIBLE);
+				}
+				// 分页
+				if (customerActivity.customerAdvancedCondition.isPageFlg()) {
+					// 是否还有更多
+					if (customerActivity.customerList.size() == 0 || customerActivity.customerList.size() < customerActivity.customerAdvancedCondition.getPageSize()
+							|| customerActivity.customerAdvancedCondition.getPageSize() >= customerActivity.customerCnt) {
+						customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
+						customerActivity.mFooterText.setText(R.string.load_more_no_data);
+						customerActivity.mFooter.setVisibility(View.VISIBLE);
+						if (customerActivity.customerList.size() == 0) {
+							customerActivity.customerAdvancedCondition.setPageIndex(customerActivity.customerAdvancedCondition.getPageIndex() - 1);
 						}
 					} else {
-						customerActivity.searchCustomerView.setVisibility(View.VISIBLE);
+						customerActivity.customerAdvancedCondition.setLoadMoreFlg(true);
+						customerActivity.mFooterText.setText(R.string.load_more_no_data);
+						customerActivity.mFooter.setVisibility(View.VISIBLE);
 					}
-					if (customerActivity.customerList.size() > 0) {
-						customerListItemAdapter = new CustomerListItemAdapter(customerActivity, customerActivity.customerList, customerActivity.fromSource,
-								customerActivity.convertOrderList);
-						customerActivity.customerListView.setAdapter(customerListItemAdapter);
-						// 变更通知
-						customerListItemAdapter.notifyDataSetChanged();
-						// 展开
-						customerActivity.expandGroupAll(customerListItemAdapter);
-						// 设置选中项
-						customerActivity.customerListView.setSelection(0);
-						// 自动滚动到已选择的顾客那一项
-						HashList<String, Customer> customerHashList = customerListItemAdapter.getAssort().getHashList();
-						int selectedGroup = -1;
-						int selectedChild = -1;
-						boolean flg = false;
-						for (int j = 0; j < customerHashList.size(); j++) {
-							if (flg) {
+				} else {
+					customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
+				}
+				if (customerActivity.customerList.size() > 0) {
+					// 设置选中项
+					customerActivity.customerListView.setSelection(0);
+					// 自动滚动到已选择的顾客那一项
+					HashList<String, Customer> customerHashList = customerActivity.customerListItemAdapter.getAssort().getHashList();
+					int selectedGroup = -1;
+					int selectedChild = -1;
+					boolean flg = false;
+					for (int j = 0; j < customerHashList.size(); j++) {
+						if (flg) {
+							break;
+						}
+						List<Customer> customerList = customerHashList.getValueListIndex(j);
+						for (int a = 0; a < customerList.size(); a++) {
+							Customer customer = customerList.get(a);
+							if (customer.getCustomerId() == customerActivity.userinfoApplication.getSelectedCustomerID()) {
+								selectedGroup = j;
+								selectedChild = a;
+								flg = true;
 								break;
 							}
-							List<Customer> customerList = customerHashList.getValueListIndex(j);
-							for (int a = 0; a < customerList.size(); a++) {
-								Customer customer = customerList.get(a);
-								if (customer.getCustomerId() == customerActivity.userinfoApplication.getSelectedCustomerID()) {
-									selectedGroup = j;
-									selectedChild = a;
-									flg = true;
-									break;
-								}
-							}
-						}
-						if (selectedGroup != -1) {
-							customerActivity.customerListView.setSelectedGroup(selectedGroup);
-							customerActivity.customerListView.setSelectedChild(selectedGroup, selectedChild, true);
 						}
 					}
-					// 隐藏头部和底部视图
-					customerActivity.mFooter.setVisibility(View.GONE);
-					customerActivity.mHeader.setVisibility(View.GONE);
+					if (selectedGroup != -1) {
+						customerActivity.customerListView.setSelectedGroup(selectedGroup);
+						customerActivity.customerListView.setSelectedChild(selectedGroup, selectedChild, true);
+					}
 				}
 			} else if (msg.what == 0) {
 				DialogUtil.createMakeSureDialog(customerActivity, "温馨提示", "您的网络貌似不给力，请检查网络设置");
@@ -295,7 +294,8 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 		if (fromSource == 3) {
 			convertOrderList = (List<OrderInfo>) getIntent().getSerializableExtra("convertOrderList");
 		}
-		customerListItemAdapter = new CustomerListItemAdapter(this, new ArrayList<Customer>() , fromSource, convertOrderList);
+		customerList = new ArrayList<Customer>();
+		customerListItemAdapter = new CustomerListItemAdapter(this, customerList, fromSource, convertOrderList);
 		customerListView.setAdapter(customerListItemAdapter);
 		// 右侧的按字母分组 字母按键回调
 		assortView.setOnTouchAssortListener(new AssortView.OnTouchAssortListener() {
@@ -411,7 +411,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 				customerTitleText.setText(getString(R.string.branch_customer_btn));
 			}
 		}
-		customerList = new ArrayList<Customer>();
+		customerList.clear();
 		requestWebServiceThread = new Thread() {
 			@Override
 			public void run() {
@@ -593,7 +593,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 			updateLayout(searchCustomer(searchName));
 		} else {
 			customerListView.setAdapter(customerListItemAdapter);
-			customerListItemAdapter.notifyDataSetChanged();
 			expandGroupAll(customerListItemAdapter);
 			customerListView.setSelection(0);
 			setCustomerListDisplayTotal();
@@ -626,7 +625,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 		CustomerListItemAdapter customerListItemAdapterSearch = new CustomerListItemAdapter(this, customerList,
 				fromSource, convertOrderList);
 		customerListView.setAdapter(customerListItemAdapterSearch);
-		customerListItemAdapterSearch.notifyDataSetChanged();
 		expandGroupAll(customerListItemAdapterSearch);
 		setCustomerListDisplayTotal();
 	}
@@ -649,8 +647,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 		super.onActivityResult(requestCode, resultCode, data);
 		if (resultCode == 100) {
 			customerCnt = 0;
-			customerListItemAdapter = new CustomerListItemAdapter(this, new ArrayList<Customer>() , fromSource, convertOrderList);
-			customerListView.setAdapter(customerListItemAdapter);
+			customerList.clear();
 			customerListItemAdapter.notifyDataSetChanged();
 			// 清除过滤
 			searchCustomerView.setQuery(null, false);

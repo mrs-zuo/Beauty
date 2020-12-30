@@ -37,6 +37,7 @@ import com.GlamourPromise.Beauty.constant.Constant;
 import com.GlamourPromise.Beauty.util.DialogUtil;
 import com.GlamourPromise.Beauty.util.FileCache;
 import com.GlamourPromise.Beauty.util.PackageUpdateUtil;
+import com.GlamourPromise.Beauty.util.ProgressDialogUtil;
 import com.GlamourPromise.Beauty.webservice.WebServiceUtil;
 
 import org.json.JSONArray;
@@ -471,6 +472,7 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 		requestWebServiceThread.start();
 	}
 	protected void getSourceTypeList() {
+		progressDialog = ProgressDialogUtil.createProgressDialog(this);
 		sourceTypeList=new ArrayList<SourceType>();
 		SourceType  defaultSourceType=new SourceType();
 		defaultSourceType.setSourceTypeID(-1);
@@ -596,9 +598,17 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 				customerType = 1;
 			// 闪退对应（ecard未选中的情况）
 			if(ecardConditionSpinner.getSelectedItemPosition() == -1){
-				ecardConditionSpinner.setSelection(0);
+				if (ecardConditionSpinner.getAdapter().getCount() > 0) {
+					ecardConditionSpinner.setSelection(0);
+				}
 			}
 			String cardCode = ecardInfoList.get(ecardConditionSpinner.getSelectedItemPosition()).getUserEcardCode();
+			// 闪退对应（SourceType未选中的情况）
+			if (customerSourceTypeSpinner.getSelectedItemPosition() == -1) {
+				if (customerSourceTypeSpinner.getAdapter().getCount() > 0) {
+					customerSourceTypeSpinner.setSelection(0);
+				}
+			}
 			int    sourceTypeID=sourceTypeList.get(customerSourceTypeSpinner.getSelectedItemPosition()).getSourceTypeID();
 			//顾客状态
 			int effectiveCustomerType=0;
@@ -673,12 +683,27 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 			}
 			break;
 		case R.id.customer_advanced_search_reset_btn:
-			customerRegistFromSpinner.setSelection(0);
-			customerSourceTypeSpinner.setSelection(0);
-			customerTypeConditionSpinner.setSelection(0);
-			ecardConditionSpinner.setSelection(0);
-			customerStatesSpinner.setSelection(0);
-			customerRegistDatSpinner.setSelection(0);
+			if (customerRegistFromSpinner.getAdapter().getCount() > 0) {
+				customerRegistFromSpinner.setSelection(0);
+			}
+			if (customerSourceTypeSpinner.getAdapter().getCount() > 0) {
+				customerSourceTypeSpinner.setSelection(0);
+			}
+			// 顾客类型
+			if (customerTypeConditionSpinner.getAdapter().getCount() > 1) {
+				customerTypeConditionSpinner.setSelection(1);
+			} else if (customerTypeConditionSpinner.getAdapter().getCount() > 0) {
+				customerTypeConditionSpinner.setSelection(0);
+			}
+			if (ecardConditionSpinner.getAdapter().getCount() > 0) {
+				ecardConditionSpinner.setSelection(0);
+			}
+			if (customerStatesSpinner.getAdapter().getCount() > 0) {
+				customerStatesSpinner.setSelection(0);
+			}
+			if (customerRegistDatSpinner.getAdapter().getCount() > 0) {
+				customerRegistDatSpinner.setSelection(0);
+			}
 			accountIDs=new JSONArray().put(userinfoApplication.getAccountInfo().getAccountId()).toString();
 			//customerAdvancedResponsibleText.setText("");
 			searchCustomerName.setText("");

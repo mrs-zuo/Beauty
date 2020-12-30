@@ -30,8 +30,8 @@ public class DispenseOrderListAdapter extends BaseAdapter {
 	private List<OrderProduct> mOrderProductList;
 	public DispenseOrderListAdapter(Context context,List<OrderProduct> orderProductList) {
 		this.mContext = context;
-		layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		mOrderProductList=orderProductList;
+		this.layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		this.mOrderProductList=orderProductList;
 	}
 	@Override
 	public int getCount() {
@@ -109,4 +109,9 @@ public class DispenseOrderListAdapter extends BaseAdapter {
 		public TextView  orderPriceText;
 		public ImageView orderDeleteIcon;
 	}
+
+	public void setmOrderProductList(List<OrderProduct> mOrderProductList) {
+		this.mOrderProductList = mOrderProductList;
+	}
+
 }

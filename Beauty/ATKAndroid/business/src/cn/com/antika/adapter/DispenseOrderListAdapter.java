@@ -109,4 +109,8 @@ public class DispenseOrderListAdapter extends BaseAdapter {
 		public TextView  orderPriceText;
 		public ImageView orderDeleteIcon;
 	}
+
+	public void setmOrderProductList(List<OrderProduct> mOrderProductList) {
+		this.mOrderProductList = mOrderProductList;
+	}
 }
