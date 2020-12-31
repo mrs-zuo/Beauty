@@ -660,6 +660,8 @@
                 android:layout_marginRight="5dip"
                 android:background="@null"
                 android:gravity="right"
+                android:hint="@string/payment_action_order_use_integral_edit"
+                android:selectAllOnFocus="true"
                 android:inputType="numberDecimal"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size" />
@@ -693,6 +695,8 @@
                 android:layout_marginRight="5dip"
                 android:background="@null"
                 android:gravity="right"
+                android:hint="@string/payment_action_order_use_cash_coupon_edit"
+                android:selectAllOnFocus="true"
                 android:inputType="numberDecimal"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size" />

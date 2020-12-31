@@ -67,13 +67,15 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 	private TextView paidOrderCountText;
 	private TextView paidOrderTotalPriceText;
 	private EditText shouldPayAmountEdit;
+	// 现金
 	private EditText thisTimePayAmountCash;
+	// 银行卡
 	private EditText thisTimePayAmountBank;
-	//微信支付文本框
+	// 微信支付
 	private EditText thisTimePayWeiXin;
-	//支付宝支付文本框
+	// 支付宝支付
 	private EditText thisTimePayAli;
-	//消费贷款
+	// 消费贷款
 	private EditText thisTimePayLoan;
 	//第三方付款
 	private EditText thisTimePayFromThird;
@@ -110,7 +112,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 	private TextView mTvBenefitPerson;
 	private PackageUpdateUtil packageUpdateUtil;
 	private int      cardID,cardChildIndex;
-	private String   mSalesPersonName,productCode,cardName;
+	private String   productCode,cardName;
 	private Button paymentActionOrderDown,paymentActionOrderReturn,paymentActionOrderUp,paymentActionOrderPayOrder;
 	private LinearLayout paymentActionOrderChildLinearLayout,paymentActionOrderChildItemLinearLayout,ordersalespercentagelinearlayout,benefitpersonlinearlayout;
 	private RelativeLayout thisTimePayAmountRelativeLayout,ordersalespercentagelayout,benefitsharepricelayout,benefitpersonlayout;
@@ -148,6 +150,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 	
 	private Button paymentActionOrderCardSurplusButton,paymentActionOrderPointAndCouponSurplusButton;
 	private TextView paymentActionOrderIntegralText24;
+	// 现金券
 	private TextView paymentActionOrderCashCouponText24;
 	private TextView paymentActionShouldPayAmountCurrencyText,paymentActionOrderCardSpinnerCurrencyText;
 	private EditText paymentActionOrderIntegralEdit22,paymentActionOrderCashCouponEdit22;
@@ -158,7 +161,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 	private String cashCouponRate="0";
 	private double useIntegralpaidOrderTotalPrice=0;
 	private double useCashCouponpaidOrderTotalPrice=0;
+	// 赠送积分
 	private EditText thisTimeGivePoint;
+	// 赠送现金券
 	private EditText thisTimeGiveCashCoupon;
 	private String updateTotalSalePriceUserCardNo;
 	private int UpdateTotalSalePriceUserCardId;
@@ -171,13 +176,10 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 	private String[] ecardNameArray;
 	private View thisTimeGiveView,thisTimePointView,paymentActionOrderCardSpinnerView,thisTimePayAmountView;
 	private RelativeLayout paymentActionOrderCardRelativelayout;
-	private String mSalesID;
 	private double promotionPrice;
     private int marketingPolicy;
-    private int quantity;
-    private int shareFlg = 0, namegetFlg=0, cnt_i, sharetowriterow,changeFlg=0;
-	private String sharetowritepercent;
-	private EditText  benefitPersonPercentText,thisBenefitSharePercent;
+    private int quantity;    private int shareFlg = 0, namegetFlg=0, cnt_i;
+	private EditText  benefitPersonPercentText;
     //业绩参与人列表  可以修改其业绩参与的比例
 	private View benefitsharepriceview,ordersalespercentageview,benefitpersonview;
 	private TextView benefitshareprice;
@@ -189,8 +191,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
     private String salesConsultantName;
     private String commissionRate="0";
     private List<SalesConsultantRate> salesConsultantRateList;
-    private int consultantcnt=0,totalcnt=0;
-    private double consultantpercent=0,personpercen=0;
+    private double personpercen=0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -206,12 +207,13 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		isComissionCalc=userinfoApplication.getAccountInfo().isComissionCalc();
 
 		payOrderInfo = (OrderInfo) getIntent().getSerializableExtra("orderInfo");
-		userRole = getIntent().getIntExtra("userRole",Constant.USER_ROLE_CUSTOMER);
+		userRole = getIntent().getIntExtra("userRole", Constant.USER_ROLE_CUSTOMER);
 		customerID=getIntent().getIntExtra("CUSTOMER_ID",0);
 		orderList=(ArrayList<OrderInfo>) getIntent().getSerializableExtra("paidOrderList");
 		ecardInfoList=new ArrayList<EcardInfo>();
 		cardList=new ArrayList<EcardInfo>();
 		cardDiscountList=new ArrayList<EcardInfo>();
+		initComponent();
 		// 去服务器获得支付信息 本次应该支付金额 是否允许e卡支付 是否允许分次支付
 		getPaymentInfoByWebService();
 	}
@@ -312,7 +314,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				String paymentMessage = (String) msg.obj;
 				DialogUtil.createMakeSureDialog(paymentActionActivity, "提示信息", paymentMessage);
 			} else if (msg.what == 3) {
-				DialogUtil.createShortDialog(paymentActionActivity, "您的网络貌似不给力，请重试！");
+				DialogUtil.createShortDialog(paymentActionActivity, "网络异常，请重试！");
 			} else if (msg.what == 4) {
 				// 支付信息获取成功之后 去获得顾客的e卡余额信息
 				if (paymentActionActivity.orderList.size() > 1) {
@@ -408,7 +410,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		}
 	}
 
-	private void initView(){
+	private void initComponent() {
 		//主
 		layoutInflater = LayoutInflater.from(this);
 		paidOrderCountText = (TextView) findViewById(R.id.payment_action_order_count);
@@ -424,7 +426,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		paymentActionOrderChildLinearLayout=(LinearLayout) findViewById(R.id.payment_action_order_child_linearlayout);
 		ordersalespercentagelinearlayout=(LinearLayout) findViewById(R.id.order_sales_percentage_linearlayout);
 		benefitpersonlinearlayout=(LinearLayout) findViewById(R.id.benefit_person_linearlayout);
-		
+
 		addCardSpinner=(Spinner)findViewById(R.id.payment_action_order_card_spinner);
 		thisTimePayAmountRelativeLayout=(RelativeLayout) findViewById(R.id.this_time_pay_amount_relativeLayout);
 		thisTimePayAmount=(TextView) findViewById(R.id.this_time_pay_amount);
@@ -443,7 +445,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		benefitsharepriceview=findViewById(R.id.benefit_share_price_view);
 		ordersalespercentageview=findViewById(R.id.order_sales_percentage_view);
 		benefitpersonview=findViewById(R.id.benefit_person_view);
-		
+
 		//子
 		paymentdetailbenefitpersonlistitem=layoutInflater.inflate(R.xml.payment_detail_benefit_person_list_item,null);
 		benefitpersonlistitem=layoutInflater.inflate(R.xml.benefit_person_list_item,null);
@@ -454,43 +456,68 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		paymentActionOrderOtherSelect=(ImageButton)paymentActionOrderChildView.findViewById(R.id.payment_action_order_other_select);
 		paymentActionOrderIntegralSelect=(ImageButton)paymentActionOrderChildView.findViewById(R.id.payment_action_order_integral_select);
 		paymentActionOrderCashCouponSelect=(ImageButton)paymentActionOrderChildView.findViewById(R.id.payment_action_order_cash_coupon_select);
-		
+
 		//选择微信支付
 		paymentActionOrderWeiXinSelect=(ImageButton)paymentActionOrderChildView.findViewById(R.id.payment_action_order_weixin_select);
 		//选择支付宝支付
 		paymentActionOrderAliPaySelect=(ImageButton)paymentActionOrderChildView.findViewById(R.id.payment_action_order_alipay_select);
 		paymentActionOrderLoanPaySelect=(ImageButton)paymentActionOrderChildView.findViewById(R.id.payment_action_order_loan_select);
 		paymentActionOrderFromThirdPaySelect=(ImageButton)paymentActionOrderChildView.findViewById(R.id.payment_action_order_from_third_select);
-		
+
 		paymentActionOrderCardSurplusButton=(Button)paymentActionOrderChildView.findViewById(R.id.payment_action_order_card_surplus_button);
 		paymentActionOrderPointAndCouponSurplusButton=(Button)paymentActionOrderChildView.findViewById(R.id.payment_action_order_point_cashcoupon_surplus_button);
+		// 积分
 		paymentActionOrderIntegralText24=(TextView)paymentActionOrderChildView.findViewById(R.id.payment_action_order_integral_text24);
+		paymentActionOrderIntegralText24.setSelectAllOnFocus(true);
+		//现金券
 		paymentActionOrderCashCouponText24=(TextView)paymentActionOrderChildView.findViewById(R.id.payment_action_order_cash_coupon_text24);
+		paymentActionOrderCashCouponText24.setSelectAllOnFocus(true);
+		// 赠送积分
 		thisTimeGivePoint=(EditText)paymentActionOrderChildView.findViewById(R.id.this_time_give_point);
+		thisTimeGivePoint.setSelectAllOnFocus(true);
+		// 赠送现金券
 		thisTimeGiveCashCoupon=(EditText)paymentActionOrderChildView.findViewById(R.id.this_time_give_cash_coupon);
+		thisTimeGiveCashCoupon.setSelectAllOnFocus(true);
+		// 使用积分edit
 		paymentActionOrderIntegralEdit22=(EditText)paymentActionOrderChildView.findViewById(R.id.payment_action_order_integral_edit22);
+		paymentActionOrderIntegralEdit22.setSelectAllOnFocus(true);
+		// 使用现金券
 		paymentActionOrderCashCouponEdit22=(EditText)paymentActionOrderChildView.findViewById(R.id.payment_action_order_cash_coupon_edit22);
-		
+		paymentActionOrderCashCouponEdit22.setSelectAllOnFocus(true);
+		// 现金
 		thisTimePayAmountCashAll = (Button) paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_cash_all);
+		// 银行卡
 		thisTimePayAmountCardAll = (Button) paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_bank_all);
+		// 其他
 		thisPaymentOtherAll = (Button) paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_other_all);
 		//全额使用微信支付的按钮
 		thisTimePayAmountWeiXinAll=(Button)paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_wexin_all);
 		//全额使用支付宝的按钮
 		thisTimePayAmountAliAll=(Button)paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_alipay_all);
+		// 消费贷款
 		thisTimePayAmountLoanAll=(Button)paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_loan_all);
+		// 第三方付款
 		thisTimePayAmountFromThirdAll=(Button)paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_from_third_all);
-		
+		// 现金
 		thisTimePayAmountCash = (EditText) paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_cash);
+		thisTimePayAmountCash.setSelectAllOnFocus(true);
+		// 银行卡
 		thisTimePayAmountBank = (EditText) paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_bank);
+		thisTimePayAmountBank.setSelectAllOnFocus(true);
+		// 其他
 		thisTimePaymentOtherAmountText = (EditText) paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_other);
+		thisTimePaymentOtherAmountText.setSelectAllOnFocus(true);
 		//微信支付输入文本框
 		thisTimePayWeiXin=(EditText) paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_weixin);
+		thisTimePayWeiXin.setSelectAllOnFocus(true);
 		//支付宝支付输入文本框
 		thisTimePayAli=(EditText)paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_alipay);
+		thisTimePayAli.setSelectAllOnFocus(true);
 		thisTimePayLoan=(EditText)paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_loan);
+		thisTimePayLoan.setSelectAllOnFocus(true);
 		thisTimePayFromThird=(EditText)paymentActionOrderChildView.findViewById(R.id.this_time_pay_amount_from_third);
-		
+		thisTimePayFromThird.setSelectAllOnFocus(true);
+
 		EditText[] editText=new EditText[]{thisTimeGivePoint,thisTimeGiveCashCoupon,paymentActionOrderIntegralEdit22,paymentActionOrderCashCouponEdit22,thisTimePayAmountCash,thisTimePayAmountBank,thisTimePaymentOtherAmountText,thisTimePayWeiXin,thisTimePayAli,thisTimePayLoan,thisTimePayFromThird,shouldPayAmountEdit};
 		NumberFormatUtil.setPricePointArray(editText,2);
 		paymentActionOrderPresent=(RelativeLayout)paymentActionOrderChildView.findViewById(R.id.payment_action_order_present);
@@ -498,7 +525,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		thisTimePointView=paymentActionOrderChildView.findViewById(R.id.this_time_point_view);
 		thisTimeGivePointRelativelayout=(RelativeLayout)paymentActionOrderChildView.findViewById(R.id.this_time_give_point_relativelayout);
 		thisTimeGiveCashCouponRelativelayout=(RelativeLayout)paymentActionOrderChildView.findViewById(R.id.this_time_give_cash_coupon_relativelayout);
-		//thisBenefitSharePercent=(EditText) findViewById(R.id.benefit_share_percent);
+	}
+
+	private void initView(){
 		String advanced=userinfoApplication.getAccountInfo().getModuleInUse();
 		
 		if(advanced.contains("|5|") || advanced.contains("|6|")){
@@ -683,6 +712,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				final ImageButton selectPaymentActionOrderCardChildButton=(ImageButton)paymentActionOrderChildItemView.findViewById(R.id.select_payment_action_order_card_child_button);
 				TextView paymentActionOrderCardChildText=(TextView)paymentActionOrderChildItemView.findViewById(R.id.payment_action_order_card_child_text);
 				final EditText paymentActionOrderCardChildEdit=(EditText)paymentActionOrderChildItemView.findViewById(R.id.payment_action_order_card_child_edit);
+				paymentActionOrderCardChildEdit.setSelectAllOnFocus(true);
 				NumberFormatUtil.setPricePoint(paymentActionOrderCardChildEdit,2);
 				Button thisTimePayAmountCardChildAll=(Button)paymentActionOrderChildItemView.findViewById(R.id.this_time_pay_amount_card_child_all);
 				paymentActionOrderCardChildText.setText(cardList.get(i).getUserEcardName());
@@ -717,6 +747,8 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 					@Override
 					public void onClick(View v) {								
 						cardChildIndex=cardChildIndex1;
+						initEditText();
+						/*
 						thisTimePayAmountCash.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 						thisTimePayAmountBank.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 						thisTimePaymentOtherAmountText.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));								
@@ -724,6 +756,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 						paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 						paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 						paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+						*/
 						for(int j=0;j<cardListSize;j++){
 							final String cardChild1="cardChild"+j;
 								View view=paymentActionOrderChildItemLinearLayout.findViewWithTag(j);
@@ -817,18 +850,20 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		findViewById(R.id.payment_benefit_person).setOnClickListener(this);
 		findViewById(R.id.payment_benefit_textv).setOnClickListener(this);
 		findViewById(R.id.payment_benefit_share_btn).setOnClickListener(this);
-		//findViewById(R.id.benefit_person_layout).setOnClickListener(this);
 		// 现金全额支付
 		thisTimePayAmountCashAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				initEditText();
 				thisTimePayAmountCash.setText(NumberFormatUtil.currencyFormat(shouldPayAmountEdit.getText().toString()));
+				/*
 				thisTimePayAmountBank.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePaymentOtherAmountText.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+				*/
 				selectButton.clear();
 				initSelectButton();
 				if(cardListSize>0){
@@ -859,13 +894,16 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		thisTimePayAmountCardAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				initEditText();
 				thisTimePayAmountBank.setText(NumberFormatUtil.currencyFormat(shouldPayAmountEdit.getText().toString()));
+				/*
 				thisTimePayAmountCash.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePaymentOtherAmountText.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+				*/
 				selectButton.clear();
 				initSelectButton();
 				if(cardListSize>0){
@@ -900,13 +938,16 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		thisPaymentOtherAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				initEditText();
 				thisTimePaymentOtherAmountText.setText(NumberFormatUtil.currencyFormat(shouldPayAmountEdit.getText().toString()));
+				/*
 				thisTimePayAmountCash.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayAmountBank.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+				*/
 				selectButton.clear();
 				initSelectButton();
 				if(cardListSize>0){
@@ -939,7 +980,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		thisTimePayAmountWeiXinAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				initEditText();
 				thisTimePayWeiXin.setText(NumberFormatUtil.currencyFormat(shouldPayAmountEdit.getText().toString()));
+				/*
 				thisTimePaymentOtherAmountText.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayAmountCash.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayAmountBank.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
@@ -947,6 +990,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+				*/
 				selectButton.clear();
 				initSelectButton();
 				if(cardListSize>0){
@@ -978,7 +1022,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		thisTimePayAmountAliAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				initEditText();
 				thisTimePayAli.setText(NumberFormatUtil.currencyFormat(shouldPayAmountEdit.getText().toString()));
+				/*
 				thisTimePayWeiXin.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePaymentOtherAmountText.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayAmountCash.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
@@ -987,6 +1033,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+				*/
 				selectButton.clear();
 				initSelectButton();
 				if(cardListSize>0){
@@ -1023,7 +1070,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		thisTimePayAmountLoanAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				initEditText();
 				thisTimePayLoan.setText(NumberFormatUtil.currencyFormat(shouldPayAmountEdit.getText().toString()));
+				/*
 				thisTimePayFromThird.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayAli.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayWeiXin.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
@@ -1034,6 +1083,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+				*/
 				selectButton.clear();
 				initSelectButton();
 				if(cardListSize>0){
@@ -1065,7 +1115,9 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		thisTimePayAmountFromThirdAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				initEditText();
 				thisTimePayFromThird.setText(NumberFormatUtil.currencyFormat(shouldPayAmountEdit.getText().toString()));
+				/*
 				thisTimePayLoan.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayAli.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				thisTimePayWeiXin.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
@@ -1076,6 +1128,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 				paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+				*/
 				selectButton.clear();
 				initSelectButton();
 				if(cardListSize>0){
@@ -1204,16 +1257,12 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		});
 		payFromOrderDetail = getIntent().getBooleanExtra("payFromOrderDetail",false);
 		//设置销售顾问业绩比例
-		//setsalesConsultantInfo(salesConsultantRateList);
 		if(salesConsultantRateList!=null&&salesConsultantRateList.size()>0) {
 			setsalesConsultantInfo(salesConsultantRateList);
 	
 		}else {
 			benefitsharepriceview.setVisibility(View.VISIBLE);
-			//totalcnt=paymentActionOrderTablelayout.getChildCount();
 		}
-		//设置默认的业绩参与人
-		//setBenefitPersonInfo(mSalesID,mSalesPersonName);
 		if(orderListSize>1 || orderList.get(0).getPaymentStatus()!=1){
 			if(isComissionCalc) {
 				ordersalespercentageview.setVisibility(View.VISIBLE);
@@ -1474,25 +1523,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 							paidOrderTotalPrice = Double.valueOf(data.getString("TotalOrigPrice"));
 							orderShouldPayAmountTotal = Double.valueOf(data.getString("UnPaidPrice"));
 							orderTotalCalcPrice = Double.valueOf(data.getString("TotalCalcPrice"));
-							//默认业绩参与人
-							/*String salesID="";
-							String salesPersonName="";
-							if(data.has("SalesList") && !data.isNull("SalesList")){
-								JSONArray salesIDJsonArray=new JSONArray();
-								for(int j=0;j<data.getJSONArray("SalesList").length();j++){
-									JSONObject obj=data.getJSONArray("SalesList").getJSONObject(j);
-									salesIDJsonArray.put(obj.getInt("SalesPersonID"));
-									if(j==data.getJSONArray("SalesList").length()-1){
-										salesPersonName+=obj.getString("SalesName");
-									}
-									else{
-										salesPersonName+=obj.getString("SalesName")+"、";
-									}
-								}
-								salesID=salesIDJsonArray.toString();
-							}
-							mSalesID=salesID;
-							mSalesPersonName=salesPersonName;*/
 							namegetFlg = 1;
 							if(data.has("CardID"))
 								cardID=data.getInt("CardID");
@@ -1746,9 +1776,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 			thisTimePayAmountView.setVisibility(View.VISIBLE);
 			if(orderList.get(0).getPaymentStatus()==1){
 				if( shouldPayAmountEdit.getText().toString()!= null && !(("").equals(shouldPayAmountEdit.getText().toString()))&& Double.valueOf(shouldPayAmountEdit.getText().toString()) > 0){
-					//if(UpdateTotalSalePriceUserCardId!=cardID || Double.compare(Double.valueOf(shouldPayAmountEdit.getText().toString()), orderShouldPayAmountTotal)!=0){
-					    UpdateTotalSalePrice();
-					//}
+					UpdateTotalSalePrice();
 					shouldPayAmountEdit.setText(shouldPayAmountEdit.getText().toString());
 					paymentActionOrderChildLinearLayout.removeView(paymentActionOrderChildView);
 					paymentActionOrderChildLinearLayout.addView(paymentActionOrderChildView);
@@ -2013,15 +2041,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				}
 			break;
 		//FIXME
-/*		case R.id.benefit_person_layout:
-			Intent chooseBenefitPersonIntent = new Intent(this,ChoosePersonActivity.class);
-			chooseBenefitPersonIntent.putExtra("personRole", "Doctor");
-			chooseBenefitPersonIntent.putExtra("checkModel", "Multi");
-			chooseBenefitPersonIntent.putExtra("setBenefitPerson",true);
-			chooseBenefitPersonIntent.putExtra("selectPersonIDs",mBenefitPersonIDs);
-			chooseBenefitPersonIntent.putExtra("customerID",customerID);
-			startActivityForResult(chooseBenefitPersonIntent, 101);
-			break;*/
 		case R.id.payment_benefit_person:
 			Intent chooseBenefitPersonIntent2 = new Intent(this,ChoosePersonActivity.class);
 			chooseBenefitPersonIntent2.putExtra("personRole", "Doctor");
@@ -2091,7 +2110,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		dialog.setCancelable(false);
 	}		
 	
-	
 	private void submitPaymentWhenpersonIsoverflow() {
 		Dialog dialog = new AlertDialog.Builder(this,R.style.CustomerAlertDialog)
 				.setTitle(getString(R.string.delete_dialog_title))
@@ -2119,7 +2137,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		dialog.show();
 		dialog.setCancelable(false);
 	}
-
 	private void setsalesConsultantInfo( List<SalesConsultantRate> rateList){				
 		if(rateList!=null && rateList.size()>0){		
 			for(cnt_i=0;cnt_i<rateList.size();cnt_i++){
@@ -2134,7 +2151,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 		}
 	}
 	
-	//FIXME
+	//FIXME 
 	private void setBenefitPersonInfo(String id, String name){
 		if (namegetFlg == 1) {
 			mBenefitPersonIDs = id;
@@ -2160,7 +2177,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 								if (shareFlg==1) {
 									String[] nameArray=mBenefitPersonNames.split("、");
 									benefitpersonlinearlayout.removeAllViews();
-									//paymentActionOrderTablelayout.removeViews(totalcnt,paymentActionOrderTablelayout.getChildCount()-totalcnt);
 									for(int j=0;j<nameArray.length;j++){
 										View benefitPersonItemView=layoutInflater.inflate(R.xml.benefit_person_list_item,null);
 										TextView  benefitPersonNameText=(TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
@@ -2378,7 +2394,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
 				thirdPartPayIntent.putExtra("orderSize",orderList.size());
 				thirdPartPayIntent.putExtra("paymentMode",paymentMode);
 				thirdPartPayIntent.putExtra("AverageFlag",shareFlg);
-				//thirdPartPayIntent.putExtra("BranchProfitRate",Double.valueOf(thisBenefitSharePercent.getText().toString())/100);
 			    if (orderList.size() == 1) {
 					Bundle bundle = new Bundle();
 					OrderInfo orderInfo = new OrderInfo();
@@ -2882,5 +2897,30 @@ private void submitStrParam(final JSONArray paidOrderIDsArray,final String payme
 			progressDialog.dismiss();
 			progressDialog = null;
 		}
+	}
+
+	private void initEditText(){
+		// 消费贷款
+		thisTimePayLoan.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 第三方付款
+		thisTimePayFromThird.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 支付宝支付
+		thisTimePayAli.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 微信支付
+		thisTimePayWeiXin.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 其他支付
+		thisTimePaymentOtherAmountText.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 现金
+		thisTimePayAmountCash.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 银行卡
+		thisTimePayAmountBank.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 积分
+		paymentActionOrderIntegralText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 现金券
+		paymentActionOrderCashCouponText24.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 使用现金券
+		paymentActionOrderCashCouponEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
+		// 使用积分edit
+		paymentActionOrderIntegralEdit22.setText(NumberFormatUtil.currencyFormat(String.valueOf(0)));
 	}
 }

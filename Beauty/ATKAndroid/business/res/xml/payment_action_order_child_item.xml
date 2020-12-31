@@ -34,6 +34,7 @@
             android:background="@null"
             android:gravity="right"
             android:hint="@string/please_input_pay_amount"
+            android:selectAllOnFocus="true"
             android:inputType="numberDecimal"
             android:maxLength="12"
             android:textColor="@color/gray"

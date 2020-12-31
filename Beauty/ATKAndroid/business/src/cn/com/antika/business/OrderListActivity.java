@@ -369,6 +369,9 @@ public class OrderListActivity extends BaseActivity implements OnClickListener,O
 	 */
 	@Override
 	public void onRefresh() {
+		// 上一次取数据任务还没有完成，不在调用后台
+		if (isRefresh)
+			return;
 		pageIndex = pageIndex - 1;
 		if (pageIndex >= 1 && pageIndex <= pageCount) {
 			refreshList(3);
@@ -383,6 +386,9 @@ public class OrderListActivity extends BaseActivity implements OnClickListener,O
 	 */
 	@Override
 	public void onLoadMore() {
+		// 上一次取数据任务还没有完成，不在调用后台
+		if (isRefresh)
+			return;
 		pageIndex = pageIndex + 1;
 		if (pageIndex > pageCount || orderInfoList.size() < 10) {
 			DialogUtil.createShortDialog(this, "没有更早的订单！");

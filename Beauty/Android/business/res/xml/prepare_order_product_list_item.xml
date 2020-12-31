@@ -395,6 +395,7 @@
             android:background="@null"
             android:gravity="right"
             android:hint="0"
+            android:selectAllOnFocus="true"
             android:inputType="numberDecimal"
             android:maxWidth="200dip"
             android:textColor="@color/gray"

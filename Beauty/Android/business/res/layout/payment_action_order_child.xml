@@ -98,6 +98,7 @@
                         android:layout_centerVertical="true"
                         android:background="@null"
                         android:hint="@string/payment_action_order_use_integral_edit"
+                        android:selectAllOnFocus="true"
                         android:inputType="numberDecimal"
                         android:textColor="@color/gray"
                         android:textSize="@dimen/text_size" />
@@ -161,6 +162,7 @@
                         android:layout_centerVertical="true"
                         android:background="@null"
                         android:hint="@string/payment_action_order_use_cash_coupon_edit"
+                        android:selectAllOnFocus="true"
                         android:inputType="numberDecimal"
                         android:textColor="@color/gray"
                         android:textSize="@dimen/text_size" />
@@ -234,6 +236,7 @@
                 android:hint="@string/please_input_pay_amount"
                 android:inputType="numberDecimal"
                 android:maxLength="12"
+                android:selectAllOnFocus="true"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size" />
 
@@ -287,6 +290,7 @@
                 android:background="@null"
                 android:gravity="right"
                 android:hint="@string/please_input_pay_amount"
+                android:selectAllOnFocus="true"
                 android:inputType="numberDecimal"
                 android:maxLength="12"
                 android:textColor="@color/gray"
@@ -348,6 +352,7 @@
                 android:hint="@string/please_input_pay_amount"
                 android:inputType="numberDecimal"
                 android:maxLength="12"
+                android:selectAllOnFocus="true"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_size" />
 
@@ -405,6 +410,7 @@
                 android:background="@null"
                 android:gravity="right"
                 android:hint="@string/please_input_pay_amount"
+                android:selectAllOnFocus="true"
                 android:inputType="numberDecimal"
                 android:maxLength="12"
                 android:textColor="@color/gray"
@@ -464,6 +470,7 @@
                 android:background="@null"
                 android:gravity="right"
                 android:hint="@string/please_input_pay_amount"
+                android:selectAllOnFocus="true"
                 android:inputType="numberDecimal"
                 android:maxLength="12"
                 android:textColor="@color/gray"
@@ -537,6 +544,7 @@
                     android:background="@null"
                     android:gravity="right"
                     android:hint="@string/please_input_pay_amount"
+                    android:selectAllOnFocus="true"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:textColor="@color/gray"
@@ -597,6 +605,7 @@
                     android:background="@null"
                     android:gravity="right"
                     android:hint="@string/please_input_pay_amount"
+                    android:selectAllOnFocus="true"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:textColor="@color/gray"
