@@ -90,17 +90,19 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
     private String searchKeyWord;
     private SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
     private Integer pageIndexRollBack;
-
     // 加载更多
     private View mFooter;
     private View mFooterParent;
     private TextView mFooterText;
     private View mHeader;
     private View mHeaderParent;
+    // 需要刷新标志
+    private boolean mustRefreshFlg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.mustRefreshFlg = false;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_customer);
         customerTitleText = (TextView) findViewById(R.id.customer_title_text);
@@ -676,11 +678,16 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             // 上一页
                             loadData(false);
                         } else {
-                            // 刷新数据
-                            mHeader.setVisibility(View.VISIBLE);
-                            refreshListViewWithWebService.refreshing();
-                            /*customerAdvancedCondition.setPageIndex(1);
-                            requestWebService(true);*/
+                            if (mustRefreshFlg) {
+                                // 刷新数据
+                                mHeader.setVisibility(View.VISIBLE);
+                                refreshListViewWithWebService.refreshing();
+                                mustRefreshFlg = false;
+                                /*customerAdvancedCondition.setPageIndex(1);
+                                requestWebService(true);*/
+                            } else {
+                                mustRefreshFlg = true;
+                            }
                         }
                     } else if (view.getLastVisiblePosition() == (view.getCount() - 1)) {
                         // 底部
