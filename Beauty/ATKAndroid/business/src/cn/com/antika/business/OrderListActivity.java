@@ -439,7 +439,7 @@ public class OrderListActivity extends BaseActivity implements OnClickListener, 
             case R.id.order_search_btn:
                 Intent searchIntent = new Intent(this, OrderSearchActivity.class);
                 if (userRole == Constant.USER_ROLE_BUSINESS)
-                    getParent().startActivityForResult(searchIntent, 2);
+                    getParent().startActivityForResult(searchIntent, 1);
                 else
                     startActivityForResult(searchIntent, 2);
                 break;
