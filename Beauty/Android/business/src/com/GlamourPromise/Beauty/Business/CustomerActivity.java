@@ -38,8 +38,8 @@ import com.GlamourPromise.Beauty.util.FileCache;
 import com.GlamourPromise.Beauty.util.GenerateMenu;
 import com.GlamourPromise.Beauty.util.HashList;
 import com.GlamourPromise.Beauty.util.PackageUpdateUtil;
+import com.GlamourPromise.Beauty.util.ProgressDialogUtil;
 import com.GlamourPromise.Beauty.view.AssortView;
-import com.GlamourPromise.Beauty.view.AssortView.OnTouchAssortListener;
 import com.GlamourPromise.Beauty.view.BusinessLeftImageButton;
 import com.GlamourPromise.Beauty.view.BusinessRightImageButton;
 import com.GlamourPromise.Beauty.webservice.WebServiceUtil;
@@ -248,9 +248,9 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 }
             } else if (msg.what == 0) {
                 // DialogUtil.createMakeSureDialog(customerActivity, "温馨提示", "您的网络貌似不给力，请检查网络设置");
-                DialogUtil.createShortDialog(customerActivity, "网络异常，请重试");
+                DialogUtil.createShortDialog(customerActivity, "您的网络貌似不给力，请重试");
             } else if (msg.what == 2)
-                DialogUtil.createShortDialog(customerActivity, "网络异常，请重试");
+                DialogUtil.createShortDialog(customerActivity, "您的网络貌似不给力，请重试");
             else if (msg.what == Constant.LOGIN_ERROR) {
                 DialogUtil.createShortDialog(customerActivity, customerActivity.getString(R.string.login_error_message));
                 UserInfoApplication.getInstance().exitForLogin(customerActivity);
@@ -275,6 +275,8 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(customerActivity, "服务器异常，请重试");
             }
             if (customerActivity.requestWebServiceThread != null) {
                 customerActivity.requestWebServiceThread.interrupt();
@@ -390,7 +392,8 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
         try {
             CustomerTypeFileterJson.put(customerTypeFileterID.toString(), customerAdvancedCondition.getCustomerType());
         } catch (JSONException e) {
-
+            mHandler.sendEmptyMessage(99);
+            return;
         }
         accountInfoSharePreferences.edit().putString("CustomerTypeFilter", CustomerTypeFileterJson.toString()).commit();
     }
@@ -398,10 +401,11 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
     protected void requestWebService(boolean isNeedProgressDialog) {
         Log.i("CustomerActivity", "获取数据开始：" + customerAdvancedCondition.getPageIndex() + ":" + sf.format(new Date()));
         if (isNeedProgressDialog) {
-            progressDialog = new ProgressDialog(this, R.style.CustomerProgressDialog);
+            /*progressDialog = new ProgressDialog(this, R.style.CustomerProgressDialog);
             progressDialog.setMessage(getString(R.string.please_wait));
             progressDialog.setCancelable(false);
-            progressDialog.show();
+            progressDialog.show();*/
+            progressDialog = ProgressDialogUtil.createProgressDialog(this);
             if (customerAdvancedCondition.getCustomerType() == Constant.CUSTOMER_FILTER_TYPE_MY) {
                 customerTitleText.setText(getString(R.string.my_customer_btn));
             } else if (customerAdvancedCondition.getCustomerType() == Constant.CUSTOMER_FILTER_TYPE_COMPANY) {
@@ -460,7 +464,8 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                     }
 
                 } catch (JSONException e) {
-
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, customerListJsonParam.toString(), userinfoApplication);
                 JSONObject resultJson = null;
@@ -468,7 +473,9 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                     resultJson = new JSONObject(serverRequestResult);
                 } catch (JSONException e1) {
                     // TODO Auto-generated catch block
-                    e1.printStackTrace();
+                    // e1.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 if (serverRequestResult == null || serverRequestResult.equals(""))
                     mHandler.sendEmptyMessage(2);
@@ -478,7 +485,9 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                         code = resultJson.getInt("Code");
                     } catch (JSONException e1) {
                         // TODO Auto-generated catch block
-                        e1.printStackTrace();
+                        // e1.printStackTrace();
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         JSONArray customerListJsonArray = null;
@@ -487,14 +496,18 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             customerCnt = resultJson.getInt("DataCnt");
                         } catch (JSONException e1) {
                             // TODO Auto-generated catch block
-                            e1.printStackTrace();
+                            // e1.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         // 查询数据（若分页则返回分页数据）
                         try {
                             customerListJsonArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e1) {
                             // TODO Auto-generated catch block
-                            e1.printStackTrace();
+                            // e1.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         for (int i = 0; i < customerListJsonArray.length(); i++) {
                             Customer customer = new Customer();
@@ -534,6 +547,8 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                                     cometime = customerJson.getString("ComeTime");
                                 }
                             } catch (JSONException e) {
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                             customer.setCustomerId(customerId);
                             customer.setCustomerName(customerName);
