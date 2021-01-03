@@ -49,6 +49,7 @@ import cn.com.antika.util.FileCache;
 import cn.com.antika.util.GenerateMenu;
 import cn.com.antika.util.HashList;
 import cn.com.antika.util.PackageUpdateUtil;
+import cn.com.antika.util.ProgressDialogUtil;
 import cn.com.antika.view.AssortView;
 import cn.com.antika.view.BusinessLeftImageButton;
 import cn.com.antika.view.BusinessRightImageButton;
