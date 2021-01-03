@@ -86,6 +86,8 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreateView(inflater, container, savedInstanceState);
+        if (mHandler == null)
+            mHandler = new DispenseFavoriteListFragmentHandler(this);
         View dispenseFavoriteListView = inflater.inflate(R.xml.dispense_favorite_list_fragment_layout, container, false);
         favoriteListView = (ListView) dispenseFavoriteListView.findViewById(R.id.favorite_listview);
         favoriteListView.setOnItemClickListener(this);
@@ -141,10 +143,6 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
 
         @Override
         public void handleMessage(Message msg) {
-            if (dispenseFavoriteListFragment == null || dispenseFavoriteListFragment.getActivity() == null) {
-                DialogUtil.createShortDialog(dispenseFavoriteListFragment.getActivity(), "网络异常，请重试");
-                return;
-            }
             switch (msg.what) {
                 case 1:
                     dispenseFavoriteListFragment.favoriteListAdapter.notifyDataSetChanged();
