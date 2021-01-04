@@ -397,7 +397,8 @@ namespace WebAPI.DAL
                     // 电话
                     if (!string.IsNullOrWhiteSpace(customerTel))
                     {
-                        strSql.Append(" and T4.LoginMobile like '%' + @CustomerTel + '%'");
+                        //strSql.Append(" and T4.LoginMobile like '%' + @CustomerTel + '%'");
+                        strSql.Append(" and ((T4.LoginMobile like '%' + @CustomerTel + '%') or exists(select 1 from phone where userid = t1.userid and phonenumber like '%' + @CustomerTel + '%'))"); ;
                     }
 
 
