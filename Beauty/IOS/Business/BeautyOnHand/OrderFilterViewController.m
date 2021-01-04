@@ -96,9 +96,9 @@
     // ---TableView
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.showsHorizontalScrollIndicator = NO;
-    _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.allowsSelection = NO;
+    // _tableView.showsHorizontalScrollIndicator = YES;
+    // _tableView.showsVerticalScrollIndicator = YES;
+    // _tableView.allowsSelection = YES;
     _tableView.autoresizingMask = UIViewAutoresizingNone;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.backgroundView = nil;
