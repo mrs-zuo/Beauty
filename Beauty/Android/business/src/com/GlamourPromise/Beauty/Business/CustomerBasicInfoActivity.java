@@ -664,8 +664,15 @@ public class CustomerBasicInfoActivity extends BaseActivity implements
                             if (customerBasicJson.has("SourceTypeName") && !customerBasicJson.isNull("SourceTypeName"))
                                 sourceType.setSourceTypeName(customerBasicJson.getString("SourceTypeName"));
                             JSONArray salesJsonArray = null;
-                            if (customerBasicJson.has("SalesList"))
-                                salesJsonArray = customerBasicJson.getJSONArray("SalesList");
+                            if (customerBasicJson.has("SalesList")) {
+                                // 顾客没有销售顾问的问题对应
+                                try {
+                                    salesJsonArray = customerBasicJson.getJSONArray("SalesList");
+                                } catch (Exception e) {
+                                    // 顾客没有销售顾问
+                                    salesJsonArray = null;
+                                }
+                            }
                             if (salesJsonArray != null) {
                                 for (int j = 0; j < salesJsonArray.length(); j++) {
                                     if (j == salesJsonArray.length() - 1)

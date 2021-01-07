@@ -28,9 +28,9 @@ namespace WebAPI.BLL
         }
         #endregion
 
-        public List<Customer_Model> GetCustomerList(int branchId, int companyId)
+        public List<Customer_Model> GetCustomerList(int branchId, int companyId, int accountID, int type)
         {
-            return RelationShip_DAL.Instance.GetCustomerList(branchId,companyId);
+            return RelationShip_DAL.Instance.GetCustomerList(branchId, companyId, accountID, type);
         }
 
         public List<Customer_Model> GetCustomerListByAccountName(int branchId, string inputSearch, int type)

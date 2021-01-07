@@ -45,7 +45,7 @@ namespace WebAPI.Controllers.Manager
             utilityModel = JsonConvert.DeserializeObject<UtilityOperation_Model>(strSafeJson);
 
             List<Customer_Model> list = new List<Customer_Model>();
-            list = RelationShip_BLL.Instance.GetCustomerList(this.BranchID,this.CompanyID);
+            list = RelationShip_BLL.Instance.GetCustomerList(utilityModel.BranchID,this.CompanyID, utilityModel.AccountID, utilityModel.Type);
 
             res.Code = "1";
             res.Message = "";
@@ -84,7 +84,7 @@ namespace WebAPI.Controllers.Manager
             List<Customer_Model> list = new List<Customer_Model>();
             if (utilityModel.InputSearch == null || utilityModel.InputSearch == "")
             {
-                list = RelationShip_BLL.Instance.GetCustomerList(this.BranchID, this.CompanyID);
+                list = RelationShip_BLL.Instance.GetCustomerList(utilityModel.BranchID, this.CompanyID, utilityModel.AccountID, utilityModel.Type);
             }
             else
             {

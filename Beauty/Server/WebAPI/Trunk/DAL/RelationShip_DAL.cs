@@ -29,26 +29,52 @@ namespace WebAPI.DAL
         }
         #endregion
 
-        public List<Customer_Model> GetCustomerList(int branchId, int companyId)
+        public List<Customer_Model> GetCustomerList(int branchId, int companyId, int accountid, int type)
         {
             using (DbManager db = new DbManager())
             {
-                string strSql = @" select  T2.UserID,T2.Name, '|' + ISNULL(T2.Name,'') + '|' +  ISNULL(T3.LoginMobile,'')+ '|' +  ISNULL(T2.PinYin,'') AS SearchOut FROM  [CUSTOMER] T2  
-                                    INNER JOIN [USER] T3 ON T2.UserID = T3.ID AND T3.UserType = 0  ";
-                //if (branchId > 0)
-                //{
-                //    strSql += "  INNER JOIN [RELATIONSHIP] T1   ON T1.CustomerID = T2.UserID  AND T1.Available = 1  ";
-                //}
-                strSql += "  WHERE T2.Available = 1 AND T2.CompanyID =@CompanyID ";
-                if (branchId > 0)
-                {
-                    strSql += "  AND T2.BranchID =@BranchID ";
-                }
+//                string strSql = @" select  T2.UserID,T2.Name, '|' + ISNULL(T2.Name,'') + '|' +  ISNULL(T3.LoginMobile,'')+ '|' +  ISNULL(T2.PinYin,'') AS SearchOut FROM  [CUSTOMER] T2  
+//                                    INNER JOIN [USER] T3 ON T2.UserID = T3.ID AND T3.UserType = 0  ";
+//                strSql += "  WHERE T2.Available = 1 AND T2.CompanyID =@CompanyID ";
+//                if (branchId > 0)
+//                {
+//                    strSql += "  AND T2.BranchID =@BranchID ";
+//                }
 
+                string strSql = @"
+                    select
+                        T2.UserID,
+                        T2.Name, 
+                        ISNULL(T2.Name,'') + 
+                            ISNULL(' ' + T3.LoginMobile, '') +
+                            case 
+                                when T5.PhoneNumber is null then ''
+                                when T5.PhoneNumber is not null and T3.LoginMobile is null then ' ' + T5.PhoneNumber 
+                                when T5.PhoneNumber = T3.LoginMobile then ''
+                                else ' ' + T5.PhoneNumber 
+                            end AS SearchOut
+                    FROM 
+                        [CUSTOMER] T2
+                        INNER JOIN [USER] T3 ON T2.UserID = T3.ID AND T3.UserType = 0
+                        left join RELATIONSHIP T4 on T4.CustomerID = T2.UserID and T4.Type = @type and T4.Available = 1
+                        left join (select UserID, max(PhoneNumber) as PhoneNumber from PHONE group by UserID) T5 on T5.UserID = T2.UserID
+                    WHERE T2.Available = 1 
+                        AND T2.CompanyID = @CompanyID   
+                        AND (@BranchID = 0 or T2.BranchID = @BranchID)
+                        And (@AccountID = 0 or T4.AccountID = @AccountID)";
+
+                //Common.WriteLOG.WriteLog("@BranchID int = " + branchId.ToString());
+                //Common.WriteLOG.WriteLog("@CompanyID int = " + companyId.ToString());
+                //Common.WriteLOG.WriteLog("@AccountID int = " + accountid.ToString());
+                //Common.WriteLOG.WriteLog("@Type int = " + type.ToString());
+                //Common.WriteLOG.WriteLog(strSql);
 
                 List<Customer_Model> list = new List<Customer_Model>();
-                list = db.SetCommand(strSql, db.Parameter("@BranchID", branchId, DbType.Int32)
-                    , db.Parameter("@CompanyID", companyId, DbType.Int32)).ExecuteList<Customer_Model>();
+                list = db.SetCommand(strSql
+                    , db.Parameter("@BranchID", branchId, DbType.Int32)
+                    , db.Parameter("@CompanyID", companyId, DbType.Int32)
+                    , db.Parameter("@AccountID", accountid, DbType.Int32)
+                    , db.Parameter("@Type", type, DbType.Int32)).ExecuteList<Customer_Model>();
 
                 return list;
             }
@@ -81,13 +107,11 @@ namespace WebAPI.DAL
 
             using (DbManager db = new DbManager())
             {
-                string strSql = @" SELECT 0 as ID,T1.UserID AccountID, 0 as Available,T1.Name AccountName,1 as AccountStatus , '|' + ISNULL(T1.Name,'') +  '|' + ISNULL(T1.Code,'') + '|' + ISNULL(T1.Mobile,'') AS SearchOut
+                string strSql = @" SELECT 0 as ID,T1.UserID AccountID, 0 as Available,T1.Name AccountName,1 as AccountStatus , ISNULL(T1.Name,'') +  ISNULL(' ' + T1.Mobile,'') AS SearchOut
                                 FROM [ACCOUNT] T1 
                                 INNER JOIN [TBL_ACCOUNTBRANCH_RELATIONSHIP] T2 
                                 ON T1.UserID = T2.UserID AND T2.Available = 1 AND T2.BranchID =@BranchID 
                                 WHERE T1.Available = 1  ";
-
-
 
                 List<RelationShip_Model> list = new List<RelationShip_Model>();
                 list = db.SetCommand(strSql, db.Parameter("@BranchID", branchId, DbType.Int32)).ExecuteList<RelationShip_Model>();
@@ -102,73 +126,88 @@ namespace WebAPI.DAL
 
             using (DbManager db = new DbManager())
             {
-                string strSqlRelat = @" select T1.ID,T1.AccountID,T1.Available,T4.Name AccountName,T4.AccountStatus , '|' + ISNULL(T4.Name,'') +  '|' + ISNULL(T4.Code,'') + '|' + ISNULL(T4.Mobile,'')  AS SearchOut
-                                from [RELATIONSHIP] T1 
-                                INNER JOIN (SELECT T2.UserID,T2.Name,T2.Code,T2.Mobile,CASE WHEN T2.Available = 1 AND T3.Available = 1 THEN 1 ELSE 0 END AccountStatus  FROM [ACCOUNT] T2 
-                                LEFT JOIN [TBL_ACCOUNTBRANCH_RELATIONSHIP] T3 
-                                ON T2.UserID = T3.UserID AND T3.BranchID=@BranchID AND T3.Available = 1) T4 
-                                ON T1.AccountID = T4.UserID 
-                                WHERE T1.CustomerID =@CustomerID AND T1.BranchID=@BranchID AND T1.Type =@Type
-                                ";
+//                string strSqlRelat = @" select T1.ID,T1.AccountID,T1.Available,T4.Name AccountName,T4.AccountStatus , '|' + ISNULL(T4.Name,'') +  '|' + ISNULL(T4.Code,'') + '|' + ISNULL(T4.Mobile,'')  AS SearchOut
+//                                from [RELATIONSHIP] T1 
+//                                INNER JOIN (SELECT T2.UserID,T2.Name,T2.Code,T2.Mobile,CASE WHEN T2.Available = 1 AND T3.Available = 1 THEN 1 ELSE 0 END AccountStatus  FROM [ACCOUNT] T2 
+//                                LEFT JOIN [TBL_ACCOUNTBRANCH_RELATIONSHIP] T3 
+//                                ON T2.UserID = T3.UserID AND T3.BranchID=@BranchID AND T3.Available = 1) T4 
+//                                ON T1.AccountID = T4.UserID 
+//                                WHERE T1.CustomerID =@CustomerID AND T1.BranchID=@BranchID AND T1.Type =@Type
+//                                ";
+
+                string strSqlRelat = @"
+                    SELECT 
+                        0 as ID,
+                        T1.UserID AccountID, 
+                        case when t3.id is null then 0 else 1 end as Available,
+                        T1.Name AccountName,
+                        1 as AccountStatus , 
+                        ISNULL(T1.Name,'') +  ISNULL(' ' + T1.Mobile,'') AS SearchOut
+                    FROM 
+                        [ACCOUNT] T1 
+                        INNER JOIN [TBL_ACCOUNTBRANCH_RELATIONSHIP] T2 ON T1.UserID = T2.UserID AND T2.Available = 1 AND T2.BranchID = @BranchID 
+                        left join RELATIONSHIP t3 on t3.AccountID = t1.UserID and t3.CustomerID = @CustomerID and T3.Type = @Type and t3.Available = 1
+                    WHERE T1.Available = 1
+                    order by Available desc, AccountName ";
 
                 List<RelationShip_Model> listRelat = new List<RelationShip_Model>();
                 listRelat = db.SetCommand(strSqlRelat, db.Parameter("@BranchID", branchId, DbType.Int32)
                     , db.Parameter("@CustomerID", customerId, DbType.Int32)
                     , db.Parameter("@Type", type, DbType.Int32)).ExecuteList<RelationShip_Model>();
-
-                string strUserId = "";
-                if (listRelat != null && listRelat.Count > 0)
-                {
-                    foreach (RelationShip_Model item in listRelat)
-                    {
-                        if (strUserId != "")
-                        {
-                            strUserId += ",";
-                        }
-                        strUserId += item.AccountID;
-                    }
-                }
-
-
-                string strSqlNorelat = @" select 0 as ID ,T1.UserID AccountID,0 as Available ,T1.Name AccountName,T1.Available AccountStatus  ,'|' + ISNULL(T1.Name,'') +  '|' + ISNULL(T1.Code,'') + '|' + ISNULL(T1.Mobile,'')  AS SearchOut
-                                        from [ACCOUNT] T1 
-                                        INNER JOIN [TBL_ACCOUNTBRANCH_RELATIONSHIP] T2 
-                                        ON T1.UserID = T2.UserID AND T2.Available = 1 AND T2.BranchID =@BranchID 
-                                        WHERE T1.Available = 1";
-                if (strUserId != "")
-                {
-                    strSqlNorelat += "  AND T1.UserID not in (  " + strUserId + " ) ";
-                }
+                return listRelat;
+//                string strUserId = "";
+//                if (listRelat != null && listRelat.Count > 0)
+//                {
+//                    foreach (RelationShip_Model item in listRelat)
+//                    {
+//                        if (strUserId != "")
+//                        {
+//                            strUserId += ",";
+//                        }
+//                        strUserId += item.AccountID;
+//                    }
+//                }
 
 
-                List<RelationShip_Model> noRelatList = new List<RelationShip_Model>();
-                noRelatList = db.SetCommand(strSqlNorelat, db.Parameter("@BranchID", branchId, DbType.Int32)
-                    , db.Parameter("@CustomerID", customerId, DbType.Int32)).ExecuteList<RelationShip_Model>();
+//                string strSqlNorelat = @" select 0 as ID ,T1.UserID AccountID,0 as Available ,T1.Name AccountName,T1.Available AccountStatus  ,'|' + ISNULL(T1.Name,'') +  '|' + ISNULL(T1.Code,'') + '|' + ISNULL(T1.Mobile,'')  AS SearchOut
+//                                        from [ACCOUNT] T1 
+//                                        INNER JOIN [TBL_ACCOUNTBRANCH_RELATIONSHIP] T2 
+//                                        ON T1.UserID = T2.UserID AND T2.Available = 1 AND T2.BranchID =@BranchID 
+//                                        WHERE T1.Available = 1";
+//                if (strUserId != "")
+//                {
+//                    strSqlNorelat += "  AND T1.UserID not in (  " + strUserId + " ) ";
+//                }
 
-                if (noRelatList == null)
-                {
-                    if (listRelat != null)
-                    {
-                        noRelatList = new List<RelationShip_Model>();
-                        foreach (RelationShip_Model item in listRelat)
-                        {
 
-                            noRelatList.Add(item);
-                        }
-                    }
-                }
-                else
-                {
-                    if (listRelat != null)
-                    {
-                        foreach (RelationShip_Model item in listRelat)
-                        {
-                            noRelatList.Insert(0, item);
-                        }
-                    }
-                }
+//                List<RelationShip_Model> noRelatList = new List<RelationShip_Model>();
+//                noRelatList = db.SetCommand(strSqlNorelat, db.Parameter("@BranchID", branchId, DbType.Int32)
+//                    , db.Parameter("@CustomerID", customerId, DbType.Int32)).ExecuteList<RelationShip_Model>();
 
-                return noRelatList;
+//                if (noRelatList == null)
+//                {
+//                    if (listRelat != null)
+//                    {
+//                        noRelatList = new List<RelationShip_Model>();
+//                        foreach (RelationShip_Model item in listRelat)
+//                        {
+
+//                            noRelatList.Add(item);
+//                        }
+//                    }
+//                }
+//                else
+//                {
+//                    if (listRelat != null)
+//                    {
+//                        foreach (RelationShip_Model item in listRelat)
+//                        {
+//                            noRelatList.Insert(0, item);
+//                        }
+//                    }
+//                }
+
+//                return noRelatList;
 
             }
         }

@@ -1693,6 +1693,13 @@ namespace WebAPI.DAL
                 strSqlCustomer.Append(" LEFT JOIN [TBL_CUSTOMER_SOURCE_TYPE] T7 WITH(NOLOCK) ON T1.[SourceType]=T7.ID AND T7.CompanyID=@CompanyID ");
                 strSqlCustomer.Append(" Where T1.UserID = @UserID ");
 
+                //Common.WriteLOG.WriteLog("@UserID int = " + customerId.ToString());
+                //Common.WriteLOG.WriteLog("@ImageHeight varchar(max) = " + imageHeight);
+                //Common.WriteLOG.WriteLog("@ImageWidth varchar(max) = " + imageWidth);
+                //Common.WriteLOG.WriteLog("@BranchID int = " + branchID.ToString());
+                //Common.WriteLOG.WriteLog("@CompanyID int = " + companyID.ToString());
+                //Common.WriteLOG.WriteLog(strSqlCustomer.ToString());
+
                 model = db.SetCommand(strSqlCustomer.ToString(), db.Parameter("@UserID", customerId, DbType.Int32)
                     , db.Parameter("@ImageHeight", imageHeight, DbType.String)
                     , db.Parameter("@ImageWidth", imageWidth, DbType.String)
@@ -1708,6 +1715,9 @@ namespace WebAPI.DAL
                                        from PHONE 
                                        Where UserID = @UserID AND Available = 1 ";
 
+                //Common.WriteLOG.WriteLog("@UserID int = " + customerId.ToString());
+                //Common.WriteLOG.WriteLog(strSql);
+
                 model.PhoneList = db.SetCommand(strSql.ToString()
                                                , db.Parameter("@UserID", customerId, DbType.Int32)).ExecuteList<Model.Table_Model.Phone>();
 
@@ -1715,12 +1725,19 @@ namespace WebAPI.DAL
                                    from EMAIL 
                                    Where UserID = @UserID AND Available = 1";
 
+                //Common.WriteLOG.WriteLog("@UserID int = " + customerId.ToString());
+                //Common.WriteLOG.WriteLog(strSql);
+
                 model.EmailList = db.SetCommand(strSql.ToString()
                                                , db.Parameter("@UserID", customerId, DbType.Int32)).ExecuteList<Model.Table_Model.Email>();
 
                 strSql = @" select ID AddressID, Type AddressType, Address AddressContent, ZipCode 
                                     from ADDRESS 
                                     Where UserID = @UserID AND Available = 1";
+
+                //Common.WriteLOG.WriteLog("@UserID int = " + customerId.ToString());
+                //Common.WriteLOG.WriteLog(strSql);
+
                 model.AddressList = db.SetCommand(strSql.ToString()
                                                , db.Parameter("@UserID", customerId, DbType.Int32)).ExecuteList<Model.Table_Model.Address>();
 
@@ -1730,12 +1747,21 @@ namespace WebAPI.DAL
                                     AND BranchID = @BranchID
                                     AND TaskOwnerID = @CustomerID
                                     AND ( TaskStatus = 1 OR TaskStatus = 2 )";
+
+                //Common.WriteLOG.WriteLog("@CompanyID int = " + companyID.ToString());
+                //Common.WriteLOG.WriteLog("@BranchID int = " + branchID.ToString());
+                //Common.WriteLOG.WriteLog("@CustomerID int = " + customerId.ToString());
+                //Common.WriteLOG.WriteLog(strSql);
+
                 model.ScheduleCount = db.SetCommand(strSql.ToString()
                                     , db.Parameter("@CompanyID", companyID, DbType.Int32)
                                     , db.Parameter("@BranchID", branchID, DbType.Int32)
                                     , db.Parameter("@CustomerID", customerId, DbType.Int32)).ExecuteScalar<int>();
 
                 string advanced = Company_DAL.Instance.getAdvancedByCompanyID(companyID);
+
+                //Common.WriteLOG.WriteLog(advanced);
+
                 if (advanced.Contains("|4|"))
                 {
                     #region 销售顾问
@@ -1748,6 +1774,11 @@ namespace WebAPI.DAL
                                                             AND T1.CustomerID = @CustomerID
                                                             AND T1.Available = 1
                                                             AND T1.Type = 2 ";
+
+                    //Common.WriteLOG.WriteLog("@CompanyID int = " + companyID.ToString());
+                    //Common.WriteLOG.WriteLog("@BranchID int = " + branchID.ToString());
+                    //Common.WriteLOG.WriteLog("@CustomerID int = " + customerId.ToString());
+                    //Common.WriteLOG.WriteLog(strSelSalesSql);
 
                     model.SalesList = db.SetCommand(strSelSalesSql,
                             db.Parameter("@CompanyID", companyID, DbType.Int32),

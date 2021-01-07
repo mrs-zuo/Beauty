@@ -59,13 +59,6 @@
                         
                     </select>
                 </div>
-
-                <div class="input-group">
-                    <input type="text" placeholder="输入员工搜索" class="form-control" id="txtInputSearch">
-                    <span class="input-group-btn">
-                        <a class="btn btn-default " onclick="getCustomerByAccountName()" type="button"><i class="fa fa-search"></i></a>
-                    </span>
-                </div>
                 <div class="btn-group select-div">
                     <div class="select-titel">选择顾问:</div>
                     <select class="select-control" id="ddlType" onchange="changeType()">
@@ -78,8 +71,8 @@
             <div class="widget-body no-padding">
 
                 <div class="row">
-                    <div class="col-xs-1"></div>
-                    <div class="col-xs-4 margin-top-20">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3 margin-top-20">
                         <table class="table table-bordered">
                             <colgroup class="row">
                                 <col class="col-xs-12">
@@ -88,9 +81,43 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            <label class="pull-left label-m"><strong>顾客姓名</strong></label>
+                                            <label class="pull-left label-m"><strong>按员工搜素顾客</strong></label>
                                             <div class="col-sm-6">
-                                                <input type="text" id="txtSearchCustomer" placeholder="请输入拼音/电话/名字" style="min-width: 160px;" class="form-control" onkeyup="showCustomerList()">
+                                                <input type="text" id="txtSearchAccount1" placeholder="请输入员工姓名/电话" class="form-control" onkeyup="showAccountList1()">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="no-padding">
+                                        <div class="over-down-tb">
+                                            <table id="tbAccount1" class="table table-hover margin-top-1"></table>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>共 <span class="label label-success" id="AccountCnt1"></span>人</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="col-md-3 margin-top-20">
+                        <table class="table table-bordered">
+                            <colgroup class="row">
+                                <col class="col-xs-12">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary pull-left" onclick="selectAllCustomer()">全选/反选</button>
+                                            <label class="pull-left col-sm-3 label-m"><strong>顾客姓名</strong></label>
+                                            <div class="col-sm-6">
+                                                <input type="text" id="txtSearchCustomer" placeholder="请输入顾客姓名/电话" style="min-width: 160px;" class="form-control" onkeyup="showCustomerList(0)">
                                             </div>
                                         </div>
                                     </td>
@@ -107,17 +134,19 @@
                             <tfoot>
                                 <tr>
 
-                                    <td>共 <span class="label label-success" id="CustomerCnt"></span>人</td>
+                                    <td>共 <span class="label label-success" id="CustomerCnt"></span>人
+                                        <button type="submit" class="btn btn-primary pull-right" onclick="showAllCustomer()">ALL</button>
+                                    </td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
 
-                    <div class="col-xs-2 arrow-client">
+                    <div class="col-xs-1 arrow-client">
                         <i class="fa fa-arrow-right fa-5x"></i>
                     </div>
 
-                    <div class="col-xs-4 margin-top-20">
+                    <div class="col-md-3 margin-top-20">
                         <table class="table table-bordered">
                             <colgroup class="row">
                                 <col class="col-xs-12">
@@ -127,9 +156,9 @@
                                     <td>
                                         <div class="form-group">
                                             <label class="pull-left label-m"><strong>选择</strong></label>
-                                            <label class="pull-left col-sm-4 label-m"><strong>员工姓名</strong></label>
+                                            <label class="pull-left col-sm-3 label-m"><strong>员工姓名</strong></label>
                                             <div class="col-sm-6 no-padding-left">
-                                                <input type="text" id="txtSearchAccount" placeholder="请输入编号/电话" class="form-control" onkeyup="showAccountList(1)">
+                                                <input type="text" id="txtSearchAccount2" placeholder="请输入员工姓名/电话" class="form-control" onkeyup="showAccountList2(1)">
                                             </div>
                                         </div>
                                     </td>
@@ -137,20 +166,20 @@
                                 <tr>
                                     <td class="no-padding">
                                         <div class="over-down-tb">
-                                            <table id="tbAccount" class="table table-hover margin-top-1"></table>
+                                            <table id="tbAccount2" class="table table-hover margin-top-1"></table>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td>共 <span class="label label-success" id="AccountCnt"></span>人</td>
+                                    <td>共 <span class="label label-success" id="AccountCnt2"></span>人</td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
 
-                    <div class="col-xs-1"></div>
+                    <div class="col-md-1"></div>
                 </div>
 
                 <br>
@@ -161,8 +190,6 @@
                 <br>
                 <br>
             </div>
-            <input type="hidden" id="selectCustomerId" />
-            <input type="hidden" id="mutiSelect" />
             <input type="hidden" id="hidData" />
         </div>
         <!-- /Page Body -->
