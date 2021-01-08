@@ -12,6 +12,7 @@
 
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
+#define IOS14   ([[[UIDevice currentDevice] systemVersion] floatValue] >= 14.0)
 #define IOS9   ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 #define IOS8   ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define IOS7   ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)

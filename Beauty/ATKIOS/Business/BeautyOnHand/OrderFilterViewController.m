@@ -96,9 +96,9 @@
     // ---TableView
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    // _tableView.showsHorizontalScrollIndicator = NO;
-    // _tableView.showsVerticalScrollIndicator = NO;
-    // _tableView.allowsSelection = NO;
+    _tableView.showsHorizontalScrollIndicator = NO;
+    _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.allowsSelection = NO;
     _tableView.autoresizingMask = UIViewAutoresizingNone;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.backgroundView = nil;
@@ -234,7 +234,11 @@
                                                        placeHolder:@"选择开始日期"
                                                      textAlignment:NSTextAlignmentRight
                                                           delegate:self];
-        [cell addSubview:value1];
+        if (IOS14) {
+            [cell.contentView addSubview:value1];
+        } else {
+            [cell addSubview:value1];
+        }
         
         if (IOS6)  value1.frame = CGRectMake(150, 13, 150, 18);
         if (IOS7 || IOS8)  value1.tintColor = [UIColor clearColor];
@@ -250,7 +254,11 @@
                                                        placeHolder:@"选择结束日期"
                                                      textAlignment:NSTextAlignmentRight
                                                           delegate:self];
-        [cell addSubview:value2];
+        if (IOS14) {
+            [cell.contentView addSubview:value2];
+        } else {
+            [cell addSubview:value2];
+        }
         if (IOS6)  value2.frame = CGRectMake(150, 46, 150, 18);
         if (IOS7 || IOS8) value2.tintColor = [UIColor clearColor];
         
@@ -274,7 +282,11 @@
                                                        placeHolder:nil
                                                      textAlignment:NSTextAlignmentRight
                                                           delegate:self];
-        [cell addSubview:value];
+        if (IOS14) {
+            [cell.contentView addSubview:value];
+        } else {
+            [cell addSubview:value];
+        }
         
         if (IOS6)
             value.frame = CGRectMake(150, 9, 150, 30);

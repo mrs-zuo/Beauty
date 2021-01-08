@@ -6945,7 +6945,7 @@
 					"$(PROJECT_DIR)",
 					/Users/macmini/Desktop,
 				);
-				MARKETING_VERSION = 4.6.018;
+				MARKETING_VERSION = 4.6.019;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -6991,7 +6991,7 @@
 					"$(PROJECT_DIR)",
 					/Users/macmini/Desktop,
 				);
-				MARKETING_VERSION = 4.6.018;
+				MARKETING_VERSION = 4.6.019;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lxml2",
