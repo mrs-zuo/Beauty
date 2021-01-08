@@ -989,6 +989,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     ImageButton prepareOrderServiceReduceProductQuantityButton = (ImageButton) prepareOrderProductView.findViewById(R.id.prepare_order_service_reduce_quantity_btn);
                     // 服务次数
                     final EditText prepareOrderServiceProductQuantityText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_service_quantity);
+                    // 不限次
                     TextView prepareOrderServiceQuantityZero = (TextView) prepareOrderProductView.findViewById(R.id.prepare_order_service_quantity_zero);
                     final RelativeLayout orderProductPromotionPriceRelativeLayout = (RelativeLayout) prepareOrderProductView.findViewById(R.id.prepare_order_product_promotion_price_relativelayout);
                     // 过去支付 Layout
@@ -1394,30 +1395,34 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 
                         @Override
                         public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                            if ((prepareOrderProductHasCompletenumText.getText().toString()).length() < 1) {
+                                prepareOrderProductHasCompletenumText.setText("0");
+                            }
                         }
 
                         @Override
                         public void afterTextChanged(Editable s) {
-                            int serviceQuantity = Integer.parseInt(prepareOrderServiceProductQuantityText.getText().toString());
                             if (s != null && !s.toString().trim().equals("")) {
-                                int quantity = Integer.parseInt(prepareOrderProductHasCompletenumText.getText().toString());
-                                if (quantity > serviceQuantity) {
-                                    DialogUtil.createShortDialog(PrepareOrderActivity.this, "过去完成次数不能大于服务次数");
-                                    prepareOrderProductHasCompletenumText.setText(prepareOrderServiceProductQuantityText.getText());
+                                if (orderProduct.getCourseFrequency() < 1) {
+                                    // 不限次
+                                } else {
+                                    // 限次
+                                    int serviceQuantity = Integer.parseInt(prepareOrderServiceProductQuantityText.getText().toString());
+                                    int quantity = Integer.parseInt(s.toString());
+                                    if (quantity > serviceQuantity) {
+                                        DialogUtil.createShortDialog(PrepareOrderActivity.this, "过去完成次数不能大于服务次数");
+                                        prepareOrderProductHasCompletenumText.setText(prepareOrderServiceProductQuantityText.getText());
+                                        prepareOrderProductHasCompletenumText.selectAll();
+                                    }
                                 }
                             } else {
-                                if (serviceQuantity > 0) {
-                                    prepareOrderProductHasCompletenumText.setText("1");
-                                } else {
-                                    prepareOrderProductHasCompletenumText.setText("0");
-                                }
+                                prepareOrderProductHasCompletenumText.setText("0");
                                 prepareOrderProductHasCompletenumText.selectAll();
                             }
                         }
                     });
                     // 手动修改过去次数edit
-                    prepareOrderProductHasCompletenumText.addTextChangedListener(new TextWatcher() {
+                    /*prepareOrderProductHasCompletenumText.addTextChangedListener(new TextWatcher() {
 
                         @Override
                         public void beforeTextChanged(CharSequence s, int start,
@@ -1438,7 +1443,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 
                         }
 
-                    });
+                    });*/
                     // 增加服务次数按钮
                     prepareOrderServicePlusProductQuantityButton.setOnClickListener(new OnClickListener() {
                         @Override
