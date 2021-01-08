@@ -176,23 +176,20 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 customerActivity.progressDialog.dismiss();
                 customerActivity.progressDialog = null;
             }
-            // 未获取到数据的情况
+            customerActivity.customerListItemAdapter = new CustomerListItemAdapter(customerActivity, customerActivity.customerList, customerActivity.fromSource, customerActivity.convertOrderList);
+            customerActivity.customerListView.setAdapter(customerActivity.customerListItemAdapter);
+            // 展开
+            customerActivity.expandGroupAll(customerActivity.customerListItemAdapter);
+            // 隐藏头部和底部视图
+            customerActivity.mFooter.setVisibility(View.GONE);
+            customerActivity.mHeader.setVisibility(View.GONE);
+            // 非正常情况处理
             if (customerActivity.loadFlg && msg.what != 1) {
                 if (customerActivity.pageIndexRollBack != null) {
                     customerActivity.customerAdvancedCondition.setPageIndex(customerActivity.pageIndexRollBack);
                 }
-                // 隐藏头部和底部视图
-                customerActivity.mFooter.setVisibility(View.GONE);
-                customerActivity.mHeader.setVisibility(View.GONE);
             }
             if (msg.what == 1) {
-                customerActivity.customerListItemAdapter = new CustomerListItemAdapter(customerActivity, customerActivity.customerList, customerActivity.fromSource, customerActivity.convertOrderList);
-                customerActivity.customerListView.setAdapter(customerActivity.customerListItemAdapter);
-                // 展开
-                customerActivity.expandGroupAll(customerActivity.customerListItemAdapter);
-                // 隐藏头部和底部视图
-                customerActivity.mFooter.setVisibility(View.GONE);
-                customerActivity.mHeader.setVisibility(View.GONE);
                 // 暂无数据
                 if (customerActivity.customerCnt == 0) {
                     customerActivity.mFooterText.setText(R.string.load_no_data);
@@ -225,9 +222,9 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                     HashList<String, Customer> customerHashList = customerActivity.customerListItemAdapter.getAssort().getHashList();
                     int selectedGroup = -1;
                     int selectedChild = -1;
-                    boolean flg = false;
+                    boolean findFlg = false;
                     for (int j = 0; j < customerHashList.size(); j++) {
-                        if (flg) {
+                        if (findFlg) {
                             break;
                         }
                         List<Customer> customerList = customerHashList.getValueListIndex(j);
@@ -236,7 +233,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             if (customer.getCustomerId() == customerActivity.userinfoApplication.getSelectedCustomerID()) {
                                 selectedGroup = j;
                                 selectedChild = a;
-                                flg = true;
+                                findFlg = true;
                                 break;
                             }
                         }

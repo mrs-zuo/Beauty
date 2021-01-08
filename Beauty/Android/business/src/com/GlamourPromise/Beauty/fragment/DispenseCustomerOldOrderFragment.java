@@ -9,11 +9,13 @@
 package com.GlamourPromise.Beauty.fragment;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,6 +80,9 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
             mHandler = new DispenseCustomerOldOrderFragmentHandler(this);
         View dispenseCustomerOldOrderView = inflater.inflate(R.xml.dispense_customer_old_order_fragment_layout, container, false);
         dispenseCustomerOldOrderListView = (RefreshListView) dispenseCustomerOldOrderView.findViewById(R.id.dispense_customer_old_order_listview);
+        dispenseCustomerOldOrderList = new ArrayList<OrderInfo>();
+        dispenseCompleteOrderListAdapter = new DispenseCompleteOrderListAdapter(getActivity(), dispenseCustomerOldOrderList, 2);
+        dispenseCustomerOldOrderListView.setAdapter(dispenseCompleteOrderListAdapter);
         dispenseCustomerOldOrderListView.setOnItemClickListener(this);
         dispenseCustomerOldOrderListView.setOnRefreshListener(new RefreshListViewWithWebservice() {
             @Override
@@ -147,26 +152,29 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
 
         @Override
         public void handleMessage(Message msg) {
+            FragmentActivity fragmentActivity = dispenseCustomerOldOrderFragment.getActivity();
+            if (fragmentActivity == null){
+                return;
+            }
             switch (msg.what) {
                 case 0:
-                    DialogUtil.createShortDialog(dispenseCustomerOldOrderFragment.getActivity(), (String) msg.obj);
+                    DialogUtil.createShortDialog(fragmentActivity, (String) msg.obj);
                     break;
                 case 1:
-                    dispenseCustomerOldOrderFragment.dispenseCompleteOrderListAdapter = new DispenseCompleteOrderListAdapter(dispenseCustomerOldOrderFragment.getActivity(), dispenseCustomerOldOrderFragment.dispenseCustomerOldOrderList, 2);
-                    dispenseCustomerOldOrderFragment.dispenseCustomerOldOrderListView.setAdapter(dispenseCustomerOldOrderFragment.dispenseCompleteOrderListAdapter);
-                    ((TextView) dispenseCustomerOldOrderFragment.getActivity().findViewById(R.id.tab_customer_old_order_title)).setText("存单" + "(" + dispenseCustomerOldOrderFragment.dispenseCustomerOldOrderList.size() + ")");
+                    dispenseCustomerOldOrderFragment.dispenseCompleteOrderListAdapter.notifyDataSetChanged();
+                    ((TextView) fragmentActivity.findViewById(R.id.tab_customer_old_order_title)).setText("存单" + "(" + dispenseCustomerOldOrderFragment.dispenseCustomerOldOrderList.size() + ")");
                     break;
                 case 2:
-                    DialogUtil.createShortDialog(dispenseCustomerOldOrderFragment.getActivity(), "您的网络貌似不给力，请重试");
+                    DialogUtil.createShortDialog(fragmentActivity, "您的网络貌似不给力，请重试");
                     break;
                 case Constant.LOGIN_ERROR:
-                    DialogUtil.createShortDialog(dispenseCustomerOldOrderFragment.getActivity(), dispenseCustomerOldOrderFragment.getString(R.string.login_error_message));
-                    UserInfoApplication.getInstance().exitForLogin(dispenseCustomerOldOrderFragment.getActivity());
+                    DialogUtil.createShortDialog(fragmentActivity, dispenseCustomerOldOrderFragment.getString(R.string.login_error_message));
+                    UserInfoApplication.getInstance().exitForLogin(fragmentActivity);
                     break;
                 case Constant.APP_VERSION_ERROR:
                     String downloadFileUrl = Constant.SERVER_URL + dispenseCustomerOldOrderFragment.getString(R.string.download_apk_address);
-                    FileCache fileCache = new FileCache(dispenseCustomerOldOrderFragment.getActivity());
-                    dispenseCustomerOldOrderFragment.packageUpdateUtil = new PackageUpdateUtil(dispenseCustomerOldOrderFragment.getActivity(), dispenseCustomerOldOrderFragment.mHandler, fileCache, downloadFileUrl, false, dispenseCustomerOldOrderFragment.userinfoApplication);
+                    FileCache fileCache = new FileCache(fragmentActivity);
+                    dispenseCustomerOldOrderFragment.packageUpdateUtil = new PackageUpdateUtil(fragmentActivity, dispenseCustomerOldOrderFragment.mHandler, fileCache, downloadFileUrl, false, dispenseCustomerOldOrderFragment.userinfoApplication);
                     dispenseCustomerOldOrderFragment.packageUpdateUtil.getPackageVersionInfo();
                     ServerPackageVersion serverPackageVersion = new ServerPackageVersion();
                     serverPackageVersion.setPackageVersion((String) msg.obj);
@@ -175,7 +183,7 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                 case 5:
                     ((DownloadInfo) msg.obj).getUpdateDialog().cancel();
                     String filename = "com.glamourpromise.beauty.business.apk";
-                    File file = dispenseCustomerOldOrderFragment.getActivity().getFileStreamPath(filename);
+                    File file = fragmentActivity.getFileStreamPath(filename);
                     file.getName();
                     dispenseCustomerOldOrderFragment.packageUpdateUtil.showInstallDialog();
                     break;
@@ -185,6 +193,9 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                 case 7:
                     int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                     ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
+                    break;
+                case 99:
+                    DialogUtil.createShortDialog(fragmentActivity, "服务器异常，请重试");
                     break;
                 default:
                     break;
@@ -197,10 +208,6 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
     }
 
     private void getCustomerOldOrderData() {
-        if (dispenseCustomerOldOrderList != null && dispenseCustomerOldOrderList.size() > 0)
-            dispenseCustomerOldOrderList.clear();
-        else
-            dispenseCustomerOldOrderList = new ArrayList<OrderInfo>();
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
@@ -210,6 +217,8 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                 try {
                     customerOldOrderJsonParam.put("CustomerID", userinfoApplication.getSelectedCustomerID());
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, customerOldOrderJsonParam.toString(), userinfoApplication);
                 if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -224,12 +233,17 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                         code = resultJson.getInt("Code");
                         msg = resultJson.getString("Message");
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         try {
                             unFinishTGArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
+                        List<OrderInfo> orderInfoList = new ArrayList<OrderInfo>();
                         if (unFinishTGArray != null) {
                             for (int i = 0; i < unFinishTGArray.length(); i++) {
                                 OrderInfo unfinishOrder = new OrderInfo();
@@ -270,6 +284,8 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                                     if (unfinishOrderJson.has("OrderObjectID") && !unfinishOrderJson.isNull("OrderObjectID"))
                                         orderObjectID = unfinishOrderJson.getInt("OrderObjectID");
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 unfinishOrder.setProductName(productName);
                                 unfinishOrder.setProductType(productType);
@@ -283,11 +299,13 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                                 unfinishOrder.setOrderID(orderID);
                                 unfinishOrder.setOrderObejctID(orderObjectID);
                                 if (totalCount == 0 || (executingCount + finishedCount) < totalCount) {
-                                    dispenseCustomerOldOrderList.add(unfinishOrder);
+                                    orderInfoList.add(unfinishOrder);
                                 }
 
                             }
                         }
+                        dispenseCustomerOldOrderList.clear();
+                        dispenseCustomerOldOrderList.addAll(orderInfoList);
                         mHandler.sendEmptyMessage(1);
                     } else if (code == Constant.LOGIN_ERROR || code == Constant.APP_VERSION_ERROR)
                         mHandler.sendEmptyMessage(code);

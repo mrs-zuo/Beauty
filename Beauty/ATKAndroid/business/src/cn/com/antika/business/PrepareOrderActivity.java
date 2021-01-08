@@ -65,7 +65,6 @@ import cn.com.antika.util.GenerateMenu;
 import cn.com.antika.util.NumberFormatUtil;
 import cn.com.antika.util.PackageUpdateUtil;
 import cn.com.antika.util.ProgressDialogUtil;
-import cn.com.antika.util.StringUtil;
 import cn.com.antika.view.BusinessLeftImageButton;
 import cn.com.antika.view.BusinessRightImageButton;
 import cn.com.antika.view.menu.BusinessRightMenu;
@@ -463,6 +462,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     }
 
                 });
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(prepareOrderActivity, "服务器异常，请重试");
             }
             if (prepareOrderActivity.requestWebServiceThread != null) {
                 prepareOrderActivity.requestWebServiceThread.interrupt();
@@ -487,13 +488,16 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         getProductInfoJson.put("ProductCode", productCode);
                         getProductInfoJson.put("ProductType", productType);
                     } catch (JSONException e) {
-
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, getProductInfoJson.toString(), userinfoApplication);
                     JSONObject resultJson = null;
                     try {
                         resultJson = new JSONObject(serverResultResult);
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (serverResultResult == null || serverResultResult.equals(""))
                         mHandler.sendEmptyMessage(-1);
@@ -506,6 +510,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         } catch (JSONException e) {
                             // TODO Auto-generated catch block
                             code = 0;
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (code == 1) {
                             ecardInfoList = new ArrayList<EcardInfo>();
@@ -513,7 +519,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             try {
                                 productArray = resultJson.getJSONArray("Data");
                             } catch (JSONException e) {
-
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                             if (productArray != null) {
                                 EcardInfo ecardInfo1 = new EcardInfo();
@@ -528,6 +535,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                     try {
                                         productjson = (JSONObject) productArray.get(i);
                                     } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
                                     try {
                                         EcardInfo ecardInfo = new EcardInfo();
@@ -552,6 +561,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                         }
                                         ecardInfoList.add(ecardInfo);
                                     } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
                                 }
                             }
@@ -604,6 +615,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     oldProduct.put("Code", orderProduct.getProductCode());
                     oldProduct.put("ProductType", orderProduct.getProductType());
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 oldProductArray.put(oldProduct);
             }
@@ -617,13 +630,16 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         getProductInfoJson.put("CustomerID", selectedCustomerID);
                         getProductInfoJson.put("ProductCode", oldProductArray);
                     } catch (JSONException e) {
-
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, getProductInfoJson.toString(), userinfoApplication);
                     JSONObject resultJson = null;
                     try {
                         resultJson = new JSONObject(serverResultResult);
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (serverResultResult == null || serverResultResult.equals(""))
                         mHandler.sendEmptyMessage(-1);
@@ -636,13 +652,16 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         } catch (JSONException e) {
                             // TODO Auto-generated catch block
                             code = 0;
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (code == 1) {
                             JSONArray productArray = null;
                             try {
                                 productArray = resultJson.getJSONArray("Data");
                             } catch (JSONException e) {
-
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                             if (productArray != null) {
                                 for (int i = 0; i < productArray.length(); i++) {
@@ -650,6 +669,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                     try {
                                         productjson = (JSONObject) productArray.get(i);
                                     } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
                                     try {
 
@@ -739,6 +760,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                         }
 
                                     } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
                                 }
                             }
@@ -771,6 +794,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     customerBenefitJsonParam.put("CustomerID", userinfoApplication.getSelectedCustomerID());
                     customerBenefitJsonParam.put("Type", 1);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, customerBenefitJsonParam.toString(), userinfoApplication);
                 if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -785,11 +810,15 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         code = resultJson.getInt("Code");
                         msg = resultJson.getString("Message");
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         try {
                             customerBenefitArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (customerBenefitArray != null) {
                             customerBenefitsList = new ArrayList<CustomerBenefit>();
@@ -826,7 +855,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                     if (!customerBenefitJson.isNull("PRValue2") && customerBenefitJson.has("PRValue2"))
                                         prValue2 = customerBenefitJson.getDouble("PRValue2");
                                 } catch (JSONException e) {
-
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 cb.setBenefitID(benefitID);
                                 cb.setBenefitName(benefitName);
@@ -1807,6 +1837,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 else if (orderProduct.getProductType() == Constant.COMMODITY_TYPE)
                                     orderProductJson.put("Expirationtime", "2099-12-31");
                             } catch (JSONException e1) {
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                             double orderProductTotalSalePrice = 0;
                             try {
@@ -1823,6 +1855,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 } else
                                     orderProductJson.put("Remark", "");
                             } catch (JSONException e) {
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
 
 
@@ -1853,6 +1887,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 }
 
                             } catch (JSONException e) {
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                             orderProductArray.put(orderProductJson);
                             productTotalPrice += orderProductTotalSalePrice;
@@ -1877,18 +1913,22 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 prepareOrderJson.put("OldOrderIDs", OldOrderIdArray);
                             } catch (JSONException e) {
                                 // TODO Auto-generated catch block
-
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                             if (opportunityID != 0) {
                                 try {
                                     prepareOrderJson.put("CustomerID", orderProductList.get(0).getCustomerID());
                                 } catch (JSONException e) {
-
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                             } else {
                                 try {
                                     prepareOrderJson.put("CustomerID", userinfoApplication.getSelectedCustomerID());
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                             }
                             String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, prepareOrderJson.toString(), userinfoApplication);
@@ -1898,6 +1938,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             } catch (JSONException e1) {
                                 // TODO Auto-generated catch block
                                 e1.printStackTrace();
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                             if (serverResultResult == null
                                     || serverResultResult.equals(""))
@@ -1911,6 +1953,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 } catch (JSONException e) {
                                     // TODO Auto-generated catch block
                                     code = "0";
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 if (Integer.parseInt(code) == 1) {
                                     quickBalanceOrderList = new ArrayList<OrderInfo>();
@@ -1918,6 +1962,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                     try {
                                         orderListArray = resultJson.getJSONArray("Data");
                                     } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
                                     if (orderListArray != null) {
                                         for (int i = 0; i < orderListArray.length(); i++) {
@@ -1925,6 +1971,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                                 list.add(orderListArray.get(i).toString());
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
+                                                mHandler.sendEmptyMessage(99);
+                                                return;
                                             }
                                         }
                                     }
@@ -1981,6 +2029,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                 try {
                     opportunityProduct.put("ResponsiblePersonID", orderProduct.getResponsiblePersonID());
                 } catch (JSONException e1) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 double orderProductTotalSalePrice = 0;
                 try {
@@ -1999,6 +2049,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     opportunityProduct.put("TotalCalcPrice", NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(orderProduct.getPromotionPrice()) * opportunityProduct.getInt("Quantity"))));
                     opportunityProduct.put("StepID", orderProduct.getStepTemplateId());
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 opportunityProductArray.put(opportunityProduct);
             }
@@ -2013,12 +2065,16 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     prepareOpportunityJson.put("CustomerID", userinfoApplication.getSelectedCustomerID());
                     prepareOpportunityJson.put("ProductList", opportunityProductArray);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, prepareOpportunityJson.toString(), userinfoApplication);
                 JSONObject resultJson = null;
                 try {
                     resultJson = new JSONObject(serverResultResult);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 if (serverResultResult == null || serverResultResult.equals(""))
                     mHandler.sendEmptyMessage(-1);
@@ -2030,6 +2086,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         message = resultJson.getString("Message");
                     } catch (JSONException e) {
                         code = "0";
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (Integer.parseInt(code) == 1) {
                         mHandler.sendEmptyMessage(1);
@@ -2065,6 +2123,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                 try {
                     resultJson = new JSONObject(serverResultResult);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 if (serverResultResult == null || serverResultResult.equals(""))
                     mHandler.sendEmptyMessage(-1);
@@ -2077,6 +2137,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         code = "0";
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (Integer.parseInt(code) == 1) {
                         stepTemplateList = new ArrayList<StepTemplate>();
@@ -2084,6 +2146,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         try {
                             stepTemplateArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (stepTemplateArray != null) {
                             for (int i = 0; i < stepTemplateArray.length(); i++) {
@@ -2091,6 +2155,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 try {
                                     stepTemplatejson = (JSONObject) stepTemplateArray.get(i);
                                 } catch (JSONException e1) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 StepTemplate st = new StepTemplate();
                                 int stepTemplateID = 0;
@@ -2098,6 +2164,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                     try {
                                         stepTemplateID = stepTemplatejson.getInt("StepID");
                                     } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
                                 }
                                 String stepTemplateName = "";
@@ -2105,6 +2173,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                     try {
                                         stepTemplateName = stepTemplatejson.getString("StepName");
                                     } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
                                 }
                                 st.setStepTemplateID(stepTemplateID);
