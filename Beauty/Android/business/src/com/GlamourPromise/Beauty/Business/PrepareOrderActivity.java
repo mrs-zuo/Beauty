@@ -100,8 +100,6 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
     long taskID = 0;
     String fromSource;
     RelativeLayout orderProductCardSpinnerRelativeLayout;
-    // 成交价 EditText
-    private EditText prepareOrderProductTotalSalePriceText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -975,7 +973,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     final EditText prepareOrderProductQuantityText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_quantity);
                     final TextView prepareOrderProductTotalPriceText = (TextView) prepareOrderProductView.findViewById(R.id.prepare_order_product_total_price);
                     // 成交价 EditText
-                    prepareOrderProductTotalSalePriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_total_sale_price);
+                    final EditText prepareOrderProductTotalSalePriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_total_sale_price);
                     // 过去支付 EditText
                     final EditText prepareOrderProductHasPaidPriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_has_paid_price);
                     final EditText prepareOrderProductPromotionPriceText = (EditText) prepareOrderProductView.findViewById(R.id.prepare_order_product_promotion_price);
@@ -1257,11 +1255,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 
                             @Override
                             public void afterTextChanged(Editable s) {
-									/*if((prepareOrderProductTotalSalePriceText.getText().toString()).length()<1){
-										prepareOrderProductTotalSalePriceText.setText("0");
-									}*/
-//									if (s != null && !s.toString().equals("")) {
-                                if (s == null || s.toString().trim().equals("") || s.toString().trim().equals(".")) {
+                                if (s == null || (s.toString()).length() < 1 || s.toString().trim().equals("") || s.toString().trim().equals(".")) {
                                     prepareOrderProductTotalSalePriceText.setText("0");
                                 }
                                 double orderProductPromotionTotalSalePrice = 0;
@@ -1766,9 +1760,6 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                 break;
             // 下单
             case R.id.prepare_order_commit:
-                if ((prepareOrderProductTotalSalePriceText.getText().toString()).length() < 1 || "".equals(prepareOrderProductTotalSalePriceText.getText().toString().trim())) {
-                    prepareOrderProductTotalSalePriceText.setText("0");
-                }
                 boolean isPaidPriceCorrect = true;
                 int k = 0;
                 for (int j = 0; j < orderProductList.size(); j++) {
