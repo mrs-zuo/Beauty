@@ -26,6 +26,7 @@ public class UnFinishTGOrderAdvancedSearchActivity extends BaseActivity implemen
 	private  int       searchCustomerID,searchServicePICID;//选中搜索的顾客ID和服务顾问ID
 	private  String    searchCustomerName,searchServicePICName;//选中搜索的顾客姓名和服务顾问姓名
 	private  Button    searchResetBtn,searchBtn;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

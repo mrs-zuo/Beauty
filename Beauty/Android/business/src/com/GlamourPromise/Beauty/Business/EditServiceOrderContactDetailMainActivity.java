@@ -22,74 +22,75 @@ import com.GlamourPromise.Beauty.view.BusinessRightImageButton;
 import java.lang.ref.WeakReference;
 
 public class EditServiceOrderContactDetailMainActivity extends BaseActivity
-		implements OnClickListener {
-	private TextView serviceOrderContactDetailTime;
-	private EditText serviceOrderContactDetailRemark;
-	private Contact contact;
-	private Switch serviceOrderContactDetailStatusSwitch;
-	private ImageButton editServiceOrderContactDetailMakeSureBtn;
-	private Thread requestWebServiceThread;
-	private UserInfoApplication userinfoApplication;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_edit_service_order_contact_detail_main);
-		BusinessLeftImageButton bussinessLeftMenuBtn = (BusinessLeftImageButton) findViewById(R.id.btn_main_left_business_menu);
-		GenerateMenu.generateLeftMenu(this, bussinessLeftMenuBtn);
-		BusinessRightImageButton bussinessRightMenuBtn = (BusinessRightImageButton) findViewById(R.id.btn_main_right_menu);
-		GenerateMenu.generateRightMenu(this, bussinessRightMenuBtn);
-		contact = (Contact) getIntent().getSerializableExtra("contact");
-		serviceOrderContactDetailTime = (TextView) findViewById(R.id.edit_service_order_contact_detail_time);
-		serviceOrderContactDetailRemark = (EditText) findViewById(R.id.edit_service_order_contact_detail_remark_text);
-		serviceOrderContactDetailStatusSwitch = (Switch) findViewById(R.id.edit_service_order_contact_detail_status);
-		editServiceOrderContactDetailMakeSureBtn = (ImageButton) findViewById(R.id.edit_service_order_contact_detail_make_sure_btn);
-		editServiceOrderContactDetailMakeSureBtn.setOnClickListener(this);
-		serviceOrderContactDetailTime.setText(contact.getTime());
-		int tcontactIsCompleted = contact.getIsCompleted();
-		if (tcontactIsCompleted == 1)
-			serviceOrderContactDetailStatusSwitch.setChecked(true);
-		else if (tcontactIsCompleted == 0)
-			serviceOrderContactDetailStatusSwitch.setChecked(false);
-		else
-			serviceOrderContactDetailStatusSwitch.setChecked(false);
-		serviceOrderContactDetailRemark.setText(contact.getRemark());
-		userinfoApplication=UserInfoApplication.getInstance();
-	}
+        implements OnClickListener {
+    private TextView serviceOrderContactDetailTime;
+    private EditText serviceOrderContactDetailRemark;
+    private Contact contact;
+    private Switch serviceOrderContactDetailStatusSwitch;
+    private ImageButton editServiceOrderContactDetailMakeSureBtn;
+    private Thread requestWebServiceThread;
+    private UserInfoApplication userinfoApplication;
 
-	private   static class EditServiceOrderContactDetailMainActivityHandler extends Handler {
-		private final EditServiceOrderContactDetailMainActivity editServiceOrderContactDetailMainActivity;
-		private EditServiceOrderContactDetailMainActivityHandler(EditServiceOrderContactDetailMainActivity activity) {
-			WeakReference<EditServiceOrderContactDetailMainActivity> weakReference = new WeakReference<EditServiceOrderContactDetailMainActivity>(activity);
-			editServiceOrderContactDetailMainActivity = weakReference.get();
-		}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_edit_service_order_contact_detail_main);
+        BusinessLeftImageButton bussinessLeftMenuBtn = (BusinessLeftImageButton) findViewById(R.id.btn_main_left_business_menu);
+        GenerateMenu.generateLeftMenu(this, bussinessLeftMenuBtn);
+        BusinessRightImageButton bussinessRightMenuBtn = (BusinessRightImageButton) findViewById(R.id.btn_main_right_menu);
+        GenerateMenu.generateRightMenu(this, bussinessRightMenuBtn);
+        contact = (Contact) getIntent().getSerializableExtra("contact");
+        serviceOrderContactDetailTime = (TextView) findViewById(R.id.edit_service_order_contact_detail_time);
+        serviceOrderContactDetailRemark = (EditText) findViewById(R.id.edit_service_order_contact_detail_remark_text);
+        serviceOrderContactDetailStatusSwitch = (Switch) findViewById(R.id.edit_service_order_contact_detail_status);
+        editServiceOrderContactDetailMakeSureBtn = (ImageButton) findViewById(R.id.edit_service_order_contact_detail_make_sure_btn);
+        editServiceOrderContactDetailMakeSureBtn.setOnClickListener(this);
+        serviceOrderContactDetailTime.setText(contact.getTime());
+        int tcontactIsCompleted = contact.getIsCompleted();
+        if (tcontactIsCompleted == 1)
+            serviceOrderContactDetailStatusSwitch.setChecked(true);
+        else if (tcontactIsCompleted == 0)
+            serviceOrderContactDetailStatusSwitch.setChecked(false);
+        else
+            serviceOrderContactDetailStatusSwitch.setChecked(false);
+        serviceOrderContactDetailRemark.setText(contact.getRemark());
+        userinfoApplication = UserInfoApplication.getInstance();
+    }
 
-		@Override
-		public void handleMessage(Message msg) {
-			if (msg.what == 1) {
-				DialogUtil.createShortDialog(
-						editServiceOrderContactDetailMainActivity,
-						"联系详情更新成功！");
-				Intent destIntent = new Intent(
-						editServiceOrderContactDetailMainActivity,
-						OrderListActivity.class);
-				editServiceOrderContactDetailMainActivity.startActivity(destIntent);
-				editServiceOrderContactDetailMainActivity.finish();
-			} else if (msg.what == 0) {
-				DialogUtil.createShortDialog(
-						editServiceOrderContactDetailMainActivity,
-						"联系详情更新失败，请重试!");
-			}
-			else if (msg.what == 2)
-				DialogUtil.createShortDialog(editServiceOrderContactDetailMainActivity,
-						"您的网络貌似不给力，请重试");
-		}
-	}
+    private static class EditServiceOrderContactDetailMainActivityHandler extends Handler {
+        private final EditServiceOrderContactDetailMainActivity editServiceOrderContactDetailMainActivity;
 
-	@Override
-	public void onClick(View view) {
-		switch (view.getId()) {
-		case R.id.edit_service_order_contact_detail_make_sure_btn:
+        private EditServiceOrderContactDetailMainActivityHandler(EditServiceOrderContactDetailMainActivity activity) {
+            WeakReference<EditServiceOrderContactDetailMainActivity> weakReference = new WeakReference<EditServiceOrderContactDetailMainActivity>(activity);
+            editServiceOrderContactDetailMainActivity = weakReference.get();
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 1) {
+                DialogUtil.createShortDialog(
+                        editServiceOrderContactDetailMainActivity,
+                        "联系详情更新成功！");
+                Intent destIntent = new Intent(
+                        editServiceOrderContactDetailMainActivity,
+                        OrderListActivity.class);
+                editServiceOrderContactDetailMainActivity.startActivity(destIntent);
+                editServiceOrderContactDetailMainActivity.finish();
+            } else if (msg.what == 0) {
+                DialogUtil.createShortDialog(
+                        editServiceOrderContactDetailMainActivity,
+                        "联系详情更新失败，请重试!");
+            } else if (msg.what == 2)
+                DialogUtil.createShortDialog(editServiceOrderContactDetailMainActivity,
+                        "您的网络貌似不给力，请重试");
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.edit_service_order_contact_detail_make_sure_btn:
 			/*requestWebServiceThread = new Thread() {
 				@Override
 				public void run() {
@@ -128,8 +129,8 @@ public class EditServiceOrderContactDetailMainActivity extends BaseActivity
 				}
 			};
 			requestWebServiceThread.start();*/
-			break;
-		}
+                break;
+        }
 
-	}
+    }
 }

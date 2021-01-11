@@ -100,10 +100,13 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
     long taskID = 0;
     String fromSource;
     RelativeLayout orderProductCardSpinnerRelativeLayout;
+    // activity 销毁(onDestroy)标志
+    private boolean exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        exit = false;
         // 开单闪退对应(PrepareOrderActivity初期化开始)
         progressDialog2 = ProgressDialogUtil.createProgressDialog(this);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -127,6 +130,11 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 
         @Override
         public void handleMessage(Message msg) {
+            // 当activity未加载完成时,用户返回的情况
+            if (prepareOrderActivity.exit) {
+                // 用户返回不做任何处理
+                return;
+            }
             if (prepareOrderActivity.progressDialog != null) {
                 prepareOrderActivity.progressDialog.dismiss();
                 prepareOrderActivity.progressDialog = null;
@@ -2202,9 +2210,18 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
+        exit = true;
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+            mHandler = null;
+        }
         if (progressDialog != null) {
             progressDialog.dismiss();
             progressDialog = null;
+        }
+        if (requestWebServiceThread != null) {
+            requestWebServiceThread.interrupt();
+            requestWebServiceThread = null;
         }
     }
 }
