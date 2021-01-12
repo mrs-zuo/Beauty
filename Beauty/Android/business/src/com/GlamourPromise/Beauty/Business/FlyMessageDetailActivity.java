@@ -766,7 +766,7 @@ public class FlyMessageDetailActivity extends BaseActivity implements OnClickLis
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

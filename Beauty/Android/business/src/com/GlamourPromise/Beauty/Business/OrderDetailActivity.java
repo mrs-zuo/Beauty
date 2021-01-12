@@ -2602,7 +2602,7 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

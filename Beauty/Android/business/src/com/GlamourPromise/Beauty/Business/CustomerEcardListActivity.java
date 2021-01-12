@@ -386,7 +386,7 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

@@ -383,7 +383,7 @@ public class CustomerRecordActivity extends BaseActivity implements OnClickListe
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

@@ -286,7 +286,7 @@ public class CustomerStatisticsPieActivity extends BaseActivity implements OnCli
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

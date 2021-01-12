@@ -473,7 +473,7 @@ public class CustomerRecordTemplateActivity extends BaseActivity implements OnIt
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         dismissDialog();
         if (requestWebServiceThread != null) {

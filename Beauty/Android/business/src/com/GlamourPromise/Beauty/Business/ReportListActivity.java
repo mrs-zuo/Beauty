@@ -222,7 +222,7 @@ public class ReportListActivity extends BaseActivity implements OnItemClickListe
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

@@ -1066,7 +1066,7 @@ public class ChoosePersonActivity extends BaseActivity implements OnClickListene
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

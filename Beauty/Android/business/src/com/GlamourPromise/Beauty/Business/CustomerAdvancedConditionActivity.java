@@ -568,7 +568,7 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

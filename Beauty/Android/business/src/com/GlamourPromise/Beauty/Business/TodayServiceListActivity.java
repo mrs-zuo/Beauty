@@ -278,7 +278,7 @@ public class TodayServiceListActivity extends BaseActivity implements OnItemClic
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
     }
 }

@@ -686,7 +686,7 @@ public class AppointmentDetailActivity extends BaseActivity implements OnClickLi
         exit = true;
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
-            handler = null;
+            // handler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

@@ -174,7 +174,7 @@ public class NoticeListActivity extends BaseActivity implements OnItemClickListe
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         dismissProgressDialog();
         if (getNoticeListThread != null) {

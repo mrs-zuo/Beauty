@@ -319,7 +319,7 @@ public class CommodityCategoryActivity extends BaseActivity implements OnItemCli
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();

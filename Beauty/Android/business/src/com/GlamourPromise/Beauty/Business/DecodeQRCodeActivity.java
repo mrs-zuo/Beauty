@@ -88,7 +88,7 @@ public class DecodeQRCodeActivity extends BaseActivity implements Callback {
         super.onPause();
         if (handler != null) {
             handler.quitSynchronously();
-            handler = null;
+            // handler = null;
         }
         CameraManager.get().closeDriver();
     }
@@ -99,7 +99,7 @@ public class DecodeQRCodeActivity extends BaseActivity implements Callback {
         super.onDestroy();
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
-            handler = null;
+            // handler = null;
         }
     }
 

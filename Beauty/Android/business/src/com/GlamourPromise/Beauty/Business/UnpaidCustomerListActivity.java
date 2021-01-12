@@ -228,7 +228,7 @@ public class UnpaidCustomerListActivity extends BaseActivity implements OnItemCl
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

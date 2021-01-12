@@ -472,7 +472,7 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();

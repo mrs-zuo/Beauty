@@ -292,7 +292,7 @@ public class OpportunityListActivity extends BaseActivity implements OnClickList
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         dismissDialog();
     }

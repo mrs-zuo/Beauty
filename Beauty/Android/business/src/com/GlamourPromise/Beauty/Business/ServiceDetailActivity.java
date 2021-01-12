@@ -620,7 +620,7 @@ public class ServiceDetailActivity extends BaseActivity implements OnClickListen
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();

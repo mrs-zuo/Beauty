@@ -164,7 +164,7 @@ public class AddLabelActivity extends BaseActivity {
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         dismissProgressDialog();
         if (addDataThread != null) {

@@ -315,7 +315,7 @@ public class BranchEmployeeBusinessDetailBarChartActivity extends BaseActivity i
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

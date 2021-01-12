@@ -325,7 +325,7 @@ public class AccountListActivity extends BaseActivity implements OnItemClickList
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         dismissProgressDialog();
         if (getAccountListDataThread != null) {

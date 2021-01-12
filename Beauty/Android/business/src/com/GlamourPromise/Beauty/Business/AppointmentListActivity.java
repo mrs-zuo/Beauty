@@ -502,7 +502,7 @@ public class AppointmentListActivity extends BaseActivity implements OnClickList
         exit = true;
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
-            handler = null;
+            // handler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

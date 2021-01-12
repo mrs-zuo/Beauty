@@ -69,6 +69,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
 /*
  * 开单界面
@@ -486,6 +487,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
             requestWebServiceThread = new Thread() {
                 @Override
                 public void run() {
+                    if (exit) {
+                        return;
+                    }
                     String methodName = "GetCardDiscountList";
                     String endPoint = "ECard";
                     JSONObject getProductInfoJson = new JSONObject();
@@ -629,6 +633,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
             requestWebServiceThread = new Thread() {
                 @Override
                 public void run() {
+                    if (exit) {
+                        return;
+                    }
                     String methodName = "getProductInfoList";
                     String endPoint = "Commodity";
                     JSONObject getProductInfoJson = new JSONObject();
@@ -793,6 +800,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
+                if (exit) {
+                    return;
+                }
                 String methodName = "GetCustomerBenefitList";
                 String endPoint = "ECard";
                 JSONObject customerBenefitJsonParam = new JSONObject();
@@ -1909,6 +1919,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     requestWebServiceThread = new Thread() {
                         @Override
                         public void run() {
+                            if (exit) {
+                                return;
+                            }
                             String methodName = "AddNewOrder";
                             String endPoint = "Order";
                             JSONObject prepareOrderJson = new JSONObject();
@@ -2062,6 +2075,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
+                if (exit) {
+                    return;
+                }
                 String methodName = "addOpportunity";
                 String endPoint = "Opportunity";
                 JSONObject prepareOpportunityJson = new JSONObject();
@@ -2119,6 +2135,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
+                if (exit) {
+                    return;
+                }
                 String methodName = "getStepList";
                 String endPoint = "Opportunity";
                 JSONObject getStepListParamJson = new JSONObject();
@@ -2213,7 +2232,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

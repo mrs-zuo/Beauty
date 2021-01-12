@@ -172,7 +172,7 @@ public class BranchListActivity extends BaseActivity implements OnItemClickListe
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         dismissProgressDialog();
         if (getBranchListDataThread != null) {

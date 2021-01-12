@@ -260,7 +260,7 @@ public class CustomerServicingPhotoActivity extends BaseActivity {
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

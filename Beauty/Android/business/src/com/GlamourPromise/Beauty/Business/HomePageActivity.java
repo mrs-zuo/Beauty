@@ -268,7 +268,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                 }
                 homePageActivity.servicingInfoListView.onRefreshComplete();
             } else if (msg.what == 9) {
-                List<OrderInfo> searchResult = (List<OrderInfo>) msg.obj;
+                List<OrderInfo> searchResult = new ArrayList<OrderInfo>();
+                searchResult.addAll((List<OrderInfo>) msg.obj);
                 homePageActivity.serviceInfoListAdapter = new ServicingInfoListAdapter(homePageActivity, searchResult, homePageActivity.userInfoApplication);
                 homePageActivity.servicingInfoListView.setAdapter(homePageActivity.serviceInfoListAdapter);
             } else if (msg.what == 10) {
@@ -290,6 +291,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                     ((LinearLayout) treatmentDialogLayout.findViewById(R.id.treatment_list_linearlayout)).addView(treatmentLayout);
                 }
                 new AlertDialog.Builder(homePageActivity, R.style.CustomerAlertDialog).setView(treatmentDialogLayout).show();
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(homePageActivity, "服务器异常，请重试");
             }
             if (homePageActivity.requestWebServiceThread != null) {
                 homePageActivity.requestWebServiceThread.interrupt();
@@ -440,7 +443,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                         unFinishTGJsonParam.put("ImageHeight", "180");
                     }
                 } catch (JSONException e) {
-
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, unFinishTGJsonParam.toString(), userInfoApplication);
                 if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -455,11 +459,15 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                         code = resultJson.getInt("Code");
                         msg = resultJson.getString("Message");
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         try {
                             unFinishTGArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (unFinishTGArray != null) {
                             for (int i = 0; i < unFinishTGArray.length(); i++) {
@@ -516,6 +524,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                                     if (unfinishOrderJson.has("IsDesignated") && !unfinishOrderJson.isNull("IsDesignated"))
                                         isDesignated = unfinishOrderJson.getBoolean("IsDesignated");
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 unfinishOrder.setCustomerName(customerName);
                                 unfinishOrder.setCustomerHeadImageUrl(customerHeadImageUrl);
@@ -564,7 +574,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                 try {
                     orderRemarkJson.put("QRCode", finalQRCode);
                 } catch (JSONException e) {
-
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, orderRemarkJson.toString(), userInfoApplication);
                 if (serverRequestResult == null
@@ -600,6 +611,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                         code = 0;
                         if (message.equals(""))
                             message = "获取数据失败,请重试!";
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     Message msg = finalHadnler.obtainMessage();
                     msg.what = 0;
@@ -625,6 +638,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                 try {
                     orderRemarkJson.put("QRCode", finalQRCode);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
 
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, orderRemarkJson.toString(), userInfoApplication);
@@ -666,6 +681,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                         }
                     } catch (JSONException e) {
                         code = 0;
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (message.equals(""))
                         message = "获取数据失败,请重试!";
@@ -722,7 +739,7 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();
@@ -873,6 +890,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                 try {
                     getTreatmentListJsonParam.put("GroupNo", groupNO);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, getTreatmentListJsonParam.toString(), userInfoApplication);
                 if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -884,6 +903,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                         treatmentListJson = new JSONObject(serverRequestResult);
                         code = treatmentListJson.getInt("Code");
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     String returnMessage = "";
                     if (code == 1) {
@@ -892,7 +913,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                         try {
                             treatmentArray = treatmentListJson.getJSONArray("Data");
                         } catch (JSONException e) {
-
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (treatmentArray != null) {
 
@@ -902,12 +924,16 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                                 try {
                                     treatmentJson = treatmentArray.getJSONObject(i);
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 try {
                                     treatment.setSubServiceName(treatmentJson.getString("SubServiceName"));
                                     treatment.setDesignated(treatmentJson.getBoolean("IsDesignated"));
                                     treatment.setExecutorName(treatmentJson.getString("ExecutorName"));
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 treatmentList.add(treatment);
                             }

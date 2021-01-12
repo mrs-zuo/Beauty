@@ -419,7 +419,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 customerTitleText.setText(getString(R.string.branch_customer_btn));
             }
         }
-        customerList.clear();
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
@@ -514,6 +513,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             mHandler.sendEmptyMessage(99);
                             return;
                         }
+                        customerList.clear();
                         for (int i = 0; i < customerListJsonArray.length(); i++) {
                             Customer customer = new Customer();
                             int customerId = 0;
@@ -581,6 +581,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 Log.i("CustomerActivity", "获取数据结束：" + sf.format(new Date()));
             }
         };
+
         requestWebServiceThread.start();
     }
 
@@ -654,7 +655,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();

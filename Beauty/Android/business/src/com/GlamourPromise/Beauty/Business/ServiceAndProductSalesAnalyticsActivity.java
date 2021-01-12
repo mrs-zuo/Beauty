@@ -226,7 +226,7 @@ public class ServiceAndProductSalesAnalyticsActivity extends BaseActivity implem
         exit = true;
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler = null;
+            // mHandler = null;
         }
         if (progressDialog != null) {
             progressDialog.dismiss();
