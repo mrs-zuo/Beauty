@@ -466,6 +466,7 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
         resetView();
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         exit = true;
