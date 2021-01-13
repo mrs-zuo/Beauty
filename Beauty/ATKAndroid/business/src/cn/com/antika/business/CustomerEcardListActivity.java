@@ -255,7 +255,7 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
     }
 
     protected void getNewestCustomerInfo() {
-        progressDialog = ProgressDialogUtil.createProgressDialog(this);
+        progressDialog = ProgressDialogUtil.createProgressDialog(CustomerEcardListActivity.this);
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
@@ -384,13 +384,13 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
         // TODO Auto-generated method stub
         super.onDestroy();
         exit = true;
-        if (progressDialog != null) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
             // mHandler = null;
+        }
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();

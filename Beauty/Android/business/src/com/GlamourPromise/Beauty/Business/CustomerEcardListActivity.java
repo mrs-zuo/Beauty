@@ -255,7 +255,7 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
     }
 
     protected void getNewestCustomerInfo() {
-        progressDialog = ProgressDialogUtil.createProgressDialog(this);
+        progressDialog = ProgressDialogUtil.createProgressDialog(CustomerEcardListActivity.this);
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {

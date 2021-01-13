@@ -1277,7 +1277,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             @Override
                             public void afterTextChanged(Editable s) {
                                 if (s == null || (s.toString()).length() < 1 || s.toString().trim().equals("") || s.toString().trim().equals(".")) {
-                                    prepareOrderProductTotalSalePriceText.setText("0");
+                                    prepareOrderProductTotalSalePriceText.setText("0.00");
                                 }
                                 double orderProductPromotionTotalSalePrice = 0;
                                 int k = 0;
@@ -1289,7 +1289,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                             orderProductTotalSalePrice = Double.parseDouble((editText.getText().toString()));
                                         } catch (NumberFormatException e) {
                                             orderProductTotalSalePrice = 0;
-                                            editText.setText("0");
+                                            editText.setText("0.00");
                                         }
                                         orderProductList.get(i).setTotalSalePrice(String.valueOf(orderProductTotalSalePrice / orderProductList.get(k).getQuantity()));
                                         orderProductPromotionTotalSalePrice += orderProductTotalSalePrice;
@@ -1332,7 +1332,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         @Override
                         public void onTextChanged(CharSequence s, int start, int before, int count) {
                             if ((prepareOrderProductHasPaidPriceText.getText().toString()).length() < 1) {
-                                prepareOrderProductHasPaidPriceText.setText("0");
+                                prepareOrderProductHasPaidPriceText.setText("0.00");
                             }
                         }
 
@@ -1344,30 +1344,33 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         @Override
                         public void afterTextChanged(Editable s) {
                             // TODO Auto-generated method stub
-                            if (s != null && !s.toString().equals("")) {
+                            if (s != null && !s.toString().trim().equals("") && !s.toString().trim().equals(".")) {
                                 String orderProductPromotionPriceInput = prepareOrderProductTotalSalePriceText.getText().toString();
                                 if (orderProductPromotionPriceInput == null || orderProductPromotionPriceInput.equals("")) {
                                     //监听输入的过去支付金额不能大于商品或者服务的成交价
                                     if (orderProduct.getMarketingPolicy() == 1 || orderProduct.getMarketingPolicy() == 2) {
                                         if (NumberFormatUtil.doubleCompare(Double.valueOf(s.toString()), Double.valueOf(orderProduct.getPromotionPrice())) > 0) {
                                             DialogUtil.createShortDialog(getApplicationContext(), "过去支付金额不能大于服务/商品的价格");
-                                            prepareOrderProductHasPaidPriceText.setText("0");
+                                            prepareOrderProductHasPaidPriceText.setText("0.00");
                                             prepareOrderProductHasPaidPriceText.selectAll();
                                         }
                                     } else {
                                         if (NumberFormatUtil.doubleCompare(Double.valueOf(s.toString()), Double.valueOf(orderProduct.getUnitPrice())) > 0) {
                                             DialogUtil.createShortDialog(getApplicationContext(), "过去支付金额不能大于服务/商品的价格");
-                                            prepareOrderProductHasPaidPriceText.setText("0");
+                                            prepareOrderProductHasPaidPriceText.setText("0.00");
                                             prepareOrderProductHasPaidPriceText.selectAll();
                                         }
                                     }
                                 } else {
                                     if (NumberFormatUtil.doubleCompare(Double.valueOf(s.toString()), Double.valueOf(orderProductPromotionPriceInput)) > 0) {
                                         DialogUtil.createShortDialog(getApplicationContext(), "过去支付金额不能大于服务/商品的价格");
-                                        prepareOrderProductHasPaidPriceText.setText("0");
+                                        prepareOrderProductHasPaidPriceText.setText("0.00");
                                         prepareOrderProductHasPaidPriceText.selectAll();
                                     }
                                 }
+                            } else {
+                                prepareOrderProductHasPaidPriceText.setText("0.00");
+                                prepareOrderProductHasPaidPriceText.selectAll();
                             }
                         }
                     });
