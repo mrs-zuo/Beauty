@@ -4,7 +4,7 @@
     <solid android:color="@android:color/white"/>
     <!--描边设置-->
     <stroke
-        android:width="15dp"
+        android:width="10dp"
         android:color="@color/border_color" />
     <padding
         android:bottom="30dp"
