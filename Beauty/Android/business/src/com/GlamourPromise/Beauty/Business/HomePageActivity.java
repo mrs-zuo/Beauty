@@ -136,7 +136,7 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                 //注册推送服务
                 //if(JPushInterface.isPushStopped(getApplicationContext())){
                 JPushInterface.resumePush(homePageActivity.getApplicationContext());
-                String uuid = com.GlamourPromise.Beauty.Jpush.RandomUUID.getRandomUUID(homePageActivity, homePageActivity.sharedPreferences.getString("lastLoginAccount", ""));
+                String uuid = RandomUUID.getRandomUUID(homePageActivity, homePageActivity.sharedPreferences.getString("lastLoginAccount", ""));
                 JPushInterface.init(homePageActivity.getApplicationContext());
                 JPushInterface.setAlias(homePageActivity.getApplicationContext(), uuid, null);
                 //}

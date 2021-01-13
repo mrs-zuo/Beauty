@@ -98,10 +98,13 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
     private View mHeaderParent;
     // 需要刷新标志
     private boolean mustRefreshFlg;
+    // activity 销毁(onDestroy)标志
+    private boolean exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        exit = false;
         this.mustRefreshFlg = false;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_customer);
@@ -171,6 +174,11 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 
         @Override
         public void handleMessage(Message msg) {
+            // 当activity未加载完成时,用户返回的情况
+            if (customerActivity.exit) {
+                // 用户返回不做任何处理
+                return;
+            }
             Log.i("CustomerActivity", "接收msg start：" + msg.what + ":" + customerActivity.sf.format(new Date()));
             if (customerActivity.progressDialog != null) {
                 customerActivity.progressDialog.dismiss();
@@ -411,7 +419,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 customerTitleText.setText(getString(R.string.branch_customer_btn));
             }
         }
-        customerList.clear();
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
@@ -506,6 +513,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             mHandler.sendEmptyMessage(99);
                             return;
                         }
+                        customerList.clear();
                         for (int i = 0; i < customerListJsonArray.length(); i++) {
                             Customer customer = new Customer();
                             int customerId = 0;
@@ -573,6 +581,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 Log.i("CustomerActivity", "获取数据结束：" + sf.format(new Date()));
             }
         };
+
         requestWebServiceThread.start();
     }
 
@@ -643,9 +652,18 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
+        exit = true;
         if (progressDialog != null) {
             progressDialog.dismiss();
             progressDialog = null;
+        }
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+            // mHandler = null;
+        }
+        if (requestWebServiceThread != null) {
+            requestWebServiceThread.interrupt();
+            requestWebServiceThread = null;
         }
         System.gc();
     }

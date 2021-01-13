@@ -6,9 +6,13 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.DialogFragment;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Selection;
@@ -32,6 +36,7 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableLayout.LayoutParams;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.GlamourPromise.Beauty.application.UserInfoApplication;
 import com.GlamourPromise.Beauty.bean.AppointmentDetailInfo;
@@ -94,6 +99,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
     // 获取优惠券状态标志
     private boolean getCustomerBenefitListRunning = false;
     DecimalFormat df = new DecimalFormat("#.00");
+    DecimalFormat df2 = new DecimalFormat("0.00");
     JSONArray OldOrderIdArray = new JSONArray();
     List<EcardInfo> ecardInfoList;
     ArrayList<String> list = new ArrayList<String>();
@@ -524,7 +530,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             return;
                         }
                         if (code == 1) {
-                            ecardInfoList = new ArrayList<EcardInfo>();
+                            List<EcardInfo> ecardInfos = new ArrayList<EcardInfo>();
                             JSONArray productArray = null;
                             try {
                                 productArray = resultJson.getJSONArray("Data");
@@ -539,7 +545,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 ecardInfo1.setUserEcardName("不使用e账户");
                                 ecardInfo1.setUserEcardDiscount("1");
                                 ecardInfo1.setUserEcardNameAndDiscount("不使用e账户");
-                                ecardInfoList.add(ecardInfo1);
+                                ecardInfos.add(ecardInfo1);
                                 for (int i = 0; i < productArray.length(); i++) {
                                     JSONObject productjson = null;
                                     try {
@@ -569,22 +575,24 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                                 ecardInfo.setUserEcardNameAndDiscount(productjson.getString("CardName"));
                                             }
                                         }
-                                        ecardInfoList.add(ecardInfo);
+                                        ecardInfos.add(ecardInfo);
                                     } catch (JSONException e) {
                                         mHandler.sendEmptyMessage(99);
                                         return;
                                     }
                                 }
                             }
+                            ecardInfoList.clear();
+                            ecardInfos.addAll(ecardInfos);
                             Message msg = new Message();
                             EcardSpinnerBean esb = new EcardSpinnerBean();
-                            String[] cardNameArray = new String[ecardInfoList.size()];
+                            String[] cardNameArray = new String[ecardInfos.size()];
                             ArrayList<String> cardDiscount = new ArrayList<String>();
                             ArrayList<String> cardId = new ArrayList<String>();
-                            for (int j = 0; j < ecardInfoList.size(); j++) {
-                                cardId.add(String.valueOf(ecardInfoList.get(j).getUserEcardID()));
-                                cardDiscount.add(ecardInfoList.get(j).getUserEcardDiscount());
-                                cardNameArray[j] = ecardInfoList.get(j).getUserEcardNameAndDiscount();
+                            for (int j = 0; j < ecardInfos.size(); j++) {
+                                cardId.add(String.valueOf(ecardInfos.get(j).getUserEcardID()));
+                                cardDiscount.add(ecardInfos.get(j).getUserEcardDiscount());
+                                cardNameArray[j] = ecardInfos.get(j).getUserEcardNameAndDiscount();
                             }
                             esb.setEcardSpinner(addCardSpinner);
                             esb.setCardNameArray(cardNameArray);
@@ -617,6 +625,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
             DialogUtil.createMakeSureDialog(this, "温馨提示", "请选择服务或者商品开单");
         } else {
             progressDialog = ProgressDialogUtil.createProgressDialog(this);
+            ecardInfoList = new ArrayList<EcardInfo>();
             final JSONArray oldProductArray = new JSONArray();
             for (int j = 0; j < orderProductList.size(); j++) {
                 JSONObject oldProduct = new JSONObject();
@@ -1827,11 +1836,18 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                 else if (isCommodityOrderResponsibleNull)
                     DialogUtil.createShortDialog(this, "商品单美丽顾问不能为空");
                 else {
-                    progressDialog = ProgressDialogUtil.createProgressDialog(this);
+                    // progressDialog = ProgressDialogUtil.createProgressDialog(this);
                     final JSONArray orderProductArray = new JSONArray();
+                    // 成交总价
                     double productTotalPrice = 0;
-                    //所有订单过去支付的金额
+                    // 所有订单过去支付的金额
                     double productPastPaidPrice = 0;
+                    // 总服务次数
+                    Integer serviceNum = 0;
+                    // 总过去服务次数
+                    Integer serviceNumPast = 0;
+                    // 是否含有不限次商品
+                    boolean serviceNumAll = false;
                     // 判断是否有销售顾问的功能
                     boolean hasSales = false;
                     if (userinfoApplication.getAccountInfo().getModuleInUse().contains("|4|"))
@@ -1841,6 +1857,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         if (!orderProductList.get(i).isOldOrder()) {
                             JSONObject orderProductJson = new JSONObject();
                             OrderProduct orderProduct = orderProductList.get(i);
+                            if (orderProduct.getCourseFrequency() < 1) {
+                                serviceNumAll = true;
+                            }
                             try {
                                 orderProductJson.put("ResponsiblePersonID", orderProduct.getResponsiblePersonID());
                                 // 如果有销售顾问功能并且销售顾问不等于美丽顾问
@@ -1861,7 +1880,24 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 // TODO Auto-generated catch block
                                 orderProductTotalSalePrice = Double.parseDouble((((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_total_price)).getText().toString()));
                             }
-                            double orderProductTotalPrice = Double.parseDouble((((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_total_price)).getText().toString()));
+                            double orderProductHasPaidPrice = 0;
+                            try {
+                                orderProductHasPaidPrice = Double.parseDouble((((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_has_paid_price)).getText().toString()));
+                            } catch (NumberFormatException e) {
+                                // TODO Auto-generated catch block
+                            }
+                            Integer prepareOrderServiceQuantity = 0;
+                            try {
+                                prepareOrderServiceQuantity = Integer.parseInt((((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_service_quantity)).getText().toString()));
+                            } catch (NumberFormatException e) {
+                                // TODO Auto-generated catch block
+                            }
+                            Integer prepareOrderProductHasCompletenum = 0;
+                            try {
+                                prepareOrderProductHasCompletenum = Integer.parseInt((((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_product_has_completenum)).getText().toString()));
+                            } catch (NumberFormatException e) {
+                                // TODO Auto-generated catch block
+                            }
                             String orderProductRemark = (((TextView) prepareOrderProductListView.getChildAt(j).findViewById(R.id.prepare_order_remark)).getText().toString());
                             try {
                                 if (orderProductRemark != null && !(("").equals(orderProductRemark))) {
@@ -1905,7 +1941,14 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 return;
                             }
                             orderProductArray.put(orderProductJson);
+                            // 成交价格
                             productTotalPrice += orderProductTotalSalePrice;
+                            // 过去支付
+                            productPastPaidPrice += orderProductHasPaidPrice;
+                            // 服务次数
+                            serviceNum += prepareOrderServiceQuantity;
+                            // 过去服务次数
+                            serviceNumPast += prepareOrderProductHasCompletenum;
                             j++;
                         }
 
@@ -1916,102 +1959,142 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     //判断订单的过去支付金额是不是都小于订单应付金额
                     if (NumberFormatUtil.doubleCompare(productTotalPrice, productPastPaidPrice) == 0)
                         isPastPayAll = 1;
-                    requestWebServiceThread = new Thread() {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomerAlertDialog);
+                    // 获取布局
+                    View view2 = getLayoutInflater().from(this).inflate(R.layout.activity_prepare_order_make_sure, null);
+                    // 获取布局中的控件
+                    final TextView prepareOrderTotalPrice = (TextView) view2.findViewById(R.id.prepare_order_total_price);
+                    if (productTotalPrice - productPastPaidPrice > 0) {
+                        prepareOrderTotalPrice.setText(df2.format(productTotalPrice - productPastPaidPrice));
+                    } else {
+                        prepareOrderTotalPrice.setText(df2.format(0));
+                    }
+                    final TextView prepareOrderServiceNum = (TextView) view2.findViewById(R.id.prepare_order_service_num);
+                    if (serviceNum - serviceNumPast > 0) {
+                        prepareOrderServiceNum.setText(String.valueOf(serviceNum - serviceNumPast));
+                    } else if (serviceNumAll) {
+                        prepareOrderServiceNum.setText("不限");
+                    } else {
+                        prepareOrderServiceNum.setText(String.valueOf(0));
+                    }
+                    final Button btnMakeSure = (Button) view2.findViewById(R.id.btn_make_sure);
+                    final Button btnCancel = (Button) view2.findViewById(R.id.btn_cancel);
+                    // 创建对话框
+                    final AlertDialog alertDialog = builder.create();
+                    alertDialog.setCanceledOnTouchOutside(true);
+                    alertDialog.show();
+                    alertDialog.getWindow().setContentView(view2);
+                    btnCancel.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void run() {
-                            if (exit) {
-                                return;
-                            }
-                            String methodName = "AddNewOrder";
-                            String endPoint = "Order";
-                            JSONObject prepareOrderJson = new JSONObject();
-                            try {
-                                prepareOrderJson.put("OrderList", orderProductArray);
-                                prepareOrderJson.put("OldOrderIDs", OldOrderIdArray);
-                            } catch (JSONException e) {
-                                // TODO Auto-generated catch block
-                                mHandler.sendEmptyMessage(99);
-                                return;
-                            }
-                            if (opportunityID != 0) {
-                                try {
-                                    prepareOrderJson.put("CustomerID", orderProductList.get(0).getCustomerID());
-                                } catch (JSONException e) {
-                                    mHandler.sendEmptyMessage(99);
-                                    return;
-                                }
-                            } else {
-                                try {
-                                    prepareOrderJson.put("CustomerID", userinfoApplication.getSelectedCustomerID());
-                                } catch (JSONException e) {
-                                    mHandler.sendEmptyMessage(99);
-                                    return;
-                                }
-                            }
-                            String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, prepareOrderJson.toString(), userinfoApplication);
-                            JSONObject resultJson = null;
-                            try {
-                                resultJson = new JSONObject(serverResultResult);
-                            } catch (JSONException e1) {
-                                // TODO Auto-generated catch block
-                                e1.printStackTrace();
-                                mHandler.sendEmptyMessage(99);
-                                return;
-                            }
-                            if (serverResultResult == null
-                                    || serverResultResult.equals(""))
-                                mHandler.sendEmptyMessage(-1);
-                            else {
-                                String code = "0";
-                                String message = "";
-                                try {
-                                    code = resultJson.getString("Code");
-                                    message = resultJson.getString("Message");
-                                } catch (JSONException e) {
-                                    // TODO Auto-generated catch block
-                                    code = "0";
-                                    mHandler.sendEmptyMessage(99);
-                                    return;
-                                }
-                                if (Integer.parseInt(code) == 1) {
-                                    quickBalanceOrderList = new ArrayList<OrderInfo>();
-                                    JSONArray orderListArray = null;
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+                        }
+                    });
+                    btnMakeSure.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            alertDialog.dismiss();
+                            progressDialog = ProgressDialogUtil.createProgressDialog(PrepareOrderActivity.this);
+                            requestWebServiceThread = new Thread() {
+                                @Override
+                                public void run() {
+                                    if (exit) {
+                                        return;
+                                    }
+                                    String methodName = "AddNewOrder";
+                                    String endPoint = "Order";
+                                    JSONObject prepareOrderJson = new JSONObject();
                                     try {
-                                        orderListArray = resultJson.getJSONArray("Data");
+                                        prepareOrderJson.put("OrderList", orderProductArray);
+                                        prepareOrderJson.put("OldOrderIDs", OldOrderIdArray);
                                     } catch (JSONException e) {
+                                        // TODO Auto-generated catch block
                                         mHandler.sendEmptyMessage(99);
                                         return;
                                     }
-                                    if (orderListArray != null) {
-                                        for (int i = 0; i < orderListArray.length(); i++) {
+                                    if (opportunityID != 0) {
+                                        try {
+                                            prepareOrderJson.put("CustomerID", orderProductList.get(0).getCustomerID());
+                                        } catch (JSONException e) {
+                                            mHandler.sendEmptyMessage(99);
+                                            return;
+                                        }
+                                    } else {
+                                        try {
+                                            prepareOrderJson.put("CustomerID", userinfoApplication.getSelectedCustomerID());
+                                        } catch (JSONException e) {
+                                            mHandler.sendEmptyMessage(99);
+                                            return;
+                                        }
+                                    }
+                                    String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, prepareOrderJson.toString(), userinfoApplication);
+                                    JSONObject resultJson = null;
+                                    try {
+                                        resultJson = new JSONObject(serverResultResult);
+                                    } catch (JSONException e1) {
+                                        // TODO Auto-generated catch block
+                                        e1.printStackTrace();
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
+                                    }
+                                    if (serverResultResult == null
+                                            || serverResultResult.equals(""))
+                                        mHandler.sendEmptyMessage(-1);
+                                    else {
+                                        String code = "0";
+                                        String message = "";
+                                        try {
+                                            code = resultJson.getString("Code");
+                                            message = resultJson.getString("Message");
+                                        } catch (JSONException e) {
+                                            // TODO Auto-generated catch block
+                                            code = "0";
+                                            mHandler.sendEmptyMessage(99);
+                                            return;
+                                        }
+                                        if (Integer.parseInt(code) == 1) {
+                                            quickBalanceOrderList = new ArrayList<OrderInfo>();
+                                            JSONArray orderListArray = null;
                                             try {
-                                                list.add(orderListArray.get(i).toString());
+                                                orderListArray = resultJson.getJSONArray("Data");
                                             } catch (JSONException e) {
-                                                e.printStackTrace();
                                                 mHandler.sendEmptyMessage(99);
                                                 return;
                                             }
+                                            if (orderListArray != null) {
+                                                for (int i = 0; i < orderListArray.length(); i++) {
+                                                    try {
+                                                        list.add(orderListArray.get(i).toString());
+                                                    } catch (JSONException e) {
+                                                        e.printStackTrace();
+                                                        mHandler.sendEmptyMessage(99);
+                                                        return;
+                                                    }
+                                                }
+                                            }
+                                            Message msg = new Message();
+                                            mHandler.sendEmptyMessage(9);
+                                        } else if (Integer.parseInt(code) == Constant.APP_VERSION_ERROR || Integer.parseInt(code) == Constant.LOGIN_ERROR)
+                                            mHandler.sendEmptyMessage(Integer.parseInt(code));
+                                        else if (Integer.parseInt(code) == -2) {
+                                            Message msg = new Message();
+                                            msg.what = 4;
+                                            msg.obj = message;
+                                            mHandler.sendMessage(msg);
+                                        } else {
+                                            Message msg = new Message();
+                                            msg.what = 0;
+                                            msg.obj = message;
+                                            mHandler.sendMessage(msg);
                                         }
                                     }
-                                    Message msg = new Message();
-                                    mHandler.sendEmptyMessage(9);
-                                } else if (Integer.parseInt(code) == Constant.APP_VERSION_ERROR || Integer.parseInt(code) == Constant.LOGIN_ERROR)
-                                    mHandler.sendEmptyMessage(Integer.parseInt(code));
-                                else if (Integer.parseInt(code) == -2) {
-                                    Message msg = new Message();
-                                    msg.what = 4;
-                                    msg.obj = message;
-                                    mHandler.sendMessage(msg);
-                                } else {
-                                    Message msg = new Message();
-                                    msg.what = 0;
-                                    msg.obj = message;
-                                    mHandler.sendMessage(msg);
                                 }
-                            }
+                            };
+                            requestWebServiceThread.start();
                         }
-                    };
-                    requestWebServiceThread.start();
+                    });
                 }
                 break;
         }

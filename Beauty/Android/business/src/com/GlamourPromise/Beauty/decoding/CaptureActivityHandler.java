@@ -26,6 +26,7 @@ import com.GlamourPromise.Beauty.Business.R;
 import com.GlamourPromise.Beauty.camera.CameraManager;
 import com.GlamourPromise.Beauty.view.ViewfinderResultPointCallback;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -41,6 +42,7 @@ import java.util.Vector;
  *
  * @author dswitkin@google.com (Daniel Switkin)
  */
+@SuppressLint("ResourceType")
 public final class CaptureActivityHandler extends Handler {
 
     private static final String TAG = CaptureActivityHandler.class.getSimpleName();

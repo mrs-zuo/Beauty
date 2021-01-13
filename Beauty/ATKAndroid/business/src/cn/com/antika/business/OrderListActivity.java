@@ -74,6 +74,8 @@ public class OrderListActivity extends BaseActivity implements OnClickListener, 
     private TextView orderListPageInfoText;
     private boolean isAllBranchOrder = false;
     private PackageUpdateUtil packageUpdateUtil;
+    // activity 销毁(onDestroy)标志
+    private boolean exit;
 
     private static class OrderListActivityHandler extends Handler {
         private final OrderListActivity orderListActivity;
@@ -85,6 +87,11 @@ public class OrderListActivity extends BaseActivity implements OnClickListener, 
 
         @Override
         public void handleMessage(Message msg) {
+            // 当activity未加载完成时,用户返回的情况
+            if (orderListActivity.exit) {
+                // 用户返回不做任何处理
+                return;
+            }
             // TODO Auto-generated method stub
             if (orderListActivity.progressDialog != null) {
                 orderListActivity.progressDialog.dismiss();
@@ -185,6 +192,7 @@ public class OrderListActivity extends BaseActivity implements OnClickListener, 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        exit = false;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_order_list);
         // 订单筛选
@@ -532,6 +540,7 @@ public class OrderListActivity extends BaseActivity implements OnClickListener, 
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
+        exit = true;
         if (progressDialog != null) {
             progressDialog.dismiss();
             progressDialog = null;
@@ -539,6 +548,10 @@ public class OrderListActivity extends BaseActivity implements OnClickListener, 
         if (orderInfoList != null) {
             orderInfoList.clear();
             orderInfoList = null;
+        }
+        if (handler != null) {
+            handler.removeCallbacksAndMessages(null);
+            // handler = null;
         }
     }
 

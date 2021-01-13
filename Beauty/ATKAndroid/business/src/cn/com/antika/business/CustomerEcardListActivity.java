@@ -55,10 +55,13 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
     private LinearLayout ecardListLinearLayout;
     private LayoutInflater layoutInflater;
     private boolean isCustomerFirstCard = true;//是否是顾客的第一张卡
+    // activity 销毁(onDestroy)标志
+    private boolean exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        exit = false;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_customer_ecard_list);
         userinfoApplication = UserInfoApplication.getInstance();
@@ -75,6 +78,11 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
 
         @Override
         public void handleMessage(Message msg) {
+            // 当activity未加载完成时,用户返回的情况
+            if (customerEcardListActivity.exit) {
+                // 用户返回不做任何处理
+                return;
+            }
             if (customerEcardListActivity.progressDialog != null) {
                 customerEcardListActivity.progressDialog.dismiss();
                 customerEcardListActivity.progressDialog = null;
@@ -375,9 +383,18 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
+        exit = true;
         if (progressDialog != null) {
             progressDialog.dismiss();
             progressDialog = null;
+        }
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+            // mHandler = null;
+        }
+        if (requestWebServiceThread != null) {
+            requestWebServiceThread.interrupt();
+            requestWebServiceThread = null;
         }
     }
 
