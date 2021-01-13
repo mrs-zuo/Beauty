@@ -626,6 +626,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
         } else {
             progressDialog = ProgressDialogUtil.createProgressDialog(this);
             ecardInfoList = new ArrayList<EcardInfo>();
+            quickBalanceOrderList = new ArrayList<OrderInfo>();
             final JSONArray oldProductArray = new JSONArray();
             for (int j = 0; j < orderProductList.size(); j++) {
                 JSONObject oldProduct = new JSONObject();
