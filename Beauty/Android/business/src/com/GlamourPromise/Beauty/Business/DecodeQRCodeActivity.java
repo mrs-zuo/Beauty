@@ -87,6 +87,7 @@ public class DecodeQRCodeActivity extends BaseActivity implements Callback {
     protected void onPause() {
         super.onPause();
         if (handler != null) {
+            handler.exit = true;
             handler.quitSynchronously();
             handler = null;
         }
@@ -97,8 +98,8 @@ public class DecodeQRCodeActivity extends BaseActivity implements Callback {
     protected void onDestroy() {
         inactivityTimer.shutdown();
         super.onDestroy();
-        handler.exit = true;
         if (handler != null) {
+            handler.exit = true;
             handler.removeCallbacksAndMessages(null);
             // handler = null;
         }
