@@ -1988,7 +1988,11 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     final AlertDialog alertDialog = builder.create();
                     alertDialog.setCanceledOnTouchOutside(true);
                     alertDialog.show();
-                    alertDialog.getWindow().setContentView(view2);
+                    Window window = alertDialog.getWindow();
+                    // 背景透明度
+                    window.setDimAmount(0.75f);
+                    window.setContentView(view2);
+
                     btnCancel.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
