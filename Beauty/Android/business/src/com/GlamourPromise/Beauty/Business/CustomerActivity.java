@@ -105,6 +105,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         exit = false;
+        pageIndexRollBack = 1;
         this.mustRefreshFlg = false;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_customer);
@@ -224,10 +225,16 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                     customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
                 }
                 if (customerActivity.customerList.size() > 0) {
-                    // 设置选中项
-                    customerActivity.customerListView.setSelection(0);
-                    // 自动滚动到已选择的顾客那一项
                     HashList<String, Customer> customerHashList = customerActivity.customerListItemAdapter.getAssort().getHashList();
+                    // 设置选中项
+                    if (customerActivity.pageIndexRollBack > customerActivity.customerAdvancedCondition.getPageIndex()) {
+                        customerActivity.customerListView.setSelectedGroup(customerHashList.size() - 1);
+                        customerActivity.customerListView.setSelectedChild(customerHashList.size() - 1, customerActivity.customerList.size() - 1, true);
+                    } else {
+                        customerActivity.customerListView.setSelectedGroup(0);
+                        customerActivity.customerListView.setSelectedChild(0, 0, true);
+                    }
+                    // 自动滚动到已选择的顾客那一项
                     int selectedGroup = -1;
                     int selectedChild = -1;
                     boolean findFlg = false;
@@ -246,7 +253,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             }
                         }
                     }
-                    if (selectedGroup != -1) {
+                    if (findFlg) {
                         customerActivity.customerListView.setSelectedGroup(selectedGroup);
                         customerActivity.customerListView.setSelectedChild(selectedGroup, selectedChild, true);
                     }
@@ -689,6 +696,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
             customerAdvancedCondition.setSearchDateTime(sf.format(new Date()));
             // 设置起始页
             customerAdvancedCondition.setPageIndex(1);
+            pageIndexRollBack = 1;
             setCustomerTypeFilter();
             requestWebService(true);
         }
@@ -702,11 +710,17 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
             case OnScrollListener.SCROLL_STATE_IDLE:
                 if (customerAdvancedCondition.isPageFlg() && !loadFlg) {
                     // 分页加载
+                    pageIndexRollBack = customerAdvancedCondition.getPageIndex();
                     if (view.getFirstVisiblePosition() == 0) {
                         // 顶部
                         if (customerAdvancedCondition.getPageIndex() > 1) {
                             // 上一页
-                            loadData(false);
+                            if (mustRefreshFlg) {
+                                mustRefreshFlg = false;
+                                loadData(false);
+                            } else {
+                                mustRefreshFlg = true;
+                            }
                         } else {
                             if (mustRefreshFlg) {
                                 // 刷新数据
@@ -723,7 +737,12 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                         // 底部
                         if (customerAdvancedCondition.isLoadMoreFlg()) {
                             // 下一页
-                            loadData(true);
+                            if (mustRefreshFlg) {
+                                mustRefreshFlg = false;
+                                loadData(true);
+                            } else {
+                                mustRefreshFlg = true;
+                            }
                         }
                     }
                 }
@@ -742,7 +761,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
      */
     private void loadData(boolean loadMoreFlg) {
         loadFlg = true;
-        pageIndexRollBack = customerAdvancedCondition.getPageIndex();
         if (loadMoreFlg) {
             mFooterText.setText(R.string.load_more_run);
             mFooter.setVisibility(View.VISIBLE);

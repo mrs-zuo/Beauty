@@ -54,6 +54,7 @@ import java.util.List;
 /*
  * 顾客服务页面
  * */
+@SuppressLint("Range")
 public class CustomerServicingActivity extends FragmentActivity implements OnClickListener {
     private CustomerServicingActivityHandler mHandler = new CustomerServicingActivityHandler(this);
     private List<Fragment> fragmentList = new ArrayList<Fragment>();// 保存碎片的集合
@@ -98,7 +99,6 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
             customerServicingActivity = weakReference.get();
         }
 
-        @SuppressLint("Range")
         @Override
         public void handleMessage(Message msg) {
             // 当activity未加载完成时,用户返回的情况
@@ -152,6 +152,7 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
                     ((Button) customerServicingActivity.findViewById(R.id.customer_servicing_customer_paid_order_btn)).setOnClickListener(customerServicingActivity);
 
                 BusinessRightMenu.createMenuContent();
+                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
             } else if (msg.what == Constant.LOGIN_ERROR) {
                 DialogUtil.createShortDialog(customerServicingActivity, customerServicingActivity.getString(R.string.login_error_message));
                 UserInfoApplication.getInstance().exitForLogin(customerServicingActivity);
@@ -176,6 +177,8 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(customerServicingActivity, "服务器异常，请重试");
             }
         }
     }
@@ -354,7 +357,8 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
                 try {
                     customerBsaicJsonParam.put("CustomerID", selectedCustomerID);
                 } catch (JSONException e) {
-
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, customerBsaicJsonParam.toString(), userinfoApplication);
                 if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -366,13 +370,16 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
                         customerBasicJsonObject = new JSONObject(serverRequestResult);
                         code = customerBasicJsonObject.getInt("Code");
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         JSONObject customerBasicJson = null;
                         try {
                             customerBasicJson = customerBasicJsonObject.getJSONObject("Data");
                         } catch (JSONException e) {
-
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         String customerHeadImageURL = "";
                         String customerName = "";
@@ -394,7 +401,8 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
                             if (customerBasicJson.has("UnPaidCount") && !customerBasicJson.isNull("UnPaidCount"))
                                 customerUnpaidCount = customerBasicJson.getInt("UnPaidCount");
                         } catch (JSONException e) {
-
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         userinfoApplication.setSelectedCustomerName(customerName);
                         userinfoApplication.setSelectedCustomerHeadImageURL(customerHeadImageURL);
@@ -547,6 +555,4 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
                 break;
         }
     }
-
-    ;
 }
