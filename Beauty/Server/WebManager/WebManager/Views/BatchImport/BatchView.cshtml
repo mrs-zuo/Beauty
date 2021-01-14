@@ -57,30 +57,40 @@
             <div class="form-horizontal form-bordered widget-body">
                 <div id="div_View">
                     <table class="table table-condensed">
-                        @{if (dt != null && dt.Rows.Count > 0)
-                        {
-                            for (int i = 0; i < dt.Rows.Count; i++)
+                        @{
+                            if (dt != null && dt.Rows.Count > 0)
                             {
-                                <tr @((!error && errorRowNumber.Contains("|" + i + "|")) ? "bgcolor=red" : "")>
-                                    @{
-                                for (int j = 0; j < dt.Columns.Count; j++)
+                                for (int i = 0; i < dt.Rows.Count; i++)
                                 {
-                                    <td style="word-wrap:break-word;word-break:break-all;">
-                                        @(dt.Rows[i][j].ToString())
-                                    </td>
-                                }
+                                    var color = "";
+                                    if (!error && errorRowNumber.Contains("|" + i + "|"))
+                                    {
+                                        color = "red";
                                     }
-                                </tr>
+                                    else if(errorRowNumber.Contains("|W" + i + "|"))
+                                    {
+                                        color="yellow";
+                                    }
+                                    else
+                                    {
+                                        color = "";
+                                    }
+                                    <tr style="background-color : @color">
+                                        @for (int j = 0; j < dt.Columns.Count; j++) {
+                                            <td style="word-wrap:break-word;word-break:break-all;">
+                                                @(dt.Rows[i][j].ToString())
+                                            </td>
+                                        }
+                                    </tr>
+                                }
                             }
-                        }
                         }
                     </table>
 
-                    @{if (error)
+                    @if (error)
                       {
                         <input type="button" class="btn btn-primary" onclick='importSubmit()' value="确定" />
                       }
-                    }
                     <a href='javascript:history.go(-1);' class='btn btn-default'>返 回 </a>
                     <br>
                     <br>

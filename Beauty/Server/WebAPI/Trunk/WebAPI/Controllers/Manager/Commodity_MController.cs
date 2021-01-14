@@ -1033,5 +1033,39 @@ namespace WebAPI.Controllers.Manager
             res.Data = model;
             return toJson(res);
         }
+
+        [HttpPost]
+        [ActionName("getCountbyCommodityName")]
+        [HTTPBasicAuthorize]
+        public HttpResponseMessage getCountbyCommodityName(JObject obj)
+        {
+            ObjectResult<int> res = new ObjectResult<int>();
+            res.Code = "0";
+            res.Data = 0;
+            res.Message = "商品名称检查失败！";
+
+            if (obj == null)
+            {
+                res.Message = "不合法参数";
+                return toJson(res);
+            }
+
+            string strSafeJson = HS.Framework.Common.Util.StringUtils.GetDbString(obj);
+            if (string.IsNullOrEmpty(strSafeJson))
+            {
+                res.Message = "不合法参数";
+                return toJson(res);
+            }
+
+            CommodityDetailOperation_Model model = new CommodityDetailOperation_Model();
+            model = JsonConvert.DeserializeObject<CommodityDetailOperation_Model>(strSafeJson);
+            int result = Commodity_BLL.Instance.getCountbyCommodityName(this.CompanyID, model.CommodityID, model.CommodityName);
+
+            res.Code = "1";
+            res.Message = "";
+            res.Data = result;
+
+            return toJson(res);
+        }
     }
 }

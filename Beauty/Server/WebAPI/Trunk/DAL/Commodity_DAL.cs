@@ -3130,5 +3130,31 @@ namespace WebAPI.DAL
                 return list;
             }
         }
+
+        public int getCountbyCommodityName(int companyID, int commodityID, string commodityName)
+        {
+            using (DbManager db = new DbManager())
+            {
+                string strSql = @"
+                    SELECT
+                        count(1)
+                    FROM 
+                        [COMMODITY] a
+                    WHERE a.CompanyID = @CompanyID  
+                      and a.Available = 1
+                      and a.ID <> @CommodityID
+                      and a.CommodityName = @CommodityName";
+
+                //Common.WriteLOG.WriteLog("@CompanyID int = " + companyID.ToString());
+                //Common.WriteLOG.WriteLog("@CommodityID int = " + commodityID.ToString());
+                //Common.WriteLOG.WriteLog("@CommodityName varchar(max) = " + commodityName);
+                //Common.WriteLOG.WriteLog(strSql);
+
+                return db.SetCommand(strSql
+                    , db.Parameter("@CompanyID", companyID, DbType.Int32)
+                    , db.Parameter("@CommodityID", commodityID, DbType.Int32)
+                    , db.Parameter("@CommodityName", commodityName, DbType.String)).ExecuteScalar<int>();
+            }
+        }
     }
 }

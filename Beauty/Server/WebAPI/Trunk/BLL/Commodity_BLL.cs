@@ -713,6 +713,9 @@ namespace WebAPI.BLL
         {
             return Commodity_DAL.Instance.getCommodityDetailByCommodityModel(companyId, branchId, commodityName);
         }
-
+        public int getCountbyCommodityName(int companyID, int commodityID, string commodityName)
+        {
+            return Commodity_DAL.Instance.getCountbyCommodityName(companyID, commodityID, commodityName);
+        }
     }
 }

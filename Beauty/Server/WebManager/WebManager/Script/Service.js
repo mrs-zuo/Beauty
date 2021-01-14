@@ -303,6 +303,36 @@ function updateService(e) {
 }
 
 function updateDetail() {
+    var param = {
+        ServiceID: $("#hidID").val(),
+        ServiceName: $("#input_Name").val().trim()
+    }
+
+    var count = 0;
+    $.ajax({
+        type: "POST",
+        url: "/Service/getCountbyServiceName",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        data: JSON.stringify(param),
+        error: function () {
+            location.href = "/Home/Index?err=2";
+        },
+        success: function (data) {
+            if (data.Code == "1") {
+                count = data.Data;
+            }
+            else {
+                alert(data.Message);
+            }
+        }
+    });
+    if (count > 0) {
+        if (confirm("服务名称已存在，是否继续？") == false) {
+            return;
+        }
+    }
 
     var SubserviceCodes = "|";
     if ($("#ck_HaveServiceCode").is(":checked")) {
@@ -427,6 +457,35 @@ function updateDetail() {
 }
 
 function addService() {
+    var param = {
+        ServiceID: $("#hidID").val(),
+        ServiceName: $("#input_Name").val().trim()
+    }
+    var count = 0;
+    $.ajax({
+        type: "POST",
+        url: "/Service/getCountbyServiceName",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        data: JSON.stringify(param),
+        error: function () {
+            location.href = "/Home/Index?err=2";
+        },
+        success: function (data) {
+            if (data.Code == "1") {
+                count = data.Data;
+            }
+            else {
+                alert(data.Message);
+            }
+        }
+    });
+    if (count > 0) {
+        if (confirm("服务名称已存在，是否继续？") == false) {
+            return;
+        }
+    }
 
     var SubserviceCodes = "|";
     if ($("#ck_HaveServiceCode").is(":checked")) {
@@ -684,4 +743,38 @@ function goback() {
 
 }
 
+function getCountbyServiceName() {
+    var serviceName = $("#input_Name").val().trim();
+    if (serviceName == "") {
+        return;
+    }
 
+    var param = {
+        ServiceID: $("#hidID").val(),
+        ServiceName: serviceName
+    }
+    var count = 0;
+    $.ajax({
+        type: "POST",
+        url: "/Service/getCountbyServiceName",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        data: JSON.stringify(param),
+        error: function () {
+            location.href = "/Home/Index?err=2";
+        },
+        success: function (data) {
+            if (data.Code == "1") {
+                count = data.Data;
+            }
+            else {
+                alert(data.Message);
+            }
+        }
+    });
+    if(count > 0) {
+        alert("服务名称已存在！");
+    }
+    return;
+}

@@ -543,5 +543,39 @@ namespace WebAPI.Controllers.Manager
 
             return toJson(res);
         }
+
+        [HttpPost]
+        [ActionName("getCountbyServiceName")]
+        [HTTPBasicAuthorize]
+        public HttpResponseMessage getCountbyServiceName(JObject obj)
+        {
+            ObjectResult<int> res = new ObjectResult<int>();
+            res.Code = "0";
+            res.Data = 0;
+            res.Message = "服务名称检查失败！";
+
+            if (obj == null)
+            {
+                res.Message = "不合法参数";
+                return toJson(res);
+            }
+
+            string strSafeJson = HS.Framework.Common.Util.StringUtils.GetDbString(obj);
+            if (string.IsNullOrEmpty(strSafeJson))
+            {
+                res.Message = "不合法参数";
+                return toJson(res);
+            }
+
+            ServiceDetailOperation_Model model = new ServiceDetailOperation_Model();
+            model = JsonConvert.DeserializeObject<ServiceDetailOperation_Model>(strSafeJson);
+            int result = Service_BLL.Instance.getCountbyServiceName(this.CompanyID, model.ServiceID, model.ServiceName);
+
+            res.Code = "1";
+            res.Message = "";
+            res.Data = result;
+
+            return toJson(res);
+        }
     }
 }

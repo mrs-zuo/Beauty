@@ -128,6 +128,35 @@ function updateCommodity(e) {
 
 
 function updateDetail() {
+    var param = {
+        CommodityID: $("#hidID").val(),
+        CommodityName: $("#input_Name").val().trim()
+    }
+    var count = 0;
+    $.ajax({
+        type: "POST",
+        url: "/Commodity/getCountbyCommodityName",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        data: JSON.stringify(param),
+        error: function () {
+            location.href = "/Home/Index?err=2";
+        },
+        success: function (data) {
+            if (data.Code == "1") {
+                count = data.Data;
+            }
+            else {
+                alert(data.Message);
+            }
+        }
+    });
+    if (count > 0) {
+        if(confirm("商品名称已存在，是否继续？") == false){
+            return;
+        }
+    }
 
     var isConfirmed = 0;
     if ($("#IsConfirmed1").is(":checked")) {
@@ -207,6 +236,36 @@ function updateDetail() {
 }
 
 function addCommodity() {
+    var param = {
+        CommodityID: $("#hidID").val(),
+        CommodityName: $("#input_Name").val().trim()
+    }
+    var count = 0;
+    $.ajax({
+        type: "POST",
+        url: "/Commodity/getCountbyCommodityName",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        data: JSON.stringify(param),
+        error: function () {
+            location.href = "/Home/Index?err=2";
+        },
+        success: function (data) {
+            if (data.Code == "1") {
+                count = data.Data;
+            }
+            else {
+                alert(data.Message);
+            }
+        }
+    });
+    if (count > 0) {
+        if (confirm("商品名称已存在，是否继续？") == false) {
+            return;
+        }
+    }
+
     var isConfirmed = 0;
     if ($("#IsConfirmed1").is(":checked")) {
         isConfirmed = 1;
@@ -1052,4 +1111,40 @@ function Negative(ID) {
         });
     }
 
+}
+
+function getCountbyCommodityName() {
+    var commodityName = $("#input_Name").val().trim();
+    if (commodityName == "") {
+        return;
+    }
+
+    var param = {
+        CommodityID: $("#hidID").val(),
+        CommodityName: commodityName
+    }
+    var count = 0;
+    $.ajax({
+        type: "POST",
+        url: "/Commodity/getCountbyCommodityName",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        data: JSON.stringify(param),
+        error: function () {
+            location.href = "/Home/Index?err=2";
+        },
+        success: function (data) {
+            if (data.Code == "1") {
+                count = data.Data;
+            }
+            else {
+                alert(data.Message);
+            }
+        }
+    });
+    if (count > 0) {
+        alert("商品名称已存在！");
+    }
+    return;
 }

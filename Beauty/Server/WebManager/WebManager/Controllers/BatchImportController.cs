@@ -104,6 +104,8 @@ namespace WebManager.Controllers
             res.Data = null;
 
             UtilityOperation_Model utimodel = new UtilityOperation_Model();
+            List<Commodity_Model> commodityList = new List<Commodity_Model>();
+            List<Service_Model> serviceList = new List<Service_Model>();
             utimodel.Type = model.Type;
             string param = "";
             string data = "";
@@ -154,14 +156,38 @@ namespace WebManager.Controllers
                         if (addType == 0)
                         {
                             resDt = dtNormalizing(dt, Const.EXPORT_SERVICENAMEEXCHANGE);
+
+                            //为判断重复，取得当前已登录的服务
+                            UtilityOperation_Model tmpmodel = new UtilityOperation_Model();
+                            string tmpparam = Newtonsoft.Json.JsonConvert.SerializeObject(tmpmodel);
+                            string tmpdata = string.Empty;
+                            bool issuccess = this.GetPostResponseNoRedirect("Commission_M", "getServiceList", tmpparam, out tmpdata, false);
+                            serviceList = JsonConvert.DeserializeObject<ObjectResult<List<Service_Model>>>(tmpdata).Data;
+                            //for (int count = 0; count < serviceList.Count; count++)
+                            //{
+                            //    WebAPI.Common.WriteLOG.WriteLog(serviceList[count].ID.ToString() + " " + serviceList[count].ServiceName);
+                            //}
                         }
                         else
                         {
                             resDt = dtNormalizing(dt, Const.EXPORT_COMMODITYNAMEEXCHANGE);
+
+                            //为判断重复，取得当前已登录的商品
+                            UtilityOperation_Model tmpmodel = new UtilityOperation_Model();
+                            string tmpparam = Newtonsoft.Json.JsonConvert.SerializeObject(tmpmodel);
+                            string tmpdata = string.Empty;
+                            bool issuccess = this.GetPostResponseNoRedirect("Commission_M", "getCommodityList", tmpparam, out tmpdata, false);
+                            commodityList = JsonConvert.DeserializeObject<ObjectResult<List<Commodity_Model>>>(tmpdata).Data;
+                            //for (int count = 0; count < commodityList.Count; count++)
+                            //{
+                            //    WebAPI.Common.WriteLOG.WriteLog(commodityList[count].ID.ToString() + " " + commodityList[count].CommodityName);
+                            //}
+
                         }
                         List<int> categoryIDList = new List<int>();
                         List<long> subServiceCodeList = new List<long>();
                         List<int> discountIDList = new List<int>();
+
                         for (int i = 1; i < dt.Rows.Count; i++)
                         {
                             if (String.IsNullOrWhiteSpace(resDt.Rows[i]["CategoryID"].ToString()))
@@ -291,6 +317,28 @@ namespace WebManager.Controllers
                                         isPass = false;
                                         errorRowNumber += i + "|";
                                         continue;
+                                    }
+                                    else
+                                    {
+                                        string ServiceID = resDt.Rows[i]["ServiceID"].ToString();
+                                        int found = 0;
+                                        for (int count = 0; count < serviceList.Count; count++)
+                                        {
+                                            if (ServiceName == serviceList[count].ServiceName &&
+                                               (ServiceID == "" || ServiceID != serviceList[count].ID.ToString()))
+                                            {
+                                                errorRowNumber += "W" + i.ToString() + "|";
+                                                found = 1;
+                                                break;
+                                            }
+                                        }
+                                        if (found == 0 && ServiceID == "")
+                                        {
+                                            Service_Model sm = new Service_Model();
+                                            sm.ID = 0;
+                                            sm.ServiceName = ServiceName;
+                                            serviceList.Add(sm);
+                                        }
                                     }
 
                                     string UnitPrice = resDt.Rows[i]["UnitPrice"].ToString();
@@ -513,6 +561,28 @@ namespace WebManager.Controllers
                                         isPass = false;
                                         errorRowNumber += i + "|";
                                         continue;
+                                    }
+                                    else
+                                    {
+                                        string CommodityID = resDt.Rows[i]["CommodityID"].ToString();
+                                        int found = 0;
+                                        for (int count = 0; count < commodityList.Count; count++)
+                                        {
+                                            if (CommodityName == commodityList[count].CommodityName &&
+                                               (CommodityID == "" || CommodityID != commodityList[count].ID.ToString()))
+                                            {
+                                                errorRowNumber += "W" + i.ToString() + "|";
+                                                found = 1;
+                                                break;
+                                            }
+                                        }
+                                        if (found == 0 && CommodityID == "")
+                                        {
+                                            Commodity_Model cm = new Commodity_Model();
+                                            cm.ID = 0;
+                                            cm.CommodityName = CommodityName;
+                                            commodityList.Add(cm);
+                                        }
                                     }
 
                                     string Specification = resDt.Rows[i]["Specification"].ToString();

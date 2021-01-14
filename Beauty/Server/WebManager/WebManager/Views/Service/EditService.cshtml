@@ -140,7 +140,7 @@
                             	<i class=" control-label glyphicon glyphicon-asterisk darkorange text-left  txt06em txtR"></i>
                             </label>
                             <div class="col-sm-4">
-                                <input placeholder="输入服务名称" type="text"  id="input_Name" value="@(editFlag ? model.ServiceName : "")" class="form-control">
+                                <input placeholder="输入服务名称" type="text"  id="input_Name" value="@(editFlag ? model.ServiceName : "")" class="form-control" onchange="getCountbyServiceName()">
                             </div>
                         </div>
                         <div class="form-group">
@@ -177,12 +177,19 @@
                             <div class="col-sm-4 col-sm-offset-2">
                                 <select id ="selDis" style="width:100%;@((editFlag && model.MarketingPolicy == 1) ? "" : "display:none")" >
                                     @{
+                                        int selectflag = 0;
                                         if (listDiscount != null && listDiscount.Count > 0)
                                         {
                                             for (int i = 0; i < listDiscount.Count; i++)
                                             {
-                                        <option value="@(listDiscount[i].ID)" @(listDiscount[i].ID == model.DiscountID ? "selected=selected" : "")>@(listDiscount[i].DiscountName)</option>
+                                                <option value="@(listDiscount[i].ID)" @(listDiscount[i].ID == model.DiscountID ? "selected=selected" : "")>@(listDiscount[i].DiscountName)</option>
                                             }
+                                        }
+                                        if (selectflag == 1) { 
+                                            <option value="0" selected = "selected"></option>
+                                        }
+                                        else { 
+                                            <option value="0"></option>
                                         }
                                     }
                                 </select>

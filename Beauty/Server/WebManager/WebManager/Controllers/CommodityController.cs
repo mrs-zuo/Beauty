@@ -675,5 +675,22 @@ namespace WebManager.Controllers
                 return Content(data, "application/json; charset=utf-8");
             }
         }
+
+        public ActionResult getCountbyCommodityName(CommodityDetailOperation_Model model)
+        {
+            ObjectResult<int> res = new ObjectResult<int>();
+            res.Data = 0;
+            res.Message = "商品名称检查失败。";
+
+            string param = Newtonsoft.Json.JsonConvert.SerializeObject(model);
+            string data = "";
+
+            bool result = this.GetPostResponseNoRedirect("Commodity_M", "getCountbyCommodityName", param, out data);
+
+            if (!result)
+                return Json(res);
+            else
+                return Content(data, "application/json; charset=utf-8");
+        }
     }
 }

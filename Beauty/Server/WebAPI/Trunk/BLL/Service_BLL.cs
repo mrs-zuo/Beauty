@@ -328,7 +328,10 @@ namespace WebAPI.BLL
         {
             return Service_DAL.Instance.deteleMultiService(model);
         }
-
+        public int getCountbyServiceName(int companyID, int serviceID, string serviceName)
+        {
+            return Service_DAL.Instance.getCountbyServiceName(companyID, serviceID, serviceName);
+        }
         public List<Service_Model> getPrintList(List<long> codeList)
         {
             List<Service_Model> list = Service_DAL.Instance.getPrintList(codeList);

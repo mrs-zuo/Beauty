@@ -1583,7 +1583,31 @@ namespace WebAPI.DAL
                 return db.SetCommand(strSql, db.Parameter("@ServiceID", serviceId, DbType.Int32)).ExecuteScalar<int>();
             }
         }
+        public int getCountbyServiceName(int companyID, int serviceID, string serviceName)
+        {
+            using (DbManager db = new DbManager())
+            {
+                string strSql = @"
+                    SELECT
+                        count(1)
+                    FROM 
+                        [SERVICE] a
+                    WHERE a.CompanyID = @CompanyID  
+                      and a.Available = 1
+                      and a.ID <> @ServiceID
+                      and a.ServiceName = @ServiceName";
 
+                //Common.WriteLOG.WriteLog("@CompanyID int = " + companyID.ToString());
+                //Common.WriteLOG.WriteLog("@ServiceID int = " + serviceID.ToString());
+                //Common.WriteLOG.WriteLog("@ServiceName varchar(max) = " + serviceName);
+                //Common.WriteLOG.WriteLog(strSql);
+
+                return db.SetCommand(strSql
+                    , db.Parameter("@CompanyID", companyID, DbType.Int32)
+                    , db.Parameter("@ServiceID", serviceID, DbType.Int32)
+                    , db.Parameter("@ServiceName", serviceName, DbType.String)).ExecuteScalar<int>();
+            }
+        }
         public bool UpdateServiceSort(int companyID, List<ServiceSort_Model> list)
         {
             int count = 0;// 总影响行数
