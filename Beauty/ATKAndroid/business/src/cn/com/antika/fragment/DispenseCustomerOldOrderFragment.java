@@ -152,7 +152,7 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
         @Override
         public void handleMessage(Message msg) {
             FragmentActivity fragmentActivity = dispenseCustomerOldOrderFragment.getActivity();
-            if (fragmentActivity == null){
+            if (fragmentActivity == null) {
                 return;
             }
             switch (msg.what) {
@@ -160,7 +160,7 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                     DialogUtil.createShortDialog(fragmentActivity, (String) msg.obj);
                     break;
                 case 1:
-                    dispenseCustomerOldOrderFragment.dispenseCompleteOrderListAdapter.notifyDataSetChanged();
+                    dispenseCustomerOldOrderFragment.setDispenseCustomerOldOrderList((List<OrderInfo>) msg.obj);
                     ((TextView) fragmentActivity.findViewById(R.id.tab_customer_old_order_title)).setText("存单" + "(" + dispenseCustomerOldOrderFragment.dispenseCustomerOldOrderList.size() + ")");
                     break;
                 case 2:
@@ -303,9 +303,7 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
 
                             }
                         }
-                        dispenseCustomerOldOrderList.clear();
-                        dispenseCustomerOldOrderList.addAll(orderInfoList);
-                        mHandler.sendEmptyMessage(1);
+                        mHandler.obtainMessage(1, orderInfoList).sendToTarget();
                     } else if (code == Constant.LOGIN_ERROR || code == Constant.APP_VERSION_ERROR)
                         mHandler.sendEmptyMessage(code);
                     else {
@@ -325,6 +323,15 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
             dispenseCustomerOldOrderList.clear();
         if (dispenseCompleteOrderListAdapter != null)
             dispenseCompleteOrderListAdapter.notifyDataSetChanged();
+    }
+
+    private void setDispenseCustomerOldOrderList(List<OrderInfo> orderList) {
+        if (dispenseCustomerOldOrderList != null) {
+            dispenseCustomerOldOrderList.clear();
+            dispenseCustomerOldOrderList.addAll(orderList);
+            if (dispenseCompleteOrderListAdapter != null)
+                dispenseCompleteOrderListAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override

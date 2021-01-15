@@ -108,6 +108,8 @@ public class CustomerBenefitDetailActivity extends BaseActivity {
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(customerBenefitDetailActivity, "服务器异常，请重试");
             } else {
                 DialogUtil.createShortDialog(customerBenefitDetailActivity, (String) msg.obj);
             }

@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,6 +91,9 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
             mHandler = new DispenseFavoriteListFragmentHandler(this);
         View dispenseFavoriteListView = inflater.inflate(R.xml.dispense_favorite_list_fragment_layout, container, false);
         favoriteListView = (ListView) dispenseFavoriteListView.findViewById(R.id.favorite_listview);
+        favoriteList = new ArrayList<FavoriteInfo>();
+        favoriteListAdapter = new FavoriteListAdapter(getActivity(), favoriteList);
+        favoriteListView.setAdapter(favoriteListAdapter);
         favoriteListView.setOnItemClickListener(this);
         userinfoApplication = (UserInfoApplication) getActivity().getApplication();
         addOrderBtn = (Button) dispenseFavoriteListView.findViewById(R.id.favorite_list_add_order_btn);
@@ -109,10 +113,7 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
             orderProductList = new ArrayList<OrderProduct>();
         userinfoApplication.setOrderInfo(orderInfo);
         userinfoApplication.getOrderInfo().setOrderProductList(orderProductList);
-        favoriteList = new ArrayList<FavoriteInfo>();
-        favoriteListAdapter = new FavoriteListAdapter(getActivity(), favoriteList);
-        favoriteListView.setAdapter(favoriteListAdapter);
-        getFavoriteListData(requestWebServiceThread, mHandler);
+        getFavoriteListData();
         return dispenseFavoriteListView;
     }
 
@@ -129,7 +130,8 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser && favoriteListView != null) {
             ((TextView) getActivity().findViewById(R.id.tab_favorite_title)).setText("收藏" + "(" + favoriteList.size() + ")");
-            favoriteListView.setAdapter(favoriteListAdapter);
+            // favoriteListView.setAdapter(favoriteListAdapter);
+            favoriteListAdapter.notifyDataSetChanged();
         }
     }
 
@@ -143,29 +145,33 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
 
         @Override
         public void handleMessage(Message msg) {
+            FragmentActivity fragmentActivity = dispenseFavoriteListFragment.getActivity();
+            if (fragmentActivity == null) {
+                return;
+            }
             switch (msg.what) {
                 case 1:
-                    dispenseFavoriteListFragment.favoriteListAdapter.notifyDataSetChanged();
-                    ((TextView) dispenseFavoriteListFragment.getActivity().findViewById(R.id.tab_favorite_title)).setText("收藏" + "(" + dispenseFavoriteListFragment.favoriteList.size() + ")");
+                    dispenseFavoriteListFragment.setData((List<FavoriteInfo>) msg.obj);
+                    ((TextView) fragmentActivity.findViewById(R.id.tab_favorite_title)).setText("收藏" + "(" + dispenseFavoriteListFragment.favoriteList.size() + ")");
                     break;
                 case 2:
-                    DialogUtil.createShortDialog(dispenseFavoriteListFragment.getActivity(), "您的网络貌似不给力，请重试");
+                    DialogUtil.createShortDialog(fragmentActivity, "您的网络貌似不给力，请重试");
                     break;
                 case 3:
-                    DialogUtil.createShortDialog(dispenseFavoriteListFragment.getActivity(), msg.obj.toString());
+                    DialogUtil.createShortDialog(fragmentActivity, msg.obj.toString());
                     break;
                 case 4:
-                    DialogUtil.createShortDialog(dispenseFavoriteListFragment.getActivity(), msg.obj.toString());
-                    dispenseFavoriteListFragment.getFavoriteListData(dispenseFavoriteListFragment.requestWebServiceThread, dispenseFavoriteListFragment.mHandler);
+                    DialogUtil.createShortDialog(fragmentActivity, msg.obj.toString());
+                    dispenseFavoriteListFragment.getFavoriteListData();
                     break;
                 case Constant.LOGIN_ERROR:
-                    DialogUtil.createShortDialog(dispenseFavoriteListFragment.getActivity(), dispenseFavoriteListFragment.getString(R.string.login_error_message));
-                    UserInfoApplication.getInstance().exitForLogin(dispenseFavoriteListFragment.getActivity());
+                    DialogUtil.createShortDialog(fragmentActivity, dispenseFavoriteListFragment.getString(R.string.login_error_message));
+                    UserInfoApplication.getInstance().exitForLogin(fragmentActivity);
                     break;
                 case Constant.APP_VERSION_ERROR:
                     String downloadFileUrl = Constant.SERVER_URL + dispenseFavoriteListFragment.getString(R.string.download_apk_address);
-                    FileCache fileCache = new FileCache(dispenseFavoriteListFragment.getActivity());
-                    dispenseFavoriteListFragment.packageUpdateUtil = new PackageUpdateUtil(dispenseFavoriteListFragment.getActivity(), dispenseFavoriteListFragment.mHandler, fileCache, downloadFileUrl, false, dispenseFavoriteListFragment.userinfoApplication);
+                    FileCache fileCache = new FileCache(fragmentActivity);
+                    dispenseFavoriteListFragment.packageUpdateUtil = new PackageUpdateUtil(fragmentActivity, dispenseFavoriteListFragment.mHandler, fileCache, downloadFileUrl, false, dispenseFavoriteListFragment.userinfoApplication);
                     dispenseFavoriteListFragment.packageUpdateUtil.getPackageVersionInfo();
                     ServerPackageVersion serverPackageVersion = new ServerPackageVersion();
                     serverPackageVersion.setPackageVersion((String) msg.obj);
@@ -174,7 +180,7 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                 case 5:
                     ((DownloadInfo) msg.obj).getUpdateDialog().cancel();
                     String filename = "com.glamourpromise.beauty.business.apk";
-                    File file = dispenseFavoriteListFragment.getActivity().getFileStreamPath(filename);
+                    File file = fragmentActivity.getFileStreamPath(filename);
                     file.getName();
                     dispenseFavoriteListFragment.packageUpdateUtil.showInstallDialog();
                     break;
@@ -185,16 +191,17 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                     int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                     ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
                     break;
+                case 99:
+                    DialogUtil.createShortDialog(fragmentActivity, "服务器异常，请重试");
+                    break;
                 default:
                     break;
             }
         }
     }
 
-    private void getFavoriteListData(Thread requestWebServiceThread, Handler mHandler) {
-        favoriteList.clear();
-        favoriteListAdapter.notifyDataSetChanged();
-        final Handler handler = mHandler;
+    private void getFavoriteListData() {
+        clearData();
         final int screenWidth = userinfoApplication.getScreenWidth();
         int authServiceRead = userinfoApplication.getAccountInfo().getAuthServiceRead();
         int authCommodityRead = userinfoApplication.getAccountInfo()
@@ -233,11 +240,12 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                             favoriteJsonParam.put("ImageHeight", "80");
                         }
                     } catch (JSONException e) {
-
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, favoriteJsonParam.toString(), userinfoApplication);
                     if (serverRequestResult == null || serverRequestResult.equals(""))
-                        handler.sendEmptyMessage(-1);
+                        mHandler.sendEmptyMessage(-1);
                     else {
                         JSONObject resultJson = null;
                         int code = 0;
@@ -246,13 +254,17 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                             resultJson = new JSONObject(serverRequestResult);
                             code = resultJson.getInt("Code");
                         } catch (JSONException e) {
-
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (code == 1) {
                             try {
                                 favoriteArray = resultJson.getJSONArray("Data");
                             } catch (JSONException e) {
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
+                            List<FavoriteInfo> favoriteInfos = new ArrayList<FavoriteInfo>();
                             if (favoriteArray != null) {
                                 for (int i = 0; i < favoriteArray.length(); i++) {
                                     FavoriteInfo favoriteInfo = new FavoriteInfo();
@@ -286,17 +298,18 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                                         if (favoriteJson.has("ExpirationTime") && !favoriteJson.isNull("ExpirationTime"))
                                             favoriteInfo.setExpirationDate(favoriteJson.getString("ExpirationTime"));
                                     } catch (JSONException e) {
-
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
                                     }
-                                    favoriteList.add(favoriteInfo);
+                                    favoriteInfos.add(favoriteInfo);
                                 }
 
                             }
-                            handler.sendEmptyMessage(1);
+                            mHandler.obtainMessage(1, favoriteInfos).sendToTarget();
                         } else if (code == Constant.LOGIN_ERROR || code == Constant.APP_VERSION_ERROR)
-                            handler.sendEmptyMessage(code);
+                            mHandler.sendEmptyMessage(code);
                         else {
-                            handler.sendEmptyMessage(0);
+                            mHandler.sendEmptyMessage(0);
                         }
                     }
                 }
@@ -325,6 +338,8 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                                             try {
                                                 delFavoriteJsonParam.put("FavoriteID", favoriteList.get(pos).getFavoriteID());
                                             } catch (JSONException e) {
+                                                mHandler.sendEmptyMessage(99);
+                                                return;
                                             }
                                             String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, delFavoriteJsonParam.toString(), userinfoApplication);
                                             if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -336,6 +351,8 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                                                     delFavoriteJson = new JSONObject(serverRequestResult);
                                                     code = delFavoriteJson.getInt("Code");
                                                 } catch (JSONException e) {
+                                                    mHandler.sendEmptyMessage(99);
+                                                    return;
                                                 }
                                                 String returnMessage = "";
                                                 if (code == 1) {
@@ -432,6 +449,22 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                 BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
                 ((ViewPager) getActivity().findViewById(R.id.customer_servicing_order_view_pager)).setCurrentItem(0);
             }
+        }
+    }
+
+    private void clearData() {
+        if (favoriteList != null) {
+            favoriteList.clear();
+            if (favoriteListAdapter != null)
+                favoriteListAdapter.notifyDataSetChanged();
+        }
+    }
+
+    private void setData(List<FavoriteInfo> orderInfoList) {
+        if (favoriteList != null) {
+            favoriteList.clear();
+            favoriteList.addAll(orderInfoList);
+            favoriteListAdapter.notifyDataSetChanged();
         }
     }
 }

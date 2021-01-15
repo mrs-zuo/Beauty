@@ -110,7 +110,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_customer);
         customerTitleText = (TextView) findViewById(R.id.customer_title_text);
-        customerListView = (ExpandableListView) findViewById(R.id.customer_list_view);
         refreshListViewWithWebService = new RefreshListViewWithWebservice() {
             @Override
             public Object refreshing() {
@@ -127,40 +126,17 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 
             }
         };
-        searchCustomerView = (SearchView) findViewById(R.id.search_customer);
         userinfoApplication = UserInfoApplication.getInstance();
         accountInfo = userinfoApplication.getAccountInfo();
         addNewCustomerButton = (ImageButton) findViewById(R.id.add_newcustomer_btn);
         addNewCustomerButton.setOnClickListener(this);
-        searchCustomerView.setVisibility(View.VISIBLE);
-        searchCustomerView.setOnQueryTextListener(this);
         customerAdvancedFilterButton = (ImageButton) findViewById(R.id.customer_advanced_filter_btn);
         customerAdvancedFilterButton.setOnClickListener(this);
         customerCountInfoText = (TextView) findViewById(R.id.customer_count_info_text);
-        assortView = (AssortView) findViewById(R.id.assort_view);
-        // 加載更多
-        // 头部
-        mHeaderParent = getLayoutInflater().inflate(R.layout.load_more_page_up, null);
-        mHeader = mHeaderParent.findViewById(R.id.mHeader);
-        mHeader.setVisibility(View.GONE);
-        customerListView.addHeaderView(mHeaderParent);
-        // 底部
-        mFooterParent = getLayoutInflater().inflate(R.layout.load_more, null);
-        mFooter = mFooterParent.findViewById(R.id.mFooter);
-        mFooter.setVisibility(View.GONE);
-        customerListView.addFooterView(mFooterParent);
-        mFooterText = (TextView) mFooter.findViewById(R.id.mFooterText);
-        // 隐藏头部和底部的下划线
-        customerListView.setHeaderDividersEnabled(false);
-        customerListView.setFooterDividersEnabled(false);
-        // 添加滑动监听
-        customerListView.setOnScrollListener(this);
-        // 屏蔽默认的箭头图标
-        customerListView.setGroupIndicator(null);
-        BusinessLeftImageButton bussinessLeftMenuBtn = (BusinessLeftImageButton) findViewById(R.id.btn_main_left_business_menu);
-        GenerateMenu.generateLeftMenu(this, bussinessLeftMenuBtn);
-        BusinessRightImageButton bussinessRightMenuBtn = (BusinessRightImageButton) findViewById(R.id.btn_main_right_menu);
-        GenerateMenu.generateRightMenu(this, bussinessRightMenuBtn);
+        BusinessLeftImageButton businessLeftMenuBtn = (BusinessLeftImageButton) findViewById(R.id.btn_main_left_business_menu);
+        GenerateMenu.generateLeftMenu(this, businessLeftMenuBtn);
+        BusinessRightImageButton businessRightMenuBtn = (BusinessRightImageButton) findViewById(R.id.btn_main_right_menu);
+        GenerateMenu.generateRightMenu(this, businessRightMenuBtn);
         initView();
     }
 
@@ -185,13 +161,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 customerActivity.progressDialog.dismiss();
                 customerActivity.progressDialog = null;
             }
-            customerActivity.customerListItemAdapter = new CustomerListItemAdapter(customerActivity, customerActivity.customerList, customerActivity.fromSource, customerActivity.convertOrderList);
-            customerActivity.customerListView.setAdapter(customerActivity.customerListItemAdapter);
-            // 展开
-            customerActivity.expandGroupAll(customerActivity.customerListItemAdapter);
-            // 隐藏头部和底部视图
-            customerActivity.mFooter.setVisibility(View.GONE);
-            customerActivity.mHeader.setVisibility(View.GONE);
             // 非正常情况处理
             if (customerActivity.loadFlg && msg.what != 1) {
                 if (customerActivity.pageIndexRollBack != null) {
@@ -199,6 +168,10 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 }
             }
             if (msg.what == 1) {
+                customerActivity.setData((List<Customer>) msg.obj);
+                // 隐藏头部和底部视图
+                customerActivity.mFooter.setVisibility(View.GONE);
+                customerActivity.mHeader.setVisibility(View.GONE);
                 // 暂无数据
                 if (customerActivity.customerCnt == 0) {
                     customerActivity.mFooterText.setText(R.string.load_no_data);
@@ -223,40 +196,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                     }
                 } else {
                     customerActivity.customerAdvancedCondition.setLoadMoreFlg(false);
-                }
-                if (customerActivity.customerList.size() > 0) {
-                    HashList<String, Customer> customerHashList = customerActivity.customerListItemAdapter.getAssort().getHashList();
-                    // 设置选中项
-                    if (customerActivity.pageIndexRollBack > customerActivity.customerAdvancedCondition.getPageIndex()) {
-                        customerActivity.customerListView.setSelectedGroup(customerHashList.size() - 1);
-                        customerActivity.customerListView.setSelectedChild(customerHashList.size() - 1, customerActivity.customerList.size() - 1, true);
-                    } else {
-                        customerActivity.customerListView.setSelectedGroup(0);
-                        customerActivity.customerListView.setSelectedChild(0, 0, true);
-                    }
-                    // 自动滚动到已选择的顾客那一项
-                    int selectedGroup = -1;
-                    int selectedChild = -1;
-                    boolean findFlg = false;
-                    for (int j = 0; j < customerHashList.size(); j++) {
-                        if (findFlg) {
-                            break;
-                        }
-                        List<Customer> customerList = customerHashList.getValueListIndex(j);
-                        for (int a = 0; a < customerList.size(); a++) {
-                            Customer customer = customerList.get(a);
-                            if (customer.getCustomerId() == customerActivity.userinfoApplication.getSelectedCustomerID()) {
-                                selectedGroup = j;
-                                selectedChild = a;
-                                findFlg = true;
-                                break;
-                            }
-                        }
-                    }
-                    if (findFlg) {
-                        customerActivity.customerListView.setSelectedGroup(selectedGroup);
-                        customerActivity.customerListView.setSelectedChild(selectedGroup, selectedChild, true);
-                    }
                 }
             } else if (msg.what == 0) {
                 // DialogUtil.createMakeSureDialog(customerActivity, "温馨提示", "您的网络貌似不给力，请检查网络设置");
@@ -294,8 +233,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 customerActivity.requestWebServiceThread.interrupt();
                 customerActivity.requestWebServiceThread = null;
             }
-            // 设置显示记录数
-            customerActivity.setCustomerListDisplayTotal();
             // 数据加载完成
             customerActivity.loadFlg = false;
             Log.i("CustomerActivity", "接收msg end：" + msg.what + ":" + customerActivity.sf.format(new Date()));
@@ -305,13 +242,32 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
     protected void initView() {
         fromSource = getIntent().getIntExtra("fromSource", 0);
         searchKeyWord = getIntent().getStringExtra("searchKeyWord");
+        convertOrderList = new ArrayList<OrderInfo>();
         if (fromSource == 3) {
             convertOrderList = (List<OrderInfo>) getIntent().getSerializableExtra("convertOrderList");
         }
-        customerList = new ArrayList<Customer>();
-        customerListItemAdapter = new CustomerListItemAdapter(this, customerList, fromSource, convertOrderList);
-        customerListView.setAdapter(customerListItemAdapter);
+        customerListView = (ExpandableListView) findViewById(R.id.customer_list_view);
+        // 加載更多
+        // 头部
+        mHeaderParent = getLayoutInflater().inflate(R.layout.load_more_page_up, null);
+        mHeader = mHeaderParent.findViewById(R.id.mHeader);
+        mHeader.setVisibility(View.GONE);
+        customerListView.addHeaderView(mHeaderParent);
+        // 底部
+        mFooterParent = getLayoutInflater().inflate(R.layout.load_more, null);
+        mFooter = mFooterParent.findViewById(R.id.mFooter);
+        mFooter.setVisibility(View.GONE);
+        customerListView.addFooterView(mFooterParent);
+        mFooterText = (TextView) mFooter.findViewById(R.id.mFooterText);
+        // 隐藏头部和底部的下划线
+        customerListView.setHeaderDividersEnabled(false);
+        customerListView.setFooterDividersEnabled(false);
+        // 添加滑动监听
+        customerListView.setOnScrollListener(this);
+        // 屏蔽默认的箭头图标
+        customerListView.setGroupIndicator(null);
         // 右侧的按字母分组 字母按键回调
+        assortView = (AssortView) findViewById(R.id.assort_view);
         assortView.setOnTouchAssortListener(new AssortView.OnTouchAssortListener() {
             View layoutView = LayoutInflater.from(CustomerActivity.this).inflate(R.xml.assort_alert_dialog_layout, null);
             TextView text = (TextView) layoutView.findViewById(R.id.letters_content);
@@ -340,6 +296,12 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
         });
         screenWidth = userinfoApplication.getScreenWidth();
         getCustomerTypeFilter();
+        customerList = new ArrayList<Customer>();
+        customerListItemAdapter = new CustomerListItemAdapter(this, customerList, fromSource, convertOrderList);
+        customerListView.setAdapter(customerListItemAdapter);
+        searchCustomerView = (SearchView) findViewById(R.id.search_customer);
+        searchCustomerView.setVisibility(View.VISIBLE);
+        searchCustomerView.setOnQueryTextListener(this);
         requestWebService(true);
     }
 
@@ -412,6 +374,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
 
     protected void requestWebService(boolean isNeedProgressDialog) {
         Log.i("CustomerActivity", "获取数据开始：" + customerAdvancedCondition.getPageIndex() + ":" + sf.format(new Date()));
+        clearData();
         if (isNeedProgressDialog) {
             /*progressDialog = new ProgressDialog(this, R.style.CustomerProgressDialog);
             progressDialog.setMessage(getString(R.string.please_wait));
@@ -520,7 +483,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             mHandler.sendEmptyMessage(99);
                             return;
                         }
-                        customerList.clear();
+                        List<Customer> customers = new ArrayList<Customer>();
                         for (int i = 0; i < customerListJsonArray.length(); i++) {
                             Customer customer = new Customer();
                             int customerId = 0;
@@ -574,11 +537,9 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                             } else {
                                 customer.setComeTime("最后上门日期：" + cometime);
                             }
-                            customerList.add(customer);
+                            customers.add(customer);
                         }
-
-                        mHandler.sendEmptyMessage(1);
-
+                        mHandler.obtainMessage(1, customers).sendToTarget();
                     } else if (code == Constant.APP_VERSION_ERROR || code == Constant.LOGIN_ERROR)
                         mHandler.sendEmptyMessage(code);
                     else {
@@ -618,10 +579,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
         if (!TextUtils.isEmpty(newText)) {
             updateLayout(searchCustomer(searchName));
         } else {
-            customerListView.setAdapter(customerListItemAdapter);
-            expandGroupAll(customerListItemAdapter);
-            customerListView.setSelection(0);
-            setCustomerListDisplayTotal();
+            setData(customerList);
         }
         return false;
     }
@@ -652,7 +610,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 fromSource, convertOrderList);
         customerListView.setAdapter(customerListItemAdapterSearch);
         expandGroupAll(customerListItemAdapterSearch);
-        setCustomerListDisplayTotal();
+        setSelectCustomer(customerListItemAdapterSearch);
     }
 
     @Override
@@ -682,10 +640,9 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == 100) {
             customerCnt = 0;
-            customerList.clear();
-            customerListItemAdapter.notifyDataSetChanged();
             // 清除过滤
             searchCustomerView.setQuery(null, false);
+            customerListView.setAdapter(customerListItemAdapter);
             customerAdvancedCondition = (CustomerAdvancedCondition) data
                     .getSerializableExtra("customerAdvancedCondition");
             // 所有顾客 分页
@@ -781,7 +738,7 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
             Integer startPos = (customerAdvancedCondition.getPageIndex() - 1) * customerAdvancedCondition.getPageSize()
                     + 1;
             Integer endPos = customerAdvancedCondition.getPageIndex() * customerAdvancedCondition.getPageSize();
-            if (!customerAdvancedCondition.isLoadMoreFlg()) {
+            if (endPos > customerCnt) {
                 endPos = customerCnt;
             }
             if (startPos > endPos) {
@@ -797,9 +754,67 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
     /**
      * 展开所有分类
      */
-    private void expandGroupAll(CustomerListItemAdapter customerListItemAdapter) {
-        for (int i = 0, length = customerListItemAdapter.getGroupCount(); i < length; i++) {
+    private void expandGroupAll(CustomerListItemAdapter adapter) {
+        for (int i = 0, length = adapter.getGroupCount(); i < length; i++) {
             customerListView.expandGroup(i);
+        }
+    }
+
+    private void clearData() {
+        customerList = new ArrayList<Customer>();
+        customerListItemAdapter = new CustomerListItemAdapter(this, customerList, fromSource, convertOrderList);
+        customerListView.setAdapter(customerListItemAdapter);
+        customerCnt = 0;
+        // 设置显示记录数
+        setCustomerListDisplayTotal();
+    }
+
+    private void setData(List<Customer> customers) {
+        customerList = customers;
+        customerListItemAdapter = new CustomerListItemAdapter(this, customers, fromSource, convertOrderList);
+        customerListView.setAdapter(customerListItemAdapter);
+        // 展开
+        expandGroupAll(customerListItemAdapter);
+        // 设置显示记录数
+        setCustomerListDisplayTotal();
+        // 设置选中项
+        setSelectCustomer(customerListItemAdapter);
+    }
+
+    // 设置选中项
+    private void setSelectCustomer(CustomerListItemAdapter adapter) {
+        if (customerList.size() > 0) {
+            HashList<String, Customer> customerHashList = adapter.getAssort().getHashList();
+            if (pageIndexRollBack > customerAdvancedCondition.getPageIndex()) {
+                customerListView.setSelectedGroup(customerHashList.size() - 1);
+                customerListView.setSelectedChild(customerHashList.size() - 1, customerList.size() - 1, true);
+            } else {
+                customerListView.setSelectedGroup(0);
+                customerListView.setSelectedChild(0, 0, true);
+            }
+            // 自动滚动到已选择的顾客那一项
+            int selectedGroup = -1;
+            int selectedChild = -1;
+            boolean findFlg = false;
+            for (int j = 0; j < customerHashList.size(); j++) {
+                if (findFlg) {
+                    break;
+                }
+                List<Customer> customerList = customerHashList.getValueListIndex(j);
+                for (int a = 0; a < customerList.size(); a++) {
+                    Customer customer = customerList.get(a);
+                    if (customer.getCustomerId() == userinfoApplication.getSelectedCustomerID()) {
+                        selectedGroup = j;
+                        selectedChild = a;
+                        findFlg = true;
+                        break;
+                    }
+                }
+            }
+            if (findFlg) {
+                customerListView.setSelectedGroup(selectedGroup);
+                customerListView.setSelectedChild(selectedGroup, selectedChild, true);
+            }
         }
     }
 

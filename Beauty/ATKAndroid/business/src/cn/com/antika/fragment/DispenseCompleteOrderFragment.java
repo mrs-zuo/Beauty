@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -75,11 +76,12 @@ public class DispenseCompleteOrderFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreateView(inflater, container, savedInstanceState);
-        if (mHandler == null)
-            mHandler = new DispenseCompleteOrderFragmentHandler(this);
         View dispenseCompleteOrderView = inflater.inflate(R.xml.dispense_complete_order_fragment_layout, container, false);
         dispenseCompleteOrderListView = (RefreshListView) dispenseCompleteOrderView.findViewById(R.id.dispense_complete_order_listview);
         dispenseCompleteOrderListView.setOnItemClickListener(this);
+        dispenseCompleteOrderList = new ArrayList<OrderInfo>();
+        dispenseCompleteOrderListAdapter = new DispenseCompleteOrderListAdapter(getActivity(), dispenseCompleteOrderList, 1);
+        dispenseCompleteOrderListView.setAdapter(dispenseCompleteOrderListAdapter);
         dispenseCompleteOrderListView.setOnRefreshListener(new RefreshListViewWithWebservice() {
 
             @Override
@@ -95,7 +97,7 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                     } else if (authMyOrderRead == 1) {
                         // 如果选择顾客不为空时
                         if (userinfoApplication.getSelectedCustomerID() != 0) {
-                            getCompleteOrderData(requestWebServiceThread, mHandler);
+                            getCompleteOrderData();
                         }
                     }
                 }
@@ -129,7 +131,7 @@ public class DispenseCompleteOrderFragment extends Fragment implements
             // 如果选择顾客不为空时
             if (userinfoApplication.getSelectedCustomerID() != 0) {
                 progressDialog = ProgressDialogUtil.createProgressDialog(getActivity());
-                getCompleteOrderData(requestWebServiceThread, mHandler);
+                getCompleteOrderData();
             }
 
         }
@@ -152,30 +154,33 @@ public class DispenseCompleteOrderFragment extends Fragment implements
 
         @Override
         public void handleMessage(Message msg) {
+            FragmentActivity fragmentActivity = dispenseCompleteOrderFragment.getActivity();
+            if (fragmentActivity == null) {
+                return;
+            }
             if (dispenseCompleteOrderFragment.progressDialog != null) {
                 dispenseCompleteOrderFragment.progressDialog.dismiss();
                 dispenseCompleteOrderFragment.progressDialog = null;
             }
             switch (msg.what) {
                 case 0:
-                    DialogUtil.createShortDialog(dispenseCompleteOrderFragment.getActivity(), (String) msg.obj);
+                    DialogUtil.createShortDialog(fragmentActivity, (String) msg.obj);
                     break;
                 case 1:
-                    dispenseCompleteOrderFragment.dispenseCompleteOrderListAdapter = new DispenseCompleteOrderListAdapter(dispenseCompleteOrderFragment.getActivity(), dispenseCompleteOrderFragment.dispenseCompleteOrderList, 1);
-                    dispenseCompleteOrderFragment.dispenseCompleteOrderListView.setAdapter(dispenseCompleteOrderFragment.dispenseCompleteOrderListAdapter);
-                    ((TextView) dispenseCompleteOrderFragment.getActivity().findViewById(R.id.tab_complete_order_title)).setText("待结" + "(" + dispenseCompleteOrderFragment.dispenseCompleteOrderList.size() + ")");
+                    dispenseCompleteOrderFragment.setDispenseCompleteOrderList((List<OrderInfo>) msg.obj);
+                    ((TextView) fragmentActivity.findViewById(R.id.tab_complete_order_title)).setText("待结" + "(" + dispenseCompleteOrderFragment.dispenseCompleteOrderList.size() + ")");
                     break;
                 case 2:
-                    DialogUtil.createShortDialog(dispenseCompleteOrderFragment.getActivity(), "您的网络貌似不给力，请重试");
+                    DialogUtil.createShortDialog(fragmentActivity, "您的网络貌似不给力，请重试");
                     break;
                 case Constant.LOGIN_ERROR:
-                    DialogUtil.createShortDialog(dispenseCompleteOrderFragment.getActivity(), dispenseCompleteOrderFragment.getString(R.string.login_error_message));
-                    UserInfoApplication.getInstance().exitForLogin(dispenseCompleteOrderFragment.getActivity());
+                    DialogUtil.createShortDialog(fragmentActivity, dispenseCompleteOrderFragment.getString(R.string.login_error_message));
+                    UserInfoApplication.getInstance().exitForLogin(fragmentActivity);
                     break;
                 case Constant.APP_VERSION_ERROR:
                     String downloadFileUrl = Constant.SERVER_URL + dispenseCompleteOrderFragment.getString(R.string.download_apk_address);
-                    FileCache fileCache = new FileCache(dispenseCompleteOrderFragment.getActivity());
-                    dispenseCompleteOrderFragment.packageUpdateUtil = new PackageUpdateUtil(dispenseCompleteOrderFragment.getActivity(), dispenseCompleteOrderFragment.mHandler, fileCache, downloadFileUrl, false, dispenseCompleteOrderFragment.userinfoApplication);
+                    FileCache fileCache = new FileCache(fragmentActivity);
+                    dispenseCompleteOrderFragment.packageUpdateUtil = new PackageUpdateUtil(fragmentActivity, dispenseCompleteOrderFragment.mHandler, fileCache, downloadFileUrl, false, dispenseCompleteOrderFragment.userinfoApplication);
                     dispenseCompleteOrderFragment.packageUpdateUtil.getPackageVersionInfo();
                     ServerPackageVersion serverPackageVersion = new ServerPackageVersion();
                     serverPackageVersion.setPackageVersion((String) msg.obj);
@@ -184,7 +189,7 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                 case 5:
                     ((DownloadInfo) msg.obj).getUpdateDialog().cancel();
                     String filename = "cn.com.antika.business.apk";
-                    File file = dispenseCompleteOrderFragment.getActivity().getFileStreamPath(filename);
+                    File file = fragmentActivity.getFileStreamPath(filename);
                     file.getName();
                     dispenseCompleteOrderFragment.packageUpdateUtil.showInstallDialog();
                     break;
@@ -199,12 +204,15 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                 case 6:
                     //撤销小单成功
                     if (msg.arg1 == 0)
-                        DialogUtil.createShortDialog(dispenseCompleteOrderFragment.getActivity(), "撤销成功！");
+                        DialogUtil.createShortDialog(fragmentActivity, "撤销成功！");
                         //完成小单成功
                     else if (msg.arg1 == 1)
-                        DialogUtil.createShortDialog(dispenseCompleteOrderFragment.getActivity(), "操作成功！");
+                        DialogUtil.createShortDialog(fragmentActivity, "操作成功！");
                     //刷新下当前数据
-                    dispenseCompleteOrderFragment.getCompleteOrderData(dispenseCompleteOrderFragment.requestWebServiceThread, dispenseCompleteOrderFragment.mHandler);
+                    dispenseCompleteOrderFragment.getCompleteOrderData();
+                    break;
+                case 99:
+                    DialogUtil.createShortDialog(fragmentActivity, "服务器异常，请重试");
                     break;
                 default:
                     break;
@@ -216,12 +224,8 @@ public class DispenseCompleteOrderFragment extends Fragment implements
         }
     }
 
-    private void getCompleteOrderData(Thread requestWebServiceThread, Handler mHandler) {
-        if (dispenseCompleteOrderList != null && dispenseCompleteOrderList.size() > 0)
-            dispenseCompleteOrderList.clear();
-        else
-            dispenseCompleteOrderList = new ArrayList<OrderInfo>();
-        final Handler handler = mHandler;
+    private void getCompleteOrderData() {
+        clearData();
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {
@@ -234,12 +238,13 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                     unFinishTGJsonParam.put("CustomerID", userinfoApplication.getSelectedCustomerID());
                     unFinishTGJsonParam.put("IsToday", false);
                 } catch (JSONException e) {
-
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, unFinishTGJsonParam.toString(), userinfoApplication);
                 if (serverRequestResult == null
                         || serverRequestResult.equals(""))
-                    handler.sendEmptyMessage(2);
+                    mHandler.sendEmptyMessage(2);
                 else {
                     JSONObject resultJson = null;
                     int code = 0;
@@ -250,12 +255,17 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                         code = resultJson.getInt("Code");
                         msg = resultJson.getString("Message");
                     } catch (JSONException e) {
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         try {
                             unFinishTGArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
+                        List<OrderInfo> orderInfos = new ArrayList<OrderInfo>();
                         if (unFinishTGArray != null) {
                             for (int i = 0; i < unFinishTGArray.length(); i++) {
                                 OrderInfo unfinishOrder = new OrderInfo();
@@ -329,6 +339,8 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                                     if (unfinishOrderJson.has("IsConfirmed") && !unfinishOrderJson.isNull("IsConfirmed"))
                                         isConfirmed = unfinishOrderJson.getInt("IsConfirmed");
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 unfinishOrder.setProductName(productName);
                                 unfinishOrder.setProductType(productType);
@@ -342,17 +354,17 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                                 unfinishOrder.setOrderID(orderID);
                                 unfinishOrder.setOrderObejctID(orderObjectID);
                                 unfinishOrder.setIsConfirmed(isConfirmed);
-                                dispenseCompleteOrderList.add(unfinishOrder);
+                                orderInfos.add(unfinishOrder);
                             }
                         }
-                        handler.sendEmptyMessage(1);
+                        mHandler.obtainMessage(1, orderInfos).sendToTarget();
                     } else if (code == Constant.LOGIN_ERROR || code == Constant.APP_VERSION_ERROR)
-                        handler.sendEmptyMessage(code);
+                        mHandler.sendEmptyMessage(code);
                     else {
                         Message message = new Message();
                         message.what = 0;
                         message.obj = msg;
-                        handler.sendMessage(message);
+                        mHandler.sendMessage(message);
                     }
                 }
             }
@@ -375,6 +387,8 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                 tempArray.put(unfinishOrderJson);
             }
         } catch (JSONException e) {
+            mHandler.sendEmptyMessage(99);
+            return;
         }
         requestWebServiceThread = new Thread() {
             @Override
@@ -395,6 +409,8 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                     completeTreatGroupJson.put("CustomerID", userinfoApplication.getSelectedCustomerID());
                     completeTreatGroupJson.put("TGDetailList", tempArray);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, completeTreatGroupJson.toString(), userinfoApplication);
                 if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -408,7 +424,8 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                         code = resultJson.getInt("Code");
                         msg = resultJson.getString("Message");
                     } catch (JSONException e) {
-
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         Message message = new Message();
@@ -543,6 +560,14 @@ public class DispenseCompleteOrderFragment extends Fragment implements
             dispenseCompleteOrderList.clear();
         if (dispenseCompleteOrderListAdapter != null)
             dispenseCompleteOrderListAdapter.notifyDataSetChanged();
+    }
+
+    private void setDispenseCompleteOrderList(List<OrderInfo> orderList) {
+        if (dispenseCompleteOrderList != null) {
+            dispenseCompleteOrderList.clear();
+            dispenseCompleteOrderList.addAll(orderList);
+            dispenseCompleteOrderListAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override
