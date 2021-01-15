@@ -270,8 +270,8 @@ public class CommodityListAdapter extends BaseAdapter {
 								selectedCommodityList.add(orderProduct);
 							}
 							CommodityListAdapter.this.notifyDataSetChanged();
-							BusinessRightMenu.createMenuContent();
-							BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
+							/*BusinessRightMenu.createMenuContent();
+							BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
 						}
 					});
 		}

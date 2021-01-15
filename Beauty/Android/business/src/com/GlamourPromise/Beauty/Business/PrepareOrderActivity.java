@@ -1710,8 +1710,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                                                         prepareOrderTotalSalePriceText.setText(NumberFormatUtil.currencyFormat(String.valueOf(orderProductPromotionTotalSalePrice)));
                                                                     }
                                                                     initView();
-                                                                    BusinessRightMenu.createMenuContent();
-                                                                    BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
+                                                                    /*BusinessRightMenu.createMenuContent();
+                                                                    BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
                                                                 }
                                                             })
                                                     .setNegativeButton(getString(R.string.delete_cancel),

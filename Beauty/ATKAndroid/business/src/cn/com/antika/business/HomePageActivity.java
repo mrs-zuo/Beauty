@@ -213,8 +213,8 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
 
                         }
                         orderProductList.add(orderProduct);
-                        BusinessRightMenu.createMenuContent();
-                        BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
+                        /*BusinessRightMenu.createMenuContent();
+                        BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
                     }
                 }
             } else if (msg.what == Constant.LOGIN_ERROR) {
