@@ -92,6 +92,10 @@ public class OrderPaymentDetailActivity extends BaseActivity {
                 orderPaymentDetailActivity.progressDialog.dismiss();
                 orderPaymentDetailActivity.progressDialog = null;
             }
+            if (orderPaymentDetailActivity.requestWebServiceThread != null) {
+                orderPaymentDetailActivity.requestWebServiceThread.interrupt();
+                orderPaymentDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 List<PaymentRecordDetail> paymentRecordDetailList = (List<PaymentRecordDetail>) msg.obj;
                 orderPaymentDetailActivity.orderPaymentDetailLinearlayout = (LinearLayout) orderPaymentDetailActivity.findViewById(R.id.order_payment_detail_linearlayout);
@@ -274,10 +278,6 @@ public class OrderPaymentDetailActivity extends BaseActivity {
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (orderPaymentDetailActivity.requestWebServiceThread != null) {
-                orderPaymentDetailActivity.requestWebServiceThread.interrupt();
-                orderPaymentDetailActivity.requestWebServiceThread = null;
             }
         }
     }

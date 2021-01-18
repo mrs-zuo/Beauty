@@ -116,6 +116,10 @@ public class ProductAndOldOrderListActivity extends BaseActivity implements OnCl
                 productAndOldOrderListActivity.progressDialog.dismiss();
                 productAndOldOrderListActivity.progressDialog = null;
             }
+            if (productAndOldOrderListActivity.requestWebServiceThread != null) {
+                productAndOldOrderListActivity.requestWebServiceThread.interrupt();
+                productAndOldOrderListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 0) {
                 String message = (String) msg.obj;
                 DialogUtil.createMakeSureDialog(productAndOldOrderListActivity, "提示信息", message);
@@ -195,10 +199,6 @@ public class ProductAndOldOrderListActivity extends BaseActivity implements OnCl
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (productAndOldOrderListActivity.requestWebServiceThread != null) {
-                productAndOldOrderListActivity.requestWebServiceThread.interrupt();
-                productAndOldOrderListActivity.requestWebServiceThread = null;
             }
         }
     }

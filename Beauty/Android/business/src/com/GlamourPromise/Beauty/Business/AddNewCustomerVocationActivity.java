@@ -99,6 +99,10 @@ public class AddNewCustomerVocationActivity extends BaseActivity implements OnCl
                 addNewCustomerVocationActivity.progressDialog.dismiss();
                 addNewCustomerVocationActivity.progressDialog = null;
             }
+            if (addNewCustomerVocationActivity.requestWebServiceThread != null) {
+                addNewCustomerVocationActivity.requestWebServiceThread.interrupt();
+                addNewCustomerVocationActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(addNewCustomerVocationActivity, "提示信息", "专业信息编辑成功！");
                 alertDialog.show();
@@ -159,10 +163,6 @@ public class AddNewCustomerVocationActivity extends BaseActivity implements OnCl
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (addNewCustomerVocationActivity.requestWebServiceThread != null) {
-                addNewCustomerVocationActivity.requestWebServiceThread.interrupt();
-                addNewCustomerVocationActivity.requestWebServiceThread = null;
             }
         }
     }

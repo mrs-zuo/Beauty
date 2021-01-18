@@ -71,6 +71,10 @@ public class SendNewEmarketingMessageActivity extends BaseActivity implements
                 sendNewEmarketingMessageActivity.progressDialog.dismiss();
                 sendNewEmarketingMessageActivity.progressDialog = null;
             }
+            if (sendNewEmarketingMessageActivity.requestWebServiceThread != null) {
+                sendNewEmarketingMessageActivity.requestWebServiceThread.interrupt();
+                sendNewEmarketingMessageActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 DialogUtil.createShortDialog(sendNewEmarketingMessageActivity, "发送成功！");
                 Intent destIntent = new Intent(sendNewEmarketingMessageActivity, EMarketingActivity.class);
@@ -104,10 +108,6 @@ public class SendNewEmarketingMessageActivity extends BaseActivity implements
             } else {
                 DialogUtil.createShortDialog(
                         sendNewEmarketingMessageActivity, "发送营销消息失败！");
-            }
-            if (sendNewEmarketingMessageActivity.requestWebServiceThread != null) {
-                sendNewEmarketingMessageActivity.requestWebServiceThread.interrupt();
-                sendNewEmarketingMessageActivity.requestWebServiceThread = null;
             }
         }
     }

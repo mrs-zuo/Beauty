@@ -87,6 +87,10 @@ public class EMarketingActivity extends BaseActivity implements
                 eMarketingActivity.progressDialog.dismiss();
                 eMarketingActivity.progressDialog = null;
             }
+            if (eMarketingActivity.requestWebServiceThread != null) {
+                eMarketingActivity.requestWebServiceThread.interrupt();
+                eMarketingActivity.requestWebServiceThread = null;
+            }
             switch (message.what) {
                 case 0:
                     // 上拉更多
@@ -165,10 +169,6 @@ public class EMarketingActivity extends BaseActivity implements
                     int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                     ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
                     break;
-            }
-            if (eMarketingActivity.requestWebServiceThread != null) {
-                eMarketingActivity.requestWebServiceThread.interrupt();
-                eMarketingActivity.requestWebServiceThread = null;
             }
         }
     }

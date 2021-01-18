@@ -152,6 +152,10 @@ public class CommodityCategoryActivity extends BaseActivity implements OnItemCli
                 // 用户返回不做任何处理
                 return;
             }
+            if (commodityCategoryActivity.requestWebServiceThread != null) {
+                commodityCategoryActivity.requestWebServiceThread.interrupt();
+                commodityCategoryActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (commodityCategoryActivity.categoryInfoList != null && commodityCategoryActivity.categoryInfoList.size() != 0) {
                     commodityCategoryActivity.commodityCategoryListView.setAdapter(new CategoryListAdapter(commodityCategoryActivity, commodityCategoryActivity.categoryInfoList));
@@ -184,10 +188,6 @@ public class CommodityCategoryActivity extends BaseActivity implements OnItemCli
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (commodityCategoryActivity.requestWebServiceThread != null) {
-                commodityCategoryActivity.requestWebServiceThread.interrupt();
-                commodityCategoryActivity.requestWebServiceThread = null;
             }
         }
     }

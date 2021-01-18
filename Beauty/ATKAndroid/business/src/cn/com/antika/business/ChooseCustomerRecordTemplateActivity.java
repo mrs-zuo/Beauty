@@ -78,6 +78,10 @@ public class ChooseCustomerRecordTemplateActivity extends BaseActivity implement
                 chooseCustomerRecordTemplateActivity.progressDialog.dismiss();
                 chooseCustomerRecordTemplateActivity.progressDialog = null;
             }
+            if (chooseCustomerRecordTemplateActivity.requestWebServiceThread != null) {
+                chooseCustomerRecordTemplateActivity.requestWebServiceThread.interrupt();
+                chooseCustomerRecordTemplateActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 chooseCustomerRecordTemplateActivity.recordTemplateListView.setAdapter(new RecordTemplateListAdapter(chooseCustomerRecordTemplateActivity, chooseCustomerRecordTemplateActivity.recordTemplateList, true, chooseCustomerRecordTemplateActivity));
             } else if (msg.what == 2)
@@ -106,10 +110,6 @@ public class ChooseCustomerRecordTemplateActivity extends BaseActivity implement
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (chooseCustomerRecordTemplateActivity.requestWebServiceThread != null) {
-                chooseCustomerRecordTemplateActivity.requestWebServiceThread.interrupt();
-                chooseCustomerRecordTemplateActivity.requestWebServiceThread = null;
             }
         }
     }

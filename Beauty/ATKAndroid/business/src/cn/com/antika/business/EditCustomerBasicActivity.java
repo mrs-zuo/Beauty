@@ -751,8 +751,11 @@ public class EditCustomerBasicActivity extends BaseActivity implements OnClickLi
                 editCustomerBasicActivity.progressDialog.dismiss();
                 editCustomerBasicActivity.progressDialog = null;
             }
+            if (editCustomerBasicActivity.requestWebServiceThread != null) {
+                editCustomerBasicActivity.requestWebServiceThread.interrupt();
+                editCustomerBasicActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
-
                 AlertDialog alertDialog = null;
                 Intent intent = null;
                 if (msg.obj != null && (Integer) msg.obj == 2) {
@@ -818,10 +821,6 @@ public class EditCustomerBasicActivity extends BaseActivity implements OnClickLi
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (editCustomerBasicActivity.requestWebServiceThread != null) {
-                editCustomerBasicActivity.requestWebServiceThread.interrupt();
-                editCustomerBasicActivity.requestWebServiceThread = null;
             }
         }
     }

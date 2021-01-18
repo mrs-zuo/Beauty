@@ -140,6 +140,10 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                 prepareOrderActivity.progressDialog.dismiss();
                 prepareOrderActivity.progressDialog = null;
             }
+            /*if (prepareOrderActivity.requestWebServiceThread != null) {
+                prepareOrderActivity.requestWebServiceThread.interrupt();
+                prepareOrderActivity.requestWebServiceThread = null;
+            }*/
             // 建立需求成功
             if (msg.what == 1) {
                 Intent intent = new Intent(prepareOrderActivity, OpportunityListActivity.class);
@@ -470,11 +474,15 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
 
                 });
             } else if (msg.what == 99) {
+                if (prepareOrderActivity.progressDialog != null) {
+                    prepareOrderActivity.progressDialog.dismiss();
+                    prepareOrderActivity.progressDialog = null;
+                }
+                if (prepareOrderActivity.requestWebServiceThread != null) {
+                    prepareOrderActivity.requestWebServiceThread.interrupt();
+                    prepareOrderActivity.requestWebServiceThread = null;
+                }
                 DialogUtil.createShortDialog(prepareOrderActivity, "服务器异常，请重试");
-            }
-            if (prepareOrderActivity.requestWebServiceThread != null) {
-                prepareOrderActivity.requestWebServiceThread.interrupt();
-                prepareOrderActivity.requestWebServiceThread = null;
             }
         }
     }
@@ -607,6 +615,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             mHandler.sendMessage(msg);
                         }
                     }
+                    interrupt();
                 }
             };
             requestWebServiceThread.start();
@@ -792,6 +801,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             mHandler.sendMessage(msg);
                         }
                     }
+                    interrupt();
                 }
             };
             requestWebServiceThread.start();
@@ -912,6 +922,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         mHandler.sendMessage(message);
                     }
                 }
+                interrupt();
             }
         };
         requestWebServiceThread.start();
@@ -1958,7 +1969,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     if (NumberFormatUtil.doubleCompare(productTotalPrice, productPastPaidPrice) == 0)
                         isPastPayAll = 1;
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomerAlertDialog);
+                    /*AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomerAlertDialog);
                     // 获取布局
                     View view2 = getLayoutInflater().from(this).inflate(R.layout.activity_prepare_order_make_sure, null);
                     // 获取布局中的控件
@@ -2092,11 +2103,111 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                             mHandler.sendMessage(msg);
                                         }
                                     }
+                                    interrupt();
                                 }
                             };
                             requestWebServiceThread.start();
                         }
-                    });
+                    });*/
+
+                    progressDialog = ProgressDialogUtil.createProgressDialog(PrepareOrderActivity.this);
+                    requestWebServiceThread = new Thread() {
+                        @Override
+                        public void run() {
+                            if (exit) {
+                                return;
+                            }
+                            String methodName = "AddNewOrder";
+                            String endPoint = "Order";
+                            JSONObject prepareOrderJson = new JSONObject();
+                            try {
+                                prepareOrderJson.put("OrderList", orderProductArray);
+                                prepareOrderJson.put("OldOrderIDs", OldOrderIdArray);
+                            } catch (JSONException e) {
+                                // TODO Auto-generated catch block
+                                mHandler.sendEmptyMessage(99);
+                                return;
+                            }
+                            if (opportunityID != 0) {
+                                try {
+                                    prepareOrderJson.put("CustomerID", orderProductList.get(0).getCustomerID());
+                                } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
+                                }
+                            } else {
+                                try {
+                                    prepareOrderJson.put("CustomerID", userinfoApplication.getSelectedCustomerID());
+                                } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
+                                }
+                            }
+                            String serverResultResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, prepareOrderJson.toString(), userinfoApplication);
+                            JSONObject resultJson = null;
+                            try {
+                                resultJson = new JSONObject(serverResultResult);
+                            } catch (JSONException e1) {
+                                // TODO Auto-generated catch block
+                                e1.printStackTrace();
+                                mHandler.sendEmptyMessage(99);
+                                return;
+                            }
+                            if (serverResultResult == null
+                                    || serverResultResult.equals(""))
+                                mHandler.sendEmptyMessage(-1);
+                            else {
+                                String code = "0";
+                                String message = "";
+                                try {
+                                    code = resultJson.getString("Code");
+                                    message = resultJson.getString("Message");
+                                } catch (JSONException e) {
+                                    // TODO Auto-generated catch block
+                                    code = "0";
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
+                                }
+                                if (Integer.parseInt(code) == 1) {
+                                    quickBalanceOrderList = new ArrayList<OrderInfo>();
+                                    JSONArray orderListArray = null;
+                                    try {
+                                        orderListArray = resultJson.getJSONArray("Data");
+                                    } catch (JSONException e) {
+                                        mHandler.sendEmptyMessage(99);
+                                        return;
+                                    }
+                                    if (orderListArray != null) {
+                                        for (int i = 0; i < orderListArray.length(); i++) {
+                                            try {
+                                                list.add(orderListArray.get(i).toString());
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                                mHandler.sendEmptyMessage(99);
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    Message msg = new Message();
+                                    mHandler.sendEmptyMessage(9);
+                                } else if (Integer.parseInt(code) == Constant.APP_VERSION_ERROR || Integer.parseInt(code) == Constant.LOGIN_ERROR)
+                                    mHandler.sendEmptyMessage(Integer.parseInt(code));
+                                else if (Integer.parseInt(code) == -2) {
+                                    Message msg = new Message();
+                                    msg.what = 4;
+                                    msg.obj = message;
+                                    mHandler.sendMessage(msg);
+                                } else {
+                                    Message msg = new Message();
+                                    msg.what = 0;
+                                    msg.obj = message;
+                                    mHandler.sendMessage(msg);
+                                }
+                            }
+                            interrupt();
+                        }
+                    };
+                    requestWebServiceThread.start();
                 }
                 break;
         }
@@ -2210,6 +2321,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         mHandler.sendMessage(msg);
                     }
                 }
+                interrupt();
             }
         };
         requestWebServiceThread.start();
@@ -2305,6 +2417,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         mHandler.sendMessage(msg);
                     }
                 }
+                interrupt();
             }
         };
         requestWebServiceThread.start();

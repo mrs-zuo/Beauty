@@ -103,6 +103,10 @@ public class AddNewCustomerEcardActivity extends BaseActivity implements OnClick
                 addNewCustomerEcardActivity.progressDialog.dismiss();
                 addNewCustomerEcardActivity.progressDialog = null;
             }
+            if (addNewCustomerEcardActivity.requestWebServiceThread != null) {
+                addNewCustomerEcardActivity.requestWebServiceThread.interrupt();
+                addNewCustomerEcardActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (addNewCustomerEcardActivity.ecardInfoList.size() > 0) {
                     String[] ecardNameArray = new String[addNewCustomerEcardActivity.ecardInfoList.size()];
@@ -187,10 +191,6 @@ public class AddNewCustomerEcardActivity extends BaseActivity implements OnClick
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (addNewCustomerEcardActivity.requestWebServiceThread != null) {
-                addNewCustomerEcardActivity.requestWebServiceThread.interrupt();
-                addNewCustomerEcardActivity.requestWebServiceThread = null;
             }
         }
     }

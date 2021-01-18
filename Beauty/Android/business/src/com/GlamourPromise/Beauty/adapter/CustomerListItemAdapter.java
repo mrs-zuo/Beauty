@@ -87,6 +87,10 @@ public class CustomerListItemAdapter extends BaseExpandableListAdapter {
 
 		@Override
 		public void handleMessage(Message msg) {
+			if (customerListItemAdapter.requestWebServiceThread != null) {
+				customerListItemAdapter.requestWebServiceThread.interrupt();
+				customerListItemAdapter.requestWebServiceThread = null;
+			}
 			if (msg.what == 2)
 				DialogUtil.createShortDialog(customerListItemAdapter.activity, "您的网络貌似不给力，请检查网络设置");
 			else if (msg.what == 3)
@@ -95,10 +99,6 @@ public class CustomerListItemAdapter extends BaseExpandableListAdapter {
 			else if (msg.what == 4) {
 				DialogUtil.createShortDialog(customerListItemAdapter.activity, msg.obj.toString());
 				customerListItemAdapter.activity.startActivity(new Intent(customerListItemAdapter.activity, CustomerUnpaidOrderActivity.class));
-			}
-			if (customerListItemAdapter.requestWebServiceThread != null) {
-				customerListItemAdapter.requestWebServiceThread.interrupt();
-				customerListItemAdapter.requestWebServiceThread = null;
 			}
 		}
 	}

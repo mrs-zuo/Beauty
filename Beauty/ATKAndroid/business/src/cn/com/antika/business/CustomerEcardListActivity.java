@@ -87,6 +87,10 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
                 customerEcardListActivity.progressDialog.dismiss();
                 customerEcardListActivity.progressDialog = null;
             }
+            if (customerEcardListActivity.requestWebServiceThread != null) {
+                customerEcardListActivity.requestWebServiceThread.interrupt();
+                customerEcardListActivity.requestWebServiceThread = null;
+            }
             // 清除会员卡信息
             customerEcardListActivity.ecardListLinearLayout.removeAllViews();
             if (msg.what == 1) {
@@ -121,10 +125,6 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
             } else if (msg.what == 99) {
                 DialogUtil.createShortDialog(customerEcardListActivity, "服务器异常，请重试");
-            }
-            if (customerEcardListActivity.requestWebServiceThread != null) {
-                customerEcardListActivity.requestWebServiceThread.interrupt();
-                customerEcardListActivity.requestWebServiceThread = null;
             }
         }
     }

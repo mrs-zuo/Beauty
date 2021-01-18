@@ -182,7 +182,7 @@ public class ServiceListActivity extends BaseActivity implements OnItemClickList
                 serviceListActivity.requestWebServiceThread.interrupt();
                 serviceListActivity.requestWebServiceThread = null;
             }
-            System.gc();
+            // System.gc();
         }
     }
 

@@ -92,6 +92,10 @@ public class AccountAttendanceCodeActivity extends BaseActivity {
                 // 用户放返回不做任何处理
                 return;
             }
+            if (accountAttendanceCodeActivity.requestWebServiceThread != null) {
+                accountAttendanceCodeActivity.requestWebServiceThread.interrupt();
+                accountAttendanceCodeActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 0) {
                 DialogUtil.createShortDialog(accountAttendanceCodeActivity, "您的网络貌似不给力，请重试！");
             } else if (msg.what == 1) {
@@ -123,10 +127,6 @@ public class AccountAttendanceCodeActivity extends BaseActivity {
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (accountAttendanceCodeActivity.requestWebServiceThread != null) {
-                accountAttendanceCodeActivity.requestWebServiceThread.interrupt();
-                accountAttendanceCodeActivity.requestWebServiceThread = null;
             }
         }
     }

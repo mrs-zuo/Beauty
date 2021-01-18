@@ -139,6 +139,10 @@ public class MyReportPercentageActivity extends BaseActivity {
                 myReportPercentageActivity.progressDialog.dismiss();
                 myReportPercentageActivity.progressDialog = null;
             }
+            if (myReportPercentageActivity.requestWebServiceThread != null) {
+                myReportPercentageActivity.requestWebServiceThread.interrupt();
+                myReportPercentageActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 ReportAccountCommProfit rac = (ReportAccountCommProfit) message.obj;
                 NumberFormat numberFormat = NumberFormat.getInstance();
@@ -182,10 +186,6 @@ public class MyReportPercentageActivity extends BaseActivity {
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (myReportPercentageActivity.requestWebServiceThread != null) {
-                myReportPercentageActivity.requestWebServiceThread.interrupt();
-                myReportPercentageActivity.requestWebServiceThread = null;
             }
         }
     }

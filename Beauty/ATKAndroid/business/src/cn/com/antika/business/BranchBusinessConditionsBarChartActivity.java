@@ -144,6 +144,10 @@ public class BranchBusinessConditionsBarChartActivity extends BaseActivity imple
                 branchBusinessConditionsBarChartActivity.progressDialog.dismiss();
                 branchBusinessConditionsBarChartActivity.progressDialog = null;
             }
+            if (branchBusinessConditionsBarChartActivity.requestWebServiceThread != null) {
+                branchBusinessConditionsBarChartActivity.requestWebServiceThread.interrupt();
+                branchBusinessConditionsBarChartActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 ((LinearLayout) branchBusinessConditionsBarChartActivity.findViewById(R.id.branch_business_conditions_bar_chart_linearlayout)).removeAllViews();
                 ((LinearLayout) branchBusinessConditionsBarChartActivity.findViewById(R.id.branch_business_conditions_bar_chart2_linearlayout)).removeAllViews();
@@ -194,10 +198,6 @@ public class BranchBusinessConditionsBarChartActivity extends BaseActivity imple
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchBusinessConditionsBarChartActivity.requestWebServiceThread != null) {
-                branchBusinessConditionsBarChartActivity.requestWebServiceThread.interrupt();
-                branchBusinessConditionsBarChartActivity.requestWebServiceThread = null;
             }
         }
     }

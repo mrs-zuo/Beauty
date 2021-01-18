@@ -76,6 +76,10 @@ public class UnUsedBenefitsFragment extends Fragment {
             if (fragmentActivity == null) {
                 return;
             }
+            if (unUsedBenefitsFragment.requestWebServiceThread != null) {
+                unUsedBenefitsFragment.requestWebServiceThread.interrupt();
+                unUsedBenefitsFragment.requestWebServiceThread = null;
+            }
             switch (msg.what) {
                 case 0:
                     DialogUtil.createShortDialog(fragmentActivity, (String) msg.obj);

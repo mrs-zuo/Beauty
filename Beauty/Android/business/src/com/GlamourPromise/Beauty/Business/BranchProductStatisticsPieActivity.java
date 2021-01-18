@@ -142,6 +142,10 @@ public class BranchProductStatisticsPieActivity extends BaseActivity implements 
                 branchProductStatisticsPieActivity.progressDialog.dismiss();
                 branchProductStatisticsPieActivity.progressDialog = null;
             }
+            if (branchProductStatisticsPieActivity.requestWebServiceThread != null) {
+                branchProductStatisticsPieActivity.requestWebServiceThread.interrupt();
+                branchProductStatisticsPieActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 ((LinearLayout) branchProductStatisticsPieActivity.findViewById(R.id.branch_product_statistics_pie_linearlayout)).removeAllViews();
                 if (branchProductStatisticsPieActivity.branchStatisticsList != null && branchProductStatisticsPieActivity.branchStatisticsList.size() > 0) {
@@ -207,10 +211,6 @@ public class BranchProductStatisticsPieActivity extends BaseActivity implements 
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchProductStatisticsPieActivity.requestWebServiceThread != null) {
-                branchProductStatisticsPieActivity.requestWebServiceThread.interrupt();
-                branchProductStatisticsPieActivity.requestWebServiceThread = null;
             }
         }
     }

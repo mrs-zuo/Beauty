@@ -82,6 +82,10 @@ public class TreatmentReviewActivity extends BaseActivity {
                 treatmentReviewActivity.progressDialog.dismiss();
                 treatmentReviewActivity.progressDialog = null;
             }
+            if (treatmentReviewActivity.requestWebServiceThread != null) {
+                treatmentReviewActivity.requestWebServiceThread.interrupt();
+                treatmentReviewActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 TreatmentReview treatmentReview = (TreatmentReview) message.obj;
                 if (treatmentReview != null) {
@@ -149,10 +153,6 @@ public class TreatmentReviewActivity extends BaseActivity {
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (treatmentReviewActivity.requestWebServiceThread != null) {
-                treatmentReviewActivity.requestWebServiceThread.interrupt();
-                treatmentReviewActivity.requestWebServiceThread = null;
             }
         }
     }

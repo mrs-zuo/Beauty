@@ -156,6 +156,10 @@ public class AddNewCustomerActivity extends BaseActivity implements OnClickListe
                 addNewCustomerActivity.progressDialog.dismiss();
                 addNewCustomerActivity.progressDialog = null;
             }
+            if (addNewCustomerActivity.requestWebServiceThread != null) {
+                addNewCustomerActivity.requestWebServiceThread.interrupt();
+                addNewCustomerActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 addNewCustomerActivity.newCustomerForResult = (Customer) msg.obj;
                 Dialog dialog = new AlertDialog.Builder(addNewCustomerActivity, R.style.CustomerAlertDialog)
@@ -291,10 +295,6 @@ public class AddNewCustomerActivity extends BaseActivity implements OnClickListe
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (addNewCustomerActivity.requestWebServiceThread != null) {
-                addNewCustomerActivity.requestWebServiceThread.interrupt();
-                addNewCustomerActivity.requestWebServiceThread = null;
             }
         }
     }

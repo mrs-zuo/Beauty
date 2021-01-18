@@ -196,6 +196,10 @@ public class PaymentActionThirdPartResultActivity extends BaseActivity implement
                 paymentActionThirdPartResultActivity.progressDialog.dismiss();
                 paymentActionThirdPartResultActivity.progressDialog = null;
             }
+            if (paymentActionThirdPartResultActivity.requestWebServiceThread != null) {
+                paymentActionThirdPartResultActivity.requestWebServiceThread.interrupt();
+                paymentActionThirdPartResultActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 0) {
                 DialogUtil.createShortDialog(paymentActionThirdPartResultActivity, "您的网络貌似不给力，请重试！");
             } else if (msg.what == 1) {
@@ -331,10 +335,6 @@ public class PaymentActionThirdPartResultActivity extends BaseActivity implement
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (paymentActionThirdPartResultActivity.requestWebServiceThread != null) {
-                paymentActionThirdPartResultActivity.requestWebServiceThread.interrupt();
-                paymentActionThirdPartResultActivity.requestWebServiceThread = null;
             }
         }
     }

@@ -113,6 +113,10 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                 homePageActivity.progressDialog.dismiss();
                 homePageActivity.progressDialog = null;
             }
+            if (homePageActivity.requestWebServiceThread != null) {
+                homePageActivity.requestWebServiceThread.interrupt();
+                homePageActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 0) {
                 DialogUtil.createShortDialog(homePageActivity, (String) msg.obj);
             } else if (msg.what == 2)
@@ -291,10 +295,6 @@ public class HomePageActivity extends BaseActivity implements OnClickListener, O
                 new AlertDialog.Builder(homePageActivity, R.style.CustomerAlertDialog).setView(treatmentDialogLayout).show();
             } else if (msg.what == 99) {
                 DialogUtil.createShortDialog(homePageActivity, "服务器异常，请重试");
-            }
-            if (homePageActivity.requestWebServiceThread != null) {
-                homePageActivity.requestWebServiceThread.interrupt();
-                homePageActivity.requestWebServiceThread = null;
             }
         }
     }

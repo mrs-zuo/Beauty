@@ -76,6 +76,10 @@ public class ExpiredBenefitsFragment extends Fragment {
             if (fragmentActivity == null) {
                 return;
             }
+            if (expiredBenefitsFragment.requestWebServiceThread != null) {
+                expiredBenefitsFragment.requestWebServiceThread.interrupt();
+                expiredBenefitsFragment.requestWebServiceThread = null;
+            }
             switch (msg.what) {
                 case 0:
                     DialogUtil.createShortDialog(fragmentActivity, (String) msg.obj);

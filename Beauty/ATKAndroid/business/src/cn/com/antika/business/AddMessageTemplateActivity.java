@@ -76,6 +76,10 @@ public class AddMessageTemplateActivity extends BaseActivity implements
                 addMessageTemplateActivity.progressDialog.dismiss();
                 addMessageTemplateActivity.progressDialog = null;
             }
+            if (addMessageTemplateActivity.requestWebServiceThread != null) {
+                addMessageTemplateActivity.requestWebServiceThread.interrupt();
+                addMessageTemplateActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(addMessageTemplateActivity, "提示信息", "添加模板信息成功！");
                 alertDialog.show();
@@ -120,10 +124,6 @@ public class AddMessageTemplateActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (addMessageTemplateActivity.requestWebServiceThread != null) {
-                addMessageTemplateActivity.requestWebServiceThread.interrupt();
-                addMessageTemplateActivity.requestWebServiceThread = null;
             }
         }
     }

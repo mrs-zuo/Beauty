@@ -79,6 +79,10 @@ public class ReportTotalActivity extends BaseActivity {
                 reportTotalActivity.progressDialog.dismiss();
                 reportTotalActivity.progressDialog = null;
             }
+            if (reportTotalActivity.requestWebServiceThread != null) {
+                reportTotalActivity.requestWebServiceThread.interrupt();
+                reportTotalActivity.requestWebServiceThread = null;
+            }
             // 显示累计数据统计在视图上
             if (message.what == 1) {
                 ReportTotal reportTotal = (ReportTotal) message.obj;
@@ -115,10 +119,6 @@ public class ReportTotalActivity extends BaseActivity {
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (reportTotalActivity.requestWebServiceThread != null) {
-                reportTotalActivity.requestWebServiceThread.interrupt();
-                reportTotalActivity.requestWebServiceThread = null;
             }
         }
     }

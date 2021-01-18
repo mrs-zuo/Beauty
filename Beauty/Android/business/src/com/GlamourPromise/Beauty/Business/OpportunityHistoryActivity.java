@@ -76,6 +76,10 @@ public class OpportunityHistoryActivity extends BaseActivity implements
                 opportunityHistoryActivity.progressDialog.dismiss();
                 opportunityHistoryActivity.progressDialog = null;
             }
+            if (opportunityHistoryActivity.requestWebServiceThread != null) {
+                opportunityHistoryActivity.requestWebServiceThread.interrupt();
+                opportunityHistoryActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 opportunityHistoryActivity.opportunityProgressListView
                         .setAdapter(new OpportunityProgressHistoryListItemAdapter(
@@ -108,10 +112,6 @@ public class OpportunityHistoryActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (opportunityHistoryActivity.requestWebServiceThread != null) {
-                opportunityHistoryActivity.requestWebServiceThread.interrupt();
-                opportunityHistoryActivity.requestWebServiceThread = null;
             }
         }
     }

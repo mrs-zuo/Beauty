@@ -162,6 +162,10 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                 dispenseCompleteOrderFragment.progressDialog.dismiss();
                 dispenseCompleteOrderFragment.progressDialog = null;
             }
+            if (dispenseCompleteOrderFragment.requestWebServiceThread != null) {
+                dispenseCompleteOrderFragment.requestWebServiceThread.interrupt();
+                dispenseCompleteOrderFragment.requestWebServiceThread = null;
+            }
             switch (msg.what) {
                 case 0:
                     DialogUtil.createShortDialog(fragmentActivity, (String) msg.obj);
@@ -216,10 +220,6 @@ public class DispenseCompleteOrderFragment extends Fragment implements
                     break;
                 default:
                     break;
-            }
-            if (dispenseCompleteOrderFragment.requestWebServiceThread != null) {
-                dispenseCompleteOrderFragment.requestWebServiceThread.interrupt();
-                dispenseCompleteOrderFragment.requestWebServiceThread = null;
             }
         }
     }

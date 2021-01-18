@@ -97,6 +97,10 @@ public class UnfishTGListActivity extends BaseActivity implements OnClickListene
                 unfishTGListActivity.progressDialog.dismiss();
                 unfishTGListActivity.progressDialog = null;
             }
+            if (unfishTGListActivity.requestWebServiceThread != null) {
+                unfishTGListActivity.requestWebServiceThread.interrupt();
+                unfishTGListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 unfishTGListActivity.unfinishTGOrderListAdapter = new UnfinishTGOrderListAdapter(unfishTGListActivity, unfishTGListActivity.unfinshTGOrderList, unfishTGListActivity.listItemClick);
                 unfishTGListActivity.unfinishTgOrderListView.setAdapter(unfishTGListActivity.unfinishTGOrderListAdapter);
@@ -153,10 +157,6 @@ public class UnfishTGListActivity extends BaseActivity implements OnClickListene
                 //结单成功
                 unfishTGListActivity.requestWebService();
                 DialogUtil.createShortDialog(unfishTGListActivity, "结单成功!");
-            }
-            if (unfishTGListActivity.requestWebServiceThread != null) {
-                unfishTGListActivity.requestWebServiceThread.interrupt();
-                unfishTGListActivity.requestWebServiceThread = null;
             }
         }
     }

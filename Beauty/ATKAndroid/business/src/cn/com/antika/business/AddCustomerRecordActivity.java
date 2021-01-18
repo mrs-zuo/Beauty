@@ -183,6 +183,10 @@ public class AddCustomerRecordActivity extends BaseActivity implements
                 addCustomerRecordActivity.progressDialog.dismiss();
                 addCustomerRecordActivity.progressDialog = null;
             }
+            if (addCustomerRecordActivity.requestWebServiceThread != null) {
+                addCustomerRecordActivity.requestWebServiceThread.interrupt();
+                addCustomerRecordActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(addCustomerRecordActivity, "提示信息", "顾客咨询记录添加成功！");
                 alertDialog.show();
@@ -219,10 +223,6 @@ public class AddCustomerRecordActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (addCustomerRecordActivity.requestWebServiceThread != null) {
-                addCustomerRecordActivity.requestWebServiceThread.interrupt();
-                addCustomerRecordActivity.requestWebServiceThread = null;
             }
         }
     }

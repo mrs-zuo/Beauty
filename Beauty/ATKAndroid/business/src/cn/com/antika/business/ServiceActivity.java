@@ -166,6 +166,10 @@ public class ServiceActivity extends BaseActivity implements OnItemClickListener
                 serviceActivity.progressDialog.dismiss();
                 serviceActivity.progressDialog = null;
             }
+            if (serviceActivity.requestWebServiceThread != null) {
+                serviceActivity.requestWebServiceThread.interrupt();
+                serviceActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (serviceActivity.categoryInfoList != null && serviceActivity.categoryInfoList.size() != 0)
                     serviceActivity.serviceCategoryListView.setAdapter(new CategoryListAdapter(serviceActivity, serviceActivity.categoryInfoList));
@@ -198,11 +202,6 @@ public class ServiceActivity extends BaseActivity implements OnItemClickListener
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
             }
-            if (serviceActivity.requestWebServiceThread != null) {
-                serviceActivity.requestWebServiceThread.interrupt();
-                serviceActivity.requestWebServiceThread = null;
-            }
-
         }
     }
 

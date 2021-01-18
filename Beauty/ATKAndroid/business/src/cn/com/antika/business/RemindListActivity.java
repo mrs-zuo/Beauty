@@ -83,6 +83,10 @@ public class RemindListActivity extends BaseActivity implements
                 remindListActivity.progressDialog.dismiss();
                 remindListActivity.progressDialog = null;
             }
+            if (remindListActivity.requestWebServiceThread != null) {
+                remindListActivity.requestWebServiceThread.interrupt();
+                remindListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 remindListActivity.remindListItemAdapter = new RemindListItemAdapter(remindListActivity, remindListActivity.remindList);
                 remindListActivity.remindListView.setAdapter(remindListActivity.remindListItemAdapter);
@@ -113,10 +117,6 @@ public class RemindListActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (remindListActivity.requestWebServiceThread != null) {
-                remindListActivity.requestWebServiceThread.interrupt();
-                remindListActivity.requestWebServiceThread = null;
             }
         }
     }

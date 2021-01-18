@@ -75,6 +75,10 @@ public class AllEcardHistoryListActivity extends BaseActivity implements OnItemC
                 allEcardHistoryListActivity.progressDialog.dismiss();
                 allEcardHistoryListActivity.progressDialog = null;
             }
+            if (allEcardHistoryListActivity.requestWebServiceThread != null) {
+                allEcardHistoryListActivity.requestWebServiceThread.interrupt();
+                allEcardHistoryListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 allEcardHistoryListActivity.allEcardHistoryListView.setAdapter(new AllEcardHistroyListItemAdapter(allEcardHistoryListActivity, allEcardHistoryListActivity.allEcardHistroyList));
             } else if (msg.what == 2)
@@ -103,10 +107,6 @@ public class AllEcardHistoryListActivity extends BaseActivity implements OnItemC
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (allEcardHistoryListActivity.requestWebServiceThread != null) {
-                allEcardHistoryListActivity.requestWebServiceThread.interrupt();
-                allEcardHistoryListActivity.requestWebServiceThread = null;
             }
         }
     }

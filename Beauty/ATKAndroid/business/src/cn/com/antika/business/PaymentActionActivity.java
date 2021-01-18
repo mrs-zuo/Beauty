@@ -256,6 +256,10 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                 paymentActionActivity.progressDialog.dismiss();
                 paymentActionActivity.progressDialog = null;
             }
+            if (paymentActionActivity.requestWebServiceThread != null) {
+                paymentActionActivity.requestWebServiceThread.interrupt();
+                paymentActionActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(paymentActionActivity, "提示信息", "支付成功！");
                 alertDialog.show();
@@ -426,10 +430,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                     paymentActionActivity.shouldPayAmountEdit.setText(paymentActionActivity.shouldPayAmountEdit.getText().toString());
                     paymentActionActivity.thisTimePayAmountUppercase.setText(LowerCase2Uppercase.l2Uppercase(0));
                 }
-            }
-            if (paymentActionActivity.requestWebServiceThread != null) {
-                paymentActionActivity.requestWebServiceThread.interrupt();
-                paymentActionActivity.requestWebServiceThread = null;
             }
         }
     }

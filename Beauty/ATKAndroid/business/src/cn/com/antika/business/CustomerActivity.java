@@ -161,6 +161,10 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 customerActivity.progressDialog.dismiss();
                 customerActivity.progressDialog = null;
             }
+            if (customerActivity.requestWebServiceThread != null) {
+                customerActivity.requestWebServiceThread.interrupt();
+                customerActivity.requestWebServiceThread = null;
+            }
             // 非正常情况处理
             if (customerActivity.loadFlg && msg.what != 1) {
                 if (customerActivity.pageIndexRollBack != null) {
@@ -228,10 +232,6 @@ public class CustomerActivity extends BaseActivity implements OnClickListener, O
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
             } else if (msg.what == 99) {
                 DialogUtil.createShortDialog(customerActivity, "服务器异常，请重试");
-            }
-            if (customerActivity.requestWebServiceThread != null) {
-                customerActivity.requestWebServiceThread.interrupt();
-                customerActivity.requestWebServiceThread = null;
             }
             // 数据加载完成
             customerActivity.loadFlg = false;

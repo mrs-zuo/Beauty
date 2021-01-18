@@ -73,6 +73,10 @@ public class EcardTypeOtherMoneyOut extends BaseActivity implements OnClickListe
                 ecardTypeOtherMoneyOut.progressDialog.dismiss();
                 ecardTypeOtherMoneyOut.progressDialog = null;
             }
+            if (ecardTypeOtherMoneyOut.thread != null) {
+                ecardTypeOtherMoneyOut.thread.interrupt();
+                ecardTypeOtherMoneyOut.thread = null;
+            }
             if (msg.what == Constant.GET_WEB_DATA_TRUE) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(ecardTypeOtherMoneyOut, "提示信息", ecardTypeOtherMoneyOut.ecardTypeName + "支出成功！");
                 alertDialog.show();
@@ -112,10 +116,6 @@ public class EcardTypeOtherMoneyOut extends BaseActivity implements OnClickListe
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (ecardTypeOtherMoneyOut.thread != null) {
-                ecardTypeOtherMoneyOut.thread.interrupt();
-                ecardTypeOtherMoneyOut.thread = null;
             }
         }
     }

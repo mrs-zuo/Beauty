@@ -162,6 +162,10 @@ public class BranchJournalReportActivity extends BaseActivity implements OnClick
                 branchJournalReportActivity.progressDialog.dismiss();
                 branchJournalReportActivity.progressDialog = null;
             }
+            if (branchJournalReportActivity.requestWebServiceThread != null) {
+                branchJournalReportActivity.requestWebServiceThread.interrupt();
+                branchJournalReportActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 BranchJournalInfo bji = (BranchJournalInfo) message.obj;
                 NumberFormat numberFormat = NumberFormat.getInstance();
@@ -236,10 +240,6 @@ public class BranchJournalReportActivity extends BaseActivity implements OnClick
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchJournalReportActivity.requestWebServiceThread != null) {
-                branchJournalReportActivity.requestWebServiceThread.interrupt();
-                branchJournalReportActivity.requestWebServiceThread = null;
             }
         }
     }

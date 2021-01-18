@@ -87,6 +87,10 @@ public class TreatmentGroupReviewActivity extends BaseActivity {
                 treatmentGroupReviewActivity.progressDialog.dismiss();
                 treatmentGroupReviewActivity.progressDialog = null;
             }
+            if (treatmentGroupReviewActivity.requestWebServiceThread != null) {
+                treatmentGroupReviewActivity.requestWebServiceThread.interrupt();
+                treatmentGroupReviewActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 treatmentGroupReviewActivity.initData();
             } else if (message.what == 0)
@@ -115,10 +119,6 @@ public class TreatmentGroupReviewActivity extends BaseActivity {
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (treatmentGroupReviewActivity.requestWebServiceThread != null) {
-                treatmentGroupReviewActivity.requestWebServiceThread.interrupt();
-                treatmentGroupReviewActivity.requestWebServiceThread = null;
             }
         }
     }

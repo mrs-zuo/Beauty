@@ -140,6 +140,10 @@ public class CustomerBasicInfoActivity extends BaseActivity implements
                 customerBasicInfoActivity.progressDialog.dismiss();
                 customerBasicInfoActivity.progressDialog = null;
             }
+            if (customerBasicInfoActivity.requestWebServiceThread != null) {
+                customerBasicInfoActivity.requestWebServiceThread.interrupt();
+                customerBasicInfoActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 customerBasicInfoActivity.imageLoader.displayImage(customerBasicInfoActivity.customer.getHeadImageUrl(), customerBasicInfoActivity.customerHeadImageView, customerBasicInfoActivity.displayImageOptions);
                 customerBasicInfoActivity.customerBasicNameText.setText(customerBasicInfoActivity.customer.getCustomerName());
@@ -340,10 +344,6 @@ public class CustomerBasicInfoActivity extends BaseActivity implements
                 customerBasicInfoActivity.progressBar.setVisibility(View.GONE);
             } else if (msg.what == 99) {
                 DialogUtil.createShortDialog(customerBasicInfoActivity, "服务器异常，请重试");
-            }
-            if (customerBasicInfoActivity.requestWebServiceThread != null) {
-                customerBasicInfoActivity.requestWebServiceThread.interrupt();
-                customerBasicInfoActivity.requestWebServiceThread = null;
             }
         }
     }

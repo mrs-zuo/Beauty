@@ -103,6 +103,10 @@ public class AssignToNewCustomerEcardActivity extends BaseActivity implements On
                 assignToNewCustomerEcardActivity.progressDialog.dismiss();
                 assignToNewCustomerEcardActivity.progressDialog = null;
             }
+            if (assignToNewCustomerEcardActivity.requestWebServiceThread != null) {
+                assignToNewCustomerEcardActivity.requestWebServiceThread.interrupt();
+                assignToNewCustomerEcardActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (assignToNewCustomerEcardActivity.ecardInfoList.size() > 0) {
                     ((TextView) assignToNewCustomerEcardActivity.findViewById(R.id.old_customer_ecard_name)).setText(assignToNewCustomerEcardActivity.oldEcard.getUserEcardName());
@@ -189,10 +193,6 @@ public class AssignToNewCustomerEcardActivity extends BaseActivity implements On
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (assignToNewCustomerEcardActivity.requestWebServiceThread != null) {
-                assignToNewCustomerEcardActivity.requestWebServiceThread.interrupt();
-                assignToNewCustomerEcardActivity.requestWebServiceThread = null;
             }
         }
     }

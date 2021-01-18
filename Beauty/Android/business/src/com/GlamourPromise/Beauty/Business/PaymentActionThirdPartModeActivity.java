@@ -195,6 +195,10 @@ public class PaymentActionThirdPartModeActivity extends BaseActivity implements 
                 // 用户返回不做任何处理
                 return;
             }
+            if (paymentActionThirdPartModeActivity.requestWebServiceThread != null) {
+                paymentActionThirdPartModeActivity.requestWebServiceThread.interrupt();
+                paymentActionThirdPartModeActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 0) {
                 DialogUtil.createShortDialog(paymentActionThirdPartModeActivity, "您的网络貌似不给力，请重试！");
             } else if (msg.what == 1) {
@@ -229,10 +233,6 @@ public class PaymentActionThirdPartModeActivity extends BaseActivity implements 
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (paymentActionThirdPartModeActivity.requestWebServiceThread != null) {
-                paymentActionThirdPartModeActivity.requestWebServiceThread.interrupt();
-                paymentActionThirdPartModeActivity.requestWebServiceThread = null;
             }
         }
     }

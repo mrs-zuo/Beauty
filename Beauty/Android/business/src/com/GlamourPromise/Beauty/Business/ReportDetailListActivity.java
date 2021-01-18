@@ -163,6 +163,10 @@ public class ReportDetailListActivity extends BaseActivity {
                 reportDetailListActivity.progressDialog.dismiss();
                 reportDetailListActivity.progressDialog = null;
             }
+            if (reportDetailListActivity.requestWebServiceThread != null) {
+                reportDetailListActivity.requestWebServiceThread.interrupt();
+                reportDetailListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 double reportTotalCount = 0;
                 if (reportDetailListActivity.extractItemType == 0) {
@@ -244,10 +248,6 @@ public class ReportDetailListActivity extends BaseActivity {
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (reportDetailListActivity.requestWebServiceThread != null) {
-                reportDetailListActivity.requestWebServiceThread.interrupt();
-                reportDetailListActivity.requestWebServiceThread = null;
             }
         }
     }

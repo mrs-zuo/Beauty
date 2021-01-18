@@ -159,6 +159,10 @@ public class BranchTotalReportActivity extends BaseActivity implements OnClickLi
                 branchTotalReportActivity.progressDialog.dismiss();
                 branchTotalReportActivity.progressDialog = null;
             }
+            if (branchTotalReportActivity.requestWebServiceThread != null) {
+                branchTotalReportActivity.requestWebServiceThread.interrupt();
+                branchTotalReportActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 BranchTotalReport btr = (BranchTotalReport) message.obj;
                 branchTotalReportActivity.branchTotalCustomerCountText.setText(String.valueOf(btr.getCustomerCount()));
@@ -196,10 +200,6 @@ public class BranchTotalReportActivity extends BaseActivity implements OnClickLi
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchTotalReportActivity.requestWebServiceThread != null) {
-                branchTotalReportActivity.requestWebServiceThread.interrupt();
-                branchTotalReportActivity.requestWebServiceThread = null;
             }
         }
     }

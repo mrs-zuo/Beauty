@@ -119,6 +119,10 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                 orderRefundActivity.progressDialog.dismiss();
                 orderRefundActivity.progressDialog = null;
             }
+            if (orderRefundActivity.requestWebServiceThread != null) {
+                orderRefundActivity.requestWebServiceThread.interrupt();
+                orderRefundActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 0) {
                 DialogUtil.createShortDialog(orderRefundActivity, "您的网络貌似不给力，请重试");
             } else if (msg.what == 2) {
@@ -367,10 +371,6 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             else if (msg.what == 6) {
                 DialogUtil.createShortDialog(orderRefundActivity, "退款成功!");
                 orderRefundActivity.finish();
-            }
-            if (orderRefundActivity.requestWebServiceThread != null) {
-                orderRefundActivity.requestWebServiceThread.interrupt();
-                orderRefundActivity.requestWebServiceThread = null;
             }
         }
     }

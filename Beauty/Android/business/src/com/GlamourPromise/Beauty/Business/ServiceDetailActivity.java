@@ -121,6 +121,10 @@ public class ServiceDetailActivity extends BaseActivity implements OnClickListen
                 // 用户返回不做任何处理
                 return;
             }
+            if (serviceDetailActivity.requestWebServiceThread != null) {
+                serviceDetailActivity.requestWebServiceThread.interrupt();
+                serviceDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (serviceDetailActivity.imageCount == 0)
                     serviceDetailActivity.serviceImageShowLinearlayout.setVisibility(View.GONE);
@@ -164,10 +168,6 @@ public class ServiceDetailActivity extends BaseActivity implements OnClickListen
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (serviceDetailActivity.requestWebServiceThread != null) {
-                serviceDetailActivity.requestWebServiceThread.interrupt();
-                serviceDetailActivity.requestWebServiceThread = null;
             }
         }
     }

@@ -149,6 +149,10 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
             if (fragmentActivity == null) {
                 return;
             }
+            if (dispenseFavoriteListFragment.requestWebServiceThread != null) {
+                dispenseFavoriteListFragment.requestWebServiceThread.interrupt();
+                dispenseFavoriteListFragment.requestWebServiceThread = null;
+            }
             switch (msg.what) {
                 case 1:
                     dispenseFavoriteListFragment.setData((List<FavoriteInfo>) msg.obj);

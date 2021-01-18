@@ -66,6 +66,10 @@ public class CustomerViewOrderActivity extends BaseActivity implements
                 customerViewOrderActivity.progressDialog.dismiss();
                 customerViewOrderActivity.progressDialog = null;
             }
+            if (customerViewOrderActivity.requestWebServiceThread != null) {
+                customerViewOrderActivity.requestWebServiceThread.interrupt();
+                customerViewOrderActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 customerViewOrderActivity.viewOderCountText.setText("(" + String.valueOf(customerViewOrderActivity.customerOrderTotal) + ")");
                 customerViewOrderActivity.unCompletedServiceText.setText("(" + String.valueOf(customerViewOrderActivity.unCompletedService) + ")");
@@ -96,10 +100,6 @@ public class CustomerViewOrderActivity extends BaseActivity implements
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerViewOrderActivity.requestWebServiceThread != null) {
-                customerViewOrderActivity.requestWebServiceThread.interrupt();
-                customerViewOrderActivity.requestWebServiceThread = null;
             }
         }
     }

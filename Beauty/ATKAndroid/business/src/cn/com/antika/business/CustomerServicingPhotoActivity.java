@@ -85,6 +85,10 @@ public class CustomerServicingPhotoActivity extends BaseActivity {
                 customerServicingPhotoActivity.progressDialog.dismiss();
                 customerServicingPhotoActivity.progressDialog = null;
             }
+            if (customerServicingPhotoActivity.requestWebServiceThread != null) {
+                customerServicingPhotoActivity.requestWebServiceThread.interrupt();
+                customerServicingPhotoActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 //初始化照片的视图
                 if (customerServicingPhotoActivity.treatmentList != null && customerServicingPhotoActivity.treatmentList.size() > 0) {
@@ -154,10 +158,6 @@ public class CustomerServicingPhotoActivity extends BaseActivity {
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerServicingPhotoActivity.requestWebServiceThread != null) {
-                customerServicingPhotoActivity.requestWebServiceThread.interrupt();
-                customerServicingPhotoActivity.requestWebServiceThread = null;
             }
         }
     }

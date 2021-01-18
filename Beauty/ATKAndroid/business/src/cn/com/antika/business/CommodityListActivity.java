@@ -133,6 +133,10 @@ public class CommodityListActivity extends BaseActivity implements
                 commodityListActivity.progressDialog.dismiss();
                 commodityListActivity.progressDialog = null;
             }
+            if (commodityListActivity.requestWebServiceThread != null) {
+                commodityListActivity.requestWebServiceThread.interrupt();
+                commodityListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (commodityListActivity.searchResult == null) {
                     commodityListActivity.searchResult = new ArrayList<CommodityInfo>();
@@ -179,10 +183,6 @@ public class CommodityListActivity extends BaseActivity implements
                         .getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(
                         downLoadFileSize);
-            }
-            if (commodityListActivity.requestWebServiceThread != null) {
-                commodityListActivity.requestWebServiceThread.interrupt();
-                commodityListActivity.requestWebServiceThread = null;
             }
         }
     }

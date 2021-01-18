@@ -122,6 +122,10 @@ public class CommodityDetailActivity extends BaseActivity implements
                 // 用户返回不做任何处理
                 return;
             }
+            if (commodityDetailActivity.requestWebServiceThread != null) {
+                commodityDetailActivity.requestWebServiceThread.interrupt();
+                commodityDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 commodityDetailActivity.CreateCommodityNameTableRow();
                 commodityDetailActivity.CreateCommodityPriceTableRow();
@@ -165,10 +169,6 @@ public class CommodityDetailActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (commodityDetailActivity.requestWebServiceThread != null) {
-                commodityDetailActivity.requestWebServiceThread.interrupt();
-                commodityDetailActivity.requestWebServiceThread = null;
             }
         }
     }

@@ -94,6 +94,10 @@ public class EditCustomerVocationActivity extends BaseActivity implements
                 editCustomerVocationActivity.progressDialog.dismiss();
                 editCustomerVocationActivity.progressDialog = null;
             }
+            if (editCustomerVocationActivity.requestWebServiceThread != null) {
+                editCustomerVocationActivity.requestWebServiceThread.interrupt();
+                editCustomerVocationActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(editCustomerVocationActivity, "提示信息", "专业信息编辑成功！");
                 alertDialog.show();
@@ -132,10 +136,6 @@ public class EditCustomerVocationActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (editCustomerVocationActivity.requestWebServiceThread != null) {
-                editCustomerVocationActivity.requestWebServiceThread.interrupt();
-                editCustomerVocationActivity.requestWebServiceThread = null;
             }
         }
     }

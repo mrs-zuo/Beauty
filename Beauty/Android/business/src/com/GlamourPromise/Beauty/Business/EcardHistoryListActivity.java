@@ -78,6 +78,10 @@ public class EcardHistoryListActivity extends BaseActivity implements
                 ecardHistoryListActivity.progressDialog.dismiss();
                 ecardHistoryListActivity.progressDialog = null;
             }
+            if (ecardHistoryListActivity.requestWebServiceThread != null) {
+                ecardHistoryListActivity.requestWebServiceThread.interrupt();
+                ecardHistoryListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 ecardHistoryListActivity.ecardHistoryListView.setAdapter(new EcardHistroyListItemAdapter(ecardHistoryListActivity, ecardHistoryListActivity.ecardHistroyList, ecardHistoryListActivity.ecardInfo.getUserEcardType()));
             } else if (msg.what == 2)
@@ -106,10 +110,6 @@ public class EcardHistoryListActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (ecardHistoryListActivity.requestWebServiceThread != null) {
-                ecardHistoryListActivity.requestWebServiceThread.interrupt();
-                ecardHistoryListActivity.requestWebServiceThread = null;
             }
         }
     }

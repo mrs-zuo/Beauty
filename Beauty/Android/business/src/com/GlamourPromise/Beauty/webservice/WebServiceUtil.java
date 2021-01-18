@@ -1,30 +1,24 @@
 package com.GlamourPromise.Beauty.webservice;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.http.Header;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.GlamourPromise.Beauty.application.UserInfoApplication;
 import com.GlamourPromise.Beauty.bean.AccountInfo;
 import com.GlamourPromise.Beauty.constant.Constant;
 import com.GlamourPromise.Beauty.util.DateUtil;
 import com.GlamourPromise.Beauty.util.MD5Encrypt;
 
-import android.util.Log;
+import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class WebServiceUtil {
     private static final String TAG = WebServiceUtil.class.getSimpleName();
@@ -50,7 +44,82 @@ public class WebServiceUtil {
             serverURL = "https://api.test.beauty.glamise.com/" + endPoint + "/" + methodName;
             Constant.formalFlag = 2;
         }
-        // 头部信息 需要验证的
+
+        //需要发送请求就需要创建空的Request对象,在这里面添加方法来丰富这个内容
+        Request.Builder builder = new Request.Builder();
+        builder.url(serverURL);
+        builder.header("Accept", "application/json");
+        builder.header("Content-type", "application/json");
+        builder.addHeader("CT", String.valueOf(Constant.CLIENT_TYPE_BUSINESS));
+        builder.addHeader("DT", String.valueOf(Constant.DEVICE_ANDROID));
+        // 头部可选参数
+        builder.addHeader("AV", userInfoApplication.getAppVersion());
+        builder.addHeader("ME", methodName);// .header("Accept-Encoding", "gzip")
+
+        StringBuilder md5EncryptString = new StringBuilder();
+        md5EncryptString.append(methodName + jsonStrParam);
+        if (!methodName.equals("getServerVersion")) {
+            if (userInfoApplication.getAccountInfo() != null) {
+                AccountInfo accountInfo = userInfoApplication.getAccountInfo();
+                builder.addHeader("CO", String.valueOf(accountInfo.getCompanyId()));
+                builder.addHeader("BR", String.valueOf(accountInfo.getBranchId()));
+                builder.addHeader("US", String.valueOf(accountInfo.getAccountId()));
+                //CompanyId为了防止其他公司的数据被查看
+                md5EncryptString.append(accountInfo.getCompanyId());
+            }
+            String GUID = userInfoApplication.getGUID();
+            if (GUID != null && !("").equals(GUID)) {
+                md5EncryptString.append(GUID);
+                builder.addHeader("GU", GUID);
+            }
+        }
+        //年月日 时分秒 毫秒
+        String nowFormateDate = DateUtil.getNowFormateDate();
+        builder.addHeader("TI", nowFormateDate);
+        String md5Encrypt = MD5Encrypt.md5Encrypt((md5EncryptString.toString() + Constant.MD5_ENCRYPT_SUFFIX).toUpperCase());
+        builder.addHeader("Authorization", md5Encrypt);
+        builder.addHeader("Connection", "close");
+
+        MultipartBody.Builder bodyBuilder = new MultipartBody.Builder().setType(MultipartBody.ALTERNATIVE);
+        Request request = null;
+
+        if (jsonStrParam != null && !"".equals(jsonStrParam.trim())) {
+            MediaType JSON = MediaType.parse("application/json; charset=utf-8");//数据类型为json格式，
+            // String jsonStr = "{\"username\":\"lisi\",\"nickname\":\"李四\"}";//json数据.
+            RequestBody requestBody = RequestBody.create(JSON, jsonStrParam);
+            request = builder.post(requestBody).build();
+        } else {
+            request = builder.build();
+        }
+
+        String resultString = "";
+        //发出请求之后还需要获取返回的数据
+        try {
+            TrustManager[] trustAllCerts = buildTrustManagers();
+            final SSLContext sslContext = SSLContext.getInstance("SSL");
+            sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
+
+            final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+
+            //创建一个OkHttpClient实例
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .addNetworkInterceptor(new NetInterceptor())
+                    .connectTimeout(15, TimeUnit.SECONDS)
+                    .readTimeout(15, TimeUnit.SECONDS)
+                    .writeTimeout(15, TimeUnit.SECONDS)
+                    .sslSocketFactory(sslSocketFactory, (X509TrustManager) trustAllCerts[0])
+                    .hostnameVerifier(new TrustAllHostnameVerifier())
+                    .build();
+            Response response = client.newCall(request).execute();
+            //这个就是得到的返回数据
+            resultString = response.body().string();
+            response.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            resultString = "";
+        }
+
+        /*// 头部信息 需要验证的
         HttpPost httpPost = new HttpPost(serverURL);
         httpPost.setHeader("Accept", "application/json");
         httpPost.setHeader("Content-type", "application/json");
@@ -112,10 +181,10 @@ public class WebServiceUtil {
                         // bufferedReader2 = new BufferedReader(new
                         // InputStreamReader(httpResponse.getEntity().getContent(), "utf-8"));
                         // String s = null;
-                        /*
-                         * for (String s = bufferedReader2.readLine(); s != null; s =
-                         * bufferedReader2.readLine()) { builder.append(s); }
-                         */
+                        *//*
+         * for (String s = bufferedReader2.readLine(); s != null; s =
+         * bufferedReader2.readLine()) { builder.append(s); }
+         *//*
                         // while((s=bufferedReader2.readLine()) !=null) {
                         // builder.append(s);
                         // }
@@ -190,7 +259,27 @@ public class WebServiceUtil {
             httpClient.getConnectionManager().closeExpiredConnections();
             httpClient.getConnectionManager().closeIdleConnections(60, TimeUnit.SECONDS);
             httpClient.getConnectionManager().shutdown();
-        }
+        }*/
         return resultString;
     }
+
+    private static TrustManager[] buildTrustManagers() {
+        return new TrustManager[]{
+                new X509TrustManager() {
+                    @Override
+                    public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) {
+                    }
+
+                    @Override
+                    public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) {
+                    }
+
+                    @Override
+                    public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                        return new java.security.cert.X509Certificate[]{};
+                    }
+                }
+        };
+    }
 }
+

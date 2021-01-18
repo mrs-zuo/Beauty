@@ -76,6 +76,10 @@ public class OrderDetailThirdPartPayListActivity extends BaseActivity implements
                 orderDetailThirdPartPayListActivity.progressDialog.dismiss();
                 orderDetailThirdPartPayListActivity.progressDialog = null;
             }
+            if (orderDetailThirdPartPayListActivity.requestWebServiceThread != null) {
+                orderDetailThirdPartPayListActivity.requestWebServiceThread.interrupt();
+                orderDetailThirdPartPayListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 ThirdPartPayItemAdapter thirdPartPayItemAdapter = new ThirdPartPayItemAdapter(orderDetailThirdPartPayListActivity, orderDetailThirdPartPayListActivity.thirdPartPayInfoList);
                 orderDetailThirdPartPayListActivity.thirdPartPayInfoListView.setAdapter(thirdPartPayItemAdapter);
@@ -105,10 +109,6 @@ public class OrderDetailThirdPartPayListActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (orderDetailThirdPartPayListActivity.requestWebServiceThread != null) {
-                orderDetailThirdPartPayListActivity.requestWebServiceThread.interrupt();
-                orderDetailThirdPartPayListActivity.requestWebServiceThread = null;
             }
         }
     }

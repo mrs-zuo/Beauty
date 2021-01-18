@@ -83,6 +83,10 @@ public class RechargeDetailActivity extends BaseActivity {
                 rechargeDetailActivity.progressDialog.dismiss();
                 rechargeDetailActivity.progressDialog = null;
             }
+            if (rechargeDetailActivity.requestWebServiceThread != null) {
+                rechargeDetailActivity.requestWebServiceThread.interrupt();
+                rechargeDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 RechargeDetail rechargeDetail = (RechargeDetail) msg.obj;
                 TableLayout rechargeDetailTablelayout = (TableLayout) rechargeDetailActivity.findViewById(R.id.recharge_detail_tablelayout);
@@ -146,10 +150,6 @@ public class RechargeDetailActivity extends BaseActivity {
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (rechargeDetailActivity.requestWebServiceThread != null) {
-                rechargeDetailActivity.requestWebServiceThread.interrupt();
-                rechargeDetailActivity.requestWebServiceThread = null;
             }
         }
     }

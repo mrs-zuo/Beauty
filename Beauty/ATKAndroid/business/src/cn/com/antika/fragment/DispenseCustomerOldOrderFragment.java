@@ -155,6 +155,10 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
             if (fragmentActivity == null) {
                 return;
             }
+            if (dispenseCustomerOldOrderFragment.requestWebServiceThread != null) {
+                dispenseCustomerOldOrderFragment.requestWebServiceThread.interrupt();
+                dispenseCustomerOldOrderFragment.requestWebServiceThread = null;
+            }
             switch (msg.what) {
                 case 0:
                     DialogUtil.createShortDialog(fragmentActivity, (String) msg.obj);
@@ -198,10 +202,6 @@ public class DispenseCustomerOldOrderFragment extends Fragment implements OnClic
                     break;
                 default:
                     break;
-            }
-            if (dispenseCustomerOldOrderFragment.requestWebServiceThread != null) {
-                dispenseCustomerOldOrderFragment.requestWebServiceThread.interrupt();
-                dispenseCustomerOldOrderFragment.requestWebServiceThread = null;
             }
         }
     }

@@ -70,6 +70,10 @@ public class EcardDiscountDetailActivity extends BaseActivity {
                 ecardDiscountDetailActivity.progressDialog.dismiss();
                 ecardDiscountDetailActivity.progressDialog = null;
             }
+            if (ecardDiscountDetailActivity.requestWebServiceThread != null) {
+                ecardDiscountDetailActivity.requestWebServiceThread.interrupt();
+                ecardDiscountDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 List<DiscountDetail> discountDetailList = (List<DiscountDetail>) msg.obj;
                 if (discountDetailList != null && discountDetailList.size() > 0) {
@@ -93,10 +97,6 @@ public class EcardDiscountDetailActivity extends BaseActivity {
             else if (msg.what == 2)
                 DialogUtil.createShortDialog(ecardDiscountDetailActivity,
                         (String) msg.obj);
-            if (ecardDiscountDetailActivity.requestWebServiceThread != null) {
-                ecardDiscountDetailActivity.requestWebServiceThread.interrupt();
-                ecardDiscountDetailActivity.requestWebServiceThread = null;
-            }
         }
     }
 

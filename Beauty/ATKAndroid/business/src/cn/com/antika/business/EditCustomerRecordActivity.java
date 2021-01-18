@@ -115,6 +115,10 @@ public class EditCustomerRecordActivity extends BaseActivity implements
                 editCustomerRecordActivity.progressDialog.dismiss();
                 editCustomerRecordActivity.progressDialog = null;
             }
+            if (editCustomerRecordActivity.requestWebServiceThread != null) {
+                editCustomerRecordActivity.requestWebServiceThread.interrupt();
+                editCustomerRecordActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 Intent intent = new Intent(editCustomerRecordActivity,
                         CustomerRecordActivity.class);
@@ -152,10 +156,6 @@ public class EditCustomerRecordActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (editCustomerRecordActivity.requestWebServiceThread != null) {
-                editCustomerRecordActivity.requestWebServiceThread.interrupt();
-                editCustomerRecordActivity.requestWebServiceThread = null;
             }
         }
     }

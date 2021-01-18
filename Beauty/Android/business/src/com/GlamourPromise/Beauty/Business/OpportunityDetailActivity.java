@@ -86,6 +86,10 @@ public class OpportunityDetailActivity extends BaseActivity implements
                 // 用户返回不做任何处理
                 return;
             }
+            if (opportunityDetailActivity.requestWebServiceThread != null) {
+                opportunityDetailActivity.requestWebServiceThread.interrupt();
+                opportunityDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(opportunityDetailActivity, "提示信息", "取消需求成功！");
                 alertDialog.show();
@@ -201,10 +205,6 @@ public class OpportunityDetailActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (opportunityDetailActivity.requestWebServiceThread != null) {
-                opportunityDetailActivity.requestWebServiceThread.interrupt();
-                opportunityDetailActivity.requestWebServiceThread = null;
             }
         }
     }

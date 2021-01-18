@@ -99,6 +99,10 @@ public class CustomerDetailActivity extends BaseActivity {
                 customerDetailActivity.progressDialog.dismiss();
                 customerDetailActivity.progressDialog = null;
             }
+            if (customerDetailActivity.requestWebServiceThread != null) {
+                customerDetailActivity.requestWebServiceThread.interrupt();
+                customerDetailActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 if (customerDetailActivity.birthday != null && !(("").equals(customerDetailActivity.birthday))) {
                     customerDetailActivity.customerDetailBasicTableLayout.setVisibility(View.VISIBLE);
@@ -190,10 +194,6 @@ public class CustomerDetailActivity extends BaseActivity {
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerDetailActivity.requestWebServiceThread != null) {
-                customerDetailActivity.requestWebServiceThread.interrupt();
-                customerDetailActivity.requestWebServiceThread = null;
             }
         }
     }

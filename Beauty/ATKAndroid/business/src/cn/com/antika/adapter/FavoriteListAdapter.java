@@ -101,6 +101,10 @@ public class FavoriteListAdapter extends BaseAdapter {
 
         @Override
         public void handleMessage(Message msg) {
+            if (favoriteListAdapter.requestWebServiceThread != null) {
+                favoriteListAdapter.requestWebServiceThread.interrupt();
+                favoriteListAdapter.requestWebServiceThread = null;
+            }
             if (msg.what == 2)
                 DialogUtil.createShortDialog(favoriteListAdapter.mContext, "您的网络貌似不给力，请检查网络设置");
             else if (msg.what == 3)
@@ -108,10 +112,6 @@ public class FavoriteListAdapter extends BaseAdapter {
             else if (msg.what == 4) {
                 favoriteListAdapter.removeItem(favoriteListAdapter.delPosition);
                 DialogUtil.createShortDialog(favoriteListAdapter.mContext, msg.obj.toString());
-            }
-            if (favoriteListAdapter.requestWebServiceThread != null) {
-                favoriteListAdapter.requestWebServiceThread.interrupt();
-                favoriteListAdapter.requestWebServiceThread = null;
             }
         }
     }
