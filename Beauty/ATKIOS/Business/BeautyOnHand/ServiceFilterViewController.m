@@ -232,7 +232,11 @@
                                                        placeHolder:@"选择开始日期"
                                                      textAlignment:NSTextAlignmentRight
                                                           delegate:self];
-        [cell addSubview:value1];
+        if (IOS14) {
+            [cell.contentView addSubview:value1];
+        } else {
+            [cell addSubview:value1];
+        }
         
         if (IOS6)  value1.frame = CGRectMake(150, 13, 150, 18);
         if (IOS7 || IOS8)  value1.tintColor = [UIColor clearColor];
@@ -249,7 +253,11 @@
                                                        placeHolder:@"选择结束日期"
                                                      textAlignment:NSTextAlignmentRight
                                                           delegate:self];
-        [cell addSubview:value2];
+        if (IOS14) {
+            [cell.contentView addSubview:value2];
+        } else {
+            [cell addSubview:value2];
+        }
         if (IOS6)  value2.frame = CGRectMake(150, 46, 150, 18);
         if (IOS7 || IOS8) value2.tintColor = [UIColor clearColor];
         if (_servicePara.EndTime) {
@@ -273,7 +281,11 @@
                                                      textAlignment:NSTextAlignmentRight
                                                           delegate:self];
         value.backgroundColor = [UIColor clearColor];
-        [cell addSubview:value];
+        if (IOS14) {
+            [cell.contentView addSubview:value];
+        } else {
+            [cell addSubview:value];
+        }
         
         title.text = _serviceFilterDatas[indexPath.row];
         if ([title.text isEqualToString:@"业务类型"]) {
