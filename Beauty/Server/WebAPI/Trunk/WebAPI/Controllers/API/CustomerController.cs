@@ -65,7 +65,7 @@ namespace WebAPI.Controllers.API
             {
                 operationModel.ImageWidth = 160;
             }
-
+            Common.WriteLOG.WriteLog("CustomerController.cs CALL Customer_BLL.Instance.GetCustomerList");
             ObjectResultSup<List<CustomerList_Model>> objResult = Customer_BLL.Instance.GetCustomerList(
                 operationModel.CompanyID, operationModel.BranchID, operationModel.AccountID, 
                 operationModel.ImageWidth, operationModel.ImageHeight, 

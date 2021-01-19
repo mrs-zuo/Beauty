@@ -2802,6 +2802,7 @@ namespace WebAPI.DAL
                                             AND T1.UnPaidPrice > 0
                                             AND T1.OrderTime > T4.StartTime 
                                             AND T1.Status <> 3 AND T1.Status <> 4 
+                                            AND T1.RecordType = 1
                                     GROUP BY T1.CustomerID ,
                                             T2.Name ,
                                             T3.LoginMobile

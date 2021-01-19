@@ -146,7 +146,8 @@ namespace WebAPI.DAL
             bool pageFlg, int pageIndex, int pageSize,
             string customerName, string customerTel, string searchDateTime
             )
-        { 
+        {
+            Common.WriteLOG.WriteLog("Customer_DAL.cs GetCustomerList START");
             ObjectResultSup<List<CustomerList_Model>> result = new ObjectResultSup<List<CustomerList_Model>>();
             result.Code = "0";
             result.Message = "";
@@ -331,6 +332,7 @@ namespace WebAPI.DAL
                 }
                 else if (type == 1)
                 {
+                    Common.WriteLOG.WriteLog("Search ALL Customers");
                     #region 查看公司所有
                     strSqlWith = @" 
                                   WITH SunRelationship(CustomerID,IsMyCustomer)  AS
@@ -468,6 +470,16 @@ namespace WebAPI.DAL
                     strSqlCommandCnt.Append(strSql);
                     strSqlCommand = string.Format(strSqlCommandCnt.ToString(), 1, cardCodeSql);
 
+
+                    Common.WriteLOG.WriteLog("@CompanyID int = " + companyId.ToString());
+                    Common.WriteLOG.WriteLog("@BranchID int = " + branchId.ToString());
+                    Common.WriteLOG.WriteLog("@SearchDateTime varchar(max) = " + searchDateTime);
+                    Common.WriteLOG.WriteLog("@StartPos int = " + ((pageIndex - 1) * pageSize + 1).ToString());
+                    Common.WriteLOG.WriteLog("@EndPos int = " + (pageIndex * pageSize).ToString());
+                    Common.WriteLOG.WriteLog("@AccountID int = " + accountId.ToString());
+                    Common.WriteLOG.WriteLog("@CustomerTel varchar(max) = " + customerTel);
+                    Common.WriteLOG.WriteLog(strSqlCommand);
+
                     db.SetCommand(strSqlCommand,
                     db.Parameter("@AccountID", accountId, DbType.Int32),
                     db.Parameter("@ImageHeight", imageHeight, DbType.String),
@@ -483,7 +495,9 @@ namespace WebAPI.DAL
                     db.Parameter("@CustomerTel", customerTel, DbType.String),
                     db.Parameter("@SearchDateTime", searchDateTime, DbType.String)
                     );
-                    result.DataCnt = db.ExecuteScalar<int>();
+                    Common.WriteLOG.WriteLog("Get DataCnt Start");
+                    result.DataCnt = db.ExecuteScalar<Int32>();
+                    Common.WriteLOG.WriteLog("result.DataCnt = " + result.DataCnt.ToString());
 
                     // 分页数据
                     StringBuilder strSqlCommandPage = new StringBuilder();
@@ -500,6 +514,15 @@ namespace WebAPI.DAL
                     strSqlCommandPage.Append(" where R2.RowNumber between @StartPos and @EndPos");
                     strSqlCommandPage.Append(orderBy);
                     strSqlCommand = string.Format(strSqlCommandPage.ToString(), strSqlLoginMobile, cardCodeSql);
+
+                    Common.WriteLOG.WriteLog("@CompanyID int = " + companyId.ToString());
+                    Common.WriteLOG.WriteLog("@BranchID int = " + branchId.ToString());
+                    Common.WriteLOG.WriteLog("@SearchDateTime varchar(max) = " + searchDateTime);
+                    Common.WriteLOG.WriteLog("@StartPos int = " + ((pageIndex - 1) * pageSize + 1).ToString());
+                    Common.WriteLOG.WriteLog("@EndPos int = " + (pageIndex * pageSize).ToString());
+                    Common.WriteLOG.WriteLog("@AccountID int = " + accountId.ToString());
+                    Common.WriteLOG.WriteLog("@CustomerTel varchar(max) = " + customerTel);
+                    Common.WriteLOG.WriteLog(strSqlCommand);
 
                     db.SetCommand(strSqlCommand,
                     db.Parameter("@AccountID", accountId, DbType.Int32),
@@ -519,6 +542,9 @@ namespace WebAPI.DAL
                     db.Parameter("@EndPos", pageIndex * pageSize, DbType.Int32)
                     );
                     list = db.ExecuteList<CustomerList_Model>();
+                    Common.WriteLOG.WriteLog("Customer List OK.");
+                    Common.WriteLOG.WriteLog("------------------------------------------------------------------");
+
                 }
                 else
                 {
