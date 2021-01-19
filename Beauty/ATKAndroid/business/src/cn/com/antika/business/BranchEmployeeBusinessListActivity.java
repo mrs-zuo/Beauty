@@ -146,6 +146,10 @@ public class BranchEmployeeBusinessListActivity extends BaseActivity implements 
                 branchEmployeeBusinessListActivity.progressDialog.dismiss();
                 branchEmployeeBusinessListActivity.progressDialog = null;
             }
+            if (branchEmployeeBusinessListActivity.requestWebServiceThread != null) {
+                branchEmployeeBusinessListActivity.requestWebServiceThread.interrupt();
+                branchEmployeeBusinessListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 branchEmployeeBusinessListActivity.branchStatisticsListView.setAdapter(new BranchEmployeeBusinessListAdapter(branchEmployeeBusinessListActivity, branchEmployeeBusinessListActivity.branchStatisticsList, branchEmployeeBusinessListActivity.type, branchEmployeeBusinessListActivity.userinfoApplication));
             } else if (message.what == 2)
@@ -174,10 +178,6 @@ public class BranchEmployeeBusinessListActivity extends BaseActivity implements 
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchEmployeeBusinessListActivity.requestWebServiceThread != null) {
-                branchEmployeeBusinessListActivity.requestWebServiceThread.interrupt();
-                branchEmployeeBusinessListActivity.requestWebServiceThread = null;
             }
         }
     }

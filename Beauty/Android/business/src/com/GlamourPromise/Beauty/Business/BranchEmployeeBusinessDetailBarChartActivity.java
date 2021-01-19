@@ -100,6 +100,10 @@ public class BranchEmployeeBusinessDetailBarChartActivity extends BaseActivity i
                 branchEmployeeBusinessDetailBarChartActivity.progressDialog.dismiss();
                 branchEmployeeBusinessDetailBarChartActivity.progressDialog = null;
             }
+            if (branchEmployeeBusinessDetailBarChartActivity.requestWebServiceThread != null) {
+                branchEmployeeBusinessDetailBarChartActivity.requestWebServiceThread.interrupt();
+                branchEmployeeBusinessDetailBarChartActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 if (branchEmployeeBusinessDetailBarChartActivity.branchStatisticsList != null && branchEmployeeBusinessDetailBarChartActivity.branchStatisticsList.size() > 0) {
                     ((LinearLayout) branchEmployeeBusinessDetailBarChartActivity.findViewById(R.id.branch_employee_business_detail_bar_chart_linearlayout)).removeAllViews();
@@ -155,10 +159,6 @@ public class BranchEmployeeBusinessDetailBarChartActivity extends BaseActivity i
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchEmployeeBusinessDetailBarChartActivity.requestWebServiceThread != null) {
-                branchEmployeeBusinessDetailBarChartActivity.requestWebServiceThread.interrupt();
-                branchEmployeeBusinessDetailBarChartActivity.requestWebServiceThread = null;
             }
         }
     }

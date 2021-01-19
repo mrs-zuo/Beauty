@@ -85,6 +85,10 @@ public class EditCustomerDetailActivity extends BaseActivity implements OnClickL
                 editCustomerDetailActivity.progressDialog.dismiss();
                 editCustomerDetailActivity.progressDialog = null;
             }
+            if (editCustomerDetailActivity.requestWebServiceThread != null) {
+                editCustomerDetailActivity.requestWebServiceThread.interrupt();
+                editCustomerDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(editCustomerDetailActivity, "提示信息", "顾客详细信息编辑成功！");
                 alertDialog.show();
@@ -121,10 +125,6 @@ public class EditCustomerDetailActivity extends BaseActivity implements OnClickL
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (editCustomerDetailActivity.requestWebServiceThread != null) {
-                editCustomerDetailActivity.requestWebServiceThread.interrupt();
-                editCustomerDetailActivity.requestWebServiceThread = null;
             }
         }
     }

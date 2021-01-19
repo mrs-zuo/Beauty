@@ -190,6 +190,10 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 editEcardBalanceActivity.progressDialog.dismiss();
                 editEcardBalanceActivity.progressDialog = null;
             }
+            if (editEcardBalanceActivity.requestWebServiceThread != null) {
+                editEcardBalanceActivity.requestWebServiceThread.interrupt();
+                editEcardBalanceActivity.requestWebServiceThread = null;
+            }
             if (msg.what == Constant.GET_WEB_DATA_TRUE) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(editEcardBalanceActivity, "提示信息", "账户充值成功！");
                 alertDialog.show();
@@ -232,10 +236,6 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
             } else if (msg.what == 6) {
                 editEcardBalanceActivity.initView();
-            }
-            if (editEcardBalanceActivity.requestWebServiceThread != null) {
-                editEcardBalanceActivity.requestWebServiceThread.interrupt();
-                editEcardBalanceActivity.requestWebServiceThread = null;
             }
         }
     }

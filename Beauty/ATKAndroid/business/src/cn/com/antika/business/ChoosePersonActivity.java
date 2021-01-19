@@ -120,6 +120,14 @@ public class ChoosePersonActivity extends BaseActivity implements OnClickListene
                 choosePersonActivity.progressDialog.dismiss();
                 choosePersonActivity.progressDialog = null;
             }
+            if (choosePersonActivity.requestWebServiceThread != null) {
+                choosePersonActivity.requestWebServiceThread.interrupt();
+                choosePersonActivity.requestWebServiceThread = null;
+            }
+            if (choosePersonActivity.getDataThread != null) {
+                choosePersonActivity.getDataThread.interrupt();
+                choosePersonActivity.getDataThread = null;
+            }
             if (message.what == 1) {
                 JSONArray selectPersonArray = null;
                 try {
@@ -227,14 +235,6 @@ public class ChoosePersonActivity extends BaseActivity implements OnClickListene
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (choosePersonActivity.requestWebServiceThread != null) {
-                choosePersonActivity.requestWebServiceThread.interrupt();
-                choosePersonActivity.requestWebServiceThread = null;
-            }
-            if (choosePersonActivity.getDataThread != null) {
-                choosePersonActivity.getDataThread.interrupt();
-                choosePersonActivity.getDataThread = null;
             }
         }
     }

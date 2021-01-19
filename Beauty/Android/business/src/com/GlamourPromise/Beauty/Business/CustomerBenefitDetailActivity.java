@@ -65,6 +65,10 @@ public class CustomerBenefitDetailActivity extends BaseActivity {
                 // 用户返回不做任何处理
                 return;
             }
+            if (customerBenefitDetailActivity.requestWebServiceThread != null) {
+                customerBenefitDetailActivity.requestWebServiceThread.interrupt();
+                customerBenefitDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 ((TextView) customerBenefitDetailActivity.findViewById(R.id.customer_benefit_detail_name_text)).setText(customerBenefitDetailActivity.customerBenefit.getBenefitName());
                 ((TextView) customerBenefitDetailActivity.findViewById(R.id.customer_benefit_detail_date_text)).setText(DateUtil.getFormateDateByString(customerBenefitDetailActivity.customerBenefit.getGrantDate()) + "\t至\t" + DateUtil.getFormateDateByString(customerBenefitDetailActivity.customerBenefit.getValidDate()));
@@ -112,10 +116,6 @@ public class CustomerBenefitDetailActivity extends BaseActivity {
                 DialogUtil.createShortDialog(customerBenefitDetailActivity, "服务器异常，请重试");
             } else {
                 DialogUtil.createShortDialog(customerBenefitDetailActivity, (String) msg.obj);
-            }
-            if (customerBenefitDetailActivity.requestWebServiceThread != null) {
-                customerBenefitDetailActivity.requestWebServiceThread.interrupt();
-                customerBenefitDetailActivity.requestWebServiceThread = null;
             }
         }
     }

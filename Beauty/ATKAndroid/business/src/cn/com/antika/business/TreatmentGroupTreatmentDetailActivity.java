@@ -104,6 +104,10 @@ public class TreatmentGroupTreatmentDetailActivity extends BaseActivity implemen
                 // 用户返回不做任何处理
                 return;
             }
+            if (treatmentGroupTreatmentDetailActivity.requestWebServiceThread != null) {
+                treatmentGroupTreatmentDetailActivity.requestWebServiceThread.interrupt();
+                treatmentGroupTreatmentDetailActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 treatmentGroupTreatmentDetailActivity.mViewList = new ArrayList<View>();
                 treatmentGroupTreatmentDetailActivity.mViewList2 = new ArrayList<View>();
@@ -174,10 +178,6 @@ public class TreatmentGroupTreatmentDetailActivity extends BaseActivity implemen
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (treatmentGroupTreatmentDetailActivity.requestWebServiceThread != null) {
-                treatmentGroupTreatmentDetailActivity.requestWebServiceThread.interrupt();
-                treatmentGroupTreatmentDetailActivity.requestWebServiceThread = null;
             }
         }
     }

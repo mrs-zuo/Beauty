@@ -83,6 +83,10 @@ public class PaymentRecordListActivity extends BaseActivity implements
                 paymentRecordListActivity.progressDialog.dismiss();
                 paymentRecordListActivity.progressDialog = null;
             }
+            if (paymentRecordListActivity.requestWebServiceThread != null) {
+                paymentRecordListActivity.requestWebServiceThread.interrupt();
+                paymentRecordListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 paymentRecordListActivity.paymentRecordListAdapter = new PaymentRecordListAdapter(paymentRecordListActivity, paymentRecordListActivity.paymentRecordList);
                 paymentRecordListActivity.paymentRecordListView.setAdapter(paymentRecordListActivity.paymentRecordListAdapter);
@@ -117,10 +121,6 @@ public class PaymentRecordListActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (paymentRecordListActivity.requestWebServiceThread != null) {
-                paymentRecordListActivity.requestWebServiceThread.interrupt();
-                paymentRecordListActivity.requestWebServiceThread = null;
             }
         }
     }

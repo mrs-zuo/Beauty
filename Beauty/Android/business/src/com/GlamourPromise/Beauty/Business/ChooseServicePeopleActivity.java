@@ -165,6 +165,14 @@ public class ChooseServicePeopleActivity extends BaseActivity implements
                 chooseServicePeopleActivity.progressDialog.dismiss();
                 chooseServicePeopleActivity.progressDialog = null;
             }
+            if (chooseServicePeopleActivity.requestWebServiceThread != null) {
+                chooseServicePeopleActivity.requestWebServiceThread.interrupt();
+                chooseServicePeopleActivity.requestWebServiceThread = null;
+            }
+            if (chooseServicePeopleActivity.getDataThread != null) {
+                chooseServicePeopleActivity.getDataThread.interrupt();
+                chooseServicePeopleActivity.getDataThread = null;
+            }
             if (message.what == 0) {
                 DialogUtil.createShortDialog(chooseServicePeopleActivity, (String) message.obj);
             } else if (message.what == 1) {
@@ -293,14 +301,6 @@ public class ChooseServicePeopleActivity extends BaseActivity implements
             } else if (message.what == 8) {
                 DialogUtil.createShortDialog(chooseServicePeopleActivity, (String) message.obj);
                 chooseServicePeopleActivity.finish();
-            }
-            if (chooseServicePeopleActivity.requestWebServiceThread != null) {
-                chooseServicePeopleActivity.requestWebServiceThread.interrupt();
-                chooseServicePeopleActivity.requestWebServiceThread = null;
-            }
-            if (chooseServicePeopleActivity.getDataThread != null) {
-                chooseServicePeopleActivity.getDataThread.interrupt();
-                chooseServicePeopleActivity.getDataThread = null;
             }
         }
     }

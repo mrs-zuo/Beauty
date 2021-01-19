@@ -96,6 +96,10 @@ public class CustomerStatisticsBarChartDetailListActivity extends BaseActivity i
                 customerStatisticsBarChartDetailListActivity.progressDialog.dismiss();
                 customerStatisticsBarChartDetailListActivity.progressDialog = null;
             }
+            if (customerStatisticsBarChartDetailListActivity.requestWebServiceThread != null) {
+                customerStatisticsBarChartDetailListActivity.requestWebServiceThread.interrupt();
+                customerStatisticsBarChartDetailListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 if (customerStatisticsBarChartDetailListActivity.customerStatisticsList != null && customerStatisticsBarChartDetailListActivity.customerStatisticsList.size() > 0) {
                     for (CustomerStatistics cs : customerStatisticsBarChartDetailListActivity.customerStatisticsList) {
@@ -137,10 +141,6 @@ public class CustomerStatisticsBarChartDetailListActivity extends BaseActivity i
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerStatisticsBarChartDetailListActivity.requestWebServiceThread != null) {
-                customerStatisticsBarChartDetailListActivity.requestWebServiceThread.interrupt();
-                customerStatisticsBarChartDetailListActivity.requestWebServiceThread = null;
             }
         }
     }

@@ -106,6 +106,10 @@ public class EditPersonalMessageActivity extends BaseActivity implements
                 editPersonalMessageActivity.progressDialog.dismiss();
                 editPersonalMessageActivity.progressDialog = null;
             }
+            if (editPersonalMessageActivity.requestWebServiceThread != null) {
+                editPersonalMessageActivity.requestWebServiceThread.interrupt();
+                editPersonalMessageActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(editPersonalMessageActivity, "提示信息", "个人信息修改成功！");
                 alertDialog.show();
@@ -143,10 +147,6 @@ public class EditPersonalMessageActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (editPersonalMessageActivity.requestWebServiceThread != null) {
-                editPersonalMessageActivity.requestWebServiceThread.interrupt();
-                editPersonalMessageActivity.requestWebServiceThread = null;
             }
         }
     }

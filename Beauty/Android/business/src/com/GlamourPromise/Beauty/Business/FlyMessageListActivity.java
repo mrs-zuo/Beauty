@@ -92,6 +92,10 @@ public class FlyMessageListActivity extends BaseActivity implements
                 flyMessageListActivity.progressDialog.dismiss();
                 flyMessageListActivity.progressDialog = null;
             }
+            if (flyMessageListActivity.requestWebServiceThread != null) {
+                flyMessageListActivity.requestWebServiceThread.interrupt();
+                flyMessageListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 if (flyMessageListActivity.flyMessageList != null && flyMessageListActivity.flyMessageList.size() != 0) {
                     flyMessageListActivity.flyMessageListAdapter = new FlyMessageListAdapter(flyMessageListActivity, flyMessageListActivity.flyMessageList);
@@ -128,10 +132,6 @@ public class FlyMessageListActivity extends BaseActivity implements
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (flyMessageListActivity.requestWebServiceThread != null) {
-                flyMessageListActivity.requestWebServiceThread.interrupt();
-                flyMessageListActivity.requestWebServiceThread = null;
             }
         }
     }

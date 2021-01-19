@@ -78,6 +78,10 @@ public class EditMessageTemplateActivity extends BaseActivity implements
                 editMessageTemplateActivity.progressDialog.dismiss();
                 editMessageTemplateActivity.progressDialog = null;
             }
+            if (editMessageTemplateActivity.requestWebServiceThread != null) {
+                editMessageTemplateActivity.requestWebServiceThread.interrupt();
+                editMessageTemplateActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 AlertDialog alertDialog = DialogUtil.createShortShowDialog(editMessageTemplateActivity, "提示信息", "模板信息编辑成功！");
                 alertDialog.show();
@@ -134,10 +138,6 @@ public class EditMessageTemplateActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (editMessageTemplateActivity.requestWebServiceThread != null) {
-                editMessageTemplateActivity.requestWebServiceThread.interrupt();
-                editMessageTemplateActivity.requestWebServiceThread = null;
             }
         }
     }

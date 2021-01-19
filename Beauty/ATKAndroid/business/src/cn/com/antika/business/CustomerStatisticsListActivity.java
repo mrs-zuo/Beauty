@@ -93,6 +93,10 @@ public class CustomerStatisticsListActivity extends BaseActivity implements OnCl
                 customerStatisticsListActivity.progressDialog.dismiss();
                 customerStatisticsListActivity.progressDialog = null;
             }
+            if (customerStatisticsListActivity.requestWebServiceThread != null) {
+                customerStatisticsListActivity.requestWebServiceThread.interrupt();
+                customerStatisticsListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 customerStatisticsListActivity.customerStatisticsListView.setAdapter(new CustomerStatisticsListAdapter(customerStatisticsListActivity, customerStatisticsListActivity.customerStatisticsList, customerStatisticsListActivity.objectType));
             } else if (message.what == 2)
@@ -121,10 +125,6 @@ public class CustomerStatisticsListActivity extends BaseActivity implements OnCl
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerStatisticsListActivity.requestWebServiceThread != null) {
-                customerStatisticsListActivity.requestWebServiceThread.interrupt();
-                customerStatisticsListActivity.requestWebServiceThread = null;
             }
         }
     }

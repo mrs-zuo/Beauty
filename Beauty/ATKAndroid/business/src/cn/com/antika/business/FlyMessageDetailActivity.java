@@ -138,6 +138,10 @@ public class FlyMessageDetailActivity extends BaseActivity implements OnClickLis
                 flyMessageDetailActivity.progressDialog.dismiss();
                 flyMessageDetailActivity.progressDialog = null;
             }
+            if (flyMessageDetailActivity.requestWebServiceThread != null) {
+                flyMessageDetailActivity.requestWebServiceThread.interrupt();
+                flyMessageDetailActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 if (flyMessageDetailActivity.flyMessageDetailList.size() != 0) {
                     flyMessageDetailActivity.oldestMessageID = flyMessageDetailActivity.flyMessageDetailList.get(0).getMessageID();
@@ -188,10 +192,6 @@ public class FlyMessageDetailActivity extends BaseActivity implements OnClickLis
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (flyMessageDetailActivity.requestWebServiceThread != null) {
-                flyMessageDetailActivity.requestWebServiceThread.interrupt();
-                flyMessageDetailActivity.requestWebServiceThread = null;
             }
         }
     }

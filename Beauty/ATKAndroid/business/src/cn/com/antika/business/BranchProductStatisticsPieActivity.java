@@ -137,6 +137,10 @@ public class BranchProductStatisticsPieActivity extends BaseActivity implements 
                 branchProductStatisticsPieActivity.progressDialog.dismiss();
                 branchProductStatisticsPieActivity.progressDialog = null;
             }
+            if (branchProductStatisticsPieActivity.requestWebServiceThread != null) {
+                branchProductStatisticsPieActivity.requestWebServiceThread.interrupt();
+                branchProductStatisticsPieActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 // 当activity未加载完成时,用户返回的情况
                 if (branchProductStatisticsPieActivity.exit) {
@@ -207,10 +211,6 @@ public class BranchProductStatisticsPieActivity extends BaseActivity implements 
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchProductStatisticsPieActivity.requestWebServiceThread != null) {
-                branchProductStatisticsPieActivity.requestWebServiceThread.interrupt();
-                branchProductStatisticsPieActivity.requestWebServiceThread = null;
             }
         }
     }

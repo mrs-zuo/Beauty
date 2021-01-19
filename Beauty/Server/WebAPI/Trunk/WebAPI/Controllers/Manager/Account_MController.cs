@@ -172,8 +172,6 @@ namespace WebAPI.Controllers.Manager
             model.CreatorID = this.UserID;
             model.CreateTime = DateTime.Now.ToLocalTime();
 
-            //Common.WriteLOG.WriteLog("Account_MController.AddAccount");
-
             bool isCan = Account_BLL.Instance.isCanAddAccount(this.CompanyID);
             if (!isCan)
             {

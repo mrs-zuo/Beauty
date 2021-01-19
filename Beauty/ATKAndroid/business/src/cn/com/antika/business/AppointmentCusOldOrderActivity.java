@@ -64,6 +64,10 @@ public class AppointmentCusOldOrderActivity extends BaseActivity implements OnCl
                 // 用户返回不做任何处理
                 return;
             }
+            if (appointmentCusOldOrderActivity.requestWebServiceThread != null) {
+                appointmentCusOldOrderActivity.requestWebServiceThread.interrupt();
+                appointmentCusOldOrderActivity.requestWebServiceThread = null;
+            }
             switch (msg.what) {
                 case 0:
                     DialogUtil.createShortDialog(appointmentCusOldOrderActivity, (String) msg.obj);
@@ -104,10 +108,6 @@ public class AppointmentCusOldOrderActivity extends BaseActivity implements OnCl
                     break;
                 default:
                     break;
-            }
-            if (appointmentCusOldOrderActivity.requestWebServiceThread != null) {
-                appointmentCusOldOrderActivity.requestWebServiceThread.interrupt();
-                appointmentCusOldOrderActivity.requestWebServiceThread = null;
             }
         }
     }

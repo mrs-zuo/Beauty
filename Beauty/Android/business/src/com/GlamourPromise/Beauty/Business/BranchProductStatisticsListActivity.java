@@ -140,6 +140,10 @@ public class BranchProductStatisticsListActivity extends BaseActivity implements
                 branchProductStatisticsListActivity.progressDialog.dismiss();
                 branchProductStatisticsListActivity.progressDialog = null;
             }
+            if (branchProductStatisticsListActivity.requestWebServiceThread != null) {
+                branchProductStatisticsListActivity.requestWebServiceThread.interrupt();
+                branchProductStatisticsListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 branchProductStatisticsListActivity.branchStatisticsListView.setAdapter(new CustomerStatisticsListAdapter(branchProductStatisticsListActivity, branchProductStatisticsListActivity.branchStatisticsList, branchProductStatisticsListActivity.objectType));
             } else if (message.what == 2)
@@ -168,10 +172,6 @@ public class BranchProductStatisticsListActivity extends BaseActivity implements
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (branchProductStatisticsListActivity.requestWebServiceThread != null) {
-                branchProductStatisticsListActivity.requestWebServiceThread.interrupt();
-                branchProductStatisticsListActivity.requestWebServiceThread = null;
             }
         }
     }

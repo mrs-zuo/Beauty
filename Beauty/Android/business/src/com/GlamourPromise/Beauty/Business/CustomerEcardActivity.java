@@ -245,6 +245,10 @@ public class CustomerEcardActivity extends BaseActivity implements
                 customerEcardActivity.progressDialog.dismiss();
                 customerEcardActivity.progressDialog = null;
             }
+            if (customerEcardActivity.requestWebServiceThread != null) {
+                customerEcardActivity.requestWebServiceThread.interrupt();
+                customerEcardActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 EcardInfo userEcardLatestInfo = (EcardInfo) msg.obj;
                 ((TextView) customerEcardActivity.findViewById(R.id.customer_ecard_no_text)).setText("No." + customerEcardActivity.ecardInfo.getUserEcardNo());
@@ -351,10 +355,6 @@ public class CustomerEcardActivity extends BaseActivity implements
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerEcardActivity.requestWebServiceThread != null) {
-                customerEcardActivity.requestWebServiceThread.interrupt();
-                customerEcardActivity.requestWebServiceThread = null;
             }
         }
     }

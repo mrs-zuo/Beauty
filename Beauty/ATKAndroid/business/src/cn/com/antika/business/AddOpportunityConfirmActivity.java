@@ -87,6 +87,10 @@ public class AddOpportunityConfirmActivity extends BaseActivity implements OnCli
                 addOpportunityConfirmActivity.progressDialog.dismiss();
                 addOpportunityConfirmActivity.progressDialog = null;
             }
+            if (addOpportunityConfirmActivity.requestWebServiceThread != null) {
+                addOpportunityConfirmActivity.requestWebServiceThread.interrupt();
+                addOpportunityConfirmActivity.requestWebServiceThread = null;
+            }
             // 建立需求成功
             if (msg.what == 1) {
                 Intent intent = new Intent(addOpportunityConfirmActivity, OpportunityListActivity.class);
@@ -128,10 +132,6 @@ public class AddOpportunityConfirmActivity extends BaseActivity implements OnCli
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (addOpportunityConfirmActivity.requestWebServiceThread != null) {
-                addOpportunityConfirmActivity.requestWebServiceThread.interrupt();
-                addOpportunityConfirmActivity.requestWebServiceThread = null;
             }
         }
     }

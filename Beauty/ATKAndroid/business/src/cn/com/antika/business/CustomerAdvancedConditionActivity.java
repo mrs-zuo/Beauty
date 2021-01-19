@@ -112,6 +112,10 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 customerAdvancedConditionActivity.progressDialog.dismiss();
                 customerAdvancedConditionActivity.progressDialog = null;
             }
+            if (customerAdvancedConditionActivity.requestWebServiceThread != null) {
+                customerAdvancedConditionActivity.requestWebServiceThread.interrupt();
+                customerAdvancedConditionActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 customerAdvancedConditionActivity.getSourceTypeList();
             } else if (msg.what == 8) {
@@ -244,10 +248,6 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerAdvancedConditionActivity.requestWebServiceThread != null) {
-                customerAdvancedConditionActivity.requestWebServiceThread.interrupt();
-                customerAdvancedConditionActivity.requestWebServiceThread = null;
             }
         }
     }

@@ -91,6 +91,10 @@ public class EcardMoneyOut extends BaseActivity implements OnClickListener {
                 ecardMoneyOut.progressDialog.dismiss();
                 ecardMoneyOut.progressDialog = null;
             }
+            if (ecardMoneyOut.thread != null) {
+                ecardMoneyOut.thread.interrupt();
+                ecardMoneyOut.thread = null;
+            }
             if (msg.what == Constant.GET_WEB_DATA_TRUE) {
                 AlertDialog alertDialog = null;
                 alertDialog = DialogUtil.createShortShowDialog(ecardMoneyOut, "提示信息", PROMPT_MESSAGE_1);
@@ -135,10 +139,6 @@ public class EcardMoneyOut extends BaseActivity implements OnClickListener {
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
             } else if (msg.what == 6)
                 ecardMoneyOut.initView();
-            if (ecardMoneyOut.thread != null) {
-                ecardMoneyOut.thread.interrupt();
-                ecardMoneyOut.thread = null;
-            }
         }
     }
 

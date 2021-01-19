@@ -89,6 +89,10 @@ public class CustomerEcardBalanceChangeAnalyticsActivity extends BaseActivity {
                 customerEcardBalanceChangeAnalyticsActivity.progressDialog.dismiss();
                 customerEcardBalanceChangeAnalyticsActivity.progressDialog = null;
             }
+            if (customerEcardBalanceChangeAnalyticsActivity.requestWebServiceThread != null) {
+                customerEcardBalanceChangeAnalyticsActivity.requestWebServiceThread.interrupt();
+                customerEcardBalanceChangeAnalyticsActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 customerEcardBalanceChangeAnalyticsActivity.customerEcardBalanceChangeAnalyticsListView
                         .setAdapter(new CustomerEcardBalanceChangeListItemAdapter(
@@ -125,10 +129,6 @@ public class CustomerEcardBalanceChangeAnalyticsActivity extends BaseActivity {
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (customerEcardBalanceChangeAnalyticsActivity.requestWebServiceThread != null) {
-                customerEcardBalanceChangeAnalyticsActivity.requestWebServiceThread.interrupt();
-                customerEcardBalanceChangeAnalyticsActivity.requestWebServiceThread = null;
             }
         }
     }

@@ -140,6 +140,10 @@ public class ServiceListActivity extends BaseActivity implements OnItemClickList
                 serviceListActivity.progressDialog.dismiss();
                 serviceListActivity.progressDialog = null;
             }
+            if (serviceListActivity.requestWebServiceThread != null) {
+                serviceListActivity.requestWebServiceThread.interrupt();
+                serviceListActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (serviceListActivity.searchResult == null) {
                     serviceListActivity.searchResult = new ArrayList<ServiceInfo>();
@@ -177,10 +181,6 @@ public class ServiceListActivity extends BaseActivity implements OnItemClickList
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (serviceListActivity.requestWebServiceThread != null) {
-                serviceListActivity.requestWebServiceThread.interrupt();
-                serviceListActivity.requestWebServiceThread = null;
             }
             // System.gc();
         }

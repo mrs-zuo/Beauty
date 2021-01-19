@@ -103,6 +103,10 @@ public class ServiceAndProductSalesAnalyticsActivity extends BaseActivity implem
                 serviceAndProductSalesAnalyticsActivity.progressDialog.dismiss();
                 serviceAndProductSalesAnalyticsActivity.progressDialog = null;
             }
+            if (serviceAndProductSalesAnalyticsActivity.requestWebServiceThread != null) {
+                serviceAndProductSalesAnalyticsActivity.requestWebServiceThread.interrupt();
+                serviceAndProductSalesAnalyticsActivity.requestWebServiceThread = null;
+            }
             if (msg.what == 1) {
                 if (serviceAndProductSalesAnalyticsActivity.productType == Constant.SERVICE_TYPE) {
                     if (serviceAndProductSalesAnalyticsActivity.extractItemType == 4) {
@@ -144,10 +148,6 @@ public class ServiceAndProductSalesAnalyticsActivity extends BaseActivity implem
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (serviceAndProductSalesAnalyticsActivity.requestWebServiceThread != null) {
-                serviceAndProductSalesAnalyticsActivity.requestWebServiceThread.interrupt();
-                serviceAndProductSalesAnalyticsActivity.requestWebServiceThread = null;
             }
         }
     }

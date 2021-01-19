@@ -168,6 +168,10 @@ public class ReportListActivity extends BaseActivity implements OnItemClickListe
                 reportListActivity.progressDialog.dismiss();
                 reportListActivity.progressDialog = null;
             }
+            if (reportListActivity.requestWebServiceThread != null) {
+                reportListActivity.requestWebServiceThread.interrupt();
+                reportListActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 reportListActivity.reportListView.setAdapter(new ReportListAdapter(reportListActivity, reportListActivity.reportListBeanList));
             } else if (message.what == 2)
@@ -196,10 +200,6 @@ public class ReportListActivity extends BaseActivity implements OnItemClickListe
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (reportListActivity.requestWebServiceThread != null) {
-                reportListActivity.requestWebServiceThread.interrupt();
-                reportListActivity.requestWebServiceThread = null;
             }
         }
     }

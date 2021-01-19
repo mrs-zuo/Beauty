@@ -208,6 +208,10 @@ public class ReportByDateActivity extends BaseActivity implements OnClickListene
                 reportByDateActivity.progressDialog.dismiss();
                 reportByDateActivity.progressDialog = null;
             }
+            if (reportByDateActivity.requestWebServiceThread != null) {
+                reportByDateActivity.requestWebServiceThread.interrupt();
+                reportByDateActivity.requestWebServiceThread = null;
+            }
             if (message.what == 1) {
                 ReportBasic rb = (ReportBasic) message.obj;
                 NumberFormat numberFormat = NumberFormat.getInstance();
@@ -345,10 +349,6 @@ public class ReportByDateActivity extends BaseActivity implements OnClickListene
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (reportByDateActivity.requestWebServiceThread != null) {
-                reportByDateActivity.requestWebServiceThread.interrupt();
-                reportByDateActivity.requestWebServiceThread = null;
             }
         }
     }

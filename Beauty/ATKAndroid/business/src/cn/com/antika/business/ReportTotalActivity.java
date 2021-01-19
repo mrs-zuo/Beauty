@@ -79,6 +79,10 @@ public class ReportTotalActivity extends BaseActivity {
                 reportTotalActivity.progressDialog.dismiss();
                 reportTotalActivity.progressDialog = null;
             }
+            if (reportTotalActivity.requestWebServiceThread != null) {
+                reportTotalActivity.requestWebServiceThread.interrupt();
+                reportTotalActivity.requestWebServiceThread = null;
+            }
             // 显示累计数据统计在视图上
             if (message.what == 1) {
                 ReportTotal reportTotal = (ReportTotal) message.obj;
@@ -88,7 +92,6 @@ public class ReportTotalActivity extends BaseActivity {
                 ((TextView) reportTotalActivity.findViewById(R.id.report_total_complete_order_number_text)).setText(reportTotal.getTotalCompleteOrderNumber() + "个");
                 ((TextView) reportTotalActivity.findViewById(R.id.report_total_effect_order_number_text)).setText(reportTotal.getTotalEffectOrderNumber() + "个");
                 ((TextView) reportTotalActivity.findViewById(R.id.report_total_order_sales_text)).setText(reportTotalActivity.userinfoApplication.getAccountInfo().getCurrency() + NumberFormatUtil.currencyFormat(String.valueOf(reportTotal.getTotalSales())));
-
             } else if (message.what == 2)
                 DialogUtil.createShortDialog(reportTotalActivity, "您的网络貌似不给力，请重试");
             else if (message.what == Constant.LOGIN_ERROR) {
@@ -115,10 +118,6 @@ public class ReportTotalActivity extends BaseActivity {
             } else if (message.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) message.obj).getDownloadApkSize();
                 ((DownloadInfo) message.obj).getUpdateDialog().setProgress(downLoadFileSize);
-            }
-            if (reportTotalActivity.requestWebServiceThread != null) {
-                reportTotalActivity.requestWebServiceThread.interrupt();
-                reportTotalActivity.requestWebServiceThread = null;
             }
         }
     }
