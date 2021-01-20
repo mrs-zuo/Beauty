@@ -35,6 +35,7 @@
             android:inputType="numberDecimal"
             android:minWidth="50dp"
             android:hint="@string/benefit_person_percent_tip"
+            android:selectAllOnFocus="true"
             android:textColor="@color/gray"
             android:textSize="@dimen/text_size" />
     </RelativeLayout>

@@ -53,6 +53,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -78,7 +79,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
     private EditText thisTimePayAli;
     // 消费贷款
     private EditText thisTimePayLoan;
-    //第三方付款
+    // 第三方付款
     private EditText thisTimePayFromThird;
 
     private TextView paymentActionOrderCardSpinnerText;
@@ -208,6 +209,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
     private String commissionRate = "0";
     private List<SalesConsultantRate> salesConsultantRateList;
     private double personpercen = 0;
+    DecimalFormat df2 = new DecimalFormat("0.00");
     // activity 销毁(onDestroy)标志
     private boolean exit;
 
@@ -2072,7 +2074,12 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                         for (int i = 0; i < benefitpersonlinearlayout.getChildCount(); i++) {
                             EditText percentEditText = ((EditText) benefitpersonlinearlayout.getChildAt(i).findViewById(R.id.benefit_person_percent));
                             double temp = 0;
-                            temp = Double.valueOf(percentEditText.getText().toString());
+                            try {
+                                temp = Double.valueOf(percentEditText.getText().toString());
+                            } catch (NumberFormatException e) {
+                                e.printStackTrace();
+                                temp = 0;
+                            }
                             percenttemp = temp + percenttemp;
                         }
                         if (percenttemp != 100) {
@@ -2205,7 +2212,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
             namegetFlg = 0;
         }
         if (shareFlg == 1) {
-            if (!mBenefitPersonNames.equals(null) && !mBenefitPersonIDs.equals(null) && !mBenefitPersonNames.equals("") && !mBenefitPersonIDs.equals("")) {
+            if (mBenefitPersonNames != null && mBenefitPersonIDs != null && !mBenefitPersonNames.equals("") && !mBenefitPersonIDs.equals("")) {
                 benefitpersonlinearlayout.removeAllViews();
                 String[] nameArray = mBenefitPersonNames.split("、");
                 for (cnt_i = 0; cnt_i < nameArray.length; cnt_i++) {
@@ -2232,7 +2239,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                                         TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
                                         EditText[] editText = new EditText[]{benefitPersonPercentText};
                                         NumberFormatUtil.setPricePointArray(editText, 2);
-                                        benefitPersonPercentText.setText(String.valueOf(0));
+                                        benefitPersonPercentText.setText(df2.format(0));
                                         benefitpersonlinearlayout.addView(benefitPersonItemView, j);
                                     }
                                     shareFlg = 0;
@@ -2245,7 +2252,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                     TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
                     EditText[] editText = new EditText[]{benefitPersonPercentText};
                     NumberFormatUtil.setPricePointArray(editText, 2);
-                    benefitPersonPercentText.setText("均分");
+                    benefitPersonPercentText.setText(df2.format(0));
                     benefitpersonlinearlayout.addView(benefitPersonItemView, cnt_i);
                 }
             } else {
@@ -2287,7 +2294,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                                         TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
                                         EditText[] editText = new EditText[]{benefitPersonPercentText};
                                         NumberFormatUtil.setPricePointArray(editText, 2);
-                                        benefitPersonPercentText.setText(String.valueOf(0));
+                                        benefitPersonPercentText.setText(df2.format(0));
                                         benefitpersonlinearlayout.addView(benefitPersonItemView, j);
                                     }
                                     shareFlg = 0;
@@ -2300,7 +2307,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                     TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
                     EditText[] editText = new EditText[]{benefitPersonPercentText};
                     NumberFormatUtil.setPricePointArray(editText, 2);
-                    benefitPersonPercentText.setText(String.valueOf("均分"));
+                    benefitPersonPercentText.setText(df2.format(0));
                     benefitpersonlinearlayout.addView(benefitPersonItemView, cnt_i);
                 }
                 shareFlg = 1;
@@ -2823,8 +2830,14 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                 for (int i = 0; i < benefitpersonlinearlayout.getChildCount(); i++) {
                     EditText percentEditText = ((EditText) benefitpersonlinearlayout.getChildAt(i).findViewById(R.id.benefit_person_percent));
                     double percent = 0;
-                    if (percentEditText.getText() != null && shareFlg == 0)
-                        percent = Double.valueOf(percentEditText.getText().toString()) / 100;
+                    if (percentEditText.getText() != null && shareFlg == 0) {
+                        try {
+                            percent = Double.parseDouble(percentEditText.getText().toString()) / 100;
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                            percent = 0;
+                        }
+                    }
                     JSONObject benefitJson = new JSONObject();
                     benefitJson.put("SlaveID", tmp.get(i));
                     benefitJson.put("ProfitPct", percent);

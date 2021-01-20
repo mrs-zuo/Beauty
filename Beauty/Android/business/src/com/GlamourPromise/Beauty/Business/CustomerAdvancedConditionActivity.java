@@ -118,90 +118,7 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 customerAdvancedConditionActivity.requestWebServiceThread = null;
             }
             if (msg.what == 1) {
-                customerAdvancedConditionActivity.getSourceTypeList();
-            } else if (msg.what == 8) {
-                String[] customerRegitsFromArray = new String[]{"全部", "商家注册", "顾客导入", "自助注册(T站)"};
-                ArrayAdapter<String> customerRegitsFromAdapter = new ArrayAdapter<String>(customerAdvancedConditionActivity, R.xml.spinner_checked_text, customerRegitsFromArray);
-                customerRegitsFromAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                customerAdvancedConditionActivity.customerRegistFromSpinner.setAdapter(customerRegitsFromAdapter);
-
-                String[] customerRegistDateArray = new String[]{"全部", "当日", "自定义"};
-                ArrayAdapter<String> customerRegistDatAdapter = new ArrayAdapter<String>(customerAdvancedConditionActivity, R.xml.spinner_checked_text, customerRegistDateArray);
-                customerRegistDatAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                customerAdvancedConditionActivity.customerRegistDatSpinner.setAdapter(customerRegistDatAdapter);
-                customerAdvancedConditionActivity.strFirstVisitDate = new StringBuffer("");
-
-                String[] customerStatesArray = new String[]{"全部", "有效", "无效(一年以上未上门)"};
-                ArrayAdapter<String> customerStatesAdapter = new ArrayAdapter<String>(customerAdvancedConditionActivity, R.xml.spinner_checked_text, customerStatesArray);
-                customerStatesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                customerAdvancedConditionActivity.customerStatesSpinner.setAdapter(customerStatesAdapter);
-
-                int ecardNameSelection = 0;
-                String[] customerTypeArray = null;
-                int authAllCustomerRead = customerAdvancedConditionActivity.userinfoApplication.getAccountInfo().getAuthAllCustomerRead();
-                if (authAllCustomerRead == 1)
-                    customerTypeArray = new String[]{"我的顾客", "门店顾客", "所有顾客"};
-                else if (authAllCustomerRead == 0)
-                    customerTypeArray = new String[]{"我的顾客"};
-                ArrayAdapter<String> customerTypeAdapter = new ArrayAdapter<String>(customerAdvancedConditionActivity, R.xml.spinner_checked_text, customerTypeArray);
-                customerTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                customerAdvancedConditionActivity.customerTypeConditionSpinner.setAdapter(customerTypeAdapter);
-                int customerType = customerAdvancedConditionActivity.getIntent().getIntExtra("customerType", 0);
-                if (customerAdvancedConditionActivity.accountInfoSharePreferences == null)
-                    customerAdvancedConditionActivity.accountInfoSharePreferences = customerAdvancedConditionActivity.getSharedPreferences("GlmourPromiseCustomerTypeFilter", Context.MODE_PRIVATE);
-                String customerTypeFileterStr = customerAdvancedConditionActivity.accountInfoSharePreferences.getString("CustomerTypeFilter", "");
-                int registFrom = -1;
-                String cardCode = "";
-                int sourceTypeID = -1;
-                int firstVisitType = 0;
-                int customerStates = 0;
-                if (customerTypeFileterStr != null && !("").equals(customerTypeFileterStr)) {
-                    StringBuilder customerTypeFileterID = new StringBuilder();
-                    customerTypeFileterID.append(customerAdvancedConditionActivity.userinfoApplication.getAccountInfo().getCompanyId());
-                    customerTypeFileterID.append("-");
-                    customerTypeFileterID.append(customerAdvancedConditionActivity.userinfoApplication.getAccountInfo().getBranchId());
-                    customerTypeFileterID.append("-");
-                    customerTypeFileterID.append(customerAdvancedConditionActivity.userinfoApplication.getAccountInfo().getAccountId());
-                    JSONObject customerFilterJson = null;
-                    try {
-                        customerFilterJson = new JSONObject(customerTypeFileterStr);
-                    } catch (JSONException e) {
-                    }
-
-                    String accountNames = "";
-                    try {
-                        customerAdvancedConditionActivity.accountIDs = customerFilterJson.getString(customerTypeFileterID.toString() + "-accountIDs");
-                        accountNames = customerFilterJson.getString(customerTypeFileterID.toString() + "-accountNames");
-                        cardCode = customerFilterJson.getString(customerTypeFileterID.toString() + "-cardCode");
-                        registFrom = customerFilterJson.getInt(customerTypeFileterID.toString() + "-registFrom");
-                        sourceTypeID = customerFilterJson.getInt(customerTypeFileterID.toString() + "-sourceType");
-                        firstVisitType = customerFilterJson.getInt(customerTypeFileterID.toString() + "-FirstVisitType");
-                        customerStates = customerFilterJson.getInt(customerTypeFileterID.toString() + "-EffectiveCustomerType");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    if (accountNames == null || ("").equals(accountNames)) {
-                        //将当前筛选的专属顾问默认为当前登录账号
-                        customerAdvancedConditionActivity.accountIDs = new JSONArray().put(customerAdvancedConditionActivity.userinfoApplication.getAccountInfo().getAccountId()).toString();
-                        customerAdvancedConditionActivity.customerAdvancedResponsibleText.setText(customerAdvancedConditionActivity.userinfoApplication.getAccountInfo().getAccountName());
-                    } else
-                        customerAdvancedConditionActivity.customerAdvancedResponsibleText.setText(accountNames);
-                }
-                //注册方式
-				/*if(registFrom==0)
-					customerRegistFromSpinner.setSelection(1);
-				else if(registFrom==1)
-					customerRegistFromSpinner.setSelection(2);
-				else if(registFrom==2)
-					customerRegistFromSpinner.setSelection(3);
-				else*/
-                customerAdvancedConditionActivity.customerRegistFromSpinner.setSelection(0);
-                // 所有顾客
-                if (customerType == 1)
-                    customerAdvancedConditionActivity.customerTypeConditionSpinner.setSelection(2);
-                    // 门店顾客
-                else if (customerType == 2)
-                    customerAdvancedConditionActivity.customerTypeConditionSpinner.setSelection(1);
+                /*int ecardNameSelection = 0;*/
                 if (customerAdvancedConditionActivity.ecardInfoList.size() > 0) {
                     String[] customerEcardArray = new String[customerAdvancedConditionActivity.ecardInfoList.size()];
                     for (int i = 0; i < customerAdvancedConditionActivity.ecardInfoList.size(); i++) {
@@ -214,7 +131,9 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                     customerAdvancedConditionActivity.ecardConditionSpinner.setAdapter(ecardLevelNameAdapter);
                     customerAdvancedConditionActivity.ecardConditionSpinner.setSelection(0);
                 }
-                //顾客来源
+                customerAdvancedConditionActivity.getSourceTypeList();
+            } else if (msg.what == 8) {
+                // 顾客来源
                 if (customerAdvancedConditionActivity.sourceTypeList.size() > 0) {
                     String[] sourceTypeNameArray = new String[customerAdvancedConditionActivity.sourceTypeList.size()];
                     //int  sourceTypeSelection=0;
@@ -224,25 +143,10 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 							sourceTypeSelection=i;*/
                     }
                     ArrayAdapter<String> sourceTypeNameAdapter = new ArrayAdapter<String>(customerAdvancedConditionActivity, R.xml.spinner_checked_text, sourceTypeNameArray);
-                    ;
                     sourceTypeNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     customerAdvancedConditionActivity.customerSourceTypeSpinner.setAdapter(sourceTypeNameAdapter);
                     customerAdvancedConditionActivity.customerSourceTypeSpinner.setSelection(0);
                 }
-                //注册时间
-				/*if(firstVisitType==1)
-					customerRegistDatSpinner.setSelection(1);
-				else if(firstVisitType==2)
-					customerRegistDatSpinner.setSelection(2);
-				else*/
-                customerAdvancedConditionActivity.customerRegistDatSpinner.setSelection(0);
-                //顾客状态
-				/*if(customerStates==1)
-					customerStatesSpinner.setSelection(1);
-				else if(customerStates==2)
-					customerStatesSpinner.setSelection(2);
-				else*/
-                customerAdvancedConditionActivity.customerStatesSpinner.setSelection(0);
             } else if (msg.what == 3)
                 DialogUtil.createShortDialog(customerAdvancedConditionActivity, "您的网络貌似不给力，请重试");
             else if (msg.what == 6)
@@ -271,6 +175,8 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
             } else if (msg.what == 7) {
                 int downLoadFileSize = ((DownloadInfo) msg.obj).getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(customerAdvancedConditionActivity, "服务器异常，请重试");
             }
         }
     }
@@ -283,8 +189,27 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
         customerAdvancedMakeSureButton.setOnClickListener(this);
         customerAdvancedSearchResetButton = (Button) findViewById(R.id.customer_advanced_search_reset_btn);
         customerAdvancedSearchResetButton.setOnClickListener(this);
+        // 顾客来源
         customerSourceTypeSpinner = (Spinner) findViewById(R.id.customer_source_spinner);
+        String[] sourceTypeNameArray = new String[1];
+        sourceTypeNameArray[0] = "全部";
+        ArrayAdapter<String> sourceTypeNameAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, sourceTypeNameArray);
+        sourceTypeNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        customerSourceTypeSpinner.setAdapter(sourceTypeNameAdapter);
+        customerSourceTypeSpinner.setSelection(0);
+        // 注册时间
         customerRegistDatSpinner = (Spinner) findViewById(R.id.customer_regist_date_spinner);
+        String[] customerRegistDateArray = new String[]{"全部", "当日", "自定义"};
+        ArrayAdapter<String> customerRegistDatAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, customerRegistDateArray);
+        customerRegistDatAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        customerRegistDatSpinner.setAdapter(customerRegistDatAdapter);
+        customerRegistDatSpinner.setSelection(0);
+				/*if(firstVisitType==1)
+					customerRegistDatSpinner.setSelection(1);
+				else if(firstVisitType==2)
+					customerRegistDatSpinner.setSelection(2);
+				else*/
+        strFirstVisitDate = new StringBuffer("");
         customerRegistDatSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -307,7 +232,18 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
         firstVisitDateTimeRelativelayout = (RelativeLayout) findViewById(R.id.first_visit_dateTime_relativelayout);
         firstVisitDateTimeText = (TextView) findViewById(R.id.first_visit_dateTime_text);
         firstVisitDateTimeText.setOnClickListener(this);
+        // 顾客状态
         customerStatesSpinner = (Spinner) findViewById(R.id.customer_states_spinner);
+        String[] customerStatesArray = new String[]{"全部", "有效", "无效(一年以上未上门)"};
+        ArrayAdapter<String> customerStatesAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, customerStatesArray);
+        customerStatesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        customerStatesSpinner.setAdapter(customerStatesAdapter);
+				/*if(customerStates==1)
+					customerStatesSpinner.setSelection(1);
+				else if(customerStates==2)
+					customerStatesSpinner.setSelection(2);
+				else*/
+        customerStatesSpinner.setSelection(0);
         backButton.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -316,10 +252,38 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 CustomerAdvancedConditionActivity.this.finish();
             }
         });
+        //注册方式
         customerRegistFromSpinner = (Spinner) findViewById(R.id.customer_regist_from_spinner);
+        String[] customerRegitsFromArray = new String[]{"全部", "商家注册", "顾客导入", "自助注册(T站)"};
+        ArrayAdapter<String> customerRegitsFromAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, customerRegitsFromArray);
+        customerRegitsFromAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        customerRegistFromSpinner.setAdapter(customerRegitsFromAdapter);
+				/*if(registFrom==0)
+					customerRegistFromSpinner.setSelection(1);
+				else if(registFrom==1)
+					customerRegistFromSpinner.setSelection(2);
+				else if(registFrom==2)
+					customerRegistFromSpinner.setSelection(3);
+				else*/
+        customerRegistFromSpinner.setSelection(0);
         customerTypeConditionSpinner = (Spinner) findViewById(R.id.customer_type_condition_spinner);
-        searchCustomerNameLayout = (RelativeLayout) findViewById(R.id.search_customer_name_layout);
-        searchCustomerTelLayout = (RelativeLayout) findViewById(R.id.search_customer_tel_layout);
+        // 顾客类型
+        String[] customerTypeArray = null;
+        int authAllCustomerRead = userinfoApplication.getAccountInfo().getAuthAllCustomerRead();
+        if (authAllCustomerRead == 1)
+            customerTypeArray = new String[]{"我的顾客", "门店顾客", "所有顾客"};
+        else if (authAllCustomerRead == 0)
+            customerTypeArray = new String[]{"我的顾客"};
+        ArrayAdapter<String> customerTypeAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, customerTypeArray);
+        customerTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        customerTypeConditionSpinner.setAdapter(customerTypeAdapter);
+        int customerType = getIntent().getIntExtra("customerType", 0);
+        // 所有顾客
+        if (customerType == 1)
+            customerTypeConditionSpinner.setSelection(2);
+            // 门店顾客
+        else if (customerType == 2)
+            customerTypeConditionSpinner.setSelection(1);
         customerTypeConditionSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -378,7 +342,15 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 // TODO Auto-generated method stub
             }
         });
+        searchCustomerNameLayout = (RelativeLayout) findViewById(R.id.search_customer_name_layout);
+        searchCustomerTelLayout = (RelativeLayout) findViewById(R.id.search_customer_tel_layout);
         ecardConditionSpinner = (Spinner) findViewById(R.id.ecard_condition_spinner);
+        String[] customerEcardArray = new String[1];
+        customerEcardArray[0] = "全部";
+        ArrayAdapter<String> ecardLevelNameAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, customerEcardArray);
+        ecardLevelNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ecardConditionSpinner.setAdapter(ecardLevelNameAdapter);
+        ecardConditionSpinner.setSelection(0);
         customerAdvancedResponsibleDivideView = findViewById(R.id.customer_advanced_responsible_person_divide_view);
         customerAdvancedResponsibleRelativelayout = (RelativeLayout) findViewById(R.id.customer_advanced_responsible_person_relativelayout);
         customerAdvancedResponsibleText = (EditText) findViewById(R.id.customer_advanced_responsible_person_edit_text);
@@ -397,6 +369,46 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 startActivityForResult(intent, 400);
             }
         });
+        if (accountInfoSharePreferences == null)
+            accountInfoSharePreferences = getSharedPreferences("GlmourPromiseCustomerTypeFilter", Context.MODE_PRIVATE);
+        String customerTypeFileterStr = accountInfoSharePreferences.getString("CustomerTypeFilter", "");
+        int registFrom = -1;
+        String cardCode = "";
+        int sourceTypeID = -1;
+        int firstVisitType = 0;
+        int customerStates = 0;
+        if (customerTypeFileterStr != null && !("").equals(customerTypeFileterStr)) {
+            StringBuilder customerTypeFileterID = new StringBuilder();
+            customerTypeFileterID.append(userinfoApplication.getAccountInfo().getCompanyId());
+            customerTypeFileterID.append("-");
+            customerTypeFileterID.append(userinfoApplication.getAccountInfo().getBranchId());
+            customerTypeFileterID.append("-");
+            customerTypeFileterID.append(userinfoApplication.getAccountInfo().getAccountId());
+            JSONObject customerFilterJson = null;
+            try {
+                customerFilterJson = new JSONObject(customerTypeFileterStr);
+            } catch (JSONException e) {
+            }
+
+            String accountNames = "";
+            try {
+                accountIDs = customerFilterJson.getString(customerTypeFileterID.toString() + "-accountIDs");
+                accountNames = customerFilterJson.getString(customerTypeFileterID.toString() + "-accountNames");
+                cardCode = customerFilterJson.getString(customerTypeFileterID.toString() + "-cardCode");
+                registFrom = customerFilterJson.getInt(customerTypeFileterID.toString() + "-registFrom");
+                sourceTypeID = customerFilterJson.getInt(customerTypeFileterID.toString() + "-sourceType");
+                firstVisitType = customerFilterJson.getInt(customerTypeFileterID.toString() + "-FirstVisitType");
+                customerStates = customerFilterJson.getInt(customerTypeFileterID.toString() + "-EffectiveCustomerType");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (accountNames == null || ("").equals(accountNames)) {
+                //将当前筛选的专属顾问默认为当前登录账号
+                accountIDs = new JSONArray().put(userinfoApplication.getAccountInfo().getAccountId()).toString();
+                customerAdvancedResponsibleText.setText(userinfoApplication.getAccountInfo().getAccountName());
+            } else
+                customerAdvancedResponsibleText.setText(accountNames);
+        }
         requestEcardList();
     }
 
@@ -418,12 +430,16 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                     getEcardListJsonParam.put("isOnlyMoneyCard", true);
                     getEcardListJsonParam.put("isShowAll", true);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, getEcardListJsonParam.toString(), userinfoApplication);
                 JSONObject resultJson = null;
                 try {
                     resultJson = new JSONObject(serverRequestResult);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 if (serverRequestResult == null || serverRequestResult.equals(""))
                     mHandler.sendEmptyMessage(3);
@@ -435,12 +451,16 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                         message = resultJson.getString("Message");
                     } catch (JSONException e) {
                         code = 0;
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         JSONArray ecardJsonArray = null;
                         try {
                             ecardJsonArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (ecardJsonArray != null) {
                             for (int i = 0; i < ecardJsonArray.length(); i++) {
@@ -448,6 +468,8 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                                 try {
                                     ecardJson = (JSONObject) ecardJsonArray.get(i);
                                 } catch (JSONException e1) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 String cardCode = "";
                                 String userEcardName = "";
@@ -457,6 +479,8 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                                     if (ecardJson.has("CardName") && !ecardJson.isNull("CardName"))
                                         userEcardName = ecardJson.getString("CardName");
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 EcardInfo customerEcardInfo = new EcardInfo();
                                 customerEcardInfo.setUserEcardCode(cardCode);
@@ -496,6 +520,8 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 try {
                     resultJson = new JSONObject(serverRequestResult);
                 } catch (JSONException e) {
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 if (serverRequestResult == null || serverRequestResult.equals(""))
                     mHandler.sendEmptyMessage(2);
@@ -507,12 +533,16 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                         message = resultJson.getString("Message");
                     } catch (JSONException e) {
                         code = 0;
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         JSONArray customerSourceTypeJsonArray = null;
                         try {
                             customerSourceTypeJsonArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (customerSourceTypeJsonArray != null) {
                             for (int i = 0; i < customerSourceTypeJsonArray.length(); i++) {
@@ -520,7 +550,8 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                                 try {
                                     sourceTypeJson = customerSourceTypeJsonArray.getJSONObject(i);
                                 } catch (JSONException e) {
-
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 int sourceTypeID = 0;
                                 String sourceTypeName = "";
@@ -530,6 +561,8 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                                     if (sourceTypeJson.has("Name") && !sourceTypeJson.isNull("Name"))
                                         sourceTypeName = sourceTypeJson.getString("Name");
                                 } catch (JSONException e) {
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 SourceType customerSourceType = new SourceType();
                                 customerSourceType.setSourceTypeID(sourceTypeID);
@@ -611,6 +644,9 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                     registFrom = 1;
                 else if (customerRegistFromSelectedPosition == 3)
                     registFrom = 2;
+                // 我的顾客
+                if (customerTypeSelectedPosition == 0)
+                    customerType = 0;
                 // 门店顾客
                 if (customerTypeSelectedPosition == 1)
                     customerType = 2;
@@ -623,14 +659,20 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                         ecardConditionSpinner.setSelection(0);
                     }
                 }
-                String cardCode = ecardInfoList.get(ecardConditionSpinner.getSelectedItemPosition()).getUserEcardCode();
                 // 闪退对应（SourceType未选中的情况）
                 if (customerSourceTypeSpinner.getSelectedItemPosition() == -1) {
                     if (customerSourceTypeSpinner.getAdapter() != null && customerSourceTypeSpinner.getAdapter().getCount() > 0) {
                         customerSourceTypeSpinner.setSelection(0);
                     }
                 }
-                int sourceTypeID = sourceTypeList.get(customerSourceTypeSpinner.getSelectedItemPosition()).getSourceTypeID();
+                String cardCode = null;
+                int sourceTypeID = 0;
+                if (ecardConditionSpinner.getSelectedItemPosition() != -1) {
+                    cardCode = ecardInfoList.get(ecardConditionSpinner.getSelectedItemPosition()).getUserEcardCode();
+                }
+                if (customerSourceTypeSpinner.getSelectedItemPosition() != -1) {
+                    sourceTypeID = sourceTypeList.get(customerSourceTypeSpinner.getSelectedItemPosition()).getSourceTypeID();
+                }
                 //顾客状态
                 int effectiveCustomerType = 0;
                 int customerStatesSelectedPosition = customerStatesSpinner.getSelectedItemPosition();
@@ -647,7 +689,6 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 if (firstVisitTypeSelectedPosition == 2) {
                     firstVisitType = 2;
                     firstVisitDateTime = firstVisitDateTimeDialog;
-
                 }
                 CustomerAdvancedCondition customerAdvancedCondition = new CustomerAdvancedCondition();
                 Intent data = new Intent();

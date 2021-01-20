@@ -541,6 +541,8 @@ public class UserInfoApplication extends Application {
     public void onCreate() {
         // TODO Auto-generated method stub
         super.onCreate();
+        // JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
         SDKInitializer.initialize(this);
         instance = this;
         accountInfoSharePreferences = getSharedPreferences("AccountInfo", Context.MODE_PRIVATE);
