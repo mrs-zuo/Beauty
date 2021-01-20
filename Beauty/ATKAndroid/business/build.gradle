@@ -36,19 +36,23 @@ dependencies {
     implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.75'
 
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
 }
 
 android {
-    compileSdkVersion 17
+    compileSdkVersion 29
     buildToolsVersion "30.0.2"
     compileOptions.encoding = "utf-8"
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 17
+        minSdkVersion 19
+        targetSdkVersion 29
         // 项目只包含了 armeabi，在所有Android设备都可以运行
         ndk {
             abiFilters "armeabi"
         }
+        // 开启multidex
+        multiDexEnabled true
     }
 
     // android studio导入eclipse项目后报error: file failed to compile.

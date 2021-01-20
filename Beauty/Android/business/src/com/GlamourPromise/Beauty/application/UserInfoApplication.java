@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.support.multidex.MultiDex;
 
 import com.GlamourPromise.Beauty.Business.LoginActivity;
 import com.GlamourPromise.Beauty.bean.AccountInfo;
@@ -554,5 +555,11 @@ public class UserInfoApplication extends Application {
          */
         // bugly(appid:4801ef7d10)
         CrashReport.initCrashReport(getApplicationContext(), "4801ef7d10", false);
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }

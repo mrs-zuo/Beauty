@@ -543,13 +543,13 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
         // TODO Auto-generated method stub
         super.onDestroy();
         exit = true;
-        if (progressDialog != null) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
             // mHandler = null;
+        }
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();
@@ -596,14 +596,14 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                     customerType = 1;
                 // 闪退对应（ecard未选中的情况）
                 if (ecardConditionSpinner.getSelectedItemPosition() == -1) {
-                    if (ecardConditionSpinner.getAdapter().getCount() > 0) {
+                    if (ecardConditionSpinner.getAdapter() != null && ecardConditionSpinner.getAdapter().getCount() > 0) {
                         ecardConditionSpinner.setSelection(0);
                     }
                 }
                 String cardCode = ecardInfoList.get(ecardConditionSpinner.getSelectedItemPosition()).getUserEcardCode();
                 // 闪退对应（SourceType未选中的情况）
                 if (customerSourceTypeSpinner.getSelectedItemPosition() == -1) {
-                    if (customerSourceTypeSpinner.getAdapter().getCount() > 0) {
+                    if (customerSourceTypeSpinner.getAdapter() != null && customerSourceTypeSpinner.getAdapter().getCount() > 0) {
                         customerSourceTypeSpinner.setSelection(0);
                     }
                 }
@@ -681,25 +681,27 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
                 }
                 break;
             case R.id.customer_advanced_search_reset_btn:
-                if (customerRegistFromSpinner.getAdapter().getCount() > 0) {
+                if (customerRegistFromSpinner.getAdapter() != null && customerRegistFromSpinner.getAdapter().getCount() > 0) {
                     customerRegistFromSpinner.setSelection(0);
                 }
-                if (customerSourceTypeSpinner.getAdapter().getCount() > 0) {
+                if (customerSourceTypeSpinner.getAdapter() != null && customerSourceTypeSpinner.getAdapter().getCount() > 0) {
                     customerSourceTypeSpinner.setSelection(0);
                 }
                 // 顾客类型
-                if (customerTypeConditionSpinner.getAdapter().getCount() > 1) {
-                    customerTypeConditionSpinner.setSelection(1);
-                } else if (customerTypeConditionSpinner.getAdapter().getCount() > 0) {
-                    customerTypeConditionSpinner.setSelection(0);
+                if (customerTypeConditionSpinner.getAdapter() != null) {
+                    if (customerTypeConditionSpinner.getAdapter().getCount() > 1) {
+                        customerTypeConditionSpinner.setSelection(1);
+                    } else if (customerTypeConditionSpinner.getAdapter().getCount() > 0) {
+                        customerTypeConditionSpinner.setSelection(0);
+                    }
                 }
-                if (ecardConditionSpinner.getAdapter().getCount() > 0) {
+                if (ecardConditionSpinner.getAdapter() != null && ecardConditionSpinner.getAdapter().getCount() > 0) {
                     ecardConditionSpinner.setSelection(0);
                 }
-                if (customerStatesSpinner.getAdapter().getCount() > 0) {
+                if (customerStatesSpinner.getAdapter() != null && customerStatesSpinner.getAdapter().getCount() > 0) {
                     customerStatesSpinner.setSelection(0);
                 }
-                if (customerRegistDatSpinner.getAdapter().getCount() > 0) {
+                if (customerRegistDatSpinner.getAdapter() != null && customerRegistDatSpinner.getAdapter().getCount() > 0) {
                     customerRegistDatSpinner.setSelection(0);
                 }
                 accountIDs = new JSONArray().put(userinfoApplication.getAccountInfo().getAccountId()).toString();

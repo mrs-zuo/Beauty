@@ -1,6 +1,6 @@
 package com.GlamourPromise.Beauty.webservice;
 
-import java.security.KeyStore;
+/*import java.security.KeyStore;
 
 import org.apache.http.HttpVersion;
 import org.apache.http.client.HttpClient;
@@ -15,10 +15,10 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
-import org.apache.http.protocol.HTTP;
+import org.apache.http.protocol.HTTP;*/
 
 public class ConnectionManager {
-	public static HttpClient getNewHttpClient() {
+	/*public static HttpClient getNewHttpClient() {
 		try {
 			KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
 			trustStore.load(null, null);
@@ -40,5 +40,5 @@ public class ConnectionManager {
 		} catch (Exception e) {
 			return new DefaultHttpClient();
 		}
-	}
+	}*/
 }

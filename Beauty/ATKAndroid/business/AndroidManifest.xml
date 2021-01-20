@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cn.com.antika.business"
     android:versionCode="6"
-    android:versionName="4.6.026">
+    android:versionName="4.6.027">
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"

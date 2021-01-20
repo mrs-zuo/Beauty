@@ -555,4 +555,10 @@ public class UserInfoApplication extends Application {
         // bugly(appid:4801ef7d10)
         CrashReport.initCrashReport(getApplicationContext(), "e57de87ce8", false);
     }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 }

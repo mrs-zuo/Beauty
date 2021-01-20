@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 package cn.com.antika.push;
-import java.util.Random;
-
-import cn.com.antika.business.FlyMessageListActivity;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -27,7 +24,11 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
-/** 
+import java.util.Random;
+
+import cn.com.antika.business.FlyMessageListActivity;
+
+/**
  * This class is to notify the user of messages with NotificationManager.
  *
  * @author Sehwan Noh (devnoh@gmail.com)
@@ -53,7 +54,7 @@ public class Notifier {
     }
 
     public void notify(String notificationId, String apiKey, String title,
-            String message, String uri) {
+                       String message, String uri) {
         Log.d(LOGTAG, "notify()...");
 
         Log.d(LOGTAG, "notificationId=" + notificationId);
@@ -69,7 +70,29 @@ public class Notifier {
             }
 
             // Notification
-            Notification notification = new Notification();
+            Intent intent = new Intent(context,
+                    FlyMessageListActivity.class);
+            intent.putExtra(Constants.NOTIFICATION_ID, notificationId);
+            intent.putExtra(Constants.NOTIFICATION_API_KEY, apiKey);
+            intent.putExtra(Constants.NOTIFICATION_TITLE, title);
+            intent.putExtra(Constants.NOTIFICATION_MESSAGE, message);
+            intent.putExtra(Constants.NOTIFICATION_URI, uri);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            PendingIntent contentIntent = PendingIntent.getActivity(context, 0,
+                    intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            /*notification.setLatestEventInfo(context, title, message,
+                    contentIntent);*/
+            Notification.Builder builder = new Notification.Builder(context)
+                    .setSmallIcon(R.drawable.ic_launcher)
+                    .setContentTitle(title)
+                    .setContentText(message)
+                    .setContentIntent(contentIntent);
+            Notification notification = builder.build();
+            // Notification notification = new Notification();
             notification.icon = getNotificationIcon();
             notification.defaults = Notification.DEFAULT_LIGHTS;
             if (isNotificationSoundEnabled()) {
@@ -99,27 +122,8 @@ public class Notifier {
             //                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             //            }
 
-            Intent intent = new Intent(context,
-            		FlyMessageListActivity.class);
-            intent.putExtra(Constants.NOTIFICATION_ID, notificationId);
-            intent.putExtra(Constants.NOTIFICATION_API_KEY, apiKey);
-            intent.putExtra(Constants.NOTIFICATION_TITLE, title);
-            intent.putExtra(Constants.NOTIFICATION_MESSAGE, message);
-            intent.putExtra(Constants.NOTIFICATION_URI, uri);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-            PendingIntent contentIntent = PendingIntent.getActivity(context, 0,
-                    intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-            notification.setLatestEventInfo(context, title, message,
-                    contentIntent);
             notificationManager.notify(random.nextInt(), notification);
-            
-            
+
 //            List<RunningTaskInfo> rt = am.getRunningTasks(1);
 //            Log.v("TopActivity", am.getRunningTasks(1).get(0).topActivity.getClassName());
 //            if(rt.topActivity.getClassName().equals("ChatMessageListActivity")){
@@ -129,7 +133,7 @@ public class Notifier {
 //            else{
 //            	Log.v("chatActivity", "NotRuning");
 //            }
-            
+
             //context.sendBroadcast(intent2);
             //            Intent clickIntent = new Intent(
             //                    Constants.ACTION_NOTIFICATION_CLICKED);
@@ -161,7 +165,7 @@ public class Notifier {
             //            notificationManager.notify(random.nextInt(), notification);
 
         } else {
-            Log.w(LOGTAG, "Notificaitons disabled.");
+            Log.w(LOGTAG, "Notifications disabled.");
         }
     }
 
