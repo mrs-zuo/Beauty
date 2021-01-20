@@ -27,6 +27,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 import cn.com.antika.business.FlyMessageListActivity;
+import cn.com.antika.business.R;
 
 /**
  * This class is to notify the user of messages with NotificationManager.

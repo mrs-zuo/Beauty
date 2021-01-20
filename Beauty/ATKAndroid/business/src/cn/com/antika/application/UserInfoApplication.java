@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.support.multidex.MultiDex;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
