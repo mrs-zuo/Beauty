@@ -12,7 +12,6 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -196,7 +195,6 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
     private int marketingPolicy;
     private int quantity;
     private int shareFlg = 0, namegetFlg = 0, cnt_i;
-    private EditText benefitPersonPercentText;
     //业绩参与人列表  可以修改其业绩参与的比例
     private View benefitsharepriceview, ordersalespercentageview, benefitpersonview;
     private TextView benefitshareprice;
@@ -2110,9 +2108,13 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                 startActivityForResult(chooseBenefitPersonIntent3, 101);
                 break;
             case R.id.payment_benefit_share_btn:
-                if (shareFlg == 0 && !checkBenefitPersonIsNull()) {
-                    shareFlg = 1;
-                    setBenefitPersonInfo(mBenefitPersonIDs, mBenefitPersonNames);
+                if (!checkBenefitPersonIsNull()) {
+                    if (shareFlg == 0) {
+                        shareFlg = 1;
+                    } else {
+                        shareFlg = 0;
+                    }
+                    setBenefitPersonInfo2();
                 }
                 break;
         }
@@ -2211,7 +2213,55 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
             mBenefitPersonNames = name;
             namegetFlg = 0;
         }
+
+        String displayPercent = df2.format(0);
         if (shareFlg == 1) {
+            displayPercent = "均分";
+        }
+
+        if (!checkBenefitPersonIsNull()) {
+            benefitpersonlinearlayout.removeAllViews();
+            String[] nameArray = mBenefitPersonNames.split("、");
+            for (cnt_i = 0; cnt_i < nameArray.length; cnt_i++) {
+                View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
+                TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
+                benefitPersonNameText.setText(nameArray[cnt_i]);
+                EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
+                /*benefitPersonPercentText.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        setBenefitPersonInfo2();
+                        switch (event.getAction()) {
+                            case MotionEvent.ACTION_DOWN:
+                                if (shareFlg == 1) {
+                                    setBenefitPersonInfo2();
+                                    return true;
+                                }
+                                break;
+                            case MotionEvent.ACTION_UP:
+                            case MotionEvent.ACTION_MOVE:
+                                break;
+                        }
+                        return false;
+                    }
+                });*/
+                if (shareFlg == 1) {
+                    benefitPersonPercentText.setEnabled(false);
+                } else {
+                    benefitPersonPercentText.setEnabled(true);
+                }
+                TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
+                EditText[] editText = new EditText[]{benefitPersonPercentText};
+                NumberFormatUtil.setPricePointArray(editText, 2);
+                benefitPersonPercentText.setText(displayPercent);
+                benefitpersonlinearlayout.addView(benefitPersonItemView, cnt_i);
+            }
+        } else {
+            benefitpersonlinearlayout.removeAllViews();
+            shareFlg = 0;
+        }
+
+        /*if (shareFlg == 1) {
             if (mBenefitPersonNames != null && mBenefitPersonIDs != null && !mBenefitPersonNames.equals("") && !mBenefitPersonIDs.equals("")) {
                 benefitpersonlinearlayout.removeAllViews();
                 String[] nameArray = mBenefitPersonNames.split("、");
@@ -2252,7 +2302,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                     TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
                     EditText[] editText = new EditText[]{benefitPersonPercentText};
                     NumberFormatUtil.setPricePointArray(editText, 2);
-                    benefitPersonPercentText.setText(df2.format(0));
+                    benefitPersonPercentText.setText("均分");
                     benefitpersonlinearlayout.addView(benefitPersonItemView, cnt_i);
                 }
             } else {
@@ -2307,10 +2357,33 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
                     TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
                     EditText[] editText = new EditText[]{benefitPersonPercentText};
                     NumberFormatUtil.setPricePointArray(editText, 2);
-                    benefitPersonPercentText.setText(df2.format(0));
+                    benefitPersonPercentText.setText("均分");
                     benefitpersonlinearlayout.addView(benefitPersonItemView, cnt_i);
                 }
                 shareFlg = 1;
+            }
+        }*/
+    }
+
+    private void setBenefitPersonInfo2() {
+        if (!checkBenefitPersonIsNull()) {
+            try {
+                String displayPercent = df2.format(0);
+                if (shareFlg == 1) {
+                    displayPercent = "均分";
+                }
+                String[] nameArray = mBenefitPersonNames.split("、");
+                for (cnt_i = 0; cnt_i < nameArray.length; cnt_i++) {
+                    EditText benefitPersonPercentText = (EditText) benefitpersonlinearlayout.getChildAt(cnt_i).findViewById(R.id.benefit_person_percent);
+                    benefitPersonPercentText.setText(displayPercent);
+                    if (shareFlg == 1) {
+                        benefitPersonPercentText.setEnabled(false);
+                    } else {
+                        benefitPersonPercentText.setEnabled(true);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
@@ -2323,6 +2396,7 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
         }
         if (requestCode == 101) {
             //FIXME
+            shareFlg = 1;
             namegetFlg = 1;
             setBenefitPersonInfo(data.getStringExtra("personId"), data.getStringExtra("personName"));
         }

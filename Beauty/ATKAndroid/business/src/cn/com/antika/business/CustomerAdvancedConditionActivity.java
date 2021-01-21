@@ -183,9 +183,14 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
         customerAdvancedSearchResetButton = (Button) findViewById(R.id.customer_advanced_search_reset_btn);
         customerAdvancedSearchResetButton.setOnClickListener(this);
         // 顾客来源
+        sourceTypeList = new ArrayList<SourceType>();
+        SourceType defaultSourceType = new SourceType();
+        defaultSourceType.setSourceTypeID(-1);
+        defaultSourceType.setSourceTypeName("全部");
+        sourceTypeList.add(defaultSourceType);
         customerSourceTypeSpinner = (Spinner) findViewById(R.id.customer_source_spinner);
         String[] sourceTypeNameArray = new String[1];
-        sourceTypeNameArray[0] = "全部";
+        sourceTypeNameArray[0] = sourceTypeList.get(0).getSourceTypeName();
         ArrayAdapter<String> sourceTypeNameAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, sourceTypeNameArray);
         sourceTypeNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         customerSourceTypeSpinner.setAdapter(sourceTypeNameAdapter);
@@ -320,9 +325,14 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
         });
         searchCustomerNameLayout = (RelativeLayout) findViewById(R.id.search_customer_name_layout);
         searchCustomerTelLayout = (RelativeLayout) findViewById(R.id.search_customer_tel_layout);
+        ecardInfoList = new ArrayList<EcardInfo>();
+        EcardInfo defaultEcardInfo = new EcardInfo();
+        defaultEcardInfo.setUserEcardName("全部");
+        defaultEcardInfo.setUserEcardCode("");
+        ecardInfoList.add(defaultEcardInfo);
         ecardConditionSpinner = (Spinner) findViewById(R.id.ecard_condition_spinner);
         String[] customerEcardArray = new String[1];
-        customerEcardArray[0] = "全部";
+        customerEcardArray[0] = ecardInfoList.get(0).getUserEcardName();
         ArrayAdapter<String> ecardLevelNameAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, customerEcardArray);
         ecardLevelNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ecardConditionSpinner.setAdapter(ecardLevelNameAdapter);
@@ -392,11 +402,6 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
         progressDialog = new ProgressDialog(this, R.style.CustomerProgressDialog);
         progressDialog.setMessage(getString(R.string.please_wait));
         progressDialog.show();
-        ecardInfoList = new ArrayList<EcardInfo>();
-        EcardInfo defaultEcardInfo = new EcardInfo();
-        defaultEcardInfo.setUserEcardName("全部");
-        defaultEcardInfo.setUserEcardCode("");
-        ecardInfoList.add(defaultEcardInfo);
         requestWebServiceThread = new Thread() {
             public void run() {
                 String methodName = "GetBranchCardList";
@@ -481,11 +486,6 @@ public class CustomerAdvancedConditionActivity extends BaseActivity implements O
 
     protected void getSourceTypeList() {
         progressDialog = ProgressDialogUtil.createProgressDialog(this);
-        sourceTypeList = new ArrayList<SourceType>();
-        SourceType defaultSourceType = new SourceType();
-        defaultSourceType.setSourceTypeID(-1);
-        defaultSourceType.setSourceTypeName("全部");
-        sourceTypeList.add(defaultSourceType);
         requestWebServiceThread = new Thread() {
             public void run() {
                 String methodName = "GetCustomerSourceType";

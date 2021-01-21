@@ -10,8 +10,7 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
-        android:smallScreens="true" />
-    <!-- JPUSH -->
+        android:smallScreens="true" /> <!-- JPUSH -->
     <permission
         android:name="cn.com.antika.business.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
@@ -56,9 +55,15 @@
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
-        android:windowSoftInputMode="stateHidden">
+        android:windowSoftInputMode="stateHidden"
+        tools:targetApi="n">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/network_security_config" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="cn.com.antika.business.fileprovider"
@@ -68,673 +73,672 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="mbgIgTkGXgXSgkqKnavuWNIlcG58evh6" />
 
         <activity
-            android:name="cn.com.antika.business.SplashActivity"
+            android:name=".SplashActivity"
             android:alwaysRetainTaskState="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name="org.achartengine.GraphicalActivity" />
         <activity
-            android:name="cn.com.antika.business.LoginActivity"
+            android:name=".LoginActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.HomePageActivity"
+            android:name=".HomePageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CompanySelectActivity"
+            android:name=".CompanySelectActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerActivity"
+            android:name=".CustomerActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="cn.com.antika.business.RemindListActivity"
+            android:name=".RemindListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddNewCustomerActivity"
+            android:name=".AddNewCustomerActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerInfoActivity"
+            android:name=".CustomerInfoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerBasicInfoActivity"
+            android:name=".CustomerBasicInfoActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name="cn.com.antika.business.CustomerDetailActivity"
+            android:name=".CustomerDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerRecordActivity"
+            android:name=".CustomerRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OrderListActivity"
+            android:name=".OrderListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditCustomerBasicActivity"
+            android:name=".EditCustomerBasicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditCustomerDetailActivity"
+            android:name=".EditCustomerDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddCustomerRecordActivity"
+            android:name=".AddCustomerRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditCustomerRecordActivity"
+            android:name=".EditCustomerRecordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddNewCustomerVocationActivity"
+            android:name=".AddNewCustomerVocationActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="cn.com.antika.business.EditCustomerVocationActivity"
+            android:name=".EditCustomerVocationActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="cn.com.antika.business.ServiceActivity"
+            android:name=".ServiceActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CommodityCategoryActivity"
+            android:name=".CommodityCategoryActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OpportunityListActivity"
+            android:name=".OpportunityListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CommodityListActivity"
+            android:name=".CommodityListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="cn.com.antika.business.CommodityDetailActivity"
+            android:name=".CommodityDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OpportunityDetailActivity"
+            android:name=".OpportunityDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OpportunityDetailMainActivity"
+            android:name=".OpportunityDetailMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OpportunityHistoryActivity"
+            android:name=".OpportunityHistoryActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditOpportunityProgressActivity"
+            android:name=".EditOpportunityProgressActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditProgressHistoryActivity"
+            android:name=".EditProgressHistoryActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ChoosePersonActivity"
+            android:name=".ChoosePersonActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="cn.com.antika.business.OrderDetailActivity"
+            android:name=".OrderDetailActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentDetailActivity"
+            android:name=".TreatmentDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentServiceDetailActivity"
+            android:name=".TreatmentServiceDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentGroupDetailActivity"
+            android:name=".TreatmentGroupDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentTreatmentDetailActivity"
+            android:name=".TreatmentTreatmentDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ServiceOrderContactDetailActivity"
+            android:name=".ServiceOrderContactDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditServiceOrderContactDetailMainActivity"
+            android:name=".EditServiceOrderContactDetailMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditTreatmentTreatmentDetailActivity"
+            android:name=".EditTreatmentTreatmentDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EMarketingActivity"
+            android:name=".EMarketingActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.SendNewEmarketingMessageActivity"
+            android:name=".SendNewEmarketingMessageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.SendMarketingTemplateActivity"
+            android:name=".SendMarketingTemplateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddMessageTemplateActivity"
+            android:name=".AddMessageTemplateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditMessageTemplateActivity"
+            android:name=".EditMessageTemplateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.FlyMessageListActivity"
+            android:name=".FlyMessageListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.FlyMessageDetailActivity"
+            android:name=".FlyMessageDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="cn.com.antika.business.SettingActivity"
+            android:name=".SettingActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.SettingPersonalMessageActivity"
+            android:name=".SettingPersonalMessageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AboutUsActivity"
+            android:name=".AboutUsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditPersonalMessageActivity"
+            android:name=".EditPersonalMessageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditPersonalPasswordActivity"
+            android:name=".EditPersonalPasswordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CropImageViewActivity"
+            android:name=".CropImageViewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerEcardActivity"
+            android:name=".CustomerEcardActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EcardHistoryListActivity"
+            android:name=".EcardHistoryListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AllEcardHistoryListActivity"
+            android:name=".AllEcardHistoryListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddNewCustomerEcardActivity"
+            android:name=".AddNewCustomerEcardActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditEcardBalanceActivity"
+            android:name=".EditEcardBalanceActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EditEcardTypeOtherBalanceActivity"
+            android:name=".EditEcardTypeOtherBalanceActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.DecodeQRCodeActivity"
+            android:name=".DecodeQRCodeActivity"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="cn.com.antika.business.ChooseServicePeopleActivity"
+            android:name=".ChooseServicePeopleActivity"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ReportMainActivity"
+            android:name=".ReportMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ReportByDateActivity"
+            android:name=".ReportByDateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ReportListActivity"
+            android:name=".ReportListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ReportDetailListActivity"
+            android:name=".ReportDetailListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ServiceListActivity"
+            android:name=".ServiceListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="cn.com.antika.business.FavoriteListActivity"
+            android:name=".FavoriteListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ServiceDetailActivity"
+            android:name=".ServiceDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.PrepareOrderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="cn.com.antika.business.ProductAndOldOrderListActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="cn.com.antika.business.CustomerViewOrderActivity"
+            android:name=".PrepareOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerUnpaidOrderActivity"
+            android:name=".ProductAndOldOrderListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentReviewActivity"
+            android:name=".CustomerViewOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.PaymentActionActivity"
+            android:name=".CustomerUnpaidOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.MemorySpaceActivity"
+            android:name=".TreatmentReviewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <!--<activity
+        <activity
+            android:name=".PaymentActionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MemorySpaceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--
+<activity
             android:name="cn.com.antika.business.EcardHistoryOrderListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
-        </activity>-->
+        </activity>
+        -->
         <activity
-            android:name="cn.com.antika.business.EcardMoneyOut"
+            android:name=".EcardMoneyOut"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EcardTypeOtherMoneyOut"
+            android:name=".EcardTypeOtherMoneyOut"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ReportTotalActivity"
+            android:name=".ReportTotalActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.Company"
+            android:name=".Company"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchListActivity"
+            android:name=".BranchListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchDetailActivity"
+            android:name=".BranchDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.NoticeListActivity"
+            android:name=".NoticeListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AccountDetailActivity"
+            android:name=".AccountDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AccountListActivity"
+            android:name=".AccountListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.NoticeDetailActivity"
+            android:name=".NoticeDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppDownloadActivity"
+            android:name=".AppDownloadActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.NotepadListActivity"
+            android:name=".NotepadListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddNoteActivity"
+            android:name=".AddNoteActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.LabelListActivity"
+            android:name=".LabelListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddLabelActivity"
+            android:name=".AddLabelActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.PaymentRecordListActivity"
+            android:name=".PaymentRecordListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.PaymentRecordDetailActivity"
+            android:name=".PaymentRecordDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.RechargeDetailActivity"
+            android:name=".RechargeDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OrderPaymentDetailActivity"
+            android:name=".OrderPaymentDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EcardDiscountDetailActivity"
+            android:name=".EcardDiscountDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.UnpaidCustomerListActivity"
+            android:name=".UnpaidCustomerListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerAdvancedConditionActivity"
+            android:name=".CustomerAdvancedConditionActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <!--订单的高级筛选-->
+            android:screenOrientation="portrait" /> <!-- 订单的高级筛选 -->
         <activity
-            android:name="cn.com.antika.business.OrderAdvancedSearchActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="cn.com.antika.business.OrderSearchNewActivity"
+            android:name=".OrderAdvancedSearchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerEcardBalanceChangeAnalyticsActivity"
+            android:name=".OrderSearchNewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ServiceAndProductSalesAnalyticsActivity"
+            android:name=".CustomerEcardBalanceChangeAnalyticsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OpportunityAdvancedSearchActivity"
+            android:name=".ServiceAndProductSalesAnalyticsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AddOpportunityConfirmActivity"
+            android:name=".OpportunityAdvancedSearchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerRecordTemplateActivity"
+            android:name=".AddOpportunityConfirmActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ChooseCustomerRecordTemplateActivity"
+            android:name=".CustomerRecordTemplateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerEcardListActivity"
+            android:name=".ChooseCustomerRecordTemplateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.EcardHistoryDetailActivity"
+            android:name=".CustomerEcardListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerServicingActivity"
+            android:name=".EcardHistoryDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.UnfishTGListActivity"
+            android:name=".CustomerServicingActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.UnFinishTGOrderAdvancedSearchActivity"
+            android:name=".UnfishTGListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ChoosePersonLocalActivity"
+            android:name=".UnFinishTGOrderAdvancedSearchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchTotalReportActivity"
+            android:name=".ChoosePersonLocalActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppointmentListActivity"
+            android:name=".BranchTotalReportActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppointmentTaskListActivity"
+            android:name=".AppointmentListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppointmentCreateActivity"
+            android:name=".AppointmentTaskListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.VisitTaskSearchActivity"
+            android:name=".AppointmentCreateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppointmentDetailActivity"
+            android:name=".VisitTaskSearchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppointmentCusOldOrderActivity"
+            android:name=".AppointmentDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <!--<activity
+        <activity
+            android:name=".AppointmentCusOldOrderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--
+<activity
             android:name="cn.com.antika.business.AppointmentTaskSearchNewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
-        </activity>-->
+        </activity>
+        -->
         <activity
-            android:name="cn.com.antika.business.AppointmentSearchNewActivity"
+            android:name=".AppointmentSearchNewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OrderListTabActivity"
+            android:name=".OrderListTabActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TodayServiceListActivity"
+            android:name=".TodayServiceListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppointmentTaskDetailActivity"
+            android:name=".AppointmentTaskDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentGroupDetailTabActivity"
+            android:name=".TreatmentGroupDetailTabActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentGroupReviewActivity"
+            android:name=".TreatmentGroupReviewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.PaymentActionThirdPartActivity"
+            android:name=".PaymentActionThirdPartActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.PaymentActionThirdPartModeActivity"
+            android:name=".PaymentActionThirdPartModeActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.PaymentActionThirdPartResultActivity"
+            android:name=".PaymentActionThirdPartResultActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OrderDetailThirdPartPayListActivity"
+            android:name=".OrderDetailThirdPartPayListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.ThirdPartPayHelpActivity"
+            android:name=".ThirdPartPayHelpActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OrderRefundActivity"
+            android:name=".OrderRefundActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerStatisticsMainActivity"
+            android:name=".CustomerStatisticsMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerStatisticsPieActivity"
+            android:name=".CustomerStatisticsPieActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerStatisticsListActivity"
+            android:name=".CustomerStatisticsListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerStatisticsBarChartActivity"
+            android:name=".CustomerStatisticsBarChartActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerStatisticsBarChartDetailListActivity"
+            android:name=".CustomerStatisticsBarChartDetailListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.OrderSearchActivity"
+            android:name=".OrderSearchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TaskListTabActivity"
+            android:name=".TaskListTabActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.VisitTaskListActivity"
+            android:name=".VisitTaskListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AppointmentTaskSearchActivity"
+            android:name=".AppointmentTaskSearchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TreatmentGroupTreatmentDetailActivity"
+            android:name=".TreatmentGroupTreatmentDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerServicingPhotoActivity"
+            android:name=".CustomerServicingPhotoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerBenefitsActivity"
+            android:name=".CustomerBenefitsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.CustomerBenefitDetailActivity"
+            android:name=".CustomerBenefitDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.TodayServiceSearchActivity"
+            android:name=".TodayServiceSearchActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <!--转卡界面  将客户老卡转到新卡-->
+            android:screenOrientation="portrait" /> <!-- 转卡界面  将客户老卡转到新卡 -->
         <activity
-            android:name="cn.com.antika.business.AssignToNewCustomerEcardActivity"
+            android:name=".AssignToNewCustomerEcardActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <!--考勤界面-->
+            android:screenOrientation="portrait" /> <!-- 考勤界面 -->
         <activity
-            android:name="cn.com.antika.business.AccountAttendanceActivity"
+            android:name=".AccountAttendanceActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.AccountAttendanceCodeActivity"
+            android:name=".AccountAttendanceCodeActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <!--电子签名界面-->
+            android:screenOrientation="portrait" /> <!-- 电子签名界面 -->
         <activity
             android:name="cn.com.antika.view.sign.HandwritingActivity"
-            android:screenOrientation="landscape" />
-        <!--门店数据统计分析-->
+            android:screenOrientation="landscape" /> <!-- 门店数据统计分析 -->
         <activity
-            android:name="cn.com.antika.business.BranchStatisticsMainActivity"
+            android:name=".BranchStatisticsMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchBusinessConditionsBarChartActivity"
+            android:name=".BranchBusinessConditionsBarChartActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchBusinessConditionsStatisticsBarChartDetailListActivity"
+            android:name=".BranchBusinessConditionsStatisticsBarChartDetailListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchEmployeeBusinessMainActivity"
+            android:name=".BranchEmployeeBusinessMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchEmployeeBusinessStatisticsPieActivity"
+            android:name=".BranchEmployeeBusinessStatisticsPieActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchEmployeeBusinessListActivity"
+            android:name=".BranchEmployeeBusinessListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchProductStatisticsMainActivity"
+            android:name=".BranchProductStatisticsMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchProductStatisticsPieActivity"
+            android:name=".BranchProductStatisticsPieActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchProductStatisticsListActivity"
+            android:name=".BranchProductStatisticsListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchEmployeeBusinessDetailBarChartActivity"
+            android:name=".BranchEmployeeBusinessDetailBarChartActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.MyReportMainActivity"
+            android:name=".MyReportMainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.MyReportPercentageActivity"
+            android:name=".MyReportPercentageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.com.antika.business.BranchJournalReportActivity"
+            android:name=".BranchJournalReportActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
@@ -808,4 +812,5 @@
             android:name="JPUSH_APPKEY"
             android:value="eb6f42381d651a47581cd2fc" />
     </application>
+
 </manifest>
