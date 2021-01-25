@@ -151,8 +151,8 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
                 } else
                     ((Button) customerServicingActivity.findViewById(R.id.customer_servicing_customer_paid_order_btn)).setOnClickListener(customerServicingActivity);
 
-                /*BusinessRightMenu.createMenuContent();
-                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
+                BusinessRightMenu.createMenuContent();
+                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
             } else if (msg.what == Constant.LOGIN_ERROR) {
                 DialogUtil.createShortDialog(customerServicingActivity, customerServicingActivity.getString(R.string.login_error_message));
                 UserInfoApplication.getInstance().exitForLogin(customerServicingActivity);

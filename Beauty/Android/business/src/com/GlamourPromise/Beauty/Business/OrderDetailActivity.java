@@ -557,8 +557,8 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
                 orderDetailActivity.userinfoApplication.setSelectedCustomerHeadImageURL(customer.getHeadImageUrl());
                 orderDetailActivity.userinfoApplication.setSelectedCustomerLoginMobile(customer.getLoginMobile());
                 orderDetailActivity.userinfoApplication.setSelectedIsMyCustomer(customer.getIsMyCustomer());
-                /*BusinessRightMenu.createMenuContent();
-                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
+                BusinessRightMenu.createMenuContent();
+                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
                 DialogUtil.createShortDialog(orderDetailActivity, "选择顾客成功!");
             } else if (msg.what == Constant.LOGIN_ERROR) {
                 DialogUtil.createShortDialog(orderDetailActivity, orderDetailActivity.getString(R.string.login_error_message));

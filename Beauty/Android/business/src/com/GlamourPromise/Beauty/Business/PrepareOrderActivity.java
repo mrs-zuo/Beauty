@@ -6,14 +6,11 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.DialogFragment;
 import android.text.Editable;
+import android.text.Html;
 import android.text.InputType;
 import android.text.Selection;
 import android.text.TextUtils;
@@ -36,7 +33,6 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableLayout.LayoutParams;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.GlamourPromise.Beauty.application.UserInfoApplication;
 import com.GlamourPromise.Beauty.bean.AppointmentDetailInfo;
@@ -74,7 +70,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.locks.ReentrantLock;
 
 /*
  * 开单界面
@@ -1721,8 +1716,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                                                         prepareOrderTotalSalePriceText.setText(NumberFormatUtil.currencyFormat(String.valueOf(orderProductPromotionTotalSalePrice)));
                                                                     }
                                                                     initView();
-                                                                    /*BusinessRightMenu.createMenuContent();
-                                                                    BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
+                                                                    BusinessRightMenu.createMenuContent();
+                                                                    BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
                                                                 }
                                                             })
                                                     .setNegativeButton(getString(R.string.delete_cancel),
@@ -1861,17 +1856,33 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     Integer serviceNum = 0;
                     // 总过去服务次数
                     Integer serviceNumPast = 0;
+                    // 服务种类数
+                    Integer serviceKindNum = 0;
+                    // 商品种类数
+                    Integer goodKindNum = 0;
                     // 是否含有不限次商品
                     boolean serviceNumAll = false;
                     // 判断是否有销售顾问的功能
                     boolean hasSales = false;
                     if (userinfoApplication.getAccountInfo().getModuleInUse().contains("|4|"))
                         hasSales = true;
+                    // 是否多开
+                    boolean multipleFlg = orderProductList.size() > 1;
                     int j = 0;
                     for (int i = 0; i < orderProductList.size(); i++) {
                         if (!orderProductList.get(i).isOldOrder()) {
                             JSONObject orderProductJson = new JSONObject();
                             OrderProduct orderProduct = orderProductList.get(i);
+                            switch (orderProduct.getProductType()) {
+                                case 0:
+                                    // 服务
+                                    serviceKindNum++;
+                                    break;
+                                case 1:
+                                    // 商品
+                                    goodKindNum++;
+                                    break;
+                            }
                             if (orderProduct.getCourseFrequency() < 1) {
                                 serviceNumAll = true;
                             }
@@ -1960,10 +1971,13 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             productTotalPrice += orderProductTotalSalePrice;
                             // 过去支付
                             productPastPaidPrice += orderProductHasPaidPrice;
-                            // 服务次数
-                            serviceNum += prepareOrderServiceQuantity;
-                            // 过去服务次数
-                            serviceNumPast += prepareOrderProductHasCompletenum;
+                            // 排除不限次产品
+                            if (!(orderProduct.getCourseFrequency() < 1)) {
+                                // 服务次数
+                                serviceNum += prepareOrderServiceQuantity;
+                                // 过去服务次数
+                                serviceNumPast += prepareOrderProductHasCompletenum;
+                            }
                             j++;
                         }
 
@@ -1975,9 +1989,16 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     if (NumberFormatUtil.doubleCompare(productTotalPrice, productPastPaidPrice) == 0)
                         isPastPayAll = 1;
 
-                    /*AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomerAlertDialog);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomerAlertDialog);
                     // 获取布局
                     View view2 = getLayoutInflater().from(this).inflate(R.layout.activity_prepare_order_make_sure, null);
+                    // 多开
+                    if (multipleFlg) {
+                        LinearLayout multipleKindLayout = view2.findViewById(R.id.multiple_kind_layout);
+                        TextView prepareOrderMultipleKind = multipleKindLayout.findViewById(R.id.prepare_order_multiple_kind);
+                        prepareOrderMultipleKind.setText(Html.fromHtml("此单共开:<font color='red'>" + serviceKindNum + "</font>种服务/<font color='red'>" + goodKindNum + "</font>种商品"));
+                        multipleKindLayout.setVisibility(View.VISIBLE);
+                    }
                     // 获取布局中的控件
                     final TextView prepareOrderTotalPrice = (TextView) view2.findViewById(R.id.prepare_order_total_price);
                     if (productTotalPrice - productPastPaidPrice > 0) {
@@ -2114,9 +2135,9 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             };
                             requestWebServiceThread.start();
                         }
-                    });*/
+                    });
 
-                    progressDialog = ProgressDialogUtil.createProgressDialog(PrepareOrderActivity.this);
+                    /*progressDialog = ProgressDialogUtil.createProgressDialog(PrepareOrderActivity.this);
                     requestWebServiceThread = new Thread() {
                         @Override
                         public void run() {
@@ -2213,7 +2234,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             interrupt();
                         }
                     };
-                    requestWebServiceThread.start();
+                    requestWebServiceThread.start();*/
                 }
                 break;
         }

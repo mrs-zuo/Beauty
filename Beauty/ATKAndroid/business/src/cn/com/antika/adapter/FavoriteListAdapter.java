@@ -119,7 +119,7 @@ public class FavoriteListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         // TODO Auto-generated method stub
-        FavoriteItem favoriteItem = null;
+        /*FavoriteItem favoriteItem = null;
         if (convertView == null) {
             favoriteItem = new FavoriteItem();
             convertView = layoutInflater.inflate(R.xml.favorite_list_item, null);
@@ -132,7 +132,16 @@ public class FavoriteListAdapter extends BaseAdapter {
             convertView.setTag(favoriteItem);
         } else {
             favoriteItem = (FavoriteItem) convertView.getTag();
-        }
+        }*/
+        FavoriteItem favoriteItem = new FavoriteItem();
+        convertView = layoutInflater.inflate(R.xml.favorite_list_item, null);
+        favoriteItem.productName = (TextView) convertView.findViewById(R.id.favorite_item_commodity_name);
+        favoriteItem.promotionPrice = (TextView) convertView.findViewById(R.id.favorite_commodity_promotion_price);
+        favoriteItem.unitPrice = (TextView) convertView.findViewById(R.id.favorite_commodity_unit_price);
+        favoriteItem.discountIcon = (ImageView) convertView.findViewById(R.id.favorite_commodity_discount_icon);
+        favoriteItem.selectCheckbox = (ImageButton) convertView.findViewById(R.id.favorite_product_select);
+        favoriteItem.isLooseIcon = (ImageView) convertView.findViewById(R.id.favorite_lose_icon);
+
         final int finalPosition = position;
         favoriteItem.productName.setText(mFavoriteList.get(position).getProductName() + "\t" + mFavoriteList.get(position).getSpecification());
         //收藏是否失效
@@ -159,10 +168,10 @@ public class FavoriteListAdapter extends BaseAdapter {
                     hasSelected = 1;
                 }
             }
-            /*if (mFavoriteList.get(position).getIsSelect()) {
+            if (mFavoriteList.get(position).getIsSelect()) {
                 favoriteItem.selectCheckbox.setBackgroundResource(R.drawable.select_btn);
                 hasSelected = 1;
-            }*/
+            }
             final int hs = hasSelected;
             final String favoriteID = mFavoriteList.get(position).getFavoriteID();
             delFavoriteID = Integer.parseInt(favoriteID);

@@ -449,8 +449,8 @@ public class DispenseFavoriteListFragment extends Fragment implements OnItemClic
                 // 去除重复
                 selectedFavoriteList.removeAll(orderProductList);
                 orderProductList.addAll(selectedFavoriteList);
-                /*BusinessRightMenu.createMenuContent();
-                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
+                BusinessRightMenu.createMenuContent();
+                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
                 ((ViewPager) getActivity().findViewById(R.id.customer_servicing_order_view_pager)).setCurrentItem(0);
             }
         }

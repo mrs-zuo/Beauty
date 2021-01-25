@@ -65,7 +65,7 @@ import cn.com.antika.view.menu.BusinessRightMenu;
 import cn.com.antika.view.sign.HandwritingActivity;
 import cn.com.antika.webservice.WebServiceUtil;
 
-@SuppressLint("ResourceType")
+@SuppressLint({"NewApi", "ResourceType"})
 public class OrderDetailActivity extends BaseActivity implements OnClickListener {
     private OrderDetailActivityHandler mHandler = new OrderDetailActivityHandler(this);
     private Thread requestWebServiceThread;
@@ -221,9 +221,6 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
                 // 用户返回不做任何处理
                 return;
             }
-            if (orderDetailActivity == null) {
-                UserInfoApplication.getInstance().exitForLogin(null);
-            }
             if (orderDetailActivity.progressDialog != null) {
                 orderDetailActivity.progressDialog.dismiss();
                 orderDetailActivity.progressDialog = null;
@@ -373,6 +370,7 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
                     orderDetailActivity.deleteOrderBtn.setText("终止");
                 }
                 //当前账户有支付权限   当前订单不是合并支付 且支付状态为部分支付或已支付 并且订单是终止状态
+                //else if(showOrderInfo.getStatus()==4 && (orderPayStatus==3 || orderPayStatus==2) && !showOrderInfo.isMergePay() && userinfoApplication.getAccountInfo().getAuthPaymentUse()==1){
                 else if (showOrderInfo.getStatus() == 4 && (orderPayStatus == 3 || orderPayStatus == 2) && orderDetailActivity.userinfoApplication.getAccountInfo().getAuthPaymentUse() == 1) {
                     orderDetailActivity.deleteOrderType = 3;
                     orderDetailActivity.deleteOrderBtn.setText("退款");
@@ -560,8 +558,8 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
                 orderDetailActivity.userinfoApplication.setSelectedCustomerHeadImageURL(customer.getHeadImageUrl());
                 orderDetailActivity.userinfoApplication.setSelectedCustomerLoginMobile(customer.getLoginMobile());
                 orderDetailActivity.userinfoApplication.setSelectedIsMyCustomer(customer.getIsMyCustomer());
-                /*BusinessRightMenu.createMenuContent();
-                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();*/
+                BusinessRightMenu.createMenuContent();
+                BusinessRightMenu.rightMenuAdapter.notifyDataSetChanged();
                 DialogUtil.createShortDialog(orderDetailActivity, "选择顾客成功!");
             } else if (msg.what == Constant.LOGIN_ERROR) {
                 DialogUtil.createShortDialog(orderDetailActivity, orderDetailActivity.getString(R.string.login_error_message));
@@ -688,7 +686,6 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
     };
 
     // 显示课程
-    @SuppressLint("NewApi")
     private void createtTreatmentGroupLayout(final List<TreatmentGroup> treatmentGroupList, int showType, int productType) {
         //将TG的信息循环显示在已完成的列表上
         //showType 0:显示未完成的TG  1：显示已完成的Tg
@@ -2604,13 +2601,13 @@ public class OrderDetailActivity extends BaseActivity implements OnClickListener
         // TODO Auto-generated method stub
         super.onDestroy();
         exit = true;
-        if (progressDialog != null) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
             // mHandler = null;
+        }
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();
