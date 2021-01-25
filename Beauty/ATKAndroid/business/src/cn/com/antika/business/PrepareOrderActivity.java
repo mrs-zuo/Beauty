@@ -34,6 +34,7 @@ import android.widget.TableLayout;
 import android.widget.TableLayout.LayoutParams;
 import android.widget.TextView;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -1996,8 +1997,18 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     if (multipleFlg) {
                         LinearLayout multipleKindLayout = view2.findViewById(R.id.multiple_kind_layout);
                         TextView prepareOrderMultipleKind = multipleKindLayout.findViewById(R.id.prepare_order_multiple_kind);
-                        prepareOrderMultipleKind.setText(Html.fromHtml("此单共开:<font color='red'>" + serviceKindNum + "</font>种服务/<font color='red'>" + goodKindNum + "</font>种商品"));
-                        multipleKindLayout.setVisibility(View.VISIBLE);
+                        // prepareOrderMultipleKind.setText(Html.fromHtml("此单共开:<font color='red'>" + serviceKindNum + "</font>种服务/<font color='red'>" + goodKindNum + "</font>种商品"));
+                        List<String> multipleKinds = new ArrayList<>();
+                        if (serviceKindNum > 0) {
+                            multipleKinds.add("<font color='red'>" + serviceKindNum + "</font>种服务");
+                        }
+                        if (goodKindNum > 0) {
+                            multipleKinds.add("<font color='red'>" + goodKindNum + "</font>种商品");
+                        }
+                        if (multipleKinds.size() > 0) {
+                            prepareOrderMultipleKind.setText(Html.fromHtml("此单共开:" + StringUtils.join(multipleKinds, "/")));
+                            multipleKindLayout.setVisibility(View.VISIBLE);
+                        }
                     }
                     // 获取布局中的控件
                     final TextView prepareOrderTotalPrice = (TextView) view2.findViewById(R.id.prepare_order_total_price);
