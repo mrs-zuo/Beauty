@@ -1972,8 +1972,8 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             productTotalPrice += orderProductTotalSalePrice;
                             // 过去支付
                             productPastPaidPrice += orderProductHasPaidPrice;
-                            // 排除不限次产品
-                            if (!(orderProduct.getCourseFrequency() < 1)) {
+                            // 服务次数(排除不限次产品)
+                            if (!(orderProduct.getCourseFrequency() < 1) && orderProduct.getProductType() == 0) {
                                 // 服务次数
                                 serviceNum += prepareOrderServiceQuantity;
                                 // 过去服务次数
