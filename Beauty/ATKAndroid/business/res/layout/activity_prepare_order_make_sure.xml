@@ -37,15 +37,12 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/service_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
-        android:orientation="horizontal" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,6 +65,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="次"
+            android:textColor="@color/home_page_sort_tg_status_text_color"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/good_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未交付商品"
+            android:textColor="@color/home_page_sort_tg_status_text_color"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/prepare_order_good_num"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="0"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="件"
             android:textColor="@color/home_page_sort_tg_status_text_color"
             android:textSize="20sp" />
 

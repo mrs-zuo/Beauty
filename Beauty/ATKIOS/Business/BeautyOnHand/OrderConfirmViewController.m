@@ -3156,23 +3156,147 @@
 - (void)confirmOrderAction
 {
     [self.view endEditing:YES];
-
+    
     if([theOpportunityDoc.productAndPriceDoc.productArray count] == 0){
          [SVProgressHUD showErrorWithStatus2:@"请先选择商品或服务！" touchEventHandle:^{}];
         return;
     }
+    // 总服务次数
+    NSInteger courseCountTotal= 0;
+    // 过去完成次数
+    NSInteger TgPastCountTotal= 0;
+    // 总应付金额
+    long double priceTotal = 0.00;
+    // 总已支付金额
+    long double pricePastTotal = 0.00;
+    // 服务数量
+    NSInteger serviceKindNum = 0;
+    // 商品数量
+    NSInteger goodKindNum = 0;
+    // 多开标志
+    Boolean multipleFlg = NO;
+    if ([theOpportunityDoc.productAndPriceDoc.productArray count] > 1) {
+        multipleFlg = YES;
+    }
     for (ProductDoc *productDoc in theOpportunityDoc.productAndPriceDoc.productArray) {
-        
         if (productDoc.pro_ResponsiblePersonID <=0 && productDoc.pro_Type ==1 ) {
-            
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"商品单美丽顾问不能为空！"]];
-            
             return;
         }
+        switch (productDoc.pro_Type) {
+            case 0:
+                // 服务
+                serviceKindNum++;
+                break;
+            case 1:
+                // 商品
+                goodKindNum++;
+                break;
+            default:
+                break;
+        }
+        courseCountTotal += productDoc.courseCount;
+        TgPastCountTotal += productDoc.TgPastCount;
+        priceTotal += productDoc.pro_TotalSaleMoney;
+        pricePastTotal += productDoc.pro_HaveToPay;
     }
     [self appendJSONString:1];
 #warning xigai
-    [self requestAddNewOrder];
+    if (serviceKindNum > 0) {
+        // 服务
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:@"内容" preferredStyle:UIAlertControllerStyleAlert];
+        // UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        NSString *tmp;
+        NSString *content = @"";
+        content = [content stringByAppendingString:@"待结账金额"];
+        NSInteger lenPos1 = [content length];
+        tmp = [NSString stringWithFormat:@"%.2Lf",  priceTotal - pricePastTotal > 0.00 ? priceTotal - pricePastTotal : 0.00];
+        NSInteger len1 = [tmp length];
+        content = [content stringByAppendingString:tmp];
+        content = [content stringByAppendingString:@"元"];
+        
+        content = [content stringByAppendingFormat:@"\n%@" , @"未服务次数"];
+        NSInteger lenPos2 = [content length];
+        tmp = [NSString stringWithFormat:@"%ld",  (long)(courseCountTotal - TgPastCountTotal > 0 ? courseCountTotal - TgPastCountTotal : 0)];
+        NSInteger len2 = [tmp length];
+        content = [content stringByAppendingString:tmp];
+        content = [content stringByAppendingString:@"次"];
+        
+        NSInteger lenPos3 = -1;
+        NSInteger len3 = -1;
+        NSInteger lenPos4 = -1;
+        NSInteger len4 = -1;
+        tmp = @"";
+        if (multipleFlg) {
+            content = [content stringByAppendingFormat:@"\n%@" , @"此单共开:"];
+            // 服务
+            if (serviceKindNum > 0) {
+                lenPos3 = [content length];
+                tmp = [NSString stringWithFormat:@"%ld", (long)(serviceKindNum > 0 ? serviceKindNum : 0)];
+                len3 = [tmp length];
+                content = [content stringByAppendingString:tmp];
+                content = [content stringByAppendingString:@"种服务"];
+                tmp = @"/";
+            }
+            // 商品
+            if (goodKindNum > 0) {
+                content =[content stringByAppendingString:tmp];
+                lenPos4 = [content length];
+                tmp = [NSString stringWithFormat:@"%ld",  (long)(goodKindNum > 0 ? goodKindNum : 0)];
+                len4 = [tmp length];
+                content = [content stringByAppendingString:tmp];
+                content = [content stringByAppendingString:@"种商品"];
+            }
+        }
+        
+        NSInteger length  = [content  length];
+        content = [content stringByAppendingFormat:@"\n%@" , @"提醒:\n待结账金额=成交价-过去支付金额\n未服务次数=总服务次数-过去完成次数"];
+        NSMutableAttributedString *alertControllerMessageStr = [[NSMutableAttributedString alloc] initWithString: content];
+    //    [alertControllerMessageStr addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:70/255.0 green:130/255.0 blue:200/255.0 alpha:1.0] range:NSMakeRange(0, length)];
+    //    [alertControllerMessageStr addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, length)];
+    //    [alertControllerMessageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:17] range:NSMakeRange(0, length)];
+        NSDictionary * attriBute3 = @{NSForegroundColorAttributeName:[UIColor colorWithRed:70/255.0 green:130/255.0 blue:200/255.0 alpha:1.0] ,NSFontAttributeName:[UIFont systemFontOfSize:17]};
+        [alertControllerMessageStr addAttributes:attriBute3 range:NSMakeRange(0, length)];
+        NSDictionary * attriBute = @{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:12]};
+        [alertControllerMessageStr addAttributes:attriBute range:NSMakeRange(length, [content length] - length)];
+        NSDictionary * attriBute2 = @{NSForegroundColorAttributeName:[UIColor redColor],NSFontAttributeName:[UIFont systemFontOfSize:17]};
+        [alertControllerMessageStr addAttributes:attriBute2 range:NSMakeRange(lenPos1, len1)];
+        [alertControllerMessageStr addAttributes:attriBute2 range:NSMakeRange(lenPos2, len2)];
+        if (lenPos3 != -1 && len3 != -1) {
+            [alertControllerMessageStr addAttributes:attriBute2 range:NSMakeRange(lenPos3, len3)];
+        }
+        if (lenPos4 != -1 && len4 != -1) {
+            [alertControllerMessageStr addAttributes:attriBute2 range:NSMakeRange(lenPos4, len4)];
+        }
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.alignment = NSTextAlignmentLeft;
+        paragraphStyle.lineSpacing = 10; // 调整行间距
+        // paragraphStyle.firstLineHeadIndent = 4;//首行缩进
+        NSRange range = NSMakeRange(0, [content length]);
+        [alertControllerMessageStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
+        [alertVc setValue:alertControllerMessageStr forKey:@"attributedMessage"];
+        
+        //默认只有标题 没有操作的按钮:添加操作的按钮 UIAlertAction
+        UIAlertAction *cancelBtn = [UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            // 返回
+        }];
+        //添加确定
+        UIAlertAction *sureBtn = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull   action) {
+            // 确定
+            [self requestAddNewOrder];
+        }];
+        //设置`确定`按钮的颜色
+        [sureBtn setValue:[UIColor redColor] forKey:@"titleTextColor"];
+        //将action添加到控制器
+        [alertVc addAction:cancelBtn];
+        [alertVc addAction:sureBtn];
+        // 展示
+        [self presentViewController:alertVc animated:YES completion:nil];
+    } else {
+        [self requestAddNewOrder];
+    }
+    // [self requestAddNewOrder];
 //    [self requestAddOrder];
 }
 
