@@ -191,11 +191,7 @@ public class CommodityListActivity extends BaseActivity implements
     }
 
     protected void initView() {
-
-        progressDialog = new ProgressDialog(this,
-                R.style.CustomerProgressDialog);
-        progressDialog.setMessage(getString(R.string.please_wait));
-        progressDialog.show();
+        progressDialog = ProgressDialogUtil.createProgressDialog(this);
         commodityListTitle = (TextView) findViewById(R.id.commodity_list_title_text);
         if (categoryName == null || ("").equals(categoryName))
             commodityListTitle.setText("商品(全部)");
@@ -209,7 +205,6 @@ public class CommodityListActivity extends BaseActivity implements
     }
 
     protected void requestWebService() {
-        progressDialog = ProgressDialogUtil.createProgressDialog(this);
         commodityList = new ArrayList<CommodityInfo>();
         final int screenWidth = userinfoApplication.getScreenWidth();
         requestWebServiceThread = new Thread() {

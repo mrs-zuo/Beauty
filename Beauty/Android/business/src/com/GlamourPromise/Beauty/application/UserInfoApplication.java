@@ -564,4 +564,9 @@ public class UserInfoApplication extends Application {
         super.attachBaseContext(base);
         MultiDex.install(this);
     }
+
+    // 操作模式(0:标准模式;1:简易模式)
+    public Integer getOperationWay() {
+        return getSharedPreferences("AppExpiredValue", Context.MODE_PRIVATE).getInt("OperationWay", 0);
+    }
 }

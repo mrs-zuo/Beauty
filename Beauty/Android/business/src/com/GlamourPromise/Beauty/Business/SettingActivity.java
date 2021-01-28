@@ -18,8 +18,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.GlamourPromise.Beauty.application.UserInfoApplication;
@@ -37,11 +41,15 @@ import com.GlamourPromise.Beauty.webservice.WebServiceUtil;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 @SuppressLint("ResourceType")
 public class SettingActivity extends BaseActivity implements OnClickListener {
     private SettingActivityHandler mHandler = new SettingActivityHandler(this);
     public static final String TAG = "SettingActivity";
+    private RelativeLayout operationWayRelativeLayout;
+    private Spinner operationWaySpinner;
     private RelativeLayout personalMessageRelativeLayout;
     private RelativeLayout aboutUsRelativeLayout;
     private RelativeLayout changeRelativeLayout;
@@ -71,10 +79,39 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_setting);
         userInfoApplication = UserInfoApplication.getInstance();
+        sharedPerferences = getSharedPreferences("AppExpiredValue", Context.MODE_PRIVATE);
         initView();
     }
 
     protected void initView() {
+        operationWayRelativeLayout = findViewById(R.id.operation_way_relativelayout);
+        operationWaySpinner = operationWayRelativeLayout.findViewById(R.id.operation_way_spinner);
+        // 操作模式
+        String[] operationWayArray = new String[]{"标准模式", "简易模式"};
+        ArrayAdapter<String> operationWayAdapter = new ArrayAdapter<String>(this, R.xml.spinner_checked_text, operationWayArray);
+        operationWayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        operationWaySpinner.setAdapter(operationWayAdapter);
+        Integer operationWay = sharedPerferences.getInt("OperationWay", 0);
+        if (operationWay == 0) {
+            operationWaySpinner.setSelection(0);
+        } else {
+            operationWaySpinner.setSelection(1);
+        }
+        operationWaySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // TODO Auto-generated method stub
+                Editor editor = sharedPerferences.edit();// 获取编辑器
+                editor.putInt("OperationWay", position);
+                editor.apply();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
+
         personalMessageRelativeLayout = (RelativeLayout) findViewById(R.id.personal_message_relativelayout);
         aboutUsRelativeLayout = (RelativeLayout) findViewById(R.id.about_us_relativelayout);
         BusinessLeftImageButton bussinessLeftMenuBtn = (BusinessLeftImageButton) findViewById(R.id.btn_main_left_business_menu);
@@ -113,8 +150,6 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
         softwareCheckUpdateRelativelayout = (RelativeLayout) findViewById(R.id.software_check_update_relativelayout);
         softwareCheckUpdateRelativelayout.setOnClickListener(this);
 
-
-        sharedPerferences = getSharedPreferences("AppExpiredValue", Context.MODE_PRIVATE);
         int appExpiredTime = sharedPerferences.getInt("APP_EXPIRED_VALUE", 30);
         appExpiredRelativelayout = (RelativeLayout) findViewById(R.id.app_expired_relativelayout);
         appExpiredValueText = (TextView) findViewById(R.id.app_expired_value_text);
@@ -206,7 +241,6 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
                                 })
                         .setNegativeButton("取消",
                                 new DialogInterface.OnClickListener() {
-
                                     @Override
                                     public void onClick(
                                             DialogInterface dialogInterface,
@@ -215,6 +249,18 @@ public class SettingActivity extends BaseActivity implements OnClickListener {
 
                                     }
                                 }).show();
+                // 打开输入框自动弹出软键盘方法
+                TextView textView = updateOrderTotalSalePriceDialog.findViewById(R.id.app_expired_time_new_value);
+                textView.setFocusable(true);
+                textView.setFocusableInTouchMode(true);
+                textView.requestFocus();
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    public void run() {
+                        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        inputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                    }
+                }, 100);//这里的100是显示后多久弹出软键盘100=0.1/s
                 break;
             case R.id.login_out_relativelayout:
                 Dialog dialog = new AlertDialog.Builder(SettingActivity.this,

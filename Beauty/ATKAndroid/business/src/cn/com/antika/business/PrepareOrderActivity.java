@@ -2007,7 +2007,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                     if (NumberFormatUtil.doubleCompare(productTotalPrice, productPastPaidPrice) == 0)
                         isPastPayAll = 1;
 
-                    if (serviceKindNum > 0) {
+                    if (serviceKindNum > 0 && userinfoApplication.getOperationWay() == 0) {
                         // 服务
                         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomerAlertDialog);
                         // 获取布局
@@ -2060,11 +2060,11 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             TextView prepareOrderMultipleKind = multipleKindLayout.findViewById(R.id.prepare_order_multiple_kind);
                             // prepareOrderMultipleKind.setText(Html.fromHtml("此单共开:<font color='red'>" + serviceKindNum + "</font>种服务/<font color='red'>" + goodKindNum + "</font>种商品"));
                             List<String> multipleKinds = new ArrayList<>();
-                            if (serviceKindNum > 0) {
-                                multipleKinds.add("<font color='red'>" + serviceKindNum + "</font>种服务");
-                            }
                             if (goodKindNum > 0) {
                                 multipleKinds.add("<font color='red'>" + goodKindNum + "</font>种商品");
+                            }
+                            if (serviceKindNum > 0) {
+                                multipleKinds.add("<font color='red'>" + serviceKindNum + "</font>种服务项目");
                             }
                             if (multipleKinds.size() > 0) {
                                 prepareOrderMultipleKind.setText(Html.fromHtml("此单共开:" + StringUtils.join(multipleKinds, "/")));
