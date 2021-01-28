@@ -125,6 +125,8 @@ public class CustomerEcardListActivity extends BaseActivity implements OnClickLi
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
             } else if (msg.what == 99) {
                 DialogUtil.createShortDialog(customerEcardListActivity, "服务器异常，请重试");
+                // 清除eCard信息
+                customerEcardListActivity.ecardListLinearLayout.removeAllViews();
             }
         }
     }

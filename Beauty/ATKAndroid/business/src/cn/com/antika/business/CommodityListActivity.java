@@ -183,6 +183,8 @@ public class CommodityListActivity extends BaseActivity implements
                         .getDownloadApkSize();
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(
                         downLoadFileSize);
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(commodityListActivity, "服务器异常，请重试");
             }
         }
     }
@@ -206,7 +208,7 @@ public class CommodityListActivity extends BaseActivity implements
     }
 
     protected void requestWebService() {
-
+        progressDialog = ProgressDialogUtil.createProgressDialog(this);
         commodityList = new ArrayList<CommodityInfo>();
         final int screenWidth = userinfoApplication.getScreenWidth();
         requestWebServiceThread = new Thread() {
@@ -243,6 +245,9 @@ public class CommodityListActivity extends BaseActivity implements
                             .valueOf(userinfoApplication
                                     .getSelectedCustomerID()));
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil
                         .requestWebServiceWithSSLUseJson(endPoint, methodName,
@@ -260,11 +265,17 @@ public class CommodityListActivity extends BaseActivity implements
                         code = resultJson.getInt("Code");
                     } catch (JSONException e) {
                         code = 0;
+                        e.printStackTrace();
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         try {
                             commodityArray = resultJson.getJSONArray("Data");
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (commodityArray != null) {
                             for (int i = 0; i < commodityArray.length(); i++) {
@@ -273,6 +284,9 @@ public class CommodityListActivity extends BaseActivity implements
                                     commodityJson = commodityArray
                                             .getJSONObject(i);
                                 } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 CommodityInfo commodityInfo = new CommodityInfo();
                                 String commodityID = "0";
@@ -355,6 +369,9 @@ public class CommodityListActivity extends BaseActivity implements
                                         searchField = commodityJson
                                                 .getString("SearchField");
                                 } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    mHandler.sendEmptyMessage(99);
+                                    return;
                                 }
                                 commodityInfo.setCommodityID(commodityID);
                                 commodityInfo.setUnitPrice(unitPrice);
@@ -436,13 +453,13 @@ public class CommodityListActivity extends BaseActivity implements
         // TODO Auto-generated method stub
         super.onDestroy();
         exit = true;
-        if (progressDialog != null) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
             // mHandler = null;
+        }
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();

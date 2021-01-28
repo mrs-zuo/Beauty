@@ -82,7 +82,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
     private LinearLayout prepareOrderProductListView, prepareOrderOldListView;
     private Button prepareOrderCommit;
     private ProgressDialog progressDialog, progressDialog2;
-    private Thread requestWebServiceThread;
+    private Thread requestWebServiceThread, requestGetCustomerBenefitListDataThread;
     private List<OrderProduct> orderProductList;
     private TableLayout prepareOrderTotalCountTableLayout;
     private int selectedCustomerID, opportunityID, fromWhere, isZeroOrder, operationIndex, isPastPayAll;
@@ -423,6 +423,10 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
             }
             //成功获取到券列表
             else if (msg.what == 10) {
+                if (prepareOrderActivity.requestGetCustomerBenefitListDataThread != null) {
+                    prepareOrderActivity.requestGetCustomerBenefitListDataThread.interrupt();
+                    prepareOrderActivity.requestGetCustomerBenefitListDataThread = null;
+                }
                 final BenefitSpinnerBean bsb = (BenefitSpinnerBean) msg.obj;
                 final int j = msg.arg1;
                 final List<CustomerBenefit> customerBenefitList = bsb.getCustomerBenefitList();
@@ -483,6 +487,10 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                 if (prepareOrderActivity.requestWebServiceThread != null) {
                     prepareOrderActivity.requestWebServiceThread.interrupt();
                     prepareOrderActivity.requestWebServiceThread = null;
+                }
+                if (prepareOrderActivity.requestGetCustomerBenefitListDataThread != null) {
+                    prepareOrderActivity.requestGetCustomerBenefitListDataThread.interrupt();
+                    prepareOrderActivity.requestGetCustomerBenefitListDataThread = null;
                 }
                 DialogUtil.createShortDialog(prepareOrderActivity, "服务器异常，请重试");
             }
@@ -587,7 +595,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 }
                             }
                             ecardInfoList.clear();
-                            ecardInfos.addAll(ecardInfos);
+                            ecardInfoList.addAll(ecardInfos);
                             Message msg = new Message();
                             EcardSpinnerBean esb = new EcardSpinnerBean();
                             String[] cardNameArray = new String[ecardInfos.size()];
@@ -813,7 +821,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
     private void getCustomerBenefitListData(final View prepareOrderProductView, final int k, final double prepareOrderPromotionPrice) {
         // 单件商品开单闪退对应(获取Ecard开始)
         getCustomerBenefitListRunning = true;
-        requestWebServiceThread = new Thread() {
+        requestGetCustomerBenefitListDataThread = new Thread() {
             @Override
             public void run() {
                 if (exit) {
@@ -907,6 +915,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         }
                         // 单件商品开单闪退对应(获取Ecard结束)
                         getCustomerBenefitListRunning = false;
+                        Log.v("PrepareOrderActivity", "获取优惠券信息成功");
                         Message message = new Message();
                         BenefitSpinnerBean bsb = new BenefitSpinnerBean();
                         bsb.setCustomerBenefitList(customerBenefits);
@@ -927,7 +936,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                 interrupt();
             }
         };
-        requestWebServiceThread.start();
+        requestGetCustomerBenefitListDataThread.start();
     }
 
     private void initData() {
@@ -1221,12 +1230,10 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                         } else {
                             prepareOrderProductPromotionPriceText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(orderProduct.getTotalPrice()))));
                         }
-                    } else {
-
                     }
                     //订单B价格
                     prepareOrderProductPromotionPriceText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(orderProduct.getPromotionPrice()))));
-                    prepareOrderProductPromotionPriceText.addTextChangedListener(new TextWatcher() {
+                    /*prepareOrderProductPromotionPriceText.addTextChangedListener(new TextWatcher() {
 
                         @Override
                         public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
@@ -1246,15 +1253,22 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                             // TODO Auto-generated method stub
                             if (orderProductList.size() == 1) {
                                 // 单件商品开单闪退对应(等待获取优惠券信息)
-                                while (getCustomerBenefitListRunning) {
-                                    Log.v("PrepareOrderActivity", "等待获取优惠券信息...");
+                                //while (getCustomerBenefitListRunning) {
+                                //    Log.v("PrepareOrderActivity", "等待获取优惠券信息...");
+                                //    try {
+                                //        Thread.sleep(200);
+                                //    } catch (InterruptedException e) {
+                                //        e.printStackTrace();
+                                //    }
+                                //}
+                                if (requestGetCustomerBenefitListDataThread != null) {
                                     try {
-                                        Thread.sleep(200);
+                                        requestGetCustomerBenefitListDataThread.join();
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
                                     }
                                 }
-                                Log.v("PrepareOrderActivity", "获取优惠券信息成功");
+                                Log.v("PrepareOrderActivity", "订单B价格 afterTextChanged is running...");
                                 List<CustomerBenefit> customerBenefits = new ArrayList<CustomerBenefit>();
                                 for (CustomerBenefit cb : customerBenefitsList) {
                                     if (TextUtils.isEmpty(cb.getBenefitID()) || cb.getPrValue1() <= Double.valueOf(((EditText) prepareOrderProductListView.getChildAt(orderProductPos).findViewById(R.id.prepare_order_product_promotion_price)).getText().toString())) {
@@ -1271,7 +1285,7 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
                                 mHandler.sendMessage(message);
                             }
                         }
-                    });
+                    });*/
                     prepareOrderProductTotalSalePriceText.setText(prepareOrderProductPromotionPriceText.getText().toString());
                     if (accountIsAllowedOrderTotalSalePriceEdit == 0) {
                         prepareOrderProductTotalSalePriceText.setEnabled(false);
@@ -2516,6 +2530,10 @@ public class PrepareOrderActivity extends BaseActivity implements OnClickListene
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();
             requestWebServiceThread = null;
+        }
+        if (requestGetCustomerBenefitListDataThread != null) {
+            requestGetCustomerBenefitListDataThread.interrupt();
+            requestGetCustomerBenefitListDataThread = null;
         }
     }
 }
