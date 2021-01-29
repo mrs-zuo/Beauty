@@ -112,7 +112,8 @@ namespace WebAPI.Controllers.Manager
                 if (dt != null)
                 {
                     ds.Tables.Add(dt);
-                    string url = ReportDownload_BLL.Instance.ExportReport(ds, "CommodityStock", file);
+                    //string url = ReportDownload_BLL.Instance.ExportReport(ds, "CommodityStock", file);
+                    string url = ReportDownload_BLL.Instance.ExportReport(ds, "库存信息", file);
 
                     res.Code = "1";
                     res.Data = url;
@@ -287,7 +288,8 @@ namespace WebAPI.Controllers.Manager
                 {
                     ds.Tables.Add(new DataTable());
                 }
-                string url = ReportDownload_BLL.Instance.ExportReport(ds, "AccountPerformance", file);
+                //string url = ReportDownload_BLL.Instance.ExportReport(ds, "AccountPerformance", file);
+                string url = ReportDownload_BLL.Instance.ExportReport(ds, "员工业绩报表", file);
 
                 res.Code = "1";
                 res.Data = url;
@@ -343,7 +345,7 @@ namespace WebAPI.Controllers.Manager
                 }
                 else
                 {
-                    string url = ReportDownload_BLL.Instance.ExportReport(ds, "BalanceDetailData", file);
+                    string url = ReportDownload_BLL.Instance.ExportReport(ds, "余额变动信息", file);
 
                     res.Code = "1";
                     res.Data = url;
@@ -404,7 +406,7 @@ namespace WebAPI.Controllers.Manager
                 if (dt != null)
                 {
                     ds.Tables.Add(dt);
-                    string url = ReportDownload_BLL.Instance.ExportReport(ds, "PeopleStatistics", file);
+                    string url = ReportDownload_BLL.Instance.ExportReport(ds, "人次统计", file);
 
                     res.Code = "1";
                     res.Data = url;
@@ -621,7 +623,8 @@ namespace WebAPI.Controllers.Manager
                         if (vHandle != HFILE_ERROR)
                         {
                             item.Status = 2;
-                            item.DonwloadUrl = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/report/" + item.fileName;
+                            //item.DonwloadUrl = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/report/" + item.fileName;
+                            item.DonwloadUrl = Const.strFileHttp + Const.server + "/report/" + item.fileName;
                             item.fileName = "";
                             item.New = 1;
                         }
@@ -682,8 +685,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "Customer" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "Customer" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "顾客信息_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -736,8 +739,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "CommodityStock" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "CommodityStock" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "库存及批次信息_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -818,8 +821,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "ProductStockOperateLog" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "ProductStockOperateLog" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "库存变动信息_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -893,8 +896,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "AccountPerformance" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "AccountPerformance" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "员工业绩_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1005,8 +1008,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "BalanceDetailData" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "BalanceDetailData" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "储值卡变动数据_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1077,8 +1080,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "BranchPerformance" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "BranchPerformance" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "门店业绩_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1164,8 +1167,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "NoCompleteTreatment" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "NoCompleteTreatment" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "待完成订单信息_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1252,8 +1255,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "AccountStatement" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "AccountStatement" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "员工分类业绩_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1346,8 +1349,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "BranchStatement" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "BranchStatement" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "门店分类业绩_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1418,8 +1421,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "CardInfo" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "CardInfo" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "储值卡信息_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1505,8 +1508,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "AccountAttendance" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "AccountAttendance" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "员工考勤_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1581,8 +1584,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "CommDetail" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "CommDetail" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "业绩提成_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1671,8 +1674,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "CustomerRelation" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "CustomerRelation" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "顾客顾问信息_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1741,8 +1744,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "ServiceRate" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "ServiceRate" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "顾客评价_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {
@@ -1813,8 +1816,8 @@ namespace WebAPI.Controllers.Manager
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "InputOrder" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
-
+            //string fileName = "InputOrder" + this.CompanyID.ToString() + this.BranchID.ToString() + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
+            string fileName = "录入订单_" + DateTime.Now.ToString("yyyyMMdd") + "_" + this.UserID.ToString() + DateTime.Now.Ticks + ".xls";
 
             Task.Factory.StartNew(() =>
             {

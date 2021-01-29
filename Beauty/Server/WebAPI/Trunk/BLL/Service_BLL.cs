@@ -301,14 +301,15 @@ namespace WebAPI.BLL
 
             cellSheet.AutoFitColumns();
 
-            string path = Const.uploadServer + "/" + Const.strImage + "temp/product/";
+            string path = Const.uploadServer + "/" + Const.strImage + "temp/report/";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "service" + DateTime.Now.Ticks + ".xls";
+            string fileName = "服务_" + DateTime.Now.ToString("yyyyMMdd") + "_" + DateTime.Now.Ticks + ".xls";
             workbook.Save(path + fileName);
-            string url = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/product/" + fileName;
+            //string url = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/product/" + fileName;
+            string url = Const.strFileHttp + Const.server + "/report/" + fileName;
             return url;
         }
 

@@ -4215,14 +4215,33 @@ namespace WebAPI.DAL
         {
             using (DbManager db = new DbManager("Report"))
             {
-                string strSqlBasic = @" select distinct T2.Name as CustomerName,T3.LoginMobile,T4.BranchName,T1.BranchID,T1.CustomerID, '' as Service, '' as Sales FROM [RELATIONSHIP] T1 with (nolock) 
-                                        LEFT JOIN [CUSTOMER] T2 WITH (NOLOCK) on T1.CustomerID = T2.UserID 
-                                        LEFT JOIN [USER] T3  with (nolock) on T1.CustomerID = T3.ID
-                                        LEFT JOIN [BRANCH] T4  with (nolock) on T1.BranchID = T4.ID
-                                        WHERE T1.CompanyID = @CompanyID and T1.Available = 1  ";
-                if (BranchID > 0) {
-                    strSqlBasic += " AND T1.BranchID =@BranchID";
-                }
+//                string strSqlBasic = @" select distinct T2.Name as CustomerName,T3.LoginMobile,T4.BranchName,T1.BranchID,T1.CustomerID, '' as Service, '' as Sales FROM [RELATIONSHIP] T1 with (nolock) 
+//                                        LEFT JOIN [CUSTOMER] T2 WITH (NOLOCK) on T1.CustomerID = T2.UserID 
+//                                        LEFT JOIN [USER] T3  with (nolock) on T1.CustomerID = T3.ID
+//                                        LEFT JOIN [BRANCH] T4  with (nolock) on T1.BranchID = T4.ID
+//                                        WHERE T1.CompanyID = @CompanyID and T1.Available = 1  ";
+//                if (BranchID > 0) {
+//                    strSqlBasic += " AND T1.BranchID =@BranchID";
+//                }
+
+                string strSqlBasic = @"
+                    select
+                        f.Name as CustomerName,
+                        isnull(dbo.fgetStrPhoneNumber(a.CustomerID, ' '), '') as LoginMobile,
+                        e.BranchName,
+                        isnull(g.Name, '') as Service,
+                        isnull(h.Name, '') as Sales,
+                        isnull(convert(varchar(10), d.TGLastTime, 120), '') as TGLastTime
+                    from
+                        (select CustomerID, BranchID from RELATIONSHIP where CompanyID = @CompanyID and (@BranchID = 0 or BranchID = @BranchID) and Available = 1 group by CustomerID, BranchID )a
+                        left join RELATIONSHIP b on b.CustomerID = a.CustomerID and b.Type = 1 and b.Available = 1
+                        left join RELATIONSHIP c on c.CustomerID = a.CustomerID and c.Type = 2 and c.Available = 1
+                        left join (select CustomerID, max(TGLastTime) as TGLastTime from TBL_ORDER_SERVICE  where CompanyID = @CompanyID and (@BranchID = 0 or BranchID = @BranchID) and Available = 1 group by CustomerID) d on d.CustomerID = a.CustomerID
+                        inner join BRANCH e on e.ID = a.BranchID
+                        inner join CUSTOMER f on f.UserID = a.CustomerID and f.Available = 1
+                        left join ACCOUNT g on g.UserID = b.AccountID
+                        left join ACCOUNT h on h.UserID = c.AccountID
+                    order by f.Name";
 
                 DataTable dtBasic = db.SetCommand(strSqlBasic, db.Parameter("@CompanyID", CompanyID, DbType.Int32)
                     , db.Parameter("@BranchID", BranchID, DbType.Int32)).ExecuteDataTable();
@@ -4231,47 +4250,47 @@ namespace WebAPI.DAL
                     return null;
                 }
 
-                string strSqlSub = @" select T2.Name AS AccountName, T1.BranchID , T1.CustomerID,T1.Type from [RELATIONSHIP] T1 with (nolock) 
-                                        LEFT JOIN [ACCOUNT] T2 ON T1.AccountID = T2.UserID
-                                        WHERE T1.CompanyID =@CompanyID AND T1.Available = 1 ";
+//                string strSqlSub = @" select T2.Name AS AccountName, T1.BranchID , T1.CustomerID,T1.Type from [RELATIONSHIP] T1 with (nolock) 
+//                                        LEFT JOIN [ACCOUNT] T2 ON T1.AccountID = T2.UserID
+//                                        WHERE T1.CompanyID =@CompanyID AND T1.Available = 1 ";
 
-                if (BranchID > 0)
-                {
-                    strSqlBasic += " and T1.BranchID = @BranchID ";
-                }
+//                if (BranchID > 0)
+//                {
+//                    strSqlBasic += " and T1.BranchID = @BranchID ";
+//                }
 
-                DataTable dtSub = db.SetCommand(strSqlSub, db.Parameter("@CompanyID", CompanyID, DbType.Int32)
-                        , db.Parameter("@BranchID", BranchID, DbType.Int32)).ExecuteDataTable();
+//                DataTable dtSub = db.SetCommand(strSqlSub, db.Parameter("@CompanyID", CompanyID, DbType.Int32)
+//                        , db.Parameter("@BranchID", BranchID, DbType.Int32)).ExecuteDataTable();
 
-                if (dtSub != null && dtSub.Rows.Count > 0) {
-                    for (int i = 0; i < dtBasic.Rows.Count; i++)
-                    {
-                        DataRow[] drService = dtSub.Select("BranchID=" + dtBasic.Rows[i]["BranchID"] + " and CustomerID=" + dtBasic.Rows[i]["CustomerID"] + " AND Type = 1");
-                        if (drService != null && drService.Length > 0)
-                        {
-                            string strService = "";
-                            foreach (DataRow item in drService)
-                            {
-                                strService += "," + item["AccountName"].ToString();
-                            }
-                            dtBasic.Rows[i]["Service"] = strService.Substring(1);
-                        }
+//                if (dtSub != null && dtSub.Rows.Count > 0) {
+//                    for (int i = 0; i < dtBasic.Rows.Count; i++)
+//                    {
+//                        DataRow[] drService = dtSub.Select("BranchID=" + dtBasic.Rows[i]["BranchID"] + " and CustomerID=" + dtBasic.Rows[i]["CustomerID"] + " AND Type = 1");
+//                        if (drService != null && drService.Length > 0)
+//                        {
+//                            string strService = "";
+//                            foreach (DataRow item in drService)
+//                            {
+//                                strService += "," + item["AccountName"].ToString();
+//                            }
+//                            dtBasic.Rows[i]["Service"] = strService.Substring(1);
+//                        }
 
-                        DataRow[] drSales = dtSub.Select("BranchID=" + dtBasic.Rows[i]["BranchID"] + " and CustomerID=" + dtBasic.Rows[i]["CustomerID"] + " AND Type = 2");
-                        if (drSales != null && drSales.Length > 0)
-                        {
-                            string strSales = "";
-                            foreach (DataRow item in drSales)
-                            {
-                                strSales += "," + item["AccountName"].ToString();
-                            }
-                            dtBasic.Rows[i]["Sales"] = strSales.Substring(1);
-                        }
-                    }
-                }
+//                        DataRow[] drSales = dtSub.Select("BranchID=" + dtBasic.Rows[i]["BranchID"] + " and CustomerID=" + dtBasic.Rows[i]["CustomerID"] + " AND Type = 2");
+//                        if (drSales != null && drSales.Length > 0)
+//                        {
+//                            string strSales = "";
+//                            foreach (DataRow item in drSales)
+//                            {
+//                                strSales += "," + item["AccountName"].ToString();
+//                            }
+//                            dtBasic.Rows[i]["Sales"] = strSales.Substring(1);
+//                        }
+//                    }
+//                }
 
-                dtBasic.Columns.Remove("BranchID");
-                dtBasic.Columns.Remove("CustomerID");
+//                dtBasic.Columns.Remove("BranchID");
+//                dtBasic.Columns.Remove("CustomerID");
                 return dtBasic;
             }
         }

@@ -360,14 +360,14 @@ namespace WebAPI.BLL
                 MemoryStream ms = new MemoryStream();
                 ms = workbook.SaveToStream();
 
-                string path = Const.uploadServer + "/" + Const.strImage + "temp/product/";
+                string path = Const.uploadServer + "/" + Const.strImage + "temp/report/";
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
                 }
-                string fileName = "commodity" + DateTime.Now.Ticks + ".xls";
+                string fileName = "商品_" + DateTime.Now.ToString("yyyyMMdd") + "_" + DateTime.Now.Ticks + ".xls";
                 workbook.Save(path + fileName);
-                string url = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/product/" + fileName;
+                string url = Const.strFileHttp + Const.server + "/report/" + fileName;
                 return url;
             }
 
@@ -452,15 +452,15 @@ namespace WebAPI.BLL
             MemoryStream ms = new MemoryStream();
             ms = workbook.SaveToStream();
 
-            string path = Const.uploadServer + "/" + Const.strImage + "temp/product/";
+            string path = Const.uploadServer + "/" + Const.strImage + "temp/report/";
             //string path = "D:/temp/product/";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = "CommodityBatchTemplate" + DateTime.Now.Ticks + ".xls";
+            string fileName = "批量商品批次模板_" + DateTime.Now.ToString("yyyyMMdd") + "_" + DateTime.Now.Ticks + ".xls";
             workbook.Save(path + fileName, SaveFormat.Excel97To2003);
-            string url = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/product/" + fileName;
+            string url = Const.strFileHttp + Const.server + "/report/" + fileName;
             return url;
 
         }

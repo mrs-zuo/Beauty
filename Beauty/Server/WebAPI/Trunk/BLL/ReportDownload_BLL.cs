@@ -187,9 +187,11 @@ namespace WebAPI.BLL
             {
                 Directory.CreateDirectory(path);
             }
-            string fileName = typeName + DateTime.Now.Ticks + ".xls";
+            //string fileName = typeName + DateTime.Now.Ticks + ".xls";
+            string fileName = typeName + "_" + DateTime.Now.ToString("yyyyMMdd") + "_" + DateTime.Now.Ticks + ".xls";
             wb.Save(path + fileName, SaveFormat.Excel97To2003);
-            string url = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/report/" + fileName;
+            //string url = Const.strFileHttp + Const.server + "/getFile.aspx?fn=temp/report/" + fileName;
+            string url = Const.strFileHttp + Const.server + "/report/" + fileName;
             return url;
         }
         /// <summary>
