@@ -115,6 +115,7 @@
     }
     
      _settingItem = [[NSMutableArray alloc] init];
+    [_settingItem addObject:@"操作模式"];
     if([[PermissionDoc sharePermission] rule_MyInfo_Write])
         [_settingItem addObject:@"个人信息"];
     if(count > 1)
@@ -190,6 +191,20 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         int time =  [[[NSUserDefaults standardUserDefaults] objectForKey:@"ACCOUNT_INDATE"] intValue];
         cell.detailTextLabel.text =[NSString stringWithFormat:@"%d分钟", time];
+    } else if ([title.text isEqualToString:@"操作模式"]){
+        switch ([PermissionDoc getOperationWay]) {
+            case 0:
+                // 标准模式
+                cell.detailTextLabel.text = @"标准模式";
+                break;
+            case 1:
+                // 简易模式
+                cell.detailTextLabel.text = @"简易模式";
+                break;
+            default:
+                cell.detailTextLabel.text = @"标准模式";
+                break;
+        }
     } else {
         cell.detailTextLabel.text = @"";
     }
@@ -201,8 +216,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if([[_settingItem objectAtIndex:indexPath.section] isEqualToString:@"个人信息"])
+    if([[_settingItem objectAtIndex:indexPath.section] isEqualToString:@"操作模式"]) {
+        NSString *cancelString = @"取消";
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"操作模式" message:nil delegate:self cancelButtonTitle:cancelString otherButtonTitles: nil];
+        NSArray *operationWayData = [NSArray arrayWithObjects:@"标准模式", @"简易模式", nil];
+        for (NSString *str in operationWayData) {
+            [alter addButtonWithTitle:str];
+        }
+        alter.tag = indexPath.section;
+        [alter show];
+    } else if([[_settingItem objectAtIndex:indexPath.section] isEqualToString:@"个人信息"])
        [self performSegueWithIdentifier:@"goAccountEditViewFromSettingView" sender:self];
     else if([[_settingItem objectAtIndex:indexPath.section] isEqualToString:@"应用下载"])
         [self performSegueWithIdentifier:@"goAppDownloadFromSettingView" sender:self];
@@ -213,7 +236,7 @@
     else if([[_settingItem objectAtIndex:indexPath.section] isEqualToString:@"检查更新"])
         [self checkVersion];
     else if ([[_settingItem objectAtIndex:indexPath.section] isEqualToString:@"自动登出"])
-        [self timeSetting:indexPath.section];
+        [self timeSetting: indexPath.section];
     else if([[_settingItem objectAtIndex:indexPath.section] isEqualToString:@"退出当前账号"])
     {
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出当前账号" otherButtonTitles: nil];
@@ -297,18 +320,46 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
-        UITextField *text = [alertView textFieldAtIndex:0];
-        int time = [text.text intValue];
+    NSUserDefaults *userDefault = nil;
+    switch (alertView.tag) {
+        case 0:
+            // 操作模式
+            userDefault = [NSUserDefaults standardUserDefaults];
+            switch (buttonIndex) {
+                case 1:
+                    // 标准模式
+                    [userDefault setInteger:0 forKey:@"OperationWay"];
+                    // 立即写入
+                    [userDefault synchronize];
+                    break;
+                case 2:
+                    // 简易模式
+                    [userDefault setInteger:1  forKey:@"OperationWay"];
+                    // 立即写入
+                    [userDefault synchronize];
+                default:
+                    break;
+            }
+            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:alertView.tag] withRowAnimation:UITableViewRowAnimationNone];
+            break;
+        case 3:
+            // 自动登出
+            if (buttonIndex == 1) {
+                UITextField *text = [alertView textFieldAtIndex:0];
+                int time = [text.text intValue];
 
-        if ([text.text isEqualToString:@""]) {
-            time = 30;
-        }
+                if ([text.text isEqualToString:@""]) {
+                    time = 30;
+                }
 
-        NSLog(@"the setting indate time is %d", time);
-        
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:time] forKey:@"ACCOUNT_INDATE"];
-        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:alertView.tag] withRowAnimation:UITableViewRowAnimationNone];
+                NSLog(@"the setting indate time is %d", time);
+                
+                [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:time] forKey:@"ACCOUNT_INDATE"];
+                [_tableView reloadSections:[NSIndexSet indexSetWithIndex:alertView.tag] withRowAnimation:UITableViewRowAnimationNone];
+            }
+            break;
+        default:
+            break;
     }
 }
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField

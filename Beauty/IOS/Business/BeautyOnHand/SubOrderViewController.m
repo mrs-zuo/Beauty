@@ -233,15 +233,6 @@ static NSString *remark = @"Remark";
                 dfCell.textLabel.textColor = kColor_DarkBlue;
                 dfCell.detailTextLabel.text = order.AccountName;
             } else if (indexPath.row == 2) {
-                dfCell.textLabel.text = order.StatusTitleCom;
-                dfCell.detailTextLabel.text = order.SurplusTitleCom;
-            } else if (indexPath.row == 3) {
-                NormalEditCell *cell = [self normalNumberCell:tableView indexPath:indexPath];
-                cell.titleLabel.textColor = kColor_Black;
-                cell.titleLabel.text = @"本次交付数量";
-                cell.nocopyText.text = [NSString stringWithFormat:@"%ld", (long)order.count];
-                return cell;
-            } else if (indexPath.row == 4) {
                 static NSString *CellTag = @"cellTag";
                 NormalEditCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellTag];
                 
@@ -262,6 +253,15 @@ static NSString *remark = @"Remark";
                 UIButton *button = (UIButton *)[cell.contentView viewWithTag:100];
                 button.selected = order.isFinish;
                 return cell;
+            } else if (indexPath.row == 3) {
+                NormalEditCell *cell = [self normalNumberCell:tableView indexPath:indexPath];
+                cell.titleLabel.textColor = kColor_Black;
+                cell.titleLabel.text = @"本次交付数量";
+                cell.nocopyText.text = [NSString stringWithFormat:@"%ld", (long)order.count];
+                return cell;
+            } else if (indexPath.row == 4) {
+                dfCell.textLabel.text = order.StatusTitleCom;
+                dfCell.detailTextLabel.text = order.SurplusTitleCom;
             } else if (indexPath.row == 5) {
                 dfCell.textLabel.text = @"备注";
                 dfCell.textLabel.textColor = kColor_DarkBlue;
@@ -501,7 +501,7 @@ static NSString *remark = @"Remark";
             }
         }
     } else {
-        if (indexPath.row == 4) {
+        if (indexPath.row == 2) {
             UIButton *button = (UIButton *)[[tableView cellForRowAtIndexPath:indexPath] viewWithTag:100];;
             order.isFinish = !order.isFinish;
             button.selected = order.isFinish;

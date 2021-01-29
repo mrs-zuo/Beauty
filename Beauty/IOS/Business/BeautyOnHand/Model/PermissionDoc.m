@@ -27,6 +27,20 @@ static PermissionDoc *permissionDoc = nil;
     [[NSUserDefaults standardUserDefaults] setObject:pwd forKey:@"RSA_PWD"];
 }
 
+// --OperationWay
++(NSInteger)getOperationWay
+{
+    // 操作模式
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    if ([userDefault integerForKey:@"OperationWay"]) {
+        NSInteger tmp = [userDefault integerForKey:@"OperationWay"];
+        return tmp;
+    } else {
+        // 标准模式
+        return 0;
+    }
+}
+
 -(void)setPermission:(NSString *)sourceString
 {
     PermissionDoc *permissionDoc = [PermissionDoc sharePermission];

@@ -3175,6 +3175,8 @@
     NSInteger goodKindNum = 0;
     // 多开标志
     Boolean multipleFlg = NO;
+    // 是否含有不限次服务
+    Boolean serviceNumZeroFlg = NO;
     if ([theOpportunityDoc.productAndPriceDoc.productArray count] > 1) {
         multipleFlg = YES;
     }
@@ -3187,6 +3189,10 @@
             case 0:
                 // 服务
                 serviceKindNum++;
+                // 不限次数
+                if (productDoc.pro_UnitCourseCount == 0) {
+                    serviceNumZeroFlg = YES;
+                }
                 break;
             case 1:
                 // 商品
@@ -3202,9 +3208,9 @@
     }
     [self appendJSONString:1];
 #warning xigai
-    if (serviceKindNum > 0) {
-        // 服务
-        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:@"内容" preferredStyle:UIAlertControllerStyleAlert];
+    if (serviceKindNum > 0 && [PermissionDoc getOperationWay] == 0) {
+        // 服务(标准模式)
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleAlert];
         // UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         NSString *tmp;
         NSString *content = @"";
@@ -3218,6 +3224,9 @@
         content = [content stringByAppendingFormat:@"\n%@" , @"未服务次数"];
         NSInteger lenPos2 = [content length];
         tmp = [NSString stringWithFormat:@"%ld",  (long)(courseCountTotal - TgPastCountTotal > 0 ? courseCountTotal - TgPastCountTotal : 0)];
+        if ([tmp isEqualToString:@"0"] && serviceNumZeroFlg) {
+            tmp = @"不限";
+        }
         NSInteger len2 = [tmp length];
         content = [content stringByAppendingString:tmp];
         content = [content stringByAppendingString:@"次"];
@@ -3229,23 +3238,23 @@
         tmp = @"";
         if (multipleFlg) {
             content = [content stringByAppendingFormat:@"\n%@" , @"此单共开:"];
-            // 服务
-            if (serviceKindNum > 0) {
-                lenPos3 = [content length];
-                tmp = [NSString stringWithFormat:@"%ld", (long)(serviceKindNum > 0 ? serviceKindNum : 0)];
-                len3 = [tmp length];
-                content = [content stringByAppendingString:tmp];
-                content = [content stringByAppendingString:@"种服务"];
-                tmp = @"/";
-            }
             // 商品
             if (goodKindNum > 0) {
-                content =[content stringByAppendingString:tmp];
                 lenPos4 = [content length];
                 tmp = [NSString stringWithFormat:@"%ld",  (long)(goodKindNum > 0 ? goodKindNum : 0)];
                 len4 = [tmp length];
                 content = [content stringByAppendingString:tmp];
                 content = [content stringByAppendingString:@"种商品"];
+                tmp = @"/";
+            }
+            // 服务
+            if (serviceKindNum > 0) {
+                content = [content stringByAppendingString:tmp];
+                lenPos3 = [content length];
+                tmp = [NSString stringWithFormat:@"%ld", (long)(serviceKindNum > 0 ? serviceKindNum : 0)];
+                len3 = [tmp length];
+                content = [content stringByAppendingString:tmp];
+                content = [content stringByAppendingString:@"种服务项目"];
             }
         }
         

@@ -122,6 +122,7 @@
 @property (nonatomic, assign) BOOL rule_PayAmountWrite;     //是否可以修改应付款
 
 @property (nonatomic, strong) NSString *record_marketing_oppotun;
++(NSInteger)getOperationWay;
 -(void)setPermission:(NSString *)sourceString;
 -(void)resetPermission:(NSString *)record_marketing_oppotun;
 @end
