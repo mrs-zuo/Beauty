@@ -96,6 +96,48 @@ namespace WebAPI.Controllers.API
 
         }
 
+        /// <summary>
+        /// zgz
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ActionName("GetDataStatisticsSurplusList")]
+        [HTTPBasicAuthorizeAttribute]
+        public HttpResponseMessage GetDataStatisticsSurplusList(JObject obj)
+        {
+            ObjectResultSup<List<StatisticsSurplus_Model>> res = new ObjectResultSup<List<StatisticsSurplus_Model>>();
+            res.Code = "0";
+            res.Data = null;
+
+            if (obj == null)
+            {
+                res.Message = "不合法参数";
+                return toJson(res);
+            }
+
+            string strSafeJson = HS.Framework.Common.Util.StringUtils.GetDbString(obj);
+            if (string.IsNullOrEmpty(strSafeJson))
+            {
+                res.Message = "不合法参数";
+                return toJson(res);
+            }
+
+            StatisticsOperation_Model operationModel = new StatisticsOperation_Model();
+            operationModel = JsonConvert.DeserializeObject<StatisticsOperation_Model>(strSafeJson);
+
+            if (operationModel.CustomerID < 0)
+            {
+                res.Message = "不合法参数";
+                return toJson(res);
+            }
+
+            ObjectResultSup<List<StatisticsSurplus_Model>> objResult = Statistics_BLL.Instance.getConsumeStatisticsSurplus(operationModel);
+
+            res.Code = "1";
+            res.Data = objResult.Data;
+            return toJson(res);
+        }
 
         [HttpPost]
         [ActionName("GetBranchDataStatisticsList")]
@@ -211,7 +253,6 @@ namespace WebAPI.Controllers.API
             return toJson(res);
 
         }
-
 
     }
 }

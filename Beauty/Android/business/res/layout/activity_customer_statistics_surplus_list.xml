@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_backcolor"
+    android:orientation="vertical"
+    tools:context=".CustomerStatisticsListActivity">
+
+    <RelativeLayout
+        android:id="@+id/customer_statistics_head_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbarbg"
+        android:gravity="center_vertical">
+
+        <com.GlamourPromise.Beauty.view.BusinessLeftImageButton
+            android:id="@+id/btn_main_left_business_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dip"
+            android:background="@drawable/navbar_businessbtn"
+            android:contentDescription="@string/search" />
+
+        <com.GlamourPromise.Beauty.view.BusinessRightImageButton
+            android:id="@+id/btn_main_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dip"
+            android:background="@drawable/navbar_menubtn"
+            android:contentDescription="@string/search"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/customer_statistics_title_relativelayout"
+        style="@style/activity_title_layout_attrs"
+        android:layout_below="@id/customer_statistics_head_layout">
+
+        <TextView
+            android:id="@+id/customer_statistics_list_title_text"
+            style="@style/activity_title_text_attrs" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/product_surplus_title_RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customer_statistics_title_relativelayout"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip">
+
+        <TextView
+            android:id="@+id/product_surplus_title_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center"
+            android:text="@string/product_service_surplus_title"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/surplus_head_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/product_surplus_title_RelativeLayout"
+        android:layout_marginBottom="5dip"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_id"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:singleLine="true"
+            android:text="@string/product_header_no"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="fill_parent" />
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:singleLine="true"
+            android:text="@string/product_service_name"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="fill_parent" />
+
+        <TextView
+            android:id="@+id/product_surplus_num"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:gravity="center"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:singleLine="true"
+            android:text="@string/product_service_surplus_num"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="fill_parent" />
+
+        <TextView
+            android:id="@+id/text_money"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:singleLine="true"
+            android:text="@string/product_surplus_price"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/customer_statistics_surplus_total_RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:layout_above="@id/customer_statistics_pie_service_commodity_linearlayout"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip">
+
+        <TextView
+            android:id="@+id/customer_statistics_surplus_total_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="@string/total_text"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/customer_statistics_pie_service_commodity_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dip"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/switch_service_btn"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_marginStart="5dip"
+            android:layout_weight="1"
+            android:background="@xml/shape_btn_blue_no_round"
+            android:text="@string/right_menu_service"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/switch_commodity_btn"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_marginEnd="5dip"
+            android:layout_weight="1"
+            android:background="@xml/shape_btn_white_no_round"
+            android:text="@string/right_menu_products"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <com.GlamourPromise.Beauty.view.NewRefreshListView
+        android:id="@+id/customer_statistics_list_listview"
+        style="@style/activity_content_listview_attrs"
+        android:layout_above="@id/customer_statistics_surplus_total_RelativeLayout"
+        android:layout_below="@id/surplus_head_LinearLayout"
+        android:background="@color/white" />
+    <!--<ListView
+        android:id="@+id/customer_statistics_list_listview"
+        style="@style/activity_content_listview_attrs"
+        android:layout_above="@id/customer_statistics_surplus_total_RelativeLayout"
+        android:layout_below="@id/surplus_head_LinearLayout"
+        android:layout_marginBottom="5dip"
+        android:background="@color/white" />-->
+</RelativeLayout>

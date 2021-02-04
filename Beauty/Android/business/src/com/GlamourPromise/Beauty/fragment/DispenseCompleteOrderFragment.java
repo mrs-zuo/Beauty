@@ -225,7 +225,6 @@ public class DispenseCompleteOrderFragment extends Fragment implements
     }
 
     private void getCompleteOrderData() {
-        clearData();
         requestWebServiceThread = new Thread() {
             @Override
             public void run() {

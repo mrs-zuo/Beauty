@@ -788,6 +788,7 @@
 	<string name="consumer_product_ranking_title_text">消费产品排行榜</string>
 	<string name="consumption_price_analysis_title_text">消费价格分析图表</string>
 	<string name="to_store_cycle_and_consumption_title_text">到店周期及消费统计</string>
+    <string name="cycle_and_surplus_title_text">消费剩余价值统计</string>
 	<string name="consume_amount_title">消费金额</string>
 	<string name="objet_count_title">到店服务次数</string>
 	<string name="recharge_amount_title">充值金额</string>
@@ -905,4 +906,13 @@
     <string name="submit_refund_when_benefit_person_is_null">本次退款的业绩参与人为空,是否继续?</string>
     <string name="submit_Give_when_Refund_Give_Point">消费赠送退还的积分与应扣积分不一致,是否继续?</string>
     <string name="submit_Give_when_refund_Give_CashCoupon">消费赠送退还的现金券与应扣现金券不一致,是否继续?</string>
+    <string name="product_header_no">序号</string>
+    <string name="product_service_name">服务名称</string>
+    <string name="product_good_name">商品名称</string>
+    <string name="product_service_surplus_num">未完成数</string>
+    <string name="product_good_surplus_num">剩余数量</string>
+    <string name="product_surplus_price">剩余金额</string>
+    <string name="total_text">总计</string>
+    <string name="product_service_surplus_title">未服务项目</string>
+    <string name="product_good_surplus_title">未交付商品</string>
 </resources>

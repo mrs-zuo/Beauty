@@ -490,6 +490,7 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
     }
 
     //点击事件
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         // TODO Auto-generated method stub
@@ -545,6 +546,7 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
                 startActivity(appointmentIntent);
                 break;
             case R.id.customer_servicing_customer_statis:
+                // 统计
                 Intent customerStatisIntent = new Intent();
                 customerStatisIntent.setClass(this, CustomerStatisticsMainActivity.class);
                 startActivity(customerStatisIntent);

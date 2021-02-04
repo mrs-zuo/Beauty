@@ -5,184 +5,249 @@
     android:layout_height="match_parent"
     android:background="@color/title_backcolor"
     android:orientation="vertical"
-    tools:context=".CustomerStatisticsMainActivity" >
+    tools:context=".CustomerStatisticsMainActivity">
+
     <include
         android:id="@+id/head_layout"
+        layout="@xml/head"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@xml/head" />
-    <RelativeLayout style="@style/activity_title_layout_attrs" >
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout style="@style/activity_title_layout_attrs">
+
         <TextView
             android:id="@+id/customer_statistics_main_title_text"
-            style="@style/activity_title_text_attrs"/>
+            style="@style/activity_title_text_attrs" />
     </RelativeLayout>
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dip" >
+        android:layout_marginBottom="10dip">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
             <View
                 style="@style/activity_content_divide_view_attrs"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/border_color" >
-            </View>
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" />
+
             <RelativeLayout
                 android:id="@+id/consumption_accounting_analysis_relativelayout"
                 style="@style/activity_content_table_relativelayout_attrs"
                 android:layout_marginLeft="5dp"
-        		android:layout_marginRight="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/white"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
+                    android:layout_marginStart="5dip"
                     android:padding="5dp"
                     android:text="@string/consumption_accounting_analysis_title_text"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="@dimen/text_size"
+                    tools:ignore="RelativeOverlap" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="5dip"
+                    android:layout_marginEnd="5dip"
                     android:background="@drawable/join_in_arrowhead"
                     android:contentDescription="@string/search" />
             </RelativeLayout>
-           <View
+
+            <View
                 android:layout_width="fill_parent"
                 android:layout_height="1px"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:background="@color/border_color" >
-          </View>
-          <View
+                android:background="@color/border_color" />
+
+            <View
                 android:layout_width="fill_parent"
                 android:layout_height="1px"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/border_color" >
-            </View>
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" />
+
             <RelativeLayout
                 android:id="@+id/consumer_product_ranking_relativelayout"
                 style="@style/activity_content_table_relativelayout_attrs"
                 android:layout_marginLeft="5dp"
-        		android:layout_marginRight="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/white"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
+                    android:layout_marginStart="5dip"
                     android:padding="5dp"
                     android:text="@string/consumer_product_ranking_title_text"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="@dimen/text_size"
+                    tools:ignore="RelativeOverlap" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="5dip"
+                    android:layout_marginEnd="5dip"
                     android:background="@drawable/join_in_arrowhead"
                     android:contentDescription="@string/search" />
             </RelativeLayout>
+
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1px"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:background="@color/border_color" >
-            </View>
-           <View
+                android:background="@color/border_color" />
+
+            <View
                 android:layout_width="fill_parent"
                 android:layout_height="1px"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/border_color" >
-            </View>
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" />
+
             <RelativeLayout
                 android:id="@+id/consumption_price_analysis_relativelayout"
                 style="@style/activity_content_table_relativelayout_attrs"
                 android:layout_marginLeft="5dp"
-        		android:layout_marginRight="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/white"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
+                    android:layout_marginStart="5dip"
                     android:padding="5dp"
                     android:text="@string/consumption_price_analysis_title_text"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="@dimen/text_size"
+                    tools:ignore="RelativeOverlap" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="5dip"
+                    android:layout_marginEnd="5dip"
                     android:background="@drawable/join_in_arrowhead"
                     android:contentDescription="@string/search" />
             </RelativeLayout>
+
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1px"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:background="@color/border_color" >
-            </View>
+                android:background="@color/border_color" />
+
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1px"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/border_color" >
-            </View>
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" />
+
             <RelativeLayout
                 android:id="@+id/to_store_cycle_and_consumption_relativelayout"
                 style="@style/activity_content_table_relativelayout_attrs"
                 android:layout_marginLeft="5dp"
-        		android:layout_marginRight="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/white"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
+                    android:layout_marginStart="5dip"
                     android:padding="5dp"
                     android:text="@string/to_store_cycle_and_consumption_title_text"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="@dimen/text_size"
+                    tools:ignore="RelativeOverlap" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="5dip"
+                    android:layout_marginEnd="5dip"
                     android:background="@drawable/join_in_arrowhead"
                     android:contentDescription="@string/search" />
             </RelativeLayout>
+
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1px"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:background="@color/border_color" >
-            </View>
+                android:background="@color/border_color" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" />
+
+            <RelativeLayout
+                android:id="@+id/cycle_and_surplus_relativeLayout"
+                style="@style/activity_content_table_relativelayout_attrs"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dip"
+                    android:padding="5dp"
+                    android:text="@string/cycle_and_surplus_title_text"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size"
+                    tools:ignore="RelativeOverlap" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dip"
+                    android:background="@drawable/join_in_arrowhead"
+                    android:contentDescription="@string/search" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/border_color" />
         </LinearLayout>
     </ScrollView>
 

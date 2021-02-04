@@ -242,6 +242,7 @@
     <Compile Include="View_Model\RecordListByAccountID_Model.cs" />
     <Compile Include="View_Model\RecordListByCustomerID_Model.cs" />
     <Compile Include="View_Model\RefundOrderInfo_Model.cs" />
+    <Compile Include="View_Model\StatisticsSurplus_Model.cs" />
     <Compile Include="View_Model\Statistics_Model.cs" />
     <Compile Include="View_Model\SupplierList_Model.cs" />
     <Compile Include="View_Model\TagList_Model.cs" />

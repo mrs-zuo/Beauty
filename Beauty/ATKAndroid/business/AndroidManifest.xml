@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cn.com.antika.business"
     android:versionCode="6"
-    android:versionName="4.6.030">
+    android:versionName="4.6.031">
 
     <supports-screens
         android:anyDensity="true"
@@ -636,6 +636,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".CustomerStatisticsBarChartDetailListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerStatisticsSurplusListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity

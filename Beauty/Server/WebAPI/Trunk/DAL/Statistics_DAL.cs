@@ -31,6 +31,96 @@ namespace WebAPI.DAL
         }
         #endregion
 
+        public ObjectResultSup<List<StatisticsSurplus_Model>> getConsumeStatisticsSurplus(StatisticsOperation_Model model)
+        {
+            using (DbManager db = new DbManager())
+            {
+                ObjectResultSup<List<StatisticsSurplus_Model>> res = new ObjectResultSup<List<StatisticsSurplus_Model>>();
+
+                StringBuilder strSql = new StringBuilder();
+                switch (model.ObjectType)
+                {
+                    case 0:
+                        // 服务
+                        strSql.Append("select a.OrderID,a.ServiceName as ProductName");
+                        // 订单编号
+                        strSql.Append(",SUBSTRING(CONVERT(varchar(6) ,d.OrderTime ,12),3,4) + right('000000'+ cast(d.ID AS VARCHAR(10)),6) + CONVERT(varchar(2) ,d.OrderTime ,12) as OrderNumber");
+                        strSql.Append(",case a.TGTotalCount");
+                        // 未完成次数
+                        strSql.Append("   when 0 then");
+                        strSql.Append("      case when a.Expirationtime < getdate() then 0");
+                        strSql.Append("      else DATEDIFF(dd, getdate(), a.Expirationtime)");
+                        strSql.Append("      end");
+                        strSql.Append("   else a.TGTotalCount - a.TGFinishedCount");
+                        strSql.Append(" end as ProductSurPlusNum");
+                        // 服务方式(时间卡|服务次数)
+                        strSql.Append(",case a.TGTotalCount when 0 then 1 else 2 end as ProductServiceType");
+                        // 剩余金额
+                        strSql.Append(",case a.TGTotalCount");
+                        strSql.Append("   when 0 then");
+                        strSql.Append("      case when a.Expirationtime < getdate() or DATEDIFF(dd, d.OrderTime, a.Expirationtime) = 0 then 0");
+                        strSql.Append("      else isnull(c.SumPaid, 0) * DATEDIFF(dd, getdate(), a.Expirationtime) / DATEDIFF(dd, d.OrderTime, a.Expirationtime)");
+                        strSql.Append("      end");
+                        strSql.Append("   else isnull(c.SumPaid, 0) * (a.TGTotalCount - a.TGFinishedCount) / a.TGTotalCount");
+                        strSql.Append(" end as ProductSurplusPrice");
+
+                        strSql.Append(" from TBL_ORDER_SERVICE a");
+
+                        strSql.Append(" left join TBL_ORDERPAYMENT_RELATIONSHIP b on b.OrderID = a.OrderID");
+
+                        strSql.Append(" left join");
+                        strSql.Append(" (");
+                        strSql.Append(" select s1.ID as PaymentID,sum(s2.PaymentAmount * case s1.type when 2 then -1 else 1 end) as SumPaid");
+                        strSql.Append(" from PAYMENT s1");
+                        strSql.Append(" inner join PAYMENT_DETAIL s2 on s2.PaymentID = s1.ID");
+                        strSql.Append(" inner join TBL_ORDERPAYMENT_RELATIONSHIP s3 on s3.PaymentID = s1.ID");
+                        strSql.Append(" inner join TBL_ORDER_SERVICE s4 on s4.OrderID = s3.OrderID and s4.CustomerID = @CustomerID");
+                        strSql.Append(" where s1.Status <> 1");
+                        strSql.Append(" group by s1.ID");
+                        strSql.Append(" ) c on c.PaymentID = b.PaymentID");
+
+                        strSql.Append(" inner join [order] d on d.ID = a.OrderID");
+
+                        strSql.Append(" where a.CustomerID = @CustomerID");
+                        strSql.Append(" and a.Status = 1");
+                        strSql.Append(" and d.RecordType = 1");
+                        strSql.Append(" and d.Status = 1");
+
+                        res.Data = db.SetCommand(strSql.ToString(), db.Parameter("@CustomerID", model.CustomerID, DbType.Int32)).ExecuteList<StatisticsSurplus_Model>();
+                        break;
+                    case 1:
+                        // 商品
+                        strSql.Append("select a.OrderID,a.CommodityName as ProductName,a.Quantity - a.DeliveredAmount as ProductSurPlusNum");
+                        // 订单编号
+                        strSql.Append(",SUBSTRING(CONVERT(varchar(6) ,d.OrderTime ,12),3,4) + right('000000'+ cast(d.ID AS VARCHAR(10)),6) + CONVERT(varchar(2) ,d.OrderTime ,12) as OrderNumber");
+                        // 剩余金额
+                        strSql.Append(",isnull(c.SumPaid, 0) * (a.Quantity - a.DeliveredAmount) / a.Quantity as ProductSurplusPrice");
+                        strSql.Append(" from TBL_ORDER_COMMODITY a");
+                        strSql.Append(" left join TBL_ORDERPAYMENT_RELATIONSHIP b on b.OrderID = a.OrderID");
+                        strSql.Append(" left join");
+                        strSql.Append(" (");
+                        strSql.Append("select s1.ID as PaymentID,sum(s2.PaymentAmount * case s1.type when 2 then -1 else 1 end) as SumPaid");
+                        strSql.Append(" from PAYMENT s1");
+                        strSql.Append(" inner join PAYMENT_DETAIL s2 on s2.PaymentID = s1.ID");
+                        strSql.Append(" inner join TBL_ORDERPAYMENT_RELATIONSHIP s3 on s3.PaymentID = s1.ID");
+                        strSql.Append(" inner join TBL_ORDER_COMMODITY s4 on s4.OrderID = s3.OrderID and s4.CustomerID = @CustomerID");
+                        strSql.Append(" where s1.Status <> 1");
+                        strSql.Append(" group by s1.ID");
+                        strSql.Append(" ) c on c.PaymentID = b.PaymentID");
+                        strSql.Append(" inner join [order] d on d.ID = a.OrderID");
+                        strSql.Append(" where a.CustomerID = @CustomerID");
+                        strSql.Append(" and a.Status = 1");
+                        strSql.Append(" and d.RecordType = 1");
+                        strSql.Append("and d.Status = 1");
+
+                        res.Data = db.SetCommand(strSql.ToString(), db.Parameter("@CustomerID", model.CustomerID, DbType.Int32)).ExecuteList<StatisticsSurplus_Model>();
+                        break;
+                }
+                return res;
+            }
+        }
+
+
         public List<Statistics_Model> getConsumeStatisticsByObejctName(StatisticsOperation_Model model)
         {
             using (DbManager db = new DbManager())

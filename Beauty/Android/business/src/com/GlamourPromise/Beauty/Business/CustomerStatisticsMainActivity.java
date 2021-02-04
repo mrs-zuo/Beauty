@@ -35,6 +35,7 @@ public class CustomerStatisticsMainActivity extends BaseActivity implements OnCl
         findViewById(R.id.consumer_product_ranking_relativelayout).setOnClickListener(this);
         findViewById(R.id.consumption_price_analysis_relativelayout).setOnClickListener(this);
         findViewById(R.id.to_store_cycle_and_consumption_relativelayout).setOnClickListener(this);
+        findViewById(R.id.cycle_and_surplus_relativeLayout).setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +63,11 @@ public class CustomerStatisticsMainActivity extends BaseActivity implements OnCl
             case R.id.to_store_cycle_and_consumption_relativelayout:
                 destIntent = new Intent();
                 destIntent.setClass(this, CustomerStatisticsBarChartActivity.class);
+                break;
+            //消费剩余价值
+            case R.id.cycle_and_surplus_relativeLayout:
+                destIntent = new Intent();
+                destIntent.setClass(this, CustomerStatisticsSurplusListActivity.class);
                 break;
         }
         if (destIntent != null)

@@ -29,6 +29,11 @@ namespace WebAPI.BLL
         }
         #endregion
 
+        public ObjectResultSup<List<StatisticsSurplus_Model>> getConsumeStatisticsSurplus(StatisticsOperation_Model model)
+        {
+            return Statistics_DAL.Instance.getConsumeStatisticsSurplus(model);
+        }
+
         public List<Statistics_Model> getConsumeStatisticsByObejctName(StatisticsOperation_Model model)
         {
             return Statistics_DAL.Instance.getConsumeStatisticsByObejctName(model);

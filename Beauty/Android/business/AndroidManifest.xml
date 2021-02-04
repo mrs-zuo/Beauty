@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.GlamourPromise.Beauty.Business"
     android:versionCode="6"
-    android:versionName="4.6.030">
+    android:versionName="4.6.031">
 
     <supports-screens
         android:anyDensity="true"
@@ -634,6 +634,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.GlamourPromise.Beauty.Business.CustomerStatisticsBarChartDetailListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.GlamourPromise.Beauty.Business.CustomerStatisticsSurplusListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
