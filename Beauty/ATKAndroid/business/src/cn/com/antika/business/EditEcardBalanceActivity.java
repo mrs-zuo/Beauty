@@ -12,7 +12,6 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -32,6 +31,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -89,6 +89,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
     private String mSlaveID, mSlaveName;
     private LayoutInflater layoutInflater;
     private TableLayout ecardSlaverTablelayout;
+    private Integer benefitPersonItemCnt = 0;
     private int shareFlg = 0, namegetFlg = 0, cnt_i, changeFlg = 0;
     private boolean isComissionCalc = true;
     // activity 销毁(onDestroy)标志
@@ -121,7 +122,9 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 try {
                     getAccountListJsonParam.put("CustomerID", userInfoApplication.getSelectedCustomerID());
                 } catch (JSONException e) {
-
+                    e.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, getAccountListJsonParam.toString(), userInfoApplication);
                 if (serverRequestResult == null || serverRequestResult.equals(""))
@@ -133,7 +136,9 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                         resultJson = new JSONObject(serverRequestResult);
                         code = resultJson.getInt("Code");
                     } catch (JSONException e) {
-
+                        e.printStackTrace();
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     JSONArray salesArray = null;
                     if (code == 1) {
@@ -161,6 +166,9 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                             mSlaveName = salesPersonName;
                             namegetFlg = 1;
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         mHandler.sendEmptyMessage(6);
                     } else
@@ -236,6 +244,8 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 ((DownloadInfo) msg.obj).getUpdateDialog().setProgress(downLoadFileSize);
             } else if (msg.what == 6) {
                 editEcardBalanceActivity.initView();
+            } else if (msg.what == 99) {
+                DialogUtil.createShortDialog(editEcardBalanceActivity, "服务器异常，请重试");
             }
         }
     }
@@ -246,7 +256,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
         BusinessRightImageButton bussinessRightMenuBtn = (BusinessRightImageButton) findViewById(R.id.btn_main_right_menu);
         GenerateMenu.generateRightMenu(this, bussinessRightMenuBtn);
         layoutInflater = LayoutInflater.from(this);
-        ecardSlaverTablelayout = (TableLayout) findViewById(R.id.layout_responsible);
+        ecardSlaverTablelayout = (TableLayout) findViewById(R.id.layout_two);
         //充值的可选充值方式
         List<String> rechargeModeList = new ArrayList<String>();
         rechargeModeList.add("现金");
@@ -467,8 +477,12 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 startActivityForResult(chooseBenefitPersonIntent3, 101);
                 break;
             case R.id.payment_benefit_share_btn_e:
-                if (shareFlg == 0 && !checkBenefitPersonIsNull() && isComissionCalc) {
-                    shareFlg = 1;
+                if (!checkBenefitPersonIsNull() && isComissionCalc) {
+                    if (shareFlg == 0) {
+                        shareFlg = 1;
+                    } else {
+                        shareFlg = 0;
+                    }
                     setBenefitPersonInfo(mBenefitPersonIDs, mBenefitPersonNames);
                 }
                 break;
@@ -488,6 +502,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
         }
         if (requestCode == 101) {
             namegetFlg = 1;
+            shareFlg = 1;
             setBenefitPersonInfo(data.getStringExtra("personId"), data.getStringExtra("personName"));
         }
     }
@@ -498,22 +513,31 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             mBenefitPersonNames = name;
             namegetFlg = 0;
         }
-        ecardSlaverTablelayout.removeViews(5, ecardSlaverTablelayout.getChildCount() - 5);
+        ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
         JSONArray idArray = null;
         try {
             idArray = new JSONArray(id);
         } catch (JSONException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            mHandler.sendEmptyMessage(99);
+            return;
         }
         if (idArray != null && idArray.length() > 0) {
             String[] nameArray = name.split("、");
+            String displayPercent = new DecimalFormat("0.00").format(0);
+            if (shareFlg == 1) {
+                displayPercent = "均分";
+                if (nameArray.length == 1) {
+                    displayPercent = "100";
+                }
+            }
             for (int i = 0; i < nameArray.length; i++) {
                 View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
                 TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
                 benefitPersonNameText.setText(nameArray[i]);
                 EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
-                benefitPersonPercentText.setOnTouchListener(new View.OnTouchListener() {
+                /*benefitPersonPercentText.setOnTouchListener(new View.OnTouchListener() {
                     int touch_flag = 0;
 
                     @Override
@@ -523,7 +547,8 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                             touch_flag = 0;
                             if (shareFlg == 1) {
                                 String[] nameArray = mBenefitPersonNames.split("、");
-                                ecardSlaverTablelayout.removeViews(5, ecardSlaverTablelayout.getChildCount() - 5);
+                                ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
+                                benefitPersonItemCnt = nameArray.length;
                                 for (int j = 0; j < nameArray.length; j++) {
                                     View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
                                     TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
@@ -541,7 +566,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                         }
                         return false;
                     }
-                });
+                });*/
                 TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
                 if (!isComissionCalc) {
                     benefitPersonPercentText.setVisibility(View.GONE);
@@ -549,13 +574,15 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 }
                 EditText[] editText = new EditText[]{benefitPersonPercentText};
                 NumberFormatUtil.setPricePointArray(editText, 2);
+                benefitPersonPercentText.setText(displayPercent);
                 if (shareFlg == 1) {
-                    benefitPersonPercentText.setText("均分");
+                    benefitPersonPercentText.setEnabled(false);
                 } else {
-                    benefitPersonPercentText.setText(String.valueOf(0));
+                    benefitPersonPercentText.setEnabled(true);
                 }
                 ecardSlaverTablelayout.addView(benefitPersonItemView, 5 + i);
             }
+            benefitPersonItemCnt = nameArray.length;
         }
     }
 
@@ -593,6 +620,8 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 giveAmountJson.put("UserCardNo", ecardInfo.getUserEcardNo());
                 giveAmountJson.put("Amount", NumberFormatUtil.currencyFormat(giveAmount));
             } catch (JSONException e) {
+                e.printStackTrace();
+                mHandler.sendEmptyMessage(99);
             }
             giveJsonArray.put(giveAmountJson);
         }
@@ -603,6 +632,8 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 giveAmountPointJson.put("UserCardNo", customerEcardInfoPoint.getUserEcardNo());
                 giveAmountPointJson.put("Amount", NumberFormatUtil.currencyFormat(giveAmountPoint));
             } catch (JSONException e) {
+                e.printStackTrace();
+                mHandler.sendEmptyMessage(99);
             }
             giveJsonArray.put(giveAmountPointJson);
         }
@@ -613,6 +644,8 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 giveAmountCashCouponJson.put("UserCardNo", customerEcardInfoCashCoupon.getUserEcardNo());
                 giveAmountCashCouponJson.put("Amount", NumberFormatUtil.currencyFormat(giveAmountCashCoupon));
             } catch (JSONException e) {
+                e.printStackTrace();
+                mHandler.sendEmptyMessage(99);
             }
             giveJsonArray.put(giveAmountCashCouponJson);
         }
@@ -635,6 +668,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
+                mHandler.sendEmptyMessage(99);
             }
         }
         builder.setAmount(amount).setChangeType(3).setCardType(ecardInfo.getUserEcardType()).setDepositMode(rechargeType).
@@ -694,6 +728,8 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
+                mHandler.sendEmptyMessage(99);
+                return;
             }
         }
         destIntent.putExtra("slaveID", benefitDetailJsonArray.toString());
@@ -745,7 +781,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             rechargeNumberTitle.setText("转入金额");
             findViewById(R.id.benefit_person_divide_view).setVisibility(View.GONE);
             findViewById(R.id.benefit_person_layout).setVisibility(View.GONE);
-            ecardSlaverTablelayout.removeViews(5, ecardSlaverTablelayout.getChildCount() - 5);
+            ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
             ecardGiveOtherTablelayout.setVisibility(View.GONE);
         } else {
             rechargeNumberTotalRelativelayout.setVisibility(View.VISIBLE);

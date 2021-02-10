@@ -152,11 +152,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentify];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIndentify];
-        
         UIImageView * arrowsImage = [[UIImageView alloc] initWithFrame:CGRectMake(295, (kTableView_HeightOfRow- 12)/2, 10, 12)];
         arrowsImage.image = [UIImage imageNamed:@"arrows_bg"];
         [cell.contentView addSubview:arrowsImage];
-        
         cell.backgroundColor = [UIColor whiteColor];
     }
     if (indexPath.section == (_settingItem.count -1) ) {
@@ -169,29 +167,16 @@
         label.textColor = kColor_DarkBlue;
         label.font = kFont_Light_16;
         [oneCell.contentView addSubview:label];
-
         return oneCell;
     }
-    
-    
-    UILabel * titleLable = [[UILabel alloc] initWithFrame:CGRectMake(5, (kTableView_HeightOfRow-20) /2, 200, 20)];
-    titleLable.font = kFont_Light_16;
-    titleLable.textColor = kColor_DarkBlue;
-    [cell.contentView addSubview:titleLable];
-    titleLable.tag = 1000 +indexPath.section;
-    
-    UILabel * title = (UILabel *)[cell.contentView viewWithTag:1000+indexPath.section];
-    
-    title.text = [_settingItem objectAtIndex:indexPath.section];
-    
     cell.textLabel.textColor = kColor_DarkBlue;
     cell.textLabel.font = kFont_Light_16;
-    
-    if ([title.text isEqualToString:@"自动登出"]) {
+    cell.textLabel.text = [_settingItem objectAtIndex:indexPath.section];
+    if ([cell.textLabel.text isEqualToString:@"自动登出"]) {
         cell.accessoryType = UITableViewCellAccessoryNone;
         int time =  [[[NSUserDefaults standardUserDefaults] objectForKey:@"ACCOUNT_INDATE"] intValue];
         cell.detailTextLabel.text =[NSString stringWithFormat:@"%d分钟", time];
-    } else if ([title.text isEqualToString:@"操作模式"]){
+    } else if ([cell.textLabel.text isEqualToString:@"操作模式"]){
         switch ([PermissionDoc getOperationWay]) {
             case 0:
                 // 标准模式
@@ -208,9 +193,7 @@
     } else {
         cell.detailTextLabel.text = @"";
     }
-    
     return cell;
-
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -321,45 +304,39 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSUserDefaults *userDefault = nil;
-    switch (alertView.tag) {
-        case 0:
-            // 操作模式
-            userDefault = [NSUserDefaults standardUserDefaults];
-            switch (buttonIndex) {
-                case 1:
-                    // 标准模式
-                    [userDefault setInteger:0 forKey:@"OperationWay"];
-                    // 立即写入
-                    [userDefault synchronize];
-                    break;
-                case 2:
-                    // 简易模式
-                    [userDefault setInteger:1  forKey:@"OperationWay"];
-                    // 立即写入
-                    [userDefault synchronize];
-                default:
-                    break;
+    NSString *itemTxt = [_settingItem objectAtIndex:alertView.tag];
+    if ([itemTxt isEqualToString:@"操作模式"]) {
+        // 操作模式
+        userDefault = [NSUserDefaults standardUserDefaults];
+        switch (buttonIndex) {
+            case 1:
+                // 标准模式
+                [userDefault setInteger:0 forKey:@"OperationWay"];
+                // 立即写入
+                [userDefault synchronize];
+                break;
+            case 2:
+                // 简易模式
+                [userDefault setInteger:1  forKey:@"OperationWay"];
+                // 立即写入
+                [userDefault synchronize];
+            default:
+                break;
+        }
+        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:alertView.tag] withRowAnimation:UITableViewRowAnimationNone];
+    } else if ([itemTxt isEqualToString:@"自动登出"]) {
+        // 自动登出
+        if (buttonIndex == 1) {
+            UITextField *text = [alertView textFieldAtIndex:0];
+            int time = [text.text intValue];
+
+            if ([text.text isEqualToString:@""]) {
+                time = 30;
             }
+            NSLog(@"the setting in datetime is %d", time);
+            [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:time] forKey:@"ACCOUNT_INDATE"];
             [_tableView reloadSections:[NSIndexSet indexSetWithIndex:alertView.tag] withRowAnimation:UITableViewRowAnimationNone];
-            break;
-        case 3:
-            // 自动登出
-            if (buttonIndex == 1) {
-                UITextField *text = [alertView textFieldAtIndex:0];
-                int time = [text.text intValue];
-
-                if ([text.text isEqualToString:@""]) {
-                    time = 30;
-                }
-
-                NSLog(@"the setting indate time is %d", time);
-                
-                [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:time] forKey:@"ACCOUNT_INDATE"];
-                [_tableView reloadSections:[NSIndexSet indexSetWithIndex:alertView.tag] withRowAnimation:UITableViewRowAnimationNone];
-            }
-            break;
-        default:
-            break;
+        }
     }
 }
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField

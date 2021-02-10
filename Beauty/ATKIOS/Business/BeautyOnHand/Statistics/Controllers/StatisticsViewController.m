@@ -13,6 +13,7 @@
 #import "NormalEditCell.h"
 #import "CusChartViewController.h"
 #import "CusProductViewController.h"
+#import "CusProductSurplusViewController.h"
 #import "CusPriceViewController.h"
 #import "PeriodViewController.h"
 
@@ -47,7 +48,7 @@
     if ((IOS7 || IOS8)) _tableView.separatorInset = UIEdgeInsetsZero;
     [self.view addSubview:_tableView];
     
-    _data = [NSMutableArray arrayWithObjects:@"消费占比分析图表",@"消费产品排行榜",@"消费价格分析图表",@"到店周期及消费统计", nil];
+    _data = [NSMutableArray arrayWithObjects:@"消费占比分析图表",@"消费产品排行榜",@"消费价格分析图表",@"到店周期及消费统计",@"消费剩余价值统计", nil];
 }
 #pragma mark - UITableViewDataSource && UITableViewDelegate
 
@@ -102,32 +103,35 @@
 {
     switch (indexPath.section) {
         case 0:
-        {
-            CusChartViewController *cusChartVC = [[CusChartViewController alloc]init];
-            [self.navigationController pushViewController:cusChartVC animated:YES];
-            
-        }
+            {
+                CusChartViewController *cusChartVC = [[CusChartViewController alloc]init];
+                [self.navigationController pushViewController:cusChartVC animated:YES];
+            }
             break;
         case 1:
-        {
-            CusProductViewController *cusProductVC = [[CusProductViewController alloc]init];
-            [self.navigationController pushViewController:cusProductVC animated:YES];
-        }
+            {
+                CusProductViewController *cusProductVC = [[CusProductViewController alloc]init];
+                [self.navigationController pushViewController:cusProductVC animated:YES];
+            }
             break;
         case 2:
-        {
-            CusPriceViewController *cusPriceVC = [[CusPriceViewController alloc]init];
-            [self.navigationController pushViewController:cusPriceVC animated:YES];
-            
-        }
+            {
+                CusPriceViewController *cusPriceVC = [[CusPriceViewController alloc]init];
+                [self.navigationController pushViewController:cusPriceVC animated:YES];
+            }
             break;
         case 3:
-        {
-            PeriodViewController *periodVC = [[PeriodViewController alloc]init];
-            [self.navigationController pushViewController:periodVC animated:YES];
-        }
+            {
+                PeriodViewController *periodVC = [[PeriodViewController alloc]init];
+                [self.navigationController pushViewController:periodVC animated:YES];
+            }
             break;
-            
+        case 4:
+            {
+                CusProductSurplusViewController *cusProductSurplusVC = [[CusProductSurplusViewController alloc]init];
+                [self.navigationController pushViewController:cusProductSurplusVC animated:YES];
+            }
+            break;
         default:
             break;
     }

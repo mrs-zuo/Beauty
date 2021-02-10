@@ -30,8 +30,7 @@ public class WebServiceUtil {
         String serverURL = "";
         //正式域名
         if (Constant.formalFlag == 0) {
-            serverURL = "http://192.168.197.103:8081/" + endPoint + "/" + methodName;
-            // serverURL = "https://api.beauty.glamise.com/" + endPoint + "/" + methodName;
+            serverURL = "https://api.beauty.glamise.com/" + endPoint + "/" + methodName;
             //serverURL = "http://10.0.0.112:3324/" + endPoint + "/"+ methodName;
         }
         // demo用户

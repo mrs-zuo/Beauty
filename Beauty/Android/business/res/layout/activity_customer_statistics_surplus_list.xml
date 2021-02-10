@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/product_surplus_title_RelativeLayout"
-        android:layout_marginBottom="5dip"
+        android:layout_marginStart="5dip"
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -164,7 +164,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dip"
         android:orientation="horizontal">
 
         <Button

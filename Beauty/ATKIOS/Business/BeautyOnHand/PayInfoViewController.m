@@ -1075,7 +1075,7 @@
     cell.valueText.textColor = kColor_Editable;
     //均分按钮
     UIButton * averageButton;
-    averageButton = [UIButton buttonTypeRoundedRectWithTitle:@"均分" target:self selector:@selector(chickAverageBtn) frame:CGRectMake(80.0f,(kTableView_HeightOfRow - 20.0f)/2,30.0f,20.0f) titleColor:[UIColor whiteColor] backgroudColor:KColor_Blue cornerRadius:5];
+    averageButton = [UIButton buttonTypeRoundedRectWithTitle:@"均分" target:self selector:@selector(chickAverageBtn) frame:CGRectMake(80.0f,(kTableView_HeightOfRow - 20.0f)/2,35.0f,20.0f) titleColor:[UIColor whiteColor] backgroudColor:KColor_Blue cornerRadius:5];
     [[cell contentView] addSubview:averageButton];
     return cell;
 }

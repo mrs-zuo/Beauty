@@ -768,6 +768,10 @@
 		37FC7706187E88D700F68D9A /* MidLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7705187E88D700F68D9A /* MidLineLabel.m */; };
 		37FC9D7518AB10B4009E4144 /* OrderTreatmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC9D7418AB10B4009E4144 /* OrderTreatmentCell.m */; };
 		37FC9D7818AB10D5009E4144 /* OrderContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC9D7718AB10D5009E4144 /* OrderContactCell.m */; };
+		53364C1725D2858F007DDC97 /* JHGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53364C1625D2858F007DDC97 /* JHGridView.m */; };
+		53364C1A25D285DC007DDC97 /* CusProductSurplusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53364C1925D285DC007DDC97 /* CusProductSurplusViewController.m */; };
+		53364C1D25D286E9007DDC97 /* StatustucsProductSurplus.m in Sources */ = {isa = PBXBuildFile; fileRef = 53364C1C25D286E9007DDC97 /* StatustucsProductSurplus.m */; };
+		53364C2025D2886C007DDC97 /* SurplusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53364C1F25D2886C007DDC97 /* SurplusTableViewCell.m */; };
 		53BF6F072576228200606704 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BF6F062576228200606704 /* Bugly.framework */; };
 		7E206CF51FBE321700186B46 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E206CF41FBE321700186B46 /* Media.xcassets */; };
 		7E491E661FABD8B0002D8EA7 /* NavBar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E491E621FABD897002D8EA7 /* NavBar_bg.png */; };
@@ -2268,6 +2272,14 @@
 		37FC9D7618AB10D5009E4144 /* OrderContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderContactCell.h; sourceTree = "<group>"; };
 		37FC9D7718AB10D5009E4144 /* OrderContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderContactCell.m; sourceTree = "<group>"; };
 		530802232592196A00B7EEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		53364C1525D2856E007DDC97 /* JHGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JHGridView.h; path = Views/JHGridView.h; sourceTree = "<group>"; };
+		53364C1625D2858F007DDC97 /* JHGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JHGridView.m; path = Views/JHGridView.m; sourceTree = "<group>"; };
+		53364C1825D285B9007DDC97 /* CusProductSurplusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CusProductSurplusViewController.h; path = Controllers/CusProductSurplusViewController.h; sourceTree = "<group>"; };
+		53364C1925D285DC007DDC97 /* CusProductSurplusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CusProductSurplusViewController.m; path = Controllers/CusProductSurplusViewController.m; sourceTree = "<group>"; };
+		53364C1B25D286CD007DDC97 /* StatustucsProductSurplus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StatustucsProductSurplus.h; path = Models/StatustucsProductSurplus.h; sourceTree = "<group>"; };
+		53364C1C25D286E9007DDC97 /* StatustucsProductSurplus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StatustucsProductSurplus.m; path = Models/StatustucsProductSurplus.m; sourceTree = "<group>"; };
+		53364C1E25D28856007DDC97 /* SurplusTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SurplusTableViewCell.h; path = Views/SurplusTableViewCell.h; sourceTree = "<group>"; };
+		53364C1F25D2886C007DDC97 /* SurplusTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SurplusTableViewCell.m; path = Views/SurplusTableViewCell.m; sourceTree = "<group>"; };
 		53BF6F062576228200606704 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		53BF6F08257622D800606704 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		53BF6F09257622ED00606704 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -5012,6 +5024,8 @@
 			children = (
 				94C37C281C06D98F0090BFBC /* ChartModel.h */,
 				94C37C291C06D98F0090BFBC /* ChartModel.m */,
+				53364C1B25D286CD007DDC97 /* StatustucsProductSurplus.h */,
+				53364C1C25D286E9007DDC97 /* StatustucsProductSurplus.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -5027,6 +5041,10 @@
 				9ADDEC851C0D3C5500F7B9B4 /* PeriodDetailTableViewCell.h */,
 				9ADDEC861C0D3C5500F7B9B4 /* PeriodDetailTableViewCell.m */,
 				9ADDEC871C0D3C5500F7B9B4 /* PeriodDetailTableViewCell.xib */,
+				53364C1525D2856E007DDC97 /* JHGridView.h */,
+				53364C1625D2858F007DDC97 /* JHGridView.m */,
+				53364C1E25D28856007DDC97 /* SurplusTableViewCell.h */,
+				53364C1F25D2886C007DDC97 /* SurplusTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -5046,6 +5064,8 @@
 				9406C7581C0C3FA400C1BD81 /* PeriodDetailViewController.m */,
 				94DFF2031C0587B800635FCB /* StatisticsViewController.h */,
 				94DFF2041C0587B800635FCB /* StatisticsViewController.m */,
+				53364C1825D285B9007DDC97 /* CusProductSurplusViewController.h */,
+				53364C1925D285DC007DDC97 /* CusProductSurplusViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -6409,6 +6429,7 @@
 				37F14A7B18923FA100E06F41 /* ScanQRCodeViewController.m in Sources */,
 				37D126F819B84229003EA278 /* ECardOutViewController.m in Sources */,
 				379D48E4182A1AC500962F9C /* GPHTTPClient.m in Sources */,
+				53364C1D25D286E9007DDC97 /* StatustucsProductSurplus.m in Sources */,
 				9AA29B961C0403B30077F86B /* OrderRefund_ViewController.m in Sources */,
 				9A05AECB1C51C825005844F0 /* AllServiceEffectRes.m in Sources */,
 				9A4AC2571CD2F9A8003E44C3 /* ProfitListRes.m in Sources */,
@@ -6515,6 +6536,7 @@
 				9AA99E3F19E4DF5E00AF0959 /* ChooseCompanyViewController.m in Sources */,
 				379D48DC182A1AC500962F9C /* AFHTTPRequestOperation.m in Sources */,
 				37D126F419B8411F003EA278 /* UIScrollView+MJRefresh.m in Sources */,
+				53364C1725D2858F007DDC97 /* JHGridView.m in Sources */,
 				37D126F319B8411F003EA278 /* UIScrollView+Extension.m in Sources */,
 				37C1038D1B6B17F70019FFB2 /* DeviceInfoManager.m in Sources */,
 				379D488A182A1AC500962F9C /* CustomerDetailEditController.m in Sources */,
@@ -6629,6 +6651,7 @@
 				37D126F019B8411F003EA278 /* MJRefreshConst.m in Sources */,
 				379D487F182A1AC500962F9C /* NormalEditCell.m in Sources */,
 				9ABF962519EBAF5000DAD93A /* AccountDetailViewController.m in Sources */,
+				53364C2025D2886C007DDC97 /* SurplusTableViewCell.m in Sources */,
 				9ABD505D1B6330D00066C3E6 /* OrderListCell.m in Sources */,
 				379ECAE01834E2E500BCCCBD /* UIImageView+WebCache.m in Sources */,
 				37CC49A81AFA074E0001C039 /* OppFilterViewController.m in Sources */,
@@ -6813,6 +6836,7 @@
 				37465DAC19F6595100A9063B /* ReportDataDoc.m in Sources */,
 				9AE964DF1C9AADDD002E262A /* TGListRes.m in Sources */,
 				37A4EA841B3BD3B9003C6FD3 /* ProcessTableViewController.m in Sources */,
+				53364C1A25D285DC007DDC97 /* CusProductSurplusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6945,7 +6969,7 @@
 					"$(PROJECT_DIR)",
 					/Users/macmini/Desktop,
 				);
-				MARKETING_VERSION = 4.6.021;
+				MARKETING_VERSION = 4.6.022;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -6991,7 +7015,7 @@
 					"$(PROJECT_DIR)",
 					/Users/macmini/Desktop,
 				);
-				MARKETING_VERSION = 4.6.021;
+				MARKETING_VERSION = 4.6.022;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lxml2",

@@ -6,17 +6,17 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context=".EditEcardBalanceActivity" >
+    tools:context=".EditEcardBalanceActivity">
 
     <include
         android:id="@+id/head_layout"
+        layout="@xml/head"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        layout="@xml/head" />
+        android:layout_height="wrap_content" />
 
     <RelativeLayout
         android:id="@+id/title"
-        style="@style/activity_title_layout_attrs" >
+        style="@style/activity_title_layout_attrs">
 
         <TextView
             android:id="@+id/edit_ecard_balance_title_text"
@@ -26,18 +26,18 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TableLayout
                 android:id="@+id/layout_responsible"
-                style="@style/activity_content_table_attrs" >
+                style="@style/activity_content_table_attrs">
 
-                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         style="@style/activity_content_table_row_title_attrs"
@@ -57,89 +57,15 @@
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
 
-                <View
-                    style="@style/activity_content_divide_view_attrs" >
-                </View>
+                <View style="@style/activity_content_divide_view_attrs"></View>
 
-                <RelativeLayout 
-                    android:id="@+id/benefit_share_percent_layout_e"
-                    style="@style/activity_content_table_relativelayout_attrs" >
-			        <TextView
-			            android:id="@+id/benefit_share_percent_textv_e"
-			            style="@style/activity_content_table_row_title_attrs"
-			            android:text="@string/benefit_share_percent" />
-			        <TextView
-			            android:id="@+id/benefit_share_percent_mark_e"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:layout_alignParentRight="true"
-			            android:layout_centerVertical="true"
-			            android:layout_marginRight="5dip"
-			            android:text="@string/percent"
-			            android:textColor="@color/black"
-			            android:textSize="@dimen/text_size" />
-			
-			        <EditText
-			            android:id="@+id/benefit_share_percent_e"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:layout_centerVertical="true"
-			            android:layout_marginRight="5dip"
-			            android:layout_toLeftOf="@id/benefit_share_percent_mark_e"
-			            android:background="@null"
-			            android:gravity="right"
-			            android:inputType="numberDecimal"
-			            android:minWidth="20dp"
-			            android:text="100"
-			            android:textColor="@color/gray"
-			            android:textSize="@dimen/text_size" />
-                </RelativeLayout>
-                
-                <View
-                    android:id="@+id/benefit_person_divide_view" 
-                    style="@style/activity_content_divide_view_attrs" >
-                </View>
-
-                <RelativeLayout 
-                    android:id="@+id/benefit_person_layout"
-                    style="@style/activity_content_table_relativelayout_attrs" >
-
-                    <TextView
-                        android:id="@+id/payment_benefit_textv_e"
-                        style="@style/activity_content_table_row_title_attrs"
-                        android:text="@string/benefit_person_prompt" />
-			        <TextView
-			            android:id="@+id/payment_benefit_share_btn_e"
-						android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-				        android:background="@xml/shape_btn_blue"
-				        android:textColor="@color/white"
-				        android:textSize="@dimen/text_size"
-				        android:layout_marginLeft="15dip"
-			            android:layout_toRightOf="@id/payment_benefit_textv_e"
-			            android:layout_toEndOf="@id/payment_benefit_textv_e"
-			            android:text="@string/benefit_person_share"/>
-                    
-                    <TextView
-                        android:id="@+id/ecard_money_benefit_person"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="5dip"
-                        android:gravity="right"
-                        android:maxWidth="250dip"
-                        android:singleLine="true"
-                        android:hint="@string/select_benefit_person_prompt"
-                        android:textColor="@color/gray"
-                        android:textSize="@dimen/text_size" />
-                </RelativeLayout>
             </TableLayout>
+
             <TableLayout
                 android:id="@+id/layout_one"
-                style="@style/activity_content_table_attrs" >
+                style="@style/activity_content_table_attrs">
 
-                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         android:id="@+id/ecard_money"
@@ -157,11 +83,12 @@
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
             </TableLayout>
+
             <TableLayout
                 android:id="@+id/layout_two"
-                style="@style/activity_content_table_attrs" >
+                style="@style/activity_content_table_attrs">
 
-                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         style="@style/activity_content_table_row_title_attrs"
@@ -179,10 +106,88 @@
                         android:paddingLeft="50dip" />
                 </RelativeLayout>
 
-                <View style="@style/activity_content_divide_view_attrs" >
-                </View>
+                <View style="@style/activity_content_divide_view_attrs"></View>
 
-                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                <RelativeLayout
+                    android:id="@+id/benefit_share_percent_layout_e"
+                    style="@style/activity_content_table_relativelayout_attrs">
+
+                    <TextView
+                        android:id="@+id/benefit_share_percent_textv_e"
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/benefit_share_percent" />
+
+                    <TextView
+                        android:id="@+id/benefit_share_percent_mark_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:text="@string/percent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size" />
+
+                    <EditText
+                        android:id="@+id/benefit_share_percent_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:layout_toLeftOf="@id/benefit_share_percent_mark_e"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:inputType="numberDecimal"
+                        android:minWidth="20dp"
+                        android:selectAllOnFocus="true"
+                        android:text="100"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/benefit_person_divide_view"
+                    style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout
+                    android:id="@+id/benefit_person_layout"
+                    style="@style/activity_content_table_relativelayout_attrs">
+
+                    <TextView
+                        android:id="@+id/payment_benefit_textv_e"
+                        style="@style/activity_content_table_row_title_attrs"
+                        android:text="@string/benefit_person_prompt" />
+
+                    <TextView
+                        android:id="@+id/payment_benefit_share_btn_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dip"
+                        android:layout_toEndOf="@id/payment_benefit_textv_e"
+                        android:layout_toRightOf="@id/payment_benefit_textv_e"
+                        android:background="@xml/shape_btn_blue"
+                        android:text="@string/benefit_person_share"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/ecard_money_benefit_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dip"
+                        android:gravity="right"
+                        android:hint="@string/select_benefit_person_prompt"
+                        android:maxWidth="250dip"
+                        android:singleLine="true"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <View style="@style/activity_content_divide_view_attrs"></View>
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         android:id="@+id/ecard_recharge_number_title"
@@ -201,6 +206,7 @@
                         android:hint="@string/plesase_ecard_recharge_number"
                         android:inputType="numberDecimal"
                         android:maxLength="200"
+                        android:selectAllOnFocus="true"
                         android:textColor="@color/gray"
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
@@ -211,7 +217,7 @@
 
                 <RelativeLayout
                     android:id="@+id/give_amount_relativelayout"
-                    style="@style/activity_content_table_relativelayout_attrs" >
+                    style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         style="@style/activity_content_table_row_title_attrs"
@@ -229,17 +235,17 @@
                         android:hint="@string/plesase_ecard_recharge_give_number"
                         android:inputType="numberDecimal"
                         android:maxLength="200"
+                        android:selectAllOnFocus="true"
                         android:textColor="@color/gray"
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
 
                 <View style="@style/activity_content_divide_view_attrs" />
 
-               
 
                 <RelativeLayout
                     android:id="@+id/ecard_recharge_number_total_relativelayout"
-                    style="@style/activity_content_table_relativelayout_attrs" >
+                    style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         style="@style/activity_content_table_row_title_attrs"
@@ -266,11 +272,12 @@
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
             </TableLayout>
+
             <TableLayout
                 android:id="@+id/ecard_this_time_give_point_and_cash_coupon_tablelayout"
-                style="@style/activity_content_table_attrs" >
-                <RelativeLayout
-                    style="@style/activity_content_table_relativelayout_attrs" >
+                style="@style/activity_content_table_attrs">
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         style="@style/activity_content_table_row_title_attrs"
@@ -283,16 +290,18 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="5dp"
-                        android:maxLength="200"
                         android:background="@null"
                         android:gravity="right"
+                        android:selectAllOnFocus="true"
                         android:inputType="numberDecimal"
+                        android:maxLength="200"
                         android:textColor="@color/gray"
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
-                 <View style="@style/activity_content_divide_view_attrs" />
-                 <RelativeLayout
-                    style="@style/activity_content_table_relativelayout_attrs" >
+
+                <View style="@style/activity_content_divide_view_attrs" />
+
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         style="@style/activity_content_table_row_title_attrs"
@@ -305,19 +314,21 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="5dp"
-                        android:maxLength="200"
                         android:background="@null"
                         android:gravity="right"
+                        android:selectAllOnFocus="true"
                         android:inputType="numberDecimal"
+                        android:maxLength="200"
                         android:textColor="@color/gray"
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
             </TableLayout>
+
             <TableLayout
                 android:id="@+id/ecard_balance_remark"
-                style="@style/activity_content_table_attrs" >
+                style="@style/activity_content_table_attrs">
 
-                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <TextView
                         style="@style/activity_content_table_row_title_attrs"
@@ -326,7 +337,7 @@
 
                 <View style="@style/activity_content_divide_view_attrs" />
 
-                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs" >
+                <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">
 
                     <EditText
                         android:id="@+id/ecard_balance_remark_text"
@@ -344,11 +355,11 @@
                         android:id="@+id/ecard_remark_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
                         android:layout_below="@id/ecard_balance_remark_text"
-                        android:layout_marginRight="5dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
                         android:layout_marginTop="5dip"
+                        android:layout_marginRight="5dip"
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
             </TableLayout>
@@ -357,14 +368,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp" >
+                android:layout_marginRight="5dp">
 
                 <Button
                     android:id="@+id/edit_ecard_balance_make_sure_btn"
                     style="@style/submit_big_btn"
                     android:layout_marginTop="10dip"
-                    android:text="@string/ok"
-                    />
+                    android:text="@string/ok" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

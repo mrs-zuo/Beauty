@@ -3286,13 +3286,16 @@
         [alertControllerMessageStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
         [alertVc setValue:alertControllerMessageStr forKey:@"attributedMessage"];
         
+        CGFloat cgFloat = self.parentViewController.view.alpha;
         //默认只有标题 没有操作的按钮:添加操作的按钮 UIAlertAction
         UIAlertAction *cancelBtn = [UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             // 返回
+            self.parentViewController.view.alpha = cgFloat;
         }];
         //添加确定
         UIAlertAction *sureBtn = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull   action) {
             // 确定
+            self.parentViewController.view.alpha = cgFloat;
             [self requestAddNewOrder];
         }];
         //设置`确定`按钮的颜色
@@ -3302,6 +3305,7 @@
         [alertVc addAction:sureBtn];
         // 展示
         [self presentViewController:alertVc animated:YES completion:nil];
+        self.parentViewController.view.alpha = 0.2;
     } else {
         [self requestAddNewOrder];
     }

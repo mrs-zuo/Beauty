@@ -13,6 +13,7 @@
 #import "NormalEditCell.h"
 #import "CusChartViewController.h"
 #import "CusProductViewController.h"
+#import "CusProductSurplusViewController.h"
 #import "CusPriceViewController.h"
 #import "PeriodViewController.h"
 
@@ -47,7 +48,7 @@
     if ((IOS7 || IOS8)) _tableView.separatorInset = UIEdgeInsetsZero;
     [self.view addSubview:_tableView];
     
-    _data = [NSMutableArray arrayWithObjects:@"消费占比分析图表",@"消费产品排行榜",@"消费价格分析图表",@"到店周期及消费统计", nil];
+    _data = [NSMutableArray arrayWithObjects:@"消费占比分析图表",@"消费产品排行榜",@"消费价格分析图表",@"到店周期及消费统计",@"消费剩余价值统计", nil];
 }
 #pragma mark - UITableViewDataSource && UITableViewDelegate
 
@@ -127,7 +128,12 @@
             [self.navigationController pushViewController:periodVC animated:YES];
         }
             break;
-            
+        case 4:
+        {
+            CusProductSurplusViewController *cusProductSurplusVC = [[CusProductSurplusViewController alloc]init];
+            [self.navigationController pushViewController:cusProductSurplusVC animated:YES];
+        }
+            break;
         default:
             break;
     }
@@ -135,3 +141,4 @@
 
 
 @end
+

@@ -99,7 +99,8 @@ static NSString *kCellID = @"CellIdentifier";
         [((AppDelegate *)[[UIApplication sharedApplication] delegate]).awaitOrderArray removeAllObjects];
     }
 
-    [self selectTableView:(UIButton *)[self.buttonField viewWithTag:(_viewOrigin == CusMainViewOriginProductList ? 100 : 103)]];
+    // 默认选择“存单”
+    [self selectTableView:(UIButton *)[self.buttonField viewWithTag:(_viewOrigin == CusMainViewOriginProductList ? 100 : 102)]];
     self.searchString = [[NSString alloc] init];
 }
 

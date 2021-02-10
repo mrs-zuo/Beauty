@@ -268,7 +268,8 @@ public class CustomerServicingActivity extends FragmentActivity implements OnCli
         fragmentList.add(dispenseCompleteOrderFragment);
         fragmentList.add(dispenseCustomerOldOrderFragment);
         fragmentList.add(dispenseFavoriteListFragment);
-        currentItem = getIntent().getIntExtra("currentItem", 3);
+        // 默认显示"存单"
+        currentItem = getIntent().getIntExtra("currentItem", 2);
         tabPrepareOrderTitle = (TextView) findViewById(R.id.tab_prepare_order_title);
         tabPrepareOrderll = (LinearLayout) findViewById(R.id.tab_prepare_order_ll);
         tabCompleteOrderTitle = (TextView) findViewById(R.id.tab_complete_order_title);

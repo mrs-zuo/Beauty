@@ -767,6 +767,10 @@
 		37FC7706187E88D700F68D9A /* MidLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC7705187E88D700F68D9A /* MidLineLabel.m */; };
 		37FC9D7518AB10B4009E4144 /* OrderTreatmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC9D7418AB10B4009E4144 /* OrderTreatmentCell.m */; };
 		37FC9D7818AB10D5009E4144 /* OrderContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC9D7718AB10D5009E4144 /* OrderContactCell.m */; };
+		536CA2B025CFD05300BB0A7E /* JHGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 536CA2AF25CFD05300BB0A7E /* JHGridView.m */; };
+		536CA2B325CFD13900BB0A7E /* CusProductSurplusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 536CA2B225CFD13900BB0A7E /* CusProductSurplusViewController.m */; };
+		538EBB4325D150D000C98E61 /* SurplusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 538EBB4225D150D000C98E61 /* SurplusTableViewCell.m */; };
+		538EBB4525D1607D00C98E61 /* StatustucsProductSurplus.m in Sources */ = {isa = PBXBuildFile; fileRef = 538EBB4425D1607C00C98E61 /* StatustucsProductSurplus.m */; };
 		53B03B4F2574EA6E0060A8A8 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B03B4E2574EA6D0060A8A8 /* Bugly.framework */; };
 		53B03B502574EAF10060A8A8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3735915F17783289008EDF5A /* SystemConfiguration.framework */; };
 		7E0B21F02030CCEC0080CB2A /* ReportCountTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B21EE2030CCEB0080CB2A /* ReportCountTopView.m */; };
@@ -2263,6 +2267,14 @@
 		37FC9D7618AB10D5009E4144 /* OrderContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderContactCell.h; sourceTree = "<group>"; };
 		37FC9D7718AB10D5009E4144 /* OrderContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderContactCell.m; sourceTree = "<group>"; };
 		53080222259217F300B7EEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		536CA2AE25CFCFFE00BB0A7E /* JHGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JHGridView.h; path = Views/JHGridView.h; sourceTree = "<group>"; };
+		536CA2AF25CFD05300BB0A7E /* JHGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JHGridView.m; path = Views/JHGridView.m; sourceTree = "<group>"; };
+		536CA2B125CFD0E900BB0A7E /* CusProductSurplusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CusProductSurplusViewController.h; path = Controllers/CusProductSurplusViewController.h; sourceTree = "<group>"; };
+		536CA2B225CFD13900BB0A7E /* CusProductSurplusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CusProductSurplusViewController.m; path = Controllers/CusProductSurplusViewController.m; sourceTree = "<group>"; };
+		536CA2B425CFD17400BB0A7E /* StatustucsProductSurplus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StatustucsProductSurplus.h; path = Models/StatustucsProductSurplus.h; sourceTree = "<group>"; };
+		538EBB4125D147AF00C98E61 /* SurplusTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SurplusTableViewCell.h; path = Views/SurplusTableViewCell.h; sourceTree = "<group>"; };
+		538EBB4225D150D000C98E61 /* SurplusTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SurplusTableViewCell.m; path = Views/SurplusTableViewCell.m; sourceTree = "<group>"; };
+		538EBB4425D1607C00C98E61 /* StatustucsProductSurplus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StatustucsProductSurplus.m; path = Models/StatustucsProductSurplus.m; sourceTree = "<group>"; };
 		53B03B4E2574EA6D0060A8A8 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		53B03B512574EB650060A8A8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		53B03B522574EB7E0060A8A8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -4998,8 +5010,10 @@
 		94DFF1F81C0586C400635FCB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				94C37C281C06D98F0090BFBC /* ChartModel.h */,
 				94C37C291C06D98F0090BFBC /* ChartModel.m */,
+				94C37C281C06D98F0090BFBC /* ChartModel.h */,
+				536CA2B425CFD17400BB0A7E /* StatustucsProductSurplus.h */,
+				538EBB4425D1607C00C98E61 /* StatustucsProductSurplus.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -5015,6 +5029,10 @@
 				9ADDEC851C0D3C5500F7B9B4 /* PeriodDetailTableViewCell.h */,
 				9ADDEC861C0D3C5500F7B9B4 /* PeriodDetailTableViewCell.m */,
 				9ADDEC871C0D3C5500F7B9B4 /* PeriodDetailTableViewCell.xib */,
+				536CA2AE25CFCFFE00BB0A7E /* JHGridView.h */,
+				536CA2AF25CFD05300BB0A7E /* JHGridView.m */,
+				538EBB4125D147AF00C98E61 /* SurplusTableViewCell.h */,
+				538EBB4225D150D000C98E61 /* SurplusTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -5034,6 +5052,8 @@
 				9406C7581C0C3FA400C1BD81 /* PeriodDetailViewController.m */,
 				94DFF2031C0587B800635FCB /* StatisticsViewController.h */,
 				94DFF2041C0587B800635FCB /* StatisticsViewController.m */,
+				536CA2B125CFD0E900BB0A7E /* CusProductSurplusViewController.h */,
+				536CA2B225CFD13900BB0A7E /* CusProductSurplusViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -5566,9 +5586,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		37D95CFC1726623F0086F440 /* 	 */ = {
+		37D95CFC1726623F0086F440 /*      */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37D95D231726623F0086F440 /* Build configuration list for PBXNativeTarget "	" */;
+			buildConfigurationList = 37D95D231726623F0086F440 /* Build configuration list for PBXNativeTarget "    " */;
 			buildPhases = (
 				37D95CF91726623F0086F440 /* Sources */,
 				37D95CFB1726623F0086F440 /* Resources */,
@@ -5579,7 +5599,7 @@
 			);
 			dependencies = (
 			);
-			name = "	";
+			name = "    ";
 			productName = ScaryBugs;
 			productReference = 37D95CFD1726623F0086F440 /* GlamourPromise.Beauty.Business.app */;
 			productType = "com.apple.product-type.application";
@@ -5618,7 +5638,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				37D95CFC1726623F0086F440 /* 	 */,
+				37D95CFC1726623F0086F440 /*      */,
 			);
 		};
 /* End PBXProject section */
@@ -6499,6 +6519,7 @@
 				9AA99E3F19E4DF5E00AF0959 /* ChooseCompanyViewController.m in Sources */,
 				379D48DC182A1AC500962F9C /* AFHTTPRequestOperation.m in Sources */,
 				37D126F419B8411F003EA278 /* UIScrollView+MJRefresh.m in Sources */,
+				536CA2B025CFD05300BB0A7E /* JHGridView.m in Sources */,
 				37D126F319B8411F003EA278 /* UIScrollView+Extension.m in Sources */,
 				37C1038D1B6B17F70019FFB2 /* DeviceInfoManager.m in Sources */,
 				379D488A182A1AC500962F9C /* CustomerDetailEditController.m in Sources */,
@@ -6613,6 +6634,7 @@
 				37D126F019B8411F003EA278 /* MJRefreshConst.m in Sources */,
 				379D487F182A1AC500962F9C /* NormalEditCell.m in Sources */,
 				9ABF962519EBAF5000DAD93A /* AccountDetailViewController.m in Sources */,
+				538EBB4325D150D000C98E61 /* SurplusTableViewCell.m in Sources */,
 				9ABD505D1B6330D00066C3E6 /* OrderListCell.m in Sources */,
 				379ECAE01834E2E500BCCCBD /* UIImageView+WebCache.m in Sources */,
 				37CC49A81AFA074E0001C039 /* OppFilterViewController.m in Sources */,
@@ -6642,6 +6664,7 @@
 				37D63BD31B18326300A30A8D /* PaperFilterController.m in Sources */,
 				9A4341561CAB712200DDC453 /* ClockCodeViewController.m in Sources */,
 				9A43418B1CABC5D200DDC453 /* View+MASAdditions.m in Sources */,
+				538EBB4525D1607D00C98E61 /* StatustucsProductSurplus.m in Sources */,
 				37A3480018338F3A00F7BF3C /* AboutUsViewController.m in Sources */,
 				9AF7231F1C993C4A00147696 /* MJPropertyType.m in Sources */,
 				379D48B6182A1AC500962F9C /* CustomerSelectViewController.m in Sources */,
@@ -6797,6 +6820,7 @@
 				37465DAC19F6595100A9063B /* ReportDataDoc.m in Sources */,
 				9AE964DF1C9AADDD002E262A /* TGListRes.m in Sources */,
 				37A4EA841B3BD3B9003C6FD3 /* ProcessTableViewController.m in Sources */,
+				536CA2B325CFD13900BB0A7E /* CusProductSurplusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6929,7 +6953,7 @@
 					"$(PROJECT_DIR)",
 					/Users/macmini/Desktop,
 				);
-				MARKETING_VERSION = 4.6.021;
+				MARKETING_VERSION = 4.6.022;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -6975,7 +6999,7 @@
 					"$(PROJECT_DIR)",
 					/Users/macmini/Desktop,
 				);
-				MARKETING_VERSION = 4.6.021;
+				MARKETING_VERSION = 4.6.022;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -7003,7 +7027,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37D95D231726623F0086F440 /* Build configuration list for PBXNativeTarget "	" */ = {
+		37D95D231726623F0086F440 /* Build configuration list for PBXNativeTarget "    " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37D95D241726623F0086F440 /* Debug */,

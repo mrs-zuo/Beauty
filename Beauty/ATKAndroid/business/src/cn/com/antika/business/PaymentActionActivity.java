@@ -12,7 +12,6 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -2214,15 +2213,16 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
             mBenefitPersonNames = name;
             namegetFlg = 0;
         }
-
-        String displayPercent = df2.format(0);
-        if (shareFlg == 1) {
-            displayPercent = "均分";
-        }
-
         if (!checkBenefitPersonIsNull()) {
             benefitpersonlinearlayout.removeAllViews();
             String[] nameArray = mBenefitPersonNames.split("、");
+            String displayPercent = df2.format(0);
+            if (shareFlg == 1) {
+                displayPercent = "均分";
+                if (nameArray.length == 1) {
+                    displayPercent = "100";
+                }
+            }
             for (cnt_i = 0; cnt_i < nameArray.length; cnt_i++) {
                 View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
                 TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
@@ -2369,11 +2369,14 @@ public class PaymentActionActivity extends BaseActivity implements OnClickListen
     private void setBenefitPersonInfo2() {
         if (!checkBenefitPersonIsNull()) {
             try {
+                String[] nameArray = mBenefitPersonNames.split("、");
                 String displayPercent = df2.format(0);
                 if (shareFlg == 1) {
                     displayPercent = "均分";
+                    if (nameArray.length == 1) {
+                        displayPercent = "100";
+                    }
                 }
-                String[] nameArray = mBenefitPersonNames.split("、");
                 for (cnt_i = 0; cnt_i < nameArray.length; cnt_i++) {
                     EditText benefitPersonPercentText = (EditText) benefitpersonlinearlayout.getChildAt(cnt_i).findViewById(R.id.benefit_person_percent);
                     benefitPersonPercentText.setText(displayPercent);
