@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.GlamourPromise.Beauty.Business.CustomerStatisticsSurplusListActivity;
 import com.GlamourPromise.Beauty.Business.R;
 import com.GlamourPromise.Beauty.bean.CustomerStatisticsSurplus;
+import com.GlamourPromise.Beauty.util.ProgressDialogUtil;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -96,6 +97,8 @@ public class CustomerStatisticsSurplusListAdapter extends BaseAdapter {
         csItem.productSurplusPrice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ProgressDialogUtil.isFastClick())
+                    return;
                 mHandler.obtainMessage(101, customerStatisticsSurplus).sendToTarget();
             }
         });

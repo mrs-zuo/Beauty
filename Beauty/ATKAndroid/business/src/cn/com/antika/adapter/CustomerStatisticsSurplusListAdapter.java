@@ -15,6 +15,7 @@ import java.util.List;
 import cn.com.antika.bean.CustomerStatisticsSurplus;
 import cn.com.antika.business.CustomerStatisticsSurplusListActivity;
 import cn.com.antika.business.R;
+import cn.com.antika.util.ProgressDialogUtil;
 
 @SuppressLint("ResourceType")
 public class CustomerStatisticsSurplusListAdapter extends BaseAdapter {
@@ -96,6 +97,8 @@ public class CustomerStatisticsSurplusListAdapter extends BaseAdapter {
         csItem.productSurplusPrice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ProgressDialogUtil.isFastClick())
+                    return;
                 mHandler.obtainMessage(101, customerStatisticsSurplus).sendToTarget();
             }
         });

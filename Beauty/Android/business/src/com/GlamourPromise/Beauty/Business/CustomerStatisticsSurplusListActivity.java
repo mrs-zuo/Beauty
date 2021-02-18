@@ -263,6 +263,8 @@ public class CustomerStatisticsSurplusListActivity extends BaseActivity implemen
 
     @Override
     public void onClick(View view) {
+        if (ProgressDialogUtil.isFastClick())
+            return;
         switch (view.getId()) {
             case R.id.switch_service_btn:
                 ((TextView) findViewById(R.id.product_name)).setText(R.string.product_service_name);

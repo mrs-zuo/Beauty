@@ -461,20 +461,13 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
 			startActivityForResult(chooseBenefitPersonIntent, 101);
 			break;*/
             case R.id.ecard_money_benefit_person:
+            case R.id.payment_benefit_textv_e:
                 Intent chooseBenefitPersonIntent2 = new Intent(this, ChoosePersonActivity.class);
                 chooseBenefitPersonIntent2.putExtra("personRole", "Doctor");
                 chooseBenefitPersonIntent2.putExtra("checkModel", "Multi");
                 chooseBenefitPersonIntent2.putExtra("selectPersonIDs", mBenefitPersonIDs);
                 chooseBenefitPersonIntent2.putExtra("customerID", userInfoApplication.getSelectedCustomerID());
                 startActivityForResult(chooseBenefitPersonIntent2, 101);
-                break;
-            case R.id.payment_benefit_textv_e:
-                Intent chooseBenefitPersonIntent3 = new Intent(this, ChoosePersonActivity.class);
-                chooseBenefitPersonIntent3.putExtra("personRole", "Doctor");
-                chooseBenefitPersonIntent3.putExtra("checkModel", "Multi");
-                chooseBenefitPersonIntent3.putExtra("selectPersonIDs", mBenefitPersonIDs);
-                chooseBenefitPersonIntent3.putExtra("customerID", userInfoApplication.getSelectedCustomerID());
-                startActivityForResult(chooseBenefitPersonIntent3, 101);
                 break;
             case R.id.payment_benefit_share_btn_e:
                 if (!checkBenefitPersonIsNull() && isComissionCalc) {
@@ -513,7 +506,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             mBenefitPersonNames = name;
             namegetFlg = 0;
         }
-        ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
+        removeBenefitPerson();
         JSONArray idArray = null;
         try {
             idArray = new JSONArray(id);
@@ -547,7 +540,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                             touch_flag = 0;
                             if (shareFlg == 1) {
                                 String[] nameArray = mBenefitPersonNames.split("、");
-                                ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
+                                removeBenefitPerson();
                                 benefitPersonItemCnt = nameArray.length;
                                 for (int j = 0; j < nameArray.length; j++) {
                                     View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
@@ -781,7 +774,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             rechargeNumberTitle.setText("转入金额");
             findViewById(R.id.benefit_person_divide_view).setVisibility(View.GONE);
             findViewById(R.id.benefit_person_layout).setVisibility(View.GONE);
-            ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
+            removeBenefitPerson();
             ecardGiveOtherTablelayout.setVisibility(View.GONE);
         } else {
             rechargeNumberTotalRelativelayout.setVisibility(View.VISIBLE);
@@ -799,5 +792,15 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    /**
+     * 清除业绩参与者
+     */
+    private void removeBenefitPerson() {
+        if (benefitPersonItemCnt > 0) {
+            ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
+            benefitPersonItemCnt = 0;
+        }
     }
 }

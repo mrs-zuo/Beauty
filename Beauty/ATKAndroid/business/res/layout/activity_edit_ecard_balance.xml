@@ -57,7 +57,7 @@
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
 
-                <View style="@style/activity_content_divide_view_attrs"></View>
+                <View style="@style/activity_content_divide_view_attrs" />
 
             </TableLayout>
 
@@ -106,7 +106,7 @@
                         android:paddingLeft="50dip" />
                 </RelativeLayout>
 
-                <View style="@style/activity_content_divide_view_attrs"></View>
+                <View style="@style/activity_content_divide_view_attrs" />
 
                 <RelativeLayout
                     android:id="@+id/benefit_share_percent_layout_e"
@@ -145,9 +145,7 @@
                         android:textSize="@dimen/text_size" />
                 </RelativeLayout>
 
-                <View
-                    android:id="@+id/benefit_person_divide_view"
-                    style="@style/activity_content_divide_view_attrs" />
+                <View style="@style/activity_content_divide_view_attrs" />
 
                 <RelativeLayout
                     android:id="@+id/benefit_person_layout"
@@ -186,7 +184,7 @@
                 </RelativeLayout>
 
                 <View
-                    android:id="@+id/benefit_person_layout_end"
+                    android:id="@+id/benefit_person_divide_view"
                     style="@style/activity_content_divide_view_attrs" />
 
                 <RelativeLayout style="@style/activity_content_table_relativelayout_attrs">

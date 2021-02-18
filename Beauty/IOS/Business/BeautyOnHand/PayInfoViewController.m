@@ -1538,8 +1538,12 @@
     if(self.averageNum % 2 ==0){
         self.averageFlag = 1;
         if (self.slaveArray.count > 0) {
+            NSString *displayPct = @"均分";
+            if (slaveArray.count == 1) {
+                displayPct = @"100";
+            }
             for(UserDoc *user in slaveArray){
-                user.user_ProfitPct = @"均分";
+                user.user_ProfitPct = displayPct;
             }
         }
     }else{
