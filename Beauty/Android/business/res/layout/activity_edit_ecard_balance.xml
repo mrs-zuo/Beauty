@@ -110,7 +110,8 @@
 
                 <RelativeLayout
                     android:id="@+id/benefit_share_percent_layout_e"
-                    style="@style/activity_content_table_relativelayout_attrs">
+                    style="@style/activity_content_table_relativelayout_attrs"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/benefit_share_percent_textv_e"
