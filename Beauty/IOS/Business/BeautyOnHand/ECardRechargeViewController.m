@@ -59,7 +59,8 @@ double presentedMoney;
 @property (nonatomic , assign) NSInteger selectIndex;
 @property (nonatomic, assign)  BOOL showWeChat;
 @property (nonatomic, assign)  BOOL showAliPay;
-
+/*均分*/
+@property (nonatomic ,assign) NSInteger averageFlag;  //0不均分 1均分
 @end
 
 @implementation ECardRechargeViewController
@@ -123,6 +124,8 @@ double presentedMoney;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //初始化均分
+    self.averageFlag = 1;
     self.view.frame = [[[UIApplication sharedApplication] keyWindow] bounds];
     
     self.view.backgroundColor = kColor_Background_View;
@@ -252,18 +255,20 @@ double presentedMoney;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return (self.rechargeWay == 3 ? 1 : (2 + self.slaveArray.count));
+    NSInteger resultCnt = 0;
+    switch (section) {
+        case 0:
+        case 1:
+            resultCnt = 1;
+            break;
+        case 2:
+            resultCnt = (self.rechargeWay == 3 ? 2: (5 + self.slaveArray.count));
+            break;
+        default:
+            resultCnt = 2;
+            break;
     }
-    if (section == 1) {
-        return 1;
-    }
-    if (section == 2) {
-        return (self.rechargeWay == 3 ? 2: 4);
-    }
-    else {
-        return 2;
-    }
+    return  resultCnt;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -322,53 +327,59 @@ double presentedMoney;
         accountCell.contentText.textColor = kColor_Editable;
         [accountCell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            CustomerDoc *customer = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).customer_Selected;
-            cell.titleLabel.text = @"顾客";
-            cell.valueText.text = customer.cus_Name;
-            return cell;
-        }if (indexPath.row == 1) {
-            UIImageView * arrowsImage = [[UIImageView alloc] initWithFrame:CGRectMake(295, (kTableView_HeightOfRow-12)/2, 10, 12)];
-            arrowsImage.image = [UIImage imageNamed:@"arrows_bg"];
-            [accountCell.contentView addSubview:arrowsImage];
-            accountCell.titleNameLabel.text = @"业绩参与";
-//            accountCell.contentText.text = ([self.slaveNames isEqualToString:@""] ? @"请选择业绩参与者  ": self.slaveNames);
-            accountCell.contentText.text = @"请选择业绩参与者  ";
-            return accountCell;
-        }else{
-            return [self configPerformanceProportionCell:tableView indexPath:indexPath];
-        }
-    }else if (indexPath.section == 1) {
-        cell.titleLabel.text = @"余额";
-        cell.valueText.text = MoneyFormat(eCardBalance);
-        return cell;
-    }else if (indexPath.section == 2) {
-        if (self.rechargeWay == 3) {
-            switch (indexPath.row) {
-                case 0:
-                    cell.titleLabel.text = @"充值方式";
-                    cell.valueText.textColor = kColor_Editable;
-                    cell.valueText.text = [self.rechargeArray objectAtIndex:4];
-                    return cell;
-                case 1:
-                    editCell.titleLabel.text = @"转入金额";
-                    editCell.valueText.text = rechargeMoney == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", rechargeMoney];
-                    editCell.valueText.placeholder = @"请输入转入金额";
-                    editCell.valueText.tag = 1000;
-                    if ((IOS7 || IOS8)) {
-                        [editCell.valueText setTintColor:[UIColor blueColor]];
-                    }
-                    return editCell;
+    switch (indexPath.section) {
+        case 0:
+            if (indexPath.row == 0) {
+                CustomerDoc *customer = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).customer_Selected;
+                cell.titleLabel.text = @"顾客";
+                cell.valueText.text = customer.cus_Name;
+                return cell;
             }
-        } else {
-            switch (indexPath.row) {
-                case 0:
+            break;
+        case 1:
+            cell.titleLabel.text = @"余额";
+            cell.valueText.text = MoneyFormat(eCardBalance);
+            return cell;
+            break;
+        case 2:
+            if (self.rechargeWay == 3) {
+                switch (indexPath.row) {
+                    case 0:
+                        cell.titleLabel.text = @"充值方式";
+                        cell.valueText.textColor = kColor_Editable;
+                        cell.valueText.text = [self.rechargeArray objectAtIndex:4];
+                        return cell;
+                    case 1:
+                        editCell.titleLabel.text = @"转入金额";
+                        editCell.valueText.text = rechargeMoney == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", rechargeMoney];
+                        editCell.valueText.placeholder = @"请输入转入金额";
+                        editCell.valueText.tag = 1000;
+                        if ((IOS7 || IOS8)) {
+                            [editCell.valueText setTintColor:[UIColor blueColor]];
+                        }
+                        return editCell;
+                }
+            } else {
+                if (indexPath.row == 0) {
                     cell.titleLabel.text = @"充值方式";
                     cell.valueText.textColor = kColor_Editable;
                     cell.valueText.text = [self.rechargeArray objectAtIndex:self.selectIndex];
                     return cell;
-                case 1:
+                } else if (indexPath.row == 1){
+                    UIImageView * arrowsImage = [[UIImageView alloc] initWithFrame:CGRectMake(295, (kTableView_HeightOfRow-12)/2, 10, 12)];
+                    arrowsImage.image = [UIImage imageNamed:@"arrows_bg"];
+                    [accountCell.contentView addSubview:arrowsImage];
+                    accountCell.titleNameLabel.text = @"业绩参与";
+                    //均分按钮
+                    UIButton * averageButton;
+                    averageButton = [UIButton buttonTypeRoundedRectWithTitle:@"均分" target:self selector:@selector(chickAverageBtn) frame:CGRectMake(80.0f,(kTableView_HeightOfRow - 20.0f)/2,35.0f,20.0f) titleColor:[UIColor whiteColor] backgroudColor:KColor_Blue cornerRadius:5];
+                    [accountCell.contentView addSubview:averageButton];
+        //            accountCell.contentText.text = ([self.slaveNames isEqualToString:@""] ? @"请选择业绩参与者  ": self.slaveNames);
+                    accountCell.contentText.text = @"请选择业绩参与者  ";
+                    return accountCell;
+                } else if (self.slaveArray.count > 0 && (indexPath.row > 1 && indexPath.row <= 1 + self.slaveArray.count)){
+                    return [self configPerformanceProportionCell:tableView indexPath:indexPath];
+                } else if (indexPath.row == 2 + self.slaveArray.count){
                     editCell.titleLabel.text = @"充值金额";
                     editCell.valueText.text =  rechargeMoney == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", rechargeMoney];
                     editCell.valueText.placeholder = @"请输入充值金额";
@@ -377,7 +388,7 @@ double presentedMoney;
                         [editCell.valueText setTintColor:[UIColor blueColor]];
                     }
                     return editCell;
-                case 2:
+                } else if (indexPath.row == 3 + self.slaveArray.count){
                     editCell.titleLabel.text = @"赠送金额";
                     editCell.valueText.text =  presentedMoney == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", presentedMoney];
                     editCell.valueText.placeholder = @"请输入赠送金额";
@@ -386,87 +397,112 @@ double presentedMoney;
                         [editCell.valueText setTintColor:[UIColor blueColor]];
                     }
                     return editCell;
-                case 3:
+                } else if (indexPath.row == 4 + self.slaveArray.count){
                     cell.titleLabel.text = @"合计";
                     cell.valueText.text = [NSString stringWithFormat:@"%@ %.2Lf", MoneyIcon, rechargeMoney + presentedMoney];
                     cell.valueText.textColor = kColor_Black;
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     return cell;
-
-            }
-        }
-    }else {
-        if (self.rechargeWay !=3) {
-            if (indexPath.section ==3) {
-                switch (indexPath.row) {
-                    case 0:
-                        editCell.titleLabel.text = @"赠送积分";
-                        editCell.valueText.text =  integralDouble == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", integralDouble];
-                        editCell.valueText.placeholder = @"请输入积分";
-                        editCell.valueText.tag = 2000 + TAG(indexPath);
-                        if ((IOS7 || IOS8)) {
-                            [editCell.valueText setTintColor:[UIColor blueColor]];
-                        }
-                        return editCell;
-
-                        break;
-                        
-                    case 1:
-                        editCell.titleLabel.text = @"赠送现金券";
-                        editCell.valueText.text =  cashCouponDouble == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", cashCouponDouble];
-                        editCell.valueText.placeholder = @"请输入赠送现金券金额";
-                        editCell.valueText.tag = 2000 + TAG(indexPath);
-                        if ((IOS7 || IOS8)) {
-                            [editCell.valueText setTintColor:[UIColor blueColor]];
-                        }
-                        return editCell;
-                        break;
-                        
-                    default:
-                        break;
                 }
             }
-        }
-        if (indexPath.section == self.selectionNumber-1) {
-            if (indexPath.row == 0) {
-                cell.titleLabel.text = @"备注";
-                cell.valueText.text = @"";
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                return cell;
-            } else {
-                
-                UILabel *accessoryLabel = [UILabel initNormalLabelWithFrame:CGRectMake(200.0f, 75.0f, 100.0f, 15.0f) title:[NSString stringWithFormat:@"%lu/200", (unsigned long)[rechargeRemark length]]];
-                accessoryLabel.textColor = [UIColor blackColor];
-                accessoryLabel.font = kFont_Light_14;
-                accessoryLabel.textAlignment = NSTextAlignmentRight;
-                accessoryLabel.tag = 101;
-                
-                static NSString *cellIdentity = @"ss";
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentity];
-                cell.backgroundColor = [UIColor whiteColor];
-                
-                UIPlaceHolderTextView *textView = [UIPlaceHolderTextView initNormalTextViewWithFrame:CGRectMake(5.0f, 0.0f, 300.0f, 75.0f)
-                                                                                                text:@""
-                                                                                         placeHolder:@""];
-                textView.tag = 102;
-                textView.delegate = self;
-                if (cell == nil) {
-                    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentity];
-                    [cell.contentView addSubview:accessoryLabel];
-                    [cell.contentView addSubview:textView];
+            break;
+        default:
+            if (self.rechargeWay !=3) {
+                if (indexPath.section ==3) {
+                    switch (indexPath.row) {
+                        case 0:
+                            editCell.titleLabel.text = @"赠送积分";
+                            editCell.valueText.text =  integralDouble == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", integralDouble];
+                            editCell.valueText.placeholder = @"请输入积分";
+                            editCell.valueText.tag = 2000 + TAG(indexPath);
+                            if ((IOS7 || IOS8)) {
+                                [editCell.valueText setTintColor:[UIColor blueColor]];
+                            }
+                            return editCell;
+                            break;
+                        case 1:
+                            editCell.titleLabel.text = @"赠送现金券";
+                            editCell.valueText.text =  cashCouponDouble == 0 ? @"" : [NSString stringWithFormat:@"%.2Lf", cashCouponDouble];
+                            editCell.valueText.placeholder = @"请输入赠送现金券金额";
+                            editCell.valueText.tag = 2000 + TAG(indexPath);
+                            if ((IOS7 || IOS8)) {
+                                [editCell.valueText setTintColor:[UIColor blueColor]];
+                            }
+                            return editCell;
+                            break;
+                        default:
+                            break;
+                    }
                 }
-                return cell;
+            }
+            if (indexPath.section == self.selectionNumber-1) {
+                if (indexPath.row == 0) {
+                    cell.titleLabel.text = @"备注";
+                    cell.valueText.text = @"";
+                    cell.valueText.placeholder = @"";
+                    cell.valueText.userInteractionEnabled = NO;
+                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                    return cell;
+                } else {
+                    
+                    UILabel *accessoryLabel = [UILabel initNormalLabelWithFrame:CGRectMake(200.0f, 75.0f, 100.0f, 15.0f) title:[NSString stringWithFormat:@"%lu/200", (unsigned long)[rechargeRemark length]]];
+                    accessoryLabel.textColor = [UIColor blackColor];
+                    accessoryLabel.font = kFont_Light_14;
+                    accessoryLabel.textAlignment = NSTextAlignmentRight;
+                    accessoryLabel.tag = 101;
+                    
+                    static NSString *cellIdentity = @"ss";
+                    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentity];
+                    cell.backgroundColor = [UIColor whiteColor];
+                    
+                    UIPlaceHolderTextView *textView = [UIPlaceHolderTextView initNormalTextViewWithFrame:CGRectMake(5.0f, 0.0f, 300.0f, 75.0f)
+                                                                                                    text:@""
+                                                                                             placeHolder:@""];
+                    textView.tag = 102;
+                    textView.delegate = self;
+                    if (cell == nil) {
+                        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentity];
+                        [cell.contentView addSubview:accessoryLabel];
+                        [cell.contentView addSubview:textView];
+                    }
+                    return cell;
+                }
+            }
+            break;
+    }
+    return cell;
+}
+
+/*
+ * 选择均分按钮后  交替点击
+ */
+-(void)chickAverageBtn
+{
+    if(self.averageFlag == 0){
+        self.averageFlag = 1;
+        if (self.slaveArray.count > 0) {
+            NSString *displayPct = @"均分";
+            if (slaveArray.count == 1) {
+                displayPct = @"100";
+            }
+            for(UserDoc *user in slaveArray){
+                user.user_ProfitPct = displayPct;
+            }
+        }
+    }else{
+        self.averageFlag = 0;
+        if (self.slaveArray.count > 0) {
+            for(UserDoc *user in slaveArray){
+                user.user_ProfitPct = @"0";
             }
         }
     }
-    
-    return cell;
+    [myTableView reloadData];
 }
 
 #pragma mark -  配置cell
 //业绩参与人比例
 - (PerformanceTableViewCell *)configPerformanceProportionCell:(UITableView *)tableView  indexPath:(NSIndexPath *)indexPath {
-    
     NSString *identifier =[NSString stringWithFormat:@"PerformanceCell%@",indexPath];
     PerformanceTableViewCell *performanceCell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!performanceCell) {
@@ -477,7 +513,21 @@ double presentedMoney;
     if (self.slaveArray.count > 0) {
         userdoc= self.slaveArray[indexPath.row - 2];
         performanceCell.nameLab.text = userdoc.user_Name;
-        performanceCell.numText.text = userdoc.user_ProfitPct;
+        performanceCell.numText.hidden = NO;
+        performanceCell.percentLab.hidden = NO;
+        performanceCell.numText.enabled = YES;
+        performanceCell.numText.keyboardType = UIKeyboardTypeDecimalPad;
+        //选择业绩参与人前已经选择了均分 那么后面再选择的业绩参与人也是均分的
+        if(self.averageFlag == 1){
+            performanceCell.numText.text = @"均分";
+            performanceCell.numText.enabled =NO;
+            if (self.slaveArray.count == 1) {
+                performanceCell.numText.text = @"100";
+            }
+        }else{
+            performanceCell.numText.enabled =YES;
+            performanceCell.numText.text = userdoc.user_ProfitPct;
+        }
     }
     return performanceCell;
 }
@@ -486,11 +536,11 @@ double presentedMoney;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.view endEditing:YES];
-    if (indexPath.section == 0 && indexPath.row == 2) {
-        self.type = COUNSELORPERSON;
-        [self chosePersion:COUNSELORPERSON];
-    }
-    if (indexPath.section == 0 && indexPath.row == 1) {
+//    if (indexPath.section == 2 && indexPath.row == 2) {
+//        self.type = COUNSELORPERSON;
+//        [self chosePersion:COUNSELORPERSON];
+//    }
+    if (indexPath.section == 2 && indexPath.row == 1) {
         self.type = 1;
         [self chosePersion:COUNSELORSLAVE];
     }
@@ -688,9 +738,11 @@ double presentedMoney;
         if (userDoc == nil)
             userDoc = [[UserDoc alloc] init];
     } else {
+        //初始化均分
+        self.averageFlag = 1;
         self.slaveArray = [NSMutableArray arrayWithArray:userArray];
     }
-    [myTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+    [myTableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -755,36 +807,27 @@ double presentedMoney;
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    UITableViewCell *cell = nil;
+    NormalEditCell *cell = nil;
     if ((IOS6 || IOS8)) {
-        cell = (UITableViewCell *)textField.superview.superview;
+        cell = (NormalEditCell *)textField.superview.superview;
     } else {
-        cell = (UITableViewCell *)textField.superview.superview.superview;
-    }
-    NSIndexPath *indexPath = [[NSIndexPath alloc] init];
-    if (textField.tag > 2000) {
-        indexPath = INDEX((textField.tag % 2000));
-    } else if (textField.tag > 1000) {
-        indexPath = INDEX((textField.tag % 1000));
-    } else {
-        indexPath = [myTableView indexPathForCell:cell];
+        cell = (NormalEditCell *)textField.superview.superview.superview;
     }
     if (self.rechargeWay == 3) {
-        if(indexPath.section == 2 && indexPath.row == 1) {
+        if ([cell.titleLabel.text isEqual:@"转入金额"]) {
             rechargeMoney = [textField.text doubleValue];
         }
     } else {
-        if(indexPath.section == 2 && indexPath.row == 1) {
+        if ([cell.titleLabel.text isEqual:@"充值金额"]) {
             rechargeMoney = [textField.text doubleValue];
-        } else if(indexPath.section == 2 && indexPath.row == 2) {
+        } else if ([cell.titleLabel.text isEqual:@"赠送金额"]) {
             presentedMoney = [textField.text doubleValue];
         }
     }
     
-    if (indexPath.section ==3&&indexPath.row==0) {
+    if ([cell.titleLabel.text isEqual:@"赠送积分"]) {
         integralDouble = [textField.text doubleValue];
-    }else if(indexPath.section ==3  &&indexPath.row==1)
-    {
+    } else if ([cell.titleLabel.text isEqual:@"赠送现金券"]) {
         cashCouponDouble = [textField.text doubleValue];
     }
     
@@ -1055,6 +1098,73 @@ double presentedMoney;
         return;
     }
     
+    NSString *alterMessage = [NSString string];
+    if(self.slaveArray.count == 0)
+    {
+        alterMessage = @"本次支付的业绩参与人为空,是否继续进行支付?";
+    }
+    else
+    {
+        alterMessage = @"业绩参与比例≠100%， 是否继续？";
+    }
+    if ([self needProfitRateAlter]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:alterMessage
+                                                           delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView showAlertViewWithHandler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+            if (buttonIndex == 1) {
+                [self requestCardRecharge:customerID];
+            }
+        }];
+    } else {
+        [self requestCardRecharge:customerID];
+    }
+}
+
+//检查是否需要提示框
+-(BOOL)needProfitRateAlter
+{
+    double rate=0;
+    
+    //不显示提成比例时不提示(余额转入)
+    if(self.rechargeWay == 3)
+    {
+        return NO;
+    }
+    
+    if(self.slaveArray.count == 0)
+    {
+        return YES;
+    }
+    else
+    {
+        //业绩参与不均分
+        if(self.averageFlag == 0)
+        {
+            
+            for (UserDoc *user in self.slaveArray) {
+                rate += [user.user_ProfitPct doubleValue];
+            }
+            
+            if(rate !=100)
+            {
+                return YES;
+            }
+            else
+            {
+                return  NO;
+                
+            }
+            
+        }
+        else
+        {
+            return  NO;
+        }
+    }
+}
+
+- (void)requestCardRecharge:(NSInteger) customerID
+{
     /**
      *微信支付
      */
@@ -1076,6 +1186,7 @@ double presentedMoney;
             if (buttonIndex == 1) {
                 NSDictionary * par = @{
                                        @"CustomerID":@((long)customerID),
+                                       @"AverageFlag":@(self.averageFlag),
                                        @"Slavers":[self gettingSlavers],
                                        @"TotalAmount":@((double)rechargeMoney),
                                        @"PointAmount":@((double)integralDouble),
@@ -1154,6 +1265,7 @@ double presentedMoney;
                                 @"ResponsiblePersonID":@(0),
                                 @"Amount":@((double)rechargeMoney),
                                 @"Remark":[OverallMethods EscapingString:rechargeRemark],
+                                @"AverageFlag":@(self.averageFlag),
                                 @"Slavers":[self gettingSlavers],
                                 @"GiveList":arr
                                 };
