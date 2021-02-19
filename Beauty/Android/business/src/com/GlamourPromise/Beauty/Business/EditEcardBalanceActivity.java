@@ -44,6 +44,7 @@ import com.GlamourPromise.Beauty.view.BusinessLeftImageButton;
 import com.GlamourPromise.Beauty.view.BusinessRightImageButton;
 import com.GlamourPromise.Beauty.webservice.WebServiceUtil;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -89,7 +90,10 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
     private String mSlaveID, mSlaveName;
     private LayoutInflater layoutInflater;
     private TableLayout ecardSlaverTablelayout;
+    // 业绩参与人数
     private Integer benefitPersonItemCnt = 0;
+    // 业绩参与者view起始位置
+    private int ecardSlaverStartPos = 5;
     private int shareFlg = 0, namegetFlg = 0, cnt_i, changeFlg = 0;
     private boolean isComissionCalc = true;
     // activity 销毁(onDestroy)标志
@@ -396,59 +400,69 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 } else {
                     if (eCardRechargeNumberText.getText() == null || ("").equals(eCardRechargeNumberText.getText().toString()))
                         DialogUtil.createShortDialog(this, "请输入充值金额!");
-                    else if (Float.valueOf(eCardRechargeNumberText.getText().toString()) == 0)
+                    else if (Float.parseFloat(eCardRechargeNumberText.getText().toString()) == 0)
                         DialogUtil.createShortDialog(this, "请输入充值金额!");
                     else {
-                        String dialogMsg = "";
-                        if (eCardRechargeTypeSpinner.getSelectedItem().toString().equals("余额转入"))
-                            dialogMsg = "本次转入合计:"
-                                    + userInfoApplication.getAccountInfo().getCurrency()
-                                    + eCardRechargeTotalText.getText().toString()
-                                    + ","
-                                    + LowerCase2Uppercase.l2Uppercase(Double.valueOf(eCardRechargeTotalText.getText().toString())) + "。";
+                        // 业绩参与人
+                        double percentTotal = 0;
+                        final JSONArray benefitDetailJsonArray = new JSONArray();
+                        if (benefitPersonItemCnt == 0 || mBenefitPersonIDs == null || mBenefitPersonIDs.equals("") || mBenefitPersonIDs.equals("[0]"))
+                            ;
                         else {
-                            //充值类型
-                            String rechargeMode = eCardRechargeTypeSpinner.getSelectedItem().toString();
-                            dialogMsg = "本次" + rechargeMode + "充值合计:"
-                                    + userInfoApplication.getAccountInfo().getCurrency()
-                                    + eCardRechargeNumberText.getText().toString()
-                                    + ","
-                                    + LowerCase2Uppercase.l2Uppercase(Double.valueOf(eCardRechargeTotalText.getText().toString())) + "。";
+                            try {
+                                JSONArray tmp = new JSONArray(mBenefitPersonIDs);
+                                percentTotal = 0;
+                                for (int i = 0; i < benefitPersonItemCnt && i < ecardSlaverTablelayout.getChildCount(); i++) {
+                                    int position = ecardSlaverStartPos + i;
+                                    EditText percentEditText = ((EditText) ecardSlaverTablelayout.getChildAt(position).findViewById(R.id.benefit_person_percent));
+                                    double percent = 0;
+                                    double percentTmp = 0;
+                                    if (shareFlg != 1 && !StringUtils.isEmpty(percentEditText.getText())) {
+                                        percentTmp = Double.parseDouble(percentEditText.getText().toString());
+                                        percent = percentTmp / 100;
+                                        percentTotal += percentTmp;
+                                    }
+                                    JSONObject benefitJson = new JSONObject();
+                                    benefitJson.put("SlaveID", tmp.get(i));
+                                    benefitJson.put("ProfitPct", percent);
+                                    benefitDetailJsonArray.put(benefitJson);
+                                }
+                            } catch (JSONException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                                mHandler.sendEmptyMessage(99);
+                                return;
+                            }
                         }
 
-                        Dialog dialog = new AlertDialog.Builder(this, R.style.CustomerAlertDialog)
-                                .setTitle(getString(R.string.delete_dialog_title)).setMessage(dialogMsg)
-                                .setPositiveButton(getString(R.string.delete_confirm),
-                                        new DialogInterface.OnClickListener() {
-
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                dialog.dismiss();
-                                                progressDialog = ProgressDialogUtil.createProgressDialog(EditEcardBalanceActivity.this);
-                                                if (selectedItemStr.equals("现金"))
-                                                    rechargeType = 1;
-                                                else if (selectedItemStr.equals("银行卡"))
-                                                    rechargeType = 2;
-                                                else if (selectedItemStr.equals("余额转入"))
-                                                    rechargeType = 3;
-                                                //如果不是微信充值  现金/银行卡/余额转入
-                                                if (!selectedItemStr.equals("微信") && !selectedItemStr.equals("支付宝"))
-                                                    rechargeToServer();
-                                                    //微信或者支付宝充值，则跳转到微信或者支付宝支付界面
-                                                else {
-                                                    thirdPartPay(selectedItemStr);
+                        // 业绩参与提醒
+                        if (!selectedItemStr.equals("余额转入") && ((shareFlg != 1 && percentTotal != 100) || benefitPersonItemCnt == 0)) {
+                            String dialogMsg = "";
+                            Dialog benefitPersonIsOverflowDialog = new AlertDialog.Builder(this, R.style.CustomerAlertDialog)
+                                    .setTitle(getString(R.string.delete_dialog_title))
+                                    .setMessage(benefitPersonItemCnt == 0 ? R.string.submit_payment_when_benefit_person_is_null : R.string.submit_payment_when_benefit_person_is_overflow)
+                                    .setPositiveButton(getString(R.string.delete_confirm),
+                                            new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface benefitPersonIsOverflowDialog,
+                                                                    int which) {
+                                                    benefitPersonIsOverflowDialog.dismiss();
+                                                    payEcardBalanceMakeSure(selectedItemStr, benefitDetailJsonArray);
                                                 }
-                                            }
-                                        })
-                                .setNegativeButton(getString(R.string.delete_cancel), new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                        dialog = null;
-                                    }
-                                }).create();
-                        dialog.show();
-                        dialog.setCancelable(false);
+                                            })
+                                    .setNegativeButton(getString(R.string.delete_cancel),
+                                            new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog,
+                                                                    int which) {
+                                                    dialog.dismiss();
+                                                }
+                                            }).create();
+                            benefitPersonIsOverflowDialog.show();
+                            benefitPersonIsOverflowDialog.setCancelable(false);
+                        } else {
+                            payEcardBalanceMakeSure(selectedItemStr, benefitDetailJsonArray);
+                        }
                     }
                 }
                 break;
@@ -480,6 +494,57 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 }
                 break;
         }
+    }
+
+    private void payEcardBalanceMakeSure(final String selectedItemStr, final JSONArray benefitDetailJsonArray) {
+        String dialogMsg = "";
+        if (eCardRechargeTypeSpinner.getSelectedItem().toString().equals("余额转入"))
+            dialogMsg = "本次转入合计:"
+                    + userInfoApplication.getAccountInfo().getCurrency()
+                    + eCardRechargeTotalText.getText().toString()
+                    + ","
+                    + LowerCase2Uppercase.l2Uppercase(Double.parseDouble(eCardRechargeTotalText.getText().toString())) + "。";
+        else {
+            //充值类型
+            String rechargeMode = eCardRechargeTypeSpinner.getSelectedItem().toString();
+            dialogMsg = "本次" + rechargeMode + "充值合计:"
+                    + userInfoApplication.getAccountInfo().getCurrency()
+                    + eCardRechargeNumberText.getText().toString()
+                    + ","
+                    + LowerCase2Uppercase.l2Uppercase(Double.parseDouble(eCardRechargeTotalText.getText().toString())) + "。";
+        }
+
+        Dialog dialog = new AlertDialog.Builder(this, R.style.CustomerAlertDialog)
+                .setTitle(getString(R.string.delete_dialog_title)).setMessage(dialogMsg)
+                .setPositiveButton(getString(R.string.delete_confirm),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                progressDialog = ProgressDialogUtil.createProgressDialog(EditEcardBalanceActivity.this);
+                                if (selectedItemStr.equals("现金"))
+                                    rechargeType = 1;
+                                else if (selectedItemStr.equals("银行卡"))
+                                    rechargeType = 2;
+                                else if (selectedItemStr.equals("余额转入"))
+                                    rechargeType = 3;
+                                //如果不是微信充值  现金/银行卡/余额转入
+                                if (!selectedItemStr.equals("微信") && !selectedItemStr.equals("支付宝"))
+                                    rechargeToServer(benefitDetailJsonArray);
+                                    //微信或者支付宝充值，则跳转到微信或者支付宝支付界面
+                                else {
+                                    thirdPartPay(selectedItemStr, benefitDetailJsonArray);
+                                }
+                            }
+                        })
+                .setNegativeButton(getString(R.string.delete_cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).create();
+        dialog.show();
+        dialog.setCancelable(false);
     }
 
     private boolean checkBenefitPersonIsNull() {
@@ -551,7 +616,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                                     EditText[] editText = new EditText[]{benefitPersonPercentText};
                                     NumberFormatUtil.setPricePointArray(editText, 2);
                                     benefitPersonPercentText.setText(String.valueOf(0));
-                                    ecardSlaverTablelayout.addView(benefitPersonItemView, 5 + j);
+                                    ecardSlaverTablelayout.addView(benefitPersonItemView, ecardSlaverStartPos + j);
                                 }
                                 shareFlg = 0;
                                 return true;
@@ -573,19 +638,19 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 } else {
                     benefitPersonPercentText.setEnabled(true);
                 }
-                ecardSlaverTablelayout.addView(benefitPersonItemView, 5 + i);
+                ecardSlaverTablelayout.addView(benefitPersonItemView, ecardSlaverStartPos + i);
             }
             benefitPersonItemCnt = nameArray.length;
         }
     }
 
-    private void rechargeToServer() {
-        RechargeEcardTask task = createRechargeTask();
+    private void rechargeToServer(JSONArray benefitDetailJsonArray) {
+        RechargeEcardTask task = createRechargeTask(benefitDetailJsonArray);
         NetUtil netUtil = NetUtil.getNetUtil();
         netUtil.submitDownloadTask(task);
     }
 
-    private RechargeEcardTask createRechargeTask() {
+    private RechargeEcardTask createRechargeTask(JSONArray benefitDetailJsonArray) {
         RechargeEcardTask.Builder builder = new RechargeEcardTask.Builder();
         int customerID = userInfoApplication.getSelectedCustomerID();
         String amount = eCardRechargeNumberText.getText().toString();
@@ -606,7 +671,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             remark = ecardBalanceRemark.getText().toString();
         }
         JSONArray giveJsonArray = new JSONArray();
-        if (Double.valueOf(giveAmount) != 0) {
+        if (Double.parseDouble(giveAmount) != 0) {
             JSONObject giveAmountJson = new JSONObject();
             try {
                 giveAmountJson.put("CardType", ecardInfo.getUserEcardType());
@@ -618,7 +683,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             }
             giveJsonArray.put(giveAmountJson);
         }
-        if (Double.valueOf(giveAmountPoint) != 0) {
+        if (Double.parseDouble(giveAmountPoint) != 0) {
             JSONObject giveAmountPointJson = new JSONObject();
             try {
                 giveAmountPointJson.put("CardType", customerEcardInfoPoint.getUserEcardType());
@@ -630,7 +695,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             }
             giveJsonArray.put(giveAmountPointJson);
         }
-        if (Double.valueOf(giveAmountCashCoupon) != 0) {
+        if (Double.parseDouble(giveAmountCashCoupon) != 0) {
             JSONObject giveAmountCashCouponJson = new JSONObject();
             try {
                 giveAmountCashCouponJson.put("CardType", customerEcardInfoCashCoupon.getUserEcardType());
@@ -642,37 +707,15 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
             }
             giveJsonArray.put(giveAmountCashCouponJson);
         }
-        JSONArray benefitDetailJsonArray = new JSONArray();
-        if (mBenefitPersonIDs == null || mBenefitPersonIDs.equals("") || mBenefitPersonIDs.equals("[0]"))
-            ;
-        else {
-            try {
-                JSONArray tmp = new JSONArray(mBenefitPersonIDs);
-                for (int i = 5; i < ecardSlaverTablelayout.getChildCount(); i++) {
-                    EditText percentEditText = ((EditText) ecardSlaverTablelayout.getChildAt(i).findViewById(R.id.benefit_person_percent));
-                    double percent = 0;
-                    if (percentEditText.getText() != null && shareFlg == 0)
-                        percent = Double.valueOf(percentEditText.getText().toString()) / 100;
-                    JSONObject benefitJson = new JSONObject();
-                    benefitJson.put("SlaveID", tmp.get(i - 5));
-                    benefitJson.put("ProfitPct", percent);
-                    benefitDetailJsonArray.put(benefitJson);
-                }
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                mHandler.sendEmptyMessage(99);
-            }
-        }
         builder.setAmount(amount).setChangeType(3).setCardType(ecardInfo.getUserEcardType()).setDepositMode(rechargeType).
                 setUserCardNo(ecardInfo.getUserEcardNo()).setCustomerID(customerID).setHandler(mHandler)
                 .setRemark(remark).setResponsiblePersonID(0).setSlaveIDs(benefitDetailJsonArray.toString()).setGiveJsonArray(giveJsonArray)
-                .setAverageFlag(shareFlg).setBranchProfitRate(Double.valueOf(thisBenefitSharePercent.getText().toString()) / 100);
+                .setAverageFlag(shareFlg).setBranchProfitRate(Double.parseDouble(thisBenefitSharePercent.getText().toString()) / 100);
         return builder.create();
     }
 
     //跳转到微信或者支付宝支付界面
-    protected void thirdPartPay(String selectedItemStr) {
+    protected void thirdPartPay(String selectedItemStr, JSONArray benefitDetailJsonArray) {
         if (progressDialog != null) {
             progressDialog.dismiss();
             progressDialog = null;
@@ -702,29 +745,6 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
         bundle.putSerializable("customerEcardPoint", customerEcardInfoPoint);
         bundle.putSerializable("customerEcardCashcoupon", customerEcardInfoCashCoupon);
         destIntent.putExtras(bundle);
-        JSONArray benefitDetailJsonArray = new JSONArray();
-        if (mBenefitPersonIDs == null || mBenefitPersonIDs.equals("") || mBenefitPersonIDs.equals("[0]"))
-            ;
-        else {
-            try {
-                JSONArray tmp = new JSONArray(mBenefitPersonIDs);
-                for (int i = 5; i < ecardSlaverTablelayout.getChildCount(); i++) {
-                    EditText percentEditText = ((EditText) ecardSlaverTablelayout.getChildAt(i).findViewById(R.id.benefit_person_percent));
-                    double percent = 0;
-                    if (percentEditText.getText() != null)
-                        percent = Double.valueOf(percentEditText.getText().toString()) / 100;
-                    JSONObject benefitJson = new JSONObject();
-                    benefitJson.put("SlaveID", tmp.get(i - 5));
-                    benefitJson.put("ProfitPct", percent);
-                    benefitDetailJsonArray.put(benefitJson);
-                }
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                mHandler.sendEmptyMessage(99);
-                return;
-            }
-        }
         destIntent.putExtra("slaveID", benefitDetailJsonArray.toString());
         destIntent.putExtra("totalAmount", NumberFormatUtil.currencyFormat(amount));
         destIntent.putExtra("pointAmount", NumberFormatUtil.currencyFormat(giveAmountPoint));
@@ -733,7 +753,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
         destIntent.putExtra("remark", remark);
         destIntent.putExtra("payType", 1);
         destIntent.putExtra("AverageFlag", shareFlg);
-        destIntent.putExtra("BranchProfitRate", Double.valueOf(thisBenefitSharePercent.getText().toString()) / 100);
+        destIntent.putExtra("BranchProfitRate", Double.parseDouble(thisBenefitSharePercent.getText().toString()) / 100);
         if (selectedItemStr.equals("微信")) {
             destIntent.putExtra("paymentMode", Constant.PAYMENT_MODE_WEIXIN);
         } else if (selectedItemStr.equals("支付宝")) {
@@ -799,7 +819,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
      */
     private void removeBenefitPerson() {
         if (benefitPersonItemCnt > 0) {
-            ecardSlaverTablelayout.removeViews(5, benefitPersonItemCnt);
+            ecardSlaverTablelayout.removeViews(ecardSlaverStartPos, benefitPersonItemCnt);
             benefitPersonItemCnt = 0;
         }
     }
