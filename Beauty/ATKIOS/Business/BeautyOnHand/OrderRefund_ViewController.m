@@ -785,7 +785,9 @@
         if(self.averageFlag == 1){
             performanceCell.numText.text = @"均分";
             performanceCell.numText.enabled =NO;
-            
+            if (self.slaveArray.count == 1) {
+                performanceCell.numText.text = @"100";
+            }
         }else{
             performanceCell.numText.enabled =YES;
             performanceCell.numText.text = userDoc.user_ProfitPct;
