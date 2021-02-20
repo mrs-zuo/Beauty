@@ -93,7 +93,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
     // 业绩参与人数
     private Integer benefitPersonItemCnt = 0;
     // 业绩参与者view起始位置
-    private int ecardSlaverStartPos = 5;
+    private int benefitPersonStartPos;
     private int shareFlg = 0, namegetFlg = 0, cnt_i, changeFlg = 0;
     private boolean isComissionCalc = true;
     // activity 销毁(onDestroy)标志
@@ -261,6 +261,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
         GenerateMenu.generateRightMenu(this, bussinessRightMenuBtn);
         layoutInflater = LayoutInflater.from(this);
         ecardSlaverTablelayout = (TableLayout) findViewById(R.id.layout_two);
+        benefitPersonStartPos = ecardSlaverTablelayout.indexOfChild(findViewById(R.id.benefit_person_divide_view)) + 1;
         //充值的可选充值方式
         List<String> rechargeModeList = new ArrayList<String>();
         rechargeModeList.add("现金");
@@ -413,7 +414,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                                 JSONArray tmp = new JSONArray(mBenefitPersonIDs);
                                 percentTotal = 0;
                                 for (int i = 0; i < benefitPersonItemCnt && i < ecardSlaverTablelayout.getChildCount(); i++) {
-                                    int position = ecardSlaverStartPos + i;
+                                    int position = benefitPersonStartPos + i;
                                     EditText percentEditText = ((EditText) ecardSlaverTablelayout.getChildAt(position).findViewById(R.id.benefit_person_percent));
                                     double percent = 0;
                                     double percentTmp = 0;
@@ -638,7 +639,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
                 } else {
                     benefitPersonPercentText.setEnabled(true);
                 }
-                ecardSlaverTablelayout.addView(benefitPersonItemView, ecardSlaverStartPos + i);
+                ecardSlaverTablelayout.addView(benefitPersonItemView, benefitPersonStartPos + i);
             }
             benefitPersonItemCnt = nameArray.length;
         }
@@ -819,7 +820,7 @@ public class EditEcardBalanceActivity extends BaseActivity implements OnClickLis
      */
     private void removeBenefitPerson() {
         if (benefitPersonItemCnt > 0) {
-            ecardSlaverTablelayout.removeViews(ecardSlaverStartPos, benefitPersonItemCnt);
+            ecardSlaverTablelayout.removeViews(benefitPersonStartPos, benefitPersonItemCnt);
             benefitPersonItemCnt = 0;
         }
     }

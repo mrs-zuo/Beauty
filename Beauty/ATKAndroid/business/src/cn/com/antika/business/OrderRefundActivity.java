@@ -31,6 +31,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -91,6 +92,10 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
     private TextView pointValueText, cashCouponValueText, thisTimepayment_benefit_share_btn;
     private int productType;
     private TableLayout orderRefundSlaverTablelayout;
+    // 业绩参与人数
+    private Integer benefitPersonItemCnt = 0;
+    // 业绩参与者view起始位置
+    private int benefitPersonStartPos;
     private int shareFlg = 0, namegetFlg = 0, cnt_i, changeFlg = 0;
     private boolean isComissionCalc = true;
     private double consultantrateamount, refundrate, refundActionShouldRefundAmount, refundActionGiveRefundAmount;
@@ -192,7 +197,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                         ((TextView) orderPaymentDetailItem.findViewById(R.id.payment_record_detail_amount_text)).setText(currency + NumberFormatUtil.currencyFormat(paymentRecordDetail.getPaymentRecordDetailAmount()));
                         LinearLayout paymentDetailIssuesLinearlayout = (LinearLayout) orderPaymentDetailItem.findViewById(R.id.payment_detail_issues_linearlayout);
 
-                        double orderrefundprice = Double.valueOf(paymentRecordDetail.getPaymentRecordDetailAmount());
+                        double orderrefundprice = Double.parseDouble(paymentRecordDetail.getPaymentRecordDetailAmount());
                         if (paymentRecordDetail.getPdiList() != null && paymentRecordDetail.getPdiList().size() > 0) {
                             for (int j = 0; j < paymentRecordDetail.getPdiList().size(); j++) {
                                 PaymentDetailIssues pdi = paymentRecordDetail.getPdiList().get(j);
@@ -301,7 +306,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                             @Override
                             public void onClick(View view) {
                                 // TODO Auto-generated method stub
-                                if ((orderRefundActivity.selectButton.containsKey(cardChild) ? orderRefundActivity.selectButton.get(cardChild) : false) == true) {
+                                if ((orderRefundActivity.selectButton.containsKey(cardChild) ? orderRefundActivity.selectButton.get(cardChild) : false)) {
                                     selectRefundActionOrderCardChildButton.setBackgroundResource(R.drawable.no_select_btn);
                                     orderRefundActivity.selectButton.put(cardChild, false);
                                 } else {
@@ -371,6 +376,8 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             else if (msg.what == 6) {
                 DialogUtil.createShortDialog(orderRefundActivity, "退款成功!");
                 orderRefundActivity.finish();
+            } else {
+                DialogUtil.createShortDialog(orderRefundActivity, "服务器异常，请重试");
             }
         }
     }
@@ -389,6 +396,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
         pointAndCouponBalanceButton = (Button) findViewById(R.id.point_and_cash_coupon_balance_btn);
         pointAndCouponBalanceButton.setOnClickListener(this);
         orderRefundSlaverTablelayout = (TableLayout) findViewById(R.id.order_refund_slaver_tablelayout);
+        benefitPersonStartPos = orderRefundSlaverTablelayout.indexOfChild(findViewById(R.id.refund_benefit_person_layout)) + 1;
 
         //退款到哪些账户的选择按钮
         refundActionCashSelect = (ImageButton) findViewById(R.id.refund_action_order_cash_select);
@@ -481,7 +489,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // TODO Auto-generated method stub
                 if (cs.toString() != null && !"".equals(cs.toString()))
-                    pointValueText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(cs.toString()) * Double.valueOf(pointRate))));
+                    pointValueText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.parseDouble(cs.toString()) * Double.parseDouble(pointRate))));
                 else
                     pointValueText.setText("0");
             }
@@ -506,7 +514,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // TODO Auto-generated method stub
                 if (cs.toString() != null && !"".equals(cs.toString()))
-                    cashCouponValueText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.valueOf(cs.toString()) * Double.valueOf(cashCouponRate))));
+                    cashCouponValueText.setText(NumberFormatUtil.currencyFormat(String.valueOf(Double.parseDouble(cs.toString()) * Double.parseDouble(cashCouponRate))));
                 else
                     cashCouponValueText.setText("0");
             }
@@ -560,12 +568,18 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                     refundDetailParamJson.put("CustomerID", customerID);
                     refundDetailParamJson.put("ProductType", productType);
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverRequestResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, refundDetailParamJson.toString(), userInfoApplication);
                 JSONObject resultJson = null;
                 try {
                     resultJson = new JSONObject(serverRequestResult);
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 if (serverRequestResult == null || serverRequestResult.equals(""))
                     mHandler.sendEmptyMessage(0);
@@ -578,6 +592,9 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                         message = resultJson.getString("Message");
                     } catch (JSONException e) {
                         code = 0;
+                        e.printStackTrace();
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         refundInfo = new RefundInfo();
@@ -589,6 +606,9 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                             paymentDetailJsonArray = refundDetailJson.getJSONArray("PaymentList");
                             ecardInfoJsonArray = refundDetailJson.getJSONArray("CardList");
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         if (refundDetailJson != null) {
                             try {
@@ -598,7 +618,10 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                                 refundInfo.setRate(refundDetailJson.getDouble("Rate"));
                                 refundInfo.setProductType(productType);
                             } catch (JSONException e) {
-                                refundInfo.setRefundAmount(Double.valueOf(0));
+                                refundInfo.setRefundAmount(0);
+                                e.printStackTrace();
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                         }
                         if (paymentDetailJsonArray != null) {
@@ -740,15 +763,17 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                                             }
                                         } catch (JSONException e) {
                                             e.printStackTrace();
+                                            mHandler.sendEmptyMessage(99);
+                                            return;
                                         }
                                         ecardInfoList.add(ecardInfo);
                                     }
                                     refundInfo.setEcardInfoList(ecardInfoList);
                                 }
-                            } catch (NumberFormatException e) {
+                            } catch (NumberFormatException | JSONException e) {
                                 e.printStackTrace();
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                mHandler.sendEmptyMessage(99);
+                                return;
                             }
                         }
                         mHandler.sendEmptyMessage(1);
@@ -783,36 +808,36 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
         //现金券
         String refundAmountCashCoupon = cashCouponValueText.getText().toString();
 
-        if ((selectButton.containsKey("cash") ? selectButton.get("cash") : false) == true) {
-            if (refundAmountCash != null && !(("").equals(refundAmountCash)) && Double.valueOf(refundAmountCash) != 0) {
-                refundCashTotalPrice += Double.valueOf(refundAmountCash);
+        if ((selectButton.containsKey("cash") ? selectButton.get("cash") : false)) {
+            if (refundAmountCash != null && !(("").equals(refundAmountCash)) && Double.parseDouble(refundAmountCash) != 0) {
+                refundCashTotalPrice += Double.parseDouble(refundAmountCash);
             }
         }
 
-        if ((selectButton.containsKey("other") ? selectButton.get("other") : false) == true) {
-            if (refundAmountOther != null && !(("").equals(refundAmountOther)) && Double.valueOf(refundAmountOther) != 0) {
-                refundOtherTotalPrice += Double.valueOf(refundAmountOther);
+        if ((selectButton.containsKey("other") ? selectButton.get("other") : false)) {
+            if (refundAmountOther != null && !(("").equals(refundAmountOther)) && Double.parseDouble(refundAmountOther) != 0) {
+                refundOtherTotalPrice += Double.parseDouble(refundAmountOther);
             }
         }
-        if ((selectButton.containsKey("point") ? selectButton.get("point") : false) == true) {
-            if (refundAmountPoint != null && !(("").equals(refundAmountPoint)) && Double.valueOf(refundAmountPoint) != 0) {
-                refundPointTotalPrice += Double.valueOf(refundAmountPoint);
+        if ((selectButton.containsKey("point") ? selectButton.get("point") : false)) {
+            if (refundAmountPoint != null && !(("").equals(refundAmountPoint)) && Double.parseDouble(refundAmountPoint) != 0) {
+                refundPointTotalPrice += Double.parseDouble(refundAmountPoint);
             }
         }
-        if ((selectButton.containsKey("cashCoupon") ? selectButton.get("cashCoupon") : false) == true) {
-            if (refundAmountCashCoupon != null && !(("").equals(refundAmountCashCoupon)) && Double.valueOf(refundAmountCashCoupon) != 0) {
-                refundCashCouponTotalPrice += Double.valueOf(refundAmountCashCoupon);
+        if ((selectButton.containsKey("cashCoupon") ? selectButton.get("cashCoupon") : false)) {
+            if (refundAmountCashCoupon != null && !(("").equals(refundAmountCashCoupon)) && Double.parseDouble(refundAmountCashCoupon) != 0) {
+                refundCashCouponTotalPrice += Double.parseDouble(refundAmountCashCoupon);
             }
         }
         for (int i = 0; i < refundInfo.getEcardInfoList().size(); i++) {
             EcardInfo ecardInfo = refundInfo.getEcardInfoList().get(i);
             if (ecardInfo.getUserEcardType() == 1) {
                 final String cardChild = "cardChild" + i;
-                if ((selectButton.containsKey(cardChild) ? selectButton.get(cardChild) : false) == true) {
+                if ((selectButton.containsKey(cardChild) ? selectButton.get(cardChild) : false)) {
                     View view = refundEcardLinearLayout.findViewWithTag(i);
                     String cardString = ((EditText) view.findViewById(R.id.payment_action_order_card_child_edit)).getText().toString();
-                    if (cardString != null && !(("").equals(cardString)) && Double.valueOf(cardString) > 0) {
-                        refundECardpaidOrderTotalPrice += Double.valueOf(cardString);
+                    if (cardString != null && !(("").equals(cardString)) && Double.parseDouble(cardString) > 0) {
+                        refundECardpaidOrderTotalPrice += Double.parseDouble(cardString);
                     }
                 }
             }
@@ -821,7 +846,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
         refundActionShouldRefundAmount = refundCashTotalPrice + refundOtherTotalPrice + refundPointTotalPrice + refundCashCouponTotalPrice + refundECardpaidOrderTotalPrice;
         refundActionGiveRefundAmount = refundCashTotalPrice + refundOtherTotalPrice + refundECardpaidOrderTotalPrice;
         //((TextView)findViewById(R.id.refund_action_should_refund_amount)).setText(currency+NumberFormatUtil.currencyFormat(String.valueOf(refundActionShouldRefundAmount)));
-        ((TextView) findViewById(R.id.refund_action_give_point_value)).setText(NumberFormatUtil.currencyFormat(String.valueOf(refundActionGiveRefundAmount * Double.valueOf(givePointRate))));
+        ((TextView) findViewById(R.id.refund_action_give_point_value)).setText(NumberFormatUtil.currencyFormat(String.valueOf(refundActionGiveRefundAmount * Double.parseDouble(givePointRate))));
         ((TextView) findViewById(R.id.refund_action_give_cash_value)).setText(currency + NumberFormatUtil.currencyFormat(String.valueOf(refundActionGiveRefundAmount * Double.valueOf(giveCashCouponRate))));
         refundBenefitSharePrice.setText(userInfoApplication.getAccountInfo().getCurrency() + NumberFormatUtil.currencyFormat(String.valueOf(refundActionShouldRefundAmount - refundActionShouldRefundAmount * consultantrateamount)));
     }
@@ -847,114 +872,73 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             mBenefitPersonNames = name;
             namegetFlg = 0;
         }
-        if (shareFlg == 1) {
-            orderRefundSlaverTablelayout.removeViews(1, orderRefundSlaverTablelayout.getChildCount() - 1);
-            JSONArray idArray = null;
-            try {
-                idArray = new JSONArray(id);
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            if (idArray != null && idArray.length() > 0) {
-                String[] nameArray = name.split("、");
-                for (int i = 0; i < nameArray.length; i++) {
-                    View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
-                    TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
-                    benefitPersonNameText.setText(nameArray[i]);
-                    EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
-                    benefitPersonPercentText.setOnTouchListener(new View.OnTouchListener() {
-                        int touch_flag = 0;
-
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
-                            touch_flag++;
-                            if (touch_flag == 2) {
-                                touch_flag = 0;
-                                if (shareFlg == 1) {
-                                    String[] nameArray = mBenefitPersonNames.split("、");
-                                    orderRefundSlaverTablelayout.removeViews(1, orderRefundSlaverTablelayout.getChildCount() - 1);
-                                    for (int j = 0; j < nameArray.length; j++) {
-                                        View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
-                                        TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
-                                        benefitPersonNameText.setText(nameArray[j]);
-                                        EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
-                                        TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
-                                        EditText[] editText = new EditText[]{benefitPersonPercentText};
-                                        NumberFormatUtil.setPricePointArray(editText, 2);
-                                        benefitPersonPercentText.setText(String.valueOf(0));
-                                        orderRefundSlaverTablelayout.addView(benefitPersonItemView, 1 + j);
-                                    }
-                                    shareFlg = 0;
-                                    return true;
-                                }
-                            }
-                            return false;
-                        }
-                    });
-                    TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
-                    EditText[] editText = new EditText[]{benefitPersonPercentText};
-                    NumberFormatUtil.setPricePointArray(editText, 2);
-                    benefitPersonPercentText.setText("均分");
-                    orderRefundSlaverTablelayout.addView(benefitPersonItemView, 1 + i);
+        removeBenefitPerson();
+        JSONArray idArray = null;
+        try {
+            idArray = new JSONArray(id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            mHandler.sendEmptyMessage(99);
+            return;
+        }
+        if (idArray != null && idArray.length() > 0) {
+            String[] nameArray = name.split("、");
+            String displayPercent = new DecimalFormat("0.00").format(0);
+            if (shareFlg == 1) {
+                displayPercent = "均分";
+                if (nameArray.length == 1) {
+                    displayPercent = "100";
                 }
-            } else {
-                orderRefundSlaverTablelayout.removeViews(1, orderRefundSlaverTablelayout.getChildCount() - 1);
-                shareFlg = 0;
             }
+            for (int i = 0; i < nameArray.length; i++) {
+                View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
+                TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
+                benefitPersonNameText.setText(nameArray[i]);
+                EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
+                /*benefitPersonPercentText.setOnTouchListener(new View.OnTouchListener() {
+                    int touch_flag = 0;
+
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        touch_flag++;
+                        if (touch_flag == 2) {
+                            touch_flag = 0;
+                            if (shareFlg == 1) {
+                                String[] nameArray = mBenefitPersonNames.split("、");
+                                orderRefundSlaverTablelayout.removeViews(ecardSlaverStartPos, orderRefundSlaverTablelayout.getChildCount() - 1);
+                                for (int j = 0; j < nameArray.length; j++) {
+                                    View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
+                                    TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
+                                    benefitPersonNameText.setText(nameArray[j]);
+                                    EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
+                                    TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
+                                    EditText[] editText = new EditText[]{benefitPersonPercentText};
+                                    NumberFormatUtil.setPricePointArray(editText, 2);
+                                    benefitPersonPercentText.setText(String.valueOf(0));
+                                    orderRefundSlaverTablelayout.addView(benefitPersonItemView, ecardSlaverStartPos + j);
+                                }
+                                shareFlg = 0;
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                });*/
+                TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
+                EditText[] editText = new EditText[]{benefitPersonPercentText};
+                NumberFormatUtil.setPricePointArray(editText, 2);
+                benefitPersonPercentText.setText(displayPercent);
+                if (shareFlg == 1) {
+                    benefitPersonPercentText.setEnabled(false);
+                } else {
+                    benefitPersonPercentText.setEnabled(true);
+                }
+                orderRefundSlaverTablelayout.addView(benefitPersonItemView, benefitPersonStartPos + i);
+            }
+            benefitPersonItemCnt = nameArray.length;
         } else {
-            orderRefundSlaverTablelayout.removeViews(1, orderRefundSlaverTablelayout.getChildCount() - 1);
-            JSONArray idArray = null;
-            try {
-                idArray = new JSONArray(id);
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            if (idArray != null && idArray.length() > 0) {
-                String[] nameArray = name.split("、");
-                for (int i = 0; i < nameArray.length; i++) {
-                    View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
-                    TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
-                    benefitPersonNameText.setText(nameArray[i]);
-                    EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
-                    benefitPersonPercentText.setOnTouchListener(new View.OnTouchListener() {
-                        int touch_flag = 0;
-
-                        @Override
-                        public boolean onTouch(View v, MotionEvent event) {
-                            touch_flag++;
-                            if (touch_flag == 2) {
-                                touch_flag = 0;
-                                if (shareFlg == 1) {
-                                    String[] nameArray = mBenefitPersonNames.split("、");
-                                    orderRefundSlaverTablelayout.removeViews(1, orderRefundSlaverTablelayout.getChildCount() - 1);
-                                    for (int j = 0; j < nameArray.length; j++) {
-                                        View benefitPersonItemView = layoutInflater.inflate(R.xml.benefit_person_list_item, null);
-                                        TextView benefitPersonNameText = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_name);
-                                        benefitPersonNameText.setText(nameArray[j]);
-                                        EditText benefitPersonPercentText = (EditText) benefitPersonItemView.findViewById(R.id.benefit_person_percent);
-                                        TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
-                                        EditText[] editText = new EditText[]{benefitPersonPercentText};
-                                        NumberFormatUtil.setPricePointArray(editText, 2);
-                                        benefitPersonPercentText.setText(String.valueOf(0));
-                                        orderRefundSlaverTablelayout.addView(benefitPersonItemView, 1 + j);
-                                    }
-                                    shareFlg = 0;
-                                    return true;
-                                }
-                            }
-                            return false;
-                        }
-                    });
-                    TextView benefitPersonPercentMark = (TextView) benefitPersonItemView.findViewById(R.id.benefit_person_percent_mark);
-                    EditText[] editText = new EditText[]{benefitPersonPercentText};
-                    NumberFormatUtil.setPricePointArray(editText, 2);
-                    benefitPersonPercentText.setText("均分");
-                    orderRefundSlaverTablelayout.addView(benefitPersonItemView, 1 + i);
-                }
-                shareFlg = 1;
-            }
+            shareFlg = 0;
+            benefitPersonItemCnt = 0;
         }
     }
 
@@ -965,6 +949,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             return;
         }
         if (requestCode == 101) {
+            shareFlg = 1;
             namegetFlg = 1;
             setBenefitPersonInfo(data.getStringExtra("personId"), data.getStringExtra("personName"));
         }
@@ -1037,14 +1022,14 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
 
     //赠送积分
     private void CheckRefundGivePoint() {
-        double refundGivePoint = refundActionGiveRefundAmount * Double.valueOf(givePointRate);
+        double refundGivePoint = refundActionGiveRefundAmount * Double.parseDouble(givePointRate);
         String inputGivePoint = ((EditText) findViewById(R.id.refund_action_give_point_edit)).getText().toString();
         double tempGivePoint = 0;
 
         if ("".equals(inputGivePoint)) {
             submitGiveWhenRefundGivePoint();
         } else {
-            tempGivePoint = Double.valueOf(inputGivePoint);
+            tempGivePoint = Double.parseDouble(inputGivePoint);
 
             if (refundGivePoint != tempGivePoint || tempGivePoint == 0)
                 submitGiveWhenRefundGivePoint();
@@ -1055,14 +1040,14 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
 
     //赠送现金券
     private void CheckRefundGiveCashCoupon() {
-        double refundGiveCashCoupon = refundActionGiveRefundAmount * Double.valueOf(giveCashCouponRate);
+        double refundGiveCashCoupon = refundActionGiveRefundAmount * Double.parseDouble(giveCashCouponRate);
         String inputGiveCashCoupon = ((EditText) findViewById(R.id.refund_action_give_cash_edit)).getText().toString();
         double tempGiveCashCoupon = 0;
 
         if ("".equals(inputGiveCashCoupon)) {
             submitGiveWhenRefundGiveCashCoupon();
         } else {
-            tempGiveCashCoupon = Double.valueOf(inputGiveCashCoupon);
+            tempGiveCashCoupon = Double.parseDouble(inputGiveCashCoupon);
 
             if (refundGiveCashCoupon != tempGiveCashCoupon || tempGiveCashCoupon == 0)
                 submitGiveWhenRefundGiveCashCoupon();
@@ -1173,38 +1158,43 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
         final JSONArray paymentDetailJsonArray = new JSONArray();
         final JSONArray giveDetailJsonArray = new JSONArray();
         //现金
-        if ((selectButton.containsKey("cash") ? selectButton.get("cash") : false) == true) {
-            if (refundAmountCash != null && !(("").equals(refundAmountCash)) && Double.valueOf(refundAmountCash) != 0) {
+        if ((selectButton.containsKey("cash") ? selectButton.get("cash") : false)) {
+            if (refundAmountCash != null && !(("").equals(refundAmountCash)) && Double.parseDouble(refundAmountCash) != 0) {
                 JSONObject cashPaymentJson = new JSONObject();
                 try {
 
                     cashPaymentJson.put("PaymentMode", 0);
                     cashPaymentJson.put("PaymentAmount", NumberFormatUtil.currencyFormat(refundAmountCash));
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 paymentDetailJsonArray.put(cashPaymentJson);
-                refundTotalPrice += Double.valueOf(refundAmountCash);
+                refundTotalPrice += Double.parseDouble(refundAmountCash);
             }
         }
         //其他
-        if ((selectButton.containsKey("other") ? selectButton.get("other") : false) == true) {
-            if (refundAmountOther != null && !(("").equals(refundAmountOther)) && Double.valueOf(refundAmountOther) != 0) {
+        if ((selectButton.containsKey("other") ? selectButton.get("other") : false)) {
+            if (refundAmountOther != null && !(("").equals(refundAmountOther)) && Double.parseDouble(refundAmountOther) != 0) {
                 JSONObject otherPaymentJson = new JSONObject();
                 try {
                     otherPaymentJson.put("PaymentMode", 3);
                     otherPaymentJson.put("PaymentAmount", NumberFormatUtil.currencyFormat(refundAmountOther));
                 } catch (JSONException e) {
-
+                    e.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 paymentDetailJsonArray.put(otherPaymentJson);
-                refundTotalPrice += Double.valueOf(refundAmountOther);
+                refundTotalPrice += Double.parseDouble(refundAmountOther);
             }
         }
         //积分
-        if ((selectButton.containsKey("point") ? selectButton.get("point") : false) == true) {
+        if ((selectButton.containsKey("point") ? selectButton.get("point") : false)) {
             for (EcardInfo ecardInfo : refundInfo.getEcardInfoList()) {
                 if (ecardInfo.getUserEcardType() == 2) {
-                    if (refundAmountPoint != null && !(("").equals(refundAmountPoint)) && Double.valueOf(refundAmountPoint) != 0) {
+                    if (refundAmountPoint != null && !(("").equals(refundAmountPoint)) && Double.parseDouble(refundAmountPoint) != 0) {
                         JSONObject integralPaymentJson = new JSONObject();
                         try {
                             integralPaymentJson.put("UserCardNo", ecardInfo.getUserEcardNo());
@@ -1212,16 +1202,19 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                             integralPaymentJson.put("PaymentMode", 6);
                             integralPaymentJson.put("PaymentAmount", NumberFormatUtil.currencyFormat(refundAmountPoint));
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         paymentDetailJsonArray.put(integralPaymentJson);
-                        refundTotalPrice += Double.valueOf(refundPointTotalPrice);
+                        refundTotalPrice += refundPointTotalPrice;
                     }
                 }
 
             }
         }
         //现金券
-        if ((selectButton.containsKey("cashCoupon") ? selectButton.get("cashCoupon") : false) == true) {
+        if ((selectButton.containsKey("cashCoupon") ? selectButton.get("cashCoupon") : false)) {
             for (EcardInfo ecardInfo : refundInfo.getEcardInfoList()) {
                 if (ecardInfo.getUserEcardType() == 3) {
                     if (refundAmountCashCoupon != null && !(("").equals(refundAmountCashCoupon)) && Double.valueOf(refundAmountCashCoupon) != 0) {
@@ -1232,9 +1225,12 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                             cashCouponPaymentJson.put("PaymentMode", 7);
                             cashCouponPaymentJson.put("PaymentAmount", NumberFormatUtil.currencyFormat(refundAmountCashCoupon));
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         paymentDetailJsonArray.put(cashCouponPaymentJson);
-                        refundTotalPrice += Double.valueOf(refundCashCouponTotalPrice);
+                        refundTotalPrice += refundCashCouponTotalPrice;
                     }
                 }
             }
@@ -1244,7 +1240,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             EcardInfo ecardInfo = refundInfo.getEcardInfoList().get(i);
             if (ecardInfo.getUserEcardType() == 1) {
                 final String cardChild = "cardChild" + i;
-                if ((selectButton.containsKey(cardChild) ? selectButton.get(cardChild) : false) == true) {
+                if ((selectButton.containsKey(cardChild) ? selectButton.get(cardChild) : false)) {
                     View view = refundEcardLinearLayout.findViewWithTag(i);
                     String cardString = ((EditText) view.findViewById(R.id.payment_action_order_card_child_edit)).getText().toString();
                     JSONObject cardPaymentJson = new JSONObject();
@@ -1256,18 +1252,21 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                             cardPaymentJson.put("PaymentAmount", NumberFormatUtil.currencyFormat(cardString));
 
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         paymentDetailJsonArray.put(cardPaymentJson);
-                        refundTotalPrice += Double.valueOf(cardString);
+                        refundTotalPrice += Double.parseDouble(cardString);
                     }
                 }
             }
         }
         //赠送积分
-        if ((selectButton.containsKey("givePoint") ? selectButton.get("givePoint") : false) == true) {
+        if ((selectButton.containsKey("givePoint") ? selectButton.get("givePoint") : false)) {
             for (EcardInfo ecardInfo : refundInfo.getEcardInfoList()) {
                 if (ecardInfo.getUserEcardType() == 2) {
-                    if (refundAmountGivePoint != null && !(("").equals(refundAmountGivePoint)) && Double.valueOf(refundAmountGivePoint) != 0) {
+                    if (refundAmountGivePoint != null && !(("").equals(refundAmountGivePoint)) && Double.parseDouble(refundAmountGivePoint) != 0) {
                         JSONObject pointGiveJson = new JSONObject();
                         try {
                             pointGiveJson.put("UserCardNo", ecardInfo.getUserEcardNo());
@@ -1275,6 +1274,9 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                             pointGiveJson.put("PaymentMode", 6);
                             pointGiveJson.put("PaymentAmount", NumberFormatUtil.currencyFormat(refundAmountGivePoint));
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         giveDetailJsonArray.put(pointGiveJson);
                     }
@@ -1282,10 +1284,10 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
             }
         }
         //赠送现金券
-        if ((selectButton.containsKey("giveCashCoupon") ? selectButton.get("giveCashCoupon") : false) == true) {
+        if ((selectButton.containsKey("giveCashCoupon") ? selectButton.get("giveCashCoupon") : false)) {
             for (EcardInfo ecardInfo : refundInfo.getEcardInfoList()) {
                 if (ecardInfo.getUserEcardType() == 3) {
-                    if (refundAmountGiveCashCoupon != null && !(("").equals(refundAmountGiveCashCoupon)) && Double.valueOf(refundAmountGiveCashCoupon) != 0) {
+                    if (refundAmountGiveCashCoupon != null && !(("").equals(refundAmountGiveCashCoupon)) && Double.parseDouble(refundAmountGiveCashCoupon) != 0) {
                         JSONObject cashCouponGiveJson = new JSONObject();
                         try {
                             cashCouponGiveJson.put("UserCardNo", ecardInfo.getUserEcardNo());
@@ -1293,6 +1295,9 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                             cashCouponGiveJson.put("PaymentMode", 7);
                             cashCouponGiveJson.put("PaymentAmount", NumberFormatUtil.currencyFormat(refundAmountGiveCashCoupon));
                         } catch (JSONException e) {
+                            e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                         giveDetailJsonArray.put(cashCouponGiveJson);
                     }
@@ -1332,19 +1337,23 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                                 EditText percentEditText = ((EditText) orderRefundSlaverTablelayout.getChildAt(i).findViewById(R.id.benefit_person_percent));
                                 double percent = 0;
                                 if (percentEditText.getText() != null && shareFlg == 0)
-                                    percent = Double.valueOf(percentEditText.getText().toString()) / 100;
+                                    percent = Double.parseDouble(percentEditText.getText().toString()) / 100;
                                 JSONObject benefitJson = new JSONObject();
                                 benefitJson.put("SlaveID", tmp.get(i - 1));
                                 benefitJson.put("ProfitPct", percent);
                                 benefitDetailJsonArray.put(benefitJson);
                             }
                         } catch (JSONException e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
+                            mHandler.sendEmptyMessage(99);
+                            return;
                         }
                     }
                     addRefundJson.put("Slavers", benefitDetailJsonArray);
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                    mHandler.sendEmptyMessage(99);
+                    return;
                 }
                 String serverResult = WebServiceUtil.requestWebServiceWithSSLUseJson(endPoint, methodName, addRefundJson.toString(), userInfoApplication);
                 if (serverResult == null || ("").equals(serverResult))
@@ -1354,6 +1363,9 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                     try {
                         resultJson = new JSONObject(serverResult);
                     } catch (JSONException e) {
+                        e.printStackTrace();
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     int code = 0;
                     String serverMessage = "";
@@ -1362,6 +1374,9 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                         serverMessage = resultJson.getString("Message");
                     } catch (JSONException e) {
                         code = 0;
+                        e.printStackTrace();
+                        mHandler.sendEmptyMessage(99);
+                        return;
                     }
                     if (code == 1) {
                         mHandler.sendEmptyMessage(6);
@@ -1386,7 +1401,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
         //显示积分或者现金券余额
         switch (view.getId()) {
             case R.id.refund_action_order_cash_select:
-                if ((selectButton.containsKey("cash") ? selectButton.get("cash") : false) == true) {
+                if ((selectButton.containsKey("cash") ? selectButton.get("cash") : false)) {
                     refundActionCashSelect.setBackgroundResource(R.drawable.no_select_btn);
                     selectButton.put("cash", false);
                 } else {
@@ -1396,7 +1411,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                 selectTotalPrice();
                 break;
             case R.id.refund_action_order_other_select:
-                if ((selectButton.containsKey("other") ? selectButton.get("other") : false) == true) {
+                if ((selectButton.containsKey("other") ? selectButton.get("other") : false)) {
                     refundActionOtherSelect.setBackgroundResource(R.drawable.no_select_btn);
                     selectButton.put("other", false);
                 } else {
@@ -1406,7 +1421,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                 selectTotalPrice();
                 break;
             case R.id.refund_action_order_point_select:
-                if ((selectButton.containsKey("point") ? selectButton.get("point") : false) == true) {
+                if ((selectButton.containsKey("point") ? selectButton.get("point") : false)) {
                     refundActionPointSelect.setBackgroundResource(R.drawable.no_select_btn);
                     selectButton.put("point", false);
                 } else {
@@ -1416,7 +1431,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                 selectTotalPrice();
                 break;
             case R.id.refund_action_order_cash_coupon_select:
-                if ((selectButton.containsKey("cashCoupon") ? selectButton.get("cashCoupon") : false) == true) {
+                if ((selectButton.containsKey("cashCoupon") ? selectButton.get("cashCoupon") : false)) {
                     refundActionCashCouponSelect.setBackgroundResource(R.drawable.no_select_btn);
                     selectButton.put("cashCoupon", false);
                 } else {
@@ -1426,7 +1441,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                 selectTotalPrice();
                 break;
             case R.id.refund_action_give_point_select:
-                if ((selectButton.containsKey("givePoint") ? selectButton.get("givePoint") : false) == true) {
+                if ((selectButton.containsKey("givePoint") ? selectButton.get("givePoint") : false)) {
                     refundActionPointPresentSelect.setBackgroundResource(R.drawable.no_select_btn);
                     selectButton.put("givePoint", false);
                 } else {
@@ -1435,7 +1450,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                 }
                 break;
             case R.id.refund_action_giva_cash_coupon_select:
-                if ((selectButton.containsKey("giveCashCoupon") ? selectButton.get("giveCashCoupon") : false) == true) {
+                if ((selectButton.containsKey("giveCashCoupon") ? selectButton.get("giveCashCoupon") : false)) {
                     refundActionCashCouponPresentSelect.setBackgroundResource(R.drawable.no_select_btn);
                     selectButton.put("giveCashCoupon", false);
                 } else {
@@ -1472,6 +1487,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
 			startActivityForResult(chooseBenefitPersonIntent, 101);
 			break;*/
             case R.id.payment_benefit_textv_r:
+            case R.id.refund_benefit_person:
                 Intent chooseBenefitPersonIntent2 = new Intent(this, ChoosePersonActivity.class);
                 chooseBenefitPersonIntent2.putExtra("personRole", "Doctor");
                 chooseBenefitPersonIntent2.putExtra("checkModel", "Multi");
@@ -1480,18 +1496,13 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                 chooseBenefitPersonIntent2.putExtra("customerID", customerID);
                 startActivityForResult(chooseBenefitPersonIntent2, 101);
                 break;
-            case R.id.refund_benefit_person:
-                Intent chooseBenefitPersonIntent3 = new Intent(this, ChoosePersonActivity.class);
-                chooseBenefitPersonIntent3.putExtra("personRole", "Doctor");
-                chooseBenefitPersonIntent3.putExtra("checkModel", "Multi");
-                chooseBenefitPersonIntent3.putExtra("setBenefitPerson", true);
-                chooseBenefitPersonIntent3.putExtra("selectPersonIDs", mBenefitPersonIDs);
-                chooseBenefitPersonIntent3.putExtra("customerID", customerID);
-                startActivityForResult(chooseBenefitPersonIntent3, 101);
-                break;
             case R.id.payment_benefit_share_btn_r:
-                if (shareFlg == 0 && !checkBenefitPersonIsNull() && isComissionCalc) {
-                    shareFlg = 1;
+                if (!checkBenefitPersonIsNull() && isComissionCalc) {
+                    if (shareFlg == 1) {
+                        shareFlg = 0;
+                    } else {
+                        shareFlg = 1;
+                    }
                     setBenefitPersonInfo(mBenefitPersonIDs, mBenefitPersonNames);
                 }
                 break;
@@ -1507,7 +1518,7 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
                         for (int i = 1; i < orderRefundSlaverTablelayout.getChildCount(); i++) {
                             EditText percentEditText = ((EditText) orderRefundSlaverTablelayout.getChildAt(i).findViewById(R.id.benefit_person_percent));
                             double temp = 0;
-                            temp = Double.valueOf(percentEditText.getText().toString());
+                            temp = Double.parseDouble(percentEditText.getText().toString());
                             percenttemp = temp + percenttemp;
                         }
                         if (percenttemp != 100) {
@@ -1533,17 +1544,27 @@ public class OrderRefundActivity extends BaseActivity implements OnClickListener
         // TODO Auto-generated method stub
         super.onDestroy();
         exit = true;
-        if (progressDialog != null) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
             // mHandler = null;
         }
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();
             requestWebServiceThread = null;
+        }
+    }
+
+    /**
+     * 清除业绩参与者
+     */
+    private void removeBenefitPerson() {
+        if (benefitPersonItemCnt > 0) {
+            orderRefundSlaverTablelayout.removeViews(benefitPersonStartPos, benefitPersonItemCnt);
+            benefitPersonItemCnt = 0;
         }
     }
 
