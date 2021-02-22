@@ -341,6 +341,9 @@ public class ChoosePersonActivity extends BaseActivity implements OnClickListene
             createCustomerThread();
         }
 
+        choosePersonListAdapter = new ChoosePersonListAdapter(this, personList, checkMode, selectPersonIDs);
+        choosePersonListView.setAdapter(choosePersonListAdapter);
+
         requestWebServiceThread.start();
     }
 

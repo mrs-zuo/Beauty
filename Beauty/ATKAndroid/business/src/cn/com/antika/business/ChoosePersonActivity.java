@@ -340,6 +340,9 @@ public class ChoosePersonActivity extends BaseActivity implements OnClickListene
             createCustomerThread();
         }
 
+        choosePersonListAdapter = new ChoosePersonListAdapter(this, personList, checkMode, selectPersonIDs);
+        choosePersonListView.setAdapter(choosePersonListAdapter);
+
         requestWebServiceThread.start();
     }
 
@@ -1063,13 +1066,13 @@ public class ChoosePersonActivity extends BaseActivity implements OnClickListene
         // TODO Auto-generated method stub
         super.onDestroy();
         exit = true;
-        if (progressDialog != null) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
         if (mHandler != null) {
             mHandler.removeCallbacksAndMessages(null);
             // mHandler = null;
+        }
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+            progressDialog = null;
         }
         if (requestWebServiceThread != null) {
             requestWebServiceThread.interrupt();
@@ -1079,7 +1082,6 @@ public class ChoosePersonActivity extends BaseActivity implements OnClickListene
             getDataThread.interrupt();
             getDataThread = null;
         }
-
     }
 
 }
