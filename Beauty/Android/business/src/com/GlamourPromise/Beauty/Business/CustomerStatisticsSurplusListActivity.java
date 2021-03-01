@@ -64,6 +64,7 @@ public class CustomerStatisticsSurplusListActivity extends BaseActivity implemen
         exit = false;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_customer_statistics_surplus_list);
+
         initView();
     }
 
